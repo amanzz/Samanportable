@@ -40,6 +40,9 @@ import knockDownPortaCabinApplications from '@/data/products/knock-down-porta-ca
 import portaCabinShopApplications from '@/data/products/porta-cabin-shop-applications.json';
 import laborColonyApplications from '@/data/products/labor-colony-applications.json';
 import laborHutmentsApplications from '@/data/products/labor-hutments-applications.json';
+import prefabSiteCanteenApplications from '@/data/products/prefab-site-canteen-applications.json';
+import oilFieldCampApplications from '@/data/products/oil-field-camp-applications.json';
+import ablutionBlockApplications from '@/data/products/ablution-block-applications.json';
 import portableShopCabinApplications from '@/data/products/portable-shop-cabin-applications.json';
 import portableCabinApplications from '@/data/products/portable-cabin-applications.json';
 import containerOfficesApplications from '@/data/products/container-offices-applications.json';
@@ -52,6 +55,8 @@ import foodTruckContainersApplications from '@/data/products/food-truck-containe
 import containerHotelApplications from '@/data/products/container-hotel-applications.json';
 import modularContainerCafeApplications from '@/data/products/modular-container-cafe-applications.json';
 import containerCoffeeShopApplications from '@/data/products/container-coffee-shop-applications.json';
+import containerOfficeCabinApplications from '@/data/products/container-office-cabin-applications.json';
+import containerMarketingOfficeApplications from '@/data/products/container-marketing-office-applications.json';
 import sectionHDatasets from '@/data/products/section-h-datasets.json';
 import c08SectionHDatasets from '@/data/products/c08-section-h-datasets.json';
 import { pushDataLayer } from '@/lib/analytics';
@@ -104,9 +109,11 @@ interface ApplicationsData {
 type SectionHPanel = {
   h2: string;
   intro: string;
+  paragraph2?: string;
   h3: string;
   applications: string[];
   imageAlt?: string;
+  image?: VariantImage;
   /** Visible tab-strip label. Optional: a pack that supplies one has written it
       to its own L13 band, so it is used verbatim; a pack that supplies none
       keeps the variant's own size label and renders byte-identically. */
@@ -123,9 +130,11 @@ const fromSectionHDrop = (dataset: SectionHDataset): ApplicationsData => ({
           sizeSlug,
           h3: panel.h2,
           paragraph: panel.intro,
+          ...(panel.paragraph2 ? { paragraph2: panel.paragraph2 } : {}),
           applications: panel.applications,
           applicationsHeading: panel.h3,
           ...(panel.imageAlt ? { imageAlt: panel.imageAlt } : {}),
+          ...(panel.image ? { image: panel.image } : {}),
           ...(panel.tab ? { tabLabel: panel.tab } : {}),
         }]
   ),
@@ -171,6 +180,7 @@ const APPLICATIONS_DATASETS: Record<string, ApplicationsData> = {
   'container-hotel': containerHotelApplications as ApplicationsData,
   'modular-container-cafe': modularContainerCafeApplications as ApplicationsData,
   'container-coffee-shop': containerCoffeeShopApplications as ApplicationsData,
+  'container-marketing-office': containerMarketingOfficeApplications as ApplicationsData,
   ...Object.fromEntries(
     Object.entries(sectionHDatasets as Record<string, SectionHDataset>).map(
       ([slug, dataset]) => [slug, fromSectionHDrop(dataset)]
@@ -269,6 +279,26 @@ const APPLICATIONS_DATASETS: Record<string, ApplicationsData> = {
   // LC-01 (17 Aug 2026) - build prompt v1 section 3. Six panels, one per
   // published size.
   'labor-hutments': laborHutmentsApplications as ApplicationsData,
+  'prefab-site-canteen': prefabSiteCanteenApplications as ApplicationsData,
+  // LC-03 (17 Aug 2026) - build prompt v1 section 3. Six panels, one per
+  // published size. Registered after every earlier entry, per the documented
+  // PC-01 failure mode (silent key overwrite if registered before it).
+  'oil-field-camp': oilFieldCampApplications as ApplicationsData,
+  // LC-07 (17 Aug 2026) - build prompt v1.1 section 6. Six panels, one per
+  // published size. Registered after every earlier entry, per the documented
+  // PC-01 failure mode (silent key overwrite if registered before it).
+  'ablution-block': ablutionBlockApplications as ApplicationsData,
+  // CO-09 (22 Aug 2026) - build prompt v1.2 section 8.3. Six panels, one per
+  // published size: one paragraph plus six approved bullets (`applications`),
+  // per the standing Section 3 rule that prose alone is never permitted. Each
+  // panel also carries its approved GA plan as `image`, downscaled
+  // proportionally from the 3912x2992 master per section 7.2 (never the
+  // 489x374 preview). The GA ratio (1.3075) is not exactly the panel box's
+  // aspect-[4/3], and cropping a dimensioned drawing is forbidden, so every
+  // panel sets `image.fit: 'contain'` — see the doc comment on VariantImage
+  // in ./types.ts. Registered after every earlier entry and both Section-H
+  // spreads, per the documented PC-01 failure mode.
+  'container-office-cabin': containerOfficeCabinApplications as ApplicationsData,
 };
 
 const C04_PRODUCT_SLUGS = new Set([
@@ -381,12 +411,21 @@ interface PortaCabinVariantHeroProps {
       page's own copy. Fixing the shared literal in place would change the hub and
       the MS page too, so the string is opted into, not edited. */
   sizeEyebrowText?: string;
+  /** LC-05 (16 Aug 2026) - opt-in fragment targets for its six required
+      `#size-*` deep links. Default false preserves every existing hero. */
+  emitSizeAnchors?: boolean;
   /** PC-02 (14 Aug 2026) — suppress the Explorer panel image. The GI page's approved
       manifest is exactly 42 slots (36 gallery + 6 description) and supplies no
       seventh image or alt per size, so Section 3 renders copy-only rather than
       repeating a gallery file or deriving an unapproved alt. Default false keeps
       every other page's Explorer imagery byte-identical. */
   explorerHidePanelImages?: boolean;
+  /** LC-05 CWV v2: hold non-LCP images until the active hero has painted.
+      Default false preserves the rendered HTML and behaviour of every sibling. */
+  deferNonLcpImagesUntilHeroPaint?: boolean;
+  /** LC-05 CWV v3: render only the active explorer panel in the initial DOM.
+      Default false preserves the crawlable grid-stack markup on every sibling. */
+  renderOnlyActiveExplorerPanel?: boolean;
 }
 
 // Star row for the review badge (Amendment G v2 — real rating: 4.6 from the 5
@@ -658,7 +697,10 @@ export function PortaCabinVariantHero({
   explorerPanelHeadingAsH2 = false,
   compactMobileDividers = false,
   sizeEyebrowText,
+  emitSizeAnchors = false,
   explorerHidePanelImages = false,
+  deferNonLcpImagesUntilHeroPaint = false,
+  renderOnlyActiveExplorerPanel = false,
 }: PortaCabinVariantHeroProps) {
   const defaultIndex = Math.max(
     0,
@@ -676,6 +718,49 @@ export function PortaCabinVariantHero({
   const [quoteIndex, setQuoteIndex] = useState(defaultIndex);
   const [showEnquiry, setShowEnquiry] = useState(false);
   const heroRef = useRef<HTMLElement>(null);
+  const lcpImageRef = useRef<HTMLImageElement>(null);
+  const [nonLcpImagesReady, setNonLcpImagesReady] = useState(!deferNonLcpImagesUntilHeroPaint);
+
+  useEffect(() => {
+    if (!deferNonLcpImagesUntilHeroPaint || nonLcpImagesReady) return;
+
+    let observer: PerformanceObserver | undefined;
+    let postPaintDelay: number | undefined;
+    const release = () => {
+      observer?.disconnect();
+      setNonLcpImagesReady(true);
+    };
+
+    if ('PerformanceObserver' in window) {
+      try {
+        observer = new PerformanceObserver((list) => {
+          const hero = lcpImageRef.current;
+          if (
+            hero
+            && postPaintDelay === undefined
+            && list.getEntries().some((entry) => (
+              entry as PerformanceEntry & { element?: Element }
+            ).element === hero)
+          ) {
+            // LCP entries are provisional until user input/page hide. Keep the
+            // lazy thumbnails out of the final candidate window instead of
+            // releasing them on the hero's first interim paint notification.
+            postPaintDelay = window.setTimeout(release, 6000);
+          }
+        });
+        observer.observe({ type: 'largest-contentful-paint', buffered: true });
+      } catch (_error) {
+        observer = undefined;
+      }
+    }
+
+    const fallback = window.setTimeout(release, 10000);
+    return () => {
+      observer?.disconnect();
+      if (postPaintDelay !== undefined) window.clearTimeout(postPaintDelay);
+      window.clearTimeout(fallback);
+    };
+  }, [deferNonLcpImagesUntilHeroPaint, nonLcpImagesReady]);
 
   // T25 — every value that used to be a porta-cabins literal, resolved from the
   // data file first, then the product's preset. Anything unresolved is omitted
@@ -804,9 +889,10 @@ export function PortaCabinVariantHero({
             />
           ) : heroImages ? (
             <Image
+              ref={lcpImageRef}
               key={heroImages[activeImageIndex].src}
               src={heroImages[activeImageIndex].src}
-              unoptimized={shouldBypassOptimizer(heroImages[activeImageIndex].src)}
+              unoptimized={data.optimizeLocalGalleryImages ? false : shouldBypassOptimizer(heroImages[activeImageIndex].src)}
               alt={heroImages[activeImageIndex].alt}
               width={heroImages[activeImageIndex].width}
               height={heroImages[activeImageIndex].height}
@@ -831,13 +917,7 @@ export function PortaCabinVariantHero({
               sizes="(max-width: 639px) calc(100vw - 48px), (max-width: 1023px) calc(100vw - 64px), 40vw"
               quality={85}
             />
-          ) : (
-            <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/10 to-primary/5 text-center p-4">
-              <p className="text-sm text-muted-foreground">
-                Reference photographs for this size are available on request. Send an enquiry and we will share them.
-              </p>
-            </div>
-          )}
+          ) : null}
         </div>
 
         {/* The track sizes to its CONTENTS — never a reserved slot.
@@ -849,7 +929,16 @@ export function PortaCabinVariantHero({
             the strip — the row keeps a constant height and CLS stays 0.
             Full class names (never an interpolated `grid-cols-${n}`) so Tailwind's
             scanner emits them. */}
-        {heroImages && (
+        {/* CO-00 (19 Aug 2026) — a product whose largest per-variant image count
+            is 1 (no real thumbnail to browse) previously still rendered a
+            grid-cols-1 thumbnail row, and a single aspect-square thumbnail at
+            full track width is visually indistinguishable from a second copy
+            of the hero image stacked underneath it. Suppressing the row when
+            there is nothing to browse to (thumbTrackCount <= 1, no video)
+            fixes that for any such product; every existing product has at
+            least 2 images per variant, so this is unreached and byte-identical
+            everywhere else. */}
+        {heroImages && thumbTrackCount > 1 && (
           <div className={GALLERY_TRACK_CLASS[thumbTrackCount] || 'grid grid-cols-5 gap-2'}>
             {heroImages.map((img, i) => (
               <button
@@ -872,7 +961,7 @@ export function PortaCabinVariantHero({
                     viewport on mobile AND desktop (measured 52-62px boxes, all
                     in-viewport). They still remain lazy so only the main viewer
                     competes in the eager/high-priority LCP lane. */}
-                <Image src={img.src} unoptimized={shouldBypassOptimizer(img.src)} alt={!showVideo && i === activeImageIndex ? `${img.alt} thumbnail` : img.alt} width={150} height={150} className="w-full h-full object-cover" loading="lazy" decoding="async" sizes="(max-width: 1023px) 18vw, 80px" />
+                {nonLcpImagesReady && <Image src={img.src} unoptimized={data.optimizeLocalGalleryImages ? false : shouldBypassOptimizer(img.src)} alt={data.productSlug === 'shipping-container-office' ? `Thumbnail ${i + 1}: ${img.alt}` : (isC04Product || isC08Product ? img.alt : (!showVideo && i === activeImageIndex ? '' : img.alt))} width={150} height={150} className="w-full h-full object-cover" loading="lazy" decoding="async" sizes="(max-width: 1023px) 18vw, 80px" />}
               </button>
             ))}
 
@@ -900,7 +989,7 @@ export function PortaCabinVariantHero({
               {/* Sibling thumbs are eager because T30 MEASURED this row inside the
                   initial viewport at 360/390/412/768 and on desktop. The approved
                   video rule deliberately keeps this non-LCP facade poster lazy. */}
-              <Image
+              {nonLcpImagesReady && <Image
                 src={video.posterSrc}
                 unoptimized={shouldBypassOptimizer(video.posterSrc)}
                 alt={video.posterAlt}
@@ -910,7 +999,7 @@ export function PortaCabinVariantHero({
                 loading="lazy"
                 decoding="async"
                 sizes="(max-width: 1023px) 15vw, 70px"
-              />
+              />}
               <span className="absolute inset-0 flex items-center justify-center bg-black/25" aria-hidden="true">
                 <span className="flex items-center justify-center w-1/2 h-1/2 rounded-full bg-white/90 shadow">
                   <Play className="w-1/2 h-1/2 text-primary fill-primary" />
@@ -1019,6 +1108,7 @@ export function PortaCabinVariantHero({
             {data.variants.map((v, i) => (
               <button
                 key={v.sizeSlug}
+                id={emitSizeAnchors ? sizeFragment(v.sizeSlug) : undefined}
                 type="button"
                 aria-pressed={i === heroIndex}
                 onClick={() => selectHero(i)}
@@ -1106,21 +1196,40 @@ export function PortaCabinVariantHero({
             values; compacted ~10% (owner direction: tighter cells, no dead space
             in col 3). SIZE and APPLICATION swap with the selected chip; min-h
             keeps rows CLS-stable. */}
-        <div className="grid grid-cols-2 rounded-lg border border-[var(--ds-color-border)] overflow-hidden">
-          {FEATURE_CELLS.map((cell, i) => (
-            <div
-              key={cell.label}
-              className={cn(
-                'px-2.5 py-1.5 min-h-[3.25rem]',
-                i % 2 === 0 && 'border-r border-[var(--ds-color-border)]',
-                i < FEATURE_CELLS.length - 2 && 'border-b border-[var(--ds-color-border)]'
-              )}
-            >
-              <div className="text-[10px] font-bold uppercase tracking-[0.7px] text-[var(--ds-color-steel)]">{cell.label}</div>
-              <div className="text-[13px] font-semibold text-[var(--ds-color-forest)]">{cell.value}</div>
-            </div>
-          ))}
-        </div>
+        {data.heroTable ? (
+          <div className="overflow-hidden rounded-lg border border-[var(--ds-color-border)]">
+            <table className="w-full border-collapse text-left">
+              <tbody>
+                {data.heroTable.map(([label, value]) => (
+                  <tr key={label} className="border-b border-[var(--ds-color-border)] last:border-b-0">
+                    <th scope="row" className="w-[42%] px-2.5 py-1.5 text-[10px] font-bold uppercase tracking-[0.7px] text-[var(--ds-color-steel)]">
+                      {label}
+                    </th>
+                    <td className="px-2.5 py-1.5 text-[13px] font-semibold text-[var(--ds-color-forest)]">
+                      {value}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        ) : (
+          <div className="grid grid-cols-2 rounded-lg border border-[var(--ds-color-border)] overflow-hidden">
+            {FEATURE_CELLS.map((cell, i) => (
+              <div
+                key={cell.label}
+                className={cn(
+                  'px-2.5 py-1.5 min-h-[3.25rem]',
+                  i % 2 === 0 && 'border-r border-[var(--ds-color-border)]',
+                  i < FEATURE_CELLS.length - 2 && 'border-b border-[var(--ds-color-border)]'
+                )}
+              >
+                <div className="text-[10px] font-bold uppercase tracking-[0.7px] text-[var(--ds-color-steel)]">{cell.label}</div>
+                <div className="text-[13px] font-semibold text-[var(--ds-color-forest)]">{cell.value}</div>
+              </div>
+            ))}
+          </div>
+        )}
 
         {/* Green chips line (verbatim, from the approved short-description footer). */}
         <div className="flex items-center gap-2 rounded-md bg-[var(--ds-color-mist)] px-3 py-2">
@@ -1146,7 +1255,7 @@ export function PortaCabinVariantHero({
               <dd className="font-semibold text-[var(--ds-color-forest)]">{productSku}</dd>
             </div>
             )}
-            {categoryLabel && categoryLinkHref && (
+            {categoryLabel && categoryLinkHref && data.productSlug !== 'shipping-container-office' && (
             <div className="flex items-center justify-between gap-3">
               <dt className="text-[10px] font-bold uppercase tracking-[0.7px] text-[var(--ds-color-steel)]">Category</dt>
               <dd>
@@ -1272,6 +1381,8 @@ export function PortaCabinVariantHero({
               className="bg-white/80 shadow-lg lg:h-auto lg:min-h-full"
               scroll
               useItemImageAltVerbatim={useCo04TileAltsVerbatim}
+              deferImagesUntilVisible={deferNonLcpImagesUntilHeroPaint}
+              imageLoadGate={nonLcpImagesReady}
             />
           </div>
         </aside>
@@ -1296,7 +1407,11 @@ export function PortaCabinVariantHero({
 
         {hasRightToExist && (
           <div className="pc-rte">
-            <RightToExist productSlug={data.productSlug} />
+            <RightToExist
+              productSlug={data.productSlug}
+              deferSplitImageUntilVisible={deferNonLcpImagesUntilHeroPaint}
+              imageLoadGate={nonLcpImagesReady}
+            />
           </div>
         )}
 
@@ -1325,6 +1440,7 @@ export function PortaCabinVariantHero({
             usePremiumSizeTabs={usePremiumSizeTabs}
             panelHeadingAsH2={explorerPanelHeadingAsH2}
             hidePanelImages={explorerHidePanelImages}
+            renderOnlyActivePanel={renderOnlyActiveExplorerPanel}
           />
         </div>
         )}
@@ -1385,9 +1501,10 @@ interface SizeApplicationsExplorerProps {
   panelHeadingAsH2?: boolean;
   /** PC-02 — see `explorerHidePanelImages` on the hero. Default false. */
   hidePanelImages?: boolean;
+  renderOnlyActivePanel?: boolean;
 }
 
-function SizeApplicationsExplorer({ data, applications, productName, sectionId, activeIndex, onSelectTab, onGetQuote, usePremiumSizeTabs = false, panelHeadingAsH2 = false, hidePanelImages = false }: SizeApplicationsExplorerProps) {
+function SizeApplicationsExplorer({ data, applications, productName, sectionId, activeIndex, onSelectTab, onGetQuote, usePremiumSizeTabs = false, panelHeadingAsH2 = false, hidePanelImages = false, renderOnlyActivePanel = false }: SizeApplicationsExplorerProps) {
   // T25 — HARD NULL. The per-slug applications copy is owner-authored; when a
   // product has none this section renders NOTHING. It must never fall back to the
   // porta-cabins copy.
@@ -1401,6 +1518,9 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
 
   // Align the copy panels to the variant order (both keyed by sizeSlug).
   const panelBySlug = new Map(applications.panels.map((p) => [p.sizeSlug, p]));
+  const renderedVariants = renderOnlyActivePanel
+    ? data.variants.map((v, i) => ({ v, i })).filter(({ i }) => i === activeIndex)
+    : data.variants.map((v, i) => ({ v, i }));
 
   return (
     <section
@@ -1469,8 +1589,8 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
           The active panel is visible; the others are visibility:hidden (still in
           the DOM, still laid out, fully crawlable — stronger than display:none for
           SEO). All 9 panels ship in SSR. */}
-      <div className="mt-4 grid">
-        {data.variants.map((v, i) => {
+      <div className="mt-4 grid min-w-0 overflow-hidden">
+        {renderedVariants.map(({ v, i }) => {
           const panel = panelBySlug.get(v.sizeSlug);
           if (!panel) return null;
           const variantImages = v.images?.length ? v.images : (data.galleryImages || []);
@@ -1513,6 +1633,13 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
                     : panel.applications.length > 0
                       ? applicationAlt(v.label, panel.applications[0], productNameLower)
                       : ''),
+                // CO-09 — see the `fit` doc comment on VariantImage in ./types.ts.
+                // Absent everywhere else, so this defaults to 'cover' below,
+                // byte-identical to every other product's panel image.
+                fit: panel.image?.fit,
+                previewSrc: panel.image?.previewSrc,
+                width: panel.image?.width || manifestImage?.width || 1254,
+                height: panel.image?.height || manifestImage?.height || 1254,
               }
             : null;
           const rate = pricePerSqft(data.pricePerSqft, v.sizeSlug, v.priceExGst, v.areaSqft);
@@ -1524,7 +1651,7 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
               aria-labelledby={`app-tab-${v.sizeSlug}`}
               aria-hidden={i !== activeIndex}
               className={cn(
-                '[grid-area:1/1] flex flex-col gap-6 lg:flex-row lg:items-stretch lg:gap-10',
+                '[grid-area:1/1] min-w-0 max-w-full flex flex-col gap-6 lg:flex-row lg:items-stretch lg:gap-10',
                 i === activeIndex ? 'visible' : 'invisible pointer-events-none'
               )}
             >
@@ -1536,10 +1663,10 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
                   ships in SSR (crawlable); the newly-active panel mounts and fetches
                   its image on demand when the tab is selected — into the already
                   reserved box, so activation is zero-CLS. */}
-              <div className="lg:w-[44%]">
+              {!hidePanelImages && <div className="lg:w-[44%]">
                 <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-[var(--ds-color-border)] bg-[var(--ds-color-mist)]">
                   {panelImage ? (
-                    i === activeIndex ? (
+                    (i === activeIndex || data.productSlug === 'container-marketing-office' || data.productSlug === 'shipping-container-office') ? (
                       /* T30 / T24.1-IMG §5.4 — this was the ONLY <img> on the page
                          with no intrinsic dimensions (next/image `fill` cannot emit
                          width/height). It swaps on every tab click, so it carried a
@@ -1549,27 +1676,36 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
                          but the browser now knows the intrinsic aspect.
                          Also right-sized (item 5): it renders ~326-378px on mobile
                          (measured = 100vw - 34px), not 100vw. */
-                      <Image
-                        src={panelImage.src}
-                        unoptimized={shouldBypassOptimizer(panelImage.src)}
-                        alt={panelImage.alt}
-                        width={panel.image?.width || manifestImage?.width || 1254}
-                        height={panel.image?.height || manifestImage?.height || 1254}
-                        className="w-full h-full object-cover"
-                        sizes="(max-width: 1023px) calc(100vw - 34px), 500px"
-                        loading="lazy"
-                        decoding="async"
-                      />
+                      panelImage.previewSrc ? (
+                        <picture>
+                          <source media="(max-width: 767px)" srcSet={panelImage.previewSrc} />
+                          <img
+                            src={panelImage.src}
+                            alt={panelImage.alt}
+                            width={panelImage.width}
+                            height={panelImage.height}
+                            className={cn('w-full h-full', panelImage.fit === 'contain' ? 'object-contain' : 'object-cover')}
+                            loading="lazy"
+                            decoding="async"
+                          />
+                        </picture>
+                      ) : (
+                        <Image
+                          src={panelImage.src}
+                          unoptimized={shouldBypassOptimizer(panelImage.src)}
+                          alt={panelImage.alt}
+                          width={panelImage.width}
+                          height={panelImage.height}
+                          className={cn('w-full h-full', panelImage.fit === 'contain' ? 'object-contain' : 'object-cover')}
+                          sizes="(max-width: 1023px) calc(100vw - 34px), 500px"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      )
                     ) : null
-                  ) : (
-                    <div className="flex h-full w-full items-center justify-center p-4 text-center">
-                      <p className="text-sm text-[var(--ds-color-steel)]">
-                        Reference photographs for this size are available on request. Send an enquiry and we will share them.
-                      </p>
-                    </div>
-                  )}
+                  ) : null}
                 </div>
-              </div>
+              </div>}
 
               {/* RIGHT — H3, paragraph, 4 checkmark applications, data row, CTA.
                   L13 REV 2 STRUCTURAL FILL RULE: on lg+ the column distributes its

@@ -1,0 +1,117 @@
+{
+  "section2_card_h3": {
+    "text": "Approved drawings, not just pictures",
+    "characters": 36,
+    "sha256": "37E825FD4C1BB4E45DD353234593203CB30A07EFD60D588EC14AA163D0F17B05"
+  },
+  "section2_card_paragraph": {
+    "text": "Every image on this page is an approved visualisation built to the general arrangement drawing for that exact size. The openings you count in a render are the openings on the drawing.",
+    "characters": 183,
+    "sha256": "7D975C2BB41969F574DA14D6E8D1E817206813A1BB2767E8C36076BE74332AB1"
+  },
+  "section2_card_bullets": {
+    "text": "Six GA boards published, one for every approved size\nPlan, four elevations, opening map and furniture schedule on one sheet\nDoor and window positions fixed before fabrication release\nFull specification and all six drawings in one downloadable PDF",
+    "characters": 246,
+    "sha256": "47F616A39943AF1167F759AB06983C20C95F3FFA7539BB65BA56C35AF8418357"
+  },
+  "section2_card_cta_text": {
+    "text": "Ask us to check a drawing against your site",
+    "characters": 43,
+    "sha256": "E86CB4D13355037C7A74BCA1A7B87D1D0137AABB0C2F7966629C87D3979D7F41"
+  },
+  "section2_card_image_alt": {
+    "text": "Indigo Grey 20 x 12 ft shipping container office, front long wall with window, door and window",
+    "characters": 94,
+    "sha256": "28B9C530F86D7B182F132B8E91005727982926930BF3DF178D689497EFE929ED"
+  },
+  "variant_20x8_paragraph_1": {
+    "text": "The narrowest approved shell suits a gate office, a stores desk or a two-shift site cabin. Its general arrangement puts all three workstations on the rear long wall.",
+    "characters": 165,
+    "sha256": "FF403FDDFB3B912BEC9AF543384553A8006A85A97CAE01049721160B2DCEABF6"
+  },
+  "variant_20x8_paragraph_2": {
+    "text": "The front wall stays clear apart from the entrance, so nobody works with their back to the door. Six windows light the room: two on each long wall and one centred on each 8 ft end. At 8 ft wide the aisle is tight, so we keep both end walls free of furniture.",
+    "characters": 258,
+    "sha256": "AB9A3522E5AFFC9EB1F0C79F3A32E868A86C8D631D7109A8B89D8BB259D43618"
+  },
+  "section3_20x8_bullets": {
+    "text": "One 3 x 7 ft door and six 4 x 3 ft windows\nThree workstations, all on the rear long wall\nFront long wall carries the entrance and nothing else\nOne centred window on each 8 ft end wall\nNo partition, so the shell is one open room\nSuits a gate post, a stores desk or a two-shift cabin",
+    "characters": 281,
+    "sha256": "2527BB8B629A38CF3CF9F8149DA9A90748CCB5CF6451860C37737F5802FE3EEF"
+  },
+  "variant_20x10_paragraph_1": {
+    "text": "This is the reference size, and the rate card is anchored here at Rs 1,800 per sq ft. Two extra feet of width change the room completely. Now five people work in it: three along the rear wall and two either side of the door.",
+    "characters": 224,
+    "sha256": "396EA0228A7210CD5664B5633737B7215C3C588A6865C5517A14520A98712323"
+  },
+  "variant_20x10_paragraph_2": {
+    "text": "A clear aisle runs down the middle, so a chair can push back without blocking traffic. Most first-time buyers order this size, then scale up or down from its drawing. Six windows and one door keep the opening count identical to the 20 x 8 ft plan.",
+    "characters": 247,
+    "sha256": "C5FBD9CA7DC6628052D5317A7FB8B722B98902AE5AB6121A6B0FD1AF753B409A"
+  },
+  "section3_20x10_bullets": {
+    "text": "One door and six windows, the same count as the 20 x 8\nFive workstations, three at the rear and two flanking the door\nClear central aisle runs the full twenty feet\nTwo feet wider than the 20 x 8 on the same length\nThe 200 sq ft reference the whole rate card is built from\nBoth end walls stay furniture-free for cross ventilation",
+    "characters": 328,
+    "sha256": "034FD2F8722A5BB3559AE38083003878F086FA5E1CACAB7282F7E6E1E2953095"
+  },
+  "variant_20x12_paragraph_1": {
+    "text": "The 12 ft shell is the 20 x 10 drawing widened by one foot on each long wall. Nothing else moves. The door keeps its position, the six windows keep theirs, and the desk count stays at five.",
+    "characters": 189,
+    "sha256": "0785572492CFD007C6F090840B48F22DA8E8F1A01D25B85D056DA9E34BF2435F"
+  },
+  "variant_20x12_paragraph_2": {
+    "text": "Every added inch becomes floor. Choose it when a survey table, a plan chest or a visitor chair must sit clear of the working aisle. Because the width grows and the seat count does not, the price per seat rises.",
+    "characters": 210,
+    "sha256": "BC95F46EAB3D11FD59A42C6BFC1C618B5521FD853821E4D4B30ED0A195A2EF50"
+  },
+  "section3_20x12_bullets": {
+    "text": "The 20 x 10 plan widened by one foot on each long wall\nFive workstations, unchanged from the 20 x 10 drawing\nOne door and six windows, every position unchanged\nThe added width becomes circulation rather than seating\nRoom for a plan table or a visitor chair clear of the aisle",
+    "characters": 275,
+    "sha256": "EEBBB2B5003521CEFD1B9A400B7954C480C0B0275477AA1C8402104E0751E5E2"
+  },
+  "variant_30x10_paragraph_1": {
+    "text": "Thirty feet is where a site office becomes a team room. Twelve workstations line the two long walls, seven at the back and five at the front.",
+    "characters": 141,
+    "sha256": "B0FE64EE1AA6EF558348F4D7A4294BCC8C09CEECF93345863B627430DDE95A1F"
+  },
+  "variant_30x10_paragraph_2": {
+    "text": "Two doors sit near the ends of the front wall, so a crew can enter one end while a meeting runs at the other. Eight windows keep the middle of a 30 ft box from going dark. The centre bay between the two window pairs stays solid, which is where we run services.",
+    "characters": 260,
+    "sha256": "5791643E6348DB4098138EFCBEA0AE72B8645141D1366429E30FED7B96EA671B"
+  },
+  "section3_30x10_bullets": {
+    "text": "Two 3 x 7 ft doors, one near each end of the front wall\nEight windows: four rear, two front, one on each end wall\nTwelve workstations, seven at the rear and five at the front\nThe front run is shorter because two doors take wall length\nSolid centre bay between the window pairs carries the services\nNo partition, so the thirty feet stay one team room",
+    "characters": 349,
+    "sha256": "E44A3187524007EE253E061C14B9F725100757E896CD25AB689FE6429E17F8EB"
+  },
+  "variant_40x8_paragraph_1": {
+    "text": "The first ten feet at one end become a private manager cabin, and the remaining thirty stay open. A partition with a single 3 x 7 ft internal door separates them. The manager has no outside door of their own.",
+    "characters": 208,
+    "sha256": "967D1B689B3D3A1E621C8208A14409F5CADA0969DFB7BD86DC56E728B757BFC0"
+  },
+  "variant_40x8_paragraph_2": {
+    "text": "Visitors come through the common office, which is exactly how a site supervisor wants it. At 8 ft wide the common run carries seven desks on one wall only, and the front wall stays clear. Ten seats sit down in total once you count the manager and two visitors.",
+    "characters": 260,
+    "sha256": "F554EAA0361B6D552269C10B78F5EAB9E3B49AEEBD2357E427A82C1E0C294041"
+  },
+  "section3_40x8_bullets": {
+    "text": "Ten feet at one end partitioned off as a manager cabin\nTwo external doors plus one 3 x 7 ft internal partition door\nTen windows spread across the forty foot length\nSeven workstations, all on a single long wall\nThe manager has no separate outside door\nTen seats once the manager and two visitors are counted",
+    "characters": 306,
+    "sha256": "306EC5F712DCDCD429DEBBCB0BE8806217A06F3C9721BBB8E3B4172B6024E6B4"
+  },
+  "variant_40x10_paragraph_1": {
+    "text": "The largest approved shell gives the manager a true 10 x 10 ft room with three outside windows. Behind the partition, twelve workstations fill the 30 ft common office, seven at the rear and five at the front.",
+    "characters": 208,
+    "sha256": "1116823E108457ED214ED31EBEC9098F5761C94534D01CB4CA4254EBA62C1AC7"
+  },
+  "variant_40x10_paragraph_2": {
+    "text": "Fifteen people can sit down at once, counting the manager and two visitor chairs. Two external doors serve the common office at either end. Order this size when one shell must hold a whole project team.",
+    "characters": 202,
+    "sha256": "F9BF1B39A6CBA742004876BC8A3E0D4CFE1E2E30F5C9C86FAE2435B37F00A174"
+  },
+  "section3_40x10_bullets": {
+    "text": "A square 10 x 10 ft manager room with three outside windows\nTwelve workstations in the thirty foot common office\nTwo external doors, one at each end of the common office\nTen windows and one internal partition door\nFifteen seats including the manager and two visitor chairs",
+    "characters": 272,
+    "sha256": "E82377F4F7EAB7AADA385C65A0A5EE38D29627D05FF1B620136E68746340C857"
+  }
+}

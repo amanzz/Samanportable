@@ -45,7 +45,7 @@ import { injectInfoImages } from '../../../lib/infoImageLayout';
 import { PortaCabinVariantHero } from '../../../components/product-variant-hero/PortaCabinVariantHero';
 import type { VariantProductData } from '../../../components/product-variant-hero/types';
 import { PORTA_CABIN_HUB_RAIL } from '../../../lib/portaCabinClusterRail';
-import { LABOR_COLONY_HUB_RAIL } from '../../../lib/labourColonyClusterRail';
+import { getLabourColonyClusterRail } from '../../../lib/labourColonyClusterRail';
 import PortaCabinsYouMayAlsoLike from '../../../components/product-variant-hero/PortaCabinsYouMayAlsoLike';
 
 const SAFE_PRODUCT_SLUG = /^[a-z0-9-]+$/;
@@ -560,11 +560,12 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
     if (category === 'porta-cabins') {
       return PORTA_CABIN_HUB_RAIL;
     }
-    // LC-00 (16 Aug 2026) — the labour colony hub's own Column 3 rail, build
-    // prompt v1 section 4.3: exactly three tabs, not the live related-products
-    // list (which would otherwise pull in unbuilt sibling URLs).
+    // LC-07 fix v3 (17 Aug 2026) - SAMAN ruling: the Explore the Range panel
+    // shows the current page's own cluster and nothing else. Same derived
+    // rail as every labor-colony subpage in [slug].tsx; the hub's own tile
+    // is filtered out by passing its own slug as currentSlug.
     if (category === 'labor-colony') {
-      return LABOR_COLONY_HUB_RAIL;
+      return getLabourColonyClusterRail('labor-colony');
     }
 
     return transformedRelatedProducts.map((relatedProduct) => ({
@@ -709,16 +710,26 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
                   // LC-00 R1/R2 (16 Aug 2026) — labor-colony opts into the identical
                   // porta-cabins treatment (both props, same values, same component),
                   // to match the reference exactly rather than approximate it.
-                  showSectionDividers={category === 'porta-cabins' || category === 'labor-colony'}
+                  // CO-00 (21 Aug 2026) — container-offices was missed at build time
+                  // and shipped with the plain grid selector instead of the reference's
+                  // premium chip selector, a visible design-lock deviation. Added here.
+                  showSectionDividers={category === 'porta-cabins' || category === 'labor-colony' || category === 'container-offices'}
                   // R3 (14 Aug 2026) — same hub-only scoping as the dividers.
-                  usePremiumSizeTabs={category === 'porta-cabins' || category === 'labor-colony'}
+                  usePremiumSizeTabs={category === 'porta-cabins' || category === 'labor-colony' || category === 'container-offices'}
                   // LC-00 R1 (16 Aug 2026) — the premium branch shows sizeEyebrowText
                   // (falling back to the porta-cabins hub's own em-dash sentence when
                   // absent), not the plain branch's hardcoded "Choose size". R1 asks
                   // for premium STYLING only, with the "Choose size" wording the page
                   // already shows kept unchanged, so it is passed through explicitly
-                  // here rather than inherited from the fallback.
-                  sizeEyebrowText={category === 'labor-colony' ? 'Choose size' : undefined}
+                  // here rather than inherited from the fallback. Same reasoning
+                  // applies to container-offices: the em-dash fallback would violate
+                  // the no-em-dash rule, so the existing plain label is reused rather
+                  // than inventing new eyebrow copy.
+                  sizeEyebrowText={category === 'labor-colony' || category === 'container-offices' ? 'Choose size' : undefined}
+                  // CO-00 (19 Aug 2026) — data-driven, same forwarding pattern as
+                  // suppressLegacyFaqSchema above. Absent/false on every other
+                  // product's variantData → no id emitted, byte-identical elsewhere.
+                  emitSizeAnchors={variantData?.emitSizeAnchors}
                 />
               ) : (
               <ProductSummaryLayout

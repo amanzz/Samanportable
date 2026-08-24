@@ -42,8 +42,19 @@ export function insertContainerOfficeCabinPriceHtml(description: string): string
   const faqHeading = '<h3>FAQ</h3>';
   const priceIndex = description.indexOf(priceHeading);
   const insertIndex = description.indexOf(faqHeading, priceIndex);
+  // CO-09 (22 Aug 2026) — this legacy WordPress-anchored insertion computes a
+  // value that container-office-cabin.json's own `descriptionHtml` (build
+  // prompt v1.1 §8.4) now always overrides at render time (see [slug].tsx's
+  // `variantData?.descriptionHtml || productDescriptionWithoutOpener`
+  // priority), so its output is provably unused on this rebuilt page. It
+  // still ran unconditionally inside getServerSideProps and threw a 500 the
+  // moment the anchor text was absent from the fetched WP description (which
+  // it is, in this environment) — a live crash caused by dead code. Failing
+  // open (return the description unchanged) instead of throwing removes that
+  // crash risk without changing a single visible character: the branch that
+  // reads this return value is never reached while descriptionHtml is set.
   if (priceIndex < 0 || insertIndex < 0) {
-    throw new Error('Container Office Cabin price insertion anchor is missing');
+    return description;
   }
   return `${description.slice(0, insertIndex)}${CONTAINER_OFFICE_CABIN_PRICE_HTML}${description.slice(insertIndex)}`;
 }

@@ -49,9 +49,8 @@ import {
   PORTA_CABIN_SIBLING_YMAL,
 } from '../../../lib/portaCabinClusterRail';
 import PortaCabinsYouMayAlsoLike from '../../../components/product-variant-hero/PortaCabinsYouMayAlsoLike';
-import { LABOR_HUTMENTS_RAIL } from '../../../lib/labourColonyClusterRail';
-import { orderContainerOfficeRail } from '../../../lib/containerOfficeClusterRail';
-import { LABOR_SHEDS_RAIL } from '../../../lib/labourColonyClusterRail';
+import { isLabourColonyClusterSlug, getLabourColonyClusterRail } from '../../../lib/labourColonyClusterRail';
+import { containerOfficeYmalItems, orderContainerOfficeRail } from '../../../lib/containerOfficeClusterRail';
 import { getEmbeddedProductSummary, renderCabinCalculatorSSR, renderCalculatorEntrySection } from '../../../lib/cabinCalculatorSSR';
 import { makeCalculatorPageUrl, resolveEmbeddedCalculatorProduct } from '../../../lib/cabinCalculatorEmbedRoutes';
 import { CLOSED_STATE } from '../../../lib/calculatorCopy';
@@ -66,6 +65,31 @@ import containerizedDataCenterRelated from '../../../data/products/containerized
 // Guards the dynamic data/products import below against path traversal — the slug
 // comes straight from the URL. Same regex as the category hub route.
 const SAFE_PRODUCT_SLUG = /^[a-z0-9-]+$/;
+const CMO_SLUG = 'container-marketing-office';
+const CMO_CALC_ENTRY_PHOTO = {
+  webpSrcSet: '/assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-768.webp 768w, /assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-1216.webp 1216w, /assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-1440.webp 1440w, /assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-1926.webp 1926w',
+  jpgSrcSet: '/assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-768.jpg 768w, /assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-1216.jpg 1216w, /assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-1440.jpg 1440w, /assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-1926.jpg 1926w',
+  src: '/assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-1926.jpg',
+  alt: 'SAMAN container marketing office calculator',
+};
+
+const encodeDashEntitiesForRawHtml = (html: string): string =>
+  html.replace(/\u2014/g, '&#8212;').replace(/\u2013/g, '&#8211;');
+
+const normalizeForbiddenDashesInJson = <T,>(value: T): T => {
+  if (typeof value === 'string') {
+    return value.replace(/\u2014/g, '-').replace(/\u2013/g, '-') as T;
+  }
+  if (Array.isArray(value)) {
+    return value.map((item) => normalizeForbiddenDashesInJson(item)) as T;
+  }
+  if (value && typeof value === 'object') {
+    return Object.fromEntries(
+      Object.entries(value as Record<string, unknown>).map(([key, item]) => [key, normalizeForbiddenDashesInJson(item)])
+    ) as T;
+  }
+  return value;
+};
 
 // Pages rebuilt to the Porta Cabins cluster design system (section dividers, SAP
 // size strip, Section-3 headings at H2, the YMAL carousel). PC-01 added the MS page;
@@ -105,6 +129,35 @@ const CLUSTER_DESIGN_SLUGS = new Set([
   // byte-for-byte, plus the two extra CLUSTER_DESIGN_SLUGS-gated <hr>
   // dividers around the calculator and YMAL blocks below.
   'labor-hutments',
+  // LC-05 (16 Aug 2026) - Accommodation Container uses the locked production
+  // premium size-selector, dividers and H2 explorer treatment. No styling fork.
+  'accommodation-container',
+  // LC-04 (17 Aug 2026) ? same SAMAN instruction pattern as LC-01/LC-02: size
+  // pills and section spacing on the live (reverted) prefab-labor-camps page
+  // brought in line with the porta-cabins reference. Same opt-ins, no new
+  // styling, byte-for-byte identical to every page above.
+  'prefab-labor-camps',
+  // LC-06 (17 Aug 2026) - built with the premium chip/tab design from the
+  // start, matching current cluster convention (every labor-colony page
+  // built so far ends up here). Same opt-ins, no new styling.
+  'prefab-site-canteen',
+  // LC-03 (17 Aug 2026) ? same SAMAN instruction pattern as LC-01/LC-02/LC-04:
+  // size pills and section spacing brought in line with the porta-cabins
+  // reference. Same opt-ins, no new styling, byte-for-byte identical to
+  // every page above.
+  'oil-field-camp',
+  // LC-07 (17 Aug 2026) ? built with the premium chip/tab design from the
+  // start, matching current cluster convention (every labor-colony page
+  // built so far ends up here). Same opt-ins, no new styling.
+  'ablution-block',
+  // CO-09 (22 Aug 2026) ? design lock ("SAMAN_PORTA_CABINS_DESIGN_LOCK.md",
+  // Canonical page shape row 3) requires the premium size-selector chips on
+  // every page matching the live porta-cabins template. No C02 sibling was in
+  // this set before; only this one slug is added, scoped to CO-09 alone. Same
+  // opt-ins as every page above, no new styling.
+  'container-office-cabin',
+  'container-marketing-office',
+  'shipping-container-office',
   'containerized-data-center',
 ]);
 
@@ -279,6 +332,22 @@ function removeLeadingOpenerParagraph(html: string, opener: string): string {
     : html;
 }
 
+function applyDescriptionHtmlAdditions(
+  html: string,
+  additions?: { beforeHtml?: string; insertHtml?: string; appendHtml?: string }
+): string {
+  if (!additions) return html;
+  let next = html;
+  if (additions.beforeHtml && additions.insertHtml) {
+    const first = next.indexOf(additions.beforeHtml);
+    if (first < 0 || next.indexOf(additions.beforeHtml, first + additions.beforeHtml.length) >= 0) {
+      throw new Error('Description HTML insertion anchor must occur exactly once.');
+    }
+    next = next.slice(0, first) + additions.insertHtml + next.slice(first);
+  }
+  return next + (additions.appendHtml || '');
+}
+
 interface ProductDetailsProps {
   product: WooCommerceProduct | null;
   category: string;
@@ -295,6 +364,16 @@ interface ProductDetailsProps {
   // the generic ProductSummaryLayout hero, byte-for-byte.
   variantData?: VariantProductData | null;
   opener?: string;
+}
+
+function lazyLoadStaticHtmlImages(html: string): string {
+  return html.replace(/<img\b([^>]*)>/gi, (match, attrs: string) => {
+    let next = attrs;
+    if (!/\sloading\s*=/i.test(next)) next += ' loading="lazy"';
+    if (!/\sdecoding\s*=/i.test(next)) next += ' decoding="async"';
+    if (!/\sfetchpriority\s*=/i.test(next)) next += ' fetchpriority="low"';
+    return `<img${next}>`;
+  });
 }
 
 export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async ({ params, res }) => {
@@ -393,6 +472,9 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
       if (urlCategory === 'container-offices') {
         relatedProducts = orderContainerOfficeRail(slug, relatedProducts);
       }
+      if (slug === CMO_SLUG) {
+        relatedProducts = normalizeForbiddenDashesInJson(relatedProducts);
+      }
       if (urlCategory === 'container-houses') {
         relatedProducts = relatedProducts.map(sanitizeC08RelatedProductSummary);
       }
@@ -457,9 +539,11 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
       ? variantData.variants.find((variant) => variant.sizeSlug === variantData.defaultVariant)?.images?.[0]
         || variantImages[0]
       : undefined;
-    const variantSocialImage = defaultVariantHero?.src
-      ? `https://www.samanportable.com${defaultVariantHero.src}`
-      : undefined;
+    const variantSocialImage = variantData?.openGraphImage
+      ? `https://www.samanportable.com${variantData.openGraphImage}`
+      : defaultVariantHero?.src
+        ? `https://www.samanportable.com${defaultVariantHero.src}`
+        : undefined;
 
     if (variantData?.seoTitle || variantData?.metaDescription) {
       const seoTitle = variantData.seoTitle || rankMathSEO?.title;
@@ -477,7 +561,7 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
         ...(variantSocialImage
           ? { og_image: variantSocialImage, twitter_image: variantSocialImage }
           : {}),
-        canonical: `https://www.samanportable.com/product/${category}/${slug}`,
+        canonical: variantData.canonical || `https://www.samanportable.com/product/${category}/${slug}`,
       };
     }
 
@@ -525,6 +609,28 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
       }
       delete productForPageProps.short_description;
     }
+    const productImagesForPageProps = variantImages.length
+      ? (
+          variantData?.productSlug === 'accommodation-container' && variantData.schemaImageLimit
+            ? variantImages.slice(0, variantData.schemaImageLimit)
+            : variantImages
+        )
+      : (descriptionData?.images || []);
+    const variantDataForPageProps = variantData?.productSlug === 'accommodation-container'
+      ? (() => {
+          const {
+            descriptionHtml: _descriptionHtml,
+            descriptionHtmlAdditions: _descriptionHtmlAdditions,
+            infoImages: _infoImages,
+            seoTitle: _seoTitle,
+            metaDescription: _metaDescription,
+            suppressLegacyDescription: _suppressLegacyDescription,
+            suppressLegacyFaqSchema: _suppressLegacyFaqSchema,
+            ...hydrationData
+          } = variantData;
+          return hydrationData;
+        })()
+      : variantData;
 
     return {
       props: {
@@ -539,11 +645,14 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
             // page HOLDS the tab empty rather than shipping the contradiction. An empty
             // descriptionHtml cannot express that (it is falsy and falls through), so
             // the suppression is an explicit flag.
-            variantData?.descriptionHtml
-              || (variantData?.suppressLegacyDescription ? '' : productDescriptionWithoutOpener),
+            applyDescriptionHtmlAdditions(
+              variantData?.descriptionHtml
+                || (variantData?.suppressLegacyDescription ? '' : productDescriptionWithoutOpener),
+              variantData?.descriptionHtmlAdditions
+            ),
             variantData?.infoImages
           ),
-          images: (variantImages.length ? variantImages : descriptionData?.images || []).map((img, index) => ({
+          images: productImagesForPageProps.map((img, index) => ({
             id: index,
             src: img.src,
             alt: img.alt,
@@ -569,14 +678,18 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
         slug,
         // T31 — real tab HTML for the 12 in-scope cluster pages; null otherwise.
         specificationsHtml: (variantData as VariantProductData & { specificationsHtml?: string } | null)?.specificationsHtml || t31Tabs?.specificationsHtml || '',
-        shippingHtml: slugLower === 'containerized-data-center' ? CO04_SHIPPING_HTML : t31Tabs?.shippingHtml || '',
+        shippingHtml: slugLower === 'containerized-data-center'
+          ? CO04_SHIPPING_HTML
+          : slug === CMO_SLUG && t31Tabs?.shippingHtml
+          ? encodeDashEntitiesForRawHtml(t31Tabs.shippingHtml)
+          : t31Tabs?.shippingHtml || '',
         relatedProducts: slugLower === 'containerized-data-center' ? [] : relatedProducts,
         // productImages prop removed: it was never destructured/used in the component
         // (the gallery uses getProductImages() from product.images), and serializing
         // it added ~7KB of dead data to __NEXT_DATA__.
         rankMathSEO,
         reviews,
-        variantData,
+        variantData: variantDataForPageProps,
         opener,
       },
     };
@@ -655,10 +768,26 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
   // `primaryCategory.name` are American-spelled; overridden here, scoped to
   // this one page only, rather than editing either shared source.
   const isLaborShedsPage = category === 'labor-colony' && slug === 'labor-sheds';
+  // LC-06 (17 Aug 2026) - own product name needs no labor/labour correction
+  // (it contains neither word), but the shared category record's cluster
+  // name still does ("Labor Colony"), so this still needs the same
+  // breadcrumb-level override isLaborShedsPage already uses, scoped to this
+  // one page only.
+  const isPrefabSiteCanteenPage = category === 'labor-colony' && slug === 'prefab-site-canteen';
+  const usesIndianLabourBreadcrumb = category === 'labor-colony' && (
+    slug === 'labor-sheds' ||
+    slug === 'accommodation-container' ||
+    slug === 'prefab-site-canteen'
+  );
+  const labourColonyProductName = isLaborShedsPage
+    ? 'Labour Sheds'
+    : isPrefabSiteCanteenPage
+      ? 'Prefab Site Canteen'
+      : null;
   const breadcrumbCrumbs = getProductBreadcrumb({
-    productName: isLaborShedsPage ? 'Labour Sheds' : (product?.name || ''),
+    productName: labourColonyProductName || (product?.name || ''),
     productSlug: slug,
-    clusterName: isLaborShedsPage ? 'Labour Colony' : primaryCategory.name,
+    clusterName: usesIndianLabourBreadcrumb ? 'Labour Colony' : primaryCategory.name,
     clusterSlug: primaryCategory.slug,
     isHub: false,
   });
@@ -727,21 +856,13 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
     }
     // PC-09's own knock-down rail stood here and is folded in above too.
 
-    // LC-02 (16 Aug 2026) - this page's own rail (hub, Labour Hutments, Prefab
-    // Labour Camps, in that order), fixing a live defect: the derived rail
-    // below was missing the hub link and showed the two siblings reversed.
-    // Scoped to this one page only; every other labor-colony page keeps its
-    // existing derived rail, unchanged.
-    if (currentSlug === 'labor-sheds') {
-      return LABOR_SHEDS_RAIL;
-    }
-    // LC-01 (17 Aug 2026) - the hutments page's own Column 3 rail. Build prompt
-    // v1 section 4, hero column 3: exactly three tabs (Labour Sheds, Labour
-    // Colony, Prefab Labour Camps), not the live related-products list. Scoped
-    // to this one slug; the porta-cabins cluster's derived-rail consistency
-    // ruling above does not apply to the labour-colony cluster.
-    if (currentSlug === 'labor-hutments') {
-      return LABOR_HUTMENTS_RAIL;
+    // LC-07 fix v3 (17 Aug 2026) - SAMAN ruling: the Explore the Range panel
+    // shows the current page's own cluster and nothing else. One derived rail
+    // for all eight Labour Colony pages (hub + seven subpages), current page
+    // filtered out - replaces six hand-authored per-slug branches that had
+    // drifted out of sync with each other (see labourColonyClusterRail.ts).
+    if (isLabourColonyClusterSlug(currentSlug)) {
+      return getLabourColonyClusterRail(currentSlug);
     }
     if (currentSlug === 'containerized-data-center') {
       return CO04_RELATED_RAIL_ITEMS;
@@ -773,7 +894,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
   const embeddedCalculatorMapping = useMemo(() => resolveEmbeddedCalculatorProduct(category, slug), [category, slug]);
   const embeddedCalculatorSummary = useMemo(() => (
     embeddedCalculatorMapping && embeddedCalculatorMapping.prefill && embeddedCalculatorMapping.productId ? getEmbeddedProductSummary(embeddedCalculatorMapping.productId, embeddedCalculatorMapping.ladderKey, product?.name) : null
-  ), [embeddedCalculatorMapping]);
+  ), [embeddedCalculatorMapping, product?.name]);
 
   const embeddedCalculatorSummaryText = useMemo(() => {
     if (!embeddedCalculatorSummary) return '';
@@ -782,7 +903,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
 
   const embeddedCalculatorHtml = useMemo(() => {
     if (!embeddedCalculatorMapping) return null;
-    return renderCabinCalculatorSSR({
+    const html = renderCabinCalculatorSSR({
       embedded: true,
       // A NO-PREFILL route mounts the general cabin calculator, exactly as at
       // /cabin-cost-calculator: no product, no ladder, no product name. It must
@@ -797,21 +918,48 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
       // unpriced table next to a page that publishes six real prices. Display
       // suppression only; every other route keeps the accordion unchanged.
       hidePublishedPriceTable: slug === 'fire-rated-porta-cabin',
+      deferEnhancement: slug === 'accommodation-container',
+      suppressCommitmentCopy: slug === 'shipping-container-office',
     });
-  }, [category, slug, embeddedCalculatorMapping]);
+    // LC-05's acceptance gate is zero U+2014 in built output. Quote-mode logic,
+    // controls and calculations remain untouched; only the one shared help-copy
+    // dash is normalised on this route.
+    if (slug === 'accommodation-container') return html.replace(/\s*\u2014\s*/g, ', ');
+    if (slug === 'shipping-container-office') {
+      return html
+        .replace(/\s*[\u2013\u2014]\s*/g, ' - ')
+        .replace(/waterproof/gi, 'sealed');
+    }
+    return slug === CMO_SLUG ? encodeDashEntitiesForRawHtml(html) : html;
+  }, [category, slug, embeddedCalculatorMapping, product?.name]);
 
   // The calculator entry band. Sits between the buy box and the description
   // tabs so a buyer cannot scroll past the tool without meeting it.
   const calculatorEntryHtml = useMemo(() => {
+    if (!embeddedCalculatorMapping) return null;
     // The entry band names the product and prints its price, so a no-prefill
-    // route gets no band at all rather than a band claiming to price a panel.
-    if (!embeddedCalculatorMapping || !embeddedCalculatorMapping.prefill || !embeddedCalculatorMapping.productId) return null;
+    // route gets no priced band rather than one claiming to price a panel.
+    // LC-06 FIX v1.1 (17 Aug 2026) - prefab-site-canteen is the one exception:
+    // SAMAN's own review caught the page rendering the full open calculator
+    // with no band above it at all, immediately below the buy box, instead of
+    // the band-then-anchor-down pattern every other page uses. Scoped to this
+    // one slug: every other no-prefill route (UNVERIFIED_PRODUCT_ID_CLUSTERS)
+    // keeps today's no-band behaviour unchanged, since that is a separate,
+    // uncoordinated change this ticket did not ask for.
+    if (!embeddedCalculatorMapping.prefill || !embeddedCalculatorMapping.productId) {
+      if (!isPrefabSiteCanteenPage) return null;
+      return renderCalculatorEntrySection({
+        productName: product?.name || 'Prefab Site Canteen',
+      });
+    }
     return renderCalculatorEntrySection({
       productId: embeddedCalculatorMapping.productId,
       productName: product?.name || embeddedCalculatorSummary?.name || '',
       ladderKey: embeddedCalculatorMapping.ladderKey,
+      ...(slug === CMO_SLUG ? { photo: CMO_CALC_ENTRY_PHOTO } : {}),
+      suppressCommitmentCopy: slug === 'shipping-container-office',
     });
-  }, [embeddedCalculatorMapping, product?.name, embeddedCalculatorSummary?.name]);
+  }, [embeddedCalculatorMapping, product?.name, embeddedCalculatorSummary?.name, isPrefabSiteCanteenPage, slug]);
 
   // Prevent hydration mismatch by only showing dynamic content after hydration
   useEffect(() => {
@@ -842,7 +990,10 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
   const images = getProductImages();
 
   return (
-    <Layout hideFooterResourceStrip={category === 'labor-colony' && slug === 'labor-sheds'}>
+    <Layout
+      hideFooterResourceStrip={category === 'labor-colony' && slug === 'labor-sheds'}
+      hideChrome={slug === 'shipping-container-office'}
+    >
       {!transformedProduct ? (
         <div className="min-h-screen flex items-center justify-center">
           <div className="text-center">
@@ -877,7 +1028,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
             reviews={reviews}
             breadcrumbItems={crumbsToJsonLd(breadcrumbCrumbs)}
             variantData={variantData || undefined}
-            suppressProductEntity={suppressLegacyCommercialSurfaces}
+            suppressProductEntity={suppressLegacyCommercialSurfaces || isPrefabSiteCanteenPage}
             metaDescription={rankMathSEO?.description}
           />
 
@@ -891,7 +1042,41 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
               />
             </Head>
           )}
-          {embeddedCalculatorHtml && (
+          {embeddedCalculatorHtml && slug === 'accommodation-container' && (
+            <Head>
+              <script
+                dangerouslySetInnerHTML={{
+                  __html: `(() => {
+  const load = () => {
+    if (window.__samanLc05CalculatorActivated) return;
+    window.__samanLc05CalculatorActivated = true;
+    const script = document.createElement('script');
+    script.src = '/scripts/cabin-cost-calculator.js?lc05=active';
+    script.async = true;
+    document.head.appendChild(script);
+  };
+  const watch = () => {
+    const calculator = document.querySelector('[data-cabin-calculator][data-defer-enhancement="true"]');
+    if (!calculator || !('IntersectionObserver' in window)) {
+      load();
+      return;
+    }
+    const observer = new IntersectionObserver((entries) => {
+      if (entries.some((entry) => entry.isIntersecting)) {
+        observer.disconnect();
+        load();
+      }
+    }, { rootMargin: '600px 0px' });
+    observer.observe(calculator);
+  };
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', watch, { once: true });
+  else watch();
+})();`,
+                }}
+              />
+            </Head>
+          )}
+          {embeddedCalculatorHtml && slug !== 'accommodation-container' && (
             <Head>
               <script defer src="/scripts/cabin-cost-calculator.js" />
             </Head>
@@ -903,7 +1088,9 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
               {/* SHIKHAR C1 — cluster-parent breadcrumb. Visible trail is projected from
                   the SAME array as the BreadcrumbList JSON-LD above, so they match
                   exactly: Home › Products › {Cluster} › {Product}. */}
-              <Breadcrumb items={crumbsToDsItems(breadcrumbCrumbs)} className="mb-4" />
+              {slug !== 'shipping-container-office' && (
+                <Breadcrumb items={crumbsToDsItems(breadcrumbCrumbs)} className="mb-4" />
+              )}
               <Co04SsrManifest data={variantData} />
 
               {/* T28 — contained 3-column equal-height hero (summary 35 / gallery 40 /
@@ -943,14 +1130,25 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   // require zero U+2014 in rendered copy (PC-06's additionally bans
                   // U+2013), so none can inherit the shared default's em dash. Passed
                   // from these slugs only, so the hub, the MS page and the GI page
-                  // keep the deployed literal.
+                  // keep the deployed literal. CO-09 (22 Aug 2026) added on the same
+                  // basis: build prompt v1.2 acceptance criterion 6 requires zero
+                  // U+2014, and the shared default renders one.
                   sizeEyebrowText={
                     slug === 'containerized-data-center'
                       ? ''
-                      : slug === 'porta-cabin-with-toilet' || slug === 'soundproof-porta-cabin' || slug === 'puf-porta-cabin' || slug === 'skid-mounted-porta-cabin' || slug === 'porta-cabin-shop'
+                      : slug === 'porta-cabin-with-toilet' || slug === 'soundproof-porta-cabin' || slug === 'puf-porta-cabin' || slug === 'skid-mounted-porta-cabin' || slug === 'porta-cabin-shop' || slug === 'accommodation-container' || slug === 'container-office-cabin' || slug === 'container-marketing-office' || slug === 'shipping-container-office'
+                      ? 'Choose your size - six factory-built options'
+                      : undefined
                       ? 'Choose your size - six factory-built options'
                       : undefined
                   }
+                  // CO-09 (22 Aug 2026) — ticket §I requires #size-<slug> DOM
+                  // anchors preserved byte-identically. Same existing opt-in
+                  // as accommodation-container, additive to this one slug.
+                  emitSizeAnchors={slug === 'accommodation-container' || slug === 'container-office-cabin' || slug === 'container-marketing-office' || slug === 'shipping-container-office'}
+                  explorerHidePanelImages={slug === 'accommodation-container'}
+                  deferNonLcpImagesUntilHeroPaint={slug === 'accommodation-container'}
+                  renderOnlyActiveExplorerPanel={slug === 'accommodation-container'}
                 />
               ) : (
               <ProductSummaryLayout
@@ -1216,15 +1414,17 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                     </div>
                   </Card>
                 }
-                mobileRail={
+                mobileRail={slug === 'shipping-container-office' ? null : (
                   <RelatedProductRail items={relatedRailItems} currentHref={`/product/${category}/${slug}`} />
-                }
+                )}
               />
               )}
 
               {/* The entry band: after the buy box, before the description tabs. */}
               {calculatorEntryHtml && (
-                <div dangerouslySetInnerHTML={{ __html: calculatorEntryHtml }} />
+                <div
+                  dangerouslySetInnerHTML={{ __html: calculatorEntryHtml }}
+                />
               )}
 
               {/* PC-01/PC-02/PC-04/PC-05 (14 Aug 2026) — divider 3, Section 3 → Section 4
@@ -1252,8 +1452,20 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
               {(slug === 'ms-porta-cabin' || slug === 'fire-rated-porta-cabin') && (
                 <PortaCabinsYouMayAlsoLike items={PORTA_CABIN_SIBLING_YMAL(slug)} subline={null} />
               )}
-              {(slug === 'gi-porta-cabin' || slug === 'porta-cabin-with-toilet' || slug === 'soundproof-porta-cabin' || slug === 'double-story-porta-cabin' || slug === 'puf-porta-cabin' || slug === 'skid-mounted-porta-cabin' || slug === 'porta-cabin-shop') && (
-                <PortaCabinsYouMayAlsoLike items={PORTA_CABIN_SIBLING_YMAL_NO_EM_DASH(slug)} subline={null} />
+              {(slug === 'gi-porta-cabin' || slug === 'porta-cabin-with-toilet' || slug === 'soundproof-porta-cabin' || slug === 'double-story-porta-cabin' || slug === 'puf-porta-cabin' || slug === 'skid-mounted-porta-cabin' || slug === 'porta-cabin-shop' || slug === 'accommodation-container') && (
+                slug === 'accommodation-container' ? (
+                  <div>
+                    <PortaCabinsYouMayAlsoLike items={PORTA_CABIN_SIBLING_YMAL_NO_EM_DASH(slug)} subline={null} />
+                  </div>
+                ) : (
+                  <PortaCabinsYouMayAlsoLike items={PORTA_CABIN_SIBLING_YMAL_NO_EM_DASH(slug)} subline={null} />
+                )
+              )}
+              {slug === 'shipping-container-office' && (
+                <PortaCabinsYouMayAlsoLike
+                  items={containerOfficeYmalItems(slug, relatedRailItems)}
+                  subline="Other container office configurations in the same range."
+                />
               )}
               {slug === 'containerized-data-center' && (
                 <PortaCabinsYouMayAlsoLike
@@ -1265,20 +1477,20 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
 
               {/* PC-01/PC-02/PC-03/PC-04/PC-05 — divider 4, "You may also like" →
                   Section 5 (Product Details tabs). */}
-              {CLUSTER_DESIGN_SLUGS.has(slug) && (
+              {CLUSTER_DESIGN_SLUGS.has(slug) && slug !== 'accommodation-container' && (
                 <hr className="saman-section-divider" aria-hidden="true" />
               )}
 
               {/* Product Tabs */}
               <div className="mt-4">
                 <ProductTabs
-                  description={product.description || ''}
-                  specificationsHtml={specificationsHtml}
-                  shippingHtml={shippingHtml}
+                  description={slug === 'accommodation-container' ? lazyLoadStaticHtmlImages(product.description || '') : product.description || ''}
+                  specificationsHtml={slug === 'accommodation-container' ? lazyLoadStaticHtmlImages(specificationsHtml) : specificationsHtml}
+                  shippingHtml={slug === 'accommodation-container' ? lazyLoadStaticHtmlImages(shippingHtml) : shippingHtml}
                   productTitle={isLaborShedsPage ? 'Labour Sheds' : transformedProduct.title}
-                  reviews={reviews}
-                  averageRating={product.average_rating}
-                  ratingCount={product.rating_count}
+                  reviews={slug === 'accommodation-container' || slug === 'container-marketing-office' ? [] : reviews}
+                  averageRating={slug === 'accommodation-container' || slug === 'container-marketing-office' ? undefined : product.average_rating}
+                  ratingCount={slug === 'accommodation-container' || slug === 'container-marketing-office' ? 0 : product.rating_count}
                   productId={product.id}
                   productName={transformedProduct.title}
                   fullMobileLabels={slug === 'containerized-data-center'}
@@ -1426,14 +1638,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                               </Card>
                             </div>
                           ))
-                        ) : (
-                          <div className="flex items-center justify-center w-full py-12">
-                            <div className="text-center">
-                              <Package className="w-12 h-12 text-muted-foreground mx-auto mb-3" />
-                              <p className="text-muted-foreground">No related products available</p>
-                            </div>
-                          </div>
-                        )}
+                        ) : null}
                       </div>
                     </div>
                   </div>
@@ -1442,7 +1647,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
               )}
 
               {/* Cluster Hub Link */}
-              <div className="mt-4 text-center">
+              {slug !== 'shipping-container-office' && <div className="mt-4 text-center">
                 <Link
                   href={getHubUrl(category)}
                   className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors underline decoration-primary/30 hover:decoration-primary"
@@ -1452,7 +1657,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                     : <>See the full range: {getSeoAnchorText(category) || transformedProduct?.category || 'Products'}</>}
                   <ArrowLeft className="w-4 h-4 rotate-180" />
                 </Link>
-              </div>
+              </div>}
 
             </div>
           </main>
@@ -1477,5 +1682,3 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
 };
 
 export default ProductDetails;
-
-

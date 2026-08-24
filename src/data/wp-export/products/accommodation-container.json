@@ -1,0 +1,42 @@
+{
+  "id": 9052026,
+  "name": "Accommodation Container",
+  "slug": "accommodation-container",
+  "permalink": "https://blog.samanportable.com/product/labor-colony/accommodation-container/",
+  "date_created": "2026-08-16T00:00:00",
+  "date_created_gmt": "2026-08-15T18:30:00",
+  "date_modified": "2026-08-16T00:00:00",
+  "date_modified_gmt": "2026-08-15T18:30:00",
+  "type": "simple",
+  "status": "draft",
+  "featured": false,
+  "catalog_visibility": "hidden",
+  "description": "",
+  "short_description": "",
+  "sku": "",
+  "price": "",
+  "regular_price": "",
+  "sale_price": "",
+  "on_sale": false,
+  "purchasable": false,
+  "stock_status": "instock",
+  "stock_quantity": null,
+  "weight": "",
+  "dimensions": {
+    "length": "",
+    "width": "",
+    "height": ""
+  },
+  "images": [],
+  "categories": [
+    {
+      "id": 289,
+      "name": "Labor Colony",
+      "slug": "labor-colony"
+    }
+  ],
+  "attributes": [],
+  "reviews_allowed": true,
+  "average_rating": "0.00",
+  "rating_count": 0
+}

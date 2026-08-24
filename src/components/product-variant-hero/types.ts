@@ -2,10 +2,17 @@ export type ImageProvenance = 'photograph' | 'render' | 'unknown';
 
 export interface VariantImage {
   src: string;
+  previewSrc?: string;
   alt: string;
   provenance: ImageProvenance;
   width: number;
   height: number;
+  /** CO-09 (22 Aug 2026) — explorer-panel-only override for the fixed aspect-[4/3]
+      object-cover box. A GA plan's approved ratio (1.3075) is close to but not
+      exactly 4:3, and the ticket forbids cropping a dimensioned drawing under any
+      circumstance. Absent everywhere else, so every other panel keeps its exact
+      object-cover crop, byte-identical. */
+  fit?: 'cover' | 'contain';
 }
 
 export interface ProductVariant {
@@ -101,6 +108,8 @@ export interface VariantProductData {
       stale WordPress head fields. */
   seoTitle?: string;
   metaDescription?: string;
+  canonical?: string;
+  openGraphImage?: string;
   /** Owner-approved page opener rendered directly below the locked H1. Optional;
       pages without one keep their existing markup byte-identical. */
   opener?: string;
@@ -108,6 +117,16 @@ export interface VariantProductData {
   descriptionHtml?: string;
   /** Owner-approved replacement for the Product Details > Specifications tab. */
   specificationsHtml?: string;
+  /** Owner-approved fixed hero facts table. When present, it replaces the standard
+      computed feature cells instead of mixing generated facts into the buy box. */
+  heroTable?: string[][];
+  /** Optional owner-approved additions to an existing Description-tab string.
+      Absent means the original HTML is returned byte-for-byte. */
+  descriptionHtmlAdditions?: {
+    beforeHtml?: string;
+    insertHtml?: string;
+    appendHtml?: string;
+  };
   /** HOLD the Description tab empty-safe. An empty `descriptionHtml` cannot express
       this, because the route falls through to the legacy body on any falsy value.
       Set true only where the legacy body contradicts the rebuilt page and approved
@@ -128,6 +147,11 @@ export interface VariantProductData {
   /** Suppress a stale Rank Math FAQ graph when the approved replacement does not
       include product FAQs. */
   suppressLegacyFaqSchema?: boolean;
+  /** CO-00 (19 Aug 2026) — opt in to `#size-<slug>` DOM ids on each size section,
+      forwarded to PortaCabinVariantHero's own `emitSizeAnchors` prop (default
+      false there too). Absent on every other product → no id is emitted,
+      byte-identical elsewhere. */
+  emitSizeAnchors?: boolean;
   /** "Download specifications" target. The button is omitted when absent. */
   specPdfHref?: string;
   /** Replaces the default "Price on request — send enquiry" line wherever a
@@ -187,6 +211,28 @@ export interface VariantProductData {
       instead of per-variant Offers. Absent on porta-cabins → per-variant Offers kept,
       byte-identical. Set true only when a page's price ladder is confirmed. */
   emitAggregateOffer?: boolean;
+  /** Merchant schema offer mode. Default aggregateOffer keeps existing variant pages
+      unchanged; "offer" emits a single from-price Offer derived from the ladder. */
+  schemaOfferType?: 'aggregateOffer' | 'offer';
+  /** Merchant condition for the Product Offer, encoded from an owner/commercial ruling.
+      Default remains new, matching the legacy product schema. */
+  schemaItemCondition?: 'new' | 'refurbished' | 'used';
+  /** Opt-in removal of product AggregateRating for pages whose ticket forbids it. */
+  suppressAggregateRatingSchema?: boolean;
+  /** Optional cap for Product JSON-LD image URLs. Absent keeps current pages unchanged. */
+  schemaImageLimit?: number;
+  /** LC-05 (16 Aug 2026) - emit the sourced Product entity even while its owner-
+      approved price ladder is pending. The entity carries no Offer, rating or
+      review. Absent everywhere else, so the existing rich-result evidence gate
+      remains unchanged for every sibling. */
+  emitQuoteOnlyProduct?: boolean;
+  /** Exact Product JSON-LD override for pages whose build ticket pins a bespoke
+      Product node. Absent everywhere else, so existing generated schema remains. */
+  schemaOverride?: Record<string, unknown>;
+  /** LC-05 (16 Aug 2026) - allow Next's responsive image pipeline for a page whose
+      gallery assets are local WebPs. Absent/false preserves the deployed bypass
+      decision byte-for-byte on every sibling product. */
+  optimizeLocalGalleryImages?: boolean;
   /** Middle segment of the buy-box trust strip. Default (absent) → preset, else the
       deployed literal "5-yr structural warranty" (flagship byte-identical). */
   trustWarranty?: string;

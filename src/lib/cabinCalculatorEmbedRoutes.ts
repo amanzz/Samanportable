@@ -83,9 +83,19 @@ function resolveForPortaCabins(category: string, slug?: string): ProductId {
 
 function resolveForLaborColony(category: string, slug?: string): ProductId {
   const target = normalise(slug || category);
+  if (target.includes('accommodation-container')) return 'accommodation-cabin';
   if (target.includes('labor-shed') || target.includes('labour-shed') || target.includes('sheds')) return 'labor-sheds';
   if (target.includes('labor-hut') || target.includes('labor-hutment') || target.includes('hutment')) return 'labor-hutments';
   if (target.includes('prefab-labor-camp') || target.includes('prefab-labour-camp') || target.includes('prefab-camp')) return 'prefab-labor-camps';
+  // LC-03 (17 Aug 2026) — without this, oil-field-camp fell through to the
+  // 'labour-colony' default, which is an isColonyProduct entry: the entry
+  // band and calculator would have silently priced from the hub's own
+  // ladder instead of this page's, while still showing this page's name.
+  if (target.includes('oil-field-camp') || target.includes('oil-field')) return 'oil-field-camp';
+  // LC-07 (17 Aug 2026) — same failure mode as LC-03's oil-field-camp fix:
+  // without this, ablution-block falls through to 'labour-colony' and
+  // silently prices from the hub's own ladder instead of its own.
+  if (target.includes('ablution-block') || target.includes('ablution')) return 'ablution-block';
   return 'labour-colony';
 }
 
@@ -279,6 +289,21 @@ export function resolveEmbeddedCalculatorProduct(
   // prices (Rs 38,88,000 and up) while the calculator beside them rendered quote
   // mode, contradicting the page in the same direction the C-05 six did.
   if (c === 'labor-colony' || c === 'c06' || c === 'labour-colony') {
+    // LC-06 (17 Aug 2026) - a fifth labor-colony route that resolveForLaborColony
+    // does not name falls through its own default to 'labour-colony' (the hub's
+    // own ProductId), which the wizard then prices from the HUB's ladder. On
+    // this route that produced a banner reading "Your Prefab Site Canteen from
+    // Rs 19,44,000" - the hub's own base price - directly contradicting this
+    // page's own published Rs 1,50,000 starting price a few sections below it.
+    // LC-06's build prompt explicitly wants zero calculator integration for
+    // this page (no ROUTE_LADDERS entry, no colony-ladder entry, "Calculator:
+    // NONE - DO NOT TOUCH"), so the correct fix is no attribution at all here,
+    // not a fifth entry in isColonyProduct/colonyLadder. Mirrors the existing
+    // UNVERIFIED_PRODUCT_ID_CLUSTERS no-prefill shape used elsewhere in this
+    // file. Scoped to this one slug; the four routes above are unaffected.
+    if (slug && normalise(slug) === 'prefab-site-canteen') {
+      return { category, slug, prefill: false, productId: undefined, ladderKey: '' };
+    }
     return {
       category,
       slug,

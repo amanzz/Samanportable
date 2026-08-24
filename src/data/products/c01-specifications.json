@@ -400,13 +400,23 @@
         }
       ],
       "narrative": "This specification is what you are actually buying, line by line. Nineteen of the thirty lines are product-specific to this cabin; eleven are SAMAN platform standards shared across the family. Use the tables to compare quotations item by item — frame section, sheet thickness, insulation density — rather than by total price alone. Final openings, colours, service loads and fit-out follow your approved drawing and quotation.",
-      "diagram": {
-        "src": "/images/products/porta-cabins/diagrams/saman-porta-cabin-build-anatomy.webp",
-        "alt": "Exploded diagram of porta cabin layers from MS chassis to corrugated roof with labelled thicknesses",
-        "caption": "SAMAN porta cabin build anatomy — Illustrative, not for construction. Source: SP-PC-HUB-01-TS-R1.",
-        "width": 1672,
-        "height": 941
-      },
+      "diagramsIntro": "The two diagrams below show where the specification is actually made or lost. The first covers the frame joint and the sheet seal, which decide squareness and weather performance. The second covers the window seal and the circuit split, which decide how the cabin behaves once it is powered on site.",
+      "diagrams": [
+        {
+          "src": "/images/products/porta-cabins/specifications/porta-cabin-diagram-1-frame-and-sheet-assembly.webp",
+          "alt": "SAMAN diagram of porta cabin frame assembly: align and clamp, tack and weld, then seal the sheet",
+          "caption": "Detail 01 - frame and corrugated sheet assembly. Buyer-facing diagram; approved shop drawings and qualified welding procedures govern fabrication.",
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "src": "/images/products/porta-cabins/specifications/porta-cabin-diagram-2-window-electrical-fan.webp",
+          "alt": "SAMAN diagram of window sealing, distribution board circuits and fan installation checks",
+          "caption": "Detail 02 - window, electrical and fan installation. Buyer-facing diagram; the approved electrical drawing, final load schedule and licensed installation govern execution.",
+          "width": 1920,
+          "height": 1080
+        }
+      ],
       "premiumTables": true
     },
     "low-cost-porta-cabin": {
@@ -4364,6 +4374,241 @@
           "width": 1920,
           "height": 1080
         }
+      ]
+    },
+    "accommodation-container": {
+      "name": "Accommodation Container",
+      "sheet": "06 Accommodation Container",
+      "canonical": "https://www.samanportable.com/product/labor-colony/accommodation-container",
+      "columnHeaders": {
+        "first": "Item",
+        "second": "Specification"
+      },
+      "premiumTables": true,
+      "specifications": [
+        {
+          "group": "Table 1 - Structure, envelope, roof and floor",
+          "component": "Build route by size",
+          "detail": "20x8 and 40x8 ft: converted used shipping container. 20x10, 30x10, 40x10, 40x12 ft: fabricated wide-body in MS corrugated sheet",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1 - Structure, envelope, roof and floor",
+          "component": "Bottom frame",
+          "detail": "IS 2062 or approved equivalent MS channel, RHS or formed sections; member sizes and support reactions from the signed structural drawing",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1 - Structure, envelope, roof and floor",
+          "component": "Bottom stiffeners",
+          "detail": "RHS, channel or angle stiffeners to the approved floor grid, partitions, bunk positions and lifting duty",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1 - Structure, envelope, roof and floor",
+          "component": "Floor frame",
+          "detail": "Fabricated units: new MS rectangular-tube framing. Converted units: original cross-members retained and repaired, with a separately approved deck",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1 - Structure, envelope, roof and floor",
+          "component": "Top frame",
+          "detail": "MS RHS or channel, or the documented proprietary upper rail, sized for roof reactions, wall restraint and opening headers",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1 - Structure, envelope, roof and floor",
+          "component": "Roof structure",
+          "detail": "Fabricated: sloped insulated PPGI roof on MS members. Converted: retained cargo roof with approved inner insulation and ceiling, penetrations repaired",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1 - Structure, envelope, roof and floor",
+          "component": "Corner posts and walls",
+          "detail": "Fabricated: MS/RHS posts and rails. Converted: retained corner posts and top rails with engineered headers and jambs at enlarged openings",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1 - Structure, envelope, roof and floor",
+          "component": "Exterior walls",
+          "detail": "Nominal 50 mm PUF/PPGI sandwich panel on fabricated units; on conversions, steel outer skin plus specified insulated inner liner",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1 - Structure, envelope, roof and floor",
+          "component": "Roof insulation",
+          "detail": "Nominal 50 mm class insulated roof, or conversion-specific liner and insulation system with condensation control",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1 - Structure, envelope, roof and floor",
+          "component": "Wall insulation",
+          "detail": "Nominal 50 mm PUF reference on fabricated wide-body units; alternative glass or mineral wool or EPS build-up on conversions only where specified",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1 - Structure, envelope, roof and floor",
+          "component": "Floor base",
+          "detail": "Fabricated: nominal 18 mm cement or cement-fibre board on steel grid. Converted: repaired 19 mm marine-ply class cargo deck with sealed edges",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1 - Structure, envelope, roof and floor",
+          "component": "Floor finish",
+          "detail": "Vinyl or PVC resilient sheet or tile, skirting and sealed thresholds. Slip-resistant wet finish in toilet or pantry variants",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1 - Structure, envelope, roof and floor",
+          "component": "Lifting and handling",
+          "detail": "Marked lifting lugs, corner fittings or transport brackets only where shown on the signed general arrangement and lifting drawing",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1 - Structure, envelope, roof and floor",
+          "component": "Fabrication control",
+          "detail": "IS 2062 / IS 1161 class structural steel or approved equivalent; weld sizes, bolt grades and joint details per the fabrication drawings",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1 - Structure, envelope, roof and floor",
+          "component": "Coating",
+          "detail": "Prepared carbon steel with compatible primer and top coats, or galvanized/pre-painted sheet with repaired cut edges; upgraded for coastal or industrial exposure",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2 - Interior, openings, services, scope and site",
+          "component": "Interior walls",
+          "detail": "Prelaminated board, PPGI or cement-board class liner with impact protection at bunk and locker positions; wet liner only in toilet or pantry variants",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2 - Interior, openings, services, scope and site",
+          "component": "Ceiling",
+          "detail": "PUF panel underside or prelaminated/cement-board ceiling below insulation, with supports for lights and fans and service access",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2 - Interior, openings, services, scope and site",
+          "component": "Main door",
+          "detail": "Nominal 900 mm class MS or insulated door; secondary exit or service door where occupancy and layout require it",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2 - Interior, openings, services, scope and site",
+          "component": "Windows",
+          "detail": "20x10 planning reference uses approximately three aluminium sliding or openable windows; exact count follows the general arrangement. Converted-shell openings receive structural headers and jambs",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2 - Interior, openings, services, scope and site",
+          "component": "Grilles and mesh",
+          "detail": "Removable mosquito mesh, louvres, restrictors or protected MS grilles only where the approved opening schedule requires them",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2 - Interior, openings, services, scope and site",
+          "component": "Electrical wiring",
+          "detail": "FR/FRLS copper in approved conduit or trunking. Typical references 1.5 sq mm lighting, 2.5 sq mm sockets, 4 sq mm AC and high-load; final sizing per the project schedule",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2 - Interior, openings, services, scope and site",
+          "component": "Electrical protection",
+          "detail": "Main isolator, MCB/RCBO or RCCB, labelled neutral and earth bars, bonding and surge protection where the supply or risk assessment requires it",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2 - Interior, openings, services, scope and site",
+          "component": "Electrical fittings",
+          "detail": "LED luminaires, fan points, 6A/16A sockets and exhaust points per the approved room and electrical schedule",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2 - Interior, openings, services, scope and site",
+          "component": "Ventilation and AC",
+          "detail": "Ceiling or wall fans plus window and louvre airflow. Split AC provision sized to the approved cooling load. The AC unit itself is not in the base rate",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2 - Interior, openings, services, scope and site",
+          "component": "Plumbing",
+          "detail": "None in the base sleeper. WC, shower, basin or pantry variants add CPVC/PPR supply, uPVC waste and vent, waterproof floor and external utility stubs",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2 - Interior, openings, services, scope and site",
+          "component": "Layout",
+          "detail": "20x10 reference plans a central aisle with bunk runs both sides and a locker and storage zone. A separate bed per worker is the planning principle; the approved bed schedule governs",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2 - Interior, openings, services, scope and site",
+          "component": "Standard inclusions",
+          "detail": "Structural box, insulated wall and roof, floor and finish, doors and windows per schedule, basic electrical fit-out, split AC provision",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2 - Interior, openings, services, scope and site",
+          "component": "Excluded from the base rate",
+          "detail": "Bunks and lockers; toilet, shower, basin or pantry and their plumbing; the split AC unit; buyer-supplied donor container where specified; transport, offloading and installation; foundations, plinths and anchors; external site utilities; project-specific engineering and specialist certificates",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2 - Interior, openings, services, scope and site",
+          "component": "Transport status after fit-out",
+          "detail": "Building module, not a freight container. No CSC plate, no loaded-stacking and no sea-freight-ready claim unless separately established",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2 - Interior, openings, services, scope and site",
+          "component": "Warranty",
+          "detail": "5-year structural warranty and 1-year finishing warranty as standard; finishing warranty extendable to 2 years on request, confirmed at quotation. Applies to both build routes",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2 - Interior, openings, services, scope and site",
+          "component": "Service life",
+          "detail": "20 to 25 years under proper use and maintenance. This is a design life, not a warranty period",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2 - Interior, openings, services, scope and site",
+          "component": "Quality checks",
+          "detail": "Dimensional, member, weld and bolt, coating, panel, roof drainage, opening, electrical and functional checks. Converted units add the donor-condition and repair record",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2 - Interior, openings, services, scope and site",
+          "component": "Delivery",
+          "detail": "7 to 21 working days. Fixed-price quotation within 48 hours",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2 - Interior, openings, services, scope and site",
+          "component": "Taxes",
+          "detail": "GST 18%. HSN 9406",
+          "differsFromHub": false
+        }
+      ],
+      "diagramsAfterGroup": {
+        "Table 1 - Structure, envelope, roof and floor": {
+          "src": "/images/products/accommodation-container/specifications/lc05-diagram-layout.webp",
+          "alt": "Module plan diagram showing bunk zones either side of a central aisle",
+          "width": 1600,
+          "height": 900
+        },
+        "Table 2 - Interior, openings, services, scope and site": {
+          "src": "/images/products/accommodation-container/specifications/lc05-diagram-section.webp",
+          "alt": "Wall section comparing converted shell and fabricated wide-body build routes",
+          "width": 1600,
+          "height": 900
+        }
+      },
+      "narrativeParagraphsAfter": [
+        "Two rows in these tables do more work than the rest. The build route decides whether you are buying a repaired second-hand shell or a new fabricated box, and that flows into the inspection, the repair pricing and how the openings are framed. The exclusion list decides what your quotation actually contains.",
+        "Read the exclusion row before you compare our figure with anyone else's. A shell rate and a fitted-out rate are different numbers for the same size, and most published market prices do not state which one they are quoting.",
+        "The performance rows are deliberately absent. We publish no fire rating, acoustic figure or thermal value for this product, because those belong to a specific tested assembly with a named standard and an issuing body. Where your project needs one, it is engineered and certified for your configuration and priced accordingly."
       ]
     }
   }

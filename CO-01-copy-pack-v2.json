@@ -1,0 +1,371 @@
+{
+  "page_id": "CO-01",
+  "page_name": "Shipping Container Office",
+  "canonical": "https://www.samanportable.com/product/container-offices/shipping-container-office",
+  "copy_pack_version": "v2.0",
+  "issued": "2026-08-23",
+  "process": "SAMAN_Page_Build_Process_v3.1",
+  "fields": {
+    "h1": {
+      "text": "Shipping Container Office Built on a Reinforced Steel Shell",
+      "characters": 59,
+      "visible_characters": 59,
+      "sha256": "1E09C8400E3CB308730BC736F15F42F7E4EF4F0355642E214F2222A1ED037809"
+    },
+    "seo_title": {
+      "text": "Shipping Container Office Price, Six Approved Sizes | SAMAN",
+      "characters": 59,
+      "visible_characters": 59,
+      "sha256": "315FE1EE7080BCE3CC3AF5EBAB761E80746BB35769D774F160DFFD64C9CD4819"
+    },
+    "meta_description": {
+      "text": "Shipping container office in six approved sizes from 160 to 400 sq ft, built to ISO container form with reinforced openings. Priced from Rs 3,16,800 ex-GST.",
+      "characters": 156,
+      "visible_characters": 156,
+      "sha256": "D4A2C6271FA0DC4C64E3AEC5484895B04F3985F7BBE16B30BE433BADC4EB590E"
+    },
+    "canonical": {
+      "text": "https://www.samanportable.com/product/container-offices/shipping-container-office",
+      "characters": 81,
+      "visible_characters": 81,
+      "sha256": "D5E44D8171038176E0513805FDC39E46ADD6FD9D6D21195A882ACF357BD169C5"
+    },
+    "breadcrumb": {
+      "text": "Home > Products > Container Offices > Shipping Container Office",
+      "characters": 63,
+      "visible_characters": 63,
+      "sha256": "810C6690C26C764F1D4D79E532DAF29038FE1C29F93B405F993ADEC7519C73BE"
+    },
+    "hero_paragraph_1": {
+      "text": "SAMAN builds this office inside a corrugated shipping container shell of 1.6 mm mild steel. Site teams pick it when the box must take yard traffic, repeated lifting and years of open weather. We build every shell to the ISO container form recorded on the approved general arrangement drawings.",
+      "characters": 293,
+      "visible_characters": 293,
+      "sha256": "A8D36C0FDD8109387E24B1984D2D7821029869519713AD85B6A39DC3AA68207E"
+    },
+    "hero_paragraph_2": {
+      "text": "Every door and window is a cut through a wall that carries load. So we box each opening with 60 x 60 x 3 mm posts and a welded header before any lining goes on. A 150 x 75 x 5 mm channel base then carries the unit on a trailer and under a crane. Six approved sizes run from 160 to 400 sq ft, and each one has its own general arrangement drawing. Interior fit-out, freight and craneage are quoted separately for your site.",
+      "characters": 421,
+      "visible_characters": 421,
+      "sha256": "E910AE615864C1C86DA3899222195DF76EE34595F4563D9F003DA866B3F80393"
+    },
+    "pdf_label": {
+      "text": "Download the technical specification and all six GA drawings (PDF)",
+      "characters": 66,
+      "visible_characters": 66,
+      "sha256": "2EC204D61EA0A74BCF368C0477070A13ED7DF9741773AF0D3213C6688E68E46C"
+    },
+    "section2_h2": {
+      "text": "When a converted container shell suits you better than a cabin",
+      "characters": 62,
+      "visible_characters": 62,
+      "sha256": "AF7988DC161E8A087849E79D9C9E0C0D2A4395433AF3667A7235A3EC486CC261"
+    },
+    "section2_paragraph_1": {
+      "text": "Buyers reach this page for one reason. They want the shell itself to be shipping container steel, not a panel cabin dressed to look like one. That choice pays off in a hard yard. Corrugated 1.6 mm skin shrugs off knocks that dent a thin panel wall. The channel base takes a forklift, a crane and a long trailer run without a purpose-built frame. If your unit will move between sites every few months, that robustness decides the job.",
+      "characters": 433,
+      "visible_characters": 433,
+      "sha256": "B4F8A52A023373F7EDBFA1D7A02F54351793706B5622F78813239D1A92075997"
+    },
+    "section2_paragraph_2": {
+      "text": "The trade-off sits in the openings. Cutting a 3 x 7 ft door into a container wall removes steel that was carrying load. So we rebuild that path with boxed posts, headers and sills. A fabricated cabin never faces that problem, and it costs less. Compare both routes across [the wider container office range](https://www.samanportable.com/product/container-offices) before you commit. [Send us your site plan and we will price the right shell for it](https://www.samanportable.com/contact).",
+      "characters": 488,
+      "visible_characters": 388,
+      "sha256": "9367570C82F37FE9F6E0BA6982CD7CF8D6311DF32B8C9B1E3D7D7AEA4CF5B54B"
+    },
+    "variant_20x8_h2": {
+      "text": "20 x 8 ft: three seats along a single clear long wall",
+      "characters": 53,
+      "visible_characters": 53,
+      "sha256": "A38EF5E5009BDB5C7B7D67518B2973E1B44EF4ECC7B56AE69C2F299DCBCA8AC0"
+    },
+    "variant_20x8_body": {
+      "text": "The narrowest approved shell suits a gate office, a stores desk or a two-shift site cabin. Its general arrangement puts all three workstations on the rear long wall. The front wall stays clear apart from the entrance, so nobody works with their back to the door. Six windows light the room: two on each long wall and one centred on each 8 ft end. At 8 ft wide the aisle is tight, so we keep both end walls free of furniture.",
+      "characters": 424,
+      "visible_characters": 424,
+      "sha256": "2D8B924188811DD4F355EC39E1A88B7CE9D14AAC2A667CEECD9BAB2A09526689"
+    },
+    "variant_20x10_h2": {
+      "text": "20 x 10 ft: five seats and a genuine central aisle",
+      "characters": 50,
+      "visible_characters": 50,
+      "sha256": "4FDA5979AAB22D480AAB774E30A065CF830DB6629513DD3BCD5270099EF16DA5"
+    },
+    "variant_20x10_body": {
+      "text": "This is the reference size, and the rate card is anchored here at Rs 1,800 per sq ft. Two extra feet of width change the room completely. Now five people work in it: three along the rear wall and two either side of the door. A clear aisle runs down the middle, so a chair can push back without blocking traffic. Most first-time buyers order this size, then scale up or down from its drawing. Six windows and one door keep the opening count identical to the 20 x 8 ft plan.",
+      "characters": 472,
+      "visible_characters": 472,
+      "sha256": "1C62A32B2E1D50C4301BDAADD88D982C112E8A79EB642B85EF05389F15FB7849"
+    },
+    "variant_20x12_h2": {
+      "text": "20 x 12 ft: the same five seats with wider circulation",
+      "characters": 54,
+      "visible_characters": 54,
+      "sha256": "B3AC1F614E561637863DB5A091F13623233ADAF51EF68F5C79BFAB4E3FCD0791"
+    },
+    "variant_20x12_body": {
+      "text": "The 12 ft shell is the 20 x 10 drawing widened by one foot on each long wall. Nothing else moves. The door keeps its position, the six windows keep theirs, and the desk count stays at five. Every added inch becomes floor. Choose it when a survey table, a plan chest or a visitor chair must sit clear of the working aisle. Because the width grows and the seat count does not, the price per seat rises.",
+      "characters": 400,
+      "visible_characters": 400,
+      "sha256": "8DFF00EF106D1907F2B83381BEB7349F64B92ED3B007A4F2CE154ACDC82E1ED6"
+    },
+    "variant_30x10_h2": {
+      "text": "30 x 10 ft: twelve seats behind two separate doors",
+      "characters": 50,
+      "visible_characters": 50,
+      "sha256": "4DBDEA1FC40F4C6DD81466C07B222E2A137161913D0D16B638528B8E8B28FDA9"
+    },
+    "variant_30x10_body": {
+      "text": "Thirty feet is where a site office becomes a team room. Twelve workstations line the two long walls, seven at the back and five at the front. Two doors sit near the ends of the front wall, so a crew can enter one end while a meeting runs at the other. Eight windows keep the middle of a 30 ft box from going dark. The centre bay between the two window pairs stays solid, which is where we run services.",
+      "characters": 402,
+      "visible_characters": 402,
+      "sha256": "E950620A6120AAE849444339621600E4D56FA93D4C110E2ED4F05269E135975D"
+    },
+    "variant_40x8_h2": {
+      "text": "40 x 8 ft: a manager cabin plus seven narrow-office seats",
+      "characters": 57,
+      "visible_characters": 57,
+      "sha256": "C7071BFFB2410BE655042F8DCCE85859B77A8308294E281356D560C6A23570EB"
+    },
+    "variant_40x8_body": {
+      "text": "The first ten feet at one end become a private manager cabin, and the remaining thirty stay open. A partition with a single 3 x 7 ft internal door separates them. The manager has no outside door of their own. Visitors come through the common office, which is exactly how a site supervisor wants it. At 8 ft wide the common run carries seven desks on one wall only, and the front wall stays clear. Ten seats sit down in total once you count the manager and two visitors.",
+      "characters": 469,
+      "visible_characters": 469,
+      "sha256": "7477706602519E6169E79833190D094671E10698BFFEFCAE43DA45E5E7D0BC33"
+    },
+    "variant_40x10_h2": {
+      "text": "40 x 10 ft: a square manager room and twelve team seats",
+      "characters": 55,
+      "visible_characters": 55,
+      "sha256": "0B95D3E00865DB9E738E0CF3B2345B00F7C31361768945676889B14172F2585A"
+    },
+    "variant_40x10_body": {
+      "text": "The largest approved shell gives the manager a true 10 x 10 ft room with three outside windows. Behind the partition, twelve workstations fill the 30 ft common office, seven at the rear and five at the front. Fifteen people can sit down at once, counting the manager and two visitor chairs. Two external doors serve the common office at either end. Order this size when one shell must hold a whole project team.",
+      "characters": 411,
+      "visible_characters": 411,
+      "sha256": "7C11E7C76954DA0E2CB7B2344CF7B20DEB1C1E6A54DD9E5D1CBC24DE8530DD58"
+    },
+    "specifications_narrative": {
+      "text": "Read these two tables as a pair. The first fixes what the shell is and what it can take, the second what you still have to buy. The 1.6 mm skin separates this product from a 0.5 mm panel cabin. Boxed 60 x 60 x 3 mm posts keep every cut opening safe. Sizes and grades below are approved starting values for a standard unit. Final member sizes, loads, lifting points and electrical design follow the signed quotation.",
+      "characters": 415,
+      "visible_characters": 415,
+      "sha256": "D0284647B7F9A4E3DE0AD1E168D379472B3678AF0725CBDBBEB594042A481935"
+    },
+    "description_tab": {
+      "text": "## What a shipping container office is at SAMAN\n\nA shipping container office starts life as a corrugated steel box, not as a set of panels. We convert that box into a working office without losing what made it useful. The skin stays 1.6 mm corrugated mild steel, and the base stays a 150 x 75 x 5 mm MS channel frame. Both survive handling that would deform a lightweight panel cabin.\n\nBuyers usually arrive here after pricing a panel cabin and discovering it is cheaper, and that comparison is legitimate. We make it explicitly further down this page. Even so, a great many sites simply cannot use a panel cabin. Loading yards, crusher plants and port compounds all punish thin cladding, and a container shell handles that duty because it was manufactured for rough handling.\n\nIMAGE_1\n\nEvery unit we dispatch carries the identical core build and the same ISO container form. Only the internal plan changes between sizes, and each plan sits on its own approved general arrangement drawing. You can open those drawings before you buy, which is the purpose of publishing them.\n\n## What happens when you cut a door into a container wall\n\nHere is the part most listings omit: a container wall is not decorative cladding. The corrugation carries load along the length of the box, and the corner posts transfer it downward. Cut a 3 x 7 ft doorway into that wall and you remove a strip of structural steel.\n\nSo the opening has to be structurally rebuilt, not simply trimmed, and we frame each cut-out before the lining goes anywhere near it.\n\n### Where the reinforcement goes\n\nEvery opening receives a box, so we weld 60 x 60 x 3 mm MS square posts at both jambs. An 80 x 40 x 3 mm member then runs across the head. The load that used to travel through the removed corrugation now travels around the hole and back into sound steel above and below.\n\nThe floor gets the same treatment, so where an opening lands near the base we add 100 x 50 x 4 mm channels underneath. Alongside them we run 80 x 40 x 3 mm cross members. Heavy loads inside the room, such as an archive rack or a UPS bank, sit over strengthened members rather than over bare decking.\n\nRoof cuts follow the same logic, so fans, ventilators and split-AC penetrations get raised curbs, welded or mechanically flashed. Then 60 x 40 x 2.5 mm rafters and purlins stabilise the roof plane after the lining and the services go in.\n\n### Why the opening schedule never moves\n\nOnce we agree a general arrangement, the opening positions are fixed. They never shift to suit a desk, a camera angle or a last-minute layout idea.\n\nThat discipline protects you in two separate ways. First, the reinforcement drawing stays valid, so nobody has to re-verify the load path on site. Second, the exterior and the interior always match, because a window you see from outside sits at the same coordinate inside. Its sill stays at 3 ft 6 in and its head at 6 ft 6 in.\n\nWe hold the same rule for furniture, so workstations never block a door swing, a window or the central aisle. If a layout needs more desks than the drawing allows, we change the drawing and re-check it, and we do not silently add a workstation.\n\n## How to read the general arrangement before you pick a size\n\nEach of the six sizes ships with a buyer-facing general arrangement board. One sheet carries the floor plan, all four elevations, the opening map and the furniture schedule. Two reading habits will prevent an expensive specification mistake.\n\nIMAGE_2\n\n### Workstations are counted by wall, not by floor area\n\nTotal seat count communicates very little, while the position of those seats communicates everything about circulation. A 20 x 8 ft office and a 20 x 10 ft office run the same length. Yet one holds three desks and the other holds five. The difference is width, and width decides whether a second desk run fits opposite the first.\n\nExamine the plan and count the workstations on each wall separately. On a 30 x 10 ft unit, seven desks line the rear wall and five line the front. That five is smaller because two doors take up front-wall length, and nobody sits in a doorway.\n\n### End walls stay empty on purpose\n\nYou will notice that no size puts furniture against an end wall. That is intentional, because end walls carry the centred window that cross-ventilates the box and form the escape path. Keeping them clear sacrifices a little floor area and buys considerable usable circulation.\n\n## Choosing between the six approved sizes\n\nWe publish six sizes and no more, and each configuration exists because it resolves a different problem with an approved drawing to demonstrate it.\n\nThe 20 x 8 ft shell is the gatehouse and stores answer, with three seats, one clear entrance wall and the smallest footprint we publish. Take it when you need a manned point rather than a team room.\n\nMost orders land on the 20 x 10 ft shell. It provides five seats, a genuine aisle and the anchor rate of Rs 1,800 per sq ft. Begin from this drawing whenever the requirement is uncertain.\n\nThe 20 x 12 ft shell adds circulation rather than seats, so it still holds five people. The extra two feet of width become floor for a plan table or a visitor chair.\n\nThe 30 x 10 ft shell is the first true team room, with twelve seats, two doors and eight windows. Two entrances matter more than most buyers anticipate, because a crew can come and go without walking through a meeting.\n\nThe 40 x 8 ft shell buys privacy in a narrow footprint, because ten feet at one end becomes a manager cabin. The remaining thirty feet then run seven desks along a single wall.\n\nThe 40 x 10 ft shell is the full project office. It has a square 10 x 10 ft manager room, three outside windows and twelve common seats, so fifteen people sit down at once.\n\n## The shell, layer by layer\n\nWalls build up in three layers, and the outer skin is 1.6 mm corrugated MS. Behind it sits 50 to 75 mm of mineral wool, packed around the corrugations and around the conversion steel so no gaps are left open. The inner face is 8 to 10 mm fibre-cement board, or a 0.50 mm pre-painted metal liner where the room takes hard use.\n\nIMAGE_3\n\nThe roof carries more insulation than the walls, because a steel roof in Indian sun radiates heat downward all afternoon. So we fit 75 to 100 mm of mineral wool up there. Pins and retainers hold it, and they stop it sagging away from the sheet after a few lifts.\n\nFloors start with a 24 mm cement board deck, or a heavy MS floor plate where the duty is severe. On top goes 2 to 3 mm commercial PVC, epoxy, or 3 mm chequered plate. Chequered plate suits a workshop environment, while PVC suits a design office, so we ask about trolleys, boots and cleaning before we recommend one.\n\nCoating is a red-oxide primer coat followed by two anti-rust enamel coats over prepared steel. We remove original container markings, loose paint and surface corrosion first. Near the coast or inside a chemical plant, the exposure category may call for an upgraded system. We identify that at quotation, never after delivery.\n\n## Power, light and cooling inside a steel box\n\nElectrical work runs in concealed PVC-insulated copper. Typical circuits are 1.5 sq mm for lighting, 2.5 sq mm for sockets and 4 sq mm for higher loads such as an air conditioner. Those are starting values only, and the final conductor size follows the approved load schedule for your order.\n\nEach unit carries a distribution board with MCB and RCCB protection, protective earthing, and separated lighting, socket and AC circuits. We test continuity, insulation resistance, polarity and RCD operation before dispatch, and the results go into the handover file.\n\nFittings cover LED ceiling lights, data outlets, a UPS provision, 6A and 16A sockets, fan points and a dedicated AC circuit. We position all of them clear of the boxed opening steel, because drilling into a reinforcement post later is exactly the wrong repair.\n\nIMAGE_4\n\nCooling combines three things: controlled window openings, wall or ceiling fans, and a split-AC provision. Note the word provision: the circuit, the wall sleeve and the condensate route come as standard where specified. The AC unit itself is quoted separately, and we route its condensate so nobody drills a fresh hole through a corrugation on site.\n\n## Lifting, transport and setting the unit down\n\nWe build to the ISO container form recorded on the approved drawings. Freight duty is a separate question, so we state it plainly. A converted unit does not automatically carry its CSC plate, its stacking rating or its international shipping approval. Each of those needs its own assessment of the finished unit, and we will not claim any of them without one.\n\nWhat you do receive is an engineered lifting arrangement. We fit MS lifting hooks or lugs matched to the finished weight of your unit and issue a lifting and support-point drawing with it. Lift only from those points, with certified slings and, where the drawing calls for it, a spreader beam.\n\nBefore dispatch we issue the shipped weight, the centre of gravity, the support points and the crane plan. Original corner castings are used for a lift only when their condition and the modified load path have both been checked for that specific lift.\n\n## Standard, optional and excluded\n\nExplicit scope definition prevents most commercial disputes, so here is ours.\n\n- STANDARD: the reinforced shell, insulation, internal lining, ceiling, floor deck and finish, doors and windows per the approved drawing, the electrical package described above, fans, and the coating system.\n- OPTIONAL: chequered-plate flooring, metal liner in place of fibre-cement, security grills, insect mesh, weather louvers, extra sockets or data points, and a manager partition on sizes that do not carry one as standard.\n- CUSTOM: any change to the approved general arrangement, which we re-draw and re-check before quoting.\n- EXCLUDED: the AC unit itself, loose furniture, plumbing and sanitary fittings, water and waste connections, foundations, site utilities, craneage, unloading, installation, and any project-specific certification or third-party inspection.\n\nPlumbing deserves its own line, because sanitary or pantry services are not included unless your approved scope shows them. They need framed and sealed penetrations through the floor or wall, and those penetrations have to be designed, not improvised.\n\n## How the price is built\n\nEvery size on this page comes off one controlled rate card, and you can check the arithmetic yourself.\n\nThe anchor is Rs 1,800 per sq ft at the 200 sq ft reference. That reference is the 20 x 10 ft unit at Rs 3,60,000 ex-GST. From there the rate steps by area band, so units of 150 to 199 sq ft carry a 10 per cent uplift. Units of 201 to 300 sq ft come down 4 per cent, and units of 301 to 400 sq ft come down 5 per cent. Bigger shells cost more in total and less per square foot, because the fixed work spreads over more floor.\n\nThat is the complete formula, so no size on this page is priced by negotiation or by estimation.\n\nWhat the rate covers is the shell as described in the standard scope above. Interior fit-out beyond that scope, loose furniture, optional equipment, transport, unloading, craneage, installation, foundations, site utilities and project-specific engineering sit outside it. GST at 18 per cent applies on top of every ex-GST figure shown.\n\n## Where this sits against our other container offices\n\nIf price leads your decision and your site is settled, look at [our fabricated container office cabin](https://www.samanportable.com/product/container-offices/container-office-cabin) first. It is built from panels rather than a container shell, and it costs less per square foot. In a less demanding environment it performs the identical office function.\n\nIMAGE_5\n\nIf the unit will be lifted and relocated many times over its life, the [site office container](https://www.samanportable.com/product/container-offices/site-office-container) is planned around that duty cycle. This page is for buyers who want the container shell itself, either for its toughness or because their site standard calls for one.\n\n## What to send us for a quotation\n\nWe can price a standard configuration from four inputs, so send them and you will get a real number, not a range.\n\n- The size you want from the six above, or the seat count you need if you would rather we suggest one.\n- The delivery pin location, so we can price freight and check road access for a 20 ft or 40 ft trailer.\n- Your power supply point and whether an AC unit is coming from you or from us.\n- The floor finish and any grills, mesh or louvers your site standard requires.\n\nTell us as well if the unit will be lifted more than once. That changes the lifting arrangement we design, and it is cheaper to build in than to add later.\n\n## Frequently asked questions\n\n**Is a shipping container office cheaper than a panel cabin?**\nNo, and at Rs 1,800 per sq ft it costs more than our panel-built cabin. You pay for the 1.6 mm shell, the channel base and the opening reinforcement, so choose it when the site justifies that spend. Ask us for both rates together and compare them on your own drawing.\n\n**Can I stack two of these units?**\nNot on the strength of the original container, because stacking a converted unit needs a separate assessment of the completed modification. We will not claim it without one.\n\n**How many people fit in a 20 ft unit?**\nThree in a 20 x 8 ft, five in a 20 x 10 ft, five in a 20 x 12 ft. Those numbers come from the approved drawings, not from floor area arithmetic.\n\n**Do you deliver across India?**\nYes, from our Bengaluru and Greater Noida units, and freight is quoted by distance and vehicle rather than included in the prices shown.\n\n**Can I move the door on the drawing?**\nYes, as a custom change, where we redraw the opening, recheck the reinforcement and requote. What we will not do is move it on the render and leave the drawing behind.",
+      "characters": 13910,
+      "visible_characters": 13727,
+      "sha256": "BDF8DA6FE92BB8F3A8910A2CF1A86969D71E0818337923518ED1E265C86905DC"
+    }
+  },
+  "hero_table": [
+    [
+      "Approved sizes",
+      "Six: 20x8, 20x10, 20x12, 30x10, 40x8 and 40x10 ft, all 8 ft 6 in high"
+    ],
+    [
+      "Shell and skin",
+      "1.6 mm corrugated MS sheet on a 150 x 75 x 5 mm MS channel base"
+    ],
+    [
+      "Openings",
+      "3 x 7 ft doors and 4 x 3 ft windows, every cut-out boxed and drained"
+    ],
+    [
+      "Insulation",
+      "50 to 75 mm mineral wool in the walls, 75 to 100 mm in the roof"
+    ],
+    [
+      "Price from",
+      "Rs 3,16,800 ex-GST for 20x8 ft, held to Rs 1,800 per sq ft at 200 sq ft"
+    ]
+  ],
+  "spec_table_1": [
+    [
+      "External sizes",
+      "20x8, 20x10, 20x12, 30x10, 40x8 and 40x10 ft, all 8 ft 6 in external height"
+    ],
+    [
+      "Finished wall thickness",
+      "100 mm"
+    ],
+    [
+      "Bottom frame",
+      "150 x 75 x 5 mm MS C-channel"
+    ],
+    [
+      "Bottom stiffeners",
+      "100 x 50 x 4 mm channels with 80 x 40 x 3 mm cross members and local reinforcement"
+    ],
+    [
+      "Floor frame",
+      "100 x 50 x 3 mm primary members, 80 x 40 x 3 mm secondary members"
+    ],
+    [
+      "Top frame",
+      "80 x 40 x 3 mm MS rectangular-pipe top perimeter"
+    ],
+    [
+      "Corner posts and opening frame",
+      "60 x 60 x 3 mm MS square-pipe posts, 80 x 40 x 3 mm boxed head at each cut-out"
+    ],
+    [
+      "Roof stiffeners",
+      "60 x 40 x 2.5 mm rafters and purlins"
+    ],
+    [
+      "Exterior wall skin",
+      "1.6 mm corrugated MS sheet, vertical profile"
+    ],
+    [
+      "Roof sheet",
+      "1.6 mm corrugated MS sheet"
+    ],
+    [
+      "Roof family",
+      "Flat ISO container roof with container corner posts and ISO corner castings"
+    ],
+    [
+      "Floor base",
+      "24 mm cement board or heavy MS floor plate"
+    ],
+    [
+      "Floor finish",
+      "2 to 3 mm commercial PVC, epoxy, or 3 mm chequered plate"
+    ],
+    [
+      "Coating system",
+      "One red-oxide primer coat plus two compatible anti-rust enamel coats on prepared MS"
+    ],
+    [
+      "Fabrication control",
+      "Welded MS fabrication, cleaned joints, safe edges, dimensional inspection, coating touch-up before dispatch"
+    ]
+  ],
+  "spec_table_2": [
+    [
+      "Wall insulation",
+      "50 to 75 mm mineral wool, fitted around corrugations and conversion steel"
+    ],
+    [
+      "Roof insulation",
+      "75 to 100 mm mineral wool on pins and retainers"
+    ],
+    [
+      "Interior lining",
+      "8 to 10 mm fibre-cement board or 0.50 mm pre-painted metal liner"
+    ],
+    [
+      "Ceiling",
+      "8 mm fibre-cement ceiling or 0.50 mm metal liner, removable panels at service points"
+    ],
+    [
+      "External door",
+      "3 x 7 ft heavy single or double-leaf MS door with industrial lockset; corrugation, profile and colour matched to the adjacent wall"
+    ],
+    [
+      "Internal partition door",
+      "3 x 7 ft, on 40x8 and 40x10 only, one per unit"
+    ],
+    [
+      "Windows",
+      "4 x 3 ft reduced-size aluminium with 5 mm glass, boxed frame and drained sill; sill 3 ft 6 in, head 6 ft 6 in"
+    ],
+    [
+      "Opening counts by size",
+      "20x8, 20x10 and 20x12: 1 door and 6 windows. 30x10: 2 doors and 8 windows. 40x8 and 40x10: 2 external doors, 1 internal door and 10 windows"
+    ],
+    [
+      "Electrical wiring",
+      "Concealed PVC-insulated copper: 1.5 sq mm lighting, 2.5 sq mm sockets, 4 sq mm AC and higher load, subject to the final load schedule"
+    ],
+    [
+      "Electrical protection",
+      "Distribution board with MCB and RCCB protection, protective earthing, segregated lighting, socket and AC circuits"
+    ],
+    [
+      "Electrical fittings",
+      "LED ceiling lights, data points, UPS provision, 6A and 16A sockets, fan points, dedicated AC circuit"
+    ],
+    [
+      "Ventilation and cooling",
+      "Cross ventilation through controlled openings, wall or ceiling fans, split-AC provision"
+    ],
+    [
+      "Plumbing and sanitary",
+      "EXCLUDED unless shown in the approved scope; framed and sealed penetrations required where included"
+    ],
+    [
+      "Lifting provision",
+      "Designed MS lifting hooks or lugs matched to the finished unit weight, issued with an approved lifting and support-point drawing"
+    ],
+    [
+      "Quality checks and warranty",
+      "Pre-dispatch checks on dimensions, welds, coating, roof drainage, sealing, doors, windows and electrical function. Warranty period and exclusions confirmed in the final quotation only"
+    ]
+  ],
+  "prices": [
+    {
+      "size": "20x8",
+      "area": 160,
+      "band": "150-199 sq ft, +10%",
+      "rate": 1980,
+      "ex_gst": 316800,
+      "incl_gst": 373824
+    },
+    {
+      "size": "20x10",
+      "area": 200,
+      "band": "200 sq ft reference",
+      "rate": 1800,
+      "ex_gst": 360000,
+      "incl_gst": 424800
+    },
+    {
+      "size": "20x12",
+      "area": 240,
+      "band": "201-300 sq ft, -4%",
+      "rate": 1728,
+      "ex_gst": 414720,
+      "incl_gst": 489370
+    },
+    {
+      "size": "30x10",
+      "area": 300,
+      "band": "201-300 sq ft, -4%",
+      "rate": 1728,
+      "ex_gst": 518400,
+      "incl_gst": 611712
+    },
+    {
+      "size": "40x8",
+      "area": 320,
+      "band": "301-400 sq ft, -5%",
+      "rate": 1710,
+      "ex_gst": 547200,
+      "incl_gst": 645696
+    },
+    {
+      "size": "40x10",
+      "area": 400,
+      "band": "301-400 sq ft, -5%",
+      "rate": 1710,
+      "ex_gst": 684000,
+      "incl_gst": 807120
+    }
+  ],
+  "forbidden_strings": [
+    "IS 2062",
+    "Corten",
+    "50 mm PUF",
+    "Stacking-rated",
+    "500 kg",
+    "crane cycles",
+    "7-21 working days",
+    "ISO-certified"
+  ],
+  "withdrawn_sizes": [
+    "10x10",
+    "20x20",
+    "40x12"
+  ]
+}

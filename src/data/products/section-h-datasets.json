@@ -1211,106 +1211,147 @@
     }
   },
   "shipping-container-office": {
-    "h2": "Explore Shipping Container Office sizes and applications",
-    "guidanceLine": "People counts are planning guidance based on typical desk layouts; the approved drawing confirms final capacity.",
-    "10x10": {
-      "h2": "10×10 ft: the compact marine-grade steel office",
-      "intro": "The compact conversion: 100 sq ft inside genuine corrugated container steel, with the marine-grade shell that shrugs off weather, transit and rough handling. One supervisor gets a secure, lockable office that reads unmistakably industrial at the gate. The small floor carries the range's highest rate per square foot, so buy it for the shell rather than the economy, where security and durability decide the purchase, nothing else in our range outlasts it. The full-height lockable door and steel shutters are part of the conversion, not accessories.",
-      "h3": "",
-      "applications": [
-        "A liftable one-desk site point",
-        "Hardened corners from the start",
-        "First office on a moving programme",
-        "Secure door for unmanned nights"
-      ]
-    },
     "20x8": {
-      "h2": "20×8 ft: the slim ISO-profile container unit",
-      "intro": "The ISO-profile footprint: 160 sq ft in the slim proportions the shipping industry standardised, sliding into rows, yards and tight margins that were designed around containers to begin with. Three to four desks run in line behind full-height corrugated walls. Ports, depots and logistics yards choose it because it matches their existing handling: the same trucks, the same placement, the same visual language as the boxes around it. Insulation and interior finish are identical to our larger conversions, only the footprint is slim.",
+      "h2": "20 x 8 ft: three seats along a single clear long wall",
+      "intro": "The narrowest approved shell suits a gate office, a stores desk or a two-shift site cabin. Its general arrangement puts all three workstations on the rear long wall.",
+      "paragraph2": "The front wall stays clear apart from the entrance, so nobody works with their back to the door. Six windows light the room: two on each long wall and one centred on each 8 ft end. At 8 ft wide the aisle is tight, so we keep both end walls free of furniture.",
       "h3": "",
       "applications": [
-        "Slim freight with no escort cost",
-        "Boundary offices that relocate",
-        "A travelling two-desk module",
-        "Reinforced cut-outs as standard"
-      ]
+        "One 3 x 7 ft door and six 4 x 3 ft windows",
+        "Three workstations, all on the rear long wall",
+        "Front long wall carries the entrance and nothing else",
+        "One centred window on each 8 ft end wall",
+        "No partition, so the shell is one open room",
+        "Suits a gate post, a stores desk or a two-shift cabin"
+      ],
+      "imageAlt": "Approved general arrangement board for the 20 x 8 ft container office, plan and four elevations",
+      "image": {
+        "src": "/images/products/shipping-container-office/ga/shipping-container-office-20x8x8-5-premium-ga-specification-board-v1.png",
+        "alt": "Approved general arrangement board for the 20 x 8 ft container office, plan and four elevations",
+        "provenance": "render",
+        "width": 3912,
+        "height": 2992,
+        "fit": "contain"
+      },
+      "stats": ""
     },
     "20x10": {
-      "h2": "20×10 ft: the classic converted shipping container",
-      "intro": "The classic of the type: 200 sq ft of converted container office, corrugated steel outside, insulated and fully fitted inside. Four to six people work behind a shell that tolerates craneage, stacking environments and hard weather for years. At ₹1,800 per square foot it costs a premium over our cabin-form units: that premium buys the structural container frame and the service life that comes with it. It is the size most buyers picture when they say container office. Windows and the personnel door are cut and framed into the corrugation to the approved drawing.",
+      "h2": "20 x 10 ft: five seats and a genuine central aisle",
+      "intro": "This is the reference size, and the rate card is anchored here at Rs 1,800 per sq ft. Two extra feet of width change the room completely. Now five people work in it: three along the rear wall and two either side of the door.",
+      "paragraph2": "A clear aisle runs down the middle, so a chair can push back without blocking traffic. Most first-time buyers order this size, then scale up or down from its drawing. Six windows and one door keep the opening count identical to the 20 x 8 ft plan.",
       "h3": "",
       "applications": [
-        "The reference floor, lift-ready",
-        "Four desks that move as one unit",
-        "Relocation papers in the pack",
-        "Durable liner for repeat moves"
-      ]
+        "One door and six windows, the same count as the 20 x 8",
+        "Five workstations, three at the rear and two flanking the door",
+        "Clear central aisle runs the full twenty feet",
+        "Two feet wider than the 20 x 8 on the same length",
+        "The 200 sq ft reference the whole rate card is built from",
+        "Both end walls stay furniture-free for cross ventilation"
+      ],
+      "imageAlt": "Approved general arrangement board for the 20 x 10 ft container office, plan and four elevations",
+      "image": {
+        "src": "/images/products/shipping-container-office/ga/shipping-container-office-20x10x8-5-premium-ga-specification-board-v1.png",
+        "alt": "Approved general arrangement board for the 20 x 10 ft container office, plan and four elevations",
+        "provenance": "render",
+        "width": 3912,
+        "height": 2992,
+        "fit": "contain"
+      },
+      "stats": ""
     },
     "20x12": {
-      "h2": "20×12 ft: extra width in structural container steel",
-      "intro": "Extra width inside structural container steel: 240 sq ft that fits a manager bay or meeting corner alongside five to seven workstations. The wider body keeps the corrugated shell and heavy frame of the type while opening the floor plan beyond a single desk row. Pick it when the office must host decisions rather than just desks, the site demands the toughest shell we build, and the footprint still has to sit in a standard container position. The heavy frame takes the wider roof span without any internal posts interrupting the floor.",
+      "h2": "20 x 12 ft: the same five seats with wider circulation",
+      "intro": "The 12 ft shell is the 20 x 10 drawing widened by one foot on each long wall. Nothing else moves. The door keeps its position, the six windows keep theirs, and the desk count stays at five.",
+      "paragraph2": "Every added inch becomes floor. Choose it when a survey table, a plan chest or a visitor chair must sit clear of the working aisle. Because the width grows and the seat count does not, the price per seat rises.",
       "h3": "",
       "applications": [
-        "Wider rooms that still lift whole",
-        "Meeting space on a mobile module",
-        "Second window bay, reinforced",
-        "Visitor room between site moves"
-      ]
+        "The 20 x 10 plan widened by one foot on each long wall",
+        "Five workstations, unchanged from the 20 x 10 drawing",
+        "One door and six windows, every position unchanged",
+        "The added width becomes circulation rather than seating",
+        "Room for a plan table or a visitor chair clear of the aisle"
+      ],
+      "imageAlt": "Approved general arrangement board for the 20 x 12 ft container office, plan and four elevations",
+      "image": {
+        "src": "/images/products/shipping-container-office/ga/shipping-container-office-20x12x8-5-premium-ga-specification-board-v1.png",
+        "alt": "Approved general arrangement board for the 20 x 12 ft container office, plan and four elevations",
+        "provenance": "render",
+        "width": 3912,
+        "height": 2992,
+        "fit": "contain"
+      },
+      "stats": ""
     },
     "30x10": {
-      "h2": "30×10 ft: the two-room converted container",
-      "intro": "A 300 sq ft conversion that partitions into a working area and a private room behind marine-grade walls. Six to eight people operate daily with reviews held in the partitioned end. The 30 ft body moves as one structural unit: the lifting points are part of the frame, not an addition welded on later. Remote and hard-duty sites pick it when the two-room plan has to survive several postings without losing its geometry or its finish. Both rooms carry independent lighting and AC provision, wired before the unit leaves the factory.",
+      "h2": "30 x 10 ft: twelve seats behind two separate doors",
+      "intro": "Thirty feet is where a site office becomes a team room. Twelve workstations line the two long walls, seven at the back and five at the front.",
+      "paragraph2": "Two doors sit near the ends of the front wall, so a crew can enter one end while a meeting runs at the other. Eight windows keep the middle of a 30 ft box from going dark. The centre bay between the two window pairs stays solid, which is where we run services.",
       "h3": "",
       "applications": [
-        "Two rooms moving as one lift",
-        "Manager cabin plus open front",
-        "Partition braced for transport",
-        "A small building that travels"
-      ]
+        "Two 3 x 7 ft doors, one near each end of the front wall",
+        "Eight windows: four rear, two front, one on each end wall",
+        "Twelve workstations, seven at the rear and five at the front",
+        "The front run is shorter because two doors take wall length",
+        "Solid centre bay between the window pairs carries the services",
+        "No partition, so the thirty feet stay one team room"
+      ],
+      "imageAlt": "Approved general arrangement board for the 30 x 10 ft container office, plan and four elevations",
+      "image": {
+        "src": "/images/products/shipping-container-office/ga/shipping-container-office-30x10x8-5-premium-ga-specification-board-v1.png",
+        "alt": "Approved general arrangement board for the 30 x 10 ft container office, plan and four elevations",
+        "provenance": "render",
+        "width": 3912,
+        "height": 2992,
+        "fit": "contain"
+      },
+      "stats": ""
     },
     "40x8": {
-      "h2": "40×8 ft: the long ISO-form workstation run",
-      "intro": "The long ISO run: 320 sq ft of workstations in a single corrugated-steel line, sized for yards and corridors that already move 40 ft containers daily. Crews of seven to nine keep working in line with doors and windows cut to the approved drawing. Because it handles exactly like a standard 40 ft box, existing container logistics place it without special planning. A working office that ships, lifts and stacks like the freight around it. The corner castings stay functional after conversion, so standard twist-lock handling still applies.",
+      "h2": "40 x 8 ft: a manager cabin plus seven narrow-office seats",
+      "intro": "The first ten feet at one end become a private manager cabin, and the remaining thirty stay open. A partition with a single 3 x 7 ft internal door separates them. The manager has no outside door of their own.",
+      "paragraph2": "Visitors come through the common office, which is exactly how a site supervisor wants it. At 8 ft wide the common run carries seven desks on one wall only, and the front wall stays clear. Ten seats sit down in total once you count the manager and two visitors.",
       "h3": "",
       "applications": [
-        "Line offices for every new site",
-        "Identical modules, every project",
-        "Standard trailers, no surprises",
-        "Three rooms hardened for lifting"
-      ]
-    },
-    "20x20": {
-      "h2": "20×20 ft: the square plan in container steel",
-      "intro": "Four hundred square feet across a square plan in container steel: an open floor with cluster seating and short supervision lines inside the hardest shell we offer. The square format is a custom fabrication rather than a standard ISO footprint, so confirm early that the approach takes a 20 ft wide delivery. Teams choose it when open-plan working and maximum shell protection have to coexist on a single pad, and the plot allows the width. The roof structure is engineered for the span, keeping the interior post-free edge to edge.",
-      "h3": "",
-      "applications": [
-        "A war room that follows the work",
-        "Square team floor in two lifts",
-        "Joint engineered for re-splitting",
-        "Full-team room, programme-ready"
-      ]
+        "Ten feet at one end partitioned off as a manager cabin",
+        "Two external doors plus one 3 x 7 ft internal partition door",
+        "Ten windows spread across the forty foot length",
+        "Seven workstations, all on a single long wall",
+        "The manager has no separate outside door",
+        "Ten seats once the manager and two visitors are counted"
+      ],
+      "imageAlt": "Approved general arrangement board for the 40 x 8 ft container office, plan and four elevations",
+      "image": {
+        "src": "/images/products/shipping-container-office/ga/shipping-container-office-40x8x8-5-premium-ga-specification-board-v1.png",
+        "alt": "Approved general arrangement board for the 40 x 8 ft container office, plan and four elevations",
+        "provenance": "render",
+        "width": 3912,
+        "height": 2992,
+        "fit": "contain"
+      },
+      "stats": ""
     },
     "40x10": {
-      "h2": "40×10 ft: the flagship forty-foot conversion",
-      "intro": "The flagship conversion: 400 sq ft of department-planned office inside a full-height corrugated shell, with reception, engineering and records zones set on the drawing. Eight to twelve people run a complete operation from it. It is the choice for multi-year and multi-posting deployments, where the structural frame keeps its geometry through every lift. If the office will move more often than it sits still, this is the shell to move it in. Every opening is framed and sealed at the factory, keeping the shell's weather rating intact.",
+      "h2": "40 x 10 ft: a square manager room and twelve team seats",
+      "intro": "The largest approved shell gives the manager a true 10 x 10 ft room with three outside windows. Behind the partition, twelve workstations fill the 30 ft common office, seven at the rear and five at the front.",
+      "paragraph2": "Fifteen people can sit down at once, counting the manager and two visitor chairs. Two external doors serve the common office at either end. Order this size when one shell must hold a whole project team.",
       "h3": "",
       "applications": [
-        "The full-length mobile office",
-        "Eight desks lifted as one piece",
-        "Secure doors on the long face",
-        "One crane day at each new site"
-      ]
-    },
-    "40x12": {
-      "h2": "40×12 ft: the largest converted-container floor",
-      "intro": "The largest converted-container floor we build: 480 sq ft partitioned into cabins, meeting space and stores behind corrugated steel. Ten to fourteen people run full site administration at the lowest rate the premium shell reaches: ₹1,656 per square foot. It anchors container campuses as the head office among stacked and joined units. Beyond this footprint, requirements become multi-container layouts engineered to drawing rather than single deliveries. Cabin partitions, meeting walls and store rooms are positioned on the drawing before cutting.",
-      "h3": "",
-      "applications": [
-        "The widest floor that still moves",
-        "Ten desks on a relocating module",
-        "Aisle kept clear for crating up",
-        "A meeting room that moves with you"
-      ]
+        "A square 10 x 10 ft manager room with three outside windows",
+        "Twelve workstations in the thirty foot common office",
+        "Two external doors, one at each end of the common office",
+        "Ten windows and one internal partition door",
+        "Fifteen seats including the manager and two visitor chairs"
+      ],
+      "imageAlt": "Approved general arrangement board for the 40 x 10 ft container office, plan and four elevations",
+      "image": {
+        "src": "/images/products/shipping-container-office/ga/shipping-container-office-40x10x8-5-premium-ga-specification-board-v1.png",
+        "alt": "Approved general arrangement board for the 40 x 10 ft container office, plan and four elevations",
+        "provenance": "render",
+        "width": 3912,
+        "height": 2992,
+        "fit": "contain"
+      },
+      "stats": ""
     }
   },
   "portacabin-office": {
@@ -2180,6 +2221,44 @@
         "48-hour fixed quotation"
       ],
       "imageAlt": "Prefab labour camp, 120x24 ft G+2, from the stair end on the left, three floors on a 120 ft footprint in the bolted panel camp build."
+    }
+  },
+  "accommodation-container": {
+    "20x8": {
+      "h2": "20x8 ft Converted Container for a Small Resident Crew",
+      "intro": "This is the smallest unit we build, and it starts life as a used 20 ft shipping container. We strip the donor shell, repair corrosion, cut and reinforce the openings, then insulate and line it. At 8 ft internal width the plan runs one bunk line down one side with a walking aisle beside it. Site managers choose it for a gate crew, a security detail or a supervisor pair, and for sites where the crane window is short and the unit must land in one lift.",
+      "h3": "",
+      "applications": []
+    },
+    "20x10": {
+      "h2": "20x10 ft Wide-Body Sleeping Module on a Short Footprint",
+      "intro": "At 10 ft width the plan changes completely. Two bunk runs face each other across a central aisle, so the same length holds a materially larger crew and people can pass without turning sideways. No shipping container is made 10 ft wide, so we fabricate this one from MS corrugated sheet on a new steel frame. It is the reference size for our specification and the one most sites start with when the footprint is tight but the headcount is not.",
+      "h3": "",
+      "applications": []
+    },
+    "30x10": {
+      "h2": "30x10 ft Wide-Body Module for a Camp That Stays Put",
+      "intro": "Thirty feet gives you room the 20 ft sizes cannot: a locker and storage zone at one end without stealing bunk space, and enough wall to place windows for genuine cross-ventilation. Fabricated wide-body, like every 10 ft unit. Choose it when the camp is settled for a season or more and the crew needs somewhere to keep kit dry. It also transports on a standard trailer, which the 40 ft sizes do not always do on a constrained access road.",
+      "h3": "",
+      "applications": []
+    },
+    "40x8": {
+      "h2": "40x8 ft Converted Container on a Standard ISO Footprint",
+      "intro": "The second conversion size, built on a used 40 ft shipping container. You get double the length of the 20x8 at the same 8 ft width, so the plan stays a single bunk run with a side aisle and simply runs longer. It suits sites that already handle 40 ft units and have the yard equipment and access for them. Because the donor shell is second-hand, we inspect and record its condition before quoting, and structural repair is priced against what we find.",
+      "h3": "",
+      "applications": []
+    },
+    "40x10": {
+      "h2": "40x10 ft Wide-Body Module for a Full Night Shift Crew",
+      "intro": "This is the workhorse of the range. Forty feet of length at 10 ft width gives two long bunk runs, a central aisle that stays walkable when everyone is changing at once, and enough wall for a proper window and fan layout. Fabricated wide-body. Most sites reach it when one shift no longer fits a 30 ft unit and splitting the crew across two smaller modules costs more in transport than one larger one.",
+      "h3": "",
+      "applications": []
+    },
+    "40x12": {
+      "h2": "40x12 ft Wide-Body Module with the Widest Central Aisle",
+      "intro": "The widest unit we build, and the only one where the central aisle stops being a corridor. Twelve feet leaves room for lockers along the aisle without narrowing it, which matters when a crew changes shift together rather than in ones and twos. Fabricated wide-body on a new steel frame. Check your transport route first: at 12 ft the unit is an over-dimension load on most Indian roads and needs the permit and escort arranged before dispatch.",
+      "h3": "",
+      "applications": []
     }
   }
 }

@@ -38,12 +38,20 @@ export interface RightToExistEntry {
     imageAlt: string;
     imageWidth: number;
     imageHeight: number;
+    /** LC-05 - reserve the ruled 16:9 media slot while the source is awaiting
+        human verification. No image, alt text or substitute is emitted. */
     /** PC-02 revision v1.2 (14 Aug 2026) — optional. The split layout is a mandatory
         cluster design, but a page whose approved copy supplies no card sub-heading or
         card body must render the panel without them rather than invent either. The hub
         supplies both, so its markup is unchanged. */
     subheading?: string;
     body?: string;
+    /** LC-03 (17 Aug 2026) — a second card paragraph, for approved copy that
+        splits the card body into two short paragraphs rather than one
+        paragraph plus bullets (the standing Section 2 shape rule allows
+        either). Rendered directly below `body`. Absent everywhere else, so
+        every other split card's markup is byte-identical. */
+    body2?: string;
     /** PC-03 post-build correction 2 (15 Aug 2026) — a short list of discrete trust
         signals or requirements rendered as checkmarked bullets below `body`. Also
         used by PC-06's Section 2 card (four quotation-input bullets) via the same
@@ -326,32 +334,148 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
       <>If you expect to add units or extend later, the <Link className={linkClass} href={containerHouseHref('prefab-container-homes')}>repeatable module line</Link> earns its premium over a fixed plan.</>
     ),
   },
+  // CO-00 (21 Aug 2026) — build-prompt v1.0 §4.2/§4.3, verbatim, sourced
+  // from draft v2.0. H2 67, P1 383, P2 485 (rendered total 868 across
+  // exactly two paragraphs), plus a third paragraph carrying the closing
+  // CTA sentence per the design lock's "ending with one CTA sentence"
+  // instruction — the CTA sentence is excluded from the 800-900 char body
+  // budget, which the ticket measures as 868 (383+485) only. The one
+  // contextual link sits on "the shipping container office" in paragraph 2,
+  // per §7 row 1; the CTA sentence carries the /contact link, per §7 row 2.
+  //
+  // Split card: H3 + two prose paragraphs (197 + 174 chars) per §4.3 —
+  // supersedes the earlier addendum-sourced bullets-in-card version. CTA is
+  // an on-page anchor to the hero size selector (#size-20x10, the default
+  // variant's chip id, emitted because emitSizeAnchors is true on this
+  // product), not /contact — no verified project-gallery URL exists per §4.3.
   'container-offices': {
-    heading: 'Why the range page instead of one model',
-    body: (
-      <>This page holds the whole container office range so a buyer can set the cabin, shipping-form and site-office builds against each other before committing to one. All three are newly fabricated steel modules from our own works, differing in duty, layout and finish rather than in platform. Start here when you know the need but not yet the model.</>
-    ),
-    comparison: (
-      <>Already certain a construction site office is the job? <Link className={linkClass} href={containerOfficeHref('site-office-container')}>The dedicated site office page</Link> carries that build alone.</>
-    ),
+    heading: 'Which Container Office Fits Your Site? Start With Width, Not Length',
+    bodyParagraphs: [
+      (
+        <>
+          Most buyers arrive knowing they want a steel office module and not knowing which one. Price rarely decides it. The decision turns on whether your shell must be a converted freight container, how often the unit will be relocated, how many people work inside it, and what the electrical load looks like once drawings are frozen. Answer those four and the size follows almost by itself.
+        </>
+      ),
+      (
+        <>
+          This hub covers the standard fabricated container office across six approved general arrangements. Read them by width first. At eight feet the module seats people along opposite walls and both end walls stay blank; at ten feet it takes facing workstations and glazing in every end wall. If your shell must be a genuine ISO freight container, with the corner castings and cargo-door end that come with it, <Link className={linkClass} href={containerOfficeHref('shipping-container-office')}>the shipping container office</Link> is a different build on a different specification.
+        </>
+      ),
+      (
+        <>
+          <Link className={linkClass} href="https://www.samanportable.com/contact">Send us your site pin code, occupancy and equipment list</Link> and we will size the module with you and put the exclusions in writing.
+        </>
+      ),
+    ],
+    splitCard: {
+      imageSrc: '/images/products/container-offices/section2/co-00-container-office-20x10-deep-forest-green-finished-16x9.webp',
+      imageAlt: 'Deep forest green 20x10 ft container office with a central door and windows either side, on paving',
+      imageWidth: 1280,
+      imageHeight: 720,
+      subheading: 'See a finished SAMAN container office before you commit',
+      body: 'This is the 20x10 ft reference module in deep forest green, photographed as delivered. Two hundred square feet, five workstations, six windows and a single door on the approved general arrangement.',
+      body2: 'Judge the corrugation, the window reveals and the door hardware on a real unit. Then pick your footprint from the six tabs below with the finish already settled in your mind.',
+      ctaLabel: 'Compare the six approved layouts',
+      ctaHref: '#size-20x10',
+    },
   },
+  // CO-09 (22 Aug 2026) — build prompt v1.1 §8.1/§8.2, verbatim. Block-1 body
+  // 897 chars across exactly two paragraphs (443 + 454), rule 800-900. The one
+  // contextual link sits on "the full container office range" in paragraph 2,
+  // per §7 row 1; the CTA sentence in the same paragraph carries the /contact
+  // link, per §7 row 2. Split card: H3 + two prose paragraphs (158 + 205
+  // chars) per §8.2, CTA to /contact, same destination as block 1 per the
+  // split-card rule. Image is the Section-2-card 16:9 slot from §7.3 (the
+  // 20x10 reference-size exterior, reallocated from the six supplied
+  // description images).
   'container-office-cabin': {
-    heading: 'Why the cabin model earns its own page',
-    body: (
-      <>The cabin is the office-first member of the range: a defined manager-and-staff layout, computer and data points, lockable records storage and AC provision all arrive as one quotation-ready module. It is specified for the people who will sit in it every working day, not just visit it between rounds. Choose it when the office itself matters more than the relocation schedule.</>
-    ),
-    comparison: (
-      <>Moving the office between projects every season? The <Link className={linkClass} href={containerOfficeHref('shipping-container-office')}>shipping-form container office</Link> is hardened for exactly that duty.</>
-    ),
+    heading: 'Why a fabricated cabin costs less than a converted container',
+    bodyParagraphs: [
+      (
+        <>
+          Two products on this site look almost identical from thirty feet away, and they are not the same thing. SAMAN fabricates this cabin: we cut and weld an MS frame, clad it in corrugated steel and finish it as an office. A shipping container office begins as a freight box that has already worked at sea, and is then cut, reinforced, insulated and lined. The converted unit costs more because the shell costs more and the cutting work is heavier.
+        </>
+      ),
+      (
+        <>
+          Choose the cabin when the office will sit on one site for years, arrive on a trailer and be craned into place once or twice. Choose a converted shell when the unit must move repeatedly, be handled by container equipment, or carry the provenance of a real freight box. If you are weighing the two, <Link className={linkClass} href={CONTAINER_OFFICES_HREF}>the full container office range</Link> sets out what each build is for. Send us your site dimensions and seat count and we will <Link className={linkClass} href="https://www.samanportable.com/contact">price the cabin against your layout</Link>.
+        </>
+      ),
+    ],
+    splitCard: {
+      imageSrc: '/images/products/container-office-cabin/section2/container-office-cabin-section2-20x10-moss-olive.webp',
+      imageAlt: 'Moss olive 20x10 ft container office cabin on paved ground, door and window line on the long wall',
+      imageWidth: 1672,
+      imageHeight: 941,
+      subheading: 'Read the approved plan before you fix a size',
+      body: 'The image beside this text is SAMAN\'s approved visualisation of the 20x10 ft cabin, the 200 sq.ft. reference size that the whole rate card is calculated from.',
+      body2: 'Every size on this page carries its own general-arrangement plan showing the door positions, the window line, the workstation grid and the seat count, so you can test your layout on paper before you order.',
+      ctaLabel: 'Talk to us about your size and layout',
+      ctaHref: 'https://www.samanportable.com/contact',
+    },
+  },
+  // CMO-01 (23 Aug 2026) - Section 2 belongs after the WooCommerce hero rail,
+  // matching the porta-cabins hub's buyer-orientation split card pattern. Lead
+  // copy is the approved S2 block from CMO-01-copy-pack-v1, moved out of the
+  // long WooCommerce description so it renders once in the correct slot.
+  'container-marketing-office': {
+    heading: 'Who Should Buy a Container Marketing Office, and Who Should Not',
+    bodyParagraphs: [
+      (
+        <>
+          Buy this module when strangers walk in and judge your project by the room. A developer running a launch, a plotted-land seller on a highway and a retail brand opening an experience yard all need the same thing. They need a door a visitor can find and a counter that faces it. They also need a private room for the numbers talk, and a clean toilet before the visitor leaves. A site cabin rarely offers any of that.
+        </>
+      ),
+      (
+        <>
+          Skip it when your occupants are only your own team. If the module houses engineers, storekeepers and a printer, the visitor route is wasted floor and wasted money. Compare the duty first, then the size, and read the <Link className={linkClass} href="https://www.samanportable.com/product/container-offices">wider container office range</Link> before you fix a plan. Send SAMAN the size you are considering and your expected daily visitor count. Then <Link className={linkClass} href="https://www.samanportable.com/contact">ask for a written quotation against the approved plan</Link>.
+        </>
+      ),
+    ],
+    splitCard: {
+      imageSrc: '/assets/products/container-marketing-office/description/container-marketing-office-40x16-launch-site.webp',
+      imageAlt: 'The 40 by 16 ft container marketing office set up at a property launch site',
+      imageWidth: 1600,
+      imageHeight: 900,
+      subheading: 'Read the Approved GA Before You Fix the Size',
+      body: 'Every size on this page ships with one approved general arrangement board. The board carries a floor plan, all four wall elevations and an opening ledger, so you can judge the visitor route before fabrication.',
+      body2: 'Match the door, counter, private room, wet core and site approach before you agree a size; that is where a marketing office succeeds or fails.',
+      ctaLabel: 'Ask for a written quotation against the approved plan',
+      ctaHref: 'https://www.samanportable.com/contact',
+    },
   },
   'shipping-container-office': {
-    heading: 'Why the shipping-form build stands apart',
+    heading: 'When a converted container shell suits you better than a cabin',
     body: (
-      <>This model is the range&apos;s relocation specialist: stronger handling interfaces, reinforced cut-outs, durable floor and liner selections and secure doors, with relocation documentation included in the delivery pack. It is engineered to be lifted, moved and lifted again without anything working loose. Choose it when the office&apos;s next address is already written on the project plan.</>
+      <>
+        {"Buyers reach this page for one reason. They want the shell itself to be shipping container steel, not a panel cabin dressed to look like one. That choice pays off in a hard yard. Corrugated 1.6 mm skin shrugs off knocks that dent a thin panel wall. The channel base takes a forklift, a crane and a long trailer run without a purpose-built frame. If your unit will move between sites every few months, that robustness decides the job."}
+      </>
     ),
     comparison: (
-      <>If the unit will stay put and daily office comfort leads, <Link className={linkClass} href={containerOfficeHref('container-office-cabin')}>the office-first cabin model</Link> is specified for that instead.</>
+      <>
+        {"The trade-off sits in the openings. Cutting a 3 x 7 ft door into a container wall removes steel that was carrying load. So we rebuild that path with boxed posts, headers and sills. A fabricated cabin never faces that problem, and it costs less. Compare both routes across "}
+        <Link className={linkClass} href="https://www.samanportable.com/product/container-offices">the wider container office range</Link>
+        {" before you commit. "}
+        <Link className={linkClass} href="https://www.samanportable.com/contact">Send us your site plan and we will price the right shell for it</Link>
+        {"."}
+      </>
     ),
+    splitCard: {
+      imageSrc: '/images/products/shipping-container-office/description/03-shipping-container-office-20x12-exterior.webp',
+      imageAlt: 'Indigo Grey 20 x 12 ft shipping container office, front long wall with window, door and window',
+      imageWidth: 1920,
+      imageHeight: 1080,
+      subheading: 'Approved drawings, not just pictures',
+      body: 'Every image on this page is an approved visualisation built to the general arrangement drawing for that exact size. The openings you count in a render are the openings on the drawing.',
+      bullets: [
+        'Six GA boards published, one for every approved size',
+        'Plan, four elevations, opening map and furniture schedule on one sheet',
+        'Door and window positions fixed before fabrication release',
+        'Full specification and all six drawings in one downloadable PDF',
+      ],
+      ctaLabel: 'Ask us to check a drawing against your site',
+      ctaHref: 'https://www.samanportable.com/contact',
+    },
   },
   'site-office-container': {
     heading: 'Why the site office is its own model',
@@ -382,13 +506,21 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
     // R15 (v1.4) — split card copy is verbatim from the revision ticket; the
     // CTA destination is the site's existing Gallery page, taken from the live
     // main navigation and verified 200.
+    // PC-00 asset refresh v1 (21 Aug 2026) — copy pack C7/C8/C9: the card image
+    // is an approved visualisation, not a delivered unit, so the heading/body
+    // no longer claim "finished cabins"/"real deliveries" beside it. C9 is a
+    // new second paragraph (`body2`) that keeps that claim, correctly, at the
+    // CTA destination instead. CTA label/href are unchanged per the copy pack's
+    // Part C ("must NOT change" list). Image is native 1920x1080 (was 1280x720)
+    // per the ticket's "convert only, no resize except the GA boards" rule.
     splitCard: {
-      imageSrc: '/images/products/porta-cabins/section2/saman-porta-cabin-20x10-elevated.webp',
-      imageAlt: 'Elevated view of a 20x10 ft SAMAN porta cabin exterior',
-      imageWidth: 1280,
-      imageHeight: 720,
-      subheading: 'See finished SAMAN cabins before you decide',
-      body: 'Browse completed porta cabin projects from our Bengaluru and Greater Noida factories — site offices, guard rooms, retail units and interiors. Judge the finish, the openings and the build quality on real deliveries, then shortlist your size with confidence.',
+      imageSrc: '/images/products/porta-cabins/section2/porta-cabin-section2-20x10-desert-ochre-site.webp',
+      imageAlt: 'Desert Ochre 20x10 ft porta cabin placed on levelled ground at an active construction site',
+      imageWidth: 1920,
+      imageHeight: 1080,
+      subheading: 'Standard build here, real deliveries in the gallery',
+      body: "The image beside this text is SAMAN's approved visualisation of the standard 20x10 ft build, shown so you can read the openings, the corrugation and the base frame clearly.",
+      body2: 'For finished units from our Bengaluru and Greater Noida factories, including site offices, guard rooms and retail units, open the project gallery and judge the finish on real deliveries.',
       ctaLabel: 'Explore the project gallery',
       ctaHref: '/gallery',
     },
@@ -850,6 +982,38 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
       ctaHref: 'https://www.samanportable.com/contact',
     },
   },
+  // LC-05 (16 Aug 2026) - build prompt v1 Section 2, both blocks mandatory.
+  'accommodation-container': {
+    heading: 'Container Module or Panel Bunkhouse: Which One Your Site Needs',
+    bodyParagraphs: [
+      (
+        <>
+          A container module and a panel bunkhouse both sleep site crews, and they are built differently. SAMAN fabricates the bunkhouse from PUF and EPS panel on a steel base. The Accommodation Container is a container-form steel box. At 8 ft width it begins as a used shipping container, and above that width we weld it up from MS corrugated sheet. Choose the container route when the unit will be lifted between sites repeatedly and handled by yard equipment.
+        </>
+      ),
+      (
+        <>
+          Width is the second decision, and it changes the plan more than length does. An 8 ft shell gives one bunk run and a side aisle. A 10 or 12 ft wide-body gives two bunk runs with a central aisle, which is why most site managers move up once the crew grows. The wider range of worker housing, from single modules to complete settlements, sits on the <Link className={linkClass} href="https://www.samanportable.com/product/labor-colony">labour colony hub</Link>. <Link className={linkClass} href="https://www.samanportable.com/contact">Send us your headcount and site access and we will quote the right width.</Link>
+        </>
+      ),
+    ],
+    splitCard: {
+      imageSrc: '/images/products/accommodation-container/section2/lc05-split-build-routes.webp',
+      imageAlt: 'Converted 20x8 ft shipping container beside a fabricated 40x12 ft wide-body module',
+      imageWidth: 1280,
+      imageHeight: 720,
+      subheading: 'Converted Shell or Fabricated Wide-Body?',
+      body: 'The two routes are priced and specified differently, and the difference is visible on the drawing rather than in the brochure. Match the route to how the unit will be moved and how long it stays.',
+      bullets: [
+        'Converted shells: 20x8 ft and 40x8 ft only',
+        'Wide-body fabricated: 20x10, 30x10, 40x10, 40x12 ft',
+        'Donor condition is inspected and recorded before build',
+        'Cut openings receive engineered headers and jambs',
+      ],
+      ctaLabel: 'Ask for a route recommendation',
+      ctaHref: 'https://www.samanportable.com/contact',
+    },
+  },
   'prefab-labor-camps': {
     heading: 'Why choose the relocatable camp build',
     body: (
@@ -862,6 +1026,48 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
         If the housing stays on one site for its whole life, the Labour Colony configuration is more economical, with <Link className={linkClass} href={LABOUR_COLONY_HREF}>fixed and movable options side by side</Link> on the range page.
       </>
     ),
+  },
+  // LC-06 (17 Aug 2026) - Section 2 "buyer orientation" rewrite from copy pack
+  // v1, verbatim, SHA-256 verified against every field (28/28 match). Both
+  // paragraphs are equal-weight prose on `bodyParagraphs`. The single
+  // approved contextual link sits inside paragraph 2: `prefab labour camps`
+  // to prefab-labor-camps. The ticket's own separate SECTION2_CTA field has
+  // no top-level ctaLabel/ctaHref slot to render into on this branch of the
+  // interface (RightToExistEntry only carries ctaLabel/ctaHref inside
+  // splitCard) - the LC-04 revert removed that field before this page
+  // merged, so the CTA sentence is instead rendered as an inline link
+  // closing paragraph 2, the same convention labor-hutments above already
+  // uses for its own closing CTA.
+  'prefab-site-canteen': {
+    heading: 'Buying the canteen building rather than the catering operation',
+    bodyParagraphs: [
+      (
+        <>
+          Most canteen quotations in this market arrive as a single rate per square foot with no scope attached. That is why the same 400 sq ft canteen can be quoted at Rs 600 and at Rs 1,200. One price covers a clean enclosure with a serving hatch and a drain. The other quietly includes a cookline, an extraction hood and a set of tables. Neither supplier is lying. They are answering different questions.
+        </>
+      ),
+      (
+        <>
+          This page answers one question only: what does the building cost. If you also need the whole camp around it, our <Link className={linkClass} href="https://www.samanportable.com/product/labor-colony/prefab-labor-camps">prefab labour camps</Link> page prices accommodation blocks the same way, block by block. Your caterer or contractor brings the cooking equipment, and we frame the openings and run the services it needs. Tell us the headcount, the number of meal sittings and whether cooking happens on site or arrives in insulated carriers, and the size answers itself. <Link className={linkClass} href="https://www.samanportable.com/contact">Send us your headcount and meal sittings for a canteen quotation</Link>.
+        </>
+      ),
+    ],
+    splitCard: {
+      imageSrc: '/images/products/prefab-site-canteen/section2/canteen-splitcard-serving-and-dining.webp',
+      imageAlt: 'Prefab site canteen showing the serving hatch side and dining glazing',
+      imageWidth: 1920,
+      imageHeight: 1080,
+      subheading: 'Why we do not print a diner count on this page',
+      body: 'Seating follows the table plan and the number of meal sittings, not the floor area. The same 600 sq ft block feeds twice as many workers on two sittings as on one. A published diner count would be a guess.',
+      bullets: [
+        'Two sittings roughly double the workforce a block serves',
+        'Bench seating fits more diners than four-seat tables',
+        'Serving-line length sets the queue, not the dining floor',
+        'Tray return and wash areas take floor away from seating',
+      ],
+      ctaLabel: 'Ask for a seating and sittings layout',
+      ctaHref: 'https://www.samanportable.com/contact',
+    },
   },
   'portable-office': {
     heading: 'Why the range page and not a single cabin',
@@ -940,6 +1146,63 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
         Team growing past four, or need a store and partitions? The full portable office cabin range carries the nine-size ladder.
       </>
     ),
+  },
+  'oil-field-camp': {
+    heading: 'Why a Camp That Moves Is Built Differently From One That Stays',
+    bodyParagraphs: [
+      (
+        <>
+          Buyers reach this page from two directions. Some need worker housing for a project that will run in one place for years, which is a settlement question rather than a module question. Others need four to sixteen people fed, rested and back on shift beside a rig that will be released in a few months. This page is written for the second buyer. A camp that stays can be bolted together on a prepared pad; a camp that moves has to survive every lift, every move and every reinstatement.
+        </>
+      ),
+      (
+        <>
+          That difference drives almost every choice here: the runner-beam skid, the welded superstructure, the reduced glazing, the service entries that disconnect without cutting. If your crew is not going anywhere, a fixed block from our <Link className={linkClass} href={labourHref('prefab-labor-camps')}>prefab labour camps range</Link> will serve you better and cost less. If it is, <Link className={linkClass} href="/contact">send us the location, the crew size and the moves you expect</Link> and we will quote the right module.
+        </>
+      ),
+    ],
+    splitCard: {
+      imageSrc: '/images/products/oil-field-camp/section2/oil-field-camp-door-and-services-detail.webp',
+      imageAlt: 'Door end of an oil field camp module showing steps, external AC condenser and protected electrical entry',
+      imageWidth: 1600,
+      imageHeight: 900,
+      subheading: 'Shell Price or Fitted Price: What Changes',
+      body: 'Two prices appear against every size. The shell rate covers the module itself: structure, skid, envelope, insulation, lining, floor finish, doors, windows, lighting, sockets and earthing.',
+      body2: 'The fitted rate adds what crews always ask about: bunk beds, the toilet fit-out and the split AC unit itself. The shell carries AC provision, meaning the bracket, the point and the wall penetration, not the machine.',
+      ctaLabel: 'Ask for a fitted-scope quotation',
+      ctaHref: 'https://www.samanportable.com/contact',
+    },
+  },
+  'ablution-block': {
+    heading: 'When One Wash Block Beats a Scatter of Single Toilet Cabins',
+    bodyParagraphs: [
+      (
+        <>
+          Most camps reach this page after the single cabins stop coping. Ten units mean ten water connections, ten drain runs and ten cleaning stops, and the crew still queues at the two nearest ones. A multi-toilet ablution block replaces that with one building on one manifold, planned around the wash routine rather than around what fits on a trailer. It belongs inside a wider camp layout, so plan it alongside the accommodation and the service spine on your <Link className={linkClass} href={LABOUR_COLONY_HREF}>labour colony</Link> plot.
+        </>
+      ),
+      (
+        <>
+          The block suits any project where the workforce stays long enough to justify a settled wash routine: a construction camp, a plant shutdown, a highway or transmission job, a mine, a relief deployment. Where you need sanitation for a few people at a gate, a single cabin is still the cheaper answer. Send us your headcount, your shift pattern and your drainage level, and <Link className={linkClass} href="/contact">request a fixed quotation</Link>; we return it within 48 hours.
+        </>
+      ),
+    ],
+    splitCard: {
+      imageSrc: '/images/products/ablution-block/section2/ablution-block-split-card-camp-context.webp',
+      imageAlt: 'Ablution block installed on an Indian labour camp site, entry and service side both visible',
+      imageWidth: 1600,
+      imageHeight: 900,
+      subheading: 'Choose the Depth Before You Choose the Length',
+      body: 'Length adds cubicles. Depth changes the plan. At 10 ft the block runs one bank served from one wall. At 12 ft two banks face each other across a central pipe duct, and every fixture sits nearer its isolation valve.',
+      bullets: [
+        '10 ft depth: one bank, shortest service run, smallest plot',
+        '12 ft depth: two banks sharing one central pipe duct',
+        '20 ft depth: dry entry lobby and split sides become possible',
+        'Every depth ships as one factory-built and wet-tested block',
+      ],
+      ctaLabel: 'Send your camp headcount and site levels and request a fixed quotation.',
+      ctaHref: 'https://www.samanportable.com/contact',
+    },
   },
 };
 

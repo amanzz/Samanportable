@@ -386,7 +386,9 @@ const ProductTabs: React.FC<ProductTabsProps> = ({ description, specificationsHt
               </div>
               <div>
                       <h3 className="text-2xl font-bold text-foreground">Shipping & Delivery</h3>
-                      <p className="text-muted-foreground">Delivery information and warranty details</p>
+                      <p className="text-muted-foreground">
+                        {shippingHtml && shippingHtml.trim() ? 'Freight tables and delivery terms' : 'Delivery information and warranty details'}
+                      </p>
               </div>
             </div>
                   <div className="prose prose-lg max-w-none">

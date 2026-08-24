@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Check } from 'lucide-react';
@@ -10,8 +11,40 @@ import {
 
 export { hasRightToExistEntry };
 
-export default function RightToExist({ productSlug }: { productSlug: string }) {
+type RightToExistProps = {
+  productSlug: string;
+  /** LC-05 CWV v2: opt-in only. Default false preserves sibling output. */
+  deferSplitImageUntilVisible?: boolean;
+  /** Optional upstream paint gate used only with deferred images. */
+  imageLoadGate?: boolean;
+};
+
+export default function RightToExist({
+  productSlug,
+  deferSplitImageUntilVisible = false,
+  imageLoadGate = true,
+}: RightToExistProps) {
   const entry = getRightToExistEntry(productSlug);
+  const splitMediaRef = useRef<HTMLDivElement>(null);
+  const [splitImageVisible, setSplitImageVisible] = useState(!deferSplitImageUntilVisible);
+
+  useEffect(() => {
+    if (!deferSplitImageUntilVisible || splitImageVisible || !entry?.splitCard) return;
+    const media = splitMediaRef.current;
+    if (!media || !('IntersectionObserver' in window)) {
+      setSplitImageVisible(true);
+      return;
+    }
+    const observer = new IntersectionObserver((entries) => {
+      if (entries.some((item) => item.isIntersecting)) {
+        setSplitImageVisible(true);
+        observer.disconnect();
+      }
+    }, { rootMargin: '0px' });
+    observer.observe(media);
+    return () => observer.disconnect();
+  }, [deferSplitImageUntilVisible, entry?.splitCard, splitImageVisible]);
+
   if (!entry) return null;
 
   const headingId = getRightToExistHeadingId(productSlug);
@@ -87,8 +120,8 @@ export default function RightToExist({ productSlug }: { productSlug: string }) {
   // entries that supply one, so every other product page is unchanged.
   const splitCard = card && (
     <div className="saman-s2-split">
-      <div className="saman-s2-split-media">
-        <Image
+      <div ref={splitMediaRef} className="saman-s2-split-media">
+        {imageLoadGate && splitImageVisible && <Image
           src={card.imageSrc}
           unoptimized={shouldBypassOptimizer(card.imageSrc)}
           alt={card.imageAlt}
@@ -96,7 +129,7 @@ export default function RightToExist({ productSlug }: { productSlug: string }) {
           height={card.imageHeight}
           loading="lazy"
           sizes="(max-width: 767px) 100vw, 45vw"
-        />
+        />}
       </div>
       <div className="saman-s2-split-body">
         {/* PC-02 revision v1.2 — both are optional now. A page whose approved copy
@@ -105,6 +138,7 @@ export default function RightToExist({ productSlug }: { productSlug: string }) {
         {copyInPanel && heading}
         {card.subheading && <h3 className="saman-s2-split-subheading">{card.subheading}</h3>}
         {card.body && <p className="saman-s2-split-text">{card.body}</p>}
+        {card.body2 && <p className="saman-s2-split-text mt-2">{card.body2}</p>}
         {/* PC-03 post-build correction 2 — checkmarked trust-signal bullets below
             the card body. Same Check icon and colour token the Section 3 explorer
             already uses for its application list, so no new visual pattern is

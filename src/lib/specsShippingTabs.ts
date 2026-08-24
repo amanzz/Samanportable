@@ -25,6 +25,7 @@ import c08Specifications from '@/data/products/c08-specifications.json';
 import c05Specifications from '@/data/products/c05-specifications.json';
 import c05SubpageSpecifications from '@/data/products/c05-subpage-specifications.json';
 import c05SubpageSpecifications2 from '@/data/products/c05-subpage-specifications-2.json';
+import cmoSpecifications from '@/data/products/container-marketing-office-specs.json';
 
 type SpecGroups = Record<string, Record<string, string | number>>;
 export interface SpecsEntry {
@@ -57,6 +58,9 @@ interface C01SpecificationEntry {
   /** PC-00 (14 Aug 2026) — optional narrative shown above the group cards.
       Absent on every entry except porta-cabins → byte-identical elsewhere. */
   narrative?: string;
+  /** LC-05 - approved narrative paragraphs rendered after both tables and their
+      interleaved diagrams. Absent on siblings, preserving their existing order. */
+  narrativeParagraphsAfter?: string[];
   /** PC-00 — optional technical diagram rendered after the group cards, with
       its mandatory illustrative-only caption. Absent everywhere else. */
   diagram?: { src: string; alt: string; caption: string; width: number; height: number };
@@ -65,6 +69,29 @@ interface C01SpecificationEntry {
       `diagram`, in order. Absent on every other entry, so the single-diagram path
       above is untouched and their markup stays byte-identical. */
   diagrams?: { src: string; alt: string; caption: string; width: number; height: number }[];
+  /** PC-00 asset-refresh v1 (21 Aug 2026) — one short paragraph rendered directly
+      above the diagram(s), after the group cards. No existing field renders in
+      that position: `narrative` sits above the cards, `narrativeParagraphsAfter`
+      sits after the diagram(s). Needed because copy pack string C10 gives the
+      two new porta-cabins diagrams a shared reason to be on the page, which
+      belongs beside them, not above the specification tables. Absent on every
+      other entry, so their markup stays byte-identical. */
+  diagramsIntro?: string;
+  /** LC-05 - one approved diagram after a named table/group. */
+  diagramsAfterGroup?: Record<string, { src: string; alt: string; caption?: string; width: number; height: number }>;
+  /** LC-05 - exact buyer-facing column labels for its two ruled tables.
+      LC-07 (17 Aug 2026) - `third`/`fourth` extend this to the two
+      four-column headers, which were previously hardcoded "Scope class" /
+      "What it means for you". Both optional, defaulting to that exact text,
+      so labor-colony (the only other four-column entry) stays byte-identical. */
+  columnHeaders?: { first: string; second: string; third?: string; fourth?: string };
+  /** CO-00 (19 Aug 2026) — per-group override for the 3rd/4th four-column
+      headers, keyed by group name. Falls back to `columnHeaders` and then the
+      hardcoded default when a group has no entry here. Needed when an entry's
+      two four-column tables use different 3rd-column labels (e.g. "Section /
+      size / thickness" vs "Specification"). Absent on every other entry
+      (labor-colony has one table, one header set) → byte-identical elsewhere. */
+  groupColumnHeaders?: Record<string, { third?: string; fourth?: string }>;
   /** R4 (14 Aug 2026) — opt-in premium `.saman-table` styling on this entry's
       group tables. Absent/false on every entry except porta-cabins → the
       existing plain table markup is byte-identical elsewhere. */
@@ -172,6 +199,13 @@ function buildC01SpecificationsHtml(entry: C01SpecificationEntry): string {
   // Absent on every entry except labor-colony → every other table's markup
   // below is unreached and byte-identical.
   const fourColumn = entry.specifications.some((row) => row.scopeClass !== undefined);
+  const asFigure = (d: { src: string; alt: string; caption?: string; width: number; height: number }) =>
+    `<figure class="mt-4 m-0 rounded-xl border border-slate-200 bg-white p-5 shadow-sm">` +
+      `<img src="${esc(d.src)}" alt="${esc(d.alt)}" ` +
+      `width="${d.width}" height="${d.height}" loading="lazy" ` +
+      `class="w-full h-auto rounded-lg" />` +
+      (d.caption ? `<figcaption class="mt-2 text-xs italic text-slate-500">${esc(d.caption)}</figcaption>` : '') +
+    `</figure>`;
   const groups = Array.from(new Set(entry.specifications.map((row) => row.group)));
   const cards = groups.map((group) => {
     const rows = entry.specifications
@@ -199,18 +233,21 @@ function buildC01SpecificationsHtml(entry: C01SpecificationEntry): string {
       ? `<div class="saman-table-wrap"><table class="saman-table"><thead><tr>`
       : `<div class="overflow-x-auto"><table class="w-full border-collapse"><thead><tr>`;
     const th = entry.premiumTables ? '' : ` class="${TH}"`;
+    const groupHeaders = entry.groupColumnHeaders?.[group];
     const extraHeaders = fourColumn
-      ? `<th${th}>Scope class</th><th${th}>What it means for you</th>`
+      ? `<th${th}>${esc(groupHeaders?.third || entry.columnHeaders?.third || 'Scope class')}</th><th${th}>${esc(groupHeaders?.fourth || entry.columnHeaders?.fourth || 'What it means for you')}</th>`
       : '';
-    return (
+    const card = (
       `<section class="mb-4 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">` +
         `<h4 class="m-0 bg-slate-50 px-4 py-3 text-base font-bold text-emerald-900">${esc(group)}</h4>` +
         tableOpen +
-          `<th${th}>Component</th><th${th}>${fourColumn ? 'Baseline specification' : 'Detail'}</th>` +
+          `<th${th}>${esc(entry.columnHeaders?.first || 'Component')}</th><th${th}>${esc(entry.columnHeaders?.second || (fourColumn ? 'Baseline specification' : 'Detail'))}</th>` +
           extraHeaders +
         `</tr></thead><tbody>${rows}</tbody></table></div>` +
       `</section>`
     );
+    const groupDiagram = entry.diagramsAfterGroup?.[group];
+    return card + (groupDiagram ? asFigure(groupDiagram) : '');
   }).join('');
 
   // PC-00 (14 Aug 2026) — optional narrative above the cards and optional
@@ -219,20 +256,19 @@ function buildC01SpecificationsHtml(entry: C01SpecificationEntry): string {
   const narrative = entry.narrative
     ? `<p class="mb-5 text-sm leading-relaxed text-slate-600">${esc(entry.narrative)}</p>`
     : '';
-  const asFigure = (d: NonNullable<C01SpecificationEntry['diagram']>) =>
-    `<figure class="mt-4 m-0 rounded-xl border border-slate-200 bg-white p-5 shadow-sm">` +
-      `<img src="${esc(d.src)}" alt="${esc(d.alt)}" ` +
-      `width="${d.width}" height="${d.height}" loading="lazy" ` +
-      `class="w-full h-auto rounded-lg" />` +
-      `<figcaption class="mt-2 text-xs italic text-slate-500">${esc(d.caption)}</figcaption>` +
-    `</figure>`;
   // Single-diagram entries keep the exact markup they already emit; `diagrams`
   // is the PC-04 multi-drawing path and is absent everywhere else.
   const diagram = entry.diagram
     ? asFigure(entry.diagram)
     : (entry.diagrams || []).map(asFigure).join('');
+  const diagramsIntro = entry.diagramsIntro
+    ? `<p class="mb-4 text-sm leading-relaxed text-slate-600">${esc(entry.diagramsIntro)}</p>`
+    : '';
+  const narrativeAfter = (entry.narrativeParagraphsAfter || [])
+    .map((paragraph) => `<p class="mt-4 text-sm leading-relaxed text-slate-600">${esc(paragraph)}</p>`)
+    .join('');
 
-  return `<div class="not-prose">${narrative}${cards}${diagram}</div>`;
+  return `<div class="not-prose">${narrative}${cards}${diagramsIntro}${diagram}${narrativeAfter}</div>`;
 }
 
 export function buildC04SpecificationsHtml(pageSlug: string): string {
@@ -422,6 +458,10 @@ const WARRANTY_BLOCK =
 
 /** The shared Shipping tab body (identical on all 13 pages). */
 export interface ShippingHtmlOptions {
+  /** Opt-in intro override for page-scoped approved shipping copy. */
+  intro?: string;
+  /** Opt-in warranty block rendering. Default false; pages must explicitly opt in. */
+  includeWarrantyBlock?: boolean;
   /**
    * PC-05 revision v1.3 (14 Aug 2026) — opt-in lead image, rendered once
    * between the intro paragraph and the free-delivery banner. Absent for
@@ -443,6 +483,7 @@ export interface ShippingHtmlOptions {
 }
 
 export function buildShippingHtml(options: ShippingHtmlOptions = {}): string {
+  const intro = options.intro || SHIPPING_INTRO;
   const leadImageHtml = options.leadImage
     ? `<figure class="mb-4 m-0 overflow-hidden rounded-xl border border-slate-200">` +
         `<img src="${esc(options.leadImage.src)}" alt="${esc(options.leadImage.alt)}" width="1280" height="720" loading="lazy" class="w-full h-auto" />` +
@@ -454,7 +495,7 @@ export function buildShippingHtml(options: ShippingHtmlOptions = {}): string {
     : '';
   return (
     `<div class="not-prose space-y-2">` +
-      `<p class="mb-4 text-sm leading-relaxed text-slate-600">${esc(SHIPPING_INTRO)}</p>` +
+      `<p class="mb-4 text-sm leading-relaxed text-slate-600">${esc(intro)}</p>` +
       leadImageHtml +
       `<div class="mb-6 flex items-start gap-3 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3">` +
         `<span class="mt-1.5 h-2.5 w-2.5 shrink-0 rounded-full bg-green-600" aria-hidden="true"></span>` +
@@ -466,7 +507,7 @@ export function buildShippingHtml(options: ShippingHtmlOptions = {}): string {
       destinationTable('Typical destinations from our Bengaluru unit (South zone)', DEST_NOTE, DEST_SOUTH) +
       destinationTable('Typical destinations from our Greater Noida unit (North zone)', DEST_NOTE, DEST_NORTH) +
       `<p class="mt-2 text-xs leading-relaxed text-slate-500">${esc(FOOTNOTES)}</p>` +
-      WARRANTY_BLOCK +
+      (options.includeWarrantyBlock ? WARRANTY_BLOCK : '') +
     `</div>`
   );
 }
@@ -816,10 +857,66 @@ export function buildPortableOfficeShippingHtml(): string {
   );
 }
 
+type CmoSpecTable = { title: string; head: string[]; rows: string[][] };
+type CmoSpecDiagram = { src: string; alt: string; caption: string; width: number; height: number };
+const CMO_SPECS = cmoSpecifications as {
+  narrative: string[];
+  tables: CmoSpecTable[];
+  diagrams: CmoSpecDiagram[];
+};
+
+function cmoTable(table: CmoSpecTable): string {
+  const head = table.head.map((cell) => `<th class="${TH}">${esc(cell)}</th>`).join('');
+  const rows = table.rows
+    .map(
+      (row) =>
+        `<tr>` +
+          row.map((cell, index) => `<td class="${TD}${index === 0 ? ' font-semibold text-slate-700' : ''}">${esc(cell)}</td>`).join('') +
+        `</tr>`
+    )
+    .join('');
+  return (
+    `<section class="mb-4 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">` +
+      `<h4 class="m-0 bg-slate-50 px-4 py-3 text-base font-bold text-emerald-900">${esc(table.title)}</h4>` +
+      `<div class="overflow-x-auto"><table class="w-full border-collapse"><thead><tr>${head}</tr></thead><tbody>${rows}</tbody></table></div>` +
+    `</section>`
+  );
+}
+
+function cmoDiagram(diagram: CmoSpecDiagram): string {
+  return (
+    `<figure class="mb-4 rounded-xl border border-slate-200 bg-white p-5 shadow-sm">` +
+      `<img src="${esc(diagram.src)}" alt="${esc(diagram.alt)}" width="${diagram.width}" height="${diagram.height}" loading="lazy" class="h-auto w-full rounded-lg" />` +
+      `<figcaption class="mt-2 text-xs italic text-slate-500">${esc(diagram.caption)}</figcaption>` +
+    `</figure>`
+  );
+}
+
+function buildContainerMarketingOfficeSpecificationsHtml(): string {
+  const narrative = CMO_SPECS.narrative
+    .map((paragraph) => `<p class="mb-4 text-sm leading-relaxed text-slate-600">${esc(paragraph)}</p>`)
+    .join('');
+  return (
+    `<div class="not-prose">` +
+      narrative +
+      cmoTable(CMO_SPECS.tables[0]) +
+      cmoDiagram(CMO_SPECS.diagrams[0]) +
+      cmoTable(CMO_SPECS.tables[1]) +
+      cmoDiagram(CMO_SPECS.diagrams[1]) +
+    `</div>`
+  );
+}
+
 /** Both tab bodies for a page slug, or null when the slug is not in scope. */
 export function getProductTabsHtml(
   pageSlug: string | undefined | null
 ): { specificationsHtml: string; shippingHtml: string } | null {
+  if (pageSlug === 'container-marketing-office') {
+    return {
+      specificationsHtml: buildContainerMarketingOfficeSpecificationsHtml(),
+      shippingHtml: buildContainerOfficesShippingHtml(),
+    };
+  }
   if (pageSlug && C01_DATASET.products[pageSlug]) {
     return {
       specificationsHtml: buildC01SpecificationsHtml(C01_DATASET.products[pageSlug]),

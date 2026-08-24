@@ -36,7 +36,9 @@ export type ProductId =
   | 'labour-colony'
   | 'labor-sheds'
   | 'labor-hutments'
-  | 'prefab-labor-camps';
+  | 'prefab-labor-camps'
+  | 'oil-field-camp'
+  | 'ablution-block';
 
 export type ColonyProductSlug = 'labor-colony' | 'labor-sheds' | 'labor-hutments' | 'prefab-labor-camps';
 
@@ -204,6 +206,10 @@ export interface RenderCalculatorOptions {
    * calculator logic changes; this hides markup only.
    */
   hidePublishedPriceTable?: boolean;
+  /** LC-05 CWV: explicit opt-in for viewport-delayed client enhancement. */
+  deferEnhancement?: boolean;
+  /** Opt-in copy suppression for pages without approved lead-time/response-time claims. */
+  suppressCommitmentCopy?: boolean;
 }
 
 export interface EmbeddedProductSummary {
@@ -244,6 +250,14 @@ export const PRODUCTS: readonly ProductDefinition[] = [
   { id: 'labor-sheds', name: 'Labour Sheds', subtitle: 'Open-hall worker dormitories' },
   { id: 'labor-hutments', name: 'Labour Hutments', subtitle: 'Room-based worker housing' },
   { id: 'prefab-labor-camps', name: 'Prefab Labour Camps', subtitle: 'Relocatable worker camp blocks' },
+  // LC-03 (17 Aug 2026) — not a colony product (isColonyProduct's bespoke
+  // multi-step flow is scoped to the four entries above): this page publishes
+  // its own six-size ladder and prices from it directly, same pattern as
+  // container-cafe above.
+  { id: 'oil-field-camp', name: 'Oil Field Camp', subtitle: 'Skid-mounted relocatable crew modules', ladderKey: 'oil-field-camp' },
+  // LC-07 (17 Aug 2026) — not a colony product: publishes its own six-size
+  // ladder and prices from it directly, same pattern as oil-field-camp above.
+  { id: 'ablution-block', name: 'Multi-Toilet Ablution Block', subtitle: 'Camp wet-service and sanitation block', ladderKey: 'ablution-block' },
 ] as const;
 
 /**
@@ -294,6 +308,10 @@ const PRODUCT_ICON: Record<ProductId, IconName> = {
   'labor-sheds': 'colony',
   'labor-hutments': 'colony',
   'prefab-labor-camps': 'colony',
+  'oil-field-camp': 'colony',
+  // LC-07 (17 Aug 2026) — matches every other labor-colony-cluster product's
+  // icon; no IconName value fits a wet-service block more specifically.
+  'ablution-block': 'colony',
 };
 
 function productIcon(id: ProductId): string {
@@ -3001,24 +3019,49 @@ export function renderProductPlanPreview(productId: string, ladderKey?: string |
  * The entry band. Placeholder copy only, each slot marked data-copy-slot.
  */
 export function renderCalculatorEntrySection(options: {
-  productId: string;
+  productId?: string;
   productName: string;
   ladderKey?: string | null;
   href?: string;
+  photo?: {
+    webpSrcSet: string;
+    jpgSrcSet: string;
+    src: string;
+    alt: string;
+  };
+  suppressCommitmentCopy?: boolean;
 }): string {
-  const product = productFor(options.productId as ProductId);
-  const rows = productPriceRows(product, options.ladderKey ?? product.ladderKey);
-  const entry = rows.find((row) => row.ex !== null && row.ex !== undefined);
+  // LC-06 FIX v1.1 (17 Aug 2026) — `productId` is now optional so a no-prefill
+  // route (this page's own calculator misattribution fix; also every existing
+  // UNVERIFIED_PRODUCT_ID_CLUSTERS route) can still show this entry band
+  // instead of no band at all. With no productId there is no ladder to read a
+  // price from, so `entry` stays undefined and the existing "Design your
+  // {product}" branch below renders exactly as it already does for
+  // container-cafe and every other unpriced-ladder route. Every existing
+  // caller still passes a real productId, so their output is unchanged.
+  const entry = options.productId
+    ? (() => {
+        const product = productFor(options.productId as ProductId);
+        const rows = productPriceRows(product, options.ladderKey ?? product.ladderKey);
+        return rows.find((row) => row.ex !== null && row.ex !== undefined);
+      })()
+    : undefined;
     // An in-page anchor, not a route. The whole calculator is already embedded
   // further down this page; sending the buyer to /cabin-cost-calculator threw
   // away the product context and the scroll position. The standalone route
   // stays exactly as it is for direct traffic.
   const href = options.href || '#cabin-calculator';
+  const photo = options.photo || {
+    webpSrcSet: '/credentials/optimized/calculator-band-v1-768.webp 768w, /credentials/optimized/calculator-band-v1-1216.webp 1216w, /credentials/optimized/calculator-band-v1-1440.webp 1440w, /credentials/optimized/calculator-band-v1-1926.webp 1926w',
+    jpgSrcSet: '/credentials/optimized/calculator-band-v1-768.jpg 768w, /credentials/optimized/calculator-band-v1-1216.jpg 1216w, /credentials/optimized/calculator-band-v1-1440.jpg 1440w, /credentials/optimized/calculator-band-v1-1926.jpg 1926w',
+    src: '/credentials/optimized/calculator-band-v1-1926.jpg',
+    alt: 'SAMAN portable cabin calculator',
+  };
   return `<style>${CALCULATOR_ENTRY_STYLES}</style>`
     + `<section class="calc-entry" data-calculator-entry aria-labelledby="calc-entry-title">`
     + `<picture class="calc-entry-photo">`
-    + `<source type="image/webp" sizes="(min-width: 1280px) 1216px, 100vw" srcset="/credentials/optimized/calculator-band-v1-768.webp 768w, /credentials/optimized/calculator-band-v1-1216.webp 1216w, /credentials/optimized/calculator-band-v1-1440.webp 1440w, /credentials/optimized/calculator-band-v1-1926.webp 1926w">`
-    + `<img src="/credentials/optimized/calculator-band-v1-1926.jpg" sizes="(min-width: 1280px) 1216px, 100vw" srcset="/credentials/optimized/calculator-band-v1-768.jpg 768w, /credentials/optimized/calculator-band-v1-1216.jpg 1216w, /credentials/optimized/calculator-band-v1-1440.jpg 1440w, /credentials/optimized/calculator-band-v1-1926.jpg 1926w" alt="SAMAN cabin calculator preview" width="1926" height="817" loading="lazy" decoding="async">`
+    + `<source type="image/webp" sizes="(min-width: 1280px) 1216px, 100vw" srcset="${esc(photo.webpSrcSet)}">`
+    + `<img src="${esc(photo.src)}" sizes="(min-width: 1280px) 1216px, 100vw" srcset="${esc(photo.jpgSrcSet)}" alt="${esc(photo.alt)}" width="1926" height="817" loading="lazy" decoding="async">`
     + `</picture>`
     + `<div class="calc-entry-scrim" aria-hidden="true"></div>`
     + `<div class="calc-entry-inner">`
@@ -3030,7 +3073,7 @@ export function renderCalculatorEntrySection(options: {
     + `<p class="calc-entry-line" data-copy-slot="subline">`
     + `Set the size, choose the finish, watch the price move as you go.</p>`
     + `<a class="calc-entry-cta" href="${esc(href)}" data-copy-slot="cta" aria-controls="cabin-calculator" aria-expanded="true">Start your design</a>`
-    + `<p class="calc-entry-trust" data-copy-slot="trust">Fixed-price quote within 48 hours. Built in our own works.</p>`
+    + (options.suppressCommitmentCopy ? '' : `<p class="calc-entry-trust" data-copy-slot="trust">Fixed-price quote within 48 hours. Built in our own works.</p>`)
     + `</div></div></section>`;
 }
 
@@ -3090,8 +3133,10 @@ export function renderCabinCalculatorSSR(options: RenderCalculatorOptions = {}):
   const openingsStep = section(4, `${renderStepGuidance('openings')}${colony ? `<p class="scope-note">${SCOPE_NOTE}</p>` : `<div class="op-left"><h3>Door placement</h3><div class="op-cards">${doorCards}</div><button type="button" data-action="add-door" class="ghost">Add another door</button><h3>Window placement</h3><div class="op-cards">${windowCards}</div><button type="button" data-action="add-window" class="ghost">Add another window</button><p class="step-tip"><small>${esc(TIPS.doorOpening)}</small></p><p class="step-tip"><small>${esc(TIPS.windowTrack)}</small></p></div><div class="op-right">${renderDrawing(config, basePriceForDrawing)}</div>`}`);
   const electricalStep = section(5, `${renderStepGuidance('electrical')}${colony ? '<p class="scope-note">Quantities are quotation items per building.</p>' : ''}<div class="ec-left"><div class="ec-cards">${ELECTRICAL_R1.map((item) => electricalCard(item, config.electrical[item.label] || 0, colony)).join('')}</div><div class="ec-chip-groups"><fieldset><legend>Light colour</legend>${radio('lightColour', 'White', 'White light', config.lightColour === 'White')}${radio('lightColour', 'Warm', 'Warm light', config.lightColour === 'Warm')}</fieldset><fieldset><legend>LED shape</legend>${radio('lightShape', 'Square', 'Square fitting', config.lightShape === 'Square')}${radio('lightShape', 'Round', 'Round fitting', config.lightShape === 'Round')}</fieldset></div></div><div class="ec-right"><fieldset class="socket-rooms"><legend>Socket placement, no cost impact</legend>${socketRoomChips}</fieldset><p class="step-tip"><small>${esc(TIPS.socketPlacement)}</small></p>${socketPanels}${renderDrawing(config, basePriceForDrawing)}</div>`);
   const addOnsStep = section(6, `${renderStepGuidance('addons')}${FITOUT_R1.map((item) => quantityRow('addOns', item.label, item.rate || 0, config.addOns[item.label] || 0, item.specification || '', colony)).join('')}<p class="step-tip"><small>Some fit-out components are being confirmed and show as Quoted separately.</small></p><fieldset><legend>Furniture position</legend>${radio('furniturePosition', 'Wall attached', 'Wall attached', config.furniturePosition === 'Wall attached')}${radio('furniturePosition', 'Centre', 'Centre', config.furniturePosition === 'Centre')}</fieldset>`);
-  const deliveryStep = section(7, `${renderStepGuidance('delivery')}<fieldset><legend>Delivery scope</legend>${(['Bangalore city', 'Delhi NCR', 'Other'] as const).map((zone) => radio('deliveryZone', zone, zone, config.deliveryZone === zone, zone === 'Other' ? 'Use the freight ladder below' : 'Free delivery zone', ` data-freight-zone="${esc(zone)}" data-price="${zone === 'Other' ? '' : '0'}"`)).join('')}</fieldset><label>Road distance in km<input type="number" inputmode="numeric" min="0" max="5000" step="1" name="distanceKm" value="${config.distanceKm}"></label><label class="checkbox"><input type="checkbox" name="installation" value="1"${checked(config.installation)}>Installation required, confirmed in fixed quotation</label><label class="checkbox"><input type="checkbox" name="includeGst" value="1"${checked(config.includeGst)}>Show GST as a line item in the estimate</label><details class="freight-ladder"><summary>See the full distance ladder</summary>${renderFreightTable()}</details><p>Delivery timing is confirmed once the exact delivery location and order are approved.</p>`);
-  const quotationStep = section(8, `${renderStepGuidance('quotation')}<p>Submit the exact configuration for a fixed, itemised quotation within 48 hours.</p>${renderEstimate(estimate)}<fieldset><legend>Your contact details</legend><label>${esc(FIELD_LABELS.firstName)} *<input name="firstName" autocomplete="given-name" value="${esc(config.quote.firstName)}" required></label><label>${esc(FIELD_LABELS.lastName)} *<input name="lastName" autocomplete="family-name" value="${esc(config.quote.lastName)}" required></label><label>${esc(FIELD_LABELS.phone)} *<input type="tel" inputmode="numeric" name="phone" autocomplete="tel" pattern="[6-9][0-9]{9}" value="${esc(config.quote.phone)}" required aria-describedby="mobile-error"></label><small id="mobile-error">Enter a 10-digit Indian mobile number.</small><label>${esc(FIELD_LABELS.email)} *<input type="email" inputmode="email" name="email" autocomplete="email" value="${esc(config.quote.email)}" required aria-describedby="email-error"></label><small id="email-error">Please add your email so we can send your quotation PDF.</small><label>${esc(FIELD_LABELS.companyName)}<input name="company" autocomplete="organization" value="${esc(config.quote.company)}"></label><label>${esc(FIELD_LABELS.city)}<input name="city" autocomplete="address-level2" value="${esc(config.quote.city)}"></label><label>${esc(FIELD_LABELS.state)}<input name="state" autocomplete="address-level1" value="${esc(config.quote.state)}"></label><label>${esc(FIELD_LABELS.notes)}<textarea name="notes" rows="4">${esc(config.quote.notes)}</textarea></label></fieldset><input type="hidden" name="configuration" value="${esc(JSON.stringify(config))}"><input type="hidden" name="estimate" value="${esc(JSON.stringify(estimate))}"><button type="submit">${esc(CONTROLS.getQuotation)}</button><p class="required-guidance">Please add your name and mobile number so our sales team can send your fixed quotation.</p>`);
+  const deliveryCommitment = options.suppressCommitmentCopy ? 'Freight is confirmed once the exact delivery location and order are approved.' : 'Delivery in 7 to 21 working days. Freight is confirmed once the exact delivery location and order are approved.';
+  const quotationCommitment = options.suppressCommitmentCopy ? 'Submit the exact configuration for an itemised quotation.' : 'Submit the exact configuration for a fixed, itemised quotation within 48 hours.';
+  const deliveryStep = section(7, `${renderStepGuidance('delivery')}<fieldset><legend>Delivery scope</legend>${(['Bangalore city', 'Delhi NCR', 'Other'] as const).map((zone) => radio('deliveryZone', zone, zone, config.deliveryZone === zone, zone === 'Other' ? 'Use the freight ladder below' : 'Free delivery zone', ` data-freight-zone="${esc(zone)}" data-price="${zone === 'Other' ? '' : '0'}"`)).join('')}</fieldset><label>Road distance in km<input type="number" inputmode="numeric" min="0" max="5000" step="1" name="distanceKm" value="${config.distanceKm}"></label><label class="checkbox"><input type="checkbox" name="installation" value="1"${checked(config.installation)}>Installation required, confirmed in fixed quotation</label><label class="checkbox"><input type="checkbox" name="includeGst" value="1"${checked(config.includeGst)}>Show GST as a line item in the estimate</label><details class="freight-ladder"><summary>See the full distance ladder</summary>${renderFreightTable()}</details><p>${deliveryCommitment}</p>`);
+  const quotationStep = section(8, `${renderStepGuidance('quotation')}<p>${quotationCommitment}</p>${renderEstimate(estimate)}<fieldset><legend>Your contact details</legend><label>${esc(FIELD_LABELS.firstName)} *<input name="firstName" autocomplete="given-name" value="${esc(config.quote.firstName)}" required></label><label>${esc(FIELD_LABELS.lastName)} *<input name="lastName" autocomplete="family-name" value="${esc(config.quote.lastName)}" required></label><label>${esc(FIELD_LABELS.phone)} *<input type="tel" inputmode="numeric" name="phone" autocomplete="tel" pattern="[6-9][0-9]{9}" value="${esc(config.quote.phone)}" required aria-describedby="mobile-error"></label><small id="mobile-error">Enter a 10-digit Indian mobile number.</small><label>${esc(FIELD_LABELS.email)} *<input type="email" inputmode="email" name="email" autocomplete="email" value="${esc(config.quote.email)}" required aria-describedby="email-error"></label><small id="email-error">Please add your email so we can send your quotation PDF.</small><label>${esc(FIELD_LABELS.companyName)}<input name="company" autocomplete="organization" value="${esc(config.quote.company)}"></label><label>${esc(FIELD_LABELS.city)}<input name="city" autocomplete="address-level2" value="${esc(config.quote.city)}"></label><label>${esc(FIELD_LABELS.state)}<input name="state" autocomplete="address-level1" value="${esc(config.quote.state)}"></label><label>${esc(FIELD_LABELS.notes)}<textarea name="notes" rows="4">${esc(config.quote.notes)}</textarea></label></fieldset><input type="hidden" name="configuration" value="${esc(JSON.stringify(config))}"><input type="hidden" name="estimate" value="${esc(JSON.stringify(estimate))}"><button type="submit">${esc(CONTROLS.getQuotation)}</button><p class="required-guidance">Please add your name and mobile number so our sales team can send your fixed quotation.</p>`);
 
   const allSections = [productStep, sizeStep, structureStep, interiorStep, openingsStep, electricalStep, addOnsStep, deliveryStep, quotationStep];
   const renderedSections = allSections;
@@ -3103,7 +3148,8 @@ export function renderCabinCalculatorSSR(options: RenderCalculatorOptions = {}):
   // SAMAN's base-cabin rate card, published once on the root so the browser
   // prices from the same numbers the server did. The six area-band multipliers
   // that used to sit here are gone with the formula they belonged to.
-  const rootRates = `data-base-fixed="${esc(BASE_CABIN_RATE_CARD_DATASET.fixed)}" data-base-bands="${esc(BASE_CABIN_RATE_CARD_DATASET.bands)}" data-base-band-top="${esc(BASE_CABIN_RATE_CARD_DATASET.top)}" data-base-slide="${esc(BASE_CABIN_RATE_CARD_DATASET.slide)}" data-base-cap="${esc(BASE_CABIN_RATE_CARD_DATASET.cap)}" data-base-unrated-ceiling="${esc(BASE_CABIN_RATE_CARD_DATASET.floor)}" data-height-rate-per-foot="0.06" data-partition-rate="300" data-gst-rate="${GST_RATE}" data-freight-bands="${RATE_CARD.freight.bands20ft.join(',')}" data-freight40-delta="${RATE_CARD.freight.trailer40ftDelta}"`;
+  let rootRates = `data-base-fixed="${esc(BASE_CABIN_RATE_CARD_DATASET.fixed)}" data-base-bands="${esc(BASE_CABIN_RATE_CARD_DATASET.bands)}" data-base-band-top="${esc(BASE_CABIN_RATE_CARD_DATASET.top)}" data-base-slide="${esc(BASE_CABIN_RATE_CARD_DATASET.slide)}" data-base-cap="${esc(BASE_CABIN_RATE_CARD_DATASET.cap)}" data-base-unrated-ceiling="${esc(BASE_CABIN_RATE_CARD_DATASET.floor)}" data-height-rate-per-foot="0.06" data-partition-rate="300" data-gst-rate="${GST_RATE}" data-freight-bands="${RATE_CARD.freight.bands20ft.join(',')}" data-freight40-delta="${RATE_CARD.freight.trailer40ftDelta}"`;
+  if (options.deferEnhancement) rootRates += ' data-defer-enhancement="true"';
   const hiddenProduct = embedded ? `<input type="hidden" name="productId" value="${config.productId}" data-label="${esc(product.name)}" data-quote-only="${rendersQuoteMode(product, config.ladderKey) ? 'true' : 'false'}" data-ladder="${esc(config.ladderKey || product.ladderKey || (isColonyProduct(product.id) ? product.id : 'none'))}">` : '';
   const standardPostFields = `${hiddenProduct}<input type="hidden" name="message" value="${esc(itemisedMessage)}"><input type="hidden" name="productName" value="${esc(product.name)}"><input type="hidden" name="pageUrl" value="${esc(pageUrl)}"><input type="hidden" name="returnTo" value="${esc(pageUrl)}">`;
   const statusText = options.submissionStatus === 'success' ? CALCULATOR_MESSAGES.submitSuccess : options.submissionStatus === 'failure' ? CALCULATOR_MESSAGES.submitFailure : '';
@@ -3112,5 +3158,11 @@ export function renderCabinCalculatorSSR(options: RenderCalculatorOptions = {}):
   const generalDisclosure = documentProductMode === 'general'
     ? `<small data-general-estimate-disclosure>${esc(GENERAL_ESTIMATE_DISCLOSURE)}</small>`
     : '';
-  return `<section class="cabin-calculator-ssr" data-cabin-calculator data-mode="${embedded ? 'embedded' : 'standalone'}" data-theme="light" data-document-product-mode="${documentProductMode}" data-initial-document-product-mode="${documentProductMode}" data-product-slug="${esc(options.productSlug || (config.productId === 'labour-colony' ? 'labor-colony' : config.productId))}" data-reference="${esc(reference)}" ${rootRates}>${messageCatalog}<p class="calculator-status" data-calculator-notice role="status"${statusText ? '' : ' hidden'}>${esc(statusText)}</p><p class="calculator-status" data-restore-banner role="status" hidden>${esc(CALCULATOR_MESSAGES.restored)}</p><input type="text" data-share-url value="${esc(pageUrl)}" readonly hidden>${includeCopy ? renderIntro() : ''}<div class="print-letterhead"><strong>SAMAN POS India Private Limited · SAMAN Portable</strong><span>Founded 2009 · Incorporated 2019 · ISO 9001:2015</span><span>Bengaluru (Unit 1): +91 88616 22859 · sales@samanportable.com</span><span>Greater Noida (Unit 2): +91 87960 39938 · ncr@samanportable.com</span><span>www.samanportable.com</span></div><header class="calculator-header"><div><p>Customized cabin</p><h2 data-summary-product>${esc(options.productName || product.name)}</h2><p data-summary-size>${summarySize}</p></div><div><p data-summary-label>Estimated total</p><p><strong data-summary-ex>${estimate.quoteOnly ? 'Price on request' : money(estimate.totalExGst)}</strong><small data-summary-incl>${estimate.quoteOnly ? 'Fixed quotation within 48 hours' : `${money(estimate.totalInclGst)} incl. GST`}</small>${generalDisclosure}</p></div><div class="calculator-header-actions"><button type="button" data-action="save">${esc(CONTROLS.saveDesign)}</button><button type="button" data-action="restore">${esc(CONTROLS.restoreDesign)}</button><button type="button" data-action="start-over">${esc(CONTROLS.startOver)}</button></div><nav class="step-nav" aria-label="Calculator steps">${visibleSteps.map(([name], index) => `<a href="#calculator-step-${index + 1}" data-step-link="${index + 1}">${esc(name)}</a>`).join('')}</nav></header><form method="post" action="${esc(options.formAction || '/api/enquiry')}" enctype="application/x-www-form-urlencoded" data-enhanced-action="/api/enquiry" data-calculator-form>${standardPostFields}<div class="calculator-grid"><div class="step-card"><p class="step-counter" data-step-counter>Step <span data-step-current>1</span> of ${visibleSteps.length}</p><div class="step-progress" role="progressbar" aria-label="Calculator progress" aria-valuemin="1" aria-valuemax="9" aria-valuenow="1" data-step-progress><span data-step-progress-fill style="width:${Math.round(100 / 9)}%"></span></div>${renderedSections.join('')}<div class="estimate-actions"><button type="button" data-action="pdf" class="ghost">${esc(CONTROLS.downloadPdf)}</button><button type="button" data-action="whatsapp" class="ghost">${esc(CONTROLS.sendWhatsApp)}</button><button type="button" data-action="copy-link" class="ghost">${esc(CONTROLS.copyLink)}</button></div></div><div class="calculator-side">${renderEstimate(estimate)}<div class="step-actions"><button type="button" data-action="back" class="ghost">${esc(CONTROLS.back)}</button><button type="button" data-action="start-over" class="ghost">${esc(CONTROLS.startOver)}</button><button type="button" data-action="next" class="primary">${esc(CONTROLS.next)}</button></div></div></div></form><div class="mobile-estimate"><a href="#calculator-step-9"><span>Total, ex-GST</span><strong data-mobile-estimate>${estimate.quoteOnly ? 'On request' : money(estimate.totalExGst)}</strong><span>Expand estimate</span></a></div>${options.hidePublishedPriceTable ? '' : renderPriceTables(tableProducts, config.ladderKey)}<noscript><section class="noscript-content"><h2>Complete published pricing and enquiry</h2><p>All calculator steps, options, published prices, freight rates and the working quotation form are shown above. Use the native controls and submit the form to request your fixed quotation.</p></section></noscript><footer class="print-footer">Indicative estimate ${esc(reference)} · ${esc(date)} · Fixed, itemised quotation within 48 hours of submission.</footer></section>`;
+  const summaryIncl = estimate.quoteOnly
+    ? (options.suppressCommitmentCopy ? 'Confirmed in quotation' : 'Fixed quotation within 48 hours')
+    : `${money(estimate.totalInclGst)} incl. GST`;
+  const printFooter = options.suppressCommitmentCopy
+    ? `Indicative estimate ${esc(reference)} · ${esc(date)} · Itemised quotation confirmed after submission.`
+    : `Indicative estimate ${esc(reference)} · ${esc(date)} · Fixed, itemised quotation within 48 hours of submission.`;
+  return `<section class="cabin-calculator-ssr" data-cabin-calculator data-mode="${embedded ? 'embedded' : 'standalone'}" data-theme="light" data-document-product-mode="${documentProductMode}" data-initial-document-product-mode="${documentProductMode}" data-product-slug="${esc(options.productSlug || (config.productId === 'labour-colony' ? 'labor-colony' : config.productId))}" data-reference="${esc(reference)}" ${rootRates}>${messageCatalog}<p class="calculator-status" data-calculator-notice role="status"${statusText ? '' : ' hidden'}>${esc(statusText)}</p><p class="calculator-status" data-restore-banner role="status" hidden>${esc(CALCULATOR_MESSAGES.restored)}</p><input type="text" data-share-url value="${esc(pageUrl)}" readonly hidden>${includeCopy ? renderIntro() : ''}<div class="print-letterhead"><strong>SAMAN POS India Private Limited · SAMAN Portable</strong><span>Founded 2009 · Incorporated 2019 · ISO 9001:2015</span><span>Bengaluru (Unit 1): +91 88616 22859 · sales@samanportable.com</span><span>Greater Noida (Unit 2): +91 87960 39938 · ncr@samanportable.com</span><span>www.samanportable.com</span></div><header class="calculator-header"><div><p>Customized cabin</p><h2 data-summary-product>${esc(options.productName || product.name)}</h2><p data-summary-size>${summarySize}</p></div><div><p data-summary-label>Estimated total</p><p><strong data-summary-ex>${estimate.quoteOnly ? 'Price on request' : money(estimate.totalExGst)}</strong><small data-summary-incl>${summaryIncl}</small>${generalDisclosure}</p></div><div class="calculator-header-actions"><button type="button" data-action="save">${esc(CONTROLS.saveDesign)}</button><button type="button" data-action="restore">${esc(CONTROLS.restoreDesign)}</button><button type="button" data-action="start-over">${esc(CONTROLS.startOver)}</button></div><nav class="step-nav" aria-label="Calculator steps">${visibleSteps.map(([name], index) => `<a href="#calculator-step-${index + 1}" data-step-link="${index + 1}">${esc(name)}</a>`).join('')}</nav></header><form method="post" action="${esc(options.formAction || '/api/enquiry')}" enctype="application/x-www-form-urlencoded" data-enhanced-action="/api/enquiry" data-calculator-form>${standardPostFields}<div class="calculator-grid"><div class="step-card"><p class="step-counter" data-step-counter>Step <span data-step-current>1</span> of ${visibleSteps.length}</p><div class="step-progress" role="progressbar" aria-label="Calculator progress" aria-valuemin="1" aria-valuemax="9" aria-valuenow="1" data-step-progress><span data-step-progress-fill style="width:${Math.round(100 / 9)}%"></span></div>${renderedSections.join('')}<div class="estimate-actions"><button type="button" data-action="pdf" class="ghost">${esc(CONTROLS.downloadPdf)}</button><button type="button" data-action="whatsapp" class="ghost">${esc(CONTROLS.sendWhatsApp)}</button><button type="button" data-action="copy-link" class="ghost">${esc(CONTROLS.copyLink)}</button></div></div><div class="calculator-side">${renderEstimate(estimate)}<div class="step-actions"><button type="button" data-action="back" class="ghost">${esc(CONTROLS.back)}</button><button type="button" data-action="start-over" class="ghost">${esc(CONTROLS.startOver)}</button><button type="button" data-action="next" class="primary">${esc(CONTROLS.next)}</button></div></div></div></form><div class="mobile-estimate"><a href="#calculator-step-9"><span>Total, ex-GST</span><strong data-mobile-estimate>${estimate.quoteOnly ? 'On request' : money(estimate.totalExGst)}</strong><span>Expand estimate</span></a></div>${options.hidePublishedPriceTable ? '' : renderPriceTables(tableProducts, config.ladderKey)}<noscript><section class="noscript-content"><h2>Complete published pricing and enquiry</h2><p>All calculator steps, options, published prices, freight rates and the working quotation form are shown above. Use the native controls and submit the form to request your quotation.</p></section></noscript><footer class="print-footer">${printFooter}</footer></section>`;
 }

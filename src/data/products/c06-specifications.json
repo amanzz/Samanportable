@@ -756,7 +756,702 @@
           "detail": "Warranty period and exclusions are confirmed only in the final quotation; relocation damage, misuse, site services and unapproved alterations remain outside the agreed scope unless stated otherwise.",
           "differsFromHub": false
         }
+      ],
+      "diagrams": [
+        {
+          "src": "/images/products/prefab-labor-camps/specifications/prefab-labour-camp-block-grid-diagram.webp",
+          "alt": "Prefab camp block grid showing dormitory, toilet, canteen, admin and store blocks",
+          "caption": "Illustrative, not for construction unless approved.",
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "src": "/images/products/prefab-labor-camps/specifications/prefab-labour-camp-services-spine-diagram.webp",
+          "alt": "Plug-in services diagram linking camp blocks to water, waste and power through a service spine",
+          "caption": "Illustrative, not for construction unless approved.",
+          "width": 1920,
+          "height": 1080
+        }
       ]
-    }
+    },
+    "prefab-site-canteen": {
+      "name": "Prefab Site Canteen",
+      "narrative": "Two lines in the tables below change what you actually buy. The first is that the floor and wall finishes split by zone, so a dining wall and a wash-area wall are not the same specification and are not priced as though they were. The second is that the roof exhaust package is conditional: a dining-only canteen does not inherit a heavy kitchen hood, and a canteen with a cookline needs one engineered before manufacture rather than cut in afterwards.",
+      "premiumTables": true,
+      "specifications": [
+        {
+          "group": "Table 1",
+          "component": "Bottom frame",
+          "detail": "IS 2062 or approved equivalent MS channel/RHS/formed sections; exact member sizes and support reactions from the signed structural drawing.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1",
+          "component": "Bottom stiffeners",
+          "detail": "RHS/channel/angle stiffeners selected to the approved floor grid, partitions, wet services and lifting/relocation duty.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1",
+          "component": "Floor frame",
+          "detail": "MS floor frame or slab designed for dining live load plus concentrated serving, kitchen and wash loads; wet zones receive cementitious reinforcement and drain falls.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1",
+          "component": "Top frame",
+          "detail": "MS RHS/channel or the documented proprietary upper rail sized for roof reactions, wall restraint and opening headers.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1",
+          "component": "Roof stiffeners",
+          "detail": "RHS/light truss roof members supporting insulated PPGI/PPGL roof; framed curbs and openings for kitchen hood or exhaust only where a cooking package is included.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1",
+          "component": "Corner posts / walls",
+          "detail": "MS/RHS posts and rails with local headers and jambs at serving hatch, external doors, exhaust, plumbing and equipment service openings.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1",
+          "component": "Lifting / handling",
+          "detail": "Marked lifting lugs, corner fittings, skid points or temporary transport brackets only where shown on the signed GA and lifting drawing.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1",
+          "component": "Welding & fabrication",
+          "detail": "IS 2062 / IS 1161 class structural steel or approved equivalent; weld sizes, bolt grades, hole tolerances and joint details as the fabrication drawings.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1",
+          "component": "Exterior walls",
+          "detail": "Nominal 50 mm PUF/EPS sandwich panel or approved insulated wall with washable, non-absorbent finish in food handling and wash zones.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1",
+          "component": "Roof",
+          "detail": "Sloped PPGI or insulated roof with gutters, sealed service curbs and condensation strategy; higher heat-control package where cooking loads justify it.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1",
+          "component": "Floor base",
+          "detail": "Cement board, RCC or equivalent rigid base; kitchen and wash zones receive waterproofing, coved edges and slope to trapped drains where designed.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 1",
+          "component": "Floor finish",
+          "detail": "Commercial anti-skid vinyl for dry dining, or tile/kota/epoxy/safety finish in kitchen and wash zones, with coved skirting where hygienic cleaning requires it.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
+          "component": "Interior walls",
+          "detail": "Washable prelaminated, FRP, metal or cementitious liner in preparation, serving and wash zones; durable dry liner in dining areas.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
+          "component": "Ceiling",
+          "detail": "Smooth moisture-resistant ceiling or liner with sealed edges and removable access above service points; hood zone uses materials compatible with heat and cleaning duty.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
+          "component": "Wall insulation",
+          "detail": "Nominal 50 mm PUF/EPS for the general envelope; non-combustible, mineral-wool or heat shield only around cooking and heat sources when engineered.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
+          "component": "Roof insulation",
+          "detail": "Nominal 50 mm insulated roof or approved equivalent plus ventilation and radiant controls; kitchen hood make-up air considered separately.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
+          "component": "Serving, wash and waste interfaces",
+          "detail": "Serving counter or hatch, hand-wash point, washable waste holding area, insect-control screens and external LPG cylinder cage only when the corresponding kitchen scope is included.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
+          "component": "Fasteners & sealing",
+          "detail": "Corrosion-compatible fasteners, EPDM washers, butyl/PU sealants, closures, flashing, sleeves and isolation tapes matched to the selected wall, roof and floor build-up.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
+          "component": "Main door / service door",
+          "detail": "Separate staff/service and diner access where layout allows; robust cleanable door surfaces and weather and insect control at external openings.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
+          "component": "Windows / service opening",
+          "detail": "Framed serving hatch plus aluminium windows or louvres with insect screens; opening arrangement follows food flow, daylight and ventilation.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
+          "component": "Grills / mosquito mesh",
+          "detail": "Removable mosquito mesh, louvres, restrictors, privacy screens or protected MS grilles only where required by room use and the approved opening schedule.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
+          "component": "Electrical wiring",
+          "detail": "Typical references: 1.5 sq.mm lighting, 2.5 sq.mm socket circuits and 4 sq.mm AC/high-load circuits; final cable sizing follows connected load, voltage drop and protection coordination.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
+          "component": "Electrical protection",
+          "detail": "Main isolator, MCB/RCBO or RCCB protection, labelled neutral and earth bars, bonding and surge protection where required by the supply or risk assessment.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
+          "component": "Electrical fittings",
+          "detail": "LED luminaires, fan points, 6A/16A sockets, exhaust points, emergency lighting and dedicated equipment outlets only in quantities shown on the approved room and electrical schedule.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
+          "component": "Ventilation / AC",
+          "detail": "Dining area uses cross ventilation, fans or comfort cooling; cooking zone uses a dedicated exhaust hood, duct and make-up air only when a cookline is included.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
+          "component": "Plumbing / sanitary",
+          "detail": "Potable-water supply to hand-wash and kitchen sinks, trapped floor drains and uPVC waste; grease trap and hot-water system when the cooking and wash process requires them.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
+          "component": "Layout / configuration",
+          "detail": "Receiving and storage, preparation, serving, dining, tray and utensil return, and wash and waste areas arranged to the selected operating model and meal sittings.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
+          "component": "Painting / coating",
+          "detail": "Prepared carbon steel with compatible primer and top coats, or galvanized/pre-painted sheet with repaired cut edges; system upgraded for coastal, industrial or wet-service exposure.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
+          "component": "Quality checks",
+          "detail": "Dimensional, member, weld/bolt, coating, panel, roof-drainage, opening, electrical and plumbing checks plus product-specific deployment or wet-test checks.",
+          "differsFromHub": false
+        },
+        {
+          "group": "Table 2",
+          "component": "Warranty",
+          "detail": "Warranty period, start date, remedy, relocation conditions, consumables and exclusions exactly as stated in the signed quotation and handover documents.",
+          "differsFromHub": false
+        }
+      ],
+      "diagrams": [
+        {
+          "src": "/images/products/prefab-site-canteen/diagrams/canteen-diagram-process-layout-R2.webp",
+          "alt": "Site canteen process layout from receiving to waste holding, with scope legend",
+          "caption": "Illustrative - not for construction unless approved. Final drawing and quotation govern.",
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "src": "/images/products/prefab-site-canteen/diagrams/canteen-diagram-food-service-utility-R2.webp",
+          "alt": "Food-service utility diagram showing water, waste, optional exhaust and queue path",
+          "caption": "Illustrative - not for construction unless approved. Final drawing and quotation govern.",
+          "width": 1920,
+          "height": 1080
+        }
+      ]
+    },
+    "oil-field-camp": {
+        "name": "Oil Field Camp",
+        "specifications": [
+          {
+            "group": "Structure, Chassis and Envelope",
+            "component": "Bottom frame",
+            "detail": "IS 2062 or approved equivalent MS channel, RHS or formed sections; member sizes and support reactions from the signed structural drawing",
+            "differsFromHub": true
+          },
+          {
+            "group": "Structure, Chassis and Envelope",
+            "component": "Bottom stiffeners",
+            "detail": "RHS, channel or angle stiffeners set to the approved floor grid, partitions, bunks and relocation duty",
+            "differsFromHub": true
+          },
+          {
+            "group": "Structure, Chassis and Envelope",
+            "component": "Floor frame",
+            "detail": "Heavy-duty lift-and-carry skid chassis with two runner beams and reinforced cross-members; skid reactions, lift points and deck supports shown on the transport drawing",
+            "differsFromHub": true
+          },
+          {
+            "group": "Structure, Chassis and Envelope",
+            "component": "Top frame",
+            "detail": "MS RHS or channel upper perimeter ring sized for roof reactions, wall restraint and opening headers",
+            "differsFromHub": true
+          },
+          {
+            "group": "Structure, Chassis and Envelope",
+            "component": "Roof stiffeners",
+            "detail": "RHS or formed roof members supporting a nominal 60 mm class insulated roof panel",
+            "differsFromHub": true
+          },
+          {
+            "group": "Structure, Chassis and Envelope",
+            "component": "Corner posts and walls",
+            "detail": "Welded MS or RHS corner posts and rails tied directly into the skid, with local reinforcement at door, AC, service and wet-room openings",
+            "differsFromHub": true
+          },
+          {
+            "group": "Structure, Chassis and Envelope",
+            "component": "Lifting and handling",
+            "detail": "Marked lifting lugs, corner fittings, skid points or transport brackets, only where shown on the signed GA and lifting drawing",
+            "differsFromHub": true
+          },
+          {
+            "group": "Structure, Chassis and Envelope",
+            "component": "Welding and fabrication",
+            "detail": "IS 2062 or IS 1161 class structural steel or approved equivalent; weld sizes, bolt grades and joint details per the fabrication drawings",
+            "differsFromHub": true
+          },
+          {
+            "group": "Structure, Chassis and Envelope",
+            "component": "Exterior walls",
+            "detail": "Nominal 60 mm PUF or approved insulated panel with PPGI or prepainted faces; external service entries protected by glands and hoods",
+            "differsFromHub": true
+          },
+          {
+            "group": "Structure, Chassis and Envelope",
+            "component": "Roof",
+            "detail": "PPGI or PPGL outer roof with nominal 60 mm PUF or approved insulated sandwich construction, sealed laps, protected penetrations",
+            "differsFromHub": true
+          },
+          {
+            "group": "Structure, Chassis and Envelope",
+            "component": "Wall insulation",
+            "detail": "Nominal 60 mm PUF; alternate mineral wool or PIR system by fire and climate brief",
+            "differsFromHub": true
+          },
+          {
+            "group": "Structure, Chassis and Envelope",
+            "component": "Roof insulation",
+            "detail": "Nominal 60 mm insulated roof or higher project-selected build-up with condensation and vapour control",
+            "differsFromHub": true
+          },
+          {
+            "group": "Structure, Chassis and Envelope",
+            "component": "Floor base",
+            "detail": "Steel-supported cement board or heavy structural deck for dry sleepers; cementitious waterproof substrate in wet modules",
+            "differsFromHub": true
+          },
+          {
+            "group": "Structure, Chassis and Envelope",
+            "component": "Painting and coating",
+            "detail": "Prepared carbon steel with compatible primer and top coats, or galvanized and pre-painted sheet with repaired cut edges; system upgraded for coastal, industrial or wet-service exposure",
+            "differsFromHub": true
+          },
+          {
+            "group": "Structure, Chassis and Envelope",
+            "component": "Fasteners and sealing",
+            "detail": "Corrosion-compatible fasteners, EPDM washers, butyl or PU sealants, closures, flashing, sleeves and isolation tapes matched to the selected build-up",
+            "differsFromHub": true
+          },
+          {
+            "group": "Interior, Services, Scope and Commercial Terms",
+            "component": "Interior walls",
+            "detail": "Prelaminated, PPGI or cement-board class liner in dry rooms; FRP, PVC or cementitious wet liner in toilet and shower modules only",
+            "differsFromHub": true
+          },
+          {
+            "group": "Interior, Services, Scope and Commercial Terms",
+            "component": "Ceiling",
+            "detail": "PUF panel underside or durable liner below roof insulation, with removable access at cable, AC and exhaust interfaces",
+            "differsFromHub": true
+          },
+          {
+            "group": "Interior, Services, Scope and Commercial Terms",
+            "component": "Floor finish",
+            "detail": "Heavy commercial vinyl or project-selected resilient finish in dry areas; slip-resistant wet finish with coved or upstand details in sanitation zones",
+            "differsFromHub": true
+          },
+          {
+            "group": "Interior, Services, Scope and Commercial Terms",
+            "component": "Doors",
+            "detail": "Weather-sealed steel or insulated doors, heavy hinges, positive latching, reinforced frames; additional emergency or service doors per the approved room plan",
+            "differsFromHub": true
+          },
+          {
+            "group": "Interior, Services, Scope and Commercial Terms",
+            "component": "Windows",
+            "detail": "Aluminium windows with mesh or grille, optional storm or security shutters; glazing area chosen against daylight, heat gain, privacy and site risk",
+            "differsFromHub": true
+          },
+          {
+            "group": "Interior, Services, Scope and Commercial Terms",
+            "component": "Grilles and mesh",
+            "detail": "Removable mosquito mesh, louvres, restrictors or protected MS grilles only where the approved opening schedule requires them",
+            "differsFromHub": true
+          },
+          {
+            "group": "Interior, Services, Scope and Commercial Terms",
+            "component": "Electrical wiring",
+            "detail": "FR or FRLS copper in approved conduit or trunking; typical references 1.5 sq mm lighting, 2.5 sq mm sockets, 4 sq mm AC and high-load; final sizing per the project electrical schedule",
+            "differsFromHub": true
+          },
+          {
+            "group": "Interior, Services, Scope and Commercial Terms",
+            "component": "Electrical protection",
+            "detail": "Main isolator, MCB, RCBO or RCCB protection, labelled neutral and earth bars, bonding, and surge protection where required",
+            "differsFromHub": true
+          },
+          {
+            "group": "Interior, Services, Scope and Commercial Terms",
+            "component": "Electrical fittings",
+            "detail": "LED luminaires, fan points, 6A and 16A sockets, exhaust points and dedicated equipment outlets, in the quantities on the approved schedule",
+            "differsFromHub": true
+          },
+          {
+            "group": "Interior, Services, Scope and Commercial Terms",
+            "component": "Ventilation and AC",
+            "detail": "Split or package AC provision sized from remote heat load. Normal-area equipment in the base module. Ex equipment or interfaces only where the client hazardous-area classification requires it",
+            "differsFromHub": true
+          },
+          {
+            "group": "Interior, Services, Scope and Commercial Terms",
+            "component": "Plumbing and sanitary",
+            "detail": "WC, shower, basin or pantry manifolds, water tank and pump, uPVC waste and vent, protected external stubs, for designated variants only. Dry crew sleepers carry no plumbing",
+            "differsFromHub": true
+          },
+          {
+            "group": "Interior, Services, Scope and Commercial Terms",
+            "component": "Layout and configuration",
+            "detail": "Crew sleeper, toolpusher or officer, and wide-body two-room configurations, per the published size schedule",
+            "differsFromHub": true
+          },
+          {
+            "group": "Interior, Services, Scope and Commercial Terms",
+            "component": "Quality checks",
+            "detail": "Dimensional, member, weld and bolt, coating, panel, roof-drainage, opening, electrical and plumbing checks, plus deployment checks",
+            "differsFromHub": true
+          },
+          {
+            "group": "Interior, Services, Scope and Commercial Terms",
+            "component": "Warranty",
+            "detail": "5-year structural and 1-year finishing as standard; finishing extendable to 2 years on request, confirmed at quotation",
+            "differsFromHub": true
+          },
+          {
+            "group": "Interior, Services, Scope and Commercial Terms",
+            "component": "Delivery and tax",
+            "detail": "7 to 21 working days; fixed-price quotation in 48 hours; prices ex-GST, GST 18%, HSN 9406",
+            "differsFromHub": true
+          },
+          {
+            "group": "Interior, Services, Scope and Commercial Terms",
+            "component": "Excluded scope",
+            "detail": "Ex-rated equipment, gas detection, blast and fire engineering, process interfaces, hazardous-area certification, sanitary tanks, transport, craneage, foundations, site infrastructure, statutory approvals, commissioning",
+            "differsFromHub": true
+          }
+        ],
+        "narrative": "Two lines in these tables change more for a buyer than the rest combined. The first is the floor frame: a lift-and-carry skid with runner beams is what makes the building relocatable, and it is why the transport drawing, not the floor plan, governs how the unit may be handled. The second is ventilation and AC: the base module is normal-area, so a location with a classified hazardous area needs a separate engineered package, priced against your own classification document. Everything else in Table 1 supports the first of those, and most of Table 2 supports the second.",
+      "diagrams": [
+        {
+          "src": "/images/products/oil-field-camp/specifications/oil-field-camp-layout-diagram.webp",
+          "alt": "Oil field camp module layout diagram showing the standard narrow-body plan and the wide-body 20 ft two-room arrangement",
+          "caption": "Illustrative, not for construction unless approved.",
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "src": "/images/products/oil-field-camp/specifications/oil-field-camp-services-coordination-diagram.webp",
+          "alt": "Remote site access and service coordination diagram showing camp modules, crane standing zone and utility routing",
+          "caption": "Illustrative, not for construction unless approved.",
+          "width": 1920,
+          "height": 1080
+        }
+      ]
+    },
+    "ablution-block": {
+        "name": "Multi-Toilet Ablution Block",
+        "specifications": [
+          {
+            "group": "Structure, Envelope, Floor and Insulation",
+            "component": "Bottom frame",
+            "detail": "Labour-colony structural base / module support frame",
+            "scopeClass": "IS 2062 or approved equivalent MS channel, RHS or formed sections; member sizes and support reactions from the signed structural drawing",
+            "meaning": "Anchor position, corrosion access and allowable bearing are frozen before fabrication",
+            "differsFromHub": true
+          },
+          {
+            "group": "Structure, Envelope, Floor and Insulation",
+            "component": "Bottom stiffeners",
+            "detail": "Secondary floor and wall support members",
+            "scopeClass": "RHS, channel or angle stiffeners selected to the approved floor grid, partitions, wet services and relocation duty",
+            "meaning": "Spacing is coordinated with board edges, cubicle partitions and openings; site cutting needs approval",
+            "differsFromHub": true
+          },
+          {
+            "group": "Structure, Envelope, Floor and Insulation",
+            "component": "Floor frame",
+            "detail": "Wet-block floor support frame",
+            "scopeClass": "Corrosion-protected MS, RHS or channel floor grid with local cross-members around WC pans, shower trays, partitions, tanks and service penetrations; slab base where site-built",
+            "meaning": "Penetrations are planned before fabrication so primary members are not cut on site",
+            "differsFromHub": true
+          },
+          {
+            "group": "Structure, Envelope, Floor and Insulation",
+            "component": "Top frame",
+            "detail": "Upper perimeter / eave support frame",
+            "scopeClass": "MS RHS or channel, or the documented proprietary upper rail, sized for roof reactions, wall restraint and opening headers",
+            "meaning": "Tank, solar, exhaust or service-platform reactions are added only after project engineering",
+            "differsFromHub": true
+          },
+          {
+            "group": "Structure, Envelope, Floor and Insulation",
+            "component": "Roof stiffeners",
+            "detail": "Ablution roof / vent-service framing",
+            "scopeClass": "RHS or formed roof members supporting the insulated PPGI roof, with framed and sealed openings for soil vent stacks, exhaust fans and service entries where specified",
+            "meaning": "All penetrations use curbs and flashings and stay maintainable",
+            "differsFromHub": true
+          },
+          {
+            "group": "Structure, Envelope, Floor and Insulation",
+            "component": "Corner posts / walls",
+            "detail": "Cubicle and service-wall structural frame",
+            "scopeClass": "MS or RHS external frame plus corrosion-resistant partition supports, reinforced at manifold, fixture, door and grab-bar positions",
+            "meaning": "Valves and traps stay serviceable; accessibility supports are structural, not fixed to thin liner",
+            "differsFromHub": true
+          },
+          {
+            "group": "Structure, Envelope, Floor and Insulation",
+            "component": "Lifting / handling",
+            "detail": "Approved lifting, unloading and repositioning provisions",
+            "scopeClass": "Marked lifting lugs, corner fittings, skid points or transport brackets only where the signed GA and lifting drawing show them",
+            "meaning": "The lift plan sets finished weight, centre of gravity and support points",
+            "differsFromHub": true
+          },
+          {
+            "group": "Structure, Envelope, Floor and Insulation",
+            "component": "Welding & fabrication",
+            "detail": "Controlled welded and bolted fabrication",
+            "scopeClass": "IS 2062 / IS 1161 class structural steel or approved equivalent; weld sizes, bolt grades and joint details as the fabrication drawings",
+            "meaning": "Certified WPS, PQR and NDT are supplied only where the contract or QA plan specifies them",
+            "differsFromHub": true
+          },
+          {
+            "group": "Structure, Envelope, Floor and Insulation",
+            "component": "Exterior walls",
+            "detail": "Wet-area wall envelope",
+            "scopeClass": "Nominal 50 mm PUF/PPGI panel, or MS frame with moisture-resistant cement, FRP or PVC liner; cut edges and panel bases protected from persistent wetting",
+            "meaning": "The assembly is washable and resists splash and cleaning water",
+            "differsFromHub": true
+          },
+          {
+            "group": "Structure, Envelope, Floor and Insulation",
+            "component": "Roof",
+            "detail": "Insulated wet-block roof",
+            "scopeClass": "PPGI or PPGL insulated roof with defined slope, gutters and sealed vent and exhaust penetrations; vapour and condensation treatment to project climate",
+            "meaning": "Roof drainage is separate from sanitary drainage; humid exhaust discharges outside",
+            "differsFromHub": true
+          },
+          {
+            "group": "Structure, Envelope, Floor and Insulation",
+            "component": "Interior walls",
+            "detail": "Sanitary internal wall finish",
+            "scopeClass": "FRP or PVC sheet, glazed or tiled cementitious board, prefinished metal or another washable moisture-tolerant liner with sealed corners and service access",
+            "meaning": "Chosen for disinfectant compatibility and easy replacement; concealed pipe zones get access panels",
+            "differsFromHub": true
+          },
+          {
+            "group": "Structure, Envelope, Floor and Insulation",
+            "component": "Ceiling",
+            "detail": "Moisture-resistant ceiling",
+            "scopeClass": "FRP, PVC, cement board or coated metal with sealed penetrations and access to exhaust, traps or valves where applicable",
+            "meaning": "Withstands humidity and cleaning without exposed absorbent surfaces",
+            "differsFromHub": true
+          },
+          {
+            "group": "Structure, Envelope, Floor and Insulation",
+            "component": "Floor base",
+            "detail": "Waterproof ablution floor base",
+            "scopeClass": "18-24 mm cement or cement-fibre board, or RCC / cementitious substrate, with waterproof membrane, perimeter upstand and positive fall to trapped drains",
+            "meaning": "Membrane continuity is held at pan collars, shower outlets and wall junctions; wet testing before final finish where the method allows",
+            "differsFromHub": true
+          },
+          {
+            "group": "Structure, Envelope, Floor and Insulation",
+            "component": "Floor finish",
+            "detail": "Slip-resistant sanitary floor finish",
+            "scopeClass": "Safety vinyl, anti-skid ceramic or porcelain tile, FRP pan or approved wet-area finish with sealed coved and upstand edges",
+            "meaning": "Falls and thresholds prevent ponding into dry circulation",
+            "differsFromHub": true
+          },
+          {
+            "group": "Structure, Envelope, Floor and Insulation",
+            "component": "Wall insulation",
+            "detail": "Moisture-protected wall insulation",
+            "scopeClass": "Closed-cell PUF or PIR class, or protected mineral-wool system behind a wet-area liner; cores and edges isolated from direct water",
+            "meaning": "Helps condensation control; waterproofing comes from the wet-side assembly, not the insulation",
+            "differsFromHub": true
+          },
+          {
+            "group": "Structure, Envelope, Floor and Insulation",
+            "component": "Roof insulation",
+            "detail": "Roof insulation and condensation control",
+            "scopeClass": "Insulated roof panel or approved vapour-controlled insulation with a mechanically or naturally ventilated wet space",
+            "meaning": "Whole-roof thermal claims require the exact assembly",
+            "differsFromHub": true
+          },
+          {
+            "group": "Structure, Envelope, Floor and Insulation",
+            "component": "External interfaces",
+            "detail": "Water, sewer and cleaning interfaces",
+            "scopeClass": "Single or multiple water inlet, manifold isolation, sewer or holding-tank outlet, vent termination, cleaning hose point, external signage and service access per the approved schematic",
+            "meaning": "Tanks, pumps, STP, septic and buried networks stay separate unless quoted",
+            "differsFromHub": true
+          },
+          {
+            "group": "Structure, Envelope, Floor and Insulation",
+            "component": "Fasteners & sealing",
+            "detail": "Weather, wet-service and panel-joint sealing system",
+            "scopeClass": "Corrosion-compatible fasteners, EPDM washers, butyl or PU sealants, closures, flashing, sleeves and isolation tapes matched to the selected build-up",
+            "meaning": "Joints drain outward, stay cleanable and allow maintenance; field drilling is deburred and resealed",
+            "differsFromHub": true
+          },
+          {
+            "group": "Openings, Services, Layout, Finish and Handover",
+            "component": "Cubicle and service doors",
+            "detail": "Privacy cubicle and service doors",
+            "scopeClass": "Corrosion-resistant cubicle doors and partitions plus an external entrance or service door; privacy latch, ventilation gap and durable wet-area hardware",
+            "meaning": "Clearances preserve cleaning and emergency assistance; accessible cubicles follow project-required openings",
+            "differsFromHub": true
+          },
+          {
+            "group": "Openings, Services, Layout, Finish and Handover",
+            "component": "Windows / service opening",
+            "detail": "High-level privacy ventilation openings",
+            "scopeClass": "High-level louvres or frosted windows with insect protection, plus mechanical exhaust openings sized to wet load and privacy requirement",
+            "meaning": "Openings avoid direct sightlines while supporting airflow",
+            "differsFromHub": true
+          },
+          {
+            "group": "Openings, Services, Layout, Finish and Handover",
+            "component": "Grills / mosquito mesh",
+            "detail": "Security grille, insect screen and privacy accessories",
+            "scopeClass": "Removable mesh, louvres, restrictors, privacy screens or protected MS grilles only where room use and the approved opening schedule require",
+            "meaning": "Ventilation, cleaning access and emergency escape are maintained",
+            "differsFromHub": true
+          },
+          {
+            "group": "Openings, Services, Layout, Finish and Handover",
+            "component": "Electrical wiring",
+            "detail": "Copper wiring and labelled containment",
+            "scopeClass": "Typical references 1.5 sq mm lighting, 2.5 sq mm sockets, 4 sq mm high-load; final sizing follows connected load, voltage drop and protection coordination",
+            "meaning": "FR/FRLS copper in conduit, separated from water and waste routes",
+            "differsFromHub": true
+          },
+          {
+            "group": "Openings, Services, Layout, Finish and Handover",
+            "component": "Electrical protection",
+            "detail": "Distribution, residual-current protection and earthing",
+            "scopeClass": "Main isolator, MCB / RCBO or RCCB protection, labelled neutral and earth bars, bonding, surge protection where required",
+            "meaning": "Frame and exposed conductive parts bond to the tested site earth; this workbook does not certify the installation",
+            "differsFromHub": true
+          },
+          {
+            "group": "Openings, Services, Layout, Finish and Handover",
+            "component": "Electrical fittings",
+            "detail": "Fixed lights, fans, sockets and service points",
+            "scopeClass": "LED luminaires, fan points, 6A/16A sockets, exhaust points and emergency lighting only in the quantities on the approved schedule",
+            "meaning": "Loose appliances, AC units and DG or UPS equipment are excluded unless itemised",
+            "differsFromHub": true
+          },
+          {
+            "group": "Openings, Services, Layout, Finish and Handover",
+            "component": "Ventilation",
+            "detail": "Continuous wet-area exhaust strategy",
+            "scopeClass": "Natural high-level ventilation supplemented by exhaust fans and ducts as needed; quantity and airflow sized from cubicle and shower load against room volume",
+            "meaning": "Air-change values and controls are project decisions, not workbook values",
+            "differsFromHub": true
+          },
+          {
+            "group": "Openings, Services, Layout, Finish and Handover",
+            "component": "Plumbing / sanitary",
+            "detail": "Multi-fixture plumbing manifold",
+            "scopeClass": "CPVC or PPR supply, uPVC soil, waste and vent, isolation by bank, WCs, urinals, basins and showers per the fixture schedule, floor drains, traps and external sewer or holding-tank connection",
+            "meaning": "Fixture count is not inferred from area; tender and applicable site rules set ratios, gender split and storage",
+            "differsFromHub": true
+          },
+          {
+            "group": "Openings, Services, Layout, Finish and Handover",
+            "component": "Layout / configuration",
+            "detail": "Ablution bank and maintenance layout",
+            "scopeClass": "Repeated toilet, shower and basin banks with dry entry, privacy segregation, central or service-side pipe access and cleaning circulation; accessible cubicle where the project requires it",
+            "meaning": "Resolves headcount, shifts, gender, pressure, drainage level and maintenance access; distinct from a single attached-toilet cabin",
+            "differsFromHub": true
+          },
+          {
+            "group": "Openings, Services, Layout, Finish and Handover",
+            "component": "Painting / coating",
+            "detail": "Corrosion protection and external finish",
+            "scopeClass": "Prepared carbon steel with compatible primer and top coats, or galvanized / pre-painted sheet with repaired cut edges; upgraded for coastal, industrial or wet-service exposure",
+            "meaning": "Skid undersides, roof drains, cut edges and wet thresholds govern field durability",
+            "differsFromHub": true
+          },
+          {
+            "group": "Openings, Services, Layout, Finish and Handover",
+            "component": "Quality checks",
+            "detail": "Factory and site QA and handover evidence",
+            "scopeClass": "Dimensional, member, weld and bolt, coating, panel, roof-drainage, opening, electrical and plumbing checks plus wet-test checks",
+            "meaning": "Handover evidence identifies the approved GA, BOM, test records and maintenance points",
+            "differsFromHub": true
+          },
+          {
+            "group": "Openings, Services, Layout, Finish and Handover",
+            "component": "Warranty",
+            "detail": "Contract-controlled warranty and maintenance obligations",
+            "scopeClass": "Period, start date, remedy, relocation conditions, consumables and exclusions exactly as the signed quotation and handover documents state",
+            "meaning": "Site foundations, utilities, misuse, blocked drains and missed maintenance remain excluded unless expressly covered",
+            "differsFromHub": true
+          }
+        ],
+        "narrative": "Read these two tables as one decision rather than two lists. The first table sets what the building is: the frame that carries wet loads and lifting, and the envelope that has to stay washable and keep water out of insulation and steel. The second sets how it works day to day: the openings that give privacy and airflow, the manifold you will isolate and maintain, and the boundary where SAMAN's supply stops. Where a line says the final value follows the approved drawing, that is not evasion. It means the value is set for your site rather than assumed here.",
+        "columnHeaders": {
+          "first": "Component",
+          "second": "Material / Type",
+          "third": "Specification",
+          "fourth": "What It Changes for the Buyer"
+        },
+        "diagrams": [
+          {
+            "src": "/images/products/ablution-block/specifications/ablution-block-bank-layout-diagram.webp",
+            "alt": "Ablution block bank layout diagram showing the central pipe duct, dry entry and cleaning circulation",
+            "caption": "Illustrative - not for construction unless approved.",
+            "width": 1920,
+            "height": 1080
+          },
+          {
+            "src": "/images/products/ablution-block/specifications/ablution-block-wet-service-section-diagram.webp",
+            "alt": "Wet-service section diagram showing floor fall to a trapped drain, vent stack and exhaust discharge",
+            "caption": "Illustrative - not for construction unless approved.",
+            "width": 1920,
+            "height": 1080
+          }
+        ]
+      }
   }
 }

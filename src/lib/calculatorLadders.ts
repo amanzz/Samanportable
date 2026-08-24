@@ -28,6 +28,9 @@ import knockDownPortaCabin from '@/data/products/knock-down-porta-cabin.json';
 import portaCabinShop from '@/data/products/porta-cabin-shop.json';
 import laborColony from '@/data/products/labor-colony.json';
 import laborHutments from '@/data/products/labor-hutments.json';
+import accommodationContainer from '@/data/products/accommodation-container.json';
+import oilFieldCamp from '@/data/products/oil-field-camp.json';
+import ablutionBlock from '@/data/products/ablution-block.json';
 import portaCabinWithToilet from '@/data/products/porta-cabin-with-toilet.json';
 import portableOffice from '@/data/products/portable-office.json';
 import modernOfficeCabin from '@/data/products/modern-office-cabin.json';
@@ -37,6 +40,7 @@ import readymadeOfficeCabin from '@/data/products/readymade-office-cabin.json';
 import smallOfficeCabin from '@/data/products/small-office-cabin.json';
 import containerOfficesJson from '@/data/products/container-offices.json';
 import containerOfficeCabinJson from '@/data/products/container-office-cabin.json';
+import containerMarketingOffice from '@/data/products/container-marketing-office.json';
 import shippingContainerOfficeJson from '@/data/products/shipping-container-office.json';
 import siteOfficeContainer from '@/data/products/site-office-container.json';
 import containerizedDataCenter from '@/data/products/containerized-data-center.json';
@@ -203,6 +207,17 @@ export const ROUTE_LADDERS: Readonly<Record<string, LadderRow[]>> = {
   // read from this route's own product JSON. Six single-unit sizes, prices
   // unchanged from the ladder this rewrite publishes.
   'labor-hutments': toRows(laborHutments),
+  // LC-05 v3 (17 Aug 2026): derived from accommodation-container.json so the
+  // calculator, price table and entry banner follow the page ladder.
+  'accommodation-container': toRows(accommodationContainer),
+  // LC-03 (17 Aug 2026) — build prompt v1 section 10: one ROUTE_LADDERS entry,
+  // read from this route's own product JSON, using the shell price ladder as
+  // the base (priceExGst/priceInclGst on each variant are the shell figures).
+  'oil-field-camp': toRows(oilFieldCamp),
+  // LC-07 (17 Aug 2026) — build prompt v1.1 section 8: one ROUTE_LADDERS
+  // entry, read from this route's own product JSON. From-price banner
+  // derives and must read Rs 2,10,000 ex-GST (the 12x10 ft shell price).
+  'ablution-block': toRows(ablutionBlock),
   'porta-cabin-with-toilet': toRows(portaCabinWithToilet),
   'portable-office': toRows(portableOffice),
   'modern-office-cabin': toRows(modernOfficeCabin),
@@ -212,6 +227,7 @@ export const ROUTE_LADDERS: Readonly<Record<string, LadderRow[]>> = {
   'small-office-cabin': toRows(smallOfficeCabin),
   'container-offices': toRows(containerOfficesJson),
   'container-office-cabin': toRows(containerOfficeCabinJson),
+  'container-marketing-office': toRows(containerMarketingOffice),
   'shipping-container-office': toRows(shippingContainerOfficeJson),
   'site-office-container': toRows(siteOfficeContainer),
   'containerized-data-center': toRows(containerizedDataCenter),
