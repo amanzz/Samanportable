@@ -1039,12 +1039,12 @@ const nextConfig = {
       },
       {
         source: '/project/container-cafe-india',
-        destination: 'https://www.samanportable.com/product-category/container-cafe',
+        destination: 'https://www.samanportable.com/product/container-cafe',
         permanent: true,
       },
       {
         source: '/project/container-cafe',
-        destination: 'https://www.samanportable.com/product-category/container-cafe',
+        destination: 'https://www.samanportable.com/product/container-cafe',
         permanent: true,
       },
       {
@@ -1589,12 +1589,12 @@ const nextConfig = {
       },
       {
         source: '/project/container-cafes-in-bangalore',
-        destination: 'https://www.samanportable.com/product-category/container-cafe',
+        destination: 'https://www.samanportable.com/product/container-cafe',
         permanent: true,
       },
       {
         source: '/project/container-cafes',
-        destination: 'https://www.samanportable.com/product-category/container-cafe',
+        destination: 'https://www.samanportable.com/product/container-cafe',
         permanent: true,
       },
       {
@@ -1604,7 +1604,7 @@ const nextConfig = {
       },
       {
         source: '/project/container-hotel-for-sale',
-        destination: 'https://www.samanportable.com/product-category/container-houses',
+        destination: 'https://www.samanportable.com/product/container-cafe/container-hotel',
         permanent: true,
       },
       {
