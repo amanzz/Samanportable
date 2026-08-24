@@ -66,11 +66,18 @@ import containerizedDataCenterRelated from '../../../data/products/containerized
 // comes straight from the URL. Same regex as the category hub route.
 const SAFE_PRODUCT_SLUG = /^[a-z0-9-]+$/;
 const CMO_SLUG = 'container-marketing-office';
+const CO06_SLUG = 'multi-story-container-office';
 const CMO_CALC_ENTRY_PHOTO = {
   webpSrcSet: '/assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-768.webp 768w, /assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-1216.webp 1216w, /assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-1440.webp 1440w, /assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-1926.webp 1926w',
   jpgSrcSet: '/assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-768.jpg 768w, /assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-1216.jpg 1216w, /assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-1440.jpg 1440w, /assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-1926.jpg 1926w',
   src: '/assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-1926.jpg',
   alt: 'SAMAN container marketing office calculator',
+};
+const CO06_CALC_ENTRY_PHOTO = {
+  webpSrcSet: '/images/products/multi-story-container-office/calc/multi-story-container-office-calculator-band-768.webp 768w, /images/products/multi-story-container-office/calc/multi-story-container-office-calculator-band-1216.webp 1216w, /images/products/multi-story-container-office/calc/multi-story-container-office-calculator-band-1440.webp 1440w, /images/products/multi-story-container-office/calc/multi-story-container-office-calculator-band-1926.webp 1926w',
+  jpgSrcSet: '/images/products/multi-story-container-office/calc/multi-story-container-office-calculator-band-768.jpg 768w, /images/products/multi-story-container-office/calc/multi-story-container-office-calculator-band-1216.jpg 1216w, /images/products/multi-story-container-office/calc/multi-story-container-office-calculator-band-1440.jpg 1440w, /images/products/multi-story-container-office/calc/multi-story-container-office-calculator-band-1926.jpg 1926w',
+  src: '/images/products/multi-story-container-office/calc/multi-story-container-office-calculator-band-1926.jpg',
+  alt: 'SAMAN multi-story container office calculator',
 };
 
 const encodeDashEntitiesForRawHtml = (html: string): string =>
@@ -160,6 +167,7 @@ const CLUSTER_DESIGN_SLUGS = new Set([
   'bess-container',
   'shipping-container-office',
   'containerized-data-center',
+  'multi-story-container-office',
 ]);
 
 // Dynamic import for ProductTabs to avoid SSR issues
@@ -681,7 +689,7 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
         specificationsHtml: (variantData as VariantProductData & { specificationsHtml?: string } | null)?.specificationsHtml || t31Tabs?.specificationsHtml || '',
         shippingHtml: slugLower === 'containerized-data-center'
           ? CO04_SHIPPING_HTML
-          : slug === CMO_SLUG && t31Tabs?.shippingHtml
+          : (slug === CMO_SLUG || slug === CO06_SLUG) && t31Tabs?.shippingHtml
           ? encodeDashEntitiesForRawHtml(t31Tabs.shippingHtml)
           : t31Tabs?.shippingHtml || '',
         relatedProducts: slugLower === 'containerized-data-center' ? [] : relatedProducts,
@@ -842,7 +850,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
 
   const relatedRailItems = useMemo<RelatedRailItem[]>(() => {
     const currentSlug = transformedProduct?.slug || slug;
-    if (currentSlug === 'bess-container' && variantData?.relatedTiles?.length) {
+    if ((currentSlug === 'bess-container' || currentSlug === CO06_SLUG) && variantData?.relatedTiles?.length) {
       return variantData.relatedTiles;
     }
     if (isC16PanelSlug(currentSlug)) {
@@ -935,7 +943,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
         .replace(/waterproof/gi, 'sealed');
     }
     if (slug === 'bess-container') return html.replace(/\s*[\u2013\u2014]\s*/g, ' - ');
-    return slug === CMO_SLUG ? encodeDashEntitiesForRawHtml(html) : html;
+    return slug === CMO_SLUG || slug === CO06_SLUG ? encodeDashEntitiesForRawHtml(html) : html;
   }, [category, slug, embeddedCalculatorMapping, product?.name]);
 
   // The calculator entry band. Sits between the buy box and the description
@@ -957,13 +965,15 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
         productName: product?.name || 'Prefab Site Canteen',
       });
     }
-    return renderCalculatorEntrySection({
+    const html = renderCalculatorEntrySection({
       productId: embeddedCalculatorMapping.productId,
       productName: product?.name || embeddedCalculatorSummary?.name || '',
       ladderKey: embeddedCalculatorMapping.ladderKey,
       ...(slug === CMO_SLUG ? { photo: CMO_CALC_ENTRY_PHOTO } : {}),
+      ...(slug === CO06_SLUG ? { photo: CO06_CALC_ENTRY_PHOTO } : {}),
       suppressCommitmentCopy: slug === 'shipping-container-office',
     });
+    return slug === CMO_SLUG || slug === CO06_SLUG ? encodeDashEntitiesForRawHtml(html) : html;
   }, [embeddedCalculatorMapping, product?.name, embeddedCalculatorSummary?.name, isPrefabSiteCanteenPage, slug]);
 
   // Prevent hydration mismatch by only showing dynamic content after hydration
@@ -997,6 +1007,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
   return (
     <Layout
       hideFooterResourceStrip={category === 'labor-colony' && slug === 'labor-sheds'}
+      hideFooterCompanyDescription={slug === CO06_SLUG}
       hideChrome={slug === 'shipping-container-office'}
     >
       {!transformedProduct ? (
@@ -1146,17 +1157,21 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   sizeEyebrowText={
                     slug === 'containerized-data-center'
                       ? ''
-                      : slug === 'porta-cabin-with-toilet' || slug === 'soundproof-porta-cabin' || slug === 'puf-porta-cabin' || slug === 'skid-mounted-porta-cabin' || slug === 'porta-cabin-shop' || slug === 'accommodation-container' || slug === 'container-office-cabin' || slug === 'container-marketing-office' || slug === 'bess-container' || slug === 'shipping-container-office'
+                      : slug === 'porta-cabin-with-toilet' || slug === 'soundproof-porta-cabin' || slug === 'puf-porta-cabin' || slug === 'skid-mounted-porta-cabin' || slug === 'porta-cabin-shop' || slug === 'accommodation-container' || slug === 'container-office-cabin' || slug === 'container-marketing-office' || slug === 'multi-story-container-office' || slug === 'bess-container' || slug === 'shipping-container-office'
                       ? 'Choose your size - six factory-built options'
                       : undefined
                   }
                   // CO-09 (22 Aug 2026) — ticket §I requires #size-<slug> DOM
                   // anchors preserved byte-identically. Same existing opt-in
                   // as accommodation-container, additive to this one slug.
-                  emitSizeAnchors={slug === 'accommodation-container' || slug === 'container-office-cabin' || slug === 'container-marketing-office' || slug === 'bess-container' || slug === 'shipping-container-office'}
+                  emitSizeAnchors={slug === 'accommodation-container' || slug === 'container-office-cabin' || slug === 'container-marketing-office' || slug === 'multi-story-container-office' || slug === 'bess-container' || slug === 'shipping-container-office'}
                   explorerHidePanelImages={slug === 'accommodation-container'}
                   deferNonLcpImagesUntilHeroPaint={slug === 'accommodation-container'}
                   renderOnlyActiveExplorerPanel={slug === 'accommodation-container'}
+                  syncVariantSelection={slug === CO06_SLUG}
+                  eagerActiveGalleryImages={slug === CO06_SLUG}
+                  renderInactiveGalleryImages={slug === CO06_SLUG}
+                  explorerImageAfterApplications={slug === CO06_SLUG}
                 />
               ) : (
               <ProductSummaryLayout
@@ -1502,9 +1517,9 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   specificationsHtml={slug === 'accommodation-container' ? lazyLoadStaticHtmlImages(specificationsHtml) : specificationsHtml}
                   shippingHtml={slug === 'accommodation-container' ? lazyLoadStaticHtmlImages(shippingHtml) : shippingHtml}
                   productTitle={isLaborShedsPage ? 'Labour Sheds' : transformedProduct.title}
-                  reviews={slug === 'accommodation-container' || slug === 'container-marketing-office' ? [] : reviews}
-                  averageRating={slug === 'accommodation-container' || slug === 'container-marketing-office' ? undefined : product.average_rating}
-                  ratingCount={slug === 'accommodation-container' || slug === 'container-marketing-office' ? 0 : product.rating_count}
+                  reviews={slug === 'accommodation-container' || slug === 'container-marketing-office' || slug === CO06_SLUG ? [] : reviews}
+                  averageRating={slug === 'accommodation-container' || slug === 'container-marketing-office' || slug === CO06_SLUG ? undefined : product.average_rating}
+                  ratingCount={slug === 'accommodation-container' || slug === 'container-marketing-office' || slug === CO06_SLUG ? 0 : product.rating_count}
                   productId={product.id}
                   productName={transformedProduct.title}
                   fullMobileLabels={slug === 'containerized-data-center'}

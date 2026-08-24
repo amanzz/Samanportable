@@ -57,6 +57,7 @@ import modularContainerCafeApplications from '@/data/products/modular-container-
 import containerCoffeeShopApplications from '@/data/products/container-coffee-shop-applications.json';
 import containerOfficeCabinApplications from '@/data/products/container-office-cabin-applications.json';
 import containerMarketingOfficeApplications from '@/data/products/container-marketing-office-applications.json';
+import multiStoryContainerOfficeApplications from '@/data/products/multi-story-container-office-applications.json';
 import siteOfficeContainerApplications from '@/data/products/site-office-container-applications.json';
 import bessContainerApplications from '@/data/products/bess-container-applications.json';
 import sectionHDatasets from '@/data/products/section-h-datasets.json';
@@ -183,6 +184,7 @@ const APPLICATIONS_DATASETS: Record<string, ApplicationsData> = {
   'modular-container-cafe': modularContainerCafeApplications as ApplicationsData,
   'container-coffee-shop': containerCoffeeShopApplications as ApplicationsData,
   'container-marketing-office': containerMarketingOfficeApplications as ApplicationsData,
+  'multi-story-container-office': multiStoryContainerOfficeApplications as ApplicationsData,
   ...Object.fromEntries(
     Object.entries(sectionHDatasets as Record<string, SectionHDataset>).map(
       ([slug, dataset]) => [slug, fromSectionHDrop(dataset)]
@@ -460,6 +462,14 @@ interface PortaCabinVariantHeroProps {
   /** LC-05 CWV v3: render only the active explorer panel in the initial DOM.
       Default false preserves the crawlable grid-stack markup on every sibling. */
   renderOnlyActiveExplorerPanel?: boolean;
+  /** CO-06: keep the two existing size controls on the same selected variant. */
+  syncVariantSelection?: boolean;
+  /** CO-06: its ticket requires all six images for the selected size to be eager. */
+  eagerActiveGalleryImages?: boolean;
+  /** CO-06: keep all inactive-size gallery assets in SSR as lazy images. */
+  renderInactiveGalleryImages?: boolean;
+  /** CO-06: place the approved GA board below that size's application bullets. */
+  explorerImageAfterApplications?: boolean;
 }
 
 // Star row for the review badge (Amendment G v2 — real rating: 4.6 from the 5
@@ -735,6 +745,10 @@ export function PortaCabinVariantHero({
   explorerHidePanelImages = false,
   deferNonLcpImagesUntilHeroPaint = false,
   renderOnlyActiveExplorerPanel = false,
+  syncVariantSelection = false,
+  eagerActiveGalleryImages = false,
+  renderInactiveGalleryImages = false,
+  explorerImageAfterApplications = false,
 }: PortaCabinVariantHeroProps) {
   const defaultIndex = Math.max(
     0,
@@ -846,6 +860,21 @@ export function PortaCabinVariantHero({
   const activeVariantImages = imagesForVariant(heroActive);
   const heroImages = activeVariantImages.length > 0 ? activeVariantImages : null;
   const hiddenCompletenessImages = (() => {
+    if (renderInactiveGalleryImages) {
+      const alreadyRendered = new Set(activeVariantImages.map((image) => image.src));
+      const activePanelImage = applications?.panels.find((panel) => panel.sizeSlug === data.variants[explorerIndex]?.sizeSlug)?.image;
+      if (activePanelImage) alreadyRendered.add(activePanelImage.src);
+      const seen = new Set<string>();
+      const allOwnedImages = [
+        ...data.variants.flatMap((variant) => imagesForVariant(variant)),
+        ...(applications?.panels.map((panel) => panel.image).filter((image): image is VariantImage => Boolean(image)) || []),
+      ];
+      return allOwnedImages.filter((image) => {
+        if (alreadyRendered.has(image.src) || seen.has(image.src)) return false;
+        seen.add(image.src);
+        return true;
+      });
+    }
     if (data.productSlug !== 'bess-container' || !applications) return [];
     const alreadyRendered = new Set(activeVariantImages.map((image) => image.src));
     const activePanelImage = applications.panels.find((panel) => panel.sizeSlug === data.variants[explorerIndex]?.sizeSlug)?.image;
@@ -881,6 +910,7 @@ export function PortaCabinVariantHero({
   // navigation, no scroll, no history entry).
   const selectHero = (index: number) => {
     setHeroIndex(index);
+    if (syncVariantSelection) setExplorerIndex(index);
     setActiveImageIndex(0);
     // Changing size returns the viewer to that size's photos (the video is a
     // page-level asset, not a per-size one).
@@ -891,6 +921,11 @@ export function PortaCabinVariantHero({
   // Explorer tabs: change ONLY the explorer panel; write #sizedetails-{WxL}.
   const selectExplorer = (index: number) => {
     setExplorerIndex(index);
+    if (syncVariantSelection) {
+      setHeroIndex(index);
+      setActiveImageIndex(0);
+      setShowVideo(false);
+    }
     window.history.replaceState(null, '', `#${detailsFragment(data.variants[index].sizeSlug)}`);
   };
 
@@ -911,6 +946,7 @@ export function PortaCabinVariantHero({
       const i = data.variants.findIndex((v) => v.sizeSlug === m1[1]);
       if (i >= 0) {
         setHeroIndex(i);
+        if (syncVariantSelection) setExplorerIndex(i);
         setActiveImageIndex(0);
         setShowVideo(false);
       }
@@ -921,6 +957,11 @@ export function PortaCabinVariantHero({
       const i = data.variants.findIndex((v) => v.sizeSlug === m2[1]);
       if (i >= 0) {
         setExplorerIndex(i);
+        if (syncVariantSelection) {
+          setHeroIndex(i);
+          setActiveImageIndex(0);
+          setShowVideo(false);
+        }
         document.getElementById(APPLICATIONS_SECTION_ID)?.scrollIntoView({ block: 'start' });
       }
     }
@@ -965,7 +1006,11 @@ export function PortaCabinVariantHero({
               // Every other image (priority=false) defaults to loading=lazy. Passing
               // an explicit `loading` alongside `priority` is a next/image error, so
               // we rely on priority to drive both.
-              priority={heroIndex === defaultIndex && activeImageIndex === 0}
+              {...(heroIndex === defaultIndex && activeImageIndex === 0
+                ? { priority: true }
+                : eagerActiveGalleryImages
+                  ? { loading: 'eager' as const }
+                  : {})}
               decoding="async"
               // T30 / T24.1-IMG §5.1 — the hero does NOT fill the viewport below
               // 1024: it sits inside the page container (px-4 <640, px-6 >=640) and
@@ -1024,7 +1069,7 @@ export function PortaCabinVariantHero({
                     viewport on mobile AND desktop (measured 52-62px boxes, all
                     in-viewport). They still remain lazy so only the main viewer
                     competes in the eager/high-priority LCP lane. */}
-                {nonLcpImagesReady && <Image src={img.src} unoptimized={data.optimizeLocalGalleryImages ? false : shouldBypassOptimizer(img.src)} alt={data.productSlug === 'shipping-container-office' || (data.productSlug === 'bess-container' && !showVideo && i === activeImageIndex) ? `Thumbnail ${i + 1}: ${img.alt}` : (isC04Product || isC08Product ? img.alt : (!showVideo && i === activeImageIndex ? '' : img.alt))} width={150} height={150} className="w-full h-full object-cover" loading="lazy" decoding="async" sizes="(max-width: 1023px) 18vw, 80px" />}
+                {nonLcpImagesReady && <Image src={img.src} unoptimized={data.optimizeLocalGalleryImages ? false : shouldBypassOptimizer(img.src)} alt={data.productSlug === 'shipping-container-office' || (data.productSlug === 'bess-container' && !showVideo && i === activeImageIndex) ? `Thumbnail ${i + 1}: ${img.alt}` : (isC04Product || isC08Product ? img.alt : (!showVideo && i === activeImageIndex ? '' : img.alt))} width={eagerActiveGalleryImages ? 1254 : 150} height={eagerActiveGalleryImages ? 1254 : 150} className="w-full h-full object-cover" loading={eagerActiveGalleryImages ? 'eager' : 'lazy'} decoding="async" sizes="(max-width: 1023px) 18vw, 80px" />}
               </button>
             ))}
 
@@ -1498,6 +1543,7 @@ export function PortaCabinVariantHero({
             panelHeadingAsH2={explorerPanelHeadingAsH2}
             hidePanelImages={explorerHidePanelImages}
             renderOnlyActivePanel={renderOnlyActiveExplorerPanel}
+            imageAfterApplications={explorerImageAfterApplications}
           />
         </div>
         )}
@@ -1506,16 +1552,23 @@ export function PortaCabinVariantHero({
           <div className="hidden" aria-hidden="true" data-co03-image-completeness="true">
             {hiddenFeatureCompletenessText && <span>{hiddenFeatureCompletenessText}</span>}
             {hiddenCompletenessImages.map((image) => (
-              <Image
-                key={image.src}
-                src={image.src}
-                unoptimized={data.optimizeLocalGalleryImages ? false : shouldBypassOptimizer(image.src)}
-                alt={image.alt}
-                width={image.width}
-                height={image.height}
-                loading="lazy"
-                decoding="async"
-              />
+              renderInactiveGalleryImages && image.previewSrc ? (
+                <picture key={image.src}>
+                  <source media="(max-width: 767px)" srcSet={image.previewSrc} />
+                  <img src={image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" />
+                </picture>
+              ) : (
+                <Image
+                  key={image.src}
+                  src={image.src}
+                  unoptimized={data.optimizeLocalGalleryImages ? false : shouldBypassOptimizer(image.src)}
+                  alt={image.alt}
+                  width={image.width}
+                  height={image.height}
+                  loading="lazy"
+                  decoding="async"
+                />
+              )
             ))}
           </div>
         )}
@@ -1577,9 +1630,10 @@ interface SizeApplicationsExplorerProps {
   /** PC-02 — see `explorerHidePanelImages` on the hero. Default false. */
   hidePanelImages?: boolean;
   renderOnlyActivePanel?: boolean;
+  imageAfterApplications?: boolean;
 }
 
-function SizeApplicationsExplorer({ data, applications, productName, sectionId, activeIndex, onSelectTab, onGetQuote, usePremiumSizeTabs = false, panelHeadingAsH2 = false, hidePanelImages = false, renderOnlyActivePanel = false }: SizeApplicationsExplorerProps) {
+function SizeApplicationsExplorer({ data, applications, productName, sectionId, activeIndex, onSelectTab, onGetQuote, usePremiumSizeTabs = false, panelHeadingAsH2 = false, hidePanelImages = false, renderOnlyActivePanel = false, imageAfterApplications = false }: SizeApplicationsExplorerProps) {
   // T25 — HARD NULL. The per-slug applications copy is owner-authored; when a
   // product has none this section renders NOTHING. It must never fall back to the
   // porta-cabins copy.
@@ -1762,7 +1816,7 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
                   ships in SSR (crawlable); the newly-active panel mounts and fetches
                   its image on demand when the tab is selected — into the already
                   reserved box, so activation is zero-CLS. */}
-              {!hidePanelImages && <div className="lg:w-[44%]">
+              {!hidePanelImages && !imageAfterApplications && <div className="lg:w-[44%]">
                 <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-[var(--ds-color-border)] bg-[var(--ds-color-mist)]">
                   {panelImage ? (
                     (i === activeIndex || data.productSlug === 'container-marketing-office' || data.productSlug === 'shipping-container-office') ? (
@@ -1867,6 +1921,37 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
                     </li>
                   ))}
                 </ul>
+                )}
+
+                {imageAfterApplications && !hidePanelImages && panelImage && i === activeIndex && (
+                  <div className="mt-4 overflow-hidden rounded-2xl border border-[var(--ds-color-border)] bg-[var(--ds-color-mist)]">
+                    {panelImage.previewSrc ? (
+                      <picture>
+                        <source media="(max-width: 767px)" srcSet={panelImage.previewSrc} />
+                        <img
+                          src={panelImage.src}
+                          alt={panelImage.alt}
+                          width={panelImage.width}
+                          height={panelImage.height}
+                          className={cn('h-auto w-full', panelImage.fit === 'contain' ? 'object-contain' : 'object-cover')}
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      </picture>
+                    ) : (
+                      <Image
+                        src={panelImage.src}
+                        unoptimized={shouldBypassOptimizer(panelImage.src)}
+                        alt={panelImage.alt}
+                        width={panelImage.width}
+                        height={panelImage.height}
+                        className={cn('h-auto w-full', panelImage.fit === 'contain' ? 'object-contain' : 'object-cover')}
+                        sizes="(max-width: 1023px) calc(100vw - 34px), 900px"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    )}
+                  </div>
                 )}
 
                 {/* Stats + CTA are ONE space-between group (REV 2): free height is

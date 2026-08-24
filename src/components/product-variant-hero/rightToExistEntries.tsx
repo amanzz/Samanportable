@@ -31,6 +31,10 @@ export interface RightToExistEntry {
       earlier `uniformParagraphWeight` flag is dropped in favour of this field, which
       renders the identical classes. */
   bodyParagraphs?: ReactNode[];
+  /** Standalone approved CTA below the lead paragraphs when no split-card content
+      was supplied. It renders as a link, never as a third paragraph. */
+  ctaLabel?: string;
+  ctaHref?: string;
   /** R15 (v1.4, 14 Aug 2026) — optional image-left / content-right split card
       rendered below the lead paragraphs. Present only on the porta-cabins hub;
       every other entry renders byte-identically to before. */
@@ -444,6 +448,23 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
       ctaLabel: 'Ask for a written quotation against the approved plan',
       ctaHref: 'https://www.samanportable.com/contact',
     },
+  },
+  'multi-story-container-office': {
+    heading: 'When Stacking Beats Spreading Out on a Crowded Project Site',
+    bodyParagraphs: [
+      (
+        <>
+          Most site offices grow sideways. A G plus one building grows upward instead, so the same team sits on half the ground area. That matters on a tight compound. It matters again when material stacks fill the plot, or when the office must stay clear of the working face. Two levels also sort the roles out. Site staff work at ground level near the gate. Planning, billing and client meetings move upstairs, away from the boots and the noise.
+        </>
+      ),
+      (
+        <>
+          The trade is engineering. A single cabin sits on levelled ground and asks for little else. A stacked building needs a designed foundation, a checked column line and a signed connection detail. Your civil contractor receives point loads rather than one simple base rail. If your site cannot carry that, the single-storey options in <Link className={linkClass} href="https://www.samanportable.com/product/container-offices">the full container office range</Link> will reach you sooner. They also cost less for each square foot you buy.
+        </>
+      ),
+    ],
+    ctaLabel: 'Send us your plot size, head count and ground conditions for a G plus one quote',
+    ctaHref: 'https://www.samanportable.com/contact',
   },
   'bess-container': {
     heading: bessContainerPage.section2.heading,
