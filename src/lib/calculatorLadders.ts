@@ -39,6 +39,7 @@ import containerOfficesJson from '@/data/products/container-offices.json';
 import containerOfficeCabinJson from '@/data/products/container-office-cabin.json';
 import shippingContainerOfficeJson from '@/data/products/shipping-container-office.json';
 import siteOfficeContainer from '@/data/products/site-office-container.json';
+import containerizedDataCenter from '@/data/products/containerized-data-center.json';
 // C-05 container cafe cluster, added in CALC-L4 (09 Aug 2026). Each of the six
 // routes publishes its own six-row ladder on its own page; these read that JSON
 // and nothing else, so the cluster follows the same route-owns-its-ladder rule
@@ -72,7 +73,7 @@ type RawVariant = {
 
 /** `20x10` and `40x12` are the only shapes the cabin ladders use. */
 function dimsFromSizeSlug(sizeSlug: string): { length: number; width: number } | null {
-  const match = String(sizeSlug).match(/^(\d+(?:\.\d+)?)\s*[x×]\s*(\d+(?:\.\d+)?)/i);
+  const match = String(sizeSlug).match(/(\d+(?:\.\d+)?)\s*(?:ft)?\s*[x×]\s*(\d+(?:\.\d+)?)/i);
   return match ? { length: Number(match[1]), width: Number(match[2]) } : null;
 }
 
@@ -81,7 +82,7 @@ function toRows(source: { variants?: RawVariant[] }): LadderRow[] {
     .filter((variant) => typeof variant.priceExGst === 'number' && variant.priceExGst > 0)
     .map((variant) => {
       const sizeSlug = variant.sizeSlug || '';
-      const dims = dimsFromSizeSlug(sizeSlug);
+      const dims = dimsFromSizeSlug(sizeSlug) || dimsFromSizeSlug(variant.dims || '');
       return {
         sizeSlug,
         label: variant.label || variant.dims || sizeSlug,
@@ -213,6 +214,7 @@ export const ROUTE_LADDERS: Readonly<Record<string, LadderRow[]>> = {
   'container-office-cabin': toRows(containerOfficeCabinJson),
   'shipping-container-office': toRows(shippingContainerOfficeJson),
   'site-office-container': toRows(siteOfficeContainer),
+  'containerized-data-center': toRows(containerizedDataCenter),
   // 'portable-cabin' removed with its product-list entry (SAMAN ruling, 15 Aug
   // 2026). The Portable Cabin cluster retires into /product/porta-cabins, so the
   // retired terminology must not survive as a separate calculator product with a

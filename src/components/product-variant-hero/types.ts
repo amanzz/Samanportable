@@ -11,6 +11,9 @@ export interface VariantImage {
 export interface ProductVariant {
   sizeSlug: string;
   label: string;
+  /** Optional short UI label for compact selectors. Absent keeps existing pages on
+      their full variant labels. */
+  chipLabel?: string;
   dims: string;
   areaSqft: number;
   /** Ex-GST price. `null` = price GATED (owner has not confirmed the ladder): the
@@ -103,6 +106,8 @@ export interface VariantProductData {
   opener?: string;
   /** Owner-approved replacement for the legacy Description-tab HTML. */
   descriptionHtml?: string;
+  /** Owner-approved replacement for the Product Details > Specifications tab. */
+  specificationsHtml?: string;
   /** HOLD the Description tab empty-safe. An empty `descriptionHtml` cannot express
       this, because the route falls through to the legacy body on any falsy value.
       Set true only where the legacy body contradicts the rebuilt page and approved
@@ -185,6 +190,8 @@ export interface VariantProductData {
   /** Middle segment of the buy-box trust strip. Default (absent) → preset, else the
       deployed literal "5-yr structural warranty" (flagship byte-identical). */
   trustWarranty?: string;
+  /** Hide the default hero trust row when a page supplies no approved string for it. */
+  hideTrustRow?: boolean;
   /** T25 VIDEO OPT-IN. Absent/false (the default) = no video facade thumb and no
       VideoObject JSON-LD. Set true ONLY on a product that genuinely has its own
       overview video AND video metadata (own `video` field or a preset). */

@@ -1,0 +1,132 @@
+{
+  "h2": "Explore the Range",
+  "intro": "Six approved sizes, six general arrangement boards. Every board locks the rack count, the cooling bays and the opening schedule for that size.",
+  "panels": [
+    {
+      "sizeSlug": "10ft-edge",
+      "tabLabel": "10x8 ft",
+      "h3": "10 ft Edge Data Center Container With Two Rack Bays",
+      "paragraph": "The 10 ft unit is the smallest approved shell in the range. It takes two rack bays and one in row cooling bay. An LV and ATS panel sits at one end, with a UPS beside it. A fire and control cabinet closes the row. There is no battery bay and no partition, so the whole 80 sq ft reads as one room. Pick it for a telecom yard, a factory floor edge node or a small branch compute point. Two racks have to cover the load, and the UPS runtime has to come from elsewhere.",
+      "applications": [
+        "Nominal 10 ft by 8 ft by 8 ft 6 in envelope, giving 80 sq ft",
+        "Two IT rack bays against a single in row cooling bay",
+        "Wall A carries one secure door; Wall B carries one cooling louvre",
+        "Both end walls stay solid, with no door and no window cut into them",
+        "No battery bay, so UPS runtime has to come from an external source",
+        "One open room, because no power and white space partition is drawn"
+      ],
+      "image": {
+        "src": "/images/products/containerized-data-center/containerized-data-center-10ft-edge-ga-board.webp",
+        "alt": "Approved general arrangement board CDC-GA-01 for the 10 ft edge data center container",
+        "provenance": "render",
+        "width": 2400,
+        "height": 1836
+      }
+    },
+    {
+      "sizeSlug": "20ft-edge",
+      "tabLabel": "20x8 ft",
+      "h3": "20 ft Edge Data Center Container With Four Rack Bays",
+      "paragraph": "Doubling the length doubles the racks. This shell takes four rack bays and two in row cooling bays. It also adds a battery bay next to the UPS. A network and control cabinet closes the far end of the row. The unit still runs as one open room. Choose it when you want on site UPS runtime and a third and fourth rack. You may not yet need a wall between the electrical plant and the servers. The standard ISO height keeps the module under low clearances.",
+      "applications": [
+        "160 sq ft inside a nominal 20 ft by 8 ft by 8 ft 6 in envelope",
+        "Two cooling bays for four rack bays, one at each end of the row",
+        "Adds a battery bay beside the UPS and a network and control cabinet",
+        "A single Wall A door, with two Wall B louvres facing the cooling bays",
+        "Standard ISO height, so low gantries and shed doors stay workable",
+        "Still one open room, with no grey and white space partition"
+      ],
+      "image": {
+        "src": "/images/products/containerized-data-center/containerized-data-center-20ft-edge-ga-board.webp",
+        "alt": "Approved general arrangement board CDC-GA-02 for the 20 ft edge data center container",
+        "provenance": "render",
+        "width": 2400,
+        "height": 1836
+      }
+    },
+    {
+      "sizeSlug": "20ft-high-cube-all-in-one",
+      "tabLabel": "20x8 ft HC",
+      "h3": "20 ft High Cube All In One Data Center, Zoned Layout",
+      "paragraph": "This size carries the same four racks and two cooling bays as the 20 ft edge unit. What it adds is height and a wall. A partition splits the LV, UPS and battery bays from the IT white space. Switching work and battery work then stop happening inside the server room. The added high cube height leaves more clearance above the containment and the cable ladder. That helps when the busway and the fibre tray both run the full length of the row.",
+      "applications": [
+        "The same 160 sq ft, lifted to a 9 ft 6 in high cube envelope",
+        "Rack and cooling count unchanged from the edge unit: four and two",
+        "A partition separates the power and control zone from the white space",
+        "The fire and control cabinet sits inside the white space, past the racks",
+        "Openings match the edge unit, one Wall A door and two Wall B louvres",
+        "Added height suits deeper overhead containment and longer busway runs"
+      ],
+      "image": {
+        "src": "/images/products/containerized-data-center/containerized-data-center-20ft-high-cube-all-in-one-ga-board.webp",
+        "alt": "Approved general arrangement board CDC-GA-03 for the 20 ft high cube all in one unit",
+        "provenance": "render",
+        "width": 2400,
+        "height": 1836
+      }
+    },
+    {
+      "sizeSlug": "40ft-iso",
+      "tabLabel": "40x8 ft",
+      "h3": "40 ft ISO Data Center Container With Eight Rack Bays",
+      "paragraph": "The 40 ft ISO shell holds eight racks and two cooling bays behind a power and control partition. It keeps standard ISO height. That matters where a gantry, a shed door or a road limit caps the module height. Check the ratio before you commit to it. Eight racks against two cooling bays is the leanest cooling provision in the range. So this size suits steady rows at moderate density, rather than the dense rows that GPU work tends to produce.",
+      "applications": [
+        "Nominal 40 ft by 8 ft by 8 ft 6 in envelope, giving 320 sq ft",
+        "Eight IT rack bays, with a cooling bay at each end of the row",
+        "Four racks per cooling bay, which is the leanest ratio of the six",
+        "Doors double to two on Wall A; Wall B still carries two louvres",
+        "Standard ISO height for height restricted sites, gantries and sheds",
+        "Power and control zone walled off from the IT white space"
+      ],
+      "image": {
+        "src": "/images/products/containerized-data-center/containerized-data-center-40ft-iso-ga-board.webp",
+        "alt": "Approved general arrangement board CDC-GA-04 for the 40 ft ISO data center container",
+        "provenance": "render",
+        "width": 2400,
+        "height": 1836
+      }
+    },
+    {
+      "sizeSlug": "40ft-high-cube",
+      "tabLabel": "40x8 ft HC",
+      "h3": "40 ft High Cube Data Center Container, Ten Rack Bays",
+      "paragraph": "Same footprint as the ISO unit, and two more racks. The high cube version fits ten rack bays and three cooling bays, which lifts the cooling positions per rack and leaves headroom above the containment. Cooling sits at both ends of the row and in the middle, rather than only at the ends. Unless a real height limit rules it out, this is the stronger of the two 40 ft options. Compare both boards before you fix the size.",
+      "applications": [
+        "The same 320 sq ft footprint, in a 9 ft 6 in high cube envelope",
+        "Ten IT rack bays and a third cooling bay in the middle of the row",
+        "Two more racks than the 40 ft ISO shell on the same footprint",
+        "Roughly three and a third racks per cooling bay, against four on the ISO",
+        "Two Wall A doors, and Wall B gains a third louvre for the extra bay",
+        "Needs 9 ft 6 in clearance on the route and at the final position"
+      ],
+      "image": {
+        "src": "/images/products/containerized-data-center/containerized-data-center-40ft-high-cube-ga-board.webp",
+        "alt": "Approved general arrangement board CDC-GA-05 for the 40 ft high cube data center unit",
+        "provenance": "render",
+        "width": 2400,
+        "height": 1836
+      }
+    },
+    {
+      "sizeSlug": "53ft-high-density",
+      "tabLabel": "53x8 ft HC",
+      "h3": "53 ft High Density Data Center Container, Twelve Racks",
+      "paragraph": "The 53 ft shell is the largest approved planning option, and the only one with two battery bays. Its twelve racks run as two groups of six. One cooling bay stands ahead of the first group, one sits between the groups, and two more sit together past the last rack. Treat the envelope as a planning figure rather than a fixed dimension. Confirm the source container type and the clear internal dimensions with us before anyone releases this size to fabrication.",
+      "applications": [
+        "424 sq ft, from a nominal 53 ft by 8 ft by 9 ft 6 in planning envelope",
+        "Twelve IT rack bays and four cooling bays, three racks to each bay",
+        "Two battery bays, and it is the only size in the range with a second",
+        "One cooling bay leads the row, one splits the two groups, two close it",
+        "Two Wall A doors, and four Wall B louvres, the most in the range",
+        "Confirm the source container and clear internal dimensions before release"
+      ],
+      "image": {
+        "src": "/images/products/containerized-data-center/containerized-data-center-53ft-high-density-ga-board.webp",
+        "alt": "Approved general arrangement board CDC-GA-06 for the 53 ft high density data center unit",
+        "provenance": "render",
+        "width": 2400,
+        "height": 1836
+      }
+    }
+  ]
+}

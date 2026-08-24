@@ -45,11 +45,12 @@ interface ProductTabsProps {
   productId: number;
   reviewProductId?: number;
   productName?: string;
+  fullMobileLabels?: boolean;
 }
 
 
 
-const ProductTabs: React.FC<ProductTabsProps> = ({ description, specificationsHtml, shippingHtml, productTitle, reviews = [], averageRating, ratingCount, productId, reviewProductId, productName }) => {
+const ProductTabs: React.FC<ProductTabsProps> = ({ description, specificationsHtml, shippingHtml, productTitle, reviews = [], averageRating, ratingCount, productId, reviewProductId, productName, fullMobileLabels = false }) => {
   const [activeTab, setActiveTab] = useState('description');
 
   // Allow a "Write a Review" trigger anywhere on the page to open the Reviews tab
@@ -292,7 +293,7 @@ const ProductTabs: React.FC<ProductTabsProps> = ({ description, specificationsHt
                 >
                   <FileText className="w-5 h-5" />
                   <span className="hidden sm:inline">Description</span>
-                  <span className="sm:hidden">Info</span>
+                  <span className="sm:hidden">{fullMobileLabels ? 'Description' : 'Info'}</span>
                 </TabsTrigger>
                 <TabsTrigger 
                   value="additional" 
@@ -300,7 +301,7 @@ const ProductTabs: React.FC<ProductTabsProps> = ({ description, specificationsHt
                 >
                   <Info className="w-5 h-5" />
                   <span className="hidden sm:inline">Specifications</span>
-                  <span className="sm:hidden">Specs</span>
+                  <span className="sm:hidden">{fullMobileLabels ? 'Specifications' : 'Specs'}</span>
                 </TabsTrigger>
                 <TabsTrigger
                   value="shipping"
@@ -308,7 +309,7 @@ const ProductTabs: React.FC<ProductTabsProps> = ({ description, specificationsHt
                 >
                   <Truck className="w-5 h-5" />
                   <span className="hidden sm:inline">Shipping</span>
-                  <span className="sm:hidden">Ship</span>
+                  <span className="sm:hidden">{fullMobileLabels ? 'Shipping' : 'Ship'}</span>
                 </TabsTrigger>
                 <TabsTrigger
                   value="reviews"

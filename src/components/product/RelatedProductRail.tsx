@@ -10,9 +10,10 @@ type RelatedProductRailProps = {
   currentHref?: string;
   className?: string;
   scroll?: boolean;
+  useItemImageAltVerbatim?: boolean;
 };
 
-const RelatedProductRail = ({ items, currentHref, className, scroll = false }: RelatedProductRailProps) => {
+const RelatedProductRail = ({ items, currentHref, className, scroll = false, useItemImageAltVerbatim = false }: RelatedProductRailProps) => {
   return (
     <div className={cn('h-full rounded-lg border border-slate-200 bg-white/90 p-4 shadow-sm', className)}>
       <div className="mb-4 flex items-center gap-3">
@@ -50,7 +51,7 @@ const RelatedProductRail = ({ items, currentHref, className, scroll = false }: R
                       <Image
                         src={item.imageSrc}
                         unoptimized={shouldBypassOptimizer(item.imageSrc)}
-                        alt={item.imageAlt || item.title}
+                        alt={useItemImageAltVerbatim ? (item.imageAlt || item.title) : `Explore range card for ${item.imageAlt || item.title}`}
                         className="h-full w-full object-cover"
                         width={56}
                         height={56}

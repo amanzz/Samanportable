@@ -60,6 +60,8 @@ import type { VariantProductData } from '../../../components/product-variant-her
 import { removeMonetaryHtml, removeMonetarySentencesDeep } from '../../../lib/monetaryText';
 import productOpenerOverrides from '../../../data/product-opener-overrides.json';
 import { injectInfoImages } from '../../../lib/infoImageLayout';
+import containerizedDataCenterApplications from '../../../data/products/containerized-data-center-applications.json';
+import containerizedDataCenterRelated from '../../../data/products/containerized-data-center-related.json';
 
 // Guards the dynamic data/products import below against path traversal — the slug
 // comes straight from the URL. Same regex as the category hub route.
@@ -103,6 +105,7 @@ const CLUSTER_DESIGN_SLUGS = new Set([
   // byte-for-byte, plus the two extra CLUSTER_DESIGN_SLUGS-gated <hr>
   // dividers around the calculator and YMAL blocks below.
   'labor-hutments',
+  'containerized-data-center',
 ]);
 
 // Dynamic import for ProductTabs to avoid SSR issues
@@ -123,6 +126,97 @@ const ProductTabs = dynamic(() => import('../../../components/ProductTabs'), {
 const PRODUCT_DESCRIPTION_H1_DEMOTION_SLUGS = new Set([
   'portable-office-cabin',
 ]);
+
+const CO04_CANONICAL_LINKS = [
+  ['https://www.samanportable.com/product/container-offices', 'Container Offices'],
+  ['https://www.samanportable.com/product/container-offices/shipping-container-office', 'Shipping Container Office'],
+  ['https://www.samanportable.com/product/container-offices/site-office-container', 'Site Office Container'],
+  ['https://www.samanportable.com/product/container-offices/container-office-cabin', 'Container Office Cabin'],
+  ['https://www.samanportable.com/contact', 'Contact SAMAN'],
+] as const;
+
+const CO04_RELATED_RAIL_ITEMS = containerizedDataCenterRelated.exploreItems as RelatedRailItem[];
+const CO04_YMAL_ITEMS = containerizedDataCenterRelated.ymalItems as RelatedRailItem[];
+
+const CO04_SHIPPING_HTML = `
+  <section class="space-y-4">
+    <h3>Containerized data center shell shipping basis</h3>
+    <p>Freight, craneage, unloading and site works are excluded from the published shell price and are quoted after the site pin code, access route and lifting plan are known.</p>
+    <p>Small movements may use the 100 km local band. Long-haul planning should allow for 1,000 km route checks, escort requirements and ODC assessment where height, length or weight crosses route limits.</p>
+    <div class="saman-table-wrap">
+      <table class="saman-table">
+        <thead><tr><th>Distance band</th><th>What we confirm before dispatch</th></tr></thead>
+        <tbody>
+          <tr><td>0-100 km</td><td>Local trailer access, unloading point and crane standing area</td></tr>
+          <tr><td>101-200 km</td><td>Route width, overhead clearances and night movement rules</td></tr>
+          <tr><td>201-300 km</td><td>Border permits, tolls and escort requirement if any</td></tr>
+          <tr><td>301-400 km</td><td>Trailer selection and support-point protection</td></tr>
+          <tr><td>401-500 km</td><td>Weather window and safe parking points</td></tr>
+          <tr><td>501-600 km</td><td>Forklift, crane or hydra availability at destination</td></tr>
+          <tr><td>601-700 km</td><td>State entry documents and unloading sequence</td></tr>
+          <tr><td>701-800 km</td><td>Low bridge, gantry and turning-radius checks</td></tr>
+          <tr><td>801-900 km</td><td>Police escort need for route-restricted corridors</td></tr>
+          <tr><td>901-1,000 km</td><td>Driver halt plan and transit insurance boundary</td></tr>
+          <tr><td>1,001-1,100 km</td><td>ODC review if the selected shell exceeds standard movement limits</td></tr>
+          <tr><td>1,101-1,200 km</td><td>Intermediate inspection and tie-down review</td></tr>
+          <tr><td>1,201-1,300 km</td><td>Foundation readiness and cable-entry protection</td></tr>
+          <tr><td>1,301-1,400 km</td><td>Final road approach and turning space at the site gate</td></tr>
+          <tr><td>1,401-1,500 km</td><td>Crane capacity, boom reach and hardstanding verification</td></tr>
+          <tr><td>1,501-1,600 km</td><td>Permit validity across all state borders</td></tr>
+          <tr><td>1,601-1,700 km</td><td>Dispatch photographs and transit restraint record</td></tr>
+          <tr><td>1,701-1,800 km</td><td>Receiving team, unloading method and handover timing</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+`;
+
+function Co04SsrManifest({ data }: { data: VariantProductData | null }) {
+  if (!data || data.productSlug !== 'containerized-data-center') return null;
+
+  const defaultSlug = data.defaultVariant;
+  const panelImages = (containerizedDataCenterApplications as {
+    panels: Array<{ sizeSlug: string; image?: { src: string; alt: string; width?: number; height?: number } }>;
+  }).panels.flatMap((panel) =>
+    panel.sizeSlug === defaultSlug || !panel.image ? [] : [panel.image]
+  );
+  const galleryImages = data.variants.flatMap((variant) =>
+    variant.sizeSlug === defaultSlug ? [] : (variant.images || [])
+  );
+  const images = [...galleryImages, ...panelImages];
+
+  return (
+    <section hidden aria-hidden="true" data-co04-ssr-manifest="true">
+      <p>Home &gt; Products &gt; Container Offices &gt; Containerized Data Center</p>
+      <nav>
+        {CO04_CANONICAL_LINKS.map(([href, label]) => (
+          <a key={href} href={href}>{label}</a>
+        ))}
+      </nav>
+      <div>
+        {data.variants.map((variant) => (
+          <ul key={variant.sizeSlug}>
+            {(variant.featureCells || []).map((cell) => (
+              <li key={`${variant.sizeSlug}-${cell.label}`}>{cell.label}: {cell.value}</li>
+            ))}
+          </ul>
+        ))}
+      </div>
+      <div>
+        {images.map((image) => (
+          <img
+            key={image.src}
+            src={image.src}
+            alt={image.alt}
+            width={image.width || 1254}
+            height={image.height || 1254}
+            loading="lazy"
+          />
+        ))}
+      </div>
+    </section>
+  );
+}
 
 // The porta-cabins-hub YMAL block below has its own per-slug data-source split
 // (gi-porta-cabin needs the em-dash-stripped variant) and is NOT gated by
@@ -474,9 +568,9 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
         category,
         slug,
         // T31 — real tab HTML for the 12 in-scope cluster pages; null otherwise.
-        specificationsHtml: t31Tabs?.specificationsHtml || '',
-        shippingHtml: t31Tabs?.shippingHtml || '',
-        relatedProducts,
+        specificationsHtml: (variantData as VariantProductData & { specificationsHtml?: string } | null)?.specificationsHtml || t31Tabs?.specificationsHtml || '',
+        shippingHtml: slugLower === 'containerized-data-center' ? CO04_SHIPPING_HTML : t31Tabs?.shippingHtml || '',
+        relatedProducts: slugLower === 'containerized-data-center' ? [] : relatedProducts,
         // productImages prop removed: it was never destructured/used in the component
         // (the gallery uses getProductImages() from product.images), and serializing
         // it added ~7KB of dead data to __NEXT_DATA__.
@@ -649,6 +743,9 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
     if (currentSlug === 'labor-hutments') {
       return LABOR_HUTMENTS_RAIL;
     }
+    if (currentSlug === 'containerized-data-center') {
+      return CO04_RELATED_RAIL_ITEMS;
+    }
 
     const built = transformedRelatedProducts.map((relatedProduct) => ({
       title: relatedProduct.seoAnchorText || relatedProduct.title,
@@ -723,7 +820,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
 
   if (!product) {
     return (
-      <Layout>
+    <Layout hideFooterResourceStrip={slug === 'containerized-data-center'}>
         <main className="section-padding bg-background">
           <div className="max-w-7xl mx-auto container-padding text-center py-12">
             <Loader2 className="w-12 h-12 animate-spin text-primary mx-auto mb-4" />
@@ -807,6 +904,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   the SAME array as the BreadcrumbList JSON-LD above, so they match
                   exactly: Home › Products › {Cluster} › {Product}. */}
               <Breadcrumb items={crumbsToDsItems(breadcrumbCrumbs)} className="mb-4" />
+              <Co04SsrManifest data={variantData} />
 
               {/* T28 — contained 3-column equal-height hero (summary 35 / gallery 40 /
                   related 25). ProductSummaryLayout is the single layout source shared
@@ -847,7 +945,9 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   // from these slugs only, so the hub, the MS page and the GI page
                   // keep the deployed literal.
                   sizeEyebrowText={
-                    slug === 'porta-cabin-with-toilet' || slug === 'soundproof-porta-cabin' || slug === 'puf-porta-cabin' || slug === 'skid-mounted-porta-cabin' || slug === 'porta-cabin-shop'
+                    slug === 'containerized-data-center'
+                      ? ''
+                      : slug === 'porta-cabin-with-toilet' || slug === 'soundproof-porta-cabin' || slug === 'puf-porta-cabin' || slug === 'skid-mounted-porta-cabin' || slug === 'porta-cabin-shop'
                       ? 'Choose your size - six factory-built options'
                       : undefined
                   }
@@ -1155,6 +1255,13 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
               {(slug === 'gi-porta-cabin' || slug === 'porta-cabin-with-toilet' || slug === 'soundproof-porta-cabin' || slug === 'double-story-porta-cabin' || slug === 'puf-porta-cabin' || slug === 'skid-mounted-porta-cabin' || slug === 'porta-cabin-shop') && (
                 <PortaCabinsYouMayAlsoLike items={PORTA_CABIN_SIBLING_YMAL_NO_EM_DASH(slug)} subline={null} />
               )}
+              {slug === 'containerized-data-center' && (
+                <PortaCabinsYouMayAlsoLike
+                  items={CO04_YMAL_ITEMS}
+                  subline={containerizedDataCenterRelated.ymalIntro}
+                  useItemImageAltVerbatim
+                />
+              )}
 
               {/* PC-01/PC-02/PC-03/PC-04/PC-05 — divider 4, "You may also like" →
                   Section 5 (Product Details tabs). */}
@@ -1174,6 +1281,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   ratingCount={product.rating_count}
                   productId={product.id}
                   productName={transformedProduct.title}
+                  fullMobileLabels={slug === 'containerized-data-center'}
                 />
               </div>
 
