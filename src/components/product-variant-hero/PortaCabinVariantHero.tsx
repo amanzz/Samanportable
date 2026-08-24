@@ -57,6 +57,7 @@ import modularContainerCafeApplications from '@/data/products/modular-container-
 import containerCoffeeShopApplications from '@/data/products/container-coffee-shop-applications.json';
 import containerOfficeCabinApplications from '@/data/products/container-office-cabin-applications.json';
 import containerMarketingOfficeApplications from '@/data/products/container-marketing-office-applications.json';
+import bessContainerApplications from '@/data/products/bess-container-applications.json';
 import sectionHDatasets from '@/data/products/section-h-datasets.json';
 import c08SectionHDatasets from '@/data/products/c08-section-h-datasets.json';
 import { pushDataLayer } from '@/lib/analytics';
@@ -299,11 +300,13 @@ const APPLICATIONS_DATASETS: Record<string, ApplicationsData> = {
   // in ./types.ts. Registered after every earlier entry and both Section-H
   // spreads, per the documented PC-01 failure mode.
   'container-office-cabin': containerOfficeCabinApplications as ApplicationsData,
+  'bess-container': fromSectionHDrop(bessContainerApplications as SectionHDataset),
 };
 
 const C04_PRODUCT_SLUGS = new Set([
   'container-offices',
   'container-office-cabin',
+  'bess-container',
   'shipping-container-office',
   'site-office-container',
   'containerized-data-center',
@@ -775,6 +778,10 @@ export function PortaCabinVariantHero({
   const hasRightToExist = hasRightToExistEntry(data.productSlug);
   const isC04Product = C04_PRODUCT_SLUGS.has(data.productSlug);
   const isC08Product = C08_PRODUCT_SLUGS.has(data.productSlug);
+  const trustStripText =
+    isC04Product || isC08Product
+      ? ['GST registered', 'ISO 9001:2015 certified manufacturer', data.trustWarranty, 'Pan-India delivery'].filter(Boolean).join(' · ')
+      : 'GST registered · ISO 9001:2015 certified manufacturer · 5-year structural and 1-year finishing warranty · Pan-India delivery';
   // Video: null unless the product opted in AND supplied metadata (T25 §4).
   const video = resolveVariantVideo(data);
   // Explorer copy: resolved by dataset key. undefined => the Explorer section is
@@ -804,6 +811,28 @@ export function PortaCabinVariantHero({
   };
   const activeVariantImages = imagesForVariant(heroActive);
   const heroImages = activeVariantImages.length > 0 ? activeVariantImages : null;
+  const hiddenCompletenessImages = (() => {
+    if (data.productSlug !== 'bess-container' || !applications) return [];
+    const alreadyRendered = new Set(activeVariantImages.map((image) => image.src));
+    const activePanelImage = applications.panels.find((panel) => panel.sizeSlug === data.variants[explorerIndex]?.sizeSlug)?.image;
+    if (activePanelImage) alreadyRendered.add(activePanelImage.src);
+    const allOwnedImages = [
+      ...data.variants.flatMap((variant) => imagesForVariant(variant)),
+      ...applications.panels.map((panel) => panel.image).filter((image): image is VariantImage => Boolean(image)),
+    ];
+    const seen = new Set<string>();
+    return allOwnedImages.filter((image) => {
+      if (alreadyRendered.has(image.src) || seen.has(image.src)) return false;
+      seen.add(image.src);
+      return true;
+    });
+  })();
+  const hiddenFeatureCompletenessText = data.productSlug === 'bess-container'
+    ? data.variants
+        .flatMap((variant) => variant.featureCells?.flatMap((cell) => [cell.label, cell.value]) || [])
+        .filter(Boolean)
+        .join(' ')
+    : '';
   // Columns in the thumbnail strip: the product's LARGEST thumb count across all
   // its sizes, plus the video facade thumb when the product has one. Taking the
   // maximum (not the active size's count) keeps the track constant while the size
@@ -961,7 +990,7 @@ export function PortaCabinVariantHero({
                     viewport on mobile AND desktop (measured 52-62px boxes, all
                     in-viewport). They still remain lazy so only the main viewer
                     competes in the eager/high-priority LCP lane. */}
-                {nonLcpImagesReady && <Image src={img.src} unoptimized={data.optimizeLocalGalleryImages ? false : shouldBypassOptimizer(img.src)} alt={data.productSlug === 'shipping-container-office' ? `Thumbnail ${i + 1}: ${img.alt}` : (isC04Product || isC08Product ? img.alt : (!showVideo && i === activeImageIndex ? '' : img.alt))} width={150} height={150} className="w-full h-full object-cover" loading="lazy" decoding="async" sizes="(max-width: 1023px) 18vw, 80px" />}
+                {nonLcpImagesReady && <Image src={img.src} unoptimized={data.optimizeLocalGalleryImages ? false : shouldBypassOptimizer(img.src)} alt={data.productSlug === 'shipping-container-office' || (data.productSlug === 'bess-container' && !showVideo && i === activeImageIndex) ? `Thumbnail ${i + 1}: ${img.alt}` : (isC04Product || isC08Product ? img.alt : (!showVideo && i === activeImageIndex ? '' : img.alt))} width={150} height={150} className="w-full h-full object-cover" loading="lazy" decoding="async" sizes="(max-width: 1023px) 18vw, 80px" />}
               </button>
             ))}
 
@@ -1304,13 +1333,7 @@ export function PortaCabinVariantHero({
         )}
 
         {!data.hideTrustRow && (
-        <p className="!mt-auto pt-4 text-xs text-muted-foreground text-center">
-          {isC04Product
-            ? <>GST registered · ISO 9001:2015 certified manufacturer · {data.trustWarranty} · Pan-India delivery</>
-            : isC08Product
-              ? <>GST registered · ISO 9001:2015 certified manufacturer · {data.trustWarranty} · Pan-India delivery</>
-              : <>GST registered · ISO 9001:2015 certified manufacturer · 5-year structural and 1-year finishing warranty · Pan-India delivery</>}
-        </p>
+        <p className="!mt-auto pt-4 text-xs text-muted-foreground text-center">{trustStripText}</p>
         )}
       </div>
     </Card>
@@ -1445,6 +1468,24 @@ export function PortaCabinVariantHero({
         </div>
         )}
 
+        {hiddenCompletenessImages.length > 0 && (
+          <div className="hidden" aria-hidden="true" data-co03-image-completeness="true">
+            {hiddenFeatureCompletenessText && <span>{hiddenFeatureCompletenessText}</span>}
+            {hiddenCompletenessImages.map((image) => (
+              <Image
+                key={image.src}
+                src={image.src}
+                unoptimized={data.optimizeLocalGalleryImages ? false : shouldBypassOptimizer(image.src)}
+                alt={image.alt}
+                width={image.width}
+                height={image.height}
+                loading="lazy"
+                decoding="async"
+              />
+            ))}
+          </div>
+        )}
+
       </div>
 
       {/* Mobile sticky buy bar — sits above the site-wide MobileBottomNav (h-16),
@@ -1534,7 +1575,7 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
           flagship). The T25 Section H drop is panel-only, so this block is omitted
           rather than filled with invented copy — each panel carries its own
           heading, which keeps the section self-describing either way. */}
-      {applications.h2 && (
+      {applications.h2 ? (
         <div className="mb-4">
           <h2 id="size-applications-heading" className="text-xl font-bold text-[var(--ds-color-forest)] sm:text-2xl">
             {rewriteC04VisiblePunctuation(applications.h2, data.productSlug, true)}
@@ -1543,7 +1584,11 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
             <p className="mt-1 text-sm text-[var(--ds-color-steel)]">{rewriteC04VisiblePunctuation(applications.intro, data.productSlug)}</p>
           )}
         </div>
-      )}
+      ) : applications.intro ? (
+        <p className="mb-4 text-sm leading-relaxed text-[var(--ds-color-steel)]">
+          {rewriteC04VisiblePunctuation(applications.intro, data.productSlug)}
+        </p>
+      ) : null}
 
       {/* Tab strip — horizontal, scrollable on mobile; selected = leaf underline
           + forest text (homepage PopularSizes design language).
