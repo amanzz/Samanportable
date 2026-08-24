@@ -270,3 +270,20 @@ the start of the long description, move that block into
 `src/components/product-variant-hero/rightToExistEntries.tsx`, add the 16:9
 split-card image and card copy there, and let the long description start with
 its own next H2.
+
+### Current page override
+
+As of 24 August 2026, the active page is **CMO-01 Container Marketing Office**,
+`/product/container-offices/container-marketing-office`, branch
+`cmo-01-container-marketing-office` (pre-build SHA `f2a9548f`, backup ref
+`backup/co-01-build-v21-prebuild-2026-08-22`). Built to CMO-01 build prompt v1
+plus addendum v1.1, including the post-WooCommerce Section 2 split-card
+correction. **PR #173** (`https://github.com/amanzz/Samanportable/pull/173`)
+is open against `static-migration` - **not yet merged.**
+
+Local verification passed before PR open:
+1. `npm run type-check -- --pretty false`
+2. `node scripts\verify-cmo-01.mjs http://localhost:3002/product/container-offices/container-marketing-office`
+
+Known local verification note: a full `npm run build` attempt timed out in the
+local command window, so it is not reported as passing.
