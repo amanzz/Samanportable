@@ -11,6 +11,7 @@ type RelatedProductRailProps = {
   currentHref?: string;
   className?: string;
   scroll?: boolean;
+  useItemImageAltVerbatim?: boolean;
   /** LC-05 CWV v2: opt-in only. Default false preserves sibling output. */
   deferImagesUntilVisible?: boolean;
   /** Optional upstream paint gate used only with deferred images. */
@@ -22,6 +23,7 @@ const RelatedProductRail = ({
   currentHref,
   className,
   scroll = false,
+  useItemImageAltVerbatim = false,
   deferImagesUntilVisible = false,
   imageLoadGate = true,
 }: RelatedProductRailProps) => {
@@ -84,7 +86,7 @@ const RelatedProductRail = ({
                       <Image
                         src={item.imageSrc}
                         unoptimized={shouldBypassOptimizer(item.imageSrc)}
-                        alt={item.imageAlt || item.title}
+                        alt={useItemImageAltVerbatim ? (item.imageAlt || item.title) : `Explore range card for ${item.imageAlt || item.title}`}
                         className="h-full w-full object-cover"
                         width={56}
                         height={56}

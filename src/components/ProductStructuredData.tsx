@@ -179,11 +179,15 @@ export default function ProductStructuredData({ product, category, reviews, brea
     bestRating: '5',
     worstRating: '1'
   } : undefined;
-  const productImages = product.images?.length
-    ? product.images
-        .slice(0, variantData?.schemaImageLimit && variantData.schemaImageLimit > 0 ? variantData.schemaImageLimit : product.images.length)
-        .map(img => img.src)
-    : [];
+  const productImages = variantData?.schemaImageMode === 'variant-first-images'
+    ? variantData.variants
+        .map((variant) => variant.images?.[0]?.src)
+        .filter((src): src is string => Boolean(src))
+    : product.images?.length
+      ? product.images
+          .slice(0, variantData?.schemaImageLimit && variantData.schemaImageLimit > 0 ? variantData.schemaImageLimit : product.images.length)
+          .map(img => img.src)
+      : [];
 
   // Variant pages render one primary Product. The visible size selector remains UI,
   // while its approved ex-GST ladder becomes a single AggregateOffer. This avoids
@@ -217,6 +221,21 @@ export default function ProductStructuredData({ product, category, reviews, brea
           highPrice: Math.max(...exGstPrices),
           offerCount: variantData.variants.length,
           ...(schemaAvailability ? { availability: schemaAvailability } : {}),
+          ...(variantData.schemaIncludeVariantOffers ? {
+            offers: variantData.variants.map((variant) => ({
+              '@type': 'Offer',
+              url: `${productUrl}#size-${variant.sizeSlug}`,
+              priceCurrency: 'INR',
+              price: variant.priceExGst,
+              itemCondition: schemaItemCondition,
+              priceSpecification: {
+                '@type': 'PriceSpecification',
+                price: variant.priceExGst,
+                priceCurrency: 'INR',
+                valueAddedTaxIncluded: false,
+              },
+            })),
+          } : {}),
           priceSpecification: {
             '@type': 'PriceSpecification',
             priceCurrency: 'INR',
@@ -270,7 +289,7 @@ export default function ProductStructuredData({ product, category, reviews, brea
     url: productUrl,
     brand: {
       '@type': 'Brand',
-      name: 'Saman Portable'
+      name: variantData?.schemaBrandName || 'Saman Portable'
     },
     manufacturer: {
       '@id': 'https://www.samanportable.com/#organization'

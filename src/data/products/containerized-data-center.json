@@ -1,0 +1,493 @@
+{
+  "productSlug": "containerized-data-center",
+  "variantAxis": "size",
+  "defaultVariant": "10ft-edge",
+  "hsn": "9406",
+  "gstPercent": 18,
+  "productName": "Containerized Data Center",
+  "h1": "Containerized Data Center Shells in Six Approved Sizes",
+  "seoTitle": "Containerized Data Center Shell Price, Six Sizes | SAMAN",
+  "metaDescription": "SAMAN containerized data center shells in six approved sizes, two to twelve rack bays, with GA drawings, published shell prices and a written scope boundary.",
+  "opener": "A SAMAN containerized data center is a secure steel shell built to carry racks, cooling and power. It is not an office. Every wall is windowless by design. One long wall carries the access doors, the other carries the cooling louvres, and both end walls stay solid. Inside, a single row of racks faces a cold service aisle, with a hot return plenum running above it.\n\nSix approved sizes run from a two rack edge unit up to a twelve rack high density unit. The price here covers the shell and the basic power and data pathways. Racks, servers, UPS, batteries, precision cooling, fire suppression and monitoring stay outside that price. Send us the IT load and we will quote the rest.",
+  "descriptionHtml": "<h2>What a containerized data center shell is, and what it is not</h2>\n<p>A containerized data center from SAMAN is an infrastructure shell. We build the steel envelope, the insulation, the technical floor, the openings and the routes that power and data cables follow. We hand it over ready to take the equipment you or your integrator select. Racks, servers, storage and network gear stay outside the published price. So do the UPS, the batteries, the PDU or busway, the precision cooling units, the fire suppression and the monitoring. A project quotation adds them.</p>\n<p>That boundary is deliberate, and it is the single most useful thing this page can tell you. Floor area cannot price a complete data center. IT load in kW, rack density, redundancy target, cooling duty, UPS runtime, fire strategy, network design and commissioning govern the real number. A shell rate gives you a firm figure for the part SAMAN builds. Your budget line for the building then stops competing with your budget line for the equipment.</p>\n<p>Competitor pages in this category rarely say any of this. Most publish a feature list and a contact form. Very few publish a size, a drawing or a rate. We publish six approved general arrangement boards, six rack counts and six opening schedules. A shell price sits against every one of them. We also say plainly what that price leaves out.</p>\n<h2>One airflow model runs through all six approved sizes</h2>\n<p>Every approved size uses the same arrangement. A single row of equipment stands along one long wall. In front of it sits a cold and service aisle, wide enough to work in. Above the row runs a hot return plenum. Overhead, power and data travel on separate pathways, so a busway and a fibre tray never share a route. Cooling louvres pierce only the equipment wall, which the drawings call Wall B.</p>\n<p>Keeping one model across six sizes has a practical benefit. Moving from a 10 ft unit to a 40 ft unit changes the rack count and the number of cooling bays. It does not change how the air moves, how the aisle works or how a technician reaches the back of a cabinet. Your operating procedure survives the upgrade. So does your containment approach.</p>\n<p>ASHRAE TC 9.9 recommended and allowable envelopes inform the cooling design. The final set points still follow your IT equipment class and the OEM limits for the hardware. Cooling capacity, the redundancy philosophy and the containment detail stay project specific. A heat load study settles all three before anyone orders equipment.</p>\n<h2>What sits in each bay, from the LV panel to the network cabinet</h2>\n<p>The approved boards name every bay in the row, and the complement changes with size. The 10 ft unit runs an LV and ATS panel, a UPS, one cooling bay, two racks and a fire and control cabinet. The 20 ft edge unit adds a battery bay next to the UPS and closes the row with a network and control cabinet. From the 20 ft high cube upward, a partition puts the LV, UPS and battery bays into their own power and control zone.</p>\n<p>The 40 ft ISO board puts the LV, UPS, battery and fire cabinets in the power zone. Past the partition come a cooling bay, eight racks, a second cooling bay and the network cabinet. The 40 ft high cube keeps that pattern and inserts a third cooling bay in the middle of the rack row. That is how it carries ten racks rather than eight on the same footprint.</p>\n<p>The 53 ft board is the only one with two battery bays. Its white space runs as two groups of six racks. One cooling bay leads the row, one splits the two groups, and two more close it out. If your runtime target is long, that second battery bay is the reason to look at this size before you look at the price.</p>\n<figure><img src=\"/images/products/containerized-data-center/containerized-data-center-description-10ft-edge.webp\" alt=\"Charcoal 20 ft edge data center container in a paved yard with one secure access door\" width=\"1920\" height=\"1080\" loading=\"lazy\" /><figcaption>20 ft Edge Data Center Container, access wall with a single secure door.</figcaption></figure>\n<h2>The opening schedule that decides how the module sits on your site</h2>\n<p>Read this before you fix the module position. The opening schedule is locked on every approved board, and it is the same logic at every size. Wall A carries the secure personnel and equipment doors. Wall B carries the cooling and service louvres. End C and End D stay solid, with no door and no window. There are zero exterior windows anywhere in the range.</p>\n<p>Windowless is a choice, not an omission. Removing glazing removes solar gain, a security weak point, a condensation risk and a leakage path in one move. A project that really needs a viewing panel gets a fire, security, condensation and thermal review first. The panel then becomes a project specific detail rather than a standard feature.</p>\n<ul><li>Wall A: one secure door on the 10 ft and both 20 ft sizes, two doors on the 40 ft and 53 ft sizes</li><li>Wall B: one louvre on the 10 ft, two on both 20 ft sizes and the 40 ft ISO, three on the 40 ft high cube, four on the 53 ft</li><li>End C and End D: solid on every size, so plan access from the long walls only</li><li>Zero exterior windows across all six approved sizes</li><li>Door sizes coordinate with rack and UPS replacement, so the largest item still comes out</li><li>Security locking must never defeat the emergency egress route</li></ul>\n<p>Two consequences follow on site. Park the module so Wall A faces your access route and Wall B faces open air, because the louvres need free intake and discharge. Then keep a working clearance in front of both walls. A shell placed hard against a boundary wall on the louvre side will not cool the way the drawing intends.</p>\n<h2>Six approved sizes, and the two pairs that share a price</h2>\n<p>The range moves in a straight line on rack count: two, four, four, eight, ten and twelve bays. It does not move in a straight line on value, and two pairs deserve a careful look before you order.</p>\n<h3>20 ft edge and 20 ft high cube all in one</h3>\n<p>Both carry four racks, two cooling bays and one door. Both cost the same. The high cube version adds a foot of internal height. It also adds a partition between the LV, UPS and battery bays and the IT white space. Your operations team may one day work on switchgear or batteries while servers run. That is when the partition earns its keep.</p>\n<h3>40 ft ISO and 40 ft high cube</h3>\n<p>Same 320 sq ft footprint, same price, different capacity. The ISO shell holds eight racks and two cooling bays. The high cube holds ten racks and three cooling bays. Its third cooling position sits in the middle of the row rather than at an end. Choose the ISO version when a height limit on the route or at the final position forces standard ISO height. Otherwise the high cube gives more capacity and more cooling positions for the same shell money.</p>\n<div class=\"saman-table-wrap\"><table class=\"saman-table\"><thead><tr><th>Approved size</th><th>Floor area</th><th>IT rack bays</th><th>In row cooling bays</th><th>Wall A doors</th><th>Wall B louvres</th><th>Power and white space partition</th></tr></thead><tbody><tr><td>10 ft Edge Data Center Container</td><td>80 sq ft</td><td>2</td><td>1</td><td>1</td><td>1</td><td>No</td></tr><tr><td>20 ft Edge Data Center Container</td><td>160 sq ft</td><td>4</td><td>2</td><td>1</td><td>2</td><td>No</td></tr><tr><td>20 ft High Cube All In One Data Center</td><td>160 sq ft</td><td>4</td><td>2</td><td>1</td><td>2</td><td>Yes</td></tr><tr><td>40 ft ISO Data Center Container</td><td>320 sq ft</td><td>8</td><td>2</td><td>2</td><td>2</td><td>Yes</td></tr><tr><td>40 ft High Cube Data Center Container</td><td>320 sq ft</td><td>10</td><td>3</td><td>2</td><td>3</td><td>Yes</td></tr><tr><td>53 ft High Density Data Center Container</td><td>424 sq ft</td><td>12</td><td>4</td><td>2</td><td>4</td><td>Yes</td></tr></tbody></table></div>\n<p>Read the table with the cooling column, not just the rack column. Racks per cooling bay run at two on the three small sizes. They run at four on the 40 ft ISO, a little over three on the 40 ft high cube and three on the 53 ft. A dense row wants more cooling positions, and a heat load study will tell you how many.</p>\n<figure><img src=\"/images/products/containerized-data-center/containerized-data-center-description-20ft-edge.webp\" alt=\"Tan 40 ft ISO data center container showing two secure doors on the access wall\" width=\"1920\" height=\"1080\" loading=\"lazy\" /><figcaption>40 ft ISO Data Center Container, two secure doors on the access wall.</figcaption></figure>\n<h2>How the shell rate moves with floor area</h2>\n<p>The published rate is budgetary and it covers the infrastructure shell with basic pathways. It starts from an approved base of Rs 4,500 per sq ft at a 200 sq ft reference scope. The workbook then applies a size band. Smaller areas carry a premium, because the fixed content of an enclosure does not shrink with the floor. Larger areas earn a discount for the opposite reason.</p>\n<p>The adjusted rate on this page runs from Rs 5,670 per sq ft at 80 sq ft. It falls to Rs 4,230 per sq ft at 424 sq ft. For context, our container office products sit near Rs 1,450 per sq ft at the same 200 sq ft reference. The gap is roughly three times, and none of it comes from the steel box. It comes from the technical envelope, the fire rated liner and the heavy duty technical deck. It also comes from the segregated pathways, the louvre and opening detail and the QA that goes with them.</p>\n<h2>Standard, optional, custom and excluded: where our scope stops</h2>\n<div class=\"saman-table-wrap\"><table class=\"saman-table\"><thead><tr><th>Scope</th><th>What it covers</th></tr></thead><tbody><tr><td>STANDARD</td><td>Steel structure and reinforced chassis; weather sealed flat roof with managed drainage; windowless insulated envelope; fire rated or non combustible interior liner; technical floor; secure doors on Wall A; cooling and service louvres on Wall B; separate overhead power and data pathways; main earthing bar and bonding; LED and emergency lighting; factory acceptance of the enclosure</td></tr><tr><td>OPTIONAL</td><td>Raised floor system and height; static dissipative or conductive floor finish; access control, CCTV and environmental sensors; DCIM or BMS interfaces; C4 or C5 grade corrosion protection; corporate branding that does not obscure intake, exhaust, lifting or emergency markings</td></tr><tr><td>CUSTOM</td><td>Rack count, kW per rack and aisle layout; cooling type, duty and redundancy; UPS capacity, runtime and battery chemistry; fire detection and suppression strategy; cable entry positions and segregation criteria; module joining or stacking, which needs project calculations</td></tr><tr><td>EXCLUDED</td><td>Servers, storage and network hardware; racks and cabinets; UPS, batteries, PDU and busway; precision cooling equipment; fire suppression equipment; DCIM and monitoring software; transport, craneage and unloading; foundations and site utilities; installation; load bank testing, integrated systems testing and certification; Uptime tier or TIA-942 certification</td></tr></tbody></table></div>\n<p>We publish this table because the category makes it easy to assume more is included than actually is. A pallet of batteries and a set of precision cooling units can cost more than the shell around them. Reading the excluded column early keeps the comparison between suppliers honest, and it keeps your capital plan from a late surprise.</p>\n<p>Two limits deserve emphasis. First, integrated equipment ships inside the module only where the component manufacturer permits it and where transport shock and vibration restraints are defined. Second, stacking, joining and transport claims need project calculations, because a data center fit out changes gross mass and centre of gravity a great deal.</p>\n<figure><img src=\"/images/products/containerized-data-center/containerized-data-center-description-20ft-high-cube.webp\" alt=\"Dark green 40 ft high cube data center container with three cooling louvres on the service wall\" width=\"1920\" height=\"1080\" loading=\"lazy\" /><figcaption>40 ft High Cube Data Center Container, service wall with three cooling louvres.</figcaption></figure>\n<h2>When a container office is the better buy</h2>\n<p>Some enquiries that reach this page are really office enquiries. If the room holds people, desks and a meeting table, an infrastructure shell is the wrong product and the wrong rate. Our container office range covers that work properly, with glazing, comfort insulation and a fit out priced for occupancy rather than equipment.</p>\n<p>Inside that range the choice narrows quickly. A site office container is configured around what a project site office has to do, from supervision to document storage. A container office cabin is the fabricated value line, built for a stationary single site posting rather than repeated relocation. Neither carries a hot return plenum, a technical floor or segregated power and data pathways, and neither should be asked to house a rack row.</p>\n<p>The reverse case matters too. Putting two or three racks into a fitted office container looks cheaper on the day. It turns expensive later. The envelope, the floor loading, the fire strategy and the airflow were never drawn for equipment. Where the load really is small, the 10 ft edge shell exists for exactly that scale.</p>\n<h2>Getting the site ready before the module arrives</h2>\n<p>Site work sits outside our price, so plan it early with your civil contractor. The module needs a level, load bearing base at its declared support points. It needs a clear route for the vehicle and the crane. It needs services brought to the cable entry positions on the approved board.</p>\n<ul><li>Level, load bearing supports at the declared points, designed by your civil consultant</li><li>Crane standing area and a swing path clear of overhead lines</li><li>Approach road able to take the trailer length for a 40 ft or 53 ft module</li><li>LV supply, earthing and any generator or ATS interface brought to the entry position</li><li>Free air in front of Wall B for louvre intake and discharge</li><li>Drainage routed away from cable entries and from any outdoor cooling unit</li></ul>\n<p>Roof water matters more here than on an office build. We detail and inspect every roof opening at the works. The roof falls then carry discharge away from the cable entries and the electrical interfaces. Keep that logic intact when you finish the surrounding hardstanding.</p>\n<h2>What we check before the module leaves the works</h2>\n<p>Factory acceptance covers the enclosure and the pathways we supply. We record fit, weld and bolt condition, coating and dry film thickness. We also record sealing, a dimensional survey and dispatch photographs against the approved board. Rack rails, module joins, lifting points and cooling supports each get a written inspection. Fabrication tolerance is what protects rack alignment later.</p>\n<p>Where a project also takes active systems, we plan and quote the integrated systems testing on its own. Load bank testing, failover testing, commissioning and any certification sit outside the shell price. We will say so on the quotation rather than leave it implied.</p>\n<figure><img src=\"/images/products/containerized-data-center/containerized-data-center-description-40ft-iso.webp\" alt=\"Navy 10 ft edge data center container beside an office building with one secure door\" width=\"1920\" height=\"1080\" loading=\"lazy\" /><figcaption>10 ft Edge Data Center Container, the smallest approved size in the range.</figcaption></figure>\n<h2>What to send us so the quotation is accurate</h2>\n<p>A shell quotation firms up quickly once you know the load side. The list below settles most of the questions our engineering team would otherwise ask twice.</p>\n<ul><li>Final IT load schedule in kW, with the kW you expect per rack</li><li>Rack and cabinet data: manufacturer, quantity, depth and weight</li><li>Redundancy target, UPS capacity and the battery runtime you want</li><li>Cable entry requirements and any segregation criteria you must meet</li><li>Site pin code, access constraints and any height restriction on the route</li><li>Fire detection and suppression strategy, plus monitoring and access control needs</li></ul>\n<p>Send us the list and your site pin code, and we will come back with the shell and the options you asked for. A clear line then covers everything that stays excluded. If a fabricated office suits you better than an infrastructure shell, we will tell you that too.</p>\n<figure><img src=\"/images/products/containerized-data-center/containerized-data-center-description-40ft-high-cube.webp\" alt=\"Maroon 53 ft high density data center container with four cooling louvres along the service wall\" width=\"1920\" height=\"1080\" loading=\"lazy\" /><figcaption>53 ft High Density Data Center Container, four cooling louvres on the service wall.</figcaption></figure>\n<h2>Questions buyers ask before ordering</h2>\n<h3>Does the price include racks, UPS and cooling equipment?</h3>\n<p>No. The published rate covers the infrastructure shell and basic power and data pathways. Racks, servers, UPS, batteries, PDU or busway, precision cooling, fire suppression and monitoring are quoted apart. Their cost follows your IT load and redundancy target, not your floor area.</p>\n<h3>How many racks fit in a 20 ft container data center?</h3>\n<p>Four rack bays, on both the 20 ft edge and the 20 ft high cube all in one. The high cube version spends its extra height on clearance above the containment and adds a partition between the power zone and the white space.</p>\n<h3>Can SAMAN claim an Uptime tier or a TIA-942 certification?</h3>\n<p>Not from a shell purchase. Tier and TIA-942 claims describe an engineered and certified facility, including power topology, redundancy and testing. Those sit outside this scope, and we will not assert them on a page.</p>\n<h3>Is the 53 ft size a standard container?</h3>\n<p>Treat it as a planning envelope. The 53 ft board uses a nominal high cube planning envelope. The source container type and the real internal clear dimensions need confirming before fabrication release.</p>\n<h3>Why are there no windows?</h3>\n<p>Glazing adds solar gain, a security weakness, a condensation risk and a leakage path. None of those help a room full of equipment. Every approved size is windowless, and any viewing panel becomes a reviewed project specific detail.</p>\n<h3>Can the shell be relocated later?</h3>\n<p>It is built on an ISO style frame with approved corner fittings or lugs. It ships with lift drawings and a shipped weight schedule. Moving it with equipment installed needs a fresh lift study, because the fit out changes both mass and centre of gravity.</p>\n<h3>What does the technical PDF on this page contain?</h3>\n<p>It carries the approved family overview with budgetary prices, and the material and envelope planning notes. It also carries both technical diagrams and all six approved general arrangement boards. A buyer checklist closes it, to complete before quotation or fabrication release.</p>",
+  "specificationsHtml": "<p>Two tables cover every approved specification field for this product. The first table settles the shell itself: the frame, the envelope, the roof and the deck the racks stand on. The second covers insulation, the services we route, security and the scope boundary. Read them together with the general arrangement board for your chosen size. That board fixes the openings and the bay layout these fields describe.</p>\n<p>One point runs through both tables. Nearly every performance number on a data center build is a project input rather than a catalogue value. Fire resistance is stated only for a tested complete assembly. IP and impact ratings need a defined tested build up. Floor loading follows your rack and rolling loads, not an office floor assumption. Cooling duty follows a heat load study. We publish what we control and we name what your engineer has to settle.</p>\n<p>The two diagrams below carry the same message in picture form. The first shows how the envelope is put together. It runs from the ISO frame out to the weather skin, then back in to the liner and the floor. The second shows the planning zones: the power and control zone, the single equipment row, the hot return path and the cold service aisle. Both are marked illustrative. Both take their geometry from the approved boards rather than from a generic template.</p>\n<h3>Table 1. Structure, envelope, roof and technical deck</h3>\n<div class=\"saman-table-wrap\"><table class=\"saman-table\"><thead><tr><th>Field</th><th>What SAMAN supplies</th><th>What your project settles</th></tr></thead><tbody><tr><td>Bottom frame</td><td>Reinforced modular chassis, minimum 150 x 75 x 5 mm perimeter or engineered equivalent, with rack rails and service skid supports</td><td>Rack point loads, UPS and battery mass, cooling skid mass, transport acceleration and support positions</td></tr><tr><td>Bottom stiffeners</td><td>Heavy channel or RHS cross members under the rack row, PDU, UPS, cooling and cable entry zones, with openings reinforced and sealed</td><td>Bottom cable entry positions and condensate routes, from the approved rack and services model</td></tr><tr><td>Floor frame</td><td>Technical floor framing designed for declared static and rolling loads, with removable panels, raised floor or direct to frame rack mounting</td><td>Declared rack loads, rolling install loads, seismic restraint and maintenance access. An office floor assumption is not accepted</td></tr><tr><td>Top frame</td><td>80 x 40 x 3 mm minimum or engineered upper frame, supporting busway, cable ladder, containment and sensors</td><td>Ceiling loads and containment weights, so critical services never hang from the lining</td></tr><tr><td>Roof stiffeners</td><td>Roof framing engineered for DX or chilled water equipment, weather, uplift and maintenance access, with coordinated penetrations</td><td>Condenser, dry cooler, exhaust or pipe header positions and the transport removal strategy</td></tr><tr><td>Corner posts and walls</td><td>Heavy posts or an ISO corner frame, with door, louvre and cable entry openings framed to restore the load path</td><td>Stacking, joining and transport claims, each of which needs project calculations</td></tr><tr><td>Lifting and handling</td><td>Approved corner fittings or lugs, lift drawings and a shipped weight schedule</td><td>The site lift study, the offload method and equipment restraint for transport</td></tr><tr><td>Welding and fabrication</td><td>Approved WPS, critical weld inspection, dimensional survey and coating repair after acceptance</td><td>Any additional inspection level or third party witness you require</td></tr><tr><td>Exterior walls</td><td>Secure weatherproof enclosure, typically 1.6 to 2.0 mm steel or a tested insulated panel system</td><td>IP, impact and corrosion targets, which need a defined tested assembly before they are claimed</td></tr><tr><td>Roof</td><td>Flat ISO roof with positive fall, sealed seams, curbs, flashings and controlled discharge</td><td>Where discharge runs on your hardstanding, kept clear of cable entries and outdoor units</td></tr><tr><td>Interior walls</td><td>Fire rated or non combustible technical liner in pre coated steel, calcium silicate or a tested panel system</td><td>The fire strategy, and whether the white space and electrical zones need a rated separation</td></tr><tr><td>Ceiling</td><td>Open soffit or removable non combustible panels, with access to busway, cable ladder, detectors and cooling services</td><td>The containment approach, since airflow and service access outrank appearance here</td></tr><tr><td>Floor base</td><td>Heavy duty technical deck in steel, cement fibre or an engineered raised floor system, with rack anchorage and sealed cable openings</td><td>Raised floor height, chosen from cable, airflow and maintenance needs rather than from looks</td></tr><tr><td>Floor finish</td><td>Standard technical deck finish. A conductive or static dissipative vinyl, epoxy or HPL finish with a documented resistance range is an option, not part of the shell rate</td><td>Whether you need ESD control, plus the bonding detail and the cleaning regime</td></tr></tbody></table></div>\n<h3>Table 2. Insulation, services, security and scope boundary</h3>\n<div class=\"saman-table-wrap\"><table class=\"saman-table\"><thead><tr><th>Field</th><th>What SAMAN supplies</th><th>What your project settles</th></tr></thead><tbody><tr><td>Wall insulation</td><td>Typically 75 to 100 mm mineral wool, PIR or a tested system, selected by the fire strategy and the U value target</td><td>Combustibility and smoke limits, the vapour control layer and the thermal bridge detail</td></tr><tr><td>Roof insulation</td><td>Continuous insulation, typically 100 mm or an engineered equivalent, with a vapour barrier and thermal bridge control</td><td>Solar gain and condensation targets for your climate zone</td></tr><tr><td>External finish and marking</td><td>Durable coating, access zone marking, module ID and emergency contact marking</td><td>Branding, which must never obscure intake, exhaust, lifting, electrical or emergency markings</td></tr><tr><td>Fasteners and sealing</td><td>Compatible fasteners, gaskets, cable glands and tested fire stop systems, with a penetration schedule</td><td>Every power, fibre, pipe, drain and sensor opening, listed before the seals are closed</td></tr><tr><td>Doors</td><td>Secure doors on Wall A only, access control compatible, insulated or fire rated, with panic egress and door contacts</td><td>Door rating, and a clear opening wide enough to replace a rack or a UPS</td></tr><tr><td>Windows and service openings</td><td>No office glazing. Removable maintenance and cable entry panels only, where engineered</td><td>Any viewing panel, which needs a fire, security, condensation and thermal review first</td></tr><tr><td>Louvres and screens</td><td>Low pressure drop weather louvres on Wall B, with bird or insect screens and security guards</td><td>Louvre sizing from the cooling design, since screens cannot be added after commissioning without a recheck</td></tr><tr><td>Electrical wiring</td><td>Segregated critical power, auxiliary and data containment in FRLS or LSZH copper, with separate A and B power, control and fibre routes</td><td>Cable fill, redundancy, earthing, EMC and bend radius control, issued by your electrical designer</td></tr><tr><td>Electrical protection</td><td>Main earthing bar, bonding, isolation and interfaces for UPS, PDU, busway and SPD</td><td>Short circuit level, selectivity, arc flash assessment and protective settings</td></tr><tr><td>Lighting, monitoring and access</td><td>LED and emergency lighting, service sockets, and provision for access control, CCTV, sensors and DCIM or BMS interfaces</td><td>Sensor coverage, protocols and the cyber security rules the monitoring must follow</td></tr><tr><td>Cooling interface</td><td>Interfaces and aisle management for DX, chilled water, in row, overhead or rear door cooling</td><td>IT kW, rack density, redundancy target and set points, from a heat load study and the OEM limits</td></tr><tr><td>Wet services</td><td>No sanitary plumbing in white space. Trapped condensate, chilled water connections, leak detection and controlled drain routing</td><td>Pipe routes kept away from energised equipment, with accessible valves and leak sensors</td></tr><tr><td>Layout and zoning</td><td>Rack, white space and grey space zoning as shown on the approved board for your size</td><td>Rack count, kW per rack, aisle clearances, egress and the UPS and cooling zones</td></tr><tr><td>Painting and coating</td><td>Prepared steel with an epoxy or PU system, documented DFT, and cut edge or transport damage repair</td><td>The exposure category for your site, from a coastal, industrial or inland assessment</td></tr><tr><td>Quality checks</td><td>Enclosure factory acceptance, with fit, weld, coating, sealing and dimensional records plus dispatch photographs</td><td>Integrated systems testing, load bank testing and commissioning, which are quoted apart</td></tr><tr><td>Warranty and exclusions</td><td>Enclosure warranty, stated separately from any equipment warranty</td><td>Racks, UPS, batteries, PDU, cooling, fire suppression, monitoring and IT hardware, all excluded unless a quotation lists them</td></tr></tbody></table></div>\n<figure><img src=\"/images/products/containerized-data-center/containerized-data-center-diagram-envelope-construction.webp\" alt=\"Envelope construction diagram showing the ISO frame, weather skin, thermal build up and floor coordination\" width=\"1920\" height=\"1080\" loading=\"lazy\" /><figcaption>Diagram 1. Envelope construction. Illustrative coordination only.</figcaption></figure>\n<figure><img src=\"/images/products/containerized-data-center/containerized-data-center-diagram-systems-coordination.webp\" alt=\"Systems zoning diagram showing the power and control zone, the single equipment row and the cold service aisle\" width=\"1920\" height=\"1080\" loading=\"lazy\" /><figcaption>Diagram 2. Systems coordination and planning zones. Illustrative coordination only.</figcaption></figure>",
+  "categoryLabel": "Container Offices",
+  "categoryHref": "/product/container-offices",
+  "specPdfButtonLabel": "Download Specification PDF",
+  "specPdfHref": "/specs/saman-containerized-data-center-technical-specification-and-ga-v1.pdf",
+  "emitAggregateOffer": true,
+  "trustWarranty": "Shell price boundary stated in writing",
+  "explorerImageTemplate": "/images/products/containerized-data-center/containerized-data-center-{sizeSlug}-ga-board.webp",
+  "applicationsDataset": "containerized-data-center",
+  "variants": [
+    {
+      "sizeSlug": "10ft-edge",
+      "label": "10 ft Edge Data Center Container",
+      "dims": "10 ft x 8 ft x 8 ft 6 in",
+      "areaSqft": 80,
+      "priceExGst": 453600,
+      "priceInclGst": 535248,
+      "sku": "SZ-01",
+      "useCase": "2 rack bays",
+      "featureCells": [
+        {
+          "label": "Nominal envelope",
+          "value": "10 ft x 8 ft x 8 ft 6 in"
+        },
+        {
+          "label": "Floor area",
+          "value": "80 sq ft"
+        },
+        {
+          "label": "IT rack bays",
+          "value": "2"
+        },
+        {
+          "label": "In row cooling bays",
+          "value": "1"
+        },
+        {
+          "label": "Doors and louvres",
+          "value": "1 door / 1 louvre"
+        }
+      ],
+      "images": [
+        {
+          "src": "/images/products/containerized-data-center/containerized-data-center-10ft-edge-main-exterior.webp",
+          "alt": "Navy 10 ft edge data center container, access wall with one secure door and no windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/containerized-data-center/containerized-data-center-10ft-edge-service-exterior.webp",
+          "alt": "Navy 10 ft edge data center container, service wall carrying a single cooling louvre",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/containerized-data-center/containerized-data-center-10ft-edge-roof-aerial.webp",
+          "alt": "Aerial view of the navy 10 ft edge data center container and its flat ISO roof",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/containerized-data-center/containerized-data-center-10ft-edge-entry-interior.webp",
+          "alt": "Inside the 10 ft edge unit, LV panel, UPS, cooling bay and two racks along one wall",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/containerized-data-center/containerized-data-center-10ft-edge-reverse-interior.webp",
+          "alt": "Reverse view inside the 10 ft edge unit, solid end wall and a clear cold service aisle",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/containerized-data-center/containerized-data-center-10ft-edge-equipment-detail.webp",
+          "alt": "Two rack bays and one in row cooling unit in the 10 ft edge data center container",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "10 ft x 8 ft x 8 ft 6 in",
+      "chipLabel": "10x8 ft"
+    },
+    {
+      "sizeSlug": "20ft-edge",
+      "label": "20 ft Edge Data Center Container",
+      "dims": "20 ft x 8 ft x 8 ft 6 in",
+      "areaSqft": 160,
+      "priceExGst": 792000,
+      "priceInclGst": 934560,
+      "sku": "SZ-02",
+      "useCase": "4 rack bays",
+      "featureCells": [
+        {
+          "label": "Nominal envelope",
+          "value": "20 ft x 8 ft x 8 ft 6 in"
+        },
+        {
+          "label": "Floor area",
+          "value": "160 sq ft"
+        },
+        {
+          "label": "IT rack bays",
+          "value": "4"
+        },
+        {
+          "label": "In row cooling bays",
+          "value": "2"
+        },
+        {
+          "label": "Doors and louvres",
+          "value": "1 door / 2 louvres"
+        }
+      ],
+      "images": [
+        {
+          "src": "/images/products/containerized-data-center/containerized-data-center-20ft-edge-main-exterior.webp",
+          "alt": "Charcoal 20 ft edge data center container, one secure door set into the access wall",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/containerized-data-center/containerized-data-center-20ft-edge-service-exterior.webp",
+          "alt": "Charcoal 20 ft edge data center container, two cooling louvres on the service wall",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/containerized-data-center/containerized-data-center-20ft-edge-roof-aerial.webp",
+          "alt": "Aerial view of the charcoal 20 ft edge data center container and its flat ISO roof",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/containerized-data-center/containerized-data-center-20ft-edge-entry-interior.webp",
+          "alt": "View from the access door of the 20 ft edge unit, equipment row along the left wall",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/containerized-data-center/containerized-data-center-20ft-edge-reverse-interior.webp",
+          "alt": "Reverse view of the 20 ft edge unit, rack bays and louvred cooling units on the right",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/containerized-data-center/containerized-data-center-20ft-edge-equipment-detail.webp",
+          "alt": "Rack bays and a louvred in row cooling unit inside the 20 ft edge data center container",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "20 ft x 8 ft x 8 ft 6 in",
+      "chipLabel": "20x8 ft"
+    },
+    {
+      "sizeSlug": "20ft-high-cube-all-in-one",
+      "label": "20 ft High Cube All In One Data Center",
+      "dims": "20 ft x 8 ft x 9 ft 6 in",
+      "areaSqft": 160,
+      "priceExGst": 792000,
+      "priceInclGst": 934560,
+      "sku": "SZ-03",
+      "useCase": "4 rack bays",
+      "featureCells": [
+        {
+          "label": "Nominal envelope",
+          "value": "20 ft x 8 ft x 9 ft 6 in high cube"
+        },
+        {
+          "label": "Floor area",
+          "value": "160 sq ft"
+        },
+        {
+          "label": "IT rack bays",
+          "value": "4"
+        },
+        {
+          "label": "In row cooling bays",
+          "value": "2"
+        },
+        {
+          "label": "Doors and louvres",
+          "value": "1 door / 2 louvres"
+        }
+      ],
+      "images": [
+        {
+          "src": "/images/products/containerized-data-center/containerized-data-center-20ft-high-cube-all-in-one-main-exterior.webp",
+          "alt": "Sage green 20 ft high cube data center container with one secure door on the access wall",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/containerized-data-center/containerized-data-center-20ft-high-cube-all-in-one-service-exterior.webp",
+          "alt": "Sage green 20 ft high cube data center container, two cooling louvres on the service wall",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/containerized-data-center/containerized-data-center-20ft-high-cube-all-in-one-roof-aerial.webp",
+          "alt": "Aerial view of the sage green 20 ft high cube data center container and its flat roof",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/containerized-data-center/containerized-data-center-20ft-high-cube-all-in-one-entry-interior.webp",
+          "alt": "Power and control zone of the 20 ft high cube unit, with the door through to white space",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/containerized-data-center/containerized-data-center-20ft-high-cube-all-in-one-reverse-interior.webp",
+          "alt": "White space of the 20 ft high cube unit, rack bays under overhead power and data trays",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/containerized-data-center/containerized-data-center-20ft-high-cube-all-in-one-equipment-detail.webp",
+          "alt": "Rack bays and an in row cooling unit inside the 20 ft high cube all in one data center",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "20 ft x 8 ft x 9 ft 6 in high cube",
+      "chipLabel": "20x8 ft HC"
+    },
+    {
+      "sizeSlug": "40ft-iso",
+      "label": "40 ft ISO Data Center Container",
+      "dims": "40 ft x 8 ft x 8 ft 6 in",
+      "areaSqft": 320,
+      "priceExGst": 1368000,
+      "priceInclGst": 1614240,
+      "sku": "SZ-04",
+      "useCase": "8 rack bays",
+      "featureCells": [
+        {
+          "label": "Nominal envelope",
+          "value": "40 ft x 8 ft x 8 ft 6 in"
+        },
+        {
+          "label": "Floor area",
+          "value": "320 sq ft"
+        },
+        {
+          "label": "IT rack bays",
+          "value": "8"
+        },
+        {
+          "label": "In row cooling bays",
+          "value": "2"
+        },
+        {
+          "label": "Doors and louvres",
+          "value": "2 doors / 2 louvres"
+        }
+      ],
+      "images": [
+        {
+          "src": "/images/products/containerized-data-center/containerized-data-center-40ft-iso-main-exterior.webp",
+          "alt": "Tan 40 ft ISO data center container with two secure doors along the access wall",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/containerized-data-center/containerized-data-center-40ft-iso-service-exterior.webp",
+          "alt": "Tan 40 ft ISO data center container, two cooling louvres on the service wall",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/containerized-data-center/containerized-data-center-40ft-iso-roof-aerial.webp",
+          "alt": "Aerial view of the tan 40 ft ISO data center container with both access doors visible",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/containerized-data-center/containerized-data-center-40ft-iso-entry-interior.webp",
+          "alt": "Power and control zone of the 40 ft ISO unit, LV panel, UPS and battery cabinets",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/containerized-data-center/containerized-data-center-40ft-iso-reverse-interior.webp",
+          "alt": "White space of the 40 ft ISO unit, eight rack bays under an orange overhead busway",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/containerized-data-center/containerized-data-center-40ft-iso-equipment-detail.webp",
+          "alt": "Rack bays and overhead power and data pathways in the 40 ft ISO data center container",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "40 ft x 8 ft x 8 ft 6 in",
+      "chipLabel": "40x8 ft"
+    },
+    {
+      "sizeSlug": "40ft-high-cube",
+      "label": "40 ft High Cube Data Center Container",
+      "dims": "40 ft x 8 ft x 9 ft 6 in",
+      "areaSqft": 320,
+      "priceExGst": 1368000,
+      "priceInclGst": 1614240,
+      "sku": "SZ-05",
+      "useCase": "10 rack bays",
+      "featureCells": [
+        {
+          "label": "Nominal envelope",
+          "value": "40 ft x 8 ft x 9 ft 6 in high cube"
+        },
+        {
+          "label": "Floor area",
+          "value": "320 sq ft"
+        },
+        {
+          "label": "IT rack bays",
+          "value": "10"
+        },
+        {
+          "label": "In row cooling bays",
+          "value": "3"
+        },
+        {
+          "label": "Doors and louvres",
+          "value": "2 doors / 3 louvres"
+        }
+      ],
+      "images": [
+        {
+          "src": "/images/products/containerized-data-center/containerized-data-center-40ft-high-cube-main-exterior.webp",
+          "alt": "Dark green 40 ft high cube data center container with two secure doors on the access wall",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/containerized-data-center/containerized-data-center-40ft-high-cube-service-exterior.webp",
+          "alt": "Dark green 40 ft high cube data center container, three cooling louvres on the service wall",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/containerized-data-center/containerized-data-center-40ft-high-cube-roof-aerial.webp",
+          "alt": "Aerial view of the dark green 40 ft high cube data center container and its flat roof",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/containerized-data-center/containerized-data-center-40ft-high-cube-entry-interior.webp",
+          "alt": "Power and control zone of the 40 ft high cube unit, with the door to the white space",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/containerized-data-center/containerized-data-center-40ft-high-cube-reverse-interior.webp",
+          "alt": "White space of the 40 ft high cube unit, ten rack bays and in row cooling positions",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/containerized-data-center/containerized-data-center-40ft-high-cube-equipment-detail.webp",
+          "alt": "In row cooling unit beside the rack bays in the 40 ft high cube data center container",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "40 ft x 8 ft x 9 ft 6 in high cube",
+      "chipLabel": "40x8 ft HC"
+    },
+    {
+      "sizeSlug": "53ft-high-density",
+      "label": "53 ft High Density Data Center Container",
+      "dims": "53 ft x 8 ft x 9 ft 6 in",
+      "areaSqft": 424,
+      "priceExGst": 1793520,
+      "priceInclGst": 2116354,
+      "sku": "SZ-06",
+      "useCase": "12 rack bays",
+      "featureCells": [
+        {
+          "label": "Nominal envelope",
+          "value": "53 ft x 8 ft x 9 ft 6 in planning envelope"
+        },
+        {
+          "label": "Floor area",
+          "value": "424 sq ft"
+        },
+        {
+          "label": "IT rack bays",
+          "value": "12"
+        },
+        {
+          "label": "In row cooling bays",
+          "value": "4"
+        },
+        {
+          "label": "Doors and louvres",
+          "value": "2 doors / 4 louvres"
+        }
+      ],
+      "images": [
+        {
+          "src": "/images/products/containerized-data-center/containerized-data-center-53ft-high-density-main-exterior.webp",
+          "alt": "Maroon 53 ft high density data center container with two secure doors on the access wall",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/containerized-data-center/containerized-data-center-53ft-high-density-service-exterior.webp",
+          "alt": "Maroon 53 ft high density data center container, four cooling louvres on the service wall",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/containerized-data-center/containerized-data-center-53ft-high-density-roof-aerial.webp",
+          "alt": "Aerial view of the maroon 53 ft high density data center container and its flat roof",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/containerized-data-center/containerized-data-center-53ft-high-density-entry-interior.webp",
+          "alt": "Power and control zone of the 53 ft unit, LV panel, UPS and two battery bays",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/containerized-data-center/containerized-data-center-53ft-high-density-reverse-interior.webp",
+          "alt": "White space of the 53 ft unit, twelve rack bays under the busway and the cable tray",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/containerized-data-center/containerized-data-center-53ft-high-density-equipment-detail.webp",
+          "alt": "Rack bays and overhead containment inside the 53 ft high density data center container",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "shortDescription": "53 ft x 8 ft x 9 ft 6 in planning envelope",
+      "chipLabel": "53x8 ft HC"
+    }
+  ],
+  "hideTrustRow": true
+}

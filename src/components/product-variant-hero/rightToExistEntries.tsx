@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { ReactNode } from 'react';
+import bessContainerPage from '@/data/products/bess-container-page.json';
 
 const CABIN_HREF = '/product/porta-cabins';
 const href = (slug: string) => `${CABIN_HREF}/${slug}`;
@@ -79,6 +80,32 @@ export interface RightToExistEntry {
 }
 
 const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
+  'containerized-data-center': {
+    heading: 'Choose This Shell by Rack Count and Cooling Bays, Not Floor Area',
+    bodyParagraphs: [
+      (
+        <>
+          Floor area prices an office well. It prices a data center badly. What drives this build is the rack count, the kW each rack draws, the cooling duty and the runtime you want from the batteries. So start there. Each approved size locks to a rack count and to a number of in row cooling bays, and the general arrangement board shows both. Read the rack figure first, then check the door schedule.
+        </>
+      ),
+      (
+        <>
+          If the room you want holds people rather than servers, our <Link className={linkClass} href="https://www.samanportable.com/product/container-offices/shipping-container-office">shipping container office</Link> covers that job instead. That build carries glazing, comfort insulation and an office fit out. This one carries a windowless envelope, a hot return plenum, a cold service aisle and separate power and data pathways. The two look alike from the yard gate, yet they solve different problems. Send us your IT load schedule and rack data, and we will quote the shell and the equipment as two clear lines.
+        </>
+      ),
+    ],
+    splitCard: {
+      imageSrc: '/images/products/containerized-data-center/containerized-data-center-section2-card-20ft-high-cube.webp',
+      imageAlt: 'Sage green 20 ft high cube all in one data center module standing on a paved industrial yard',
+      imageWidth: 1920,
+      imageHeight: 1080,
+      subheading: 'Why the 20 ft High Cube Splits Power From White Space',
+      body: 'The 20 ft High Cube All In One is the smallest size that carries a partition. That wall separates the power and control zone from the IT white space. Below it, the two edge units run as one open room.',
+      bullets: ['A partition separates the LV, UPS and battery bays from the racks', 'Four rack bays and two cooling bays, as on the edge unit', 'High cube height leaves more room above the containment', 'One door on Wall A and two cooling louvres on Wall B'],
+      ctaLabel: 'Ask us which of the six sizes fits your rack schedule',
+      ctaHref: 'https://www.samanportable.com/contact',
+    },
+  },
   // PC-03 double-story-porta-cabin - Section 2 buyer orientation, build prompt v2 12.4,
   // verbatim and SHA-256 verified before wiring (S2_H2 2dfd9911, S2_P1 571b9418,
   // S2_P2 1c304999). Two equal-weight paragraphs, so `bodyParagraphs` is used rather
@@ -416,6 +443,35 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
       body2: 'Match the door, counter, private room, wet core and site approach before you agree a size; that is where a marketing office succeeds or fails.',
       ctaLabel: 'Ask for a written quotation against the approved plan',
       ctaHref: 'https://www.samanportable.com/contact',
+    },
+  },
+  'bess-container': {
+    heading: bessContainerPage.section2.heading,
+    bodyParagraphs: [
+      (
+        <>
+          {bessContainerPage.section2.paragraph1}
+        </>
+      ),
+      (
+        <>
+          {bessContainerPage.section2.paragraph2}{' '}
+          <Link className={linkClass} href={bessContainerPage.section2.linkHref}>{bessContainerPage.section2.linkAnchor}</Link>
+          {' '}
+          <Link className={linkClass} href={bessContainerPage.section2.ctaHref}>{bessContainerPage.section2.ctaText}</Link>
+        </>
+      ),
+    ],
+    splitCard: {
+      imageSrc: bessContainerPage.section2.cardImageSrc,
+      imageAlt: bessContainerPage.section2.cardImageAlt,
+      imageWidth: bessContainerPage.section2.cardImageWidth,
+      imageHeight: bessContainerPage.section2.cardImageHeight,
+      subheading: bessContainerPage.section2.cardH3,
+      body: bessContainerPage.section2.cardParagraph,
+      bullets: bessContainerPage.section2.cardBullets,
+      ctaLabel: bessContainerPage.section2.cardCtaText,
+      ctaHref: bessContainerPage.section2.cardCtaHref,
     },
   },
   'shipping-container-office': {

@@ -1,0 +1,73 @@
+{
+  "id": 330003,
+  "name": "BESS Container",
+  "slug": "bess-container",
+  "permalink": "https://blog.samanportable.com/product/container-offices/bess-container/",
+  "date_created": "2026-08-23T00:00:00",
+  "date_created_gmt": "2026-08-22T18:30:00",
+  "date_modified": "2026-08-23T00:00:00",
+  "date_modified_gmt": "2026-08-22T18:30:00",
+  "type": "simple",
+  "status": "publish",
+  "featured": false,
+  "catalog_visibility": "visible",
+  "description": "",
+  "short_description": "",
+  "sku": "",
+  "price": "404800",
+  "regular_price": "404800",
+  "sale_price": "",
+  "on_sale": false,
+  "purchasable": true,
+  "total_sales": 0,
+  "virtual": false,
+  "downloadable": false,
+  "downloads": [],
+  "download_limit": -1,
+  "download_expiry": -1,
+  "external_url": "",
+  "button_text": "",
+  "tax_status": "taxable",
+  "tax_class": "",
+  "manage_stock": false,
+  "stock_quantity": null,
+  "stock_status": "",
+  "reviews_allowed": false,
+  "average_rating": "0.00",
+  "rating_count": 0,
+  "categories": [
+    {
+      "id": 187,
+      "name": "Container Offices",
+      "slug": "container-offices"
+    }
+  ],
+  "brands": [
+    {
+      "id": 3870,
+      "name": "Saman Portable",
+      "slug": "saman-portable"
+    }
+  ],
+  "images": [
+    {
+      "id": 0,
+      "src": "/images/products/bess-container/gallery/20ft-standard-exterior.webp",
+      "alt": "Sage green 20 ft BESS enclosure with centred double service doors on the end wall and a side service door",
+      "name": "Sage green 20 ft BESS enclosure with centred double service doors on the end wall and a side service door"
+    }
+  ],
+  "attributes": [],
+  "dimensions": {
+    "length": "",
+    "width": "",
+    "height": ""
+  },
+  "relatedProductSlugs": [
+    "container-offices",
+    "shipping-container-office",
+    "site-office-container",
+    "container-office-cabin"
+  ],
+  "head": "<title>BESS Container Enclosure Price, Six Approved Sizes | SAMAN</title>\n<meta name=\"description\" content=\"SAMAN BESS container enclosures in six approved sizes from 80 to 320 sq ft, with GA drawings, published enclosure shell prices and a written scope boundary.\"/>\n<meta name=\"robots\" content=\"index, follow\"/>"
+}

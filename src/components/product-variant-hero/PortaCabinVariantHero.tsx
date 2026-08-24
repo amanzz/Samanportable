@@ -46,6 +46,7 @@ import ablutionBlockApplications from '@/data/products/ablution-block-applicatio
 import portableShopCabinApplications from '@/data/products/portable-shop-cabin-applications.json';
 import portableCabinApplications from '@/data/products/portable-cabin-applications.json';
 import containerOfficesApplications from '@/data/products/container-offices-applications.json';
+import containerizedDataCenterApplications from '@/data/products/containerized-data-center-applications.json';
 import portableOfficeApplications from '@/data/products/portable-office-applications.json';
 import portableCabinWithToiletApplications from '@/data/products/portable-cabin-with-toilet-applications.json';
 import containerCafeApplications from '@/data/products/container-cafe-applications.json';
@@ -57,6 +58,7 @@ import containerCoffeeShopApplications from '@/data/products/container-coffee-sh
 import containerOfficeCabinApplications from '@/data/products/container-office-cabin-applications.json';
 import containerMarketingOfficeApplications from '@/data/products/container-marketing-office-applications.json';
 import siteOfficeContainerApplications from '@/data/products/site-office-container-applications.json';
+import bessContainerApplications from '@/data/products/bess-container-applications.json';
 import sectionHDatasets from '@/data/products/section-h-datasets.json';
 import c08SectionHDatasets from '@/data/products/c08-section-h-datasets.json';
 import { pushDataLayer } from '@/lib/analytics';
@@ -157,6 +159,7 @@ const APPLICATIONS_DATASETS: Record<string, ApplicationsData> = {
   // C-04 container-offices HUB — same dataset shape → identical SizeApplicationsExplorer.
   // Resolves via productSlug; additive, so the porta-cabin cluster is unaffected.
   'container-offices': containerOfficesApplications as ApplicationsData,
+  'containerized-data-center': containerizedDataCenterApplications as ApplicationsData,
   // C-03 portable-office HUB — same dataset shape → identical SizeApplicationsExplorer.
   // Resolves via the preset's applicationsDataset key; additive, so every other
   // product's explorer is unaffected.
@@ -299,13 +302,16 @@ const APPLICATIONS_DATASETS: Record<string, ApplicationsData> = {
   // spreads, per the documented PC-01 failure mode.
   'container-office-cabin': containerOfficeCabinApplications as ApplicationsData,
   'site-office-container': siteOfficeContainerApplications as ApplicationsData,
+  'bess-container': fromSectionHDrop(bessContainerApplications as SectionHDataset),
 };
 
 const C04_PRODUCT_SLUGS = new Set([
   'container-offices',
   'container-office-cabin',
+  'bess-container',
   'shipping-container-office',
   'site-office-container',
+  'containerized-data-center',
 ]);
 
 const C08_PRODUCT_SLUGS = new Set([
@@ -803,6 +809,10 @@ export function PortaCabinVariantHero({
   const hasRightToExist = hasRightToExistEntry(data.productSlug);
   const isC04Product = C04_PRODUCT_SLUGS.has(data.productSlug);
   const isC08Product = C08_PRODUCT_SLUGS.has(data.productSlug);
+  const trustStripText =
+    isC04Product || isC08Product
+      ? ['GST registered', 'ISO 9001:2015 certified manufacturer', data.trustWarranty, 'Pan-India delivery'].filter(Boolean).join(' · ')
+      : 'GST registered · ISO 9001:2015 certified manufacturer · 5-year structural and 1-year finishing warranty · Pan-India delivery';
   // Video: null unless the product opted in AND supplied metadata (T25 §4).
   const video = resolveVariantVideo(data);
   // Explorer copy: resolved by dataset key. undefined => the Explorer section is
@@ -812,6 +822,21 @@ export function PortaCabinVariantHero({
     ? 'site-office-size-applications'
     : APPLICATIONS_SECTION_ID;
   const heroActive = data.variants[heroIndex];
+  const heroActiveChipLabel = heroActive.chipLabel || heroActive.label;
+  const useCo04TileAltsVerbatim = data.productSlug === 'containerized-data-center';
+  const buyBoxScrollRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (!useCo04TileAltsVerbatim) return;
+    const node = buyBoxScrollRef.current;
+    if (!node) return;
+    const reset = () => {
+      node.scrollTop = 0;
+    };
+    reset();
+    const frame = window.requestAnimationFrame(reset);
+    return () => window.cancelAnimationFrame(frame);
+  }, [heroIndex, useCo04TileAltsVerbatim]);
   const imagesForVariant = (variant: typeof heroActive) => {
     const images = variant.images?.length ? variant.images : (data.galleryImages || []);
     // C-08 reserves manifest row six for the independent Section H image slot.
@@ -820,6 +845,28 @@ export function PortaCabinVariantHero({
   };
   const activeVariantImages = imagesForVariant(heroActive);
   const heroImages = activeVariantImages.length > 0 ? activeVariantImages : null;
+  const hiddenCompletenessImages = (() => {
+    if (data.productSlug !== 'bess-container' || !applications) return [];
+    const alreadyRendered = new Set(activeVariantImages.map((image) => image.src));
+    const activePanelImage = applications.panels.find((panel) => panel.sizeSlug === data.variants[explorerIndex]?.sizeSlug)?.image;
+    if (activePanelImage) alreadyRendered.add(activePanelImage.src);
+    const allOwnedImages = [
+      ...data.variants.flatMap((variant) => imagesForVariant(variant)),
+      ...applications.panels.map((panel) => panel.image).filter((image): image is VariantImage => Boolean(image)),
+    ];
+    const seen = new Set<string>();
+    return allOwnedImages.filter((image) => {
+      if (alreadyRendered.has(image.src) || seen.has(image.src)) return false;
+      seen.add(image.src);
+      return true;
+    });
+  })();
+  const hiddenFeatureCompletenessText = data.productSlug === 'bess-container'
+    ? data.variants
+        .flatMap((variant) => variant.featureCells?.flatMap((cell) => [cell.label, cell.value]) || [])
+        .filter(Boolean)
+        .join(' ')
+    : '';
   // Columns in the thumbnail strip: the product's LARGEST thumb count across all
   // its sizes, plus the video facade thumb when the product has one. Taking the
   // maximum (not the active size's count) keeps the track constant while the size
@@ -977,7 +1024,7 @@ export function PortaCabinVariantHero({
                     viewport on mobile AND desktop (measured 52-62px boxes, all
                     in-viewport). They still remain lazy so only the main viewer
                     competes in the eager/high-priority LCP lane. */}
-                {nonLcpImagesReady && <Image src={img.src} unoptimized={data.optimizeLocalGalleryImages ? false : shouldBypassOptimizer(img.src)} alt={data.productSlug === 'shipping-container-office' ? `Thumbnail ${i + 1}: ${img.alt}` : (isC04Product || isC08Product ? img.alt : (!showVideo && i === activeImageIndex ? '' : img.alt))} width={150} height={150} className="w-full h-full object-cover" loading="lazy" decoding="async" sizes="(max-width: 1023px) 18vw, 80px" />}
+                {nonLcpImagesReady && <Image src={img.src} unoptimized={data.optimizeLocalGalleryImages ? false : shouldBypassOptimizer(img.src)} alt={data.productSlug === 'shipping-container-office' || (data.productSlug === 'bess-container' && !showVideo && i === activeImageIndex) ? `Thumbnail ${i + 1}: ${img.alt}` : (isC04Product || isC08Product ? img.alt : (!showVideo && i === activeImageIndex ? '' : img.alt))} width={150} height={150} className="w-full h-full object-cover" loading="lazy" decoding="async" sizes="(max-width: 1023px) 18vw, 80px" />}
               </button>
             ))}
 
@@ -1107,7 +1154,9 @@ export function PortaCabinVariantHero({
 
         <div className="space-y-2">
           {usePremiumSizeTabs ? (
+            sizeEyebrowText !== '' && (
             <p className="text-sm font-semibold text-foreground">{sizeEyebrowText || 'Choose your size — six factory-built options'}</p>
+            )
           ) : (
             <p className="text-sm font-semibold text-foreground">Choose size</p>
           )}
@@ -1135,7 +1184,7 @@ export function PortaCabinVariantHero({
                         : 'bg-white text-foreground border-slate-200 hover:border-[var(--ds-color-leaf)]'
                     )}
               >
-                {v.label}
+                {v.chipLabel || v.label}
                 {/* Quotation-mode products carry no price ladder, so the size
                     list is the only place the six areas can be read. Rendered
                     ONLY when gatedPriceLabel is set — every priced product keeps
@@ -1155,7 +1204,7 @@ export function PortaCabinVariantHero({
           {/* Two children (not three) so React SSR emits ONE `<!-- -->` text
               separator here — byte-identical to the T24.1 markup, which had the
               product noun as a literal in the trailing static string. */}
-          <p className="text-sm text-muted-foreground">{heroActive.label}{` ${productName}`}</p>
+          <p className="text-sm text-muted-foreground">{heroActiveChipLabel}{` ${productName}`}</p>
           {/* Price GATED (priceExGst null): show the enquiry line, no numbers, no
               incl-GST line. When priceExGst is a number the ORIGINAL two elements
               render unchanged (the fragment is transparent → flagship byte-identity). */}
@@ -1317,13 +1366,9 @@ export function PortaCabinVariantHero({
         <p className="-mt-1 text-xs italic text-slate-500 text-center">{data.specPdfCaption}</p>
         )}
 
-        <p className="!mt-auto pt-4 text-xs text-muted-foreground text-center">
-          {isC04Product
-            ? <>GST registered · ISO 9001:2015 certified manufacturer · {data.trustWarranty} · Pan-India delivery</>
-            : isC08Product
-              ? <>GST registered · ISO 9001:2015 certified manufacturer · {data.trustWarranty} · Pan-India delivery</>
-              : <>GST registered · ISO 9001:2015 certified manufacturer · 5-year structural and 1-year finishing warranty · Pan-India delivery</>}
-        </p>
+        {!data.hideTrustRow && (
+        <p className="!mt-auto pt-4 text-xs text-muted-foreground text-center">{trustStripText}</p>
+        )}
       </div>
     </Card>
   );
@@ -1382,7 +1427,7 @@ export function PortaCabinVariantHero({
         {/* Buy box — the ONLY H1 on the page. Internally-scrolling T28 shell on
             desktop; normal flow on mobile. */}
         <div className="pc-buybox lg:relative lg:min-h-0">
-          <div className="t28-rail-scroll lg:absolute lg:inset-0 lg:overflow-y-auto lg:overscroll-contain">{buyBoxColumn('h1')}</div>
+          <div ref={buyBoxScrollRef} className="t28-rail-scroll lg:absolute lg:inset-0 lg:overflow-y-auto lg:overscroll-contain">{buyBoxColumn('h1')}</div>
         </div>
 
         <aside className="pc-rail lg:relative lg:min-h-0">
@@ -1392,6 +1437,7 @@ export function PortaCabinVariantHero({
               currentHref={currentHref}
               className="bg-white/80 shadow-lg lg:h-auto lg:min-h-full"
               scroll
+              useItemImageAltVerbatim={useCo04TileAltsVerbatim}
               deferImagesUntilVisible={deferNonLcpImagesUntilHeroPaint}
               imageLoadGate={nonLcpImagesReady}
             />
@@ -1456,6 +1502,24 @@ export function PortaCabinVariantHero({
         </div>
         )}
 
+        {hiddenCompletenessImages.length > 0 && (
+          <div className="hidden" aria-hidden="true" data-co03-image-completeness="true">
+            {hiddenFeatureCompletenessText && <span>{hiddenFeatureCompletenessText}</span>}
+            {hiddenCompletenessImages.map((image) => (
+              <Image
+                key={image.src}
+                src={image.src}
+                unoptimized={data.optimizeLocalGalleryImages ? false : shouldBypassOptimizer(image.src)}
+                alt={image.alt}
+                width={image.width}
+                height={image.height}
+                loading="lazy"
+                decoding="async"
+              />
+            ))}
+          </div>
+        )}
+
       </div>
 
       {/* Mobile sticky buy bar — sits above the site-wide MobileBottomNav (h-16),
@@ -1463,7 +1527,7 @@ export function PortaCabinVariantHero({
       <div className="lg:hidden fixed bottom-16 left-0 right-0 z-40 bg-white border-t border-slate-200 shadow-[0_-2px_8px_rgba(20,33,27,0.08)]">
         <div className="flex items-center justify-between gap-3 px-4 py-3">
           <div>
-            <p className="text-[11px] text-muted-foreground leading-none">{heroActive.label}</p>
+            <p className="text-[11px] text-muted-foreground leading-none">{heroActiveChipLabel} {productName}</p>
             <p className="text-base font-bold text-primary leading-tight">{heroActive.priceExGst == null ? (data.gatedPriceLabel || 'Price on request') : <>{formatIndianPrice(heroActive.priceExGst)} + GST</>}</p>
           </div>
           <Button
@@ -1549,7 +1613,7 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
           flagship). The T25 Section H drop is panel-only, so this block is omitted
           rather than filled with invented copy — each panel carries its own
           heading, which keeps the section self-describing either way. */}
-      {applications.h2 && (
+      {applications.h2 ? (
         <div className="mb-4">
           <h2 id={headingId} className="text-xl font-bold text-[var(--ds-color-forest)] sm:text-2xl">
             {rewriteC04VisiblePunctuation(applications.h2, data.productSlug, true)}
@@ -1574,7 +1638,11 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
             </span>
           )}
         </div>
-      )}
+      ) : applications.intro ? (
+        <p className="mb-4 text-sm leading-relaxed text-[var(--ds-color-steel)]">
+          {rewriteC04VisiblePunctuation(applications.intro, data.productSlug)}
+        </p>
+      ) : null}
 
       {/* Tab strip — horizontal, scrollable on mobile; selected = leaf underline
           + forest text (homepage PopularSizes design language).
