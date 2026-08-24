@@ -114,12 +114,7 @@ const RelatedProductRail = ({
               </Link>
             );
           })
-        ) : (
-          <div className="rounded-lg border border-dashed border-slate-200 p-6 text-center">
-            <Package className="mx-auto mb-2 h-8 w-8 text-slate-300" />
-            <p className="text-sm text-slate-500">No related products available</p>
-          </div>
-        )}
+        ) : null}
       </div>
     </div>
   );

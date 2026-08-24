@@ -458,6 +458,10 @@ const WARRANTY_BLOCK =
 
 /** The shared Shipping tab body (identical on all 13 pages). */
 export interface ShippingHtmlOptions {
+  /** Opt-in intro override for page-scoped approved shipping copy. */
+  intro?: string;
+  /** Opt-in warranty block rendering. Default false; pages must explicitly opt in. */
+  includeWarrantyBlock?: boolean;
   /**
    * PC-05 revision v1.3 (14 Aug 2026) — opt-in lead image, rendered once
    * between the intro paragraph and the free-delivery banner. Absent for
@@ -479,6 +483,7 @@ export interface ShippingHtmlOptions {
 }
 
 export function buildShippingHtml(options: ShippingHtmlOptions = {}): string {
+  const intro = options.intro || SHIPPING_INTRO;
   const leadImageHtml = options.leadImage
     ? `<figure class="mb-4 m-0 overflow-hidden rounded-xl border border-slate-200">` +
         `<img src="${esc(options.leadImage.src)}" alt="${esc(options.leadImage.alt)}" width="1280" height="720" loading="lazy" class="w-full h-auto" />` +
@@ -490,7 +495,7 @@ export function buildShippingHtml(options: ShippingHtmlOptions = {}): string {
     : '';
   return (
     `<div class="not-prose space-y-2">` +
-      `<p class="mb-4 text-sm leading-relaxed text-slate-600">${esc(SHIPPING_INTRO)}</p>` +
+      `<p class="mb-4 text-sm leading-relaxed text-slate-600">${esc(intro)}</p>` +
       leadImageHtml +
       `<div class="mb-6 flex items-start gap-3 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3">` +
         `<span class="mt-1.5 h-2.5 w-2.5 shrink-0 rounded-full bg-green-600" aria-hidden="true"></span>` +
@@ -502,7 +507,7 @@ export function buildShippingHtml(options: ShippingHtmlOptions = {}): string {
       destinationTable('Typical destinations from our Bengaluru unit (South zone)', DEST_NOTE, DEST_SOUTH) +
       destinationTable('Typical destinations from our Greater Noida unit (North zone)', DEST_NOTE, DEST_NORTH) +
       `<p class="mt-2 text-xs leading-relaxed text-slate-500">${esc(FOOTNOTES)}</p>` +
-      WARRANTY_BLOCK +
+      (options.includeWarrantyBlock ? WARRANTY_BLOCK : '') +
     `</div>`
   );
 }

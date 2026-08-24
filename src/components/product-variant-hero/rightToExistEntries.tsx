@@ -419,13 +419,37 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
     },
   },
   'shipping-container-office': {
-    heading: 'Why the shipping-form build stands apart',
+    heading: 'When a converted container shell suits you better than a cabin',
     body: (
-      <>This model is the range&apos;s relocation specialist: stronger handling interfaces, reinforced cut-outs, durable floor and liner selections and secure doors, with relocation documentation included in the delivery pack. It is engineered to be lifted, moved and lifted again without anything working loose. Choose it when the office&apos;s next address is already written on the project plan.</>
+      <>
+        {"Buyers reach this page for one reason. They want the shell itself to be shipping container steel, not a panel cabin dressed to look like one. That choice pays off in a hard yard. Corrugated 1.6 mm skin shrugs off knocks that dent a thin panel wall. The channel base takes a forklift, a crane and a long trailer run without a purpose-built frame. If your unit will move between sites every few months, that robustness decides the job."}
+      </>
     ),
     comparison: (
-      <>If the unit will stay put and daily office comfort leads, <Link className={linkClass} href={containerOfficeHref('container-office-cabin')}>the office-first cabin model</Link> is specified for that instead.</>
+      <>
+        {"The trade-off sits in the openings. Cutting a 3 x 7 ft door into a container wall removes steel that was carrying load. So we rebuild that path with boxed posts, headers and sills. A fabricated cabin never faces that problem, and it costs less. Compare both routes across "}
+        <Link className={linkClass} href="https://www.samanportable.com/product/container-offices">the wider container office range</Link>
+        {" before you commit. "}
+        <Link className={linkClass} href="https://www.samanportable.com/contact">Send us your site plan and we will price the right shell for it</Link>
+        {"."}
+      </>
     ),
+    splitCard: {
+      imageSrc: '/images/products/shipping-container-office/description/03-shipping-container-office-20x12-exterior.webp',
+      imageAlt: 'Indigo Grey 20 x 12 ft shipping container office, front long wall with window, door and window',
+      imageWidth: 1920,
+      imageHeight: 1080,
+      subheading: 'Approved drawings, not just pictures',
+      body: 'Every image on this page is an approved visualisation built to the general arrangement drawing for that exact size. The openings you count in a render are the openings on the drawing.',
+      bullets: [
+        'Six GA boards published, one for every approved size',
+        'Plan, four elevations, opening map and furniture schedule on one sheet',
+        'Door and window positions fixed before fabrication release',
+        'Full specification and all six drawings in one downloadable PDF',
+      ],
+      ctaLabel: 'Ask us to check a drawing against your site',
+      ctaHref: 'https://www.samanportable.com/contact',
+    },
   },
   'site-office-container': {
     heading: 'Why the site office is its own model',

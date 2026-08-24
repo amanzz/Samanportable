@@ -108,9 +108,11 @@ interface ApplicationsData {
 type SectionHPanel = {
   h2: string;
   intro: string;
+  paragraph2?: string;
   h3: string;
   applications: string[];
   imageAlt?: string;
+  image?: VariantImage;
   /** Visible tab-strip label. Optional: a pack that supplies one has written it
       to its own L13 band, so it is used verbatim; a pack that supplies none
       keeps the variant's own size label and renders byte-identically. */
@@ -127,9 +129,11 @@ const fromSectionHDrop = (dataset: SectionHDataset): ApplicationsData => ({
           sizeSlug,
           h3: panel.h2,
           paragraph: panel.intro,
+          ...(panel.paragraph2 ? { paragraph2: panel.paragraph2 } : {}),
           applications: panel.applications,
           applicationsHeading: panel.h3,
           ...(panel.imageAlt ? { imageAlt: panel.imageAlt } : {}),
+          ...(panel.image ? { image: panel.image } : {}),
           ...(panel.tab ? { tabLabel: panel.tab } : {}),
         }]
   ),
@@ -895,13 +899,7 @@ export function PortaCabinVariantHero({
               sizes="(max-width: 639px) calc(100vw - 48px), (max-width: 1023px) calc(100vw - 64px), 40vw"
               quality={85}
             />
-          ) : (
-            <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/10 to-primary/5 text-center p-4">
-              <p className="text-sm text-muted-foreground">
-                Reference photographs for this size are available on request. Send an enquiry and we will share them.
-              </p>
-            </div>
-          )}
+          ) : null}
         </div>
 
         {/* The track sizes to its CONTENTS — never a reserved slot.
@@ -945,7 +943,7 @@ export function PortaCabinVariantHero({
                     viewport on mobile AND desktop (measured 52-62px boxes, all
                     in-viewport). They still remain lazy so only the main viewer
                     competes in the eager/high-priority LCP lane. */}
-                {nonLcpImagesReady && <Image src={img.src} unoptimized={data.optimizeLocalGalleryImages ? false : shouldBypassOptimizer(img.src)} alt={isC04Product || isC08Product ? img.alt : (!showVideo && i === activeImageIndex ? '' : img.alt)} width={150} height={150} className="w-full h-full object-cover" loading="lazy" decoding="async" sizes="(max-width: 1023px) 18vw, 80px" />}
+                {nonLcpImagesReady && <Image src={img.src} unoptimized={data.optimizeLocalGalleryImages ? false : shouldBypassOptimizer(img.src)} alt={data.productSlug === 'shipping-container-office' ? `Thumbnail ${i + 1}: ${img.alt}` : (isC04Product || isC08Product ? img.alt : (!showVideo && i === activeImageIndex ? '' : img.alt))} width={150} height={150} className="w-full h-full object-cover" loading="lazy" decoding="async" sizes="(max-width: 1023px) 18vw, 80px" />}
               </button>
             ))}
 
@@ -1237,7 +1235,7 @@ export function PortaCabinVariantHero({
               <dd className="font-semibold text-[var(--ds-color-forest)]">{productSku}</dd>
             </div>
             )}
-            {categoryLabel && categoryLinkHref && (
+            {categoryLabel && categoryLinkHref && data.productSlug !== 'shipping-container-office' && (
             <div className="flex items-center justify-between gap-3">
               <dt className="text-[10px] font-bold uppercase tracking-[0.7px] text-[var(--ds-color-steel)]">Category</dt>
               <dd>
@@ -1568,7 +1566,7 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
           The active panel is visible; the others are visibility:hidden (still in
           the DOM, still laid out, fully crawlable — stronger than display:none for
           SEO). All 9 panels ship in SSR. */}
-      <div className="mt-4 grid">
+      <div className="mt-4 grid min-w-0 overflow-hidden">
         {renderedVariants.map(({ v, i }) => {
           const panel = panelBySlug.get(v.sizeSlug);
           if (!panel) return null;
@@ -1630,7 +1628,7 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
               aria-labelledby={`app-tab-${v.sizeSlug}`}
               aria-hidden={i !== activeIndex}
               className={cn(
-                '[grid-area:1/1] flex flex-col gap-6 lg:flex-row lg:items-stretch lg:gap-10',
+                '[grid-area:1/1] min-w-0 max-w-full flex flex-col gap-6 lg:flex-row lg:items-stretch lg:gap-10',
                 i === activeIndex ? 'visible' : 'invisible pointer-events-none'
               )}
             >
@@ -1645,7 +1643,7 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
               {!hidePanelImages && <div className="lg:w-[44%]">
                 <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-[var(--ds-color-border)] bg-[var(--ds-color-mist)]">
                   {panelImage ? (
-                    i === activeIndex || data.productSlug === 'container-marketing-office' ? (
+                    (i === activeIndex || data.productSlug === 'container-marketing-office' || data.productSlug === 'shipping-container-office') ? (
                       /* T30 / T24.1-IMG §5.4 — this was the ONLY <img> on the page
                          with no intrinsic dimensions (next/image `fill` cannot emit
                          width/height). It swaps on every tab click, so it carried a
@@ -1682,13 +1680,7 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
                         />
                       )
                     ) : null
-                  ) : (
-                    <div className="flex h-full w-full items-center justify-center p-4 text-center">
-                      <p className="text-sm text-[var(--ds-color-steel)]">
-                        Reference photographs for this size are available on request. Send an enquiry and we will share them.
-                      </p>
-                    </div>
-                  )}
+                  ) : null}
                 </div>
               </div>}
 
