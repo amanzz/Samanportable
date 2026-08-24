@@ -1,0 +1,204 @@
+{
+  "narrative": [
+    "Two tables cover this module. The first fixes the shell: the geometry, the steel, the envelope, the roof and the floor. The second fixes everything a visitor touches or feels: insulation, linings, openings, power, air, water and the scope boundary.",
+    "The split follows how the money moves. Shell decisions are frozen before fabrication and cost the most to reverse. Interior and service decisions can still flex while the module is on the line, and they are the ones a marketing brief usually changes late.",
+    "Read the second table against your branding plan. Glazing area, signage load, the display wall and the counter position all appear there. Each one changes a member size, a circuit or an opening on the first table."
+  ],
+  "tables": [
+    {
+      "title": "Table 1. Geometry, structure, envelope, roof and floor",
+      "head": [
+        "Item",
+        "Approved specification",
+        "Why it is specified this way"
+      ],
+      "rows": [
+        [
+          "Approved sizes and height",
+          "Six plates at 8 ft 6 in height: 20 x 8, 20 x 16, 40 x 8, 40 x 16, 40 x 24 and 40 x 32 ft. Finished walls 100 mm. Workstation module about 4 ft x 2 ft 5 in.",
+          "The published set is the set SAMAN draws, prices and photographs. Anything outside it is a custom plate and needs its own GA."
+        ],
+        [
+          "Bottom frame",
+          "Premium commercial module base. 150 x 75 x 5 mm MS C-channel or engineered equivalent, sized for glazing and facade loads.",
+          "A heavier perimeter carries large glazed openings, feature cladding and repeated relocation without twisting a storefront frame out of square."
+        ],
+        [
+          "Bottom stiffeners",
+          "100 x 50 x 4 mm channels, with local reinforcement under glass walls, counters, signage and equipment.",
+          "Cross-members line up with counter bases, display walls and glazing mullions, so a customer-facing finish does not crack in transit."
+        ],
+        [
+          "Floor frame",
+          "100 x 50 x 3 mm primary members with 80 x 40 x 3 mm secondary members, locally reinforced for display or sales equipment.",
+          "The floor grid follows reception counters, displays, meeting tables and rolling loads. Heavy display equipment is identified before fabrication."
+        ],
+        [
+          "Top frame",
+          "80 x 40 x 3 mm top frame with dedicated signage and glazing header members.",
+          "Storefront headers, canopies, fascia, lighting and signage load the frame, never the glass or the decorative panels."
+        ],
+        [
+          "Roof stiffeners",
+          "60 x 40 x 2.5 mm rafters with 50 x 50 x 2.5 mm purlins or an engineered equivalent.",
+          "Concealed drainage, external signage, lighting, canopy and optional solar or AC loads are carried while the sales floor stays column-free."
+        ],
+        [
+          "Corner posts and wall posts",
+          "60 x 60 x 3 mm corner posts and 50 x 50 x 3 mm intermediate posts, with engineered mullion and opening reinforcement.",
+          "Large openings are framed as structural bays, so glass, doors, facade panels and transport restraints work as one system."
+        ],
+        [
+          "Lifting and handling",
+          "Designed lugs or corner fittings, with glazing restraints and transport protection.",
+          "Films and temporary restraints stay on until the module is placed and levelled, which is when most transit damage would otherwise appear."
+        ],
+        [
+          "Welding and fabrication",
+          "Qualified welds, controlled tolerances, smooth exposed edges and concealed service support.",
+          "Visible steel lines stay straight for a premium finish, and every opening is surveyed before glass and doors are ordered."
+        ],
+        [
+          "Exterior walls",
+          "1.25 to 1.6 mm steel and, or, 50 to 75 mm insulated panels, with HPL, ACP or feature cladding zones.",
+          "The elevation mixes durable opaque panels with customer-facing glazing. Joint lines, replacement access and hidden drainage are set before manufacture."
+        ],
+        [
+          "Roof",
+          "1.6 mm corrugated steel or an insulated panel roof, with positive fall, flashings and an optional canopy.",
+          "Roof edges tie into the fascia and signage while still shedding water. Canopies drain away from the entrance and the queue."
+        ],
+        [
+          "Floor base",
+          "19 mm marine-grade plywood or 18 mm Bison or cement-fibre panel.",
+          "Board joints are supported and sealed. Thresholds, display bases and the wet pantry zone get local detailing before the finish goes down."
+        ],
+        [
+          "Floor finish",
+          "5 to 6 mm SPC, 3 to 4 mm LVT or a project-selected commercial floor, with skirting.",
+          "Selection follows rolling chairs, visitor traffic, cleaning and the brand palette. Entrance zones can take higher slip resistance or removable mats."
+        ],
+        [
+          "External finish and branding",
+          "ACP, HPL, paint, vinyl graphics, illuminated fascia or digital display backing, to an approved elevation.",
+          "Brand materials stay replaceable and never cover lifting points, drainage, ventilation or statutory safety markings. Signage load is scheduled separately."
+        ],
+        [
+          "Fasteners and sealing",
+          "Stainless or coated fasteners, EPDM glazing gaskets, butyl tapes, flashings and compatible sealants.",
+          "Sealants are matched to glass, ACP, HPL and painted steel. Storefront sill drainage and facade joints are water-tested under control."
+        ]
+      ]
+    },
+    {
+      "title": "Table 2. Insulation, interior, openings, services and scope",
+      "head": [
+        "Item",
+        "Approved specification",
+        "Why it is specified this way"
+      ],
+      "rows": [
+        [
+          "Wall insulation",
+          "75 mm mineral wool, glass wool or PUF or PIR panel, selected against fire and comfort requirements.",
+          "Insulation and air sealing cut heat gain and traffic noise. Glazing ratio goes into the AC load and is not hidden behind a nominal thickness."
+        ],
+        [
+          "Roof insulation",
+          "100 mm mineral wool or an approved insulated roof system.",
+          "Roof insulation plus a reflective exterior keeps solar load down, which matters when the room stays open for long customer hours."
+        ],
+        [
+          "Interior walls",
+          "12 mm plywood with 0.8 to 1.0 mm laminate, HPL feature panels or gypsum systems by zone.",
+          "Customer zones take cleanable finishes. Back-office and storage zones take practical linings. Fixing backers go in for displays and screens."
+        ],
+        [
+          "Ceiling",
+          "12.5 mm gypsum, mineral-fibre grid or a premium laminated ceiling, with access panels.",
+          "Lighting, speakers, CCTV, detectors, AC diffusers and signage power are coordinated on one reflected ceiling plan."
+        ],
+        [
+          "Main door and service door",
+          "Toughened or laminated glazed entrance with commercial hardware. Insulated steel or laminate service door. Personnel doors 3 x 7 ft on the approved GA.",
+          "Entrance clear width, threshold and swing follow customer flow. Stock and staff move through the service door without crossing a visitor."
+        ],
+        [
+          "Windows and sales openings",
+          "Typically 8 to 12 mm toughened or laminated glass in powder-coated aluminium or steel framing. Standard GA windows 4 x 3 ft. Shutters where required.",
+          "Glass type, size, wind load, manifestation, safety marking and shading are engineered. A fold-up sales hatch gets independent supports and secure locking."
+        ],
+        [
+          "Grills, mesh and shutters",
+          "Perforated shutters, rolling shutters, mesh or louvres, selected by retail duty.",
+          "Security is integrated into the elevation and must never compromise egress, ventilation or the way the module presents to a customer."
+        ],
+        [
+          "Service penetrations",
+          "Two high-level exhaust and louvre assemblies on the solid toilet end, on every plan from 20 x 16 ft upward. No glazing on the toilet side.",
+          "These are service openings, not windows, so they are excluded from the window count on the GA and from the daylight calculation."
+        ],
+        [
+          "Electrical wiring",
+          "Copper circuits sized for general power, air conditioning, illuminated signage, display screens, point of sale and networking.",
+          "Power and data follow counters, screens, routers and exterior signs, and allow rearrangement later. Data conduit runs separate from power."
+        ],
+        [
+          "Electrical protection",
+          "Main isolator, MCB or RCBO or RCCB, SPD where required, earthing and labelled circuits.",
+          "Public-access sockets, exterior signage and wet pantry circuits take appropriate residual-current and weather protection."
+        ],
+        [
+          "Electrical fittings",
+          "LED downlights or tracks, feature lights, sockets, USB or data outlets, point-of-sale points, signage supply and emergency lighting.",
+          "Light level and colour rendering are chosen for customer-facing use, so sample boards and finishes read true. Exit lighting follows the egress plan."
+        ],
+        [
+          "Ventilation and air conditioning",
+          "Split, cassette or ducted provision, sized from occupancy, glazing, lighting and equipment heat. Fresh air or exhaust as required.",
+          "Door opening frequency and solar exposure go into the load. Outdoor units and condensate are concealed without blocking branding or access."
+        ],
+        [
+          "Plumbing and sanitary",
+          "Water and waste only where the approved plan shows them. Accessible isolation, trapped drain and external service points. Toilets 5 x 5 ft, shared wash 5 x 6 ft, pantry 5 x 6 ft.",
+          "Base price excludes plumbing unless the approved layout carries a pantry or toilet. Wet areas take moisture-resistant linings and sealed flooring."
+        ],
+        [
+          "Layout and configuration",
+          "Customer journey, counter, displays, meeting zone, staff storage and service access, all fixed on the approved GA.",
+          "This is what separates the module from a generic office: approach, sightlines, branding, queuing, consultation privacy and secure staff-only zones."
+        ],
+        [
+          "Painting and coating",
+          "Prepared MS with epoxy or PU over an approved primer or topcoat. High-finish exposed surfaces with controlled touch-up.",
+          "Colour and gloss are approved against brand standards. Cut edges and concealed steel are protected before the cladding closes."
+        ],
+        [
+          "Quality checks and warranty",
+          "Structural, water-ingress, glazing, door, electrical, lighting, signage and finish inspection against an approved mock-up or sample. Warranty separated by shell, glazing, signage, electrical, AC and finish.",
+          "Glass certificates, safety marking, sealant cure, door alignment and lighting scenes are checked before dispatch. Graphics, lamps and customer-supplied equipment are excluded."
+        ]
+      ]
+    }
+  ],
+  "diagrams": [
+    {
+      "file": "01-container-marketing-material-construction-diagram",
+      "title": "Materials and construction sequence",
+      "caption": "SAMAN Container Marketing Office, materials and construction sequence. Structural frame, insulated envelope, joints and finish. Ruleset 1.0.22, 22 August 2026. Illustrative - not for construction.",
+      "alt": "Three-stage diagram of container marketing office frame, insulated envelope and sealed joints",
+      "src": "/assets/products/container-marketing-office/diagrams/01-container-marketing-material-construction-diagram.svg",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "file": "02-container-marketing-services-coordination-diagram",
+      "title": "Openings, electrical and ventilation coordination",
+      "caption": "SAMAN Container Marketing Office, openings, electrical and ventilation coordination. 4 x 3 ft sliding window, distribution board and wet-area exhaust. Ruleset 1.0.22, 22 August 2026. Illustrative - not for construction.",
+      "alt": "Diagram of 4 by 3 ft window detail, distribution board circuits and toilet exhaust louvre routing",
+      "src": "/assets/products/container-marketing-office/diagrams/02-container-marketing-services-coordination-diagram.svg",
+      "width": 1920,
+      "height": 1080
+    }
+  ]
+}

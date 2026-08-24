@@ -254,3 +254,36 @@ it can even start.
 2. **Known, reported-not-fixed gaps**, all pre-existing patterns rather than CO-09-introduced defects, listed in the PR description: the Shipping tab carries a per-product intro paragraph (not byte-identical to a sibling, matches the whole C04 cluster's existing convention); the technical PDF's clickable link now targets the canonical page but its visible link *text* still shows the hub URL; one U+2014 renders from the shared calculator's rate-card guidance line, which has no override prop (the other em dash, the `sizeEyebrowText` default, is fixed — see the lessons list above: `container-office-cabin` was missing from `[slug].tsx`'s existing no-em-dash slug list even though the sanctioned override string already existed and is reused by five other pages).
 
 When CO-09 ships (merged, live URL verified 200), replace this section with the next page and delete the "goes stale fast" note only once you've actually developed the discipline it's asking for.
+
+---
+
+## Agent handoff addendum - CMO-01
+
+Added 24 August 2026 after the Container Marketing Office preview review.
+For every new product page, Section 2 must use the same post-WooCommerce
+design as the live `/product/porta-cabins` reference: `RightToExist` renders
+immediately after the hero/product block and before `SizeApplicationsExplorer`.
+
+Do not put approved Section 2 copy inside `descriptionHtml` or the Description
+tab. If the build data already has the Section 2 H2 and two lead paragraphs at
+the start of the long description, move that block into
+`src/components/product-variant-hero/rightToExistEntries.tsx`, add the 16:9
+split-card image and card copy there, and let the long description start with
+its own next H2.
+
+### Current page override
+
+As of 24 August 2026, the active page is **CMO-01 Container Marketing Office**,
+`/product/container-offices/container-marketing-office`, branch
+`cmo-01-container-marketing-office` (pre-build SHA `f2a9548f`, backup ref
+`backup/co-01-build-v21-prebuild-2026-08-22`). Built to CMO-01 build prompt v1
+plus addendum v1.1, including the post-WooCommerce Section 2 split-card
+correction. **PR #173** (`https://github.com/amanzz/Samanportable/pull/173`)
+is open against `static-migration` - **not yet merged.**
+
+Local verification passed before PR open:
+1. `npm run type-check -- --pretty false`
+2. `node scripts\verify-cmo-01.mjs http://localhost:3002/product/container-offices/container-marketing-office`
+
+Known local verification note: a full `npm run build` attempt timed out in the
+local command window, so it is not reported as passing.

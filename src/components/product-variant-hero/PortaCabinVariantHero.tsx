@@ -55,6 +55,7 @@ import containerHotelApplications from '@/data/products/container-hotel-applicat
 import modularContainerCafeApplications from '@/data/products/modular-container-cafe-applications.json';
 import containerCoffeeShopApplications from '@/data/products/container-coffee-shop-applications.json';
 import containerOfficeCabinApplications from '@/data/products/container-office-cabin-applications.json';
+import containerMarketingOfficeApplications from '@/data/products/container-marketing-office-applications.json';
 import sectionHDatasets from '@/data/products/section-h-datasets.json';
 import c08SectionHDatasets from '@/data/products/c08-section-h-datasets.json';
 import { pushDataLayer } from '@/lib/analytics';
@@ -177,6 +178,7 @@ const APPLICATIONS_DATASETS: Record<string, ApplicationsData> = {
   'container-hotel': containerHotelApplications as ApplicationsData,
   'modular-container-cafe': modularContainerCafeApplications as ApplicationsData,
   'container-coffee-shop': containerCoffeeShopApplications as ApplicationsData,
+  'container-marketing-office': containerMarketingOfficeApplications as ApplicationsData,
   ...Object.fromEntries(
     Object.entries(sectionHDatasets as Record<string, SectionHDataset>).map(
       ([slug, dataset]) => [slug, fromSectionHDrop(dataset)]
@@ -1174,21 +1176,40 @@ export function PortaCabinVariantHero({
             values; compacted ~10% (owner direction: tighter cells, no dead space
             in col 3). SIZE and APPLICATION swap with the selected chip; min-h
             keeps rows CLS-stable. */}
-        <div className="grid grid-cols-2 rounded-lg border border-[var(--ds-color-border)] overflow-hidden">
-          {FEATURE_CELLS.map((cell, i) => (
-            <div
-              key={cell.label}
-              className={cn(
-                'px-2.5 py-1.5 min-h-[3.25rem]',
-                i % 2 === 0 && 'border-r border-[var(--ds-color-border)]',
-                i < FEATURE_CELLS.length - 2 && 'border-b border-[var(--ds-color-border)]'
-              )}
-            >
-              <div className="text-[10px] font-bold uppercase tracking-[0.7px] text-[var(--ds-color-steel)]">{cell.label}</div>
-              <div className="text-[13px] font-semibold text-[var(--ds-color-forest)]">{cell.value}</div>
-            </div>
-          ))}
-        </div>
+        {data.heroTable ? (
+          <div className="overflow-hidden rounded-lg border border-[var(--ds-color-border)]">
+            <table className="w-full border-collapse text-left">
+              <tbody>
+                {data.heroTable.map(([label, value]) => (
+                  <tr key={label} className="border-b border-[var(--ds-color-border)] last:border-b-0">
+                    <th scope="row" className="w-[42%] px-2.5 py-1.5 text-[10px] font-bold uppercase tracking-[0.7px] text-[var(--ds-color-steel)]">
+                      {label}
+                    </th>
+                    <td className="px-2.5 py-1.5 text-[13px] font-semibold text-[var(--ds-color-forest)]">
+                      {value}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        ) : (
+          <div className="grid grid-cols-2 rounded-lg border border-[var(--ds-color-border)] overflow-hidden">
+            {FEATURE_CELLS.map((cell, i) => (
+              <div
+                key={cell.label}
+                className={cn(
+                  'px-2.5 py-1.5 min-h-[3.25rem]',
+                  i % 2 === 0 && 'border-r border-[var(--ds-color-border)]',
+                  i < FEATURE_CELLS.length - 2 && 'border-b border-[var(--ds-color-border)]'
+                )}
+              >
+                <div className="text-[10px] font-bold uppercase tracking-[0.7px] text-[var(--ds-color-steel)]">{cell.label}</div>
+                <div className="text-[13px] font-semibold text-[var(--ds-color-forest)]">{cell.value}</div>
+              </div>
+            ))}
+          </div>
+        )}
 
         {/* Green chips line (verbatim, from the approved short-description footer). */}
         <div className="flex items-center gap-2 rounded-md bg-[var(--ds-color-mist)] px-3 py-2">
@@ -1593,6 +1614,9 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
                 // Absent everywhere else, so this defaults to 'cover' below,
                 // byte-identical to every other product's panel image.
                 fit: panel.image?.fit,
+                previewSrc: panel.image?.previewSrc,
+                width: panel.image?.width || manifestImage?.width || 1254,
+                height: panel.image?.height || manifestImage?.height || 1254,
               }
             : null;
           const rate = pricePerSqft(data.pricePerSqft, v.sizeSlug, v.priceExGst, v.areaSqft);
@@ -1619,7 +1643,7 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
               {!hidePanelImages && <div className="lg:w-[44%]">
                 <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-[var(--ds-color-border)] bg-[var(--ds-color-mist)]">
                   {panelImage ? (
-                    (i === activeIndex || data.productSlug === 'shipping-container-office') ? (
+                    (i === activeIndex || data.productSlug === 'container-marketing-office' || data.productSlug === 'shipping-container-office') ? (
                       /* T30 / T24.1-IMG §5.4 — this was the ONLY <img> on the page
                          with no intrinsic dimensions (next/image `fill` cannot emit
                          width/height). It swaps on every tab click, so it carried a
@@ -1629,17 +1653,32 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
                          but the browser now knows the intrinsic aspect.
                          Also right-sized (item 5): it renders ~326-378px on mobile
                          (measured = 100vw - 34px), not 100vw. */
-                      <Image
-                        src={panelImage.src}
-                        unoptimized={shouldBypassOptimizer(panelImage.src)}
-                        alt={panelImage.alt}
-                        width={panel.image?.width || manifestImage?.width || 1254}
-                        height={panel.image?.height || manifestImage?.height || 1254}
-                        className={cn('w-full h-full', panelImage.fit === 'contain' ? 'object-contain' : 'object-cover')}
-                        sizes="(max-width: 1023px) calc(100vw - 34px), 500px"
-                        loading="lazy"
-                        decoding="async"
-                      />
+                      panelImage.previewSrc ? (
+                        <picture>
+                          <source media="(max-width: 767px)" srcSet={panelImage.previewSrc} />
+                          <img
+                            src={panelImage.src}
+                            alt={panelImage.alt}
+                            width={panelImage.width}
+                            height={panelImage.height}
+                            className={cn('w-full h-full', panelImage.fit === 'contain' ? 'object-contain' : 'object-cover')}
+                            loading="lazy"
+                            decoding="async"
+                          />
+                        </picture>
+                      ) : (
+                        <Image
+                          src={panelImage.src}
+                          unoptimized={shouldBypassOptimizer(panelImage.src)}
+                          alt={panelImage.alt}
+                          width={panelImage.width}
+                          height={panelImage.height}
+                          className={cn('w-full h-full', panelImage.fit === 'contain' ? 'object-contain' : 'object-cover')}
+                          sizes="(max-width: 1023px) calc(100vw - 34px), 500px"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      )
                     ) : null
                   ) : null}
                 </div>

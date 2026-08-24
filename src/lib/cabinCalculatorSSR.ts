@@ -3023,6 +3023,12 @@ export function renderCalculatorEntrySection(options: {
   productName: string;
   ladderKey?: string | null;
   href?: string;
+  photo?: {
+    webpSrcSet: string;
+    jpgSrcSet: string;
+    src: string;
+    alt: string;
+  };
   suppressCommitmentCopy?: boolean;
 }): string {
   // LC-06 FIX v1.1 (17 Aug 2026) — `productId` is now optional so a no-prefill
@@ -3045,11 +3051,17 @@ export function renderCalculatorEntrySection(options: {
   // away the product context and the scroll position. The standalone route
   // stays exactly as it is for direct traffic.
   const href = options.href || '#cabin-calculator';
+  const photo = options.photo || {
+    webpSrcSet: '/credentials/optimized/calculator-band-v1-768.webp 768w, /credentials/optimized/calculator-band-v1-1216.webp 1216w, /credentials/optimized/calculator-band-v1-1440.webp 1440w, /credentials/optimized/calculator-band-v1-1926.webp 1926w',
+    jpgSrcSet: '/credentials/optimized/calculator-band-v1-768.jpg 768w, /credentials/optimized/calculator-band-v1-1216.jpg 1216w, /credentials/optimized/calculator-band-v1-1440.jpg 1440w, /credentials/optimized/calculator-band-v1-1926.jpg 1926w',
+    src: '/credentials/optimized/calculator-band-v1-1926.jpg',
+    alt: 'SAMAN portable cabin calculator',
+  };
   return `<style>${CALCULATOR_ENTRY_STYLES}</style>`
     + `<section class="calc-entry" data-calculator-entry aria-labelledby="calc-entry-title">`
     + `<picture class="calc-entry-photo">`
-    + `<source type="image/webp" sizes="(min-width: 1280px) 1216px, 100vw" srcset="/credentials/optimized/calculator-band-v1-768.webp 768w, /credentials/optimized/calculator-band-v1-1216.webp 1216w, /credentials/optimized/calculator-band-v1-1440.webp 1440w, /credentials/optimized/calculator-band-v1-1926.webp 1926w">`
-    + `<img src="/credentials/optimized/calculator-band-v1-1926.jpg" sizes="(min-width: 1280px) 1216px, 100vw" srcset="/credentials/optimized/calculator-band-v1-768.jpg 768w, /credentials/optimized/calculator-band-v1-1216.jpg 1216w, /credentials/optimized/calculator-band-v1-1440.jpg 1440w, /credentials/optimized/calculator-band-v1-1926.jpg 1926w" alt="SAMAN portable cabin calculator" width="1926" height="817" loading="lazy" decoding="async">`
+    + `<source type="image/webp" sizes="(min-width: 1280px) 1216px, 100vw" srcset="${esc(photo.webpSrcSet)}">`
+    + `<img src="${esc(photo.src)}" sizes="(min-width: 1280px) 1216px, 100vw" srcset="${esc(photo.jpgSrcSet)}" alt="${esc(photo.alt)}" width="1926" height="817" loading="lazy" decoding="async">`
     + `</picture>`
     + `<div class="calc-entry-scrim" aria-hidden="true"></div>`
     + `<div class="calc-entry-inner">`
