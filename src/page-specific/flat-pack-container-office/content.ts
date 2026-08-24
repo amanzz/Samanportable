@@ -1,8 +1,15 @@
 import type { VariantProductData } from '@/components/product-variant-hero/types';
 import productData from '@/data/products/flat-pack-container-office.json';
 import copyPack from '../../../content/co-07/CO-07-copy-pack-v1.json';
+import filenameMap from '../../../scripts/CO-07-output-filename-map-v1.2.json';
 
 type CopyPack = typeof copyPack;
+
+const outputFor = (source: string): string => {
+  const row = filenameMap.find((item) => item.source === source);
+  if (!row) throw new Error(`Missing CO-07 v1.2 output filename for ${source}`);
+  return row.output;
+};
 
 const esc = (value: string): string => value
   .replace(/&/g, '&amp;')
@@ -25,8 +32,7 @@ const heading = (level: 'h2' | 'h3', value: string): string =>
   `<${level}>${esc(value)}</${level}>`;
 
 const descriptionImage = (item: CopyPack['description_images'][number]): string => {
-  const basename = item.file.split('/').at(-1)!.replace(/\.png$/, '.webp');
-  return `<figure class="my-5 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm"><img src="/images/products/flat-pack-container-office/description/${basename}" alt="${esc(item.alt)}" width="1920" height="1080" loading="lazy" decoding="async" class="h-auto w-full" /></figure>`;
+  return `<figure class="my-5 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm"><img src="${outputFor(item.file)}" alt="${esc(item.alt)}" width="1920" height="1080" loading="lazy" decoding="async" class="h-auto w-full" /></figure>`;
 };
 
 const table = (headers: string[], rows: string[][]): string => (
@@ -114,8 +120,7 @@ const specTable = (group: CopyPack['spec_tables'][number]): string => table(
 ).replace('</div></div>', '</div></div></section>');
 
 const specificationDiagram = (item: CopyPack['diagrams'][number]): string => {
-  const basename = item.file.split('/').at(-1)!.replace(/\.png$/, '');
-  return `<figure class="mb-4 rounded-xl border border-slate-200 bg-white p-5 shadow-sm"><picture><source media="(max-width: 767px)" srcset="/images/products/flat-pack-container-office/diagrams/${basename}.svg" /><img src="/images/products/flat-pack-container-office/diagrams/${basename}.webp" alt="${esc(item.alt)}" width="1920" height="1080" loading="lazy" decoding="async" class="h-auto w-full rounded-lg" /></picture></figure>`;
+  return `<figure class="mb-4 rounded-xl border border-slate-200 bg-white p-5 shadow-sm"><picture><source media="(max-width: 767px)" srcset="${outputFor(item.svg)}" /><img src="${outputFor(item.file)}" alt="${esc(item.alt)}" width="1920" height="1080" loading="lazy" decoding="async" class="h-auto w-full rounded-lg" /></picture></figure>`;
 };
 
 function buildSpecificationsHtml(): string {
@@ -128,10 +133,9 @@ function buildSpecificationsHtml(): string {
 
 const gaImage = (size: string) => {
   const item = copyPack.ga_boards[size as keyof typeof copyPack.ga_boards];
-  const basename = item.file.split('/').at(-1)!.replace(/\.png$/, '');
   return {
-    src: `/images/products/flat-pack-container-office/ga/${basename}.webp`,
-    previewSrc: `/images/products/flat-pack-container-office/ga/${basename}.svg`,
+    src: outputFor(item.file),
+    previewSrc: outputFor(item.svg),
     alt: item.alt,
     provenance: 'render' as const,
     width: item.width,

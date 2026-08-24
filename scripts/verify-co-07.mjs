@@ -28,6 +28,19 @@ const hashPath = argOf('--hashes', here('CO-07-copy-hashes-v1.1.json'));
 
 const packRaw = readFileSync(packPath);
 const P = JSON.parse(packRaw.toString('utf8'));
+const MAPPATH = argOf('--map', here('CO-07-output-filename-map-v1.2.json'));
+let MAP = null;
+try { MAP = JSON.parse(readFileSync(MAPPATH, 'utf8')); } catch { MAP = null; }
+/** Output basename for a source path, per the rename rule. No supplied filename survives. */
+const outBase = (src) => {
+  const row = MAP && MAP.find(r => r.source === src);
+  if (!row) return src.split('/').pop().replace(/\.(png|svg|pdf)$/, '');
+  return row.output.split('/').pop().replace(/\.(webp|svg|jpg|pdf)$/, '');
+};
+const outPath = (src) => {
+  const row = MAP && MAP.find(r => r.source === src);
+  return row ? row.output : src;
+};
 const H = JSON.parse(readFileSync(hashPath, 'utf8'));
 
 // ---- integrity gate. Nothing else runs until the inputs prove themselves. ----
@@ -110,8 +123,8 @@ C.bullets.forEach((b, i) => check(has(b), `card bullet ${i + 1}: ${b}`));
 check(has(C.cta_text), 'card CTA text present');
 check(html.includes(C.cta_url) || html.includes('/contact'), 'card CTA points at /contact');
 {
-  const base = C.image.split('/').pop().replace(/\.png$/, '');
-  const t = imgTagsEarly().find(x => (x.match(/\bsrc="([^"]+)"/i) || [, ''])[1].includes(base));
+  const base = outBase(C.image);
+  const t = imgTagsEarly().find(x => (x.match(/\bsrc="([^"]+)"/i) || [, ''])[1].includes(outPath(C.image)));
   check(!!t, `card image rendered: ${base}`);
   if (t) {
     check(((t.match(/\balt="([^"]*)"/i) || [, ''])[1]) === C.image_alt, 'card image alt exact');
@@ -143,8 +156,8 @@ const altOf = (t) => (t.match(/\balt="([^"]*)"/i) || [, null])[1];
 const gallery = Object.values(P.gallery).flat();
 check(gallery.length === 36, `copy pack declares 36 gallery images (${gallery.length})`);
 gallery.forEach(g => {
-  const base = g.file.split('/').pop().replace(/\.png$/, '');
-  const t = imgTags.find(x => srcOf(x).includes(base));
+  const base = outBase(g.file);
+  const t = imgTags.find(x => srcOf(x).includes(outPath(g.file)));
   check(!!t, `gallery image rendered: ${base}`);
   if (t) {
     check(altOf(t) === g.alt, `gallery alt exact: ${base}`);
@@ -152,21 +165,21 @@ gallery.forEach(g => {
   }
 });
 Object.entries(P.ga_boards).forEach(([size, g]) => {
-  const base = g.file.split('/').pop().replace(/\.png$/, '');
-  check(html.includes(base), `GA board rendered inside the ${size} section: ${base}`);
+  const base = outBase(g.file);
+  check(html.includes(outPath(g.file)), `GA board rendered inside the ${size} section: ${base}`);
   check(html.includes(g.alt), `GA board alt exact: ${size}`);
 });
 check(P.description_images.length >= 4 && P.description_images.length <= 6,
       `Description tab carries 4 to 6 images (${P.description_images.length}) after the card reallocation`);
 P.description_images.forEach(i => {
-  const base = i.file.split('/').pop().replace(/\.png$/, '');
-  const t = imgTags.find(x => srcOf(x).includes(base));
+  const base = outBase(i.file);
+  const t = imgTags.find(x => srcOf(x).includes(outPath(i.file)));
   check(!!t, `Description image rendered: ${base}`);
   if (t) check(altOf(t) === i.alt, `Description image alt exact: ${base}`);
 });
 P.diagrams.forEach(d => {
-  const base = d.file.split('/').pop().replace(/\.png$/, '');
-  check(html.includes(base), `diagram rendered: ${base}`);
+  const base = outBase(d.file);
+  check(html.includes(outPath(d.file)), `diagram rendered: ${base}`);
   check(html.includes(d.alt), `diagram alt exact: ${base}`);
 });
 check(html.includes(P.technical_pdf.file) || /flat-pack-container-office-technical-specification/.test(html),
@@ -231,6 +244,18 @@ OUT_OF_PLAN.forEach(d => check(!hrefs.some(h => new RegExp(`(^|/)${d}/?$`).test(
 
 // ---------------------------------------------------------------- prohibitions
 section('Prohibitions');
+{
+  const supplied = new Set();
+  Object.values(P.gallery).flat().forEach(g => supplied.add(g.file.split('/').pop()));
+  Object.values(P.ga_boards).forEach(g => { supplied.add(g.file.split('/').pop()); supplied.add(g.svg.split('/').pop()); });
+  P.description_images.forEach(i => supplied.add(i.file.split('/').pop()));
+  P.diagrams.forEach(d => { supplied.add(d.file.split('/').pop()); supplied.add(d.svg.split('/').pop()); });
+  supplied.add(C.image.split('/').pop());
+  supplied.add(P.calc_entry_band.source.split('/').pop());
+  const leaked = [...supplied].filter(f => html.includes(f.replace(/\.(png|svg)$/, '')));
+  check(leaked.length === 0,
+        `no supplied source filename survives into the build (${leaked.length} leaked${leaked.length ? ': ' + leaked.slice(0,3).join(', ') : ''})`);
+}
 ['available on request','Reference photographs','coming soon','contact us for','[DATA REQUIRED]',
  'TBD','lorem','fireproof','earthquake-proof','maintenance-free','waterproof','eco-friendly']
   .forEach(s => check(!text.toLowerCase().includes(s.toLowerCase()), `absent from rendered copy: "${s}"`));

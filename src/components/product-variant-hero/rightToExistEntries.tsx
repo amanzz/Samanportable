@@ -107,7 +107,7 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
       flatPackContainerOfficeCopy.s2_paragraphs[1].replace(/\[([^\]]+)\]\([^)]+\)/g, '$1'),
     ],
     splitCard: {
-      imageSrc: '/images/products/flat-pack-container-office/section2/01-flatpack-10x8-compact-office-use.webp',
+      imageSrc: '/images/products/flat-pack-container-office/section2/flat-pack-container-office-10x8-compact-office-interior.webp',
       imageAlt: flatPackContainerOfficeCopy.s2_card.image_alt,
       imageWidth: 1920,
       imageHeight: 1080,

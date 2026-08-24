@@ -1,0 +1,297 @@
+[
+ {
+  "slot": "Gallery",
+  "source": "02-square-product-images/size-10x8/01-flatpack-10x8-wall-a-exterior.png",
+  "output": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-10x8-wall-a-exterior.webp"
+ },
+ {
+  "slot": "Gallery",
+  "source": "02-square-product-images/size-10x8/02-flatpack-10x8-wall-b-exterior.png",
+  "output": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-10x8-wall-b-exterior.webp"
+ },
+ {
+  "slot": "Gallery",
+  "source": "02-square-product-images/size-10x8/03-flatpack-10x8-end-c-exterior.png",
+  "output": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-10x8-end-c-exterior.webp"
+ },
+ {
+  "slot": "Gallery",
+  "source": "02-square-product-images/size-10x8/04-flatpack-10x8-workstation-interior.png",
+  "output": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-10x8-workstation-interior.webp"
+ },
+ {
+  "slot": "Gallery",
+  "source": "02-square-product-images/size-10x8/05-flatpack-10x8-reverse-office-interior.png",
+  "output": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-10x8-reverse-office-interior.webp"
+ },
+ {
+  "slot": "Gallery",
+  "source": "02-square-product-images/size-10x8/06-flatpack-10x8-end-station-interior.png",
+  "output": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-10x8-end-station-interior.webp"
+ },
+ {
+  "slot": "Gallery",
+  "source": "02-square-product-images/size-20x8/01-flatpack-20x8-wall-a-exterior.png",
+  "output": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-20x8-wall-a-exterior.webp"
+ },
+ {
+  "slot": "Gallery",
+  "source": "02-square-product-images/size-20x8/02-flatpack-20x8-wall-b-exterior.png",
+  "output": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-20x8-wall-b-exterior.webp"
+ },
+ {
+  "slot": "Gallery",
+  "source": "02-square-product-images/size-20x8/03-flatpack-20x8-end-c-exterior.png",
+  "output": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-20x8-end-c-exterior.webp"
+ },
+ {
+  "slot": "Gallery",
+  "source": "02-square-product-images/size-20x8/04-flatpack-20x8-workstation-interior.png",
+  "output": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-20x8-workstation-interior.webp"
+ },
+ {
+  "slot": "Gallery",
+  "source": "02-square-product-images/size-20x8/05-flatpack-20x8-wall-a-interior.png",
+  "output": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-20x8-wall-a-interior.webp"
+ },
+ {
+  "slot": "Gallery",
+  "source": "02-square-product-images/size-20x8/06-flatpack-20x8-end-window-interior.png",
+  "output": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-20x8-end-window-interior.webp"
+ },
+ {
+  "slot": "Gallery",
+  "source": "02-square-product-images/size-20x10/01-flatpack-20x10-wall-a-exterior.png",
+  "output": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-20x10-wall-a-exterior.webp"
+ },
+ {
+  "slot": "Gallery",
+  "source": "02-square-product-images/size-20x10/02-flatpack-20x10-wall-b-exterior.png",
+  "output": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-20x10-wall-b-exterior.webp"
+ },
+ {
+  "slot": "Gallery",
+  "source": "02-square-product-images/size-20x10/03-flatpack-20x10-end-c-exterior.png",
+  "output": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-20x10-end-c-exterior.webp"
+ },
+ {
+  "slot": "Gallery",
+  "source": "02-square-product-images/size-20x10/04-flatpack-20x10-workstation-interior.png",
+  "output": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-20x10-workstation-interior.webp"
+ },
+ {
+  "slot": "Gallery",
+  "source": "02-square-product-images/size-20x10/05-flatpack-20x10-wall-a-workstations.png",
+  "output": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-20x10-wall-a-workstations.webp"
+ },
+ {
+  "slot": "Gallery",
+  "source": "02-square-product-images/size-20x10/06-flatpack-20x10-end-window-interior.png",
+  "output": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-20x10-end-window-interior.webp"
+ },
+ {
+  "slot": "Gallery",
+  "source": "02-square-product-images/size-30x10/01-flatpack-30x10-wall-a-exterior.png",
+  "output": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-30x10-wall-a-exterior.webp"
+ },
+ {
+  "slot": "Gallery",
+  "source": "02-square-product-images/size-30x10/02-flatpack-30x10-wall-b-exterior.png",
+  "output": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-30x10-wall-b-exterior.webp"
+ },
+ {
+  "slot": "Gallery",
+  "source": "02-square-product-images/size-30x10/03-flatpack-30x10-end-c-exterior.png",
+  "output": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-30x10-end-c-exterior.webp"
+ },
+ {
+  "slot": "Gallery",
+  "source": "02-square-product-images/size-30x10/04-flatpack-30x10-workstation-interior.png",
+  "output": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-30x10-workstation-interior.webp"
+ },
+ {
+  "slot": "Gallery",
+  "source": "02-square-product-images/size-30x10/05-flatpack-30x10-wall-a-workstations.png",
+  "output": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-30x10-wall-a-workstations.webp"
+ },
+ {
+  "slot": "Gallery",
+  "source": "02-square-product-images/size-30x10/06-flatpack-30x10-end-window-interior.png",
+  "output": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-30x10-end-window-interior.webp"
+ },
+ {
+  "slot": "Gallery",
+  "source": "02-square-product-images/size-40x10/01-flatpack-40x10-wall-a-exterior.png",
+  "output": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-40x10-wall-a-exterior.webp"
+ },
+ {
+  "slot": "Gallery",
+  "source": "02-square-product-images/size-40x10/02-flatpack-40x10-wall-b-exterior.png",
+  "output": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-40x10-wall-b-exterior.webp"
+ },
+ {
+  "slot": "Gallery",
+  "source": "02-square-product-images/size-40x10/03-flatpack-40x10-end-c-exterior.png",
+  "output": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-40x10-end-c-exterior.webp"
+ },
+ {
+  "slot": "Gallery",
+  "source": "02-square-product-images/size-40x10/04-flatpack-40x10-manager-interior.png",
+  "output": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-40x10-manager-interior.webp"
+ },
+ {
+  "slot": "Gallery",
+  "source": "02-square-product-images/size-40x10/05-flatpack-40x10-common-office-interior.png",
+  "output": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-40x10-common-office-interior.webp"
+ },
+ {
+  "slot": "Gallery",
+  "source": "02-square-product-images/size-40x10/06-flatpack-40x10-wall-b-workstations.png",
+  "output": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-40x10-wall-b-workstations.webp"
+ },
+ {
+  "slot": "Gallery",
+  "source": "02-square-product-images/size-40x20/01-flatpack-40x20-wall-a-exterior.png",
+  "output": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-40x20-wall-a-exterior.webp"
+ },
+ {
+  "slot": "Gallery",
+  "source": "02-square-product-images/size-40x20/02-flatpack-40x20-wall-b-exterior.png",
+  "output": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-40x20-wall-b-exterior.webp"
+ },
+ {
+  "slot": "Gallery",
+  "source": "02-square-product-images/size-40x20/03-flatpack-40x20-service-end-exterior.png",
+  "output": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-40x20-service-end-exterior.webp"
+ },
+ {
+  "slot": "Gallery",
+  "source": "02-square-product-images/size-40x20/04-flatpack-40x20-island-interior.png",
+  "output": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-40x20-island-interior.webp"
+ },
+ {
+  "slot": "Gallery",
+  "source": "02-square-product-images/size-40x20/05-flatpack-40x20-conference-room-interior.png",
+  "output": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-40x20-conference-room-interior.webp"
+ },
+ {
+  "slot": "Gallery",
+  "source": "02-square-product-images/size-40x20/06-flatpack-40x20-shared-wash-interior.png",
+  "output": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-40x20-shared-wash-interior.webp"
+ },
+ {
+  "slot": "GA board",
+  "source": "01-ga-boards/size-10x8/01-flatpack-office-10x8-ga-v1.png",
+  "output": "/images/products/flat-pack-container-office/ga/flat-pack-container-office-ga-plan-10x8.webp"
+ },
+ {
+  "slot": "GA board SVG",
+  "source": "01-ga-boards/size-10x8/01-flatpack-office-10x8-ga-v1.svg",
+  "output": "/images/products/flat-pack-container-office/ga/flat-pack-container-office-ga-plan-10x8.svg"
+ },
+ {
+  "slot": "GA board",
+  "source": "01-ga-boards/size-20x8/01-flatpack-office-20x8-ga-v1.png",
+  "output": "/images/products/flat-pack-container-office/ga/flat-pack-container-office-ga-plan-20x8.webp"
+ },
+ {
+  "slot": "GA board SVG",
+  "source": "01-ga-boards/size-20x8/01-flatpack-office-20x8-ga-v1.svg",
+  "output": "/images/products/flat-pack-container-office/ga/flat-pack-container-office-ga-plan-20x8.svg"
+ },
+ {
+  "slot": "GA board",
+  "source": "01-ga-boards/size-20x10/01-flatpack-office-20x10-ga-v1.png",
+  "output": "/images/products/flat-pack-container-office/ga/flat-pack-container-office-ga-plan-20x10.webp"
+ },
+ {
+  "slot": "GA board SVG",
+  "source": "01-ga-boards/size-20x10/01-flatpack-office-20x10-ga-v1.svg",
+  "output": "/images/products/flat-pack-container-office/ga/flat-pack-container-office-ga-plan-20x10.svg"
+ },
+ {
+  "slot": "GA board",
+  "source": "01-ga-boards/size-30x10/01-flatpack-office-30x10-ga-v1.png",
+  "output": "/images/products/flat-pack-container-office/ga/flat-pack-container-office-ga-plan-30x10.webp"
+ },
+ {
+  "slot": "GA board SVG",
+  "source": "01-ga-boards/size-30x10/01-flatpack-office-30x10-ga-v1.svg",
+  "output": "/images/products/flat-pack-container-office/ga/flat-pack-container-office-ga-plan-30x10.svg"
+ },
+ {
+  "slot": "GA board",
+  "source": "01-ga-boards/size-40x10/01-flatpack-office-40x10-ga-v1.png",
+  "output": "/images/products/flat-pack-container-office/ga/flat-pack-container-office-ga-plan-40x10.webp"
+ },
+ {
+  "slot": "GA board SVG",
+  "source": "01-ga-boards/size-40x10/01-flatpack-office-40x10-ga-v1.svg",
+  "output": "/images/products/flat-pack-container-office/ga/flat-pack-container-office-ga-plan-40x10.svg"
+ },
+ {
+  "slot": "GA board",
+  "source": "01-ga-boards/size-40x20/01-flatpack-office-40x20-ga-v3.png",
+  "output": "/images/products/flat-pack-container-office/ga/flat-pack-container-office-ga-plan-40x20.webp"
+ },
+ {
+  "slot": "GA board SVG",
+  "source": "01-ga-boards/size-40x20/01-flatpack-office-40x20-ga-v3.svg",
+  "output": "/images/products/flat-pack-container-office/ga/flat-pack-container-office-ga-plan-40x20.svg"
+ },
+ {
+  "slot": "Description",
+  "source": "03-long-description-images/02-flatpack-20x8-exterior-office-use.png",
+  "output": "/images/products/flat-pack-container-office/description/flat-pack-container-office-20x8-exterior-in-use.webp"
+ },
+ {
+  "slot": "Description",
+  "source": "03-long-description-images/03-flatpack-20x10-workstation-office-use.png",
+  "output": "/images/products/flat-pack-container-office/description/flat-pack-container-office-20x10-workstations-in-use.webp"
+ },
+ {
+  "slot": "Description",
+  "source": "03-long-description-images/05-flatpack-40x10-common-office-use.png",
+  "output": "/images/products/flat-pack-container-office/description/flat-pack-container-office-40x10-common-office-in-use.webp"
+ },
+ {
+  "slot": "Description",
+  "source": "03-long-description-images/06-flatpack-40x20-service-office-exterior.png",
+  "output": "/images/products/flat-pack-container-office/description/flat-pack-container-office-40x20-service-end-exterior.webp"
+ },
+ {
+  "slot": "Section 2 card",
+  "source": "03-long-description-images/01-flatpack-10x8-compact-office-use.png",
+  "output": "/images/products/flat-pack-container-office/section2/flat-pack-container-office-10x8-compact-office-interior.webp"
+ },
+ {
+  "slot": "Diagram",
+  "source": "04-technical-diagrams/01-flatpack-office-material-construction-diagram.png",
+  "output": "/images/products/flat-pack-container-office/diagrams/flat-pack-container-office-construction-sequence.webp"
+ },
+ {
+  "slot": "Diagram SVG",
+  "source": "04-technical-diagrams/01-flatpack-office-material-construction-diagram.svg",
+  "output": "/images/products/flat-pack-container-office/diagrams/flat-pack-container-office-construction-sequence.svg"
+ },
+ {
+  "slot": "Diagram",
+  "source": "04-technical-diagrams/02-flatpack-office-services-opening-diagram.png",
+  "output": "/images/products/flat-pack-container-office/diagrams/flat-pack-container-office-openings-and-services.webp"
+ },
+ {
+  "slot": "Diagram SVG",
+  "source": "04-technical-diagrams/02-flatpack-office-services-opening-diagram.svg",
+  "output": "/images/products/flat-pack-container-office/diagrams/flat-pack-container-office-openings-and-services.svg"
+ },
+ {
+  "slot": "Calculator band",
+  "source": "03-long-description-images/04-flatpack-30x10-long-office-exterior.png",
+  "output": "/images/products/flat-pack-container-office/calc/flat-pack-container-office-calculator-band-{768,1216,1440,1926}.{webp,jpg}"
+ },
+ {
+  "slot": "Technical PDF",
+  "source": "05-technical-pdf/flat-pack-container-office-technical-specification-and-price-dashboard.pdf",
+  "output": "/specs/flat-pack-container-office-technical-specification.pdf"
+ }
+]

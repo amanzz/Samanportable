@@ -5,6 +5,13 @@ import { resolve } from 'node:path';
 
 const root = resolve(import.meta.dirname, '..');
 const pack = JSON.parse(readFileSync(resolve(root, 'content/co-07/CO-07-copy-pack-v1.json'), 'utf8'));
+const filenameMap = JSON.parse(readFileSync(resolve(root, 'scripts/CO-07-output-filename-map-v1.2.json'), 'utf8'));
+
+const outputFor = (source) => {
+  const row = filenameMap.find((item) => item.source === source);
+  if (!row) throw new Error(`Missing CO-07 v1.2 output filename for ${source}`);
+  return row.output;
+};
 
 const parseIndianNumber = (value) => Number(value.replaceAll(',', ''));
 const dimensions = (size) => {
@@ -29,7 +36,7 @@ const variants = pack.variants.map((copy) => {
     priceExGst: parseIndianNumber(priceMatch[1]),
     priceInclGst: parseIndianNumber(priceMatch[2]),
     images: pack.gallery[copy.size].map((image) => ({
-      src: `/images/products/flat-pack-container-office/gallery/${image.file.split('/').at(-1).replace(/\.png$/, '.webp')}`,
+      src: outputFor(image.file),
       alt: image.alt,
       provenance: 'render',
       width: image.width,
