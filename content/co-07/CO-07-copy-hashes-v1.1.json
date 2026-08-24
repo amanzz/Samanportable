@@ -1,0 +1,239 @@
+{
+ "_note": "Every value below is a SHA-256 over the exact UTF-8 bytes of the copy field in CO-07-copy-pack-v1.json at version v1.1. The builder renders the copy pack verbatim and never retypes, shortens, expands or improves a field. A mismatch is a failed build.",
+ "copy_pack_version": "v1.1",
+ "copy_pack_sha256": "9de527c5fc1fe0d3a8d3448e6af8378525e7feb01506ae394d89f8ed23190949",
+ "copy_fields": {
+  "h1": {
+   "chars": 54,
+   "sha256": "fd1ec82f95b0b61c915c07d20c3cc66b73684ccdf539bb172bfac8b48216a7f9"
+  },
+  "seo_title": {
+   "chars": 57,
+   "sha256": "f34ae7ac0f2783d304bf19e64be84b29d9c633ff66bbf8b08e9846d761b1b954"
+  },
+  "meta_description": {
+   "chars": 151,
+   "sha256": "603ab7b65d54f091821eae31322975631a0ecef222d6b3240179a9c21279bcb7"
+  },
+  "canonical": {
+   "chars": 82,
+   "sha256": "32bb6f2f53bc4ace63ce2205408e470048182856c9affee47e593d3520249128"
+  },
+  "short_description": {
+   "chars": 686,
+   "sha256": "97db018876c08ff68f41c8b696e83ea2b3edfd548a371ad4986969d5bbfc8883"
+  },
+  "s2_h2": {
+   "chars": 60,
+   "sha256": "d6668575e76471661f40412ddf9651c4345211514fcc0f69a3766e6d30484b65"
+  },
+  "s2_cta_text": {
+   "chars": 53,
+   "sha256": "0318a5e8a95e2f1d3edae28e91de208cdc8586836b0e5eb815f01cb646e1d495"
+  },
+  "s2_cta_url": {
+   "chars": 37,
+   "sha256": "058040372c3fd79507c00ed119bf3c2f632d3522483d41f2ff05b2b93c2cbc19"
+  },
+  "breadcrumb": {
+   "value": "Home > Products > Container Offices > Flat-Pack Container Office",
+   "sha256": "67eb0af24e26bf91abd5ed52983f86eba53ee7d15ab5795ea2736d1d2dc7fa2b"
+  },
+  "hero_table": {
+   "rows": 5,
+   "sha256": "86ccc299f8998bddc37245d2d1f5d4058f5d56adf505d9907fc1079cb5692109"
+  },
+  "s2_paragraphs": {
+   "count": 2,
+   "sha256": "92f758fbe6274ac75c4bb52b2c75c357acb03f0905eddffbc0b9b8c5af1a9b97"
+  },
+  "SECTION2_CARD_H3": {
+   "chars": 45,
+   "sha256": "44f12c9217523b5a5ac4507cd38634662e30d68c3cdf638e6764659b9236676b"
+  },
+  "SECTION2_CARD_PARAGRAPH": {
+   "chars": 154,
+   "sha256": "dd4835a6adc2470ae7e08166952e7408a6227ddc2b6071e99bc061f9c1aaa981"
+  },
+  "SECTION2_CARD_BULLETS": {
+   "items": 4,
+   "sha256": "e2ce4e08dfb3fa23a098b1aaf7d8ee90a3acbd7bfef50964f4a6f28bc1a2448b"
+  },
+  "SECTION2_CARD_CTA_TEXT": {
+   "sha256": "24be2eeb8827ff1db958047a985bdbdd4f568d38bc1e3c89a997c69b9921d412"
+  },
+  "SECTION2_CARD_CTA_HREF": {
+   "value": "https://www.samanportable.com/contact",
+   "sha256": "058040372c3fd79507c00ed119bf3c2f632d3522483d41f2ff05b2b93c2cbc19"
+  },
+  "SECTION2_CARD_IMAGE_ALT": {
+   "chars": 112,
+   "sha256": "0ef131d9c17b6143268bec959f28402b6cebe9a41df6c6a97a3e477593b605c9"
+  },
+  "S3_10x8_H2": {
+   "chars": 51,
+   "sha256": "2047f5a6785db0b1f5e75c332392a963126ce72ad4be1434dce98a0acb21c2d0"
+  },
+  "S3_10x8_BODY": {
+   "sha256": "f4f32c45a86f072de59317c99c7b194c2dbaa268c70f3b33c186fe2fd6c26b60"
+  },
+  "S3_10x8_BULLETS": {
+   "items": 5,
+   "sha256": "4b5adb167b8298eabcc56ab78f110684316c0931bec189a15dd4778eac83d3d5"
+  },
+  "S3_20x8_H2": {
+   "chars": 53,
+   "sha256": "9e64674b567bfb603ff83f6b7997ef59e7da20a57bb44c64ca781df42a609821"
+  },
+  "S3_20x8_BODY": {
+   "sha256": "d40b4b6bb01ff798434594b449b9e642bfb59c697f662bdbb51746cfa0a4e95b"
+  },
+  "S3_20x8_BULLETS": {
+   "items": 6,
+   "sha256": "95017ecc2a6a7bbc4ebcf11ef9bb713985ff2916a226491162e1df770636b78d"
+  },
+  "S3_20x10_H2": {
+   "chars": 52,
+   "sha256": "65aa0b9194aec02c881274fec9942c12b1701ff81f8656dc459cb551ad644986"
+  },
+  "S3_20x10_BODY": {
+   "sha256": "db27a1a1f7b7e67f086213f32b8915d84286011062b55428a0af7896daa366bc"
+  },
+  "S3_20x10_BULLETS": {
+   "items": 5,
+   "sha256": "2d589f29d76af1af38db29aba900cb77f8a08ba46bcc94a8587c1ea483e3767d"
+  },
+  "S3_30x10_H2": {
+   "chars": 50,
+   "sha256": "69fb28ffca2b6987ce688bf737538ea2ccbbee6c836eb9e27ea24e0446bbd90d"
+  },
+  "S3_30x10_BODY": {
+   "sha256": "259330065357c642b21b980cf78bc50e13600e27d718759728a26ca252077e81"
+  },
+  "S3_30x10_BULLETS": {
+   "items": 6,
+   "sha256": "eb981486810bd1825583846d77ed55c502a2c36d138603308301b51092bd57fa"
+  },
+  "S3_40x10_H2": {
+   "chars": 55,
+   "sha256": "dd2935f758a40511b2c3525c7fe5ca1b86e3d1547ecc8a647553f813a4389cde"
+  },
+  "S3_40x10_BODY": {
+   "sha256": "83df33210f7b27643685c07fb3056b22ea3cafc2995d567b10f1530c0ef67781"
+  },
+  "S3_40x10_BULLETS": {
+   "items": 6,
+   "sha256": "0f16d1be7e3e993b0b7aa10fa0b97ce69ac474af9552ad3289d4644c0cc85e11"
+  },
+  "S3_40x20_H2": {
+   "chars": 50,
+   "sha256": "9ef16b948d1e241fec5931099c8af704b762224e965d9d9b8c677ef7755dea00"
+  },
+  "S3_40x20_BODY": {
+   "sha256": "69b6747c71e265d236042b7d520b429130aafca23c90fb360effb8dee290c279"
+  },
+  "S3_40x20_BULLETS": {
+   "items": 6,
+   "sha256": "4a71b4ae33123b7c9cdd19ce405d228d1fe25b86b4e9e3531850fff247b590ff"
+  },
+  "description_blocks": {
+   "blocks": 36,
+   "sha256": "7d824671eb28498e2b3310257520b8ec7a277a52defa0efdadf1b46a2c76a9a0"
+  },
+  "description_outline": {
+   "sha256": "5c7fe0ef9b02b70ff73b8885bc4fb8350130a0e155211a3c079a53ede32e9eb0"
+  },
+  "spec_narratives": {
+   "sha256": "b47c48e62b9592e3592c16e6726ec47b01604da044fca2783719c37cfa012d2c"
+  },
+  "SPEC_TABLE_1": {
+   "rows": 14,
+   "sha256": "41ba475ab016ef6900e160e2d8ad457fcbcaf2789c3eebb7cf5d13cbf11245ad"
+  },
+  "SPEC_TABLE_2": {
+   "rows": 16,
+   "sha256": "4807910a41bf803e16756963a41f395c41f2db0a551c4cdc3aa225e8cb12f28c"
+  },
+  "calc_band_headline": {
+   "sha256": "d067c79c1bb0a3c981725ef1acc114695c1ebd6e63f1e43ae69f1ce71e0c5228"
+  },
+  "all_alt_text": {
+   "count": 50,
+   "sha256": "15a6469fc95d5042768be2d9c51869bf9027c8d9613a785d8f2851250805b414"
+  }
+ },
+ "asset_sha256": {
+  "02-square-product-images/size-10x8/01-flatpack-10x8-wall-a-exterior.png": "ad5910158807ea2293971f682957f36ba885a2c63baf9d58c3e21590ccf9373c",
+  "02-square-product-images/size-10x8/02-flatpack-10x8-wall-b-exterior.png": "123a7fc1adbf926014d9e3b5c2cd8a852744e2e9bd73c86bb4e6472eed3ee927",
+  "02-square-product-images/size-10x8/03-flatpack-10x8-end-c-exterior.png": "6315b95cd2c959bbb36b32e6db4159ca73346931d31344595836e13bcf2f8cd6",
+  "02-square-product-images/size-10x8/04-flatpack-10x8-workstation-interior.png": "44e6128a680c8d81a4d19bfaf57f2d4cedca6d9e661ac33d1b6fed988afab9c5",
+  "02-square-product-images/size-10x8/05-flatpack-10x8-reverse-office-interior.png": "b258bd1127fe940a7b84181bc99c656d095ec7ec6df69f307dd005e246f4fa8c",
+  "02-square-product-images/size-10x8/06-flatpack-10x8-end-station-interior.png": "83fe803d4ddd8ecef7c989eb0bc92dc72b00eaf49eedb2f3e95493ee4cfd3741",
+  "02-square-product-images/size-20x8/01-flatpack-20x8-wall-a-exterior.png": "7c2b6838ec7bcabc7fdcf761e932e52f2f859c9c46ee1a6b16624386af59c07f",
+  "02-square-product-images/size-20x8/02-flatpack-20x8-wall-b-exterior.png": "7ae0a4c3456cabe4823234d56a377a76d27216d174364a50dc2c161470b4ee62",
+  "02-square-product-images/size-20x8/03-flatpack-20x8-end-c-exterior.png": "e90218f8388c4a44a13e19ebd6a1187e476ec5914a5f38c9c2c7e57477266eaf",
+  "02-square-product-images/size-20x8/04-flatpack-20x8-workstation-interior.png": "8b2556209ff23090cb10e7adfb22890a383bf6e6dd3aeae06139bc40c0f9fefb",
+  "02-square-product-images/size-20x8/05-flatpack-20x8-wall-a-interior.png": "026264d3e4f2d4a1a93c8da0d33a4d66686f36e3f44914b23ef751dc3987aae6",
+  "02-square-product-images/size-20x8/06-flatpack-20x8-end-window-interior.png": "3f2ff454a676bb132bee2cddb7dcb74944dc65610b5a1fafd0f6c98d7a818709",
+  "02-square-product-images/size-20x10/01-flatpack-20x10-wall-a-exterior.png": "c2d605f077e33de249c5bb4c2f4da196bf4dbff28de9963f330878e4221459f2",
+  "02-square-product-images/size-20x10/02-flatpack-20x10-wall-b-exterior.png": "48a82ac9ceb5c748e788f857178291d3b9ebca5e568e9f5c463781c8505b3a43",
+  "02-square-product-images/size-20x10/03-flatpack-20x10-end-c-exterior.png": "5bb2acd723286f6c64eea6d19453972ccbd212191ccdd11d94dc46a91301b73b",
+  "02-square-product-images/size-20x10/04-flatpack-20x10-workstation-interior.png": "07c7c1f0705ad05a33b2550601aa997ef2635e28a048b08c121efc3099471e74",
+  "02-square-product-images/size-20x10/05-flatpack-20x10-wall-a-workstations.png": "893ea63cdd97daa9502f6e6578fe3570495c29a196b8f74162427aa3aa529901",
+  "02-square-product-images/size-20x10/06-flatpack-20x10-end-window-interior.png": "ba525759fa5adc569c09baca7ca282405e26ffba3ee38d77208c70070c12c948",
+  "02-square-product-images/size-30x10/01-flatpack-30x10-wall-a-exterior.png": "e25ae800f1db95ad2018f747c90b9914d623d420d74b55907b54c5b983f3983d",
+  "02-square-product-images/size-30x10/02-flatpack-30x10-wall-b-exterior.png": "1fbc7f7956f50a898910f0182f36062f01ae134e94e096a1bc1f1b30ea598055",
+  "02-square-product-images/size-30x10/03-flatpack-30x10-end-c-exterior.png": "f94956ca29404b2ed1859f18512f764247d92b78fc1165f90a03c5df0e3dce52",
+  "02-square-product-images/size-30x10/04-flatpack-30x10-workstation-interior.png": "5cc0c090b8c85549cd7054a88aae3c59c52646aa085c5b1a224a01f208048502",
+  "02-square-product-images/size-30x10/05-flatpack-30x10-wall-a-workstations.png": "131c0d45a7d2b90aa229a9a9da89b3e8c89f52ee0d38a5b31f326d781fd8a9eb",
+  "02-square-product-images/size-30x10/06-flatpack-30x10-end-window-interior.png": "e11e6ace541964b8c5c36665e204d19e005b86dfcf6266c1e6ddb5b7d628e634",
+  "02-square-product-images/size-40x10/01-flatpack-40x10-wall-a-exterior.png": "df34a87c19da4ae92bf26b4b902e05fbb93bbd3c32e63531d9d47b096fa35d70",
+  "02-square-product-images/size-40x10/02-flatpack-40x10-wall-b-exterior.png": "aaa2d9be61954829c2ee1012f0a09ca881a7dec98756d8645727c234eb656bc2",
+  "02-square-product-images/size-40x10/03-flatpack-40x10-end-c-exterior.png": "74b5c7e81bf32aa70cc0a5e9f2abf948566aefc0c4895f1cc040830d0ebde61e",
+  "02-square-product-images/size-40x10/04-flatpack-40x10-manager-interior.png": "558c77e87af6e2ba6e637de47e1beb60833d36a0d2bc680673338fc13e3325f1",
+  "02-square-product-images/size-40x10/05-flatpack-40x10-common-office-interior.png": "44448a8a5a0e9a511d1c3063cc5715715980be125b8cc40046a74a73ce5f4d84",
+  "02-square-product-images/size-40x10/06-flatpack-40x10-wall-b-workstations.png": "2b2a81e2725fe417d7c582150414797a7b28120c2d0696dcc3a56d35aeb38082",
+  "02-square-product-images/size-40x20/01-flatpack-40x20-wall-a-exterior.png": "f29e973720d40d5a2e0007fa7b3016f542dc95b80eb1c3b8b783fef0bfaaad23",
+  "02-square-product-images/size-40x20/02-flatpack-40x20-wall-b-exterior.png": "d1fb9b9cc0cf9d3b70e2105d723e4043bf058f213c7036305e530f37566b8133",
+  "02-square-product-images/size-40x20/03-flatpack-40x20-service-end-exterior.png": "3238d30ba9c2f2e1c7e882838c19a5a30fb94133b586f22cce662ce26ac8e02e",
+  "02-square-product-images/size-40x20/04-flatpack-40x20-island-interior.png": "f04fba071ca03c869647eb7a65b218a1ff7eff7a3af29f5ecd7e803b04733e96",
+  "02-square-product-images/size-40x20/05-flatpack-40x20-conference-room-interior.png": "81c54233b6a80b539cb101c7b630a0861844bca5410cca2432c38c464bbeb678",
+  "02-square-product-images/size-40x20/06-flatpack-40x20-shared-wash-interior.png": "afbd3d46c8c698db2c06114f8181b61413eeeae05fd05826a5ec6fe7e5e2e544",
+  "01-ga-boards/size-10x8/01-flatpack-office-10x8-ga-v1.png": "015931b4e5f54d9235f08f69520421900755b844875d1c266378af47c66ab335",
+  "01-ga-boards/size-10x8/01-flatpack-office-10x8-ga-v1.svg": "afdf1abdb9f7a37205d12448758a454cbab939927e2471951f569e274dae3c4f",
+  "01-ga-boards/size-20x8/01-flatpack-office-20x8-ga-v1.png": "b22ec45f0b1319aadb6c21e2cb0a9b7274dc9105b492b21d76e159ac092d5165",
+  "01-ga-boards/size-20x8/01-flatpack-office-20x8-ga-v1.svg": "bab15c2b9c967313ef17e465d403cf4145639938968ae1aa587f6233bef66e33",
+  "01-ga-boards/size-20x10/01-flatpack-office-20x10-ga-v1.png": "6e42adfd868c87dcac5e86df5659d4e52a2717a30a77dc3e482c1a6b7e34d646",
+  "01-ga-boards/size-20x10/01-flatpack-office-20x10-ga-v1.svg": "fa16967299757e1b43c51aff23c8a2a1f08452befef1fdf89cbd61141054c3e4",
+  "01-ga-boards/size-30x10/01-flatpack-office-30x10-ga-v1.png": "f5ca87f433c7db82b2bc7c16b33b6aa5b894588fd59adf1324a462c3ae83bbfa",
+  "01-ga-boards/size-30x10/01-flatpack-office-30x10-ga-v1.svg": "5083d5250d3f98e3728e47d5da199e39584c068fb0f0f7b00d348a7a3c7ace47",
+  "01-ga-boards/size-40x10/01-flatpack-office-40x10-ga-v1.png": "9f008250bddc503cf00528078beb49be61d0b7a0a42a9d34270544a1d864776d",
+  "01-ga-boards/size-40x10/01-flatpack-office-40x10-ga-v1.svg": "14119565de3b4f35418e361ba252173addf7264c154bc098cf8ab084faf9a965",
+  "01-ga-boards/size-40x20/01-flatpack-office-40x20-ga-v3.png": "642c6b6f9cd011d94eef1a02ef971564c820cf79375e5ecd422c085feb7db486",
+  "01-ga-boards/size-40x20/01-flatpack-office-40x20-ga-v3.svg": "284e90c8e52fb493ae53aeed203c7d611df8cb6b94f49691e164c13b104c2055",
+  "03-long-description-images/02-flatpack-20x8-exterior-office-use.png": "8cae794b1016e3c28e8364143ab57a2b87b637e7dc4419e085880b858be04b6f",
+  "03-long-description-images/03-flatpack-20x10-workstation-office-use.png": "c92569996454969f4be34c472174855d8b08606d7c6f1a005bf886b79bddbfa9",
+  "03-long-description-images/05-flatpack-40x10-common-office-use.png": "7b015ebb42d4c7ba67f0c60feca6c398868ad318005c8b658258589666c11776",
+  "03-long-description-images/06-flatpack-40x20-service-office-exterior.png": "fa755f362e71b0f05637487f24bf79b4878c91c126fe10bdfe7264fd9a3a2808",
+  "03-long-description-images/01-flatpack-10x8-compact-office-use.png": "f0265fb95761ab457fcaf8803518f1467f3b9fe9616ca25854e9d8bbe338e410",
+  "03-long-description-images/04-flatpack-30x10-long-office-exterior.png": "d556915fa4d601711b1779fae8f06685599335a23c18a833a53c3f1c9f12c09a",
+  "04-technical-diagrams/01-flatpack-office-material-construction-diagram.png": "e424bab5e4d20e6d16b26354fe1335024bb9bc8586b08dbb7dd96a9cb915b192",
+  "04-technical-diagrams/01-flatpack-office-material-construction-diagram.svg": "d10668577b096d777caf717131a3d406385c7c0a003586a83a8649b2fafb9e25",
+  "04-technical-diagrams/02-flatpack-office-services-opening-diagram.png": "aa885309a0ab1af3ec8d3033b5b9ca9cdfde644f6e5fe452cb7d7994310d8333",
+  "04-technical-diagrams/02-flatpack-office-services-opening-diagram.svg": "d8d92e16e87d76bb9cf8ab04a0218fa9a62232bbc5874c7da6ee86a4f5ce9df3",
+  "05-technical-pdf/flat-pack-container-office-technical-specification-and-price-dashboard.pdf": "339755e02472785ca8d10a71df953e2a13c1d362e41a690099ba61c1d3d64bf9"
+ },
+ "assets_hashed": 59,
+ "assets_missing_from_manifest": [],
+ "fields_changed_since_v1": [
+  "all_alt_text"
+ ],
+ "fields_added_since_v1": [
+  "SECTION2_CARD_H3",
+  "SECTION2_CARD_PARAGRAPH",
+  "SECTION2_CARD_BULLETS",
+  "SECTION2_CARD_CTA_TEXT",
+  "SECTION2_CARD_CTA_HREF",
+  "SECTION2_CARD_IMAGE_ALT"
+ ]
+}

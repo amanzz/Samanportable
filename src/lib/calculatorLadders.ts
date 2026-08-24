@@ -41,6 +41,7 @@ import smallOfficeCabin from '@/data/products/small-office-cabin.json';
 import containerOfficesJson from '@/data/products/container-offices.json';
 import containerOfficeCabinJson from '@/data/products/container-office-cabin.json';
 import containerMarketingOffice from '@/data/products/container-marketing-office.json';
+import flatPackContainerOffice from '@/data/products/flat-pack-container-office.json';
 import bessContainerJson from '@/data/products/bess-container.json';
 import shippingContainerOfficeJson from '@/data/products/shipping-container-office.json';
 import siteOfficeContainer from '@/data/products/site-office-container.json';
@@ -229,6 +230,7 @@ export const ROUTE_LADDERS: Readonly<Record<string, LadderRow[]>> = {
   'container-offices': toRows(containerOfficesJson),
   'container-office-cabin': toRows(containerOfficeCabinJson),
   'container-marketing-office': toRows(containerMarketingOffice),
+  'flat-pack-container-office': toRows(flatPackContainerOffice),
   // CO-03: read the BESS enclosure shell ladder from this route's own product JSON.
   'bess-container': toRows(bessContainerJson),
   'shipping-container-office': toRows(shippingContainerOfficeJson),

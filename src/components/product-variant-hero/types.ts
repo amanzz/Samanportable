@@ -180,6 +180,23 @@ export interface VariantProductData {
       Explorer section renders NOTHING — it never falls back to another product's
       copy. */
   applicationsDataset?: string;
+  /** Optional page-owned size-section copy. When supplied, it takes precedence over
+      the legacy registry so a signed page copy pack can remain the rendering source. */
+  applicationsContent?: {
+    h2?: string;
+    intro?: string;
+    panels: Array<{
+      sizeSlug: string;
+      h3: string;
+      paragraph: string;
+      paragraph2?: string;
+      applications: string[];
+      applicationsHeading?: string;
+      imageAlt?: string;
+      image?: VariantImage;
+      tabLabel?: string;
+    }>;
+  };
   /** Override for the buy-box "Delivery" feature cell. Default (absent) keeps the
       porta-cabins value "7–21 Working Days" → flagship byte-identical. */
   deliveryLabel?: string;

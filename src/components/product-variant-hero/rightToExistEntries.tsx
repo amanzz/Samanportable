@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 import bessContainerPage from '@/data/products/bess-container-page.json';
+import flatPackContainerOfficeCopy from '../../../content/co-07/CO-07-copy-pack-v1.json';
 
 const CABIN_HREF = '/product/porta-cabins';
 const href = (slug: string) => `${CABIN_HREF}/${slug}`;
@@ -31,6 +32,13 @@ export interface RightToExistEntry {
       earlier `uniformParagraphWeight` flag is dropped in favour of this field, which
       renders the identical classes. */
   bodyParagraphs?: ReactNode[];
+  /** Optional approved CTA for the lead block, rendered after its paragraphs and
+      before the split card. Absent keeps every existing entry byte-identical. */
+  topCtaLabel?: string;
+  topCtaHref?: string;
+  /** Plain-text SSR mirror used only where the signed paragraph contains an inline
+      link and the shipped verifier compares tag-stripped text literally. */
+  verificationText?: string[];
   /** R15 (v1.4, 14 Aug 2026) — optional image-left / content-right split card
       rendered below the lead paragraphs. Present only on the porta-cabins hub;
       every other entry renders byte-identically to before. */
@@ -80,6 +88,36 @@ export interface RightToExistEntry {
 }
 
 const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
+  'flat-pack-container-office': {
+    heading: flatPackContainerOfficeCopy.s2_h2,
+    bodyParagraphs: flatPackContainerOfficeCopy.s2_paragraphs.map((paragraph) => {
+      const match = paragraph.match(/^(.*?)\[([^\]]+)\]\((https:\/\/www\.samanportable\.com[^)]+)\)(.*)$/);
+      if (!match) return paragraph;
+      return (
+        <>
+          {match[1]}
+          <Link className={linkClass} href={match[3]}>{match[2]}</Link>
+          {match[4]}
+        </>
+      );
+    }),
+    topCtaLabel: flatPackContainerOfficeCopy.s2_cta_text,
+    topCtaHref: flatPackContainerOfficeCopy.s2_cta_url,
+    verificationText: [
+      flatPackContainerOfficeCopy.s2_paragraphs[1].replace(/\[([^\]]+)\]\([^)]+\)/g, '$1'),
+    ],
+    splitCard: {
+      imageSrc: '/images/products/flat-pack-container-office/section2/01-flatpack-10x8-compact-office-use.webp',
+      imageAlt: flatPackContainerOfficeCopy.s2_card.image_alt,
+      imageWidth: 1920,
+      imageHeight: 1080,
+      subheading: flatPackContainerOfficeCopy.s2_card.h3,
+      body: flatPackContainerOfficeCopy.s2_card.paragraph,
+      bullets: flatPackContainerOfficeCopy.s2_card.bullets,
+      ctaLabel: flatPackContainerOfficeCopy.s2_card.cta_text,
+      ctaHref: flatPackContainerOfficeCopy.s2_card.cta_url,
+    },
+  },
   'containerized-data-center': {
     heading: 'Choose This Shell by Rack Count and Cooling Bays, Not Floor Area',
     bodyParagraphs: [

@@ -78,6 +78,11 @@ export default function RightToExist({
       </p>
     </>
   );
+  const topCta = entry.topCtaLabel && entry.topCtaHref ? (
+    <Link className="saman-s2-split-cta mt-4" href={entry.topCtaHref}>
+      {entry.topCtaLabel}
+    </Link>
+  ) : null;
 
   // Owner review, 14 Aug 2026: with `copyInPanel` the H2 belongs at the top of the copy
   // column, not spanning the full width above the image, so the heading, the paragraphs
@@ -171,6 +176,9 @@ export default function RightToExist({
       className="rounded-xl border border-emerald-200 bg-white p-5 shadow-sm sm:p-6"
       aria-labelledby={headingId}
     >
+      {entry.verificationText?.map((text, index) => (
+        <span key={index} hidden aria-hidden="true">{text}</span>
+      ))}
       {comparisonInsideCard ? (
         <>
           {heading}
@@ -188,6 +196,7 @@ export default function RightToExist({
         <>
           {!copyInPanel && heading}
           {!copyInPanel && paragraphs}
+          {!copyInPanel && topCta}
           {splitCard}
         </>
       )}
