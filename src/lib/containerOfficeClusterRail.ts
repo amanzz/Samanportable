@@ -1,4 +1,5 @@
 const CONTAINER_OFFICE_HUB_SLUG = 'container-offices';
+const CONTAINER_MARKETING_OFFICE_SLUG = 'container-marketing-office';
 
 const CONTAINER_OFFICE_KEEP_SLUGS: readonly string[] = [
   'container-office-cabin',
@@ -13,12 +14,13 @@ type Slugged = { slug?: string };
  * the hub plus its two siblings.
  */
 export function orderContainerOfficeRail<T extends Slugged>(currentSlug: string, products: readonly T[]): T[] {
-  const order = currentSlug === CONTAINER_OFFICE_HUB_SLUG
-    ? CONTAINER_OFFICE_KEEP_SLUGS
-    : [
-        CONTAINER_OFFICE_HUB_SLUG,
-        ...CONTAINER_OFFICE_KEEP_SLUGS.filter((slug) => slug !== currentSlug),
-      ];
+  const order =
+    currentSlug === CONTAINER_OFFICE_HUB_SLUG || currentSlug === CONTAINER_MARKETING_OFFICE_SLUG
+      ? CONTAINER_OFFICE_KEEP_SLUGS
+      : [
+          CONTAINER_OFFICE_HUB_SLUG,
+          ...CONTAINER_OFFICE_KEEP_SLUGS.filter((slug) => slug !== currentSlug),
+        ];
   const bySlug = new Map(products.map((product) => [product.slug, product]));
   return order.map((slug) => bySlug.get(slug)).filter((product): product is T => product !== undefined);
 }

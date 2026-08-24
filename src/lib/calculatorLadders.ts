@@ -40,6 +40,7 @@ import readymadeOfficeCabin from '@/data/products/readymade-office-cabin.json';
 import smallOfficeCabin from '@/data/products/small-office-cabin.json';
 import containerOfficesJson from '@/data/products/container-offices.json';
 import containerOfficeCabinJson from '@/data/products/container-office-cabin.json';
+import containerMarketingOffice from '@/data/products/container-marketing-office.json';
 import shippingContainerOfficeJson from '@/data/products/shipping-container-office.json';
 import siteOfficeContainer from '@/data/products/site-office-container.json';
 // C-05 container cafe cluster, added in CALC-L4 (09 Aug 2026). Each of the six
@@ -225,6 +226,7 @@ export const ROUTE_LADDERS: Readonly<Record<string, LadderRow[]>> = {
   'small-office-cabin': toRows(smallOfficeCabin),
   'container-offices': toRows(containerOfficesJson),
   'container-office-cabin': toRows(containerOfficeCabinJson),
+  'container-marketing-office': toRows(containerMarketingOffice),
   'shipping-container-office': toRows(shippingContainerOfficeJson),
   'site-office-container': toRows(siteOfficeContainer),
   // 'portable-cabin' removed with its product-list entry (SAMAN ruling, 15 Aug

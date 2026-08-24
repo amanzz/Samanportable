@@ -258,7 +258,9 @@ export default function ProductStructuredData({ product, category, reviews, brea
   // Generate structured data for Product only when it has real Product-snippet
   // evidence. Quote-only/unrated products must not emit an ineligible Product
   // node with no offers, aggregateRating, or review.
-  const productStructuredData = !suppressProductEntity && (hasProductRichResultEvidence || variantData?.emitQuoteOnlyProduct) ? {
+  const productStructuredData = variantData?.schemaOverride
+    ? variantData.schemaOverride
+    : !suppressProductEntity && (hasProductRichResultEvidence || variantData?.emitQuoteOnlyProduct) ? {
     '@context': 'https://schema.org/',
     '@type': 'Product',
     '@id': `${productUrl}#product`,

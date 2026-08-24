@@ -25,6 +25,7 @@ import c08Specifications from '@/data/products/c08-specifications.json';
 import c05Specifications from '@/data/products/c05-specifications.json';
 import c05SubpageSpecifications from '@/data/products/c05-subpage-specifications.json';
 import c05SubpageSpecifications2 from '@/data/products/c05-subpage-specifications-2.json';
+import cmoSpecifications from '@/data/products/container-marketing-office-specs.json';
 
 type SpecGroups = Record<string, Record<string, string | number>>;
 export interface SpecsEntry {
@@ -851,10 +852,66 @@ export function buildPortableOfficeShippingHtml(): string {
   );
 }
 
+type CmoSpecTable = { title: string; head: string[]; rows: string[][] };
+type CmoSpecDiagram = { src: string; alt: string; caption: string; width: number; height: number };
+const CMO_SPECS = cmoSpecifications as {
+  narrative: string[];
+  tables: CmoSpecTable[];
+  diagrams: CmoSpecDiagram[];
+};
+
+function cmoTable(table: CmoSpecTable): string {
+  const head = table.head.map((cell) => `<th class="${TH}">${esc(cell)}</th>`).join('');
+  const rows = table.rows
+    .map(
+      (row) =>
+        `<tr>` +
+          row.map((cell, index) => `<td class="${TD}${index === 0 ? ' font-semibold text-slate-700' : ''}">${esc(cell)}</td>`).join('') +
+        `</tr>`
+    )
+    .join('');
+  return (
+    `<section class="mb-4 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">` +
+      `<h4 class="m-0 bg-slate-50 px-4 py-3 text-base font-bold text-emerald-900">${esc(table.title)}</h4>` +
+      `<div class="overflow-x-auto"><table class="w-full border-collapse"><thead><tr>${head}</tr></thead><tbody>${rows}</tbody></table></div>` +
+    `</section>`
+  );
+}
+
+function cmoDiagram(diagram: CmoSpecDiagram): string {
+  return (
+    `<figure class="mb-4 rounded-xl border border-slate-200 bg-white p-5 shadow-sm">` +
+      `<img src="${esc(diagram.src)}" alt="${esc(diagram.alt)}" width="${diagram.width}" height="${diagram.height}" loading="lazy" class="h-auto w-full rounded-lg" />` +
+      `<figcaption class="mt-2 text-xs italic text-slate-500">${esc(diagram.caption)}</figcaption>` +
+    `</figure>`
+  );
+}
+
+function buildContainerMarketingOfficeSpecificationsHtml(): string {
+  const narrative = CMO_SPECS.narrative
+    .map((paragraph) => `<p class="mb-4 text-sm leading-relaxed text-slate-600">${esc(paragraph)}</p>`)
+    .join('');
+  return (
+    `<div class="not-prose">` +
+      narrative +
+      cmoTable(CMO_SPECS.tables[0]) +
+      cmoDiagram(CMO_SPECS.diagrams[0]) +
+      cmoTable(CMO_SPECS.tables[1]) +
+      cmoDiagram(CMO_SPECS.diagrams[1]) +
+    `</div>`
+  );
+}
+
 /** Both tab bodies for a page slug, or null when the slug is not in scope. */
 export function getProductTabsHtml(
   pageSlug: string | undefined | null
 ): { specificationsHtml: string; shippingHtml: string } | null {
+  if (pageSlug === 'container-marketing-office') {
+    return {
+      specificationsHtml: buildContainerMarketingOfficeSpecificationsHtml(),
+      shippingHtml: buildContainerOfficesShippingHtml(),
+    };
+  }
   if (pageSlug && C01_DATASET.products[pageSlug]) {
     return {
       specificationsHtml: buildC01SpecificationsHtml(C01_DATASET.products[pageSlug]),

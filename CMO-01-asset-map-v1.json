@@ -1,0 +1,917 @@
+{
+  "gallery": [
+    {
+      "no": 1,
+      "role": "gallery",
+      "size": "20x8",
+      "slot": "gallery 1 of 6",
+      "src": "02-square-product-images/size-20x8/01-container-marketing-20x8-front-exterior.png",
+      "sha256": "0e978541d17c5ebaba42dd0f836fab1cd1ceaf3c67687da201dd31a6e0262866",
+      "dim": [
+        1254,
+        1254
+      ],
+      "bytes": 1848472,
+      "out": "/assets/products/container-marketing-office/gallery/20x8/01-container-marketing-20x8-front-exterior.webp",
+      "alt": "Deep blue 20 by 8 ft container marketing office, front wall with a steel door between two windows",
+      "crop": "none, source is 1:1",
+      "target": "WebP q82, 1254 x 1254, width and height attributes set"
+    },
+    {
+      "no": 2,
+      "role": "gallery",
+      "size": "20x8",
+      "slot": "gallery 2 of 6",
+      "src": "02-square-product-images/size-20x8/02-container-marketing-20x8-rear-exterior.png",
+      "sha256": "d404805bc4fca5ed85522c9e1854993f25f6a5901992161695ee3abcaf45467b",
+      "dim": [
+        1254,
+        1254
+      ],
+      "bytes": 2047522,
+      "out": "/assets/products/container-marketing-office/gallery/20x8/02-container-marketing-20x8-rear-exterior.webp",
+      "alt": "Rear wall of the 20 by 8 ft container marketing office showing two windows and no external door",
+      "crop": "none, source is 1:1",
+      "target": "WebP q82, 1254 x 1254, width and height attributes set"
+    },
+    {
+      "no": 3,
+      "role": "gallery",
+      "size": "20x8",
+      "slot": "gallery 3 of 6",
+      "src": "02-square-product-images/size-20x8/03-container-marketing-20x8-end-exterior.png",
+      "sha256": "0349a42a344e98c2d1fa2517a64d9eddf5488f18e67b353c3e08f7e622f9dc96",
+      "dim": [
+        1254,
+        1254
+      ],
+      "bytes": 1905834,
+      "out": "/assets/products/container-marketing-office/gallery/20x8/03-container-marketing-20x8-end-exterior.webp",
+      "alt": "End wall of the 20 by 8 ft container marketing office with one centred sliding window",
+      "crop": "none, source is 1:1",
+      "target": "WebP q82, 1254 x 1254, width and height attributes set"
+    },
+    {
+      "no": 4,
+      "role": "gallery",
+      "size": "20x8",
+      "slot": "gallery 4 of 6",
+      "src": "02-square-product-images/size-20x8/04-container-marketing-20x8-main-interior.png",
+      "sha256": "00c0405cec49ef0f10d234c6d75922d3ae129b3fae9725b0f85f47f1a6d2d011",
+      "dim": [
+        1254,
+        1254
+      ],
+      "bytes": 2226599,
+      "out": "/assets/products/container-marketing-office/gallery/20x8/04-container-marketing-20x8-main-interior.webp",
+      "alt": "Interior of the 20 by 8 ft marketing office with three desks along one wall under overhead storage",
+      "crop": "none, source is 1:1",
+      "target": "WebP q82, 1254 x 1254, width and height attributes set"
+    },
+    {
+      "no": 5,
+      "role": "gallery",
+      "size": "20x8",
+      "slot": "gallery 5 of 6",
+      "src": "02-square-product-images/size-20x8/05-container-marketing-20x8-reverse-interior.png",
+      "sha256": "2e56fd5b5859ffeddb2ba5370b270196fa4672fbedcc95c2e344a9c1e9ea9bf2",
+      "dim": [
+        1254,
+        1254
+      ],
+      "bytes": 1756620,
+      "out": "/assets/products/container-marketing-office/gallery/20x8/05-container-marketing-20x8-reverse-interior.webp",
+      "alt": "Empty 20 by 8 ft marketing office interior facing the entry door set between two windows",
+      "crop": "none, source is 1:1",
+      "target": "WebP q82, 1254 x 1254, width and height attributes set"
+    },
+    {
+      "no": 6,
+      "role": "gallery",
+      "size": "20x8",
+      "slot": "gallery 6 of 6",
+      "src": "02-square-product-images/size-20x8/06-container-marketing-20x8-workstation-interior.png",
+      "sha256": "cb0432c872dcfaaa86a4ec4433f60ee434a8e0a6987004ee5a4228ef2f7acc9f",
+      "dim": [
+        1254,
+        1254
+      ],
+      "bytes": 2212922,
+      "out": "/assets/products/container-marketing-office/gallery/20x8/06-container-marketing-20x8-workstation-interior.webp",
+      "alt": "Three workstations with chairs and monitors on the rear wall of the 20 by 8 ft marketing office",
+      "crop": "none, source is 1:1",
+      "target": "WebP q82, 1254 x 1254, width and height attributes set"
+    },
+    {
+      "no": 7,
+      "role": "gallery",
+      "size": "20x16",
+      "slot": "gallery 1 of 6",
+      "src": "02-square-product-images/size-20x16/01-container-marketing-20x16-front-exterior.png",
+      "sha256": "bbe5e4364405bdad0858cb1c7e5d6f757dfef0b408038f2b343e762df15a7809",
+      "dim": [
+        1254,
+        1254
+      ],
+      "bytes": 1984571,
+      "out": "/assets/products/container-marketing-office/gallery/20x16/01-container-marketing-20x16-front-exterior.webp",
+      "alt": "Charcoal 20 by 16 ft marketing office with the entry door and window on the long wall",
+      "crop": "none, source is 1:1",
+      "target": "WebP q82, 1254 x 1254, width and height attributes set"
+    },
+    {
+      "no": 8,
+      "role": "gallery",
+      "size": "20x16",
+      "slot": "gallery 2 of 6",
+      "src": "02-square-product-images/size-20x16/02-container-marketing-20x16-rear-exterior.png",
+      "sha256": "088409a41235b74aa78280fc2d1b43a5c00a68ec20fc0f4fc80533a95c0a1d2b",
+      "dim": [
+        1254,
+        1254
+      ],
+      "bytes": 1761788,
+      "out": "/assets/products/container-marketing-office/gallery/20x16/02-container-marketing-20x16-rear-exterior.webp",
+      "alt": "Rear wall of the 20 by 16 ft marketing office with two windows and no external door",
+      "crop": "none, source is 1:1",
+      "target": "WebP q82, 1254 x 1254, width and height attributes set"
+    },
+    {
+      "no": 9,
+      "role": "gallery",
+      "size": "20x16",
+      "slot": "gallery 3 of 6",
+      "src": "02-square-product-images/size-20x16/03-container-marketing-20x16-service-exterior.png",
+      "sha256": "f0e00c7c3782aa25c1957e00a1972069a2505a5cdd92f643456cb6adf234224d",
+      "dim": [
+        1254,
+        1254
+      ],
+      "bytes": 1689936,
+      "out": "/assets/products/container-marketing-office/gallery/20x16/03-container-marketing-20x16-service-exterior.webp",
+      "alt": "Solid service end of the 20 by 16 ft marketing office with two high-level exhaust louvres",
+      "crop": "none, source is 1:1",
+      "target": "WebP q82, 1254 x 1254, width and height attributes set"
+    },
+    {
+      "no": 10,
+      "role": "gallery",
+      "size": "20x16",
+      "slot": "gallery 4 of 6",
+      "src": "02-square-product-images/size-20x16/04-container-marketing-20x16-main-interior.png",
+      "sha256": "78cb919c96c20ab58103ef23ab30e7016b7607d782e0b8d37daa25b29f0f0018",
+      "dim": [
+        1254,
+        1254
+      ],
+      "bytes": 2259068,
+      "out": "/assets/products/container-marketing-office/gallery/20x16/04-container-marketing-20x16-main-interior.webp",
+      "alt": "Sage interior of the 20 by 16 ft marketing office with four desks and a six-seat discussion table",
+      "crop": "none, source is 1:1",
+      "target": "WebP q82, 1254 x 1254, width and height attributes set"
+    },
+    {
+      "no": 11,
+      "role": "gallery",
+      "size": "20x16",
+      "slot": "gallery 5 of 6",
+      "src": "02-square-product-images/size-20x16/05-container-marketing-20x16-pantry-interior.png",
+      "sha256": "4ce40a1d6b296f2b4a1797e0b6c88d4e26b963cee4ddf8421b53195eb8795177",
+      "dim": [
+        1254,
+        1254
+      ],
+      "bytes": 1874729,
+      "out": "/assets/products/container-marketing-office/gallery/20x16/05-container-marketing-20x16-pantry-interior.webp",
+      "alt": "Pantry of the 20 by 16 ft marketing office with an L-shaped counter, sink and base cabinets",
+      "crop": "none, source is 1:1",
+      "target": "WebP q82, 1254 x 1254, width and height attributes set"
+    },
+    {
+      "no": 12,
+      "role": "gallery",
+      "size": "20x16",
+      "slot": "gallery 6 of 6",
+      "src": "02-square-product-images/size-20x16/06-container-marketing-20x16-wash-interior.png",
+      "sha256": "085ecf4e09f3b9f4018bc1ad5b320227b4f10c1f17f7efad29096e60809d563f",
+      "dim": [
+        1254,
+        1254
+      ],
+      "bytes": 1890995,
+      "out": "/assets/products/container-marketing-office/gallery/20x16/06-container-marketing-20x16-wash-interior.webp",
+      "alt": "Shared wash area of the 20 by 16 ft marketing office with one basin and ladies and gents doors",
+      "crop": "none, source is 1:1",
+      "target": "WebP q82, 1254 x 1254, width and height attributes set"
+    },
+    {
+      "no": 13,
+      "role": "gallery",
+      "size": "40x8",
+      "slot": "gallery 1 of 6",
+      "src": "02-square-product-images/size-40x8/01-container-marketing-40x8-rear-exterior.png",
+      "sha256": "50757cde43fb0e95d49c00ab63727e1cda715d9f9077f3c2df0757e1ad131f29",
+      "dim": [
+        1254,
+        1254
+      ],
+      "bytes": 2363343,
+      "out": "/assets/products/container-marketing-office/gallery/40x8/01-container-marketing-40x8-rear-exterior.webp",
+      "alt": "Rear wall of the green 40 by 8 ft container marketing office with four windows and no door",
+      "crop": "none, source is 1:1",
+      "target": "WebP q82, 1254 x 1254, width and height attributes set"
+    },
+    {
+      "no": 14,
+      "role": "gallery",
+      "size": "40x8",
+      "slot": "gallery 2 of 6",
+      "src": "02-square-product-images/size-40x8/02-container-marketing-40x8-front-exterior.png",
+      "sha256": "e9e374e66e6ba64d27e3b5dc15c335d4ca1ab69bd06bd3b0aad8933f8627d566",
+      "dim": [
+        1254,
+        1254
+      ],
+      "bytes": 1812277,
+      "out": "/assets/products/container-marketing-office/gallery/40x8/02-container-marketing-40x8-front-exterior.webp",
+      "alt": "Front wall of the 40 by 8 ft marketing office with three windows and two steel personnel doors",
+      "crop": "none, source is 1:1",
+      "target": "WebP q82, 1254 x 1254, width and height attributes set"
+    },
+    {
+      "no": 15,
+      "role": "gallery",
+      "size": "40x8",
+      "slot": "gallery 3 of 6",
+      "src": "02-square-product-images/size-40x8/03-container-marketing-40x8-end-exterior.png",
+      "sha256": "a1bd6f35e73e424e735ae5bb9609d8dddde1d6d303ebaccbc1133d785bc1e4b0",
+      "dim": [
+        1254,
+        1254
+      ],
+      "bytes": 1777164,
+      "out": "/assets/products/container-marketing-office/gallery/40x8/03-container-marketing-40x8-end-exterior.webp",
+      "alt": "End wall of the 40 by 8 ft marketing office with a single centred sliding window",
+      "crop": "none, source is 1:1",
+      "target": "WebP q82, 1254 x 1254, width and height attributes set"
+    },
+    {
+      "no": 16,
+      "role": "gallery",
+      "size": "40x8",
+      "slot": "gallery 4 of 6",
+      "src": "02-square-product-images/size-40x8/04-container-marketing-40x8-main-interior.png",
+      "sha256": "ba63bc2837ace68f8188c2994fbe02ad14898bb463a4e1d992ec94bae799fe4c",
+      "dim": [
+        1254,
+        1254
+      ],
+      "bytes": 2057348,
+      "out": "/assets/products/container-marketing-office/gallery/40x8/04-container-marketing-40x8-main-interior.webp",
+      "alt": "Common office of the 40 by 8 ft marketing office with seven desks in one run under wall cabinets",
+      "crop": "none, source is 1:1",
+      "target": "WebP q82, 1254 x 1254, width and height attributes set"
+    },
+    {
+      "no": 17,
+      "role": "gallery",
+      "size": "40x8",
+      "slot": "gallery 5 of 6",
+      "src": "02-square-product-images/size-40x8/05-container-marketing-40x8-manager-interior.png",
+      "sha256": "6f2fd5c9ac7f48f783f1c89fd9e177bd7b83eed26ffc98c77f1f8c68ac936890",
+      "dim": [
+        1254,
+        1254
+      ],
+      "bytes": 2097467,
+      "out": "/assets/products/container-marketing-office/gallery/40x8/05-container-marketing-40x8-manager-interior.webp",
+      "alt": "Manager cabin of the 40 by 8 ft marketing office with a desk, two guest chairs and a window each side",
+      "crop": "none, source is 1:1",
+      "target": "WebP q82, 1254 x 1254, width and height attributes set"
+    },
+    {
+      "no": 18,
+      "role": "gallery",
+      "size": "40x8",
+      "slot": "gallery 6 of 6",
+      "src": "02-square-product-images/size-40x8/06-container-marketing-40x8-reverse-interior.png",
+      "sha256": "4fc7d96d7f54b46277206d6c4da89af3f1c0f9c1499637c33a546be34bcf9ef6",
+      "dim": [
+        1254,
+        1254
+      ],
+      "bytes": 2109914,
+      "out": "/assets/products/container-marketing-office/gallery/40x8/06-container-marketing-40x8-reverse-interior.webp",
+      "alt": "Reverse view of the 40 by 8 ft common office toward the window-free manager partition door",
+      "crop": "none, source is 1:1",
+      "target": "WebP q82, 1254 x 1254, width and height attributes set"
+    },
+    {
+      "no": 19,
+      "role": "gallery",
+      "size": "40x16",
+      "slot": "gallery 1 of 6",
+      "src": "02-square-product-images/size-40x16/01-container-marketing-40x16-rear-exterior.png",
+      "sha256": "cf49e356141f281cd953048569811934e860659301d891a6f7461f50a5bc5109",
+      "dim": [
+        1254,
+        1254
+      ],
+      "bytes": 1903008,
+      "out": "/assets/products/container-marketing-office/gallery/40x16/01-container-marketing-40x16-rear-exterior.webp",
+      "alt": "Taupe 40 by 16 ft marketing office, rear wall with four windows and a solid service end",
+      "crop": "none, source is 1:1",
+      "target": "WebP q82, 1254 x 1254, width and height attributes set"
+    },
+    {
+      "no": 20,
+      "role": "gallery",
+      "size": "40x16",
+      "slot": "gallery 2 of 6",
+      "src": "02-square-product-images/size-40x16/02-container-marketing-40x16-front-exterior.png",
+      "sha256": "7d4e85c5fe982854ca814af6b4417f84803c31b0a9f1b0ada1c20c288f7095a1",
+      "dim": [
+        1254,
+        1254
+      ],
+      "bytes": 2136048,
+      "out": "/assets/products/container-marketing-office/gallery/40x16/02-container-marketing-40x16-front-exterior.webp",
+      "alt": "Front wall of the 40 by 16 ft marketing office with three windows and two external doors",
+      "crop": "none, source is 1:1",
+      "target": "WebP q82, 1254 x 1254, width and height attributes set"
+    },
+    {
+      "no": 21,
+      "role": "gallery",
+      "size": "40x16",
+      "slot": "gallery 3 of 6",
+      "src": "02-square-product-images/size-40x16/03-container-marketing-40x16-end-exterior.png",
+      "sha256": "891eddf60aeac21cb8bbf970e840ffad44adab639ab910762781a8037c7c3fd7",
+      "dim": [
+        1254,
+        1254
+      ],
+      "bytes": 2016818,
+      "out": "/assets/products/container-marketing-office/gallery/40x16/03-container-marketing-40x16-end-exterior.webp",
+      "alt": "End wall of the 40 by 16 ft marketing office with two sliding windows",
+      "crop": "none, source is 1:1",
+      "target": "WebP q82, 1254 x 1254, width and height attributes set"
+    },
+    {
+      "no": 22,
+      "role": "gallery",
+      "size": "40x16",
+      "slot": "gallery 4 of 6",
+      "src": "02-square-product-images/size-40x16/04-container-marketing-40x16-main-interior.png",
+      "sha256": "dc842f8a7f2ab37e1d2805278b6ee703ea62e6d6aab61737b28f41ba53aa64d3",
+      "dim": [
+        1254,
+        1254
+      ],
+      "bytes": 1992747,
+      "out": "/assets/products/container-marketing-office/gallery/40x16/04-container-marketing-40x16-main-interior.webp",
+      "alt": "Common office of the 40 by 16 ft marketing office with seven desks and two internal cabin doors",
+      "crop": "none, source is 1:1",
+      "target": "WebP q82, 1254 x 1254, width and height attributes set"
+    },
+    {
+      "no": 23,
+      "role": "gallery",
+      "size": "40x16",
+      "slot": "gallery 5 of 6",
+      "src": "02-square-product-images/size-40x16/05-container-marketing-40x16-manager-interior.png",
+      "sha256": "c8021cc9b44cd6de83f4880f9a60550eeb6f7bb41309f532e5b1559cc900057e",
+      "dim": [
+        1254,
+        1254
+      ],
+      "bytes": 1822470,
+      "out": "/assets/products/container-marketing-office/gallery/40x16/05-container-marketing-40x16-manager-interior.webp",
+      "alt": "Manager cabin of the 40 by 16 ft marketing office with a desk, three seats and two windows",
+      "crop": "none, source is 1:1",
+      "target": "WebP q82, 1254 x 1254, width and height attributes set"
+    },
+    {
+      "no": 24,
+      "role": "gallery",
+      "size": "40x16",
+      "slot": "gallery 6 of 6",
+      "src": "02-square-product-images/size-40x16/06-container-marketing-40x16-conference-interior.png",
+      "sha256": "7145d6921b2624faef36e8199cc293f5de3eeb302477c2ae3c790970437c90c2",
+      "dim": [
+        1254,
+        1254
+      ],
+      "bytes": 1889853,
+      "out": "/assets/products/container-marketing-office/gallery/40x16/06-container-marketing-40x16-conference-interior.webp",
+      "alt": "Six-seat conference room of the 40 by 16 ft marketing office with a window on two walls",
+      "crop": "none, source is 1:1",
+      "target": "WebP q82, 1254 x 1254, width and height attributes set"
+    },
+    {
+      "no": 25,
+      "role": "gallery",
+      "size": "40x24",
+      "slot": "gallery 1 of 6",
+      "src": "02-square-product-images/size-40x24/01-container-marketing-40x24-rear-exterior.png",
+      "sha256": "b21d7977fe50176ffb7b8ffaaf6ba4381d2722cc1b44110e7c6168dff9a0b95d",
+      "dim": [
+        1254,
+        1254
+      ],
+      "bytes": 1940905,
+      "out": "/assets/products/container-marketing-office/gallery/40x24/01-container-marketing-40x24-rear-exterior.webp",
+      "alt": "Rear wall of the green 40 by 24 ft marketing office with four windows and a solid service end",
+      "crop": "none, source is 1:1",
+      "target": "WebP q82, 1254 x 1254, width and height attributes set"
+    },
+    {
+      "no": 26,
+      "role": "gallery",
+      "size": "40x24",
+      "slot": "gallery 2 of 6",
+      "src": "02-square-product-images/size-40x24/02-container-marketing-40x24-front-exterior.png",
+      "sha256": "b2b8fc74c1180945e51f58c8ef98b97dcfd5cb125680b0eafb40b07ba338db19",
+      "dim": [
+        1254,
+        1254
+      ],
+      "bytes": 1865207,
+      "out": "/assets/products/container-marketing-office/gallery/40x24/02-container-marketing-40x24-front-exterior.webp",
+      "alt": "Front wall of the 40 by 24 ft marketing office with two doors and three windows between them",
+      "crop": "none, source is 1:1",
+      "target": "WebP q82, 1254 x 1254, width and height attributes set"
+    },
+    {
+      "no": 27,
+      "role": "gallery",
+      "size": "40x24",
+      "slot": "gallery 3 of 6",
+      "src": "02-square-product-images/size-40x24/03-container-marketing-40x24-end-exterior.png",
+      "sha256": "31aad79f4b47c3a8113e5f39819e751fb74dff02e50d798f397497e726a0b13d",
+      "dim": [
+        1254,
+        1254
+      ],
+      "bytes": 1765519,
+      "out": "/assets/products/container-marketing-office/gallery/40x24/03-container-marketing-40x24-end-exterior.webp",
+      "alt": "The 24 ft end wall of the 40 by 24 ft marketing office with three evenly spaced windows",
+      "crop": "none, source is 1:1",
+      "target": "WebP q82, 1254 x 1254, width and height attributes set"
+    },
+    {
+      "no": 28,
+      "role": "gallery",
+      "size": "40x24",
+      "slot": "gallery 4 of 6",
+      "src": "02-square-product-images/size-40x24/04-container-marketing-40x24-island-interior.png",
+      "sha256": "f912bf245ff30dbf57a1fb2444194792cad153ef85e3f1762f1b6ab8193c36c1",
+      "dim": [
+        1254,
+        1254
+      ],
+      "bytes": 1963618,
+      "out": "/assets/products/container-marketing-office/gallery/40x24/04-container-marketing-40x24-island-interior.webp",
+      "alt": "Six-workstation island in the 40 by 24 ft marketing office, three desks facing three",
+      "crop": "none, source is 1:1",
+      "target": "WebP q82, 1254 x 1254, width and height attributes set"
+    },
+    {
+      "no": 29,
+      "role": "gallery",
+      "size": "40x24",
+      "slot": "gallery 5 of 6",
+      "src": "02-square-product-images/size-40x24/05-container-marketing-40x24-reception-interior.png",
+      "sha256": "3e1c06ba5eb7b753eac66dbc0297bfbcb3969cfeb0163a5df765cb9a69725ff5",
+      "dim": [
+        1254,
+        1254
+      ],
+      "bytes": 2150451,
+      "out": "/assets/products/container-marketing-office/gallery/40x24/05-container-marketing-40x24-reception-interior.webp",
+      "alt": "Reception counter and waiting chairs inside the 40 by 24 ft container marketing office",
+      "crop": "none, source is 1:1",
+      "target": "WebP q82, 1254 x 1254, width and height attributes set"
+    },
+    {
+      "no": 30,
+      "role": "gallery",
+      "size": "40x24",
+      "slot": "gallery 6 of 6",
+      "src": "02-square-product-images/size-40x24/06-container-marketing-40x24-manager-interior.png",
+      "sha256": "719232c385b35001a292ff7f1afcbe536aacfe9e48dbdb57ad28b8f7dd113fdc",
+      "dim": [
+        1254,
+        1254
+      ],
+      "bytes": 1947938,
+      "out": "/assets/products/container-marketing-office/gallery/40x24/06-container-marketing-40x24-manager-interior.webp",
+      "alt": "Manager cabin of the 40 by 24 ft marketing office with a desk, two visitor chairs and one window",
+      "crop": "none, source is 1:1",
+      "target": "WebP q82, 1254 x 1254, width and height attributes set"
+    },
+    {
+      "no": 31,
+      "role": "gallery",
+      "size": "40x32",
+      "slot": "gallery 1 of 6",
+      "src": "02-square-product-images/size-40x32/01-container-marketing-40x32-rear-exterior.png",
+      "sha256": "3890864070a667bd1a58961ecceb785ae8fa51cc8f96cf4df7e2b11b56bf4764",
+      "dim": [
+        1254,
+        1254
+      ],
+      "bytes": 2205838,
+      "out": "/assets/products/container-marketing-office/gallery/40x32/01-container-marketing-40x32-rear-exterior.webp",
+      "alt": "Burgundy 40 by 32 ft marketing office, rear wall with four evenly spaced windows",
+      "crop": "none, source is 1:1",
+      "target": "WebP q82, 1254 x 1254, width and height attributes set"
+    },
+    {
+      "no": 32,
+      "role": "gallery",
+      "size": "40x32",
+      "slot": "gallery 2 of 6",
+      "src": "02-square-product-images/size-40x32/02-container-marketing-40x32-front-exterior.png",
+      "sha256": "b75d825f0d28bcdf191f27643cf5f0f1b0697f8ddb8ee29c2e362a430e64f41a",
+      "dim": [
+        1254,
+        1254
+      ],
+      "bytes": 1720471,
+      "out": "/assets/products/container-marketing-office/gallery/40x32/02-container-marketing-40x32-front-exterior.webp",
+      "alt": "Front wall of the 40 by 32 ft marketing office with two doors and three windows",
+      "crop": "none, source is 1:1",
+      "target": "WebP q82, 1254 x 1254, width and height attributes set"
+    },
+    {
+      "no": 33,
+      "role": "gallery",
+      "size": "40x32",
+      "slot": "gallery 3 of 6",
+      "src": "02-square-product-images/size-40x32/03-container-marketing-40x32-service-exterior.png",
+      "sha256": "2cdff11b0cb9cde84f6f83e45efc1791b63db508bee45322f8617104e311ef94",
+      "dim": [
+        1254,
+        1254
+      ],
+      "bytes": 2112326,
+      "out": "/assets/products/container-marketing-office/gallery/40x32/03-container-marketing-40x32-service-exterior.webp",
+      "alt": "Solid 32 ft service end of the 40 by 32 ft marketing office with two high-level louvres",
+      "crop": "none, source is 1:1",
+      "target": "WebP q82, 1254 x 1254, width and height attributes set"
+    },
+    {
+      "no": 34,
+      "role": "gallery",
+      "size": "40x32",
+      "slot": "gallery 4 of 6",
+      "src": "02-square-product-images/size-40x32/04-container-marketing-40x32-islands-interior.png",
+      "sha256": "6516ce8ba95b1936ff2a9b53bad58b2c3bf0cdd24712e14754202d89b33302d0",
+      "dim": [
+        1254,
+        1254
+      ],
+      "bytes": 2123705,
+      "out": "/assets/products/container-marketing-office/gallery/40x32/04-container-marketing-40x32-islands-interior.webp",
+      "alt": "Two six-desk islands in the open office of the 40 by 32 ft container marketing office",
+      "crop": "none, source is 1:1",
+      "target": "WebP q82, 1254 x 1254, width and height attributes set"
+    },
+    {
+      "no": 35,
+      "role": "gallery",
+      "size": "40x32",
+      "slot": "gallery 5 of 6",
+      "src": "02-square-product-images/size-40x32/05-container-marketing-40x32-reception-interior.png",
+      "sha256": "e55697f48af7573c1ab3e5d170f2e64ffe35daa293669e909f2bf669376db301",
+      "dim": [
+        1254,
+        1254
+      ],
+      "bytes": 1835307,
+      "out": "/assets/products/container-marketing-office/gallery/40x32/05-container-marketing-40x32-reception-interior.webp",
+      "alt": "Reception counter, four waiting chairs and the entry door in the 40 by 32 ft marketing office",
+      "crop": "none, source is 1:1",
+      "target": "WebP q82, 1254 x 1254, width and height attributes set"
+    },
+    {
+      "no": 36,
+      "role": "gallery",
+      "size": "40x32",
+      "slot": "gallery 6 of 6",
+      "src": "02-square-product-images/size-40x32/06-container-marketing-40x32-service-interior.png",
+      "sha256": "7923e851b7f2658b62e68cabf829b0620411547a892e86094e9b41cb7d9720d6",
+      "dim": [
+        1254,
+        1254
+      ],
+      "bytes": 1824374,
+      "out": "/assets/products/container-marketing-office/gallery/40x32/06-container-marketing-40x32-service-interior.webp",
+      "alt": "Wash area of the 40 by 32 ft marketing office with a basin between the ladies and gents toilets",
+      "crop": "none, source is 1:1",
+      "target": "WebP q82, 1254 x 1254, width and height attributes set"
+    }
+  ],
+  "ga_boards": [
+    {
+      "role": "ga_board",
+      "size": "20x8",
+      "slot": "inside the 20x8 variant section",
+      "src": "01-ga-boards/size-20x8/container-marketing-office-20x8x8-5-premium-ga-specification-board-v1.png",
+      "sha256": "1fcb83fabacc8f57ecbed688b1433563d537e881b7f2200bc89886aee50481db",
+      "dim": [
+        3912,
+        2992
+      ],
+      "bytes": 429246,
+      "out": "/assets/products/container-marketing-office/ga/container-marketing-office-20x8-ga-board.webp",
+      "preview": "/assets/products/container-marketing-office/ga/container-marketing-office-20x8-ga-board-preview.webp",
+      "alt": "Approved GA board for the 20 by 8 ft container marketing office with plan, elevations and openings",
+      "crop": "none",
+      "target": "full raster WebP above 768 px, 1400 px preview below 768 px"
+    },
+    {
+      "role": "ga_board",
+      "size": "20x16",
+      "slot": "inside the 20x16 variant section",
+      "src": "01-ga-boards/size-20x16/container-marketing-office-20x16x8-5-premium-ga-specification-board-v2.png",
+      "sha256": "c6f92ccd5c0c914f0ca46fa867d579920c7787079e342fcfa0bc121fa15fbc12",
+      "dim": [
+        3912,
+        2992
+      ],
+      "bytes": 421847,
+      "out": "/assets/products/container-marketing-office/ga/container-marketing-office-20x16-ga-board.webp",
+      "preview": "/assets/products/container-marketing-office/ga/container-marketing-office-20x16-ga-board-preview.webp",
+      "alt": "Approved GA board for the 20 by 16 ft marketing office showing the wet strip, pantry and openings",
+      "crop": "none",
+      "target": "full raster WebP above 768 px, 1400 px preview below 768 px"
+    },
+    {
+      "role": "ga_board",
+      "size": "40x8",
+      "slot": "inside the 40x8 variant section",
+      "src": "01-ga-boards/size-40x8/container-marketing-office-40x8x8-5-premium-ga-specification-board-v1.png",
+      "sha256": "fe2e33732688eb16b88e2f3ca832b1961950be771d9da5940397b1423162bae2",
+      "dim": [
+        3912,
+        2992
+      ],
+      "bytes": 461680,
+      "out": "/assets/products/container-marketing-office/ga/container-marketing-office-40x8-ga-board.webp",
+      "preview": "/assets/products/container-marketing-office/ga/container-marketing-office-40x8-ga-board-preview.webp",
+      "alt": "Approved GA board for the 40 by 8 ft marketing office with the manager cabin and seven desks",
+      "crop": "none",
+      "target": "full raster WebP above 768 px, 1400 px preview below 768 px"
+    },
+    {
+      "role": "ga_board",
+      "size": "40x16",
+      "slot": "inside the 40x16 variant section",
+      "src": "01-ga-boards/size-40x16/container-marketing-office-40x16x8-5-premium-ga-specification-board-v1.png",
+      "sha256": "bc59b176d87994bc542e68ff5c25c1cee47ce732d37642a7c4a4255f17d2f259",
+      "dim": [
+        3912,
+        2992
+      ],
+      "bytes": 327690,
+      "out": "/assets/products/container-marketing-office/ga/container-marketing-office-40x16-ga-board.webp",
+      "preview": "/assets/products/container-marketing-office/ga/container-marketing-office-40x16-ga-board-preview.webp",
+      "alt": "Approved GA board for the 40 by 16 ft marketing office with manager, conference and service strip",
+      "crop": "none",
+      "target": "full raster WebP above 768 px, 1400 px preview below 768 px"
+    },
+    {
+      "role": "ga_board",
+      "size": "40x24",
+      "slot": "inside the 40x24 variant section",
+      "src": "01-ga-boards/size-40x24/container-marketing-office-40x24x8-5-premium-ga-specification-board-v2.png",
+      "sha256": "4541682c1da1dfa49cda6ebc08cdb30b98a00ae9768064671b21dc3049a8d566",
+      "dim": [
+        3912,
+        2992
+      ],
+      "bytes": 341649,
+      "out": "/assets/products/container-marketing-office/ga/container-marketing-office-40x24-ga-board.webp",
+      "preview": "/assets/products/container-marketing-office/ga/container-marketing-office-40x24-ga-board-preview.webp",
+      "alt": "Approved GA board for the 40 by 24 ft marketing office with reception, island and support rooms",
+      "crop": "none",
+      "target": "full raster WebP above 768 px, 1400 px preview below 768 px"
+    },
+    {
+      "role": "ga_board",
+      "size": "40x32",
+      "slot": "inside the 40x32 variant section",
+      "src": "01-ga-boards/size-40x32/container-marketing-office-40x32x8-5-premium-ga-specification-board-v1.png",
+      "sha256": "0110f555fbd25525f0fb8be4d88f4a6c2939e8b9297be03f2cf1632aab8dabef",
+      "dim": [
+        3912,
+        2992
+      ],
+      "bytes": 372314,
+      "out": "/assets/products/container-marketing-office/ga/container-marketing-office-40x32-ga-board.webp",
+      "preview": "/assets/products/container-marketing-office/ga/container-marketing-office-40x32-ga-board-preview.webp",
+      "alt": "Approved GA board for the 40 by 32 ft marketing office with four front rooms and two islands",
+      "crop": "none",
+      "target": "full raster WebP above 768 px, 1400 px preview below 768 px"
+    }
+  ],
+  "pre_calculator": {
+    "role": "pre_calculator",
+    "slot": "inside the existing picture.calc-entry-photo in section.calc-entry",
+    "src": "03-long-description-images/05-container-marketing-40x24-usecase-exterior.png",
+    "sha256": "7ac96737904ccf0b2ca3afdb80ee487e841674451762f9b61600278bde5778e3",
+    "dim": [
+      1920,
+      1080
+    ],
+    "bytes": 3577864,
+    "crop": "centre-vertical crop to 1920 x 814, then responsive calculator band renditions",
+    "target": "768w, 1216w, 1440w and 1926w; WebP source plus JPG fallback; final slot keeps width 1926 and height 817",
+    "out": "/assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-1926.jpg",
+    "alt": "SAMAN container marketing office calculator",
+    "webp_srcset": "/assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-768.webp 768w, /assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-1216.webp 1216w, /assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-1440.webp 1440w, /assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-1926.webp 1926w",
+    "jpg_srcset": "/assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-768.jpg 768w, /assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-1216.jpg 1216w, /assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-1440.jpg 1440w, /assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-1926.jpg 1926w",
+    "renditions": [
+      {
+        "role": "pre_calculator",
+        "width": 768,
+        "format": "webp",
+        "out": "/assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-768.webp",
+        "alt": "SAMAN container marketing office calculator"
+      },
+      {
+        "role": "pre_calculator",
+        "width": 768,
+        "format": "jpg",
+        "out": "/assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-768.jpg",
+        "alt": "SAMAN container marketing office calculator"
+      },
+      {
+        "role": "pre_calculator",
+        "width": 1216,
+        "format": "webp",
+        "out": "/assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-1216.webp",
+        "alt": "SAMAN container marketing office calculator"
+      },
+      {
+        "role": "pre_calculator",
+        "width": 1216,
+        "format": "jpg",
+        "out": "/assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-1216.jpg",
+        "alt": "SAMAN container marketing office calculator"
+      },
+      {
+        "role": "pre_calculator",
+        "width": 1440,
+        "format": "webp",
+        "out": "/assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-1440.webp",
+        "alt": "SAMAN container marketing office calculator"
+      },
+      {
+        "role": "pre_calculator",
+        "width": 1440,
+        "format": "jpg",
+        "out": "/assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-1440.jpg",
+        "alt": "SAMAN container marketing office calculator"
+      },
+      {
+        "role": "pre_calculator",
+        "width": 1926,
+        "format": "webp",
+        "out": "/assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-1926.webp",
+        "alt": "SAMAN container marketing office calculator"
+      },
+      {
+        "role": "pre_calculator",
+        "width": 1926,
+        "format": "jpg",
+        "out": "/assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-1926.jpg",
+        "alt": "SAMAN container marketing office calculator"
+      }
+    ]
+  },
+  "description": [
+    {
+      "role": "description",
+      "slot": "below the H2 'What Makes a Marketing Office Different from an Office'",
+      "src": "03-long-description-images/01-container-marketing-20x8-usecase-exterior.png",
+      "sha256": "dfb6124129c4798215f26d4e828552c3053e1881462c38d7adb46a66f83a3e48",
+      "dim": [
+        1920,
+        1080
+      ],
+      "bytes": 3597198,
+      "out": "/assets/products/container-marketing-office/description/container-marketing-office-20x8-plot-frontage.webp",
+      "alt": "The 20 by 8 ft container marketing office placed at a plot frontage as a single staffed desk",
+      "crop": "16:9 kept, source is already 1920 x 1080",
+      "target": "WebP, 1600 x 900, compressed to 80-120 KB"
+    },
+    {
+      "role": "description",
+      "slot": "below the H2 'The Six Approved Plans and What Each One Solves'",
+      "src": "03-long-description-images/02-container-marketing-20x16-usecase-exterior.png",
+      "sha256": "916074b9c6a080ce2ed56a627a094e7ec3ded28cfe10bebae0d95ac5dc4dcc7d",
+      "dim": [
+        1920,
+        1080
+      ],
+      "bytes": 4043676,
+      "out": "/assets/products/container-marketing-office/description/container-marketing-office-20x16-self-contained-suite.webp",
+      "alt": "The 20 by 16 ft container marketing office, the smallest plan with its own toilets and pantry",
+      "crop": "16:9 kept, source is already 1920 x 1080",
+      "target": "WebP, 1600 x 900, compressed to 80-120 KB"
+    },
+    {
+      "role": "description",
+      "slot": "below the H2 'Where the Visitor Route and the Staff Route Split'",
+      "src": "03-long-description-images/03-container-marketing-40x8-usecase-exterior.png",
+      "sha256": "21381a63f5a40a74e3233bb3091d2be92b70e71d24d7e27093a193f80001b179",
+      "dim": [
+        1920,
+        1080
+      ],
+      "bytes": 3535699,
+      "out": "/assets/products/container-marketing-office/description/container-marketing-office-40x8-narrow-frontage.webp",
+      "alt": "The 40 by 8 ft container marketing office on a narrow frontage with two external doors",
+      "crop": "16:9 kept, source is already 1920 x 1080",
+      "target": "WebP, 1600 x 900, compressed to 80-120 KB"
+    },
+    {
+      "role": "description",
+      "slot": "below the H2 'Getting the Module to a Launch Site'",
+      "src": "03-long-description-images/04-container-marketing-40x16-usecase-exterior.png",
+      "sha256": "a28cd876e6ed207337aa3dd5bee73b809a725c3ad9e4d909f3f41a2dbbebc3ba",
+      "dim": [
+        1920,
+        1080
+      ],
+      "bytes": 3899565,
+      "out": "/assets/products/container-marketing-office/description/container-marketing-office-40x16-launch-site.webp",
+      "alt": "The 40 by 16 ft container marketing office set up at a property launch site",
+      "crop": "16:9 kept, source is already 1920 x 1080",
+      "target": "WebP, 1600 x 900, compressed to 80-120 KB"
+    },
+    {
+      "role": "description",
+      "slot": "below the H2 'Branding the Face Without Breaking the Envelope'",
+      "src": "03-long-description-images/06-container-marketing-40x32-usecase-exterior.png",
+      "sha256": "6b803cd1430f04de6d75ed2caa84f379747c8cd1cc5c10f1d2a12948a63930ba",
+      "dim": [
+        1920,
+        1080
+      ],
+      "bytes": 3473526,
+      "out": "/assets/products/container-marketing-office/description/container-marketing-office-40x32-sales-gallery.webp",
+      "alt": "The 40 by 32 ft container marketing office working as a full sales gallery on a project site",
+      "crop": "16:9 kept, source is already 1920 x 1080",
+      "target": "WebP, 1600 x 900, compressed to 80-120 KB"
+    }
+  ],
+  "diagrams": [
+    {
+      "role": "diagram",
+      "slot": "Specifications tab",
+      "src": "04-technical-diagrams/01-container-marketing-material-construction-diagram.png",
+      "svg": "04-technical-diagrams/01-container-marketing-material-construction-diagram.svg",
+      "sha256": "cfd3007e9d8a4ba240625b8059a99273056de6601978ae1e96880211312f0e7c",
+      "dim": [
+        1920,
+        1080
+      ],
+      "bytes": 80699,
+      "out": "/assets/products/container-marketing-office/diagrams/01-container-marketing-material-construction-diagram.svg",
+      "alt": "Three-stage diagram of container marketing office frame, insulated envelope and sealed joints",
+      "caption": "SAMAN Container Marketing Office, materials and construction sequence. Structural frame, insulated envelope, joints and finish. Ruleset 1.0.22, 22 August 2026. Illustrative - not for construction.",
+      "crop": "none",
+      "target": "inline SVG preferred, 1920 x 1080 PNG fallback"
+    },
+    {
+      "role": "diagram",
+      "slot": "Specifications tab",
+      "src": "04-technical-diagrams/02-container-marketing-services-coordination-diagram.png",
+      "svg": "04-technical-diagrams/02-container-marketing-services-coordination-diagram.svg",
+      "sha256": "4e164d381fab9e476f1f562c3235bafea3e76bfaf723a4d27910cc4310394eb8",
+      "dim": [
+        1920,
+        1080
+      ],
+      "bytes": 80352,
+      "out": "/assets/products/container-marketing-office/diagrams/02-container-marketing-services-coordination-diagram.svg",
+      "alt": "Diagram of 4 by 3 ft window detail, distribution board circuits and toilet exhaust louvre routing",
+      "caption": "SAMAN Container Marketing Office, openings, electrical and ventilation coordination. 4 x 3 ft sliding window, distribution board and wet-area exhaust. Ruleset 1.0.22, 22 August 2026. Illustrative - not for construction.",
+      "crop": "none",
+      "target": "inline SVG preferred, 1920 x 1080 PNG fallback"
+    }
+  ],
+  "technical_pdf": {
+    "role": "technical_pdf",
+    "slot": "hero column 1 download control",
+    "src": "05-technical-pdf/container-marketing-office-technical-specification-and-price-dashboard.pdf",
+    "sha256": "d158ae63e8665baf71c91e8354f2bbfd331486b382ee07cb7c5b223b1220c34d",
+    "bytes": 16530986,
+    "out": "/specs/container-marketing-office-technical-specification.pdf",
+    "label": null
+  }
+}

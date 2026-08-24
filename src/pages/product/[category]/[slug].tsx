@@ -63,6 +63,31 @@ import { injectInfoImages } from '../../../lib/infoImageLayout';
 // Guards the dynamic data/products import below against path traversal — the slug
 // comes straight from the URL. Same regex as the category hub route.
 const SAFE_PRODUCT_SLUG = /^[a-z0-9-]+$/;
+const CMO_SLUG = 'container-marketing-office';
+const CMO_CALC_ENTRY_PHOTO = {
+  webpSrcSet: '/assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-768.webp 768w, /assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-1216.webp 1216w, /assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-1440.webp 1440w, /assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-1926.webp 1926w',
+  jpgSrcSet: '/assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-768.jpg 768w, /assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-1216.jpg 1216w, /assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-1440.jpg 1440w, /assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-1926.jpg 1926w',
+  src: '/assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-1926.jpg',
+  alt: 'SAMAN container marketing office calculator',
+};
+
+const encodeDashEntitiesForRawHtml = (html: string): string =>
+  html.replace(/\u2014/g, '&#8212;').replace(/\u2013/g, '&#8211;');
+
+const normalizeForbiddenDashesInJson = <T,>(value: T): T => {
+  if (typeof value === 'string') {
+    return value.replace(/\u2014/g, '-').replace(/\u2013/g, '-') as T;
+  }
+  if (Array.isArray(value)) {
+    return value.map((item) => normalizeForbiddenDashesInJson(item)) as T;
+  }
+  if (value && typeof value === 'object') {
+    return Object.fromEntries(
+      Object.entries(value as Record<string, unknown>).map(([key, item]) => [key, normalizeForbiddenDashesInJson(item)])
+    ) as T;
+  }
+  return value;
+};
 
 // Pages rebuilt to the Porta Cabins cluster design system (section dividers, SAP
 // size strip, Section-3 headings at H2, the YMAL carousel). PC-01 added the MS page;
@@ -129,6 +154,7 @@ const CLUSTER_DESIGN_SLUGS = new Set([
   // this set before; only this one slug is added, scoped to CO-09 alone. Same
   // opt-ins as every page above, no new styling.
   'container-office-cabin',
+  'container-marketing-office',
 ]);
 
 // Dynamic import for ProductTabs to avoid SSR issues
@@ -351,6 +377,9 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
       if (urlCategory === 'container-offices') {
         relatedProducts = orderContainerOfficeRail(slug, relatedProducts);
       }
+      if (slug === CMO_SLUG) {
+        relatedProducts = normalizeForbiddenDashesInJson(relatedProducts);
+      }
       if (urlCategory === 'container-houses') {
         relatedProducts = relatedProducts.map(sanitizeC08RelatedProductSummary);
       }
@@ -415,9 +444,11 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
       ? variantData.variants.find((variant) => variant.sizeSlug === variantData.defaultVariant)?.images?.[0]
         || variantImages[0]
       : undefined;
-    const variantSocialImage = defaultVariantHero?.src
-      ? `https://www.samanportable.com${defaultVariantHero.src}`
-      : undefined;
+    const variantSocialImage = variantData?.openGraphImage
+      ? `https://www.samanportable.com${variantData.openGraphImage}`
+      : defaultVariantHero?.src
+        ? `https://www.samanportable.com${defaultVariantHero.src}`
+        : undefined;
 
     if (variantData?.seoTitle || variantData?.metaDescription) {
       const seoTitle = variantData.seoTitle || rankMathSEO?.title;
@@ -435,7 +466,7 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
         ...(variantSocialImage
           ? { og_image: variantSocialImage, twitter_image: variantSocialImage }
           : {}),
-        canonical: `https://www.samanportable.com/product/${category}/${slug}`,
+        canonical: variantData.canonical || `https://www.samanportable.com/product/${category}/${slug}`,
       };
     }
 
@@ -552,7 +583,9 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
         slug,
         // T31 — real tab HTML for the 12 in-scope cluster pages; null otherwise.
         specificationsHtml: t31Tabs?.specificationsHtml || '',
-        shippingHtml: t31Tabs?.shippingHtml || '',
+        shippingHtml: slug === CMO_SLUG && t31Tabs?.shippingHtml
+          ? encodeDashEntitiesForRawHtml(t31Tabs.shippingHtml)
+          : t31Tabs?.shippingHtml || '',
         relatedProducts,
         // productImages prop removed: it was never destructured/used in the component
         // (the gallery uses getProductImages() from product.images), and serializing
@@ -761,7 +794,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
   const embeddedCalculatorMapping = useMemo(() => resolveEmbeddedCalculatorProduct(category, slug), [category, slug]);
   const embeddedCalculatorSummary = useMemo(() => (
     embeddedCalculatorMapping && embeddedCalculatorMapping.prefill && embeddedCalculatorMapping.productId ? getEmbeddedProductSummary(embeddedCalculatorMapping.productId, embeddedCalculatorMapping.ladderKey, product?.name) : null
-  ), [embeddedCalculatorMapping]);
+  ), [embeddedCalculatorMapping, product?.name]);
 
   const embeddedCalculatorSummaryText = useMemo(() => {
     if (!embeddedCalculatorSummary) return '';
@@ -790,8 +823,11 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
     // LC-05's acceptance gate is zero U+2014 in built output. Quote-mode logic,
     // controls and calculations remain untouched; only the one shared help-copy
     // dash is normalised on this route.
-    return slug === 'accommodation-container' ? html.replace(/\s*\u2014\s*/g, ', ') : html;
-  }, [category, slug, embeddedCalculatorMapping]);
+    if (slug === 'accommodation-container') {
+      return html.replace(/\s*\u2014\s*/g, ', ');
+    }
+    return slug === CMO_SLUG ? encodeDashEntitiesForRawHtml(html) : html;
+  }, [category, slug, embeddedCalculatorMapping, product?.name]);
 
   // The calculator entry band. Sits between the buy box and the description
   // tabs so a buyer cannot scroll past the tool without meeting it.
@@ -816,8 +852,9 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
       productId: embeddedCalculatorMapping.productId,
       productName: product?.name || embeddedCalculatorSummary?.name || '',
       ladderKey: embeddedCalculatorMapping.ladderKey,
+      ...(slug === CMO_SLUG ? { photo: CMO_CALC_ENTRY_PHOTO } : {}),
     });
-  }, [embeddedCalculatorMapping, product?.name, embeddedCalculatorSummary?.name, isPrefabSiteCanteenPage]);
+  }, [embeddedCalculatorMapping, product?.name, embeddedCalculatorSummary?.name, isPrefabSiteCanteenPage, slug]);
 
   // Prevent hydration mismatch by only showing dynamic content after hydration
   useEffect(() => {
@@ -986,14 +1023,14 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   // basis: build prompt v1.2 acceptance criterion 6 requires zero
                   // U+2014, and the shared default renders one.
                   sizeEyebrowText={
-                    slug === 'porta-cabin-with-toilet' || slug === 'soundproof-porta-cabin' || slug === 'puf-porta-cabin' || slug === 'skid-mounted-porta-cabin' || slug === 'porta-cabin-shop' || slug === 'accommodation-container' || slug === 'container-office-cabin'
+                    slug === 'porta-cabin-with-toilet' || slug === 'soundproof-porta-cabin' || slug === 'puf-porta-cabin' || slug === 'skid-mounted-porta-cabin' || slug === 'porta-cabin-shop' || slug === 'accommodation-container' || slug === 'container-office-cabin' || slug === 'container-marketing-office'
                       ? 'Choose your size - six factory-built options'
                       : undefined
                   }
                   // CO-09 (22 Aug 2026) — ticket §I requires #size-<slug> DOM
                   // anchors preserved byte-identically. Same existing opt-in
                   // as accommodation-container, additive to this one slug.
-                  emitSizeAnchors={slug === 'accommodation-container' || slug === 'container-office-cabin'}
+                  emitSizeAnchors={slug === 'accommodation-container' || slug === 'container-office-cabin' || slug === 'container-marketing-office'}
                   explorerHidePanelImages={slug === 'accommodation-container'}
                   deferNonLcpImagesUntilHeroPaint={slug === 'accommodation-container'}
                   renderOnlyActiveExplorerPanel={slug === 'accommodation-container'}
@@ -1323,9 +1360,9 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   specificationsHtml={slug === 'accommodation-container' ? lazyLoadStaticHtmlImages(specificationsHtml) : specificationsHtml}
                   shippingHtml={slug === 'accommodation-container' ? lazyLoadStaticHtmlImages(shippingHtml) : shippingHtml}
                   productTitle={isLaborShedsPage ? 'Labour Sheds' : transformedProduct.title}
-                  reviews={slug === 'accommodation-container' ? [] : reviews}
-                  averageRating={slug === 'accommodation-container' ? undefined : product.average_rating}
-                  ratingCount={slug === 'accommodation-container' ? 0 : product.rating_count}
+                  reviews={slug === 'accommodation-container' || slug === 'container-marketing-office' ? [] : reviews}
+                  averageRating={slug === 'accommodation-container' || slug === 'container-marketing-office' ? undefined : product.average_rating}
+                  ratingCount={slug === 'accommodation-container' || slug === 'container-marketing-office' ? 0 : product.rating_count}
                   productId={product.id}
                   productName={transformedProduct.title}
                 />

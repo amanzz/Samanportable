@@ -2,6 +2,7 @@ export type ImageProvenance = 'photograph' | 'render' | 'unknown';
 
 export interface VariantImage {
   src: string;
+  previewSrc?: string;
   alt: string;
   provenance: ImageProvenance;
   width: number;
@@ -104,11 +105,16 @@ export interface VariantProductData {
       stale WordPress head fields. */
   seoTitle?: string;
   metaDescription?: string;
+  canonical?: string;
+  openGraphImage?: string;
   /** Owner-approved page opener rendered directly below the locked H1. Optional;
       pages without one keep their existing markup byte-identical. */
   opener?: string;
   /** Owner-approved replacement for the legacy Description-tab HTML. */
   descriptionHtml?: string;
+  /** Owner-approved fixed hero facts table. When present, it replaces the standard
+      computed feature cells instead of mixing generated facts into the buy box. */
+  heroTable?: string[][];
   /** Optional owner-approved additions to an existing Description-tab string.
       Absent means the original HTML is returned byte-for-byte. */
   descriptionHtmlAdditions?: {
@@ -215,6 +221,9 @@ export interface VariantProductData {
       review. Absent everywhere else, so the existing rich-result evidence gate
       remains unchanged for every sibling. */
   emitQuoteOnlyProduct?: boolean;
+  /** Exact Product JSON-LD override for pages whose build ticket pins a bespoke
+      Product node. Absent everywhere else, so existing generated schema remains. */
+  schemaOverride?: Record<string, unknown>;
   /** LC-05 (16 Aug 2026) - allow Next's responsive image pipeline for a page whose
       gallery assets are local WebPs. Absent/false preserves the deployed bypass
       decision byte-for-byte on every sibling product. */

@@ -388,6 +388,36 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
       ctaHref: 'https://www.samanportable.com/contact',
     },
   },
+  // CMO-01 (23 Aug 2026) - Section 2 belongs after the WooCommerce hero rail,
+  // matching the porta-cabins hub's buyer-orientation split card pattern. Lead
+  // copy is the approved S2 block from CMO-01-copy-pack-v1, moved out of the
+  // long WooCommerce description so it renders once in the correct slot.
+  'container-marketing-office': {
+    heading: 'Who Should Buy a Container Marketing Office, and Who Should Not',
+    bodyParagraphs: [
+      (
+        <>
+          Buy this module when strangers walk in and judge your project by the room. A developer running a launch, a plotted-land seller on a highway and a retail brand opening an experience yard all need the same thing. They need a door a visitor can find and a counter that faces it. They also need a private room for the numbers talk, and a clean toilet before the visitor leaves. A site cabin rarely offers any of that.
+        </>
+      ),
+      (
+        <>
+          Skip it when your occupants are only your own team. If the module houses engineers, storekeepers and a printer, the visitor route is wasted floor and wasted money. Compare the duty first, then the size, and read the <Link className={linkClass} href="https://www.samanportable.com/product/container-offices">wider container office range</Link> before you fix a plan. Send SAMAN the size you are considering and your expected daily visitor count. Then <Link className={linkClass} href="https://www.samanportable.com/contact">ask for a written quotation against the approved plan</Link>.
+        </>
+      ),
+    ],
+    splitCard: {
+      imageSrc: '/assets/products/container-marketing-office/description/container-marketing-office-40x16-launch-site.webp',
+      imageAlt: 'The 40 by 16 ft container marketing office set up at a property launch site',
+      imageWidth: 1600,
+      imageHeight: 900,
+      subheading: 'Read the Approved GA Before You Fix the Size',
+      body: 'Every size on this page ships with one approved general arrangement board. The board carries a floor plan, all four wall elevations and an opening ledger, so you can judge the visitor route before fabrication.',
+      body2: 'Match the door, counter, private room, wet core and site approach before you agree a size; that is where a marketing office succeeds or fails.',
+      ctaLabel: 'Ask for a written quotation against the approved plan',
+      ctaHref: 'https://www.samanportable.com/contact',
+    },
+  },
   'shipping-container-office': {
     heading: 'Why the shipping-form build stands apart',
     body: (
