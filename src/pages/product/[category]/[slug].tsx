@@ -1469,7 +1469,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   <PortaCabinsYouMayAlsoLike items={PORTA_CABIN_SIBLING_YMAL_NO_EM_DASH(slug)} subline={null} />
                 )
               )}
-              {slug === 'shipping-container-office' && (
+              {(slug === 'shipping-container-office' || slug === 'container-marketing-office') && (
                 <PortaCabinsYouMayAlsoLike
                   items={containerOfficeYmalItems(slug, relatedRailItems)}
                   subline="Other container office configurations in the same range."
