@@ -57,19 +57,25 @@
       "title": "Container Office Cabin",
       "href": "https://www.samanportable.com/product/container-offices/container-office-cabin",
       "category": "Container Offices",
-      "blurb": "Single-storey value line when the plot allows spreading out"
+      "blurb": "Single-storey value line when the plot allows spreading out",
+      "imageSrc": "/images/products/container-office-cabin/20x10/container-office-cabin-20x10-01-exterior-front-left.webp",
+      "imageAlt": "20x10 ft container office cabin exterior"
     },
     {
       "title": "Site Office Container",
       "href": "https://www.samanportable.com/product/container-offices/site-office-container",
       "category": "Container Offices",
-      "blurb": "Single-storey site duty office for one project team"
+      "blurb": "Single-storey site duty office for one project team",
+      "imageSrc": "/images/products/site-office-container/20x10/01-site-office-container-20x10-front-exterior.webp",
+      "imageAlt": "20 x 10 ft site office container exterior"
     },
     {
       "title": "Shipping Container Office",
       "href": "https://www.samanportable.com/product/container-offices/shipping-container-office",
       "category": "Container Offices",
-      "blurb": "Converted ISO shell for buyers who want the freight form"
+      "blurb": "Converted ISO shell for buyers who want the freight form",
+      "imageSrc": "/images/products/shipping-container-office/size-20x8/01-shipping-container-office-front-exterior.png",
+      "imageAlt": "20 x 8 ft shipping container office exterior"
     }
   ],
   "schemaOverride": {

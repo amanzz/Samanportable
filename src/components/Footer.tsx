@@ -87,10 +87,14 @@ interface FooterProps {
       removed rather than edited. Absent/false on every other page, so the
       strip stays byte-identical everywhere else. */
   hideResourceStrip?: boolean;
-  hideCompanyDescription?: boolean;
+  companyDescription?: string;
 }
 
-const Footer = ({ homepageNeutrality = false, hideResourceStrip = false, hideCompanyDescription = false }: FooterProps) => {
+const Footer = ({
+  homepageNeutrality = false,
+  hideResourceStrip = false,
+  companyDescription = 'Saman Portable offers durable, modular, and maintenance-free buildings, designed with high-quality materials for reliability and long-term performance.',
+}: FooterProps) => {
   const resourceLinks = homepageNeutrality ? HOMEPAGE_POPULAR_RESOURCE_LINKS : MONEY_STRIP_LINKS;
 
   return (
@@ -144,9 +148,9 @@ const Footer = ({ homepageNeutrality = false, hideResourceStrip = false, hideCom
             </div>
             
             {/* Company Description */}
-            {!hideCompanyDescription && <p className="text-zinc-200 text-sm font-medium leading-7 mb-5 mt-4">
-              Saman Portable offers durable, modular, and maintenance-free buildings, designed with high-quality materials for reliability and long-term performance.
-            </p>}
+            <p className="text-zinc-200 text-sm font-medium leading-7 mb-5 mt-4">
+              {companyDescription}
+            </p>
             
             {/* Social Media Icons */}
             <div className="flex space-x-3 mt-6 items-center">

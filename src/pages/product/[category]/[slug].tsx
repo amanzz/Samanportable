@@ -1007,7 +1007,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
   return (
     <Layout
       hideFooterResourceStrip={category === 'labor-colony' && slug === 'labor-sheds'}
-      hideFooterCompanyDescription={slug === CO06_SLUG}
+      footerCompanyDescription={slug === CO06_SLUG ? 'Saman Portable offers durable, modular, and low-maintenance buildings, designed with high-quality materials for reliability and long-term performance.' : undefined}
       hideChrome={slug === 'shipping-container-office'}
     >
       {!transformedProduct ? (
@@ -1443,17 +1443,18 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
               />
               )}
 
-              {/* The entry band: after the buy box, before the description tabs. */}
+              {/* PC-01/PC-02/PC-04/PC-05 (14 Aug 2026) — divider 3, Section 3 → Section 4
+                  (calculator), OUTSIDE the calculator's own container. */}
+              {CLUSTER_DESIGN_SLUGS.has(slug) && (calculatorEntryHtml || embeddedCalculatorHtml) && (
+                <hr className="saman-section-divider" aria-hidden="true" />
+              )}
+
+              {/* The entry band uses the locked porta-cabins position: after
+                  divider 3 and before the calculator itself. */}
               {calculatorEntryHtml && (
                 <div
                   dangerouslySetInnerHTML={{ __html: calculatorEntryHtml }}
                 />
-              )}
-
-              {/* PC-01/PC-02/PC-04/PC-05 (14 Aug 2026) — divider 3, Section 3 → Section 4
-                  (calculator), OUTSIDE the calculator's own container. */}
-              {CLUSTER_DESIGN_SLUGS.has(slug) && embeddedCalculatorHtml && (
-                <hr className="saman-section-divider" aria-hidden="true" />
               )}
 
               {/* One entry point per page: the dark band above is it. The white
@@ -1501,6 +1502,12 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                 <PortaCabinsYouMayAlsoLike
                   items={variantData.ymalTiles}
                   subline={null}
+                />
+              )}
+              {slug === CO06_SLUG && relatedRailItems.length > 0 && (
+                <PortaCabinsYouMayAlsoLike
+                  items={relatedRailItems}
+                  subline="Other container office configurations in the same range."
                 />
               )}
 
