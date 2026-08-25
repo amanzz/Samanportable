@@ -144,6 +144,21 @@ const gaImage = (size: string) => {
   };
 };
 
+const relatedTileImages: Record<string, { imageSrc: string; imageAlt: string }> = {
+  'Shipping Container Office': {
+    imageSrc: '/images/products/shipping-container-office/description/03-shipping-container-office-20x12-exterior.webp',
+    imageAlt: 'Indigo Grey 20 x 12 ft shipping container office, front long wall with window, door and window',
+  },
+  'Site Office Container': {
+    imageSrc: '/images/products/site-office-container/description/05-site-office-container-20x10-entrance-and-levelling.webp',
+    imageAlt: 'Site office container entrance with steel step, boot mat and concrete bearing pads',
+  },
+  'Container Office Cabin': {
+    imageSrc: '/images/products/container-office-cabin/section2/container-office-cabin-section2-20x10-moss-olive.webp',
+    imageAlt: 'Moss olive 20x10 ft container office cabin on paved ground, door and window line on the long wall',
+  },
+};
+
 const relatedTiles = copyPack.hero_tabs.map((item) => ({
   title: item.label,
   // The query distinguishes the hero/YMAL navigation link from the editorial
@@ -151,6 +166,7 @@ const relatedTiles = copyPack.hero_tabs.map((item) => ({
   href: `${item.url}?from=flat-pack-container-office`,
   category: 'Container Offices',
   blurb: item.why,
+  ...relatedTileImages[item.label],
 }));
 
 export const flatPackContainerOfficeData: VariantProductData = {
