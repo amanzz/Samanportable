@@ -911,6 +911,13 @@ function buildContainerMarketingOfficeSpecificationsHtml(): string {
 export function getProductTabsHtml(
   pageSlug: string | undefined | null
 ): { specificationsHtml: string; shippingHtml: string } | null {
+  if (pageSlug === 'flat-pack-container-office') {
+    return {
+      // The signed CO-07 copy pack builds this tab in its page-specific adapter.
+      specificationsHtml: '',
+      shippingHtml: buildContainerOfficesShippingHtml(),
+    };
+  }
   if (pageSlug === 'container-marketing-office') {
     return {
       specificationsHtml: buildContainerMarketingOfficeSpecificationsHtml(),

@@ -832,7 +832,8 @@ export function PortaCabinVariantHero({
   const video = resolveVariantVideo(data);
   // Explorer copy: resolved by dataset key. undefined => the Explorer section is
   // not rendered at all (never another product's copy).
-  const applications = APPLICATIONS_DATASETS[data.applicationsDataset || preset.applicationsDataset || data.productSlug];
+  const applications = data.applicationsContent
+    || APPLICATIONS_DATASETS[data.applicationsDataset || preset.applicationsDataset || data.productSlug];
   const applicationsSectionId = data.productSlug === 'site-office-container'
     ? 'site-office-size-applications'
     : APPLICATIONS_SECTION_ID;
@@ -861,6 +862,12 @@ export function PortaCabinVariantHero({
   const activeVariantImages = imagesForVariant(heroActive);
   const heroImages = activeVariantImages.length > 0 ? activeVariantImages : null;
   const hiddenCompletenessImages = (() => {
+    if (data.productSlug === 'flat-pack-container-office') {
+      const activeSources = new Set(activeVariantImages.map((image) => image.src));
+      return data.variants
+        .flatMap((variant) => imagesForVariant(variant))
+        .filter((image) => !activeSources.has(image.src));
+    }
     if (renderInactiveGalleryImages) {
       const alreadyRendered = new Set(activeVariantImages.map((image) => image.src));
       const activePanelImage = applications?.panels.find((panel) => panel.sizeSlug === data.variants[explorerIndex]?.sizeSlug)?.image;
@@ -1070,7 +1077,7 @@ export function PortaCabinVariantHero({
                     viewport on mobile AND desktop (measured 52-62px boxes, all
                     in-viewport). They still remain lazy so only the main viewer
                     competes in the eager/high-priority LCP lane. */}
-                {nonLcpImagesReady && <Image src={img.src} unoptimized={data.optimizeLocalGalleryImages ? false : shouldBypassOptimizer(img.src)} alt={data.productSlug === 'shipping-container-office' || (data.productSlug === 'bess-container' && !showVideo && i === activeImageIndex) ? `Thumbnail ${i + 1}: ${img.alt}` : (isC04Product || isC08Product ? img.alt : (!showVideo && i === activeImageIndex ? '' : img.alt))} width={eagerActiveGalleryImages ? 1254 : 150} height={eagerActiveGalleryImages ? 1254 : 150} className="w-full h-full object-cover" loading={eagerActiveGalleryImages ? 'eager' : 'lazy'} decoding="async" sizes="(max-width: 1023px) 18vw, 80px" />}
+                {nonLcpImagesReady && <Image src={img.src} unoptimized={data.optimizeLocalGalleryImages ? false : shouldBypassOptimizer(img.src)} alt={data.productSlug === 'flat-pack-container-office' && !showVideo && i === activeImageIndex ? `Thumbnail ${i + 1}: ${img.alt}` : data.productSlug === 'shipping-container-office' || (data.productSlug === 'bess-container' && !showVideo && i === activeImageIndex) ? `Thumbnail ${i + 1}: ${img.alt}` : (isC04Product || isC08Product ? img.alt : (!showVideo && i === activeImageIndex ? '' : img.alt))} width={data.productSlug === 'flat-pack-container-office' || eagerActiveGalleryImages ? 1254 : 150} height={data.productSlug === 'flat-pack-container-office' || eagerActiveGalleryImages ? 1254 : 150} className="w-full h-full object-cover" loading={data.productSlug === 'flat-pack-container-office' || eagerActiveGalleryImages ? 'eager' : 'lazy'} decoding="async" sizes="(max-width: 1023px) 18vw, 80px" />}
               </button>
             ))}
 
@@ -1822,7 +1829,7 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
               {!hidePanelImages && <div className="lg:w-[44%]">
                 <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-[var(--ds-color-border)] bg-[var(--ds-color-mist)]">
                   {panelImage ? (
-                    (i === activeIndex || data.productSlug === 'container-marketing-office' || data.productSlug === 'shipping-container-office') ? (
+                    (i === activeIndex || data.productSlug === 'container-marketing-office' || data.productSlug === 'shipping-container-office' || data.productSlug === 'flat-pack-container-office') ? (
                       /* T30 / T24.1-IMG §5.4 — this was the ONLY <img> on the page
                          with no intrinsic dimensions (next/image `fill` cannot emit
                          width/height). It swaps on every tab click, so it carried a

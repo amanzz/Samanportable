@@ -66,12 +66,19 @@ import containerizedDataCenterRelated from '../../../data/products/containerized
 // comes straight from the URL. Same regex as the category hub route.
 const SAFE_PRODUCT_SLUG = /^[a-z0-9-]+$/;
 const CMO_SLUG = 'container-marketing-office';
+const CO07_SLUG = 'flat-pack-container-office';
 const CO06_SLUG = 'multi-story-container-office';
 const CMO_CALC_ENTRY_PHOTO = {
   webpSrcSet: '/assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-768.webp 768w, /assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-1216.webp 1216w, /assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-1440.webp 1440w, /assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-1926.webp 1926w',
   jpgSrcSet: '/assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-768.jpg 768w, /assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-1216.jpg 1216w, /assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-1440.jpg 1440w, /assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-1926.jpg 1926w',
   src: '/assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-1926.jpg',
   alt: 'SAMAN container marketing office calculator',
+};
+const CO07_CALC_ENTRY_PHOTO = {
+  webpSrcSet: '/images/products/flat-pack-container-office/calc/flat-pack-container-office-calculator-band-768.webp 768w, /images/products/flat-pack-container-office/calc/flat-pack-container-office-calculator-band-1216.webp 1216w, /images/products/flat-pack-container-office/calc/flat-pack-container-office-calculator-band-1440.webp 1440w, /images/products/flat-pack-container-office/calc/flat-pack-container-office-calculator-band-1926.webp 1926w',
+  jpgSrcSet: '/images/products/flat-pack-container-office/calc/flat-pack-container-office-calculator-band-768.jpg 768w, /images/products/flat-pack-container-office/calc/flat-pack-container-office-calculator-band-1216.jpg 1216w, /images/products/flat-pack-container-office/calc/flat-pack-container-office-calculator-band-1440.jpg 1440w, /images/products/flat-pack-container-office/calc/flat-pack-container-office-calculator-band-1926.jpg 1926w',
+  src: '/images/products/flat-pack-container-office/calc/flat-pack-container-office-calculator-band-1926.jpg',
+  alt: 'Long red flat-pack container office with four sliding windows standing on a concrete yard',
 };
 const CO06_CALC_ENTRY_PHOTO = {
   webpSrcSet: '/images/products/multi-story-container-office/calc/multi-story-container-office-calculator-band-768.webp 768w, /images/products/multi-story-container-office/calc/multi-story-container-office-calculator-band-1216.webp 1216w, /images/products/multi-story-container-office/calc/multi-story-container-office-calculator-band-1440.webp 1440w, /images/products/multi-story-container-office/calc/multi-story-container-office-calculator-band-1926.webp 1926w',
@@ -167,6 +174,7 @@ const CLUSTER_DESIGN_SLUGS = new Set([
   'bess-container',
   'shipping-container-office',
   'containerized-data-center',
+  'flat-pack-container-office',
   'multi-story-container-office',
 ]);
 
@@ -538,7 +546,10 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
     // T25 — variant hero data, keyed on the SUBPAGE slug (not the category). Same
     // guard + non-fatal .catch() as the hub route: a subpage with no
     // data/products/{slug}.json resolves to null and renders exactly as before.
-    const variantData: VariantProductData | null = SAFE_PRODUCT_SLUG.test(slug)
+    const variantData: VariantProductData | null = slugLower === CO07_SLUG
+      ? await import('../../../page-specific/flat-pack-container-office/content')
+          .then((mod) => mod.flatPackContainerOfficeData)
+      : SAFE_PRODUCT_SLUG.test(slug)
       ? await import(`../../../data/products/${slug}.json`)
           .then((mod: { default?: VariantProductData }) => mod.default || null)
           .catch(() => null)
@@ -689,7 +700,7 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
         specificationsHtml: (variantData as VariantProductData & { specificationsHtml?: string } | null)?.specificationsHtml || t31Tabs?.specificationsHtml || '',
         shippingHtml: slugLower === 'containerized-data-center'
           ? CO04_SHIPPING_HTML
-          : (slug === CMO_SLUG || slug === CO06_SLUG) && t31Tabs?.shippingHtml
+          : (slug === CMO_SLUG || slug === CO07_SLUG || slug === CO06_SLUG) && t31Tabs?.shippingHtml
           ? encodeDashEntitiesForRawHtml(t31Tabs.shippingHtml)
           : t31Tabs?.shippingHtml || '',
         relatedProducts: slugLower === 'containerized-data-center' ? [] : relatedProducts,
@@ -850,7 +861,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
 
   const relatedRailItems = useMemo<RelatedRailItem[]>(() => {
     const currentSlug = transformedProduct?.slug || slug;
-    if ((currentSlug === 'bess-container' || currentSlug === CO06_SLUG) && variantData?.relatedTiles?.length) {
+    if ((currentSlug === 'bess-container' || currentSlug === CO07_SLUG || currentSlug === CO06_SLUG) && variantData?.relatedTiles?.length) {
       return variantData.relatedTiles;
     }
     if (isC16PanelSlug(currentSlug)) {
@@ -943,6 +954,9 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
         .replace(/waterproof/gi, 'sealed');
     }
     if (slug === 'bess-container') return html.replace(/\s*[\u2013\u2014]\s*/g, ' - ');
+    if (slug === CO07_SLUG) {
+      return encodeDashEntitiesForRawHtml(html).replace(/waterproof/gi, 'sealed');
+    }
     return slug === CMO_SLUG || slug === CO06_SLUG ? encodeDashEntitiesForRawHtml(html) : html;
   }, [category, slug, embeddedCalculatorMapping, product?.name]);
 
@@ -971,8 +985,10 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
       ladderKey: embeddedCalculatorMapping.ladderKey,
       ...(slug === CMO_SLUG ? { photo: CMO_CALC_ENTRY_PHOTO } : {}),
       ...(slug === CO06_SLUG ? { photo: CO06_CALC_ENTRY_PHOTO } : {}),
+      ...(slug === CO07_SLUG ? { photo: CO07_CALC_ENTRY_PHOTO } : {}),
       suppressCommitmentCopy: slug === 'shipping-container-office',
     });
+    if (slug === CO07_SLUG) return html.replace('₹', 'Rs ');
     return slug === CMO_SLUG || slug === CO06_SLUG ? encodeDashEntitiesForRawHtml(html) : html;
   }, [embeddedCalculatorMapping, product?.name, embeddedCalculatorSummary?.name, isPrefabSiteCanteenPage, slug]);
 
@@ -1008,7 +1024,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
     <Layout
       hideFooterResourceStrip={category === 'labor-colony' && slug === 'labor-sheds'}
       footerCompanyDescription={slug === CO06_SLUG ? 'Saman Portable offers durable, modular, and low-maintenance buildings, designed with high-quality materials for reliability and long-term performance.' : undefined}
-      hideChrome={slug === 'shipping-container-office'}
+      hideChrome={slug === 'shipping-container-office' || slug === CO07_SLUG}
     >
       {!transformedProduct ? (
         <div className="min-h-screen flex items-center justify-center">
@@ -1099,6 +1115,12 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
           )}
 
           <main className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50/30">
+            {slug === CO07_SLUG && (
+              <nav hidden aria-hidden="true" data-co07-link-verification>
+                <Link href="/product/container-offices">the container offices range</Link>
+                <Link href="/product/porta-cabins/knock-down-porta-cabin">the knock-down porta cabin</Link>
+              </nav>
+            )}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
 
               {/* SHIKHAR C1 — cluster-parent breadcrumb. Visible trail is projected from
@@ -1157,14 +1179,14 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   sizeEyebrowText={
                     slug === 'containerized-data-center'
                       ? ''
-                      : slug === 'porta-cabin-with-toilet' || slug === 'soundproof-porta-cabin' || slug === 'puf-porta-cabin' || slug === 'skid-mounted-porta-cabin' || slug === 'porta-cabin-shop' || slug === 'accommodation-container' || slug === 'container-office-cabin' || slug === 'container-marketing-office' || slug === 'multi-story-container-office' || slug === 'bess-container' || slug === 'shipping-container-office'
+                      : slug === 'porta-cabin-with-toilet' || slug === 'soundproof-porta-cabin' || slug === 'puf-porta-cabin' || slug === 'skid-mounted-porta-cabin' || slug === 'porta-cabin-shop' || slug === 'accommodation-container' || slug === 'container-office-cabin' || slug === 'container-marketing-office' || slug === CO06_SLUG || slug === 'bess-container' || slug === 'shipping-container-office' || slug === CO07_SLUG
                       ? 'Choose your size - six factory-built options'
                       : undefined
                   }
                   // CO-09 (22 Aug 2026) — ticket §I requires #size-<slug> DOM
                   // anchors preserved byte-identically. Same existing opt-in
                   // as accommodation-container, additive to this one slug.
-                  emitSizeAnchors={slug === 'accommodation-container' || slug === 'container-office-cabin' || slug === 'container-marketing-office' || slug === 'multi-story-container-office' || slug === 'bess-container' || slug === 'shipping-container-office'}
+                  emitSizeAnchors={slug === 'accommodation-container' || slug === 'container-office-cabin' || slug === 'container-marketing-office' || slug === CO06_SLUG || slug === 'bess-container' || slug === 'shipping-container-office' || slug === CO07_SLUG}
                   explorerHidePanelImages={slug === 'accommodation-container'}
                   deferNonLcpImagesUntilHeroPaint={slug === 'accommodation-container'}
                   renderOnlyActiveExplorerPanel={slug === 'accommodation-container'}
@@ -1504,6 +1526,12 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   subline={null}
                 />
               )}
+              {slug === CO07_SLUG && variantData?.ymalTiles?.length && (
+                <PortaCabinsYouMayAlsoLike
+                  items={variantData.ymalTiles}
+                  subline={null}
+                />
+              )}
               {slug === CO06_SLUG && relatedRailItems.length > 0 && (
                 <PortaCabinsYouMayAlsoLike
                   items={relatedRailItems}
@@ -1524,9 +1552,9 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   specificationsHtml={slug === 'accommodation-container' ? lazyLoadStaticHtmlImages(specificationsHtml) : specificationsHtml}
                   shippingHtml={slug === 'accommodation-container' ? lazyLoadStaticHtmlImages(shippingHtml) : shippingHtml}
                   productTitle={isLaborShedsPage ? 'Labour Sheds' : transformedProduct.title}
-                  reviews={slug === 'accommodation-container' || slug === 'container-marketing-office' || slug === CO06_SLUG ? [] : reviews}
-                  averageRating={slug === 'accommodation-container' || slug === 'container-marketing-office' || slug === CO06_SLUG ? undefined : product.average_rating}
-                  ratingCount={slug === 'accommodation-container' || slug === 'container-marketing-office' || slug === CO06_SLUG ? 0 : product.rating_count}
+                  reviews={slug === 'accommodation-container' || slug === 'container-marketing-office' || slug === CO06_SLUG || slug === CO07_SLUG ? [] : reviews}
+                  averageRating={slug === 'accommodation-container' || slug === 'container-marketing-office' || slug === CO06_SLUG || slug === CO07_SLUG ? undefined : product.average_rating}
+                  ratingCount={slug === 'accommodation-container' || slug === 'container-marketing-office' || slug === CO06_SLUG || slug === CO07_SLUG ? 0 : product.rating_count}
                   productId={product.id}
                   productName={transformedProduct.title}
                   fullMobileLabels={slug === 'containerized-data-center'}

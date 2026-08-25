@@ -1,0 +1,316 @@
+{
+  "id": 9707,
+  "name": "Flat-Pack Container Office",
+  "slug": "flat-pack-container-office",
+  "permalink": "https://www.samanportable.com/product/container-offices/flat-pack-container-office",
+  "date_created": "2024-10-15T22:25:10",
+  "date_created_gmt": "2024-10-15T16:55:10",
+  "date_modified": "2026-05-07T17:49:22",
+  "date_modified_gmt": "2026-05-07T12:19:22",
+  "type": "simple",
+  "status": "publish",
+  "featured": false,
+  "catalog_visibility": "visible",
+  "description": "",
+  "short_description": "",
+  "sku": "",
+  "price": "",
+  "regular_price": "",
+  "sale_price": "",
+  "date_on_sale_from": null,
+  "date_on_sale_from_gmt": null,
+  "date_on_sale_to": null,
+  "date_on_sale_to_gmt": null,
+  "on_sale": false,
+  "purchasable": false,
+  "total_sales": 0,
+  "virtual": false,
+  "downloadable": false,
+  "downloads": [],
+  "download_limit": -1,
+  "download_expiry": -1,
+  "external_url": "",
+  "button_text": "",
+  "tax_status": "taxable",
+  "tax_class": "",
+  "manage_stock": false,
+  "stock_quantity": null,
+  "backorders": "no",
+  "backorders_allowed": false,
+  "backordered": false,
+  "low_stock_amount": null,
+  "sold_individually": false,
+  "weight": "",
+  "dimensions": {
+    "length": "",
+    "width": "",
+    "height": ""
+  },
+  "shipping_required": true,
+  "shipping_taxable": true,
+  "shipping_class": "",
+  "shipping_class_id": 0,
+  "reviews_allowed": true,
+  "average_rating": "0.00",
+  "rating_count": 0,
+  "upsell_ids": [],
+  "cross_sell_ids": [],
+  "parent_id": 0,
+  "purchase_note": "",
+  "categories": [
+    {
+      "id": 0,
+      "name": "Container Offices",
+      "slug": "container-offices"
+    }
+  ],
+  "brands": [
+    {
+      "id": 3870,
+      "name": "Saman Portable",
+      "slug": "saman-portable"
+    }
+  ],
+  "tags": [],
+  "images": [
+    {
+      "id": 970700,
+      "src": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-10x8-wall-a-exterior.webp",
+      "alt": "Slate blue-grey flat-pack container office with one personnel door on the long wall and one end-wall window",
+      "name": "Slate blue-grey flat-pack container office with one personnel door on the long wall and one end-wall window"
+    },
+    {
+      "id": 970701,
+      "src": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-10x8-wall-b-exterior.webp",
+      "alt": "Rear wall of the slate blue-grey flat-pack office with one sliding window and an end window, gravel yard",
+      "name": "Rear wall of the slate blue-grey flat-pack office with one sliding window and an end window, gravel yard"
+    },
+    {
+      "id": 970702,
+      "src": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-10x8-end-c-exterior.webp",
+      "alt": "End elevation of the slate blue-grey flat-pack office with one centred sliding window and forklift pockets",
+      "name": "End elevation of the slate blue-grey flat-pack office with one centred sliding window and forklift pockets"
+    },
+    {
+      "id": 970703,
+      "src": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-10x8-workstation-interior.webp",
+      "alt": "Champagne cream interior with four workstations, four mesh chairs and overhead cabinets under three windows",
+      "name": "Champagne cream interior with four workstations, four mesh chairs and overhead cabinets under three windows"
+    },
+    {
+      "id": 970704,
+      "src": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-10x8-reverse-office-interior.webp",
+      "alt": "Two desks along the long wall under a sliding window and a third desk at the end window, oak tops",
+      "name": "Two desks along the long wall under a sliding window and a third desk at the end window, oak tops"
+    },
+    {
+      "id": 970705,
+      "src": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-10x8-end-station-interior.webp",
+      "alt": "Single end workstation with desk, task chair and one overhead cabinet below a centred sliding window",
+      "name": "Single end workstation with desk, task chair and one overhead cabinet below a centred sliding window"
+    },
+    {
+      "id": 970710,
+      "src": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-20x8-wall-a-exterior.webp",
+      "alt": "Sandstone beige flat-pack container office with a personnel door between two sliding windows",
+      "name": "Sandstone beige flat-pack container office with a personnel door between two sliding windows"
+    },
+    {
+      "id": 970711,
+      "src": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-20x8-wall-b-exterior.webp",
+      "alt": "Rear long wall of the sandstone beige flat-pack office with two sliding windows and no door",
+      "name": "Rear long wall of the sandstone beige flat-pack office with two sliding windows and no door"
+    },
+    {
+      "id": 970712,
+      "src": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-20x8-end-c-exterior.webp",
+      "alt": "Straight-on end elevation of the sandstone beige flat-pack office with one centred sliding window",
+      "name": "Straight-on end elevation of the sandstone beige flat-pack office with one centred sliding window"
+    },
+    {
+      "id": 970713,
+      "src": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-20x8-workstation-interior.webp",
+      "alt": "Three desks, three mesh chairs and three wall-fixed cabinets along one long wall below two sliding windows",
+      "name": "Three desks, three mesh chairs and three wall-fixed cabinets along one long wall below two sliding windows"
+    },
+    {
+      "id": 970714,
+      "src": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-20x8-wall-a-interior.webp",
+      "alt": "Mist blue-grey interior showing the entrance door between two sliding windows and the end-wall window",
+      "name": "Mist blue-grey interior showing the entrance door between two sliding windows and the end-wall window"
+    },
+    {
+      "id": 970715,
+      "src": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-20x8-end-window-interior.webp",
+      "alt": "Interior end wall of the flat-pack office with one centred sliding window and pale lining panels",
+      "name": "Interior end wall of the flat-pack office with one centred sliding window and pale lining panels"
+    },
+    {
+      "id": 970720,
+      "src": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-20x10-wall-a-exterior.webp",
+      "alt": "Mineral bronze flat-pack container office, long wall with a window, personnel door and second window",
+      "name": "Mineral bronze flat-pack container office, long wall with a window, personnel door and second window"
+    },
+    {
+      "id": 970721,
+      "src": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-20x10-wall-b-exterior.webp",
+      "alt": "Rear long wall of the mineral bronze flat-pack office with two sliding windows and no door",
+      "name": "Rear long wall of the mineral bronze flat-pack office with two sliding windows and no door"
+    },
+    {
+      "id": 970722,
+      "src": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-20x10-end-c-exterior.webp",
+      "alt": "End elevation of the mineral bronze flat-pack office with one centred sliding window and corner castings",
+      "name": "End elevation of the mineral bronze flat-pack office with one centred sliding window and corner castings"
+    },
+    {
+      "id": 970723,
+      "src": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-20x10-workstation-interior.webp",
+      "alt": "Porcelain sage interior with three desks, three chairs and overhead cabinets, clear aisle to the end window",
+      "name": "Porcelain sage interior with three desks, three chairs and overhead cabinets, clear aisle to the end window"
+    },
+    {
+      "id": 970724,
+      "src": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-20x10-wall-a-workstations.webp",
+      "alt": "Two workstations with drawer pedestals and overhead cabinets flanking the entrance door",
+      "name": "Two workstations with drawer pedestals and overhead cabinets flanking the entrance door"
+    },
+    {
+      "id": 970725,
+      "src": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-20x10-end-window-interior.webp",
+      "alt": "Empty container office end wall with one centred sliding window above a grey vinyl floor",
+      "name": "Empty container office end wall with one centred sliding window above a grey vinyl floor"
+    },
+    {
+      "id": 970730,
+      "src": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-30x10-wall-a-exterior.webp",
+      "alt": "Burnt terracotta flat-pack container office with two personnel doors and two sliding windows on one wall",
+      "name": "Burnt terracotta flat-pack container office with two personnel doors and two sliding windows on one wall"
+    },
+    {
+      "id": 970731,
+      "src": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-30x10-wall-b-exterior.webp",
+      "alt": "Four evenly spaced sliding windows along the rear long wall of the burnt terracotta flat-pack office",
+      "name": "Four evenly spaced sliding windows along the rear long wall of the burnt terracotta flat-pack office"
+    },
+    {
+      "id": 970732,
+      "src": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-30x10-end-c-exterior.webp",
+      "alt": "End elevation of the burnt terracotta flat-pack office with one centred sliding window and black base rail",
+      "name": "End elevation of the burnt terracotta flat-pack office with one centred sliding window and black base rail"
+    },
+    {
+      "id": 970733,
+      "src": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-30x10-workstation-interior.webp",
+      "alt": "Seven-desk workstation row with overhead cabinets under four sliding windows and linear LED ceiling lights",
+      "name": "Seven-desk workstation row with overhead cabinets under four sliding windows and linear LED ceiling lights"
+    },
+    {
+      "id": 970734,
+      "src": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-30x10-wall-a-workstations.webp",
+      "alt": "Two workstations with mesh chairs, drawer pedestals and overhead cabinets below sliding windows",
+      "name": "Two workstations with mesh chairs, drawer pedestals and overhead cabinets below sliding windows"
+    },
+    {
+      "id": 970735,
+      "src": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-30x10-end-window-interior.webp",
+      "alt": "Porcelain white interior end wall with one centred sliding window and a grey vinyl floor",
+      "name": "Porcelain white interior end wall with one centred sliding window and a grey vinyl floor"
+    },
+    {
+      "id": 970740,
+      "src": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-40x10-wall-a-exterior.webp",
+      "alt": "Muted teal flat-pack container office with two personnel doors and three sliding windows on one long wall",
+      "name": "Muted teal flat-pack container office with two personnel doors and three sliding windows on one long wall"
+    },
+    {
+      "id": 970741,
+      "src": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-40x10-wall-b-exterior.webp",
+      "alt": "Rear long wall of the muted teal flat-pack office with four evenly spaced sliding windows and no door",
+      "name": "Rear long wall of the muted teal flat-pack office with four evenly spaced sliding windows and no door"
+    },
+    {
+      "id": 970742,
+      "src": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-40x10-end-c-exterior.webp",
+      "alt": "End elevation of the muted teal flat-pack office with one centred sliding window and charcoal corner posts",
+      "name": "End elevation of the muted teal flat-pack office with one centred sliding window and charcoal corner posts"
+    },
+    {
+      "id": 970743,
+      "src": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-40x10-manager-interior.webp",
+      "alt": "Manager cabin in almond beige with a laminate desk, manager chair, two visitor chairs and a flush door",
+      "name": "Manager cabin in almond beige with a laminate desk, manager chair, two visitor chairs and a flush door"
+    },
+    {
+      "id": 970744,
+      "src": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-40x10-common-office-interior.webp",
+      "alt": "Common office wall with two sliding windows, a continuous laminate worktop, mesh chairs and cabinets",
+      "name": "Common office wall with two sliding windows, a continuous laminate worktop, mesh chairs and cabinets"
+    },
+    {
+      "id": 970745,
+      "src": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-40x10-wall-b-workstations.webp",
+      "alt": "Workstation run with two sliding windows, overhead storage cabinets and three-drawer pedestals",
+      "name": "Workstation run with two sliding windows, overhead storage cabinets and three-drawer pedestals"
+    },
+    {
+      "id": 970750,
+      "src": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-40x20-wall-a-exterior.webp",
+      "alt": "Deep oxford blue flat-pack container office with two personnel doors and four sliding windows on the long wall",
+      "name": "Deep oxford blue flat-pack container office with two personnel doors and four sliding windows on the long wall"
+    },
+    {
+      "id": 970751,
+      "src": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-40x20-wall-b-exterior.webp",
+      "alt": "Rear long wall of the deep oxford blue flat-pack office with four sliding windows and no door",
+      "name": "Rear long wall of the deep oxford blue flat-pack office with four sliding windows and no door"
+    },
+    {
+      "id": 970752,
+      "src": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-40x20-service-end-exterior.webp",
+      "alt": "Solid service end elevation with two high-level exhaust louvres, no doors and no windows",
+      "name": "Solid service end elevation with two high-level exhaust louvres, no doors and no windows"
+    },
+    {
+      "id": 970753,
+      "src": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-40x20-island-interior.webp",
+      "alt": "Six-station island desk with three chairs on each side and six wall-fixed cabinets under two windows",
+      "name": "Six-station island desk with three chairs on each side and six wall-fixed cabinets under two windows"
+    },
+    {
+      "id": 970754,
+      "src": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-40x20-conference-room-interior.webp",
+      "alt": "Conference room with a long table, ten mesh chairs, two long-wall sliding windows and one end window",
+      "name": "Conference room with a long table, ten mesh chairs, two long-wall sliding windows and one end window"
+    },
+    {
+      "id": 970755,
+      "src": "/images/products/flat-pack-container-office/gallery/flat-pack-container-office-40x20-shared-wash-interior.webp",
+      "alt": "Shared wash lobby with a wall-hung basin, framed mirror and two internal doors to separate toilets",
+      "name": "Shared wash lobby with a wall-hung basin, framed mirror and two internal doors to separate toilets"
+    }
+  ],
+  "attributes": [],
+  "default_attributes": [],
+  "variations": [],
+  "grouped_products": [],
+  "menu_order": 0,
+  "price_html": "",
+  "related_ids": [],
+  "meta_data": [],
+  "stock_status": "instock",
+  "has_options": false,
+  "post_password": "",
+  "global_unique_id": "",
+  "google_listings_and_ads__channel_visibility": {
+    "is_visible": true,
+    "channel_visibility": "sync-and-show",
+    "sync_status": "synced",
+    "issues": []
+  },
+  "_links": {},
+  "_rank_math_head": {
+    "success": true,
+    "head": "<title>Flat-Pack Container Office Price, Sizes and Specs | SAMAN</title>\n<meta name=\"description\" content=\"Flat-pack container office in six sizes, 80 to 800 sq ft. Ships as panels and cassettes, then bolts together on your own site. From Rs 1,91,520 ex-GST.\"/>\n<meta name=\"robots\" content=\"index, follow\"/>\n<link rel=\"canonical\" href=\"https://www.samanportable.com/product/container-offices/flat-pack-container-office\" />"
+  }
+}
