@@ -1,5 +1,18 @@
 # Production Base Identification
 
+## Superseding integration update, 2026-08-26 IST
+
+- Exact production/release branch: `origin/static-migration`.
+- Exact current production commit integrated: `4fcb0d089404ecc966d343df89bdd74ecd8ddf44`, `Merge pull request #179 from amanzz/feature/co-08-expandable-container-office`.
+- Earlier confirmed base containing all 14 feature-missing records: `82d0730e1dd9af7a9959525176d5f2ab95494fc2`.
+- Controlled branch: `seo/remediation-production-base-integration`.
+- Integration method: fast-forward to the reviewed RB-01C descendant, followed by reviewed three-way merges of current production and the reversible temporary 63-path branch.
+- History compatibility: current production commit and `seo/remediation-temporary-63-gating` are both ancestors of the integrated head. The original `feature/llms-txt` checkout remains divergent and untouched.
+- Preservation result: all 14 `src/data/wp-export/products/*` blobs listed below match production commit `4fcb0d08` exactly. CO-08 production assets/facts were preserved; only the owner-approved RB-01C lifecycle/schema decisions were retained during its two-file conflict resolution.
+- Environment constraint: the managed workspace denied writes to the source repository `.git`. The controlled branch was completed in `tmp/seo-integration-worktree` with Git metadata in `tmp/seo-integration-repo-meta`. No source checkout ref or working file was altered.
+
+The original identification below is retained as historical evidence of the first production-base decision. Where it names `82d0730e` as the release head, this superseding section is authoritative.
+
 Updated: 2026-08-25 (IST)
 
 ## Base decision

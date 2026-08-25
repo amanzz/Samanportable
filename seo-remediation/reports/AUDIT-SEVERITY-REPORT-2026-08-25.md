@@ -1,5 +1,17 @@
 # SAMAN SEO audit severity report
 
+## Superseding integration status, 2026-08-26 IST
+
+- Current integrated production base: `origin/static-migration` at `4fcb0d089404ecc966d343df89bdd74ecd8ddf44`.
+- Validated architecture: 61 approved/live and 43 planned/unpublished; final New Approved plan topology unchanged.
+- SEO-001 remains a planned-release backlog classification, not a 404 production defect.
+- SEO-002 temporary exact-path containment is now present in the controlled integration candidate. It is still reversible and makes no permanent disposition for any of the 63 rows.
+- All 43 planned paths and all 63 temporary paths are absent from page/image sitemaps. The indexed local crawl finds 138 links to 42 temporary 200/noindex targets; these remain a P0 governance/staging blocker pending row decisions.
+- All 61 approved routes return direct 200. The build succeeds. No production deployment was performed.
+- AH-001 through AH-020 are registered in `AHREFS-BASELINE-2026-08-24.md`; none was remediated under this integration task.
+
+This section supersedes older statements below that the 63-path branch is isolated or that Expandable Container Office remains a live/planned contradiction. The historical text is retained as audit chronology.
+
 Updated: 2026-08-25  
 Production base: `origin/static-migration` at `82d0730e`  
 Architecture authority: final New Approved plan, unchanged

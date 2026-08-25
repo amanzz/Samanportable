@@ -1,5 +1,23 @@
 # SAMAN SEO remediation implementation backlog
 
+## Superseding integration status, 2026-08-26 IST
+
+| Order | Commit/lineage | Scope | State |
+|---:|---|---|---|
+| 11 | `db828095` lineage | RB-01C owner-approved lifecycle/publication gate | Integrated and validated |
+| 12 | production merge from `4fcb0d08` | Current CO-08 production base and all production records/assets | Integrated; two CO-08 conflicts resolved with production facts/assets plus approved RB-01C lifecycle/schema decisions |
+| 13 | merge from `2ca0eaa8` | Reversible exact-63 containment | Integrated; no permanent row disposition |
+| 14 | current integration checkpoint | Dedicated/static schema suppression, strict combined validation, generated sitemaps, Ahrefs register, readiness evidence | Complete locally; no deployment |
+
+Current blockers before staging recommendation:
+
+1. Review 138 links to 42 temporary gated targets. Do not rewrite them without the corresponding row disposition.
+2. Keep the 11 Tiny Container Homes source-content occurrences in the owner/Claude content gate; do not collapse its final-plan intent.
+3. Perform staging form-delivery and post-deployment Ahrefs verification.
+4. Treat the four hook warnings, raw-image warning, route-count warning, and 581 to 583 kB commercial templates as open warnings, not suppressed results.
+
+AH-001 through AH-020 are tracking-only entries in `../progress.md` and `AHREFS-BASELINE-2026-08-24.md`. No AH fix is authorized by this backlog update.
+
 Updated: 2026-08-25  
 Architecture lock: do not modify the final New Approved plan
 

@@ -1,6 +1,5 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { spawnSync } from 'node:child_process';
 
 const root = process.cwd();
 const baseUrl = (
@@ -10,6 +9,7 @@ const baseUrl = (
 ).replace(/\/$/, '');
 const siteOrigin = 'https://www.samanportable.com';
 const architecture = JSON.parse(fs.readFileSync(path.join(root, 'src/data/seo/commercialArchitecture.json'), 'utf8'));
+const temporaryGating = JSON.parse(fs.readFileSync(path.join(root, 'src/data/seo/unapprovedCommercialGating.json'), 'utf8'));
 const customCanonicalPaths = JSON.parse(fs.readFileSync(path.join(root, 'src/lib/customProductCanonicalPaths.json'), 'utf8'));
 const customCanonicalBySlug = new Map(customCanonicalPaths.map((entry) => [entry.slug, entry.canonicalPath]));
 const failures = [];
@@ -115,6 +115,7 @@ async function request(pathname) {
     pathname,
     status: response.status,
     location: response.headers.get('location'),
+    xRobots: response.headers.get('x-robots-tag') || '',
     html,
   };
 }
@@ -162,10 +163,18 @@ async function main() {
   if (!planned.has(ACCOMMODATION) || approved.has(ACCOMMODATION)) fail('Accommodation Container release classification is wrong');
   if (!planned.has(EXPANDABLE_HOUSE) || approved.has(EXPANDABLE_HOUSE)) fail('Expandable Container House release classification is wrong');
 
-  for (const file of gatingFiles) if (fs.existsSync(path.join(root, file))) fail(`temporary 63 gating file present: ${file}`);
-  const ancestry = spawnSync('git', ['merge-base', '--is-ancestor', 'seo/remediation-temporary-63-gating', 'HEAD']);
-  if (ancestry.status === 0) fail('temporary 63 gating branch is in HEAD ancestry');
-  if (ancestry.status !== 1) fail(`could not verify temporary 63 gating ancestry (exit ${ancestry.status})`);
+  for (const file of gatingFiles) if (!fs.existsSync(path.join(root, file))) fail(`temporary 63 gating file missing: ${file}`);
+  const gatedPaths = new Set(temporaryGating.paths || []);
+  const preExcludedDraftPaths = new Set([
+    '/product/roofing-sheet/metal-roofing-sheet',
+    '/product/roofing-sheet/pvc-roofing-sheet',
+  ]);
+  if (temporaryGating.status !== 'TEMPORARY_OWNER_DISPOSITION_PENDING' || gatedPaths.size !== 63) {
+    fail(`temporary gating fixture is ${temporaryGating.status || 'missing-status'} with ${gatedPaths.size} paths`);
+  }
+  for (const pathname of gatedPaths) {
+    if (approved.has(pathname) || planned.has(pathname)) fail(`temporarily gated path overlaps approved/planned architecture: ${pathname}`);
+  }
 
   const records = productRecords();
   const draftRecords = records.filter(({ product }) => product.status === 'draft');
@@ -186,6 +195,19 @@ async function main() {
   const plannedResults = await mapConcurrent([...planned], 12, async (pathname) => {
     const response = await request(pathname);
     if (response.status !== 404 || response.location) fail(`planned path ${pathname} returned ${response.status}${response.location ? ` -> ${response.location}` : ''}`);
+    return response;
+  });
+  const gatedResults = await mapConcurrent([...gatedPaths], 12, async (pathname) => {
+    const response = await request(pathname);
+    if (preExcludedDraftPaths.has(pathname)) {
+      if (response.status !== 404 || response.location) fail(`pre-excluded draft path ${pathname} returned ${response.status}${response.location ? ` -> ${response.location}` : ''}`);
+      if (schemaNodes(jsonLdObjects(response.html), 'Product').length) fail(`${pathname} draft 404 emitted Product schema`);
+      return response;
+    }
+    if (response.status !== 200 || response.location) fail(`temporarily gated path ${pathname} returned ${response.status}${response.location ? ` -> ${response.location}` : ''}`);
+    const robots = `${attr(response.html, 'robots')} ${response.xRobots}`.toLowerCase();
+    if (!robots.includes('noindex') || !robots.includes('follow')) fail(`temporarily gated path ${pathname} lacks noindex,follow`);
+    if (schemaNodes(jsonLdObjects(response.html), 'Product').length) fail(`${pathname} temporarily gated page emitted Product schema`);
     return response;
   });
 
@@ -219,6 +241,10 @@ async function main() {
   }
   if (!productLocs.includes(`${siteOrigin}${EXPANDABLE_OFFICE}`)) fail('Expandable Container Office missing from product sitemap');
   if (!imageProductLocs.includes(`${siteOrigin}${EXPANDABLE_OFFICE}`)) fail('Expandable Container Office missing from product-image sitemap');
+  for (const pathname of gatedPaths) {
+    if (productLocs.includes(`${siteOrigin}${pathname}`)) fail(`${pathname} temporarily gated path appears in product sitemap`);
+    if (imageProductLocs.includes(`${siteOrigin}${pathname}`)) fail(`${pathname} temporarily gated path appears in product-image sitemap`);
+  }
 
   const hub = await request('/product/container-offices');
   if (hub.status !== 200) fail(`Container Offices hub returned ${hub.status}`);
@@ -249,6 +275,8 @@ async function main() {
     const incoming = linkOccurrences.filter((edge) => edge.target === target);
     if (incoming.length) fail(`${target} has ${incoming.length} public internal link occurrence(s)`);
   }
+  const gatedIncomingLinks = linkOccurrences.filter((edge) => gatedPaths.has(edge.target));
+  const gatedIncomingTargets = new Set(gatedIncomingLinks.map((edge) => edge.target));
   const uniqueTargets = [...new Set(linkOccurrences.map((edge) => edge.target))];
   const targetResults = await mapConcurrent(uniqueTargets, 16, request);
   const statusByPath = new Map(targetResults.map((result) => [result.pathname, result]));
@@ -260,6 +288,9 @@ async function main() {
     drafts: draftResults,
     approvedRoutesChecked: approvedResults.length,
     plannedRoutesChecked: plannedResults.length,
+    temporarilyGatedRoutesChecked: gatedResults.length,
+    temporarilyGatedIncomingLinkOccurrences: gatedIncomingLinks.length,
+    temporarilyGatedIncomingLinkTargets: gatedIncomingTargets.size,
     sitemapPagesCrawled: crawledPages.length,
     internalLinkOccurrences: linkOccurrences.length,
     uniqueInternalTargets: uniqueTargets.length,
