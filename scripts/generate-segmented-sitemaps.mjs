@@ -109,7 +109,12 @@ const unfilteredSegments = { products, locations, projects, editorial };
 // four re-verified 200/self-canonical/index,follow immediately before this
 // change. No content, title, H1, redirect, calculator, rental or size change
 // rides with this commit - sitemap inclusion only.
-const expectedSegments = { products: 85, locations: 196, projects: 1, editorial: 65 };
+// SEO-006 remediation: six verified live approved pages join the product and
+// image sitemap crawl set. Accommodation Container remains held because its
+// source record is still draft even though the current route returns 200.
+// Temporary containment removes the exact 63 unapproved commercial paths from
+// the product segment, leaving 91 candidates before redirect exclusion.
+const expectedSegments = { products: 91, locations: 196, projects: 1, editorial: 65 };
 
 const redirectEntries = await nextConfig.redirects();
 const redirectMatchers = redirectEntries
@@ -178,8 +183,8 @@ for (const [name, expected] of Object.entries(expectedSegments)) {
 // 406 = 436 minus the 30 local paths removed by the Phase 2 cleanup (11 redirected,
 // 19 noindex). See the expectedSegments note above for the segment breakdown.
 // 410 = 406 plus the four porta-cabin pages this commit adds to the sitemap.
-if (all.length !== 347) {
-  throw new Error(`Page sitemap total changed from 347 to ${all.length}`);
+if (all.length !== 353) {
+  throw new Error(`Page sitemap total changed from 353 to ${all.length}`);
 }
 
 const pageMap = new Map();
