@@ -34,6 +34,7 @@ import {
 } from '@/lib/verifiedCommercialFacts';
 import commercialArchitecture from '@/data/seo/commercialArchitecture.json';
 import { getCanonicalProductPath } from '@/lib/productCanonicalPaths';
+import { isTemporarilyGatedCommercialProduct } from '@/lib/unapprovedCommercialGating';
 
 const EXPORT_DIR = path.join(process.cwd(), 'src', 'data', 'wp-export');
 
@@ -908,7 +909,9 @@ function getListingProducts(options: ListingOptions = {}): any[] {
     ? getPublishedProducts()
     : getAllListingProductsRaw().filter((p) => !p.status || p.status === 'publish' || p.status === 'draft');
   // C01: drop retired/301'd products so no listing card or rail links to a redirecting URL.
-  return base.filter((p) => !RETIRED_LISTING_SLUGS.has(p.slug));
+  return base.filter(
+    (p) => !RETIRED_LISTING_SLUGS.has(p.slug) && !isTemporarilyGatedCommercialProduct(p)
+  );
 }
 
 function findProductBySlug(slug: string, options: ProductLookupOptions = {}): any | null {

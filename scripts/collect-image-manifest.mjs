@@ -16,6 +16,11 @@ const sourceRoots = [
 const canonicalPaths = JSON.parse(
   fs.readFileSync(path.join(root, 'src/lib/sitemapCanonicalPaths.json'), 'utf8'),
 );
+const temporarilyGatedCommercialPaths = new Set(
+  JSON.parse(
+    fs.readFileSync(path.join(root, 'src/data/seo/unapprovedCommercialGating.json'), 'utf8'),
+  ).paths,
+);
 const outputArgument = process.argv.find(argument => argument.startsWith('--output='));
 const baseArgument = process.argv.find(argument => argument.startsWith('--base-url='));
 const outputPath = path.resolve(
@@ -472,6 +477,7 @@ const extractRenderedImages = html => {
 
 const pagePaths = [...new Set(canonicalPaths)]
   .filter(pathname => !pathname.startsWith('/product-category/'))
+  .filter(pathname => !temporarilyGatedCommercialPaths.has(pathname))
   .sort();
 const pages = [];
 let pageCursor = 0;
