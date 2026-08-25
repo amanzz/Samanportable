@@ -28,6 +28,10 @@ import { decodeHtmlEntities } from '@/lib/utils';
 import { PORTA_CABIN_REDIRECTED_SLUGS } from '@/lib/portaCabinClusterRail';
 import { PORTABLE_OFFICE_REDIRECTED_SLUGS } from '@/lib/portableOfficeCluster';
 import { removeMonetaryHtml, removeMonetarySentencesDeep } from '@/lib/monetaryText';
+import {
+  normalizeVerifiedCommercialFacts,
+  normalizeVerifiedCommercialFactsDeep,
+} from '@/lib/verifiedCommercialFacts';
 
 const EXPORT_DIR = path.join(process.cwd(), 'src', 'data', 'wp-export');
 
@@ -626,13 +630,13 @@ export async function fetchBlogPost(slug: string): Promise<any | null> {
   if (typeof rest?.content?.rendered === 'string') {
     rest.content = {
       ...rest.content,
-      rendered: rewriteRetiredInternalLinks(rest.content.rendered),
+      rendered: normalizeVerifiedCommercialFacts(rewriteRetiredInternalLinks(rest.content.rendered)),
     };
   }
   if (typeof rest?.excerpt?.rendered === 'string') {
     rest.excerpt = {
       ...rest.excerpt,
-      rendered: rewriteRetiredInternalLinks(rest.excerpt.rendered),
+      rendered: normalizeVerifiedCommercialFacts(rewriteRetiredInternalLinks(rest.excerpt.rendered)),
     };
   }
   return rest;
@@ -895,7 +899,9 @@ function toFeedProduct(p: any): WooCommerceProduct {
     sale_price: p.sale_price,
     on_sale: p.on_sale,
     images: p.images || [],
-    short_description: rewriteRetiredInternalLinks(p.short_description || ''),
+    short_description: normalizeVerifiedCommercialFacts(
+      rewriteRetiredInternalLinks(p.short_description || '')
+    ),
     stock_status: p.stock_status,
     stock_quantity: p.stock_quantity ?? null,
     average_rating: p.average_rating,
@@ -923,7 +929,9 @@ function toLightweight(p: any, categoryName?: string, categorySlug?: string): Li
     featured_image: p.images?.[0]?.src || '/placeholder.svg',
     category: categoryName || p.categories?.[0]?.name || 'Uncategorized',
     category_slug: categorySlug || p.categories?.[0]?.slug || 'uncategorized',
-    short_description: rewriteRetiredInternalLinks(p.short_description || ''),
+    short_description: normalizeVerifiedCommercialFacts(
+      rewriteRetiredInternalLinks(p.short_description || '')
+    ),
     stock_status: p.stock_status,
     average_rating: p.average_rating,
     rating_count: p.rating_count,
@@ -1032,13 +1040,15 @@ export async function fetchProductDescription(
   const p = findProductBySlug(slug);
   if (!p) return null;
   return {
-    description: trimImageAltWhitespace(
-      rewriteC04NonL3Punctuation(
-        applyC04GapCloseCopy(
-          rewriteC03RenderPunctuation(rewriteRetiredInternalLinks(p.description || ''), slug),
+    description: normalizeVerifiedCommercialFacts(
+      trimImageAltWhitespace(
+        rewriteC04NonL3Punctuation(
+          applyC04GapCloseCopy(
+            rewriteC03RenderPunctuation(rewriteRetiredInternalLinks(p.description || ''), slug),
+            slug
+          ),
           slug
-        ),
-        slug
+        )
       )
     ),
     images: (p.images || []).map((image: any) =>
@@ -1048,8 +1058,12 @@ export async function fetchProductDescription(
     ),
     // Optional per-product tab overrides — passed through only when present in the
     // product JSON. Absent on all other products, so their tabs render unchanged.
-    ...(p.specificationsHtml ? { specificationsHtml: p.specificationsHtml } : {}),
-    ...(p.shippingHtml ? { shippingHtml: p.shippingHtml } : {}),
+    ...(p.specificationsHtml
+      ? { specificationsHtml: normalizeVerifiedCommercialFacts(p.specificationsHtml) }
+      : {}),
+    ...(p.shippingHtml
+      ? { shippingHtml: normalizeVerifiedCommercialFacts(p.shippingHtml) }
+      : {}),
   };
 }
 
@@ -1064,7 +1078,7 @@ export async function fetchProductRankMathSEO(categorySlug: string): Promise<Ran
   // preferCuratedFaq: PRODUCT path (T25 ruling b — products only in this PR).
   const seoData = headToSeo(product, true) || (product?.faqSchema ? {} : null);
   if (seoData && product?.faqSchema) seoData.faqSchema = product.faqSchema;
-  return applyPublicFaqSchemaUrl(seoData, productUrl);
+  return normalizeVerifiedCommercialFactsDeep(applyPublicFaqSchemaUrl(seoData, productUrl));
 }
 
 // Mirrors api.fetchProductReviews: approved-only, latest first, capped, non-fatal.
