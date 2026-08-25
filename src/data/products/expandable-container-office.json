@@ -1,0 +1,90 @@
+{
+  "productSlug": "expandable-container-office",
+  "productName": "Expandable Container Office",
+  "variantAxis": "Deployed size",
+  "defaultVariant": "10x20",
+  "gstPercent": 18,
+  "categoryLabel": "Container Offices",
+  "categoryHref": "https://www.samanportable.com/product/container-offices",
+  "canonical": "https://www.samanportable.com/product/container-offices/expandable-container-office",
+  "openGraphImage": "/images/products/expandable-container-office/gallery/expandable-container-office-10x20-a-1.webp",
+  "emitSizeAnchors": true,
+  "emitAggregateOffer": true,
+  "schemaOfferType": "aggregateOffer",
+  "schemaIncludeVariantOffers": true,
+  "schemaBrandName": "SAMAN",
+  "schemaOutputMode": "productOnly",
+  "suppressLegacyDescription": true,
+  "suppressLegacyFaqSchema": true,
+  "suppressAggregateRatingSchema": true,
+  "pricePerSqft": {
+    "10x20": "1,875.00",
+    "20x20": "1,781.25",
+    "30x20": "1,743.75",
+    "40x20": "1,706.25",
+    "40x40": "1,687.50",
+    "60x20": "1,687.50"
+  },
+  "variants": [
+    {
+      "sizeSlug": "10x20",
+      "label": "10 x 20 ft",
+      "chipLabel": "10 x 20",
+      "dims": "10 x 20 ft",
+      "areaSqft": 200,
+      "priceExGst": 375000,
+      "priceInclGst": 442500,
+      "sku": "EX-10X20-COMPACT-DRY-OFFICE-V1"
+    },
+    {
+      "sizeSlug": "20x20",
+      "label": "20 x 20 ft",
+      "chipLabel": "20 x 20",
+      "dims": "20 x 20 ft",
+      "areaSqft": 400,
+      "priceExGst": 712500,
+      "priceInclGst": 840750,
+      "sku": "EX-20X20-MANAGER-MEETING-SIX-V1"
+    },
+    {
+      "sizeSlug": "30x20",
+      "label": "30 x 20 ft",
+      "chipLabel": "30 x 20",
+      "dims": "30 x 20 ft",
+      "areaSqft": 600,
+      "priceExGst": 1046250,
+      "priceInclGst": 1234575,
+      "sku": "EX-30X20-MANAGER-CONFERENCE-EIGHT-SERVICE-V1"
+    },
+    {
+      "sizeSlug": "40x20",
+      "label": "40 x 20 ft",
+      "chipLabel": "40 x 20",
+      "dims": "40 x 20 ft",
+      "areaSqft": 800,
+      "priceExGst": 1365000,
+      "priceInclGst": 1610700,
+      "sku": "EX-40X20-CORPORATE-EIGHT-DUAL-SERVICE-V1"
+    },
+    {
+      "sizeSlug": "40x40",
+      "label": "40 x 40 ft",
+      "chipLabel": "40 x 40",
+      "dims": "40 x 40 ft",
+      "areaSqft": 1600,
+      "priceExGst": 2700000,
+      "priceInclGst": 3186000,
+      "sku": "EX-40X40-CORPORATE-TWENTYFOUR-SERVICE-V1"
+    },
+    {
+      "sizeSlug": "60x20",
+      "label": "60 x 20 ft",
+      "chipLabel": "60 x 20",
+      "dims": "60 x 20 ft",
+      "areaSqft": 1200,
+      "priceExGst": 2025000,
+      "priceInclGst": 2389500,
+      "sku": "EX-60X20-CORPORATE-EIGHTEEN-SERVICE-V1"
+    }
+  ]
+}

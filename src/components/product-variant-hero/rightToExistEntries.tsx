@@ -2,6 +2,7 @@ import Link from 'next/link';
 import type { ReactNode } from 'react';
 import bessContainerPage from '@/data/products/bess-container-page.json';
 import flatPackContainerOfficeCopy from '../../../content/co-07/CO-07-copy-pack-v1.json';
+import expandableContainerOfficeCopy from '../../../content/co-08/CO-08-copy-pack-v2.json';
 
 const CABIN_HREF = '/product/porta-cabins';
 const href = (slug: string) => `${CABIN_HREF}/${slug}`;
@@ -92,6 +93,27 @@ export interface RightToExistEntry {
 }
 
 const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
+  'expandable-container-office': {
+    heading: expandableContainerOfficeCopy.section2.h2,
+    bodyParagraphs: [
+      (() => {
+        const paragraph = expandableContainerOfficeCopy.section2.paragraph_1;
+        const anchor = expandableContainerOfficeCopy.section2.internal_link.anchor;
+        const [before, after] = paragraph.split(anchor);
+        return (
+          <>
+            {before}
+            <Link className={linkClass} href={expandableContainerOfficeCopy.section2.internal_link.destination}>{anchor}</Link>
+            {after}
+          </>
+        );
+      })(),
+      expandableContainerOfficeCopy.section2.paragraph_2,
+    ],
+    topCtaLabel: expandableContainerOfficeCopy.section2.cta.text,
+    topCtaHref: expandableContainerOfficeCopy.section2.cta.destination,
+    verificationText: [expandableContainerOfficeCopy.section2.paragraph_1],
+  },
   'flat-pack-container-office': {
     heading: flatPackContainerOfficeCopy.s2_h2,
     bodyParagraphs: flatPackContainerOfficeCopy.s2_paragraphs.map((paragraph) => {
