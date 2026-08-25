@@ -1,7 +1,7 @@
 import type { VariantImage, VariantProductData } from '@/components/product-variant-hero/types';
 import productData from '@/data/products/expandable-container-office.json';
 import { buildShippingHtml } from '@/lib/specsShippingTabs';
-import copyPack from '../../../content/co-08/CO-08-copy-pack-v2.json';
+import copyPack from '../../../content/co-08/CO-08-copy-pack-v3.json';
 import assetMap from '../../../content/co-08/CO-08-asset-map-v1.json';
 
 type DescriptionBlock = (typeof copyPack.description_tab.blocks)[number];
@@ -32,19 +32,14 @@ const table = (
   headers: readonly string[],
   rows: readonly (readonly string[])[],
 ): string => (
-  `<section class="my-5 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">`
-  + `<h3 class="m-0 bg-slate-50 px-4 py-3 text-base font-bold text-emerald-900">${esc(caption)}</h3>`
-  + `<div class="overflow-x-auto"><table class="w-full border-collapse"><thead class="bg-slate-50"><tr>`
-  + headers.map((cell) => `<th class="px-3 py-2 text-left text-xs font-semibold uppercase tracking-wide text-slate-600">${esc(cell)}</th>`).join('')
+  `<section class="mb-4 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">`
+  + `<h4 class="m-0 bg-slate-50 px-4 py-3 text-base font-bold text-emerald-900">${esc(caption)}</h4>`
+  + `<div class="saman-table-wrap"><table class="saman-table"><thead><tr>`
+  + headers.map((cell) => `<th>${esc(cell)}</th>`).join('')
   + `</tr></thead><tbody>`
-  + rows.map((row) => `<tr>${row.map((cell) => `<td class="border-t border-slate-200 px-3 py-2 align-top text-sm text-slate-700">${esc(cell)}</td>`).join('')}</tr>`).join('')
+  + rows.map((row) => `<tr>${row.map((cell) => `<td>${esc(cell)}</td>`).join('')}</tr>`).join('')
   + `</tbody></table></div></section>`
 );
-
-const descriptionImagesHtml = copyPack.description_tab.images.map((item) => {
-  const output = item.source.replace(/^02 Long Description Images\//, '').replace(/\.png$/i, '.webp');
-  return `<figure class="my-5 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm"><img src="${PRODUCT_ASSET_ROOT}/description/${esc(output)}" alt="${esc(item.alt)}" width="1664" height="936" loading="lazy" decoding="async" class="h-auto w-full" /></figure>`;
-}).join('');
 
 const descriptionTable = copyPack.description_tab.tables[0];
 const linkedBlockVerificationText = copyPack.description_tab.blocks
@@ -88,7 +83,7 @@ function renderDescriptionBlocks(blocks: readonly DescriptionBlock[]): string {
 }
 
 function buildDescriptionHtml(): string {
-  return `<div class="co08-description space-y-4">${linkedBlockVerificationText}${descriptionTableVerificationText}${descriptionImagesHtml}${renderDescriptionBlocks(copyPack.description_tab.blocks)}${standaloneApprovedLink}</div>`;
+  return `${linkedBlockVerificationText}${descriptionTableVerificationText}${renderDescriptionBlocks(copyPack.description_tab.blocks)}${standaloneApprovedLink}`;
 }
 
 function buildSpecificationsHtml(): string {
@@ -127,6 +122,15 @@ const gaImage = (sizeSlug: string, position: number): VariantImage => ({
 const variants = (productData.variants as VariantProductData['variants']).map((variant) => ({
   ...variant,
   images: galleryImages(variant.sizeSlug),
+  featureCells: copyPack.hero.table_rows.map(([label, value]) => ({ label, value })),
+}));
+
+const descriptionImages: VariantImage[] = copyPack.description_tab.images.map((item) => ({
+  src: `${PRODUCT_ASSET_ROOT}/description/${item.source.replace(/^02 Long Description Images\//, '').replace(/\.png$/i, '.webp')}`,
+  alt: item.alt,
+  provenance: 'render',
+  width: 1664,
+  height: 936,
 }));
 
 const defaultGallery = galleryImages('10x20');
@@ -163,10 +167,10 @@ export const expandableContainerOfficeData: VariantProductData = {
   metaDescription: copyPack.metadata.meta_description,
   canonical: copyPack.canonical,
   opener: copyPack.hero.short_description,
-  heroTable: copyPack.hero.table_rows,
   specPdfButtonLabel: copyPack.hero.pdf_label,
   specPdfHref: '/specs/saman-expandable-container-office-technical-specification-and-ga-v1.pdf',
   descriptionHtml: buildDescriptionHtml(),
+  infoImages: descriptionImages,
   specificationsHtml: buildSpecificationsHtml(),
   shippingHtml: buildShippingHtml({ intro: copyPack.shipping_opening_paragraph }),
   schemaOverride,

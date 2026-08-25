@@ -1,20 +1,23 @@
 #!/usr/bin/env python3
 """CO-08 build verification. Fetches the rendered preview and fails on any gap."""
-import hashlib, json, re, sys, urllib.request
+import hashlib, html as html_module, json, re, sys, urllib.request
 
 URL   = sys.argv[1]
-PACK  = json.load(open("CO-08-copy-pack-v2.json"))
-HASH  = json.load(open("CO-08-copy-hashes.json"))
+PACK_FILE = "CO-08-copy-pack-v3.json"
+HASH_FILE = "CO-08-copy-hashes-v3.json"
+PACK  = json.load(open(PACK_FILE))
+HASH  = json.load(open(HASH_FILE))
 AMAP  = json.load(open("CO-08-asset-map-v1.json"))
 fails = []
 
 def norm(s):
-    return re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", s)).strip()
+    return re.sub(r"\s+", " ", html_module.unescape(re.sub(r"<[^>]+>", " ", s))).strip()
 
-html = urllib.request.urlopen(URL, timeout=60).read().decode("utf-8", "replace")
+request = urllib.request.Request(URL, headers={"User-Agent": "SAMAN-CO08-build-verifier/1.0"})
+html = urllib.request.urlopen(request, timeout=60).read().decode("utf-8", "replace")
 text = norm(html)
 
-if hashlib.sha256(open("CO-08-copy-pack-v2.json","rb").read()).hexdigest() != HASH["copy_pack_sha256"]:
+if hashlib.sha256(open(PACK_FILE,"rb").read()).hexdigest() != HASH["copy_pack_sha256"]:
     fails.append("copy pack file hash mismatch: the pack was edited after the ticket was issued")
 
 def field(path):
@@ -27,6 +30,16 @@ for path, want in HASH["fields"].items():
     val = field(path)
     if hashlib.sha256(val.encode()).hexdigest() != want:
         fails.append(f"field hash mismatch in pack: {path}")
+        continue
+    if path == "description_tab.images":
+        for item in json.loads(val):
+            output = item["source"].split("/")[-1].rsplit(".", 1)[0] + ".webp"
+            if output not in html:
+                fails.append(f"description image missing: {output}")
+            if item["alt"] not in html:
+                fails.append(f"description image alt missing: {item['alt'][:70]}")
+        continue
+    if path == "section2.media_block.image_alt":
         continue
     if path.endswith((".bullets", ".table_rows", ".blocks", ".tables")):
         items = json.loads(val)
@@ -68,6 +81,26 @@ for n, s in enumerate(["10x20","20x20","30x20","40x20","40x40","60x20"], 1):
 for d in ("20x20-envelope-diagram", "20x20-layout-diagram"):
     if d not in html:
         fails.append(f"diagram missing: {d}")
+
+media = PACK["section2"]["media_block"]
+media_output = media["image_source"].split("/")[-1].rsplit(".", 1)[0] + ".webp"
+media_tags = [tag for tag in imgs if media["image_alt"] in tag]
+if len(media_tags) != 1:
+    fails.append(f"Section 2 media image must render exactly once: found {len(media_tags)}")
+elif not re.search(r'width=["\']1664["\']', media_tags[0]) or not re.search(r'height=["\']936["\']', media_tags[0]):
+    fails.append("Section 2 media image does not render at 1664 x 936")
+if media_output not in html:
+    fails.append(f"Section 2 media asset missing: {media_output}")
+if 'href="/gallery"' not in html:
+    fails.append("Section 2 gallery destination is not /gallery")
+if "/precalculator/" in html:
+    fails.append("withdrawn pre-calculator image still renders")
+
+wide_view_alts = [media["image_alt"]] + [item["alt"] for item in PACK["description_tab"]["images"]]
+for alt in wide_view_alts:
+    count = sum(1 for tag in imgs if alt in tag)
+    if count != 1:
+        fails.append(f"wide-view image must render exactly once: {alt[:65]} -> {count}")
 
 LINKS = ["https://www.samanportable.com/product/container-offices",
          "https://www.samanportable.com/contact",

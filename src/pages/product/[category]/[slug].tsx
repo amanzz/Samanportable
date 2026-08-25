@@ -1478,22 +1478,6 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                 <hr className="saman-section-divider" aria-hidden="true" />
               )}
 
-              {slug === CO08_SLUG && (calculatorEntryHtml || embeddedCalculatorHtml) && (
-                <figure className="my-4 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
-                  <Image
-                    src="/images/products/expandable-container-office/precalculator/01-expandable-office-20x20-precalculator.webp"
-                    unoptimized
-                    alt="Graphite charcoal 20 by 20 ft expandable container office deployed on a paved yard"
-                    width={1254}
-                    height={1254}
-                    loading="lazy"
-                    decoding="async"
-                    className="h-auto w-full"
-                    sizes="(max-width: 1279px) calc(100vw - 32px), 1216px"
-                  />
-                </figure>
-              )}
-
               {/* The entry band uses the locked porta-cabins position: after
                   divider 3 and before the calculator itself. */}
               {calculatorEntryHtml && (
@@ -1605,9 +1589,11 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
               )}
 
               {/* Manufacturer Trust Strip ★ NEW (links to /about-us#certifications) */}
-              <div className="mt-4">
-                <ManufacturerTrustStrip />
-              </div>
+              {slug !== CO08_SLUG && (
+                <div className="mt-4">
+                  <ManufacturerTrustStrip />
+                </div>
+              )}
 
               {/* Related Products Section — SKIPPED for the variant-hero pages
                   (T25, mirroring the hub route): the related rail lives inside the
