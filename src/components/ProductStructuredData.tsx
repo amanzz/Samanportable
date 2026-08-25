@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { WooCommerceProduct, ProductReview } from '@/config/api';
 import type { VariantProductData } from '@/components/product-variant-hero/types';
 import { resolveVariantVideo } from '@/components/product-variant-hero/presets';
+import { isTemporarilyGatedCommercialProduct } from '@/lib/unapprovedCommercialGating';
 
 interface ProductStructuredDataProps {
   product: WooCommerceProduct;
@@ -28,6 +29,7 @@ interface ProductStructuredDataProps {
 
 export default function ProductStructuredData({ product, category, reviews, breadcrumbItems, variantData, suppressProductEntity = false, metaDescription }: ProductStructuredDataProps) {
   if (!product) return null;
+  if (isTemporarilyGatedCommercialProduct(product)) return null;
 
   const baseUrl = 'https://www.samanportable.com';
   const categorySlug = category || product.categories?.[0]?.slug || 'uncategorized';

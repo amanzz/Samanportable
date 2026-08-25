@@ -16,6 +16,11 @@ const sourceRoots = [
 const canonicalPaths = JSON.parse(
   fs.readFileSync(path.join(root, 'src/lib/sitemapCanonicalPaths.json'), 'utf8'),
 );
+const temporarilyGatedCommercialPaths = new Set(
+  JSON.parse(
+    fs.readFileSync(path.join(root, 'src/data/seo/unapprovedCommercialGating.json'), 'utf8'),
+  ).paths,
+);
 const extraIndexablePaths = ['/product-category/container-offices'];
 const outputArgument = process.argv.find(argument => argument.startsWith('--output='));
 const baseArgument = process.argv.find(argument => argument.startsWith('--base-url='));
@@ -471,7 +476,9 @@ const extractRenderedImages = html => {
   return images;
 };
 
-const pagePaths = [...new Set([...canonicalPaths, ...extraIndexablePaths])].sort();
+const pagePaths = [...new Set([...canonicalPaths, ...extraIndexablePaths])]
+  .filter(pathname => !temporarilyGatedCommercialPaths.has(pathname))
+  .sort();
 const pages = [];
 let pageCursor = 0;
 const pageWorkers = Array.from({ length: 12 }, async () => {

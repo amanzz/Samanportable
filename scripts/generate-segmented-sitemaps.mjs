@@ -13,6 +13,11 @@ const manifestPath = path.join(publicDir, 'image-manifest.json');
 const canonicalPaths = JSON.parse(
   fs.readFileSync(path.join(root, 'src/lib/sitemapCanonicalPaths.json'), 'utf8'),
 );
+const temporarilyGatedCommercialPaths = new Set(
+  JSON.parse(
+    fs.readFileSync(path.join(root, 'src/data/seo/unapprovedCommercialGating.json'), 'utf8'),
+  ).paths,
+);
 
 if (!fs.existsSync(manifestPath)) {
   throw new Error(
@@ -46,7 +51,9 @@ const imageUrlset = entries => `<?xml version="1.0" encoding="UTF-8"?>\n`
   ).join('\n')
   + `\n</urlset>\n`;
 
-const all = [...new Set([...canonicalPaths, '/product-category/container-offices'])].sort();
+const all = [...new Set([...canonicalPaths, '/product-category/container-offices'])]
+  .filter(pathname => !temporarilyGatedCommercialPaths.has(pathname))
+  .sort();
 const productSupplement = new Set([
   '/rental-services',
   '/portable-cabin-price-calculator',
@@ -102,7 +109,7 @@ const unfilteredSegments = { products, locations, projects, editorial };
 // four re-verified 200/self-canonical/index,follow immediately before this
 // change. No content, title, H1, redirect, calculator, rental or size change
 // rides with this commit - sitemap inclusion only.
-const expectedSegments = { products: 148, locations: 196, projects: 1, editorial: 65 };
+const expectedSegments = { products: 85, locations: 196, projects: 1, editorial: 65 };
 
 const redirectEntries = await nextConfig.redirects();
 const redirectMatchers = redirectEntries
@@ -171,8 +178,8 @@ for (const [name, expected] of Object.entries(expectedSegments)) {
 // 406 = 436 minus the 30 local paths removed by the Phase 2 cleanup (11 redirected,
 // 19 noindex). See the expectedSegments note above for the segment breakdown.
 // 410 = 406 plus the four porta-cabin pages this commit adds to the sitemap.
-if (all.length !== 410) {
-  throw new Error(`Page sitemap total changed from 410 to ${all.length}`);
+if (all.length !== 347) {
+  throw new Error(`Page sitemap total changed from 347 to ${all.length}`);
 }
 
 const pageMap = new Map();

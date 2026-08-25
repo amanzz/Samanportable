@@ -29,6 +29,7 @@ import ProductStructuredData from '../../../components/ProductStructuredData';
 import RelatedProductRail from '../../../components/product/RelatedProductRail';
 import ProductZoneCtas from '../../../components/product/ProductZoneCtas';
 import ProductSummaryLayout from '../../../components/product/ProductSummaryLayout';
+import { isTemporarilyGatedCommercialPath } from '../../../lib/unapprovedCommercialGating';
 import SandwichInfoBox from '../../../components/product-sandwich/SandwichInfoBox';
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
@@ -69,6 +70,7 @@ interface ProductDetailsProps {
   // just porta-cabins). Renders the variant hero instead of ProductSummaryLayout.
   // Every other category page gets `null` here and is completely unaffected.
   variantData?: VariantProductData | null;
+  isTemporarilyGated: boolean;
 }
 
 type PrefabricatedWarehouseLink = {
@@ -114,7 +116,7 @@ const RelatedPrefabricatedWarehouseResource = ({ category }: { category: string 
   );
 };
 
-export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async ({ params }) => {
+export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async ({ params, res }) => {
   try {
     const { category } = params as { category: string };
     
@@ -123,6 +125,9 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
         notFound: true,
       };
     }
+    const normalizedCategory = decodeURIComponent(category).toLowerCase();
+    const isTemporarilyGated = isTemporarilyGatedCommercialPath(`/product/${normalizedCategory}`);
+    if (isTemporarilyGated) res.setHeader('X-Robots-Tag', 'noindex, follow');
 
     // Static content layer: reads exported product files — no WordPress call.
     // Server-only module, loaded dynamically so fs never reaches the client bundle.
@@ -409,6 +414,7 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
         rankMathSEO,
         reviews,
         variantData,
+        isTemporarilyGated,
       },
     };
   } catch (error) {
@@ -426,7 +432,7 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
   }
 };
 
-const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, reviews = [], variantData = null }: ProductDetailsProps) => {
+const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, reviews = [], variantData = null, isTemporarilyGated }: ProductDetailsProps) => {
   // All hooks must be called FIRST, before any conditional logic
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [showScrollToTop, setShowScrollToTop] = useState(false);
@@ -653,6 +659,7 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
             fallbackTwitterDescription={`${transformedProduct.title} - Durable and reliable portable solutions for your business needs.`}
             keywords={`${transformedProduct.title}, ${transformedProduct.category}, portable solutions`}
             structuredData={undefined} // ProductStructuredData component handles this separately
+            noindex={isTemporarilyGated}
           />
           
           {/* Product Schema handled by ProductStructuredData component */}
@@ -660,11 +667,13 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
           {/* Product Structured Data for Google Merchant Center.
               Review JSON-LD is emitted ONLY for the same real approved reviews
               that are rendered in the Customer Reviews section below. */}
-          <ProductStructuredData product={product} category={category} reviews={reviews} breadcrumbItems={crumbsToJsonLd(breadcrumbCrumbs)} variantData={variantData || undefined} metaDescription={rankMathSEO?.description} />
+          {!isTemporarilyGated && (
+            <ProductStructuredData product={product} category={category} reviews={reviews} breadcrumbItems={crumbsToJsonLd(breadcrumbCrumbs)} variantData={variantData || undefined} metaDescription={rankMathSEO?.description} />
+          )}
 
           {/* FAQ Structured Data: the approved variant dataset owns its rendered
               FAQs; legacy products continue to use RankMath. */}
-          {(variantData?.faqSchema || rankMathSEO?.faqSchema) && (
+          {!isTemporarilyGated && (variantData?.faqSchema || rankMathSEO?.faqSchema) && (
             <Head>
               <script
                 type="application/ld+json"
