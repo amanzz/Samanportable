@@ -8,7 +8,8 @@
 
 | Scope | Branch | Assessed head | Purpose |
 |---|---|---:|---|
-| Initial remediation integration | `seo/remediation-production-base-integration` | `814b420d` | Production-base fixes and evidence; intentionally excludes temporary containment of the 63 unapproved URLs |
+| Initial remediation integration | `seo/remediation-production-base-integration` | `8245b89a` | Production-base fixes and evidence; intentionally excludes temporary containment of the 63 unapproved URLs |
+| RB-01 publication-status candidate | `seo/rb-01-publication-status` | This report's commit, based on `8245b89a` | Reconciles only the verified Multi-Story and Flat-Pack publication states; no deployment |
 | Reversible 63-URL containment | `seo/remediation-temporary-63-gating` | `2ca0eaa8` | Exact-path noindex/schema/sitemap/discovery containment for the 63 URLs, kept separate from the initial integration branch |
 
 Both worktrees were clean at assessment time. The original dirty `feature/llms-txt` worktree remains preserved and was not used as the integration base.
@@ -20,6 +21,8 @@ Both worktrees were clean at assessment time. The original dirty `feature/llms-t
 > **PLANNED RELEASE BACKLOG — 45 approved new pages not yet published**
 
 It is not classified as a P0 production-defect set. The final New Approved architecture was not modified.
+
+RB-01 subsequently authorized the lifecycle reconciliation of Multi-Story Container Office and Flat-Pack Container Office after both complete live page packages passed their publication gates. The current repository fixture is 61 approved-production paths and 43 planned-release paths. This changes publication state only; the final New Approved page architecture remains unchanged.
 
 The release rules are encoded as validation fixtures:
 
@@ -99,7 +102,8 @@ The initial integration branch intentionally does not include this containment a
 
 | Set | Page sitemap | Product-image sitemap | Result |
 |---|---|---|---|
-| 45 planned-release paths | 0 included | 0 included | Pass |
+| 43 planned-release paths after RB-01 | 0 included | 0 included | Pass on the built candidate; 42 live 404 plus one live/planned Expandable blocker |
+| Multi-Story and Flat-Pack Container Office | 2 included | 2 included | Pass; each is direct 200, self-canonical, index/follow, complete, schema-valid and bidirectionally linked |
 | Six verified approved additions | 6 included | 6 included | Pass |
 | Accommodation Container | Excluded | Excluded | Held pending publication-state reconciliation |
 | 63 unapproved paths, containment branch | 0 included | 0 included | Pass |
@@ -134,10 +138,10 @@ Source and SSR checks also confirmed native actions for Contact CTA, Enquiry Dia
 
 - TypeScript `tsc --noEmit`
 - production build and postbuild sitemap/image generation
-- non-strict commercial architecture validation: 59 approved paths and 45 planned paths
+- non-strict commercial architecture validation: 61 approved paths and 43 planned paths
 - exact temporary gating validation: 63 paths, no approved/planned overlap
 - all nine sitemap XML files well formed
-- exact 45 planned paths absent from page/image sitemaps
+- exact 43 planned paths absent from page/image sitemaps
 - exact 63 paths absent from page/image sitemaps on containment branch
 - six verified approved pages present in both product and image sitemaps
 - full contained internal-link crawl: zero redirect/error edges
@@ -151,21 +155,15 @@ Source and SSR checks also confirmed native actions for Contact CTA, Enquiry Dia
 
 ## Blocking conditions
 
-The strict release gate correctly fails on three publication-state conflicts:
+The strict repository release gate correctly fails on the remaining source-state conflict:
 
 1. `/product/labor-colony/accommodation-container`
    - approved/live path;
    - live route is indexable HTTP 200;
    - source record status is `draft`;
    - held out of sitemaps pending owner reconciliation.
-2. `/product/container-offices/multi-story-container-office`
-   - remains in the 45 planned-release fixture;
-   - production record status is `publish`;
-   - live route returns HTTP 200.
-3. `/product/container-offices/flat-pack-container-office`
-   - remains in the 45 planned-release fixture;
-   - production record status is `publish`;
-   - live route returns HTTP 200.
+
+Independent live validation also blocks on `/product/container-offices/expandable-container-office`: it remains planned and absent from sitemap/link/schema discovery, but returns direct HTTP 200. RB-01 prohibits changing the status of remaining planned pages, so this requires a separate owner ruling.
 
 Additional release blockers:
 
@@ -188,7 +186,7 @@ Additional release blockers:
 | Internal discoverable links free of redirects/errors | Pass on contained 318-page crawl |
 | Verified commercial facts complete in visible content | **Fail / waiting for approved content** |
 | Forms proven end to end in staging | **Fail / not yet tested** |
-| Strict commercial architecture gate | **Fail by design on three conflicts** |
+| Strict commercial architecture gate | **Fail on Accommodation draft/source conflict; live release gate also fails on Expandable** |
 | Commercial-template performance acceptable | **Fail / remediation remains** |
 
 ## Release decision

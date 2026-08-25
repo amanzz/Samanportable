@@ -16,7 +16,6 @@ const sourceRoots = [
 const canonicalPaths = JSON.parse(
   fs.readFileSync(path.join(root, 'src/lib/sitemapCanonicalPaths.json'), 'utf8'),
 );
-const extraIndexablePaths = ['/product-category/container-offices'];
 const outputArgument = process.argv.find(argument => argument.startsWith('--output='));
 const baseArgument = process.argv.find(argument => argument.startsWith('--base-url='));
 const outputPath = path.resolve(
@@ -471,7 +470,9 @@ const extractRenderedImages = html => {
   return images;
 };
 
-const pagePaths = [...new Set([...canonicalPaths, ...extraIndexablePaths])].sort();
+const pagePaths = [...new Set(canonicalPaths)]
+  .filter(pathname => !pathname.startsWith('/product-category/'))
+  .sort();
 const pages = [];
 let pageCursor = 0;
 const pageWorkers = Array.from({ length: 12 }, async () => {

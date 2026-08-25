@@ -46,7 +46,9 @@ const imageUrlset = entries => `<?xml version="1.0" encoding="UTF-8"?>\n`
   ).join('\n')
   + `\n</urlset>\n`;
 
-const all = [...new Set([...canonicalPaths, '/product-category/container-offices'])].sort();
+const all = [...new Set(canonicalPaths)]
+  .filter(pathname => !pathname.startsWith('/product-category/'))
+  .sort();
 const productSupplement = new Set([
   '/rental-services',
   '/portable-cabin-price-calculator',
@@ -55,9 +57,7 @@ const productSupplement = new Set([
 ]);
 const products = all.filter(pathname =>
   pathname === '/product'
-  || pathname === '/product-category/container-offices'
   || pathname.startsWith('/product/')
-  || pathname.startsWith('/product-category/')
   || productSupplement.has(pathname)
 );
 const projects = all.filter(pathname => pathname === '/gallery');

@@ -3,12 +3,18 @@ const path = require('path');
 const architecture = require('../src/data/seo/commercialArchitecture.json');
 const customCanonicalPaths = require('../src/lib/customProductCanonicalPaths.json');
 
-const EXPECTED = { approved: 59, planned: 45 };
+const EXPECTED = { approved: 61, planned: 43 };
 const strict = process.argv.includes('--strict') || process.env.SAMAN_STRICT_PRODUCTION_DATA === 'true';
 const failures = [];
 const warnings = [];
 const approved = new Set(architecture.approvedProductionPaths);
 const planned = new Set(architecture.plannedReleasePaths);
+
+if (architecture.plannedReleaseBacklogCurrentCount !== EXPECTED.planned) {
+  failures.push(
+    `planned-release current count is ${architecture.plannedReleaseBacklogCurrentCount}, expected ${EXPECTED.planned}`,
+  );
+}
 
 if (approved.size !== EXPECTED.approved) failures.push(`approved production path count is ${approved.size}, expected ${EXPECTED.approved}`);
 if (planned.size !== EXPECTED.planned) failures.push(`planned-release path count is ${planned.size}, expected ${EXPECTED.planned}`);

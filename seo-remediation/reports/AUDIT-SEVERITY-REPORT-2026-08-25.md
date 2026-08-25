@@ -8,7 +8,9 @@ Architecture authority: final New Approved plan, unchanged
 
 SEO-001 is **PLANNED RELEASE BACKLOG**, not a P0 production-defect count. The accepted 2026-08-24 baseline contained 45 approved `New` URLs that were intentionally unpublished, absent from sitemaps and internal links, outside the repository allowlist, and without published product data.
 
-The production base has since changed: Multi-Story Container Office and Flat-Pack Container Office now have publish-status records and live HTTP 200 pages. They remain in the locked 45-path plan fixture, so the original cohort is no longer uniformly unpublished. This is a release-governance conflict, not authority to remove the pages, change the plan, or silently redefine the cohort. Strict release validation remains failed until the owner reconciles those two post-audit publications.
+The production base has since changed. Multi-Story Container Office and Flat-Pack Container Office have publish-status records, complete approved page packages, direct live HTTP 200 responses, and verified bidirectional Container Offices hub links. RB-01 authorizes reconciling those two released pages without changing the final New Approved architecture, reducing the planned fixture from 45 to 43 and increasing the approved-production fixture from 59 to 61.
+
+A fresh 2026-08-25 live check found that Expandable Container Office also returns HTTP 200 while it remains in the planned fixture. RB-01 explicitly prohibits changing the publication status of remaining planned pages, so Expandable Container Office remains a separate publication-status blocker. After the authorized two-page reconciliation, the 43-path planned set contains 42 verified 404 paths and this one live contradiction.
 
 The remaining planned URLs must stay 404 and disconnected. No sitemap, image sitemap, navigation, rail, schema, feed, internal link, placeholder, or unrelated redirect is allowed before the full family/page publication gate passes.
 
@@ -16,7 +18,7 @@ The remaining planned URLs must stay 404 and disconnected. No sitemap, image sit
 
 | ID | Severity/class | Current state | Release effect |
 |---|---|---|---|
-| SEO-001 | PLANNED RELEASE BACKLOG | 45-path baseline retained; two paths were published after the audit | **BLOCKING reconciliation**; do not unpublish or change architecture without owner ruling |
+| SEO-001 | PLANNED RELEASE BACKLOG | 45-path audit baseline; RB-01 authorizes two releases, leaving 43 planned records: 42 verified 404 and Expandable Container Office live at 200 | **BLOCKING** only on the unauthorized remaining live/planned contradiction; do not change its status under RB-01 |
 | SEO-002 | P0 | 63 live 200/indexable commercial URLs remain in current product and image sitemaps; row-level register complete | Temporary exact-path containment is isolated on `seo/remediation-temporary-63-gating`; permanent dispositions remain owner-only |
 | SEO-003 | P0 | Tiny Container Homes still lacks its approved differentiated owner page | WAITING_CLAUDE and owner publication approval |
 | SEO-005 | P0 | False global flat-freight Offer schema removed; known ₹3,000 render/schema phrases normalized | Source-record rewrite and shared visible Shipping-panel replacement remain WAITING_CLAUDE/OWNER facts |
@@ -31,4 +33,4 @@ The remaining planned URLs must stay 404 and disconnected. No sitemap, image sit
 
 Current result: **NOT READY FOR PRODUCTION DEPLOYMENT**.
 
-The implementation branch is intentionally conservative. It does not include the temporary 63-URL containment commit, does not publish planned pages, does not change Accommodation Container from draft, and does not introduce unapproved customer-facing Shipping-tab copy.
+The implementation branch is intentionally conservative. It does not include the temporary 63-URL containment commit, does not publish any page, does not change Accommodation Container from draft, does not change the remaining planned-page statuses, and does not introduce unapproved customer-facing Shipping-tab copy.

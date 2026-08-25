@@ -15,6 +15,8 @@
     "/product/container-offices/containerized-data-center",
     "/product/container-offices/container-marketing-office",
     "/product/container-offices/container-office-cabin",
+    "/product/container-offices/flat-pack-container-office",
+    "/product/container-offices/multi-story-container-office",
     "/product/container-offices/shipping-container-office",
     "/product/container-offices/site-office-container",
     "/product/eps-panel",
@@ -61,8 +63,6 @@
     "/product/security-cabins/frp-security-cabin"
   ],
   "plannedReleasePaths": [
-    "/product/container-offices/multi-story-container-office",
-    "/product/container-offices/flat-pack-container-office",
     "/product/container-offices/expandable-container-office",
     "/product/portable-office/portable-weighbridge-office",
     "/product/portable-office/executive-portable-office",
@@ -108,5 +108,6 @@
     "/product/roofing-sheet/curved-roofing-sheet"
   ],
   "plannedReleaseBacklogBaselineCount": 45,
+  "plannedReleaseBacklogCurrentCount": 43,
   "sourceAuditDate": "2026-08-24"
 }
