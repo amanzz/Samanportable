@@ -19,6 +19,7 @@ import {
   ArrowRight,
   type LucideIcon,
 } from 'lucide-react';
+import { isTemporarilyGatedCommercialPath } from '@/lib/unapprovedCommercialGating';
 
 // T6.21b — homepage product category grid, LIGHT theme (owner directive): white section
 // background, black (ink) headings, dark-gray (steel) descriptions, solid brand-green
@@ -91,7 +92,7 @@ const CategoryGrid = ({ counts }: { counts: Record<string, number> }) => {
           data-homepage-range-grid
           className="grid auto-rows-fr grid-cols-2 gap-4 md:grid-cols-2 lg:grid-cols-4"
         >
-          {CATEGORIES.map((cat) => {
+          {CATEGORIES.filter((cat) => !isTemporarilyGatedCommercialPath(cat.href)).map((cat) => {
             const Icon = cat.icon;
             const count = counts[cat.slug];
             return (
