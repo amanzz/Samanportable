@@ -54,6 +54,11 @@ export default function RightToExist({
   // identical in both positions, so this is placement only, never a copy change. Default
   // false → the hub keeps paragraphs-above-card byte-identically.
   const copyInPanel = Boolean(card?.copyInPanel);
+  const standaloneCta = entry.ctaLabel && entry.ctaHref ? (
+    <Link className="saman-s2-split-cta mt-4" href={entry.ctaHref}>
+      {entry.ctaLabel}
+    </Link>
+  ) : null;
   const paragraphs = entry.bodyParagraphs ? (
     <>
       {entry.bodyParagraphs.map((para, i) => (
@@ -197,6 +202,7 @@ export default function RightToExist({
           {!copyInPanel && heading}
           {!copyInPanel && paragraphs}
           {!copyInPanel && topCta}
+          {!copyInPanel && standaloneCta}
           {splitCard}
         </>
       )}

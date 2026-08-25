@@ -1,0 +1,136 @@
+{
+  "panels": [
+    {
+      "sizeSlug": "20x8",
+      "h3": "20 x 8 ft G+1: 320 sq ft From a 160 sq ft Footprint",
+      "paragraph": "This is the smallest approved stack and the one that saves the most ground. Each floor is a single open office of 160 sq ft with three workstations along Wall B and three ceiling cabinets above them. A clear centre aisle runs the length, and both end bays stay free of furniture. One door per floor sits mid way along Wall A, with a window each side of it. Pick it when the gate area is small and six desks are enough.",
+      "applications": [
+        "Rs 4,71,200 ex GST, Rs 5,56,016 with 18 per cent GST",
+        "160 sq ft per floor, 320 sq ft gross, two stacked 8 ft bands",
+        "6 windows and 1 external door per floor, both end walls solid",
+        "3 workstations per floor, 6 in total, 6 ceiling cabinets",
+        "Clear centre aisle, with both end bays kept free of furniture"
+      ],
+      "tabLabel": "20x8 ft G+1",
+      "image": {
+        "src": "/images/products/multi-story-container-office/ga/multi-story-container-office-ga-plan-20x8.webp",
+        "previewSrc": "/images/products/multi-story-container-office/ga/multi-story-container-office-ga-plan-20x8-489.webp",
+        "alt": "Approved G+1 GA board for the 20 x 8 ft multi-story container office, both floor plans",
+        "provenance": "render",
+        "width": 4200,
+        "height": 3300,
+        "fit": "contain"
+      }
+    },
+    {
+      "sizeSlug": "20x16",
+      "h3": "20 x 16 ft G+1: A Fully Serviced Floor, Repeated Twice",
+      "paragraph": "Widen the same 20 ft length to 16 ft and each floor gains its own service core. You get four workstations, a six seat discussion table, a 5 x 6 ft pantry, a gents WC, a ladies WC and a shared wash. All of it repeats upstairs, so neither floor depends on the other for a toilet or a kettle. The service end stays solid, with two high level louvres per floor and no window. Choose it when each floor must run alone.",
+      "applications": [
+        "Rs 9,12,640 ex GST, Rs 10,76,915 with 18 per cent GST",
+        "320 sq ft per floor, 640 sq ft gross, four stacked 8 ft bands",
+        "5 windows and 1 external door per floor, service end solid",
+        "4 workstations and one 6 seat discussion table per floor",
+        "Pantry, gents, ladies and shared wash on both levels"
+      ],
+      "tabLabel": "20x16 ft G+1",
+      "image": {
+        "src": "/images/products/multi-story-container-office/ga/multi-story-container-office-ga-plan-20x16.webp",
+        "previewSrc": "/images/products/multi-story-container-office/ga/multi-story-container-office-ga-plan-20x16-489.webp",
+        "alt": "Approved G+1 GA board for the 20 x 16 ft multi-story container office, both floor plans",
+        "provenance": "render",
+        "width": 4200,
+        "height": 3300,
+        "fit": "contain"
+      }
+    },
+    {
+      "sizeSlug": "40x8",
+      "h3": "40 x 8 ft G+1: A Manager Room on Each of Two Floors",
+      "paragraph": "Same 640 sq ft gross as the 20 x 16, but laid out long and narrow instead. Each floor holds a 10 x 8 ft manager room at the End C end and a 30 x 8 ft common office behind it. Seven workstations run in one line along Wall B, each with a cabinet above. Two doors per floor open onto Wall A, so staff and visitors need not share one entry. Pick this when a closed room matters more than a wide floor. Both floors run the identical plan, so the upstairs manager gets the same room.",
+      "applications": [
+        "Rs 9,12,640 ex GST, Rs 10,76,915 with 18 per cent GST",
+        "320 sq ft per floor, 640 sq ft gross, two stacked 8 ft bands",
+        "9 windows and 2 external doors per floor, both end walls glazed",
+        "7 workstations per floor, 14 in total, one 10 x 8 ft manager room",
+        "Manager room at the End C end of both levels, entered from inside"
+      ],
+      "tabLabel": "40x8 ft G+1",
+      "image": {
+        "src": "/images/products/multi-story-container-office/ga/multi-story-container-office-ga-plan-40x8.webp",
+        "previewSrc": "/images/products/multi-story-container-office/ga/multi-story-container-office-ga-plan-40x8-489.webp",
+        "alt": "Approved G+1 GA board for the 40 x 8 ft multi-story container office, both floor plans",
+        "provenance": "render",
+        "width": 4200,
+        "height": 3300,
+        "fit": "contain"
+      }
+    },
+    {
+      "sizeSlug": "40x16",
+      "h3": "40 x 16 ft G+1: Manager, Conference and a Wet Core",
+      "paragraph": "At 640 sq ft per floor the plan finally holds two closed rooms and a service bay together. Each level gives a 10 x 8 ft manager room and a 10 x 8 ft conference room. Behind them sit a common office of seven workstations, a pantry, twin toilets and a shared wash. Desks run along both long walls, so the aisle stays clear. This is the first size that reads as a corporate project office rather than a site cabin.",
+      "applications": [
+        "Rs 17,85,600 ex GST, Rs 21,07,008 with 18 per cent GST",
+        "640 sq ft per floor, 1,280 sq ft gross, four stacked 8 ft bands",
+        "9 windows and 2 external doors per floor, service end solid",
+        "7 workstations, a manager room and a conference room per floor",
+        "Pantry, twin toilets and shared wash on both levels"
+      ],
+      "tabLabel": "40x16 ft G+1",
+      "image": {
+        "src": "/images/products/multi-story-container-office/ga/multi-story-container-office-ga-plan-40x16.webp",
+        "previewSrc": "/images/products/multi-story-container-office/ga/multi-story-container-office-ga-plan-40x16-489.webp",
+        "alt": "Approved G+1 GA board for the 40 x 16 ft multi-story container office, both floor plans",
+        "provenance": "render",
+        "width": 4200,
+        "height": 3300,
+        "fit": "contain"
+      }
+    },
+    {
+      "sizeSlug": "40x24",
+      "h3": "40 x 24 ft G+1: Reception, Cabins and a Six Desk Island",
+      "paragraph": "Twenty four feet of width lets the plan carry a front row of rooms and still hold an open floor. Each level runs a 10 x 8 ft reception, a 10 x 8 ft manager room and a conference room of the same size. Behind them sit fourteen workstations. Six of those form one island of three facing three. The service side adds a print store and a server room next to the pantry and the toilets. Choose it when clients visit the site office as often as staff do.",
+      "applications": [
+        "Rs 26,78,400 ex GST, Rs 31,60,512 with 18 per cent GST",
+        "960 sq ft per floor, 1,920 sq ft gross, six stacked 8 ft bands",
+        "10 windows and 2 external doors per floor, service end solid",
+        "14 workstations per floor, 28 in total, one 3 facing 3 island",
+        "Reception, manager, conference, print store and server room"
+      ],
+      "tabLabel": "40x24 ft G+1",
+      "image": {
+        "src": "/images/products/multi-story-container-office/ga/multi-story-container-office-ga-plan-40x24.webp",
+        "previewSrc": "/images/products/multi-story-container-office/ga/multi-story-container-office-ga-plan-40x24-489.webp",
+        "alt": "Approved G+1 GA board for the 40 x 24 ft multi-story container office, both floor plans",
+        "provenance": "render",
+        "width": 4200,
+        "height": 3300,
+        "fit": "contain"
+      }
+    },
+    {
+      "sizeSlug": "40x32",
+      "h3": "40 x 32 ft G+1: The Largest Approved Two Level Plan",
+      "paragraph": "This is the full department floor, repeated. Four 10 x 8 ft rooms line the front wall on each level. Twenty workstations fill the open floor behind them, arranged in two islands of three facing three. A pantry, a sanitary group and four support rooms take the far end. Both floors carry twenty desks, so a project of eighty people on the ground can seat forty of them here. Every approved option in this family is two levels, and this is the largest of them.",
+      "applications": [
+        "Rs 35,71,200 ex GST, Rs 42,14,016 with 18 per cent GST",
+        "1,280 sq ft per floor, 2,560 sq ft gross, eight stacked 8 ft bands",
+        "11 windows and 2 external doors per floor, service end solid",
+        "20 workstations per floor, 40 in total, two 3 facing 3 islands",
+        "Four front rooms, pantry, sanitary group and four support rooms"
+      ],
+      "tabLabel": "40x32 ft G+1",
+      "image": {
+        "src": "/images/products/multi-story-container-office/ga/multi-story-container-office-ga-plan-40x32.webp",
+        "previewSrc": "/images/products/multi-story-container-office/ga/multi-story-container-office-ga-plan-40x32-489.webp",
+        "alt": "Approved G+1 GA board for the 40 x 32 ft multi-story container office, both floor plans",
+        "provenance": "render",
+        "width": 4200,
+        "height": 3300,
+        "fit": "contain"
+      }
+    }
+  ]
+}
