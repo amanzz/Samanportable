@@ -49,6 +49,7 @@ import {
   PORTA_CABIN_SIBLING_YMAL,
 } from '../../../lib/portaCabinClusterRail';
 import PortaCabinsYouMayAlsoLike from '../../../components/product-variant-hero/PortaCabinsYouMayAlsoLike';
+import { rewriteRetiredInternalLinks } from '../../../lib/staticContent';
 import { isLabourColonyClusterSlug, getLabourColonyClusterRail } from '../../../lib/labourColonyClusterRail';
 import { containerOfficeYmalItems, orderContainerOfficeRail } from '../../../lib/containerOfficeClusterRail';
 import { getEmbeddedProductSummary, renderCabinCalculatorSSR, renderCalculatorEntrySection } from '../../../lib/cabinCalculatorSSR';
@@ -671,10 +672,12 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
             // page HOLDS the tab empty rather than shipping the contradiction. An empty
             // descriptionHtml cannot express that (it is falsy and falls through), so
             // the suppression is an explicit flag.
-            applyDescriptionHtmlAdditions(
-              variantData?.descriptionHtml
-                || (variantData?.suppressLegacyDescription ? '' : productDescriptionWithoutOpener),
-              variantData?.descriptionHtmlAdditions
+            rewriteRetiredInternalLinks(
+              applyDescriptionHtmlAdditions(
+                variantData?.descriptionHtml
+                  || (variantData?.suppressLegacyDescription ? '' : productDescriptionWithoutOpener),
+                variantData?.descriptionHtmlAdditions
+              )
             ),
             variantData?.infoImages
           ),

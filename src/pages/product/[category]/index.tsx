@@ -48,6 +48,7 @@ import type { VariantProductData } from '../../../components/product-variant-her
 import { PORTA_CABIN_HUB_RAIL } from '../../../lib/portaCabinClusterRail';
 import { getLabourColonyClusterRail } from '../../../lib/labourColonyClusterRail';
 import PortaCabinsYouMayAlsoLike from '../../../components/product-variant-hero/PortaCabinsYouMayAlsoLike';
+import { rewriteRetiredInternalLinks } from '../../../lib/staticContent';
 
 const SAFE_PRODUCT_SLUG = /^[a-z0-9-]+$/;
 
@@ -371,10 +372,12 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
           // C-08 E3 Step C — same Info-image placement as the sibling route, so
           // the hub's Description panel carries its 16:9 band on the same rules.
           description: injectInfoImages(
-            // Same empty-safe hold as the subpage route (C-05 close-out Part 2).
-            variantData?.descriptionHtml
-              || (variantData?.suppressLegacyDescription ? '' : descriptionData?.description)
-              || '',
+            rewriteRetiredInternalLinks(
+              // Same empty-safe hold as the subpage route (C-05 close-out Part 2).
+              variantData?.descriptionHtml
+                || (variantData?.suppressLegacyDescription ? '' : descriptionData?.description)
+                || ''
+            ),
             variantData?.infoImages
           ),
           // T31 — real Specifications + shared Shipping tab HTML for the porta-cabin
