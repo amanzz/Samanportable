@@ -13,7 +13,9 @@ Architecture lock: do not modify the final New Approved plan
 | 4 | `e6f9ce66` | Native POST fallbacks and named review controls | Complete; browser/staging QA pending |
 | 5 | `0035dad5` | Exact 63-row disposition CSV/MD | Complete; all permanent decisions pending owner review |
 | 6 | `d1e5d201` | Add six verified live approved pages to sitemap inputs | Complete; Accommodation Container held as draft |
-| 7 | `seo/remediation-temporary-63-gating` at `2f0cbb24` | Reversible exact-63 noindex/discovery/sitemap containment | Separate from initial integration release candidate |
+| 7 | `8b372cf1` | Refresh generated product and image sitemap artifacts | Complete |
+| 8 | `dcafaf8e`, `e18a874e`, `5ab8882e`, `814b420d` | Remove retired Portable Cabin discovery from hero, cluster, breadcrumb and variant-content rendering | Complete; contained full recrawl found zero redirect/error edges |
+| 9 | `seo/remediation-temporary-63-gating` at `2ca0eaa8` | Reversible exact-63 noindex/schema/discovery/sitemap containment | Validated and separate from the initial integration release candidate |
 
 ## Immediate queue
 

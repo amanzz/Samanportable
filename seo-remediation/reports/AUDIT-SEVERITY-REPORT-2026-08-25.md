@@ -21,11 +21,11 @@ The remaining planned URLs must stay 404 and disconnected. No sitemap, image sit
 | SEO-003 | P0 | Tiny Container Homes still lacks its approved differentiated owner page | WAITING_CLAUDE and owner publication approval |
 | SEO-005 | P0 | False global flat-freight Offer schema removed; known ₹3,000 render/schema phrases normalized | Source-record rewrite and shared visible Shipping-panel replacement remain WAITING_CLAUDE/OWNER facts |
 | SEO-006 | P1 | Six verified approved pages added to sitemap inputs; Accommodation Container held because its source record is `draft` | **BLOCKING owner publication-state reconciliation** for the seventh page |
-| SEO-007 | P1 | 375/386 audited bad-link occurrences covered by 17 verified shared mappings | Remaining 11 Tiny Container Homes links are content/release gated |
-| SEO-008 | P1 | Retired Portable Cabin shared links point directly to the approved Porta Cabins destinations | Targeted recrawl pending |
-| SEO-011 | P1 | Seven Container House legacy sources now point directly to their verified final destinations | Build and HTTP redirect verification pending |
+| SEO-007 | P1 | 375/386 audited occurrences were repointed; the held Tiny page is contained separately; the contained 318-page recrawl found 0 redirect/error edges across 32,514 rendered links | Remaining 11 Tiny source-content links still require the owner/content decision before a permanent disposition |
+| SEO-008 | P1 | Retired Portable Cabin hero, cluster, breadcrumb and variant-content links resolve directly to the approved Porta Cabins hub | **Verified** by full contained recrawl: 0 redirect/error edges |
+| SEO-011 | P1 | Seven Container House legacy sources point directly to their verified final destinations | **Verified** locally as one-hop permanent redirects |
 | SEO-013 | P1 | No performance change included in the initial release candidate | Shared ProductTabs reduction is coupled to new customer-facing freight copy and is WAITING_CLAUDE; profiling remains open |
-| SEO-014 | P1 | Four shared forms expose POST actions; review form exposes named native controls | Browser/no-JS QA pending; no real lead submission is authorized without staging delivery approval |
+| SEO-014 | P1 | Four shared forms expose POST actions; local SSR/browser checks passed and review/quote controls have native names | Staging delivery remains required; no production lead was submitted |
 
 ## Release classification
 
