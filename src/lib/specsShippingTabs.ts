@@ -917,6 +917,12 @@ export function getProductTabsHtml(
       shippingHtml: buildContainerOfficesShippingHtml(),
     };
   }
+  if (pageSlug === 'multi-story-container-office') {
+    return {
+      specificationsHtml: '',
+      shippingHtml: buildContainerOfficesShippingHtml(),
+    };
+  }
   if (pageSlug && C01_DATASET.products[pageSlug]) {
     return {
       specificationsHtml: buildC01SpecificationsHtml(C01_DATASET.products[pageSlug]),
