@@ -87,6 +87,23 @@ function readJson(file: string): any | null {
 // event, so approved hrefs are corrected at the static content boundary without
 // changing any visible text, L3 field, schema payload, or winner source byte.
 const RETIRED_INTERNAL_LINKS = new Map<string, string>([
+  ['/product/portable-cabin', '/product/porta-cabins'],
+  ['/product/porta-cabins/portacabin-office', '/product/porta-cabins'],
+  ['/product/porta-cabins/luxury-porta-cabin', '/product/porta-cabins'],
+  ['/product/porta-cabins/steel-porta-cabin', '/product/porta-cabins/ms-porta-cabin'],
+  ['/product/container-cafe/shipping-container-cafe', '/product/container-cafe'],
+  ['/product/porta-cabins/low-cost-porta-cabin', '/product/porta-cabins'],
+  ['/product/porta-cabins/mini-porta-cabin', '/product/porta-cabins'],
+  ['/product/portable-cabin/office-portable-cabin', '/product/porta-cabins'],
+  ['/product/portable-cabin/portable-cabin-with-toilet', '/product/porta-cabins/porta-cabin-with-toilet'],
+  ['/product/portable-cabin/buy-portable-cabin', '/product/porta-cabins'],
+  ['/product/prefabricated-houses/portable-cabin-house', '/product/prefabricated-houses/porta-cabin-house'],
+  ['/portable-cabins-in-bellandur', '/product/porta-cabins'],
+  ['/product/portable-cabin/modular-portable-cabin', '/product/porta-cabins'],
+  ['/product/portable-cabin/portable-cabin-building', '/product/porta-cabins'],
+  ['/product/portable-cabin/ms-portable-cabin', '/product/porta-cabins/ms-porta-cabin'],
+  ['/product/portable-cabin/small-portable-cabin', '/product/porta-cabins'],
+  ['/cheap-porta-cabins-for-sale', '/product/porta-cabins'],
   ['/product/labor-colony/prefab-labor-sheds', '/product/labor-colony/labor-sheds'],
   ['/product/labor-colony/prefab-labor-hutments', '/product/labor-colony/labor-hutments'],
   ['/product/labor-colony/labor-camps', '/product/labor-colony/prefab-labor-camps'],
@@ -612,6 +629,12 @@ export async function fetchBlogPost(slug: string): Promise<any | null> {
       rendered: rewriteRetiredInternalLinks(rest.content.rendered),
     };
   }
+  if (typeof rest?.excerpt?.rendered === 'string') {
+    rest.excerpt = {
+      ...rest.excerpt,
+      rendered: rewriteRetiredInternalLinks(rest.excerpt.rendered),
+    };
+  }
   return rest;
 }
 
@@ -872,7 +895,7 @@ function toFeedProduct(p: any): WooCommerceProduct {
     sale_price: p.sale_price,
     on_sale: p.on_sale,
     images: p.images || [],
-    short_description: p.short_description || '',
+    short_description: rewriteRetiredInternalLinks(p.short_description || ''),
     stock_status: p.stock_status,
     stock_quantity: p.stock_quantity ?? null,
     average_rating: p.average_rating,
@@ -900,7 +923,7 @@ function toLightweight(p: any, categoryName?: string, categorySlug?: string): Li
     featured_image: p.images?.[0]?.src || '/placeholder.svg',
     category: categoryName || p.categories?.[0]?.name || 'Uncategorized',
     category_slug: categorySlug || p.categories?.[0]?.slug || 'uncategorized',
-    short_description: p.short_description,
+    short_description: rewriteRetiredInternalLinks(p.short_description || ''),
     stock_status: p.stock_status,
     average_rating: p.average_rating,
     rating_count: p.rating_count,

@@ -1256,7 +1256,7 @@ const nextConfig = {
       },
       {
         source: '/product/cargo-container-house',
-        destination: 'https://www.samanportable.com/product/container-houses/cargo-container-house',
+        destination: 'https://www.samanportable.com/product/container-houses/shipping-container-homes',
         permanent: true,
       },
       {
@@ -1311,7 +1311,7 @@ const nextConfig = {
       },
       {
         source: '/product/inexpensive-container-homes',
-        destination: 'https://www.samanportable.com/product/container-houses/inexpensive-container-homes',
+        destination: 'https://www.samanportable.com/product/container-houses/affordable-container-homes',
         permanent: true,
       },
       {
@@ -1336,7 +1336,7 @@ const nextConfig = {
       },
       {
         source: '/product/modern-container-home',
-        destination: 'https://www.samanportable.com/product/container-houses/modern-container-home',
+        destination: 'https://www.samanportable.com/product/container-houses',
         permanent: true,
       },
       {
@@ -1444,7 +1444,7 @@ const nextConfig = {
       },
       {
         source: '/product/prebuilt-container-homes',
-        destination: 'https://www.samanportable.com/product/container-houses/prebuilt-container-homes',
+        destination: 'https://www.samanportable.com/product/container-houses/prefab-container-homes',
         permanent: true,
       },
       {
@@ -1559,7 +1559,7 @@ const nextConfig = {
       },
       {
         source: '/product/shipping-container-tiny-house',
-        destination: 'https://www.samanportable.com/product/container-houses/shipping-container-tiny-house',
+        destination: 'https://www.samanportable.com/product/container-houses/shipping-container-homes',
         permanent: true,
       },
       {
@@ -1569,12 +1569,12 @@ const nextConfig = {
       },
       {
         source: '/product/storage-container-house',
-        destination: 'https://www.samanportable.com/product/container-houses/storage-container-house',
+        destination: 'https://www.samanportable.com/product/container-houses/shipping-container-homes',
         permanent: true,
       },
       {
         source: '/product/tiny-container-homes',
-        destination: 'https://www.samanportable.com/product/container-houses/tiny-container-homes',
+        destination: 'https://www.samanportable.com/product/container-houses/shipping-container-homes',
         permanent: true,
       },
       {
