@@ -1,0 +1,69 @@
+{
+  "id": 2026082508,
+  "name": "Expandable Container Office",
+  "slug": "expandable-container-office",
+  "permalink": "https://www.samanportable.com/product/container-offices/expandable-container-office",
+  "date_created": "2026-08-25T00:00:00",
+  "date_modified": "2026-08-25T00:00:00",
+  "type": "simple",
+  "status": "publish",
+  "featured": false,
+  "catalog_visibility": "visible",
+  "description": "",
+  "short_description": "",
+  "sku": "",
+  "price": "",
+  "regular_price": "",
+  "sale_price": "",
+  "on_sale": false,
+  "purchasable": false,
+  "virtual": false,
+  "downloadable": false,
+  "downloads": [],
+  "manage_stock": false,
+  "stock_quantity": null,
+  "stock_status": "instock",
+  "backorders": "no",
+  "reviews_allowed": true,
+  "average_rating": "0.00",
+  "rating_count": 0,
+  "categories": [
+    {
+      "id": 187,
+      "name": "Container Offices",
+      "slug": "container-offices"
+    }
+  ],
+  "brands": [
+    {
+      "id": 3870,
+      "name": "Saman Portable",
+      "slug": "saman-portable"
+    }
+  ],
+  "tags": [],
+  "images": [
+    {
+      "id": 202608250801,
+      "src": "/images/products/expandable-container-office/gallery/expandable-container-office-10x20-a-1.webp",
+      "name": "expandable-container-office-10x20-a-1",
+      "alt": "Deep Oxford Blue 10 by 20 ft expandable container office deployed, entrance wall and end wall in view",
+      "width": 1254,
+      "height": 1254
+    }
+  ],
+  "attributes": [],
+  "dimensions": {
+    "length": "",
+    "width": "",
+    "height": ""
+  },
+  "weight": "",
+  "meta_data": [],
+  "_rank_math_head": {
+    "success": true,
+    "head": "<title>Expandable Container Office Price and Six Sizes | SAMAN</title>\n<meta name=\"description\" content=\"Expandable container office in six approved sizes, 200 to 1,600 sq ft deployed. Folds to an 8 ft transport width. Six GA drawings, from Rs 3,75,000 ex-GST.\"/>\n<meta name=\"robots\" content=\"index, follow\"/>\n<link rel=\"canonical\" href=\"https://www.samanportable.com/product/container-offices/expandable-container-office\" />"
+  },
+  "category": "Container Offices",
+  "category_slug": "container-offices"
+}

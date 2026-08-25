@@ -5,6 +5,7 @@ const CONTAINER_OFFICE_KEEP_SLUGS: readonly string[] = [
   'container-office-cabin',
   'shipping-container-office',
   'site-office-container',
+  'expandable-container-office',
 ];
 
 type Slugged = { slug?: string };

@@ -16,6 +16,7 @@
     "validate:local-inventory": "node scripts/validate-local-inventory-feed.js",
     "validate:commercial-architecture": "node scripts/validate-commercial-architecture.js",
     "validate:commercial-architecture:release": "node scripts/validate-commercial-architecture.js --strict",
+    "validate:publication-gate": "node scripts/validate-rb01c-publication-gate.mjs",
     "analyze": "ANALYZE=true next build",
     "postbuild": "node scripts/build-image-manifest-and-sitemaps.mjs",
     "image-manifest:collect": "node scripts/collect-image-manifest.mjs",

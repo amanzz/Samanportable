@@ -15,6 +15,7 @@
     "/product/container-offices/containerized-data-center",
     "/product/container-offices/container-marketing-office",
     "/product/container-offices/container-office-cabin",
+    "/product/container-offices/expandable-container-office",
     "/product/container-offices/flat-pack-container-office",
     "/product/container-offices/multi-story-container-office",
     "/product/container-offices/shipping-container-office",
@@ -26,7 +27,6 @@
     "/product/industrial-sheds/prefabricated-warehouses",
     "/product/labor-colony",
     "/product/labor-colony/ablution-block",
-    "/product/labor-colony/accommodation-container",
     "/product/labor-colony/labor-hutments",
     "/product/labor-colony/labor-sheds",
     "/product/labor-colony/oil-field-camp",
@@ -63,7 +63,7 @@
     "/product/security-cabins/frp-security-cabin"
   ],
   "plannedReleasePaths": [
-    "/product/container-offices/expandable-container-office",
+    "/product/labor-colony/accommodation-container",
     "/product/portable-office/portable-weighbridge-office",
     "/product/portable-office/executive-portable-office",
     "/product/portable-office/portable-mobile-laboratory",

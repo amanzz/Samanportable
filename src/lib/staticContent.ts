@@ -32,6 +32,8 @@ import {
   normalizeVerifiedCommercialFacts,
   normalizeVerifiedCommercialFactsDeep,
 } from '@/lib/verifiedCommercialFacts';
+import commercialArchitecture from '@/data/seo/commercialArchitecture.json';
+import { getCanonicalProductPath } from '@/lib/productCanonicalPaths';
 
 const EXPORT_DIR = path.join(process.cwd(), 'src', 'data', 'wp-export');
 
@@ -858,21 +860,47 @@ function getAllListingProductsRaw(): any[] {
   return items;
 }
 
-type ListingOptions = {
+export type ProductLookupOptions = {
   includeDrafts?: boolean;
 };
 
+type ListingOptions = ProductLookupOptions;
+
+const APPROVED_PRODUCTION_PATHS = new Set<string>(commercialArchitecture.approvedProductionPaths);
+const PLANNED_RELEASE_PATHS = new Set<string>(commercialArchitecture.plannedReleasePaths);
+
+function hasPublishedStatus(product: any): boolean {
+  return !product?.status || product.status === 'publish';
+}
+
+/**
+ * One public product decision shared by direct routes, listings, SEO and schema
+ * lookups. The release fixture governs approved-plan URLs; legacy published
+ * products outside that fixture remain unchanged pending their separate owner
+ * dispositions. Draft status always fails closed in ordinary production.
+ */
+export function isProductPubliclyRenderable(product: any): boolean {
+  if (!product?.slug || !hasPublishedStatus(product)) return false;
+  const canonicalPath = getCanonicalProductPath(product);
+  const governedByReleaseFixture = APPROVED_PRODUCTION_PATHS.has(canonicalPath)
+    || PLANNED_RELEASE_PATHS.has(canonicalPath);
+  return !governedByReleaseFixture
+    || (APPROVED_PRODUCTION_PATHS.has(canonicalPath) && !PLANNED_RELEASE_PATHS.has(canonicalPath));
+}
+
 export function shouldShowDraftsInListings(host?: string | null): boolean {
-  if (process.env.SAMAN_SHOW_DRAFTS_IN_LISTINGS === 'true') return true;
   const normalized = String(host || '').toLowerCase();
-  return /^(localhost|127\.0\.0\.1|\[::1\])(?::|$)/.test(normalized);
+  const isLoopback = /^(localhost|127\.0\.0\.1|\[::1\])(?::|$)/.test(normalized);
+  return process.env.NODE_ENV !== 'production'
+    && isLoopback
+    && process.env.SAMAN_SHOW_DRAFTS_IN_LISTINGS !== 'false';
 }
 
 // Buyer-visible production listings only contain published products. Localhost
 // preview can opt into drafts so owners can review listing-card behavior before
 // publish approval.
 function getPublishedProducts(): any[] {
-  return getAllListingProductsRaw().filter((p) => !p.status || p.status === 'publish');
+  return getAllListingProductsRaw().filter(isProductPubliclyRenderable);
 }
 
 function getListingProducts(options: ListingOptions = {}): any[] {
@@ -883,9 +911,15 @@ function getListingProducts(options: ListingOptions = {}): any[] {
   return base.filter((p) => !RETIRED_LISTING_SLUGS.has(p.slug));
 }
 
-function findProductBySlug(slug: string): any | null {
+function findProductBySlug(slug: string, options: ProductLookupOptions = {}): any | null {
   if (!SAFE_SLUG.test(slug)) return null;
-  return getAllProductsRaw().find((p) => p.slug === slug) || null;
+  const product = getAllProductsRaw().find((p) => p.slug === slug) || null;
+  if (!product || options.includeDrafts) return product;
+  return isProductPubliclyRenderable(product) ? product : null;
+}
+
+export function isPublicProductSlug(slug: string): boolean {
+  return Boolean(findProductBySlug(slug));
 }
 
 // Same field subset that api.fetchProducts requested via _fields.
@@ -994,8 +1028,11 @@ export async function fetchProducts(
 }
 
 // Mirrors api.fetchLightweightProduct: product or null (genuinely absent → 404 ok).
-export async function fetchLightweightProduct(slug: string): Promise<LightweightProduct | null> {
-  const p = findProductBySlug(slug);
+export async function fetchLightweightProduct(
+  slug: string,
+  options: ProductLookupOptions = {}
+): Promise<LightweightProduct | null> {
+  const p = findProductBySlug(slug, options);
   return p ? toLightweight(p) : null;
 }
 
@@ -1035,9 +1072,10 @@ export function trimImageAltWhitespaceDeep<T>(value: T, key = ''): T {
 
 // Mirrors api.fetchProductDescription.
 export async function fetchProductDescription(
-  slug: string
+  slug: string,
+  options: ProductLookupOptions = {}
 ): Promise<{ description: string; images: Array<{ src: string; alt: string }>; specificationsHtml?: string; shippingHtml?: string } | null> {
-  const p = findProductBySlug(slug);
+  const p = findProductBySlug(slug, options);
   if (!p) return null;
   return {
     description: normalizeVerifiedCommercialFacts(
@@ -1069,12 +1107,15 @@ export async function fetchProductDescription(
 
 // Mirrors api.fetchProductRankMathSEO. Accepts "category/slug" or a bare slug —
 // the LAST path segment identifies the product file.
-export async function fetchProductRankMathSEO(categorySlug: string): Promise<RankMathSEOData | null> {
+export async function fetchProductRankMathSEO(
+  categorySlug: string,
+  options: ProductLookupOptions = {}
+): Promise<RankMathSEOData | null> {
   const parts = String(categorySlug).split('/').filter(Boolean);
   const slug = parts[parts.length - 1] || '';
   const productPath = parts.join('/');
   const productUrl = `https://www.samanportable.com/product/${productPath}${productPath.includes('/') ? '/' : ''}`;
-  const product = findProductBySlug(slug);
+  const product = findProductBySlug(slug, options);
   // preferCuratedFaq: PRODUCT path (T25 ruling b — products only in this PR).
   const seoData = headToSeo(product, true) || (product?.faqSchema ? {} : null);
   if (seoData && product?.faqSchema) seoData.faqSchema = product.faqSchema;

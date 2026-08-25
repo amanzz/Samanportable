@@ -1,0 +1,731 @@
+{
+  "page_id": "CO-08",
+  "cluster": "C02 Container Offices",
+  "canonical": "https://www.samanportable.com/product/container-offices/expandable-container-office",
+  "breadcrumb": [
+    "Home",
+    "Products",
+    "Container Offices",
+    "Expandable Container Office"
+  ],
+  "content_version": "draft-v1",
+  "content_date": "2026-08-24",
+  "metadata": {
+    "h1": "Expandable Container Office That Folds for Transport",
+    "seo_title": "Expandable Container Office Price and Six Sizes | SAMAN",
+    "meta_description": "Expandable container office in six approved sizes, 200 to 1,600 sq ft deployed. Folds to an 8 ft transport width. Six GA drawings, from Rs 3,75,000 ex-GST."
+  },
+  "hero": {
+    "short_description": "An expandable container office travels folded at 8 ft wide. On site it opens to a 20 ft deployed width. A central steel chassis carries the transport load. Two fold-out wings, 6 ft deep each, drop down and lock to form the finished floor. You buy deployed area, not transport area. When the project moves, the same unit folds and moves with it. Six approved sizes run from 200 sq ft to 1,600 sq ft. Every size ships with a signed general arrangement drawing. That drawing fixes the wall openings, the workstation positions and the room layout before fabrication starts. The prices below are budgetary planning estimates. They cover the fold mechanism, the enclosure and the base electrical interfaces.",
+    "table_rows": [
+      [
+        "Deployed sizes",
+        "Six approved, 200 to 1,600 sq ft"
+      ],
+      [
+        "Transport width, folded",
+        "8 ft central chassis"
+      ],
+      [
+        "Deployed width",
+        "20 ft, a 6 ft wing each side"
+      ],
+      [
+        "Rate basis",
+        "Rs 1,875 per sq ft at the 200 sq ft reference"
+      ],
+      [
+        "Price range, ex-GST",
+        "Rs 3,75,000 to Rs 27,00,000"
+      ]
+    ],
+    "pdf_label": "Download the technical specification and GA set",
+    "pdf_source_file": "saman-expandable-container-office-technical-specification-and-ga-v1.pdf"
+  },
+  "section2": {
+    "h2": "Where an Expandable Container Office Earns Its Extra Cost",
+    "paragraph_1": "This office costs more per square foot than a rigid cabin of the same deployed area. The reason is the mechanism, and you can weigh it against the full container office range. You are paying for hinge beams, lock pockets, weather-seal folds and adjustable support legs. That premium buys two things a fixed cabin cannot. The folded unit clears a standard trailer at 8 ft wide. So a 1,200 sq ft office reaches plots that a 20 ft wide module could never reach.",
+    "paragraph_2": "Choose it when the office has to reach a difficult site, or when you expect to relocate. Choose a fixed cabin when the unit will stand in one place for its whole life. You will pay less for the same floor. Our container office cabin sits at about Rs 1,250 per sq ft at the 200 sq ft reference. This page sits at Rs 1,875. That gap is the honest price of the fold.",
+    "internal_link": {
+      "anchor": "the full container office range",
+      "destination": "https://www.samanportable.com/product/container-offices",
+      "placement": "paragraph 1, sentence 2"
+    },
+    "cta": {
+      "text": "Send us your site access width and the deployed area you need, and we will quote the right size",
+      "destination": "https://www.samanportable.com/contact"
+    },
+    "media_block": {
+      "image_source": "02 Long Description Images/02-expandable-office-20x20-wide-view.png",
+      "image_native_size": "1664 x 936, exactly 16:9",
+      "image_alt": "Approved visualisation of the 20 by 20 ft expandable container office, deployed",
+      "heading": "Approved visualisation here, real deliveries in the gallery",
+      "paragraph_1": "The image beside this text is SAMAN's approved visualisation of the 20 by 20 ft deployed build. It is shown so you can read the corrugation, the wall openings and the deployed support legs clearly.",
+      "paragraph_2": "For finished units from our Bengaluru and Greater Noida factories, open the project gallery and judge the finish on real deliveries rather than on a visualisation.",
+      "link_anchor": "Explore the project gallery",
+      "link_destination": "USE THE SAME DESTINATION PORTA-CABINS USES FOR THIS LINK. Read it from the reference page. Do not invent a URL."
+    }
+  },
+  "variants": [
+    {
+      "code": "SZ-01",
+      "size": "10x20",
+      "option_id": "EX-10X20-COMPACT-DRY-OFFICE-V1",
+      "h2": "10 x 20 ft Expandable Container Office, 200 sq ft Deployed",
+      "body": "The smallest approved size, and the only one with no sanitary room. Three workstations plus a reception task seat sit around a four-seat collaboration table. A pantry and a print and file unit stand against one long wall. One external door sits on a 10 ft wall. Three windows light the plan, and one 20 ft wall stays completely solid. Folded, the unit is 10 ft long and 8 ft wide. It travels on a standard 20 ft open trailer with no route planning.",
+      "bullets": [
+        "Rs 3,75,000 ex GST, Rs 4,42,500 with 18 per cent GST",
+        "Rs 1,875 per sq ft, the reference rate for the whole family",
+        "1 external door, 3 windows, 3 workstations plus reception",
+        "Dry office, no toilet at this size"
+      ]
+    },
+    {
+      "code": "SZ-02",
+      "size": "20x20",
+      "option_id": "EX-20X20-MANAGER-MEETING-SIX-V1",
+      "h2": "20 x 20 ft Expandable Container Office, 400 sq ft Deployed",
+      "body": "Doubling the length gives you the first enclosed rooms. An 8 by 8 ft manager cabin and an 8 by 12 ft six-seat meeting room take one half. Six workstations sit three facing three in the other. Reception and waiting share the entrance corner with a pantry and print point. Seven windows cross three walls, one external door serves the plan, and the fourth wall stays solid. A site team can hold a client meeting here without clearing the desks first.",
+      "bullets": [
+        "Rs 7,12,500 ex GST, Rs 8,40,750 with 18 per cent GST",
+        "Rs 1,781.25 per sq ft, the first step down the band",
+        "1 external door, 7 windows, 6 workstations plus reception",
+        "First size with an enclosed manager cabin and meeting room"
+      ]
+    },
+    {
+      "code": "SZ-03",
+      "size": "30x20",
+      "option_id": "EX-30X20-MANAGER-CONFERENCE-EIGHT-SERVICE-V1",
+      "h2": "30 x 20 ft Expandable Container Office, 600 sq ft Deployed",
+      "body": "The first size with sanitary provision. A wash lobby leads into a single toilet. That keeps the door out of the open office and gives you a privacy sequence. A 10 by 10 ft manager room and a six-seat conference room sit along one wall. Eight workstations fill two four-seat islands. Two external doors let site staff and visitors enter separately. An extract louvre in the solid end wall serves the toilet directly.",
+      "bullets": [
+        "Rs 10,46,250 ex GST, Rs 12,34,575 with 18 per cent GST",
+        "Rs 1,743.75 per sq ft",
+        "2 external doors, 8 windows, 8 workstations plus reception",
+        "First size with a toilet, reached through a wash lobby"
+      ]
+    },
+    {
+      "code": "SZ-04",
+      "size": "40x20",
+      "option_id": "EX-40X20-CORPORATE-EIGHT-DUAL-SERVICE-V1",
+      "h2": "40 x 20 ft Expandable Container Office, 800 sq ft Deployed",
+      "body": "The same eight workstations as the 600 sq ft plan. What the extra 200 sq ft buys is rooms, not desks. A ten-seat conference room replaces the six-seat one. The pantry becomes an enclosed 5 by 5 ft room rather than a counter. Print gets its own point, and separate Gents and Ladies open off a shared wash. Ten windows and two external doors serve the plan. Choose it over the 600 sq ft layout when the office hosts client meetings.",
+      "bullets": [
+        "Rs 13,65,000 ex GST, Rs 16,10,700 with 18 per cent GST",
+        "Rs 1,706.25 per sq ft",
+        "2 external doors, 10 windows, 8 workstations plus reception",
+        "Separate Gents and Ladies through a shared wash"
+      ]
+    },
+    {
+      "code": "SZ-05",
+      "size": "40x40",
+      "option_id": "EX-40X40-CORPORATE-TWENTYFOUR-SERVICE-V1",
+      "h2": "40 x 40 ft Expandable Container Office, 1,600 sq ft Deployed",
+      "body": "The largest approved deployed area. It is the only size built as two 40 by 20 modules, joined along their long edges at the 20 ft line. Twenty-four workstations run in four islands of three facing three. Two manager rooms, a huddle room and an eight-seat conference room sit off the floor. A pantry and break area, a print and server room and a shared wash complete the plan. Twelve windows cross three walls. Both modules travel folded and join on site.",
+      "bullets": [
+        "Rs 27,00,000 ex GST, Rs 31,86,000 with 18 per cent GST",
+        "Rs 1,687.50 per sq ft, the floor of the band",
+        "2 external doors, 12 windows, 24 workstations plus reception",
+        "Two 40 x 20 modules joined on site at the 20 ft datum"
+      ]
+    },
+    {
+      "code": "SZ-06",
+      "size": "60x20",
+      "option_id": "EX-60X20-CORPORATE-EIGHTEEN-SERVICE-V1",
+      "h2": "60 x 20 ft Expandable Container Office, 1,200 sq ft Deployed",
+      "body": "One long single-width run rather than two joined modules. That matters when your plot is narrow. Eighteen workstations sit in three islands of three facing three. A manager room, reception and a ten-seat conference room take one end. A pantry and break area, a print and server room and a shared wash fill the other. Three external doors spread the entry points along the length. Fourteen windows light both long walls.",
+      "bullets": [
+        "Rs 20,25,000 ex GST, Rs 23,89,500 with 18 per cent GST",
+        "Rs 1,687.50 per sq ft, the same floor rate as the 40 x 40",
+        "3 external doors, 14 windows, 18 workstations plus reception",
+        "Single-width run for narrow plots, not a twin-module block"
+      ]
+    }
+  ],
+  "description_tab": {
+    "images": [
+      {
+        "slot": "ld01",
+        "source": "02 Long Description Images/01-expandable-office-10x20-wide-view.png",
+        "alt": "Deep blue 10 by 20 ft expandable container office deployed on a concrete hardstand"
+      },
+      {
+        "slot": "ld02",
+        "source": "02 Long Description Images/03-expandable-office-30x20-wide-view.png",
+        "alt": "Grey-green 30 by 20 ft expandable container office with two external doors on the long wall"
+      },
+      {
+        "slot": "ld03",
+        "source": "02 Long Description Images/04-expandable-office-40x20-wide-view.png",
+        "alt": "Bronze 40 by 20 ft expandable container office deployed on screw-jack legs"
+      },
+      {
+        "slot": "ld04",
+        "source": "02 Long Description Images/05-expandable-office-40x40-wide-view.png",
+        "alt": "Burgundy 40 by 40 ft expandable container office deployed on a concrete apron"
+      },
+      {
+        "slot": "ld05",
+        "source": "02 Long Description Images/06-expandable-office-60x20-wide-view.png",
+        "alt": "Teal 60 by 20 ft expandable container office, single-width run with three external doors"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "What an Expandable Container Office Actually Is"
+      },
+      {
+        "type": "p",
+        "text": "Strip away the marketing and the product is three steel assemblies. A central chassis runs the full length of the unit and is exactly 8 ft wide. Two wings, each 6 ft deep, hinge along its long edges. Folded, the wings sit up against the chassis and the whole building is 8 ft across. Deployed, they swing down and lock, and the finished floor measures 6 plus 8 plus 6, so 20 ft."
+      },
+      {
+        "type": "p",
+        "text": "That single number is what the product is for. Eight feet is a road width. Twenty feet is an office width. A rigid cabin has to be one or the other, and a rigid 20 ft wide module needs over-dimensional routing on most Indian approach roads. The fold lets you buy the office width and pay the road width in transport."
+      },
+      {
+        "type": "p",
+        "text": "Everything else follows from the hinge line. The end walls of every size split into three panels, 6 ft then 8 ft then 6 ft, because the wing edges cut them. Windows in those end walls sit inside the wing panels, and the central chassis panel stays solid. Look at any of the six general arrangement drawings and you can read the fold straight off the elevation."
+      },
+      {
+        "type": "p",
+        "text": "One boundary matters before you go further. This is an office product priced by deployed floor area. Folding and expandable dwellings are a separate line with a different fit-out, different sanitary provision and a different price basis. If you are buying accommodation rather than a workplace, you want that page, not this one."
+      },
+      {
+        "type": "h2",
+        "text": "How the Fold Works, Component by Component"
+      },
+      {
+        "type": "h3",
+        "text": "The central transport chassis"
+      },
+      {
+        "type": "p",
+        "text": "The chassis is the part that gets lifted, trailered and set down. It is an ISO-corner or engineered steel frame carrying hinge beams, jack points and locking pockets. It takes the transport loads on its own, and it supports the deployed wings once they are down. Hinge reactions, deployed support loads and the road transport condition are all checked separately, because they are different load cases on the same steel."
+      },
+      {
+        "type": "h3",
+        "text": "The fold-out floor wings"
+      },
+      {
+        "type": "p",
+        "text": "Each wing floor is an insulated steel cassette with an 18 to 20 mm board or plate deck. The cassettes carry RHS or channel members with local reinforcement at the hinges, jacks and locks. Folded, they have to resist transport vibration. Deployed, they carry office loading. Joint covers bridge the movement line so the walking surface stays continuous, and they lift out for hinge inspection."
+      },
+      {
+        "type": "h3",
+        "text": "The roof and wall leaves"
+      },
+      {
+        "type": "p",
+        "text": "A central roof spine carries the wing-lock frame. The roof leaves are steel PUF or PIR cassettes, typically 50 to 75 mm, with compression seals and a positive fall once deployed. Wall leaves are composite panels, typically 50 to 60 mm, with steel skins and reinforced edges at the hinge zones and transport contact points. The envelope is a low-profile flat container roof, not a pitched cabin roof."
+      },
+      {
+        "type": "h3",
+        "text": "Seals, locks and support legs"
+      },
+      {
+        "type": "p",
+        "text": "Weather sealing uses EPDM gaskets, butyl tape and compatible sealants at the fold lines. The locks are mechanical and inspectable, and they carry the load. Sealant is never treated as a structural or travel restraint. Adjustable screw-jack legs stand under the outer edge of each deployed wing and bear on prepared pads. Seals are consumable items with inspection criteria, and they get checked after every deployment."
+      },
+      {
+        "type": "h2",
+        "text": "Folded Transport Against Deployed Floor"
+      },
+      {
+        "type": "p",
+        "text": "The commercial point of the product is the difference between two footprints. Every approved size is 8 ft wide folded. What changes between sizes is the length, and that is what decides your trailer and your route."
+      },
+      {
+        "type": "p",
+        "text": "The four sizes up to 40 ft long travel as a single load on a standard open trailer. The 60 ft run travels as one long load. The 1,600 sq ft plan is different again. It is two 40 by 20 modules, so it travels as two folded loads. They are joined on site at the 20 ft datum. Two deliveries, one building."
+      },
+      {
+        "type": "p",
+        "text": "Freight follows the shared distance bands in the Shipping tab. Those bands are set by trailer length, not by the deployed area you end up with. That is the arbitrage. A 1,200 sq ft expandable office travels on the same trailer class as a far smaller rigid cabin. Folded, it is the same 8 ft across."
+      },
+      {
+        "type": "h2",
+        "text": "Choosing Between the Six Deployed Sizes"
+      },
+      {
+        "type": "p",
+        "text": "The sizes are not a smooth ladder, and the jumps matter more than the areas. Three thresholds decide almost every enquiry."
+      },
+      {
+        "type": "p",
+        "text": "The first is enclosure. At 200 sq ft you get one open room with no sanitary provision at all. At 400 sq ft you get an enclosed manager cabin and a six-seat meeting room. If you need a door you can close for a wage discussion or a client call, 400 sq ft is where that starts."
+      },
+      {
+        "type": "p",
+        "text": "The second is sanitation. At 600 sq ft a wash lobby and a single toilet appear. The lobby matters as much as the toilet, because it keeps the sanitary door off the open floor. At 800 sq ft that becomes separate Gents and Ladies through a shared wash. That is usually the point where one cubicle stops serving a mixed site team."
+      },
+      {
+        "type": "p",
+        "text": "The third is desk count against room count. The 600 and 800 sq ft plans carry the same eight workstations. The extra 200 sq ft buys a larger conference room, an enclosed pantry and dual sanitary provision. If you need desks rather than rooms, the 1,200 sq ft plan takes you to eighteen and the 1,600 sq ft plan to twenty-four."
+      },
+      {
+        "type": "p",
+        "text": "Between the two largest plans, plot shape decides. The 1,600 sq ft option is a square block two modules deep. The 1,200 sq ft option is a single-width run 60 ft long. On a narrow strip along a boundary the smaller plan often fits where the larger one cannot. Both carry the same rate per square foot."
+      },
+      {
+        "type": "h2",
+        "text": "What the Published Price Includes"
+      },
+      {
+        "type": "p",
+        "text": "Every figure on this page is a budgetary, mechanism-inclusive planning estimate. The rate applies to deployed floor area, not folded area. Prices are shown ex-GST and with 18 per cent GST added. The final quotation governs, and the scope below is what the planning rate assumes."
+      },
+      {
+        "type": "p",
+        "text": "Standard, inside the published rate:"
+      },
+      {
+        "type": "li",
+        "text": "The deployed office enclosure and the defined fold mechanism"
+      },
+      {
+        "type": "li",
+        "text": "The approved six-size GA family and the signed drawing for your size"
+      },
+      {
+        "type": "li",
+        "text": "Fold-out floors, hinge and lock interfaces and weather seals at planning level"
+      },
+      {
+        "type": "li",
+        "text": "Base electrical interfaces, and interior office finish only where expressly quoted"
+      },
+      {
+        "type": "p",
+        "text": "Excluded unless your quotation lists it:"
+      },
+      {
+        "type": "li",
+        "text": "Transport, unloading, craneage and installation"
+      },
+      {
+        "type": "li",
+        "text": "Foundations, support pads and site utilities up to the connection point"
+      },
+      {
+        "type": "li",
+        "text": "Loose furniture, appliances and specialist systems"
+      },
+      {
+        "type": "li",
+        "text": "Project-specific structural, fire, electrical or statutory certification"
+      },
+      {
+        "type": "li",
+        "text": "Repeated deployment-cycle validation and site-specific wind restrictions"
+      },
+      {
+        "type": "p",
+        "text": "We publish that exclusion list on the page rather than in the small print. The two items buyers most often assume are included are craneage and the support pads. Both are separate. On a first deployment they decide whether the unit opens on the day it lands or waits a week."
+      },
+      {
+        "type": "h2",
+        "text": "Site Readiness for a Deployed Unit"
+      },
+      {
+        "type": "p",
+        "text": "A rigid cabin needs a level base under its own footprint. An expandable unit needs more than that, and the extra is easy to miss when you scope the pad."
+      },
+      {
+        "type": "li",
+        "text": "Prepared bearing pads under the outer edge of both wings, not only under the chassis"
+      },
+      {
+        "type": "li",
+        "text": "A clear swing zone around the unit while the wings come down"
+      },
+      {
+        "type": "li",
+        "text": "A crane standing position that reaches the folded unit in its final placement"
+      },
+      {
+        "type": "li",
+        "text": "An approach road that clears the folded transit envelope, checked for height as well as width"
+      },
+      {
+        "type": "li",
+        "text": "Setback from boundaries measured on the deployed footprint, not the folded one"
+      },
+      {
+        "type": "p",
+        "text": "That last point causes the most rework. A plot that accepts an 8 ft wide delivery does not automatically accept a 20 ft wide building. Measure your boundary clearance against the deployed plan before you place the order."
+      },
+      {
+        "type": "h2",
+        "text": "Deployment, Relocation and Cycle Life"
+      },
+      {
+        "type": "p",
+        "text": "The unit is lifted and transported fully folded and locked, unless an engineered method statement says otherwise. Deployment jacks are not lifting points, and that is a safety line rather than a preference. Certified corner fittings or lugs, travel locks and a restraint checklist govern the lift."
+      },
+      {
+        "type": "p",
+        "text": "At least one complete deployment happens in the factory before dispatch. That trial confirms the geometry and the function: fold, lock, level, seal, water ingress, electrical continuity, interlock and re-fold. Handover includes the setup sequence, the wind restrictions, the support plan and the inspection checklist."
+      },
+      {
+        "type": "p",
+        "text": "For relocation, the honest answer is that a fold is a maintenance event, not a free move. Seals are consumables with inspection criteria. Panel edges and seals are repaired before redeployment. The electrical system is bonded across every moving leaf and is retested after each relocation before anyone occupies the building. Where your project needs a defined number of cycles, that requirement is stated and validated in the quotation rather than assumed from the planning rate."
+      },
+      {
+        "type": "h2",
+        "text": "Where a Fixed Cabin Is the Better Buy"
+      },
+      {
+        "type": "p",
+        "text": "There are projects where this product is the wrong answer, and saying so is more useful than a page that recommends itself in every case."
+      },
+      {
+        "type": "p",
+        "text": "If the office will stand in one position for its whole service life, the mechanism premium buys you nothing after day one. A fabricated steel cabin gives you the same deployed floor for less. Our container office cabin publishes about Rs 1,250 per sq ft at the 200 sq ft reference, against Rs 1,875 here."
+      },
+      {
+        "type": "p",
+        "text": "If you want a genuine converted freight box, with the original ISO shell retained, that is a different build. And if the interior will carry heavy equipment loads, a fixed structure without articulated floor joints is the simpler engineering problem. Tell us the duty and we will point you at the right one, including when the right one is not this."
+      },
+      {
+        "type": "h2",
+        "text": "What the Signed GA Drawing Fixes Before Fabrication"
+      },
+      {
+        "type": "p",
+        "text": "Every approved size on this page has its own general arrangement drawing, and that drawing is the contract for geometry. It carries the dimensioned deployed plan, the exact opening ledger wall by wall, the capacity figures and all four wall elevations. Nothing goes to the shop floor until it is signed."
+      },
+      {
+        "type": "p",
+        "text": "That matters because openings on this product are not free. Wall leaves carry the deployed lateral system, so a large window or an extra door needs additional framing. Adding one after fabrication release is a redesign, not a change order. The drawing is where you make those decisions cheaply."
+      },
+      {
+        "type": "p",
+        "text": "Six things get frozen before release, and we ask you to confirm each one:"
+      },
+      {
+        "type": "li",
+        "text": "The deployed footprint, the site access route and the placement surface"
+      },
+      {
+        "type": "li",
+        "text": "The exact option ID and the opening ledger for your size"
+      },
+      {
+        "type": "li",
+        "text": "The transport route, the unloading method and the deployment method"
+      },
+      {
+        "type": "li",
+        "text": "Electrical, plumbing, HVAC and utility-entry locations"
+      },
+      {
+        "type": "li",
+        "text": "Furniture and equipment loads, and the final quotation scope"
+      },
+      {
+        "type": "li",
+        "text": "Release of the signed project shop drawings, and nothing earlier"
+      },
+      {
+        "type": "p",
+        "text": "The GA is an architectural and commercial control document. It governs geometry. It does not certify structure, fire, egress or accessibility, and final project engineering still governs fabrication and supply. We would rather say that plainly than let a drawing carry weight it was never issued to carry."
+      },
+      {
+        "type": "h2",
+        "text": "Common Questions About Expandable Container Offices"
+      },
+      {
+        "type": "h3",
+        "text": "How wide is it when folded?"
+      },
+      {
+        "type": "p",
+        "text": "Eight feet across every approved size. That is the central chassis width, and it is why the unit clears a standard open trailer. The length varies by size, from 10 ft on the smallest plan to 60 ft on the longest run."
+      },
+      {
+        "type": "h3",
+        "text": "How much floor do I gain when it opens?"
+      },
+      {
+        "type": "p",
+        "text": "The deployed width is 20 ft against 8 ft folded, so the wings add 12 ft across the whole length. On the 200 sq ft plan that is the difference between a corridor and an office."
+      },
+      {
+        "type": "h3",
+        "text": "Is the price per unit or per square foot?"
+      },
+      {
+        "type": "p",
+        "text": "Both are published. The rate is Rs 1,875 per sq ft at the 200 sq ft reference. It steps down as the deployed area rises, reaching Rs 1,687.50 at the two largest plans. Each size also shows a total, ex-GST and with 18 per cent GST added."
+      },
+      {
+        "type": "h3",
+        "text": "Does it leak at the fold joints?"
+      },
+      {
+        "type": "p",
+        "text": "The joints use compression seals with positive mechanical locks, and water paths are directed away from the floor hinges and the centre joint. Seals are consumable items with inspection criteria, and they are checked after every deployment. Any page promising a permanently sealed moving joint is overselling it."
+      },
+      {
+        "type": "h3",
+        "text": "Which size has a toilet?"
+      },
+      {
+        "type": "p",
+        "text": "Sanitary provision starts at 600 sq ft, with a wash lobby into a single toilet. The 800 sq ft plan and both larger plans carry separate Gents and Ladies through a shared wash. The 200 and 400 sq ft plans are dry offices with no sanitary room."
+      },
+      {
+        "type": "h3",
+        "text": "Can I move it between sites?"
+      },
+      {
+        "type": "p",
+        "text": "Yes, and that is the case for buying one. Plan each move as a maintenance event. Fold, then inspect and repair the seals and panel edges. Transport folded and locked, re-level on prepared pads, and retest the electrical system before occupation."
+      }
+    ],
+    "tables": [
+      {
+        "id": "desc-t1",
+        "reason_for_existing": "Folded transport length against deployed area is a two-number comparison per size. Prose cannot hold twelve figures legibly, and the trailer decision depends on reading them side by side.",
+        "caption": "Folded transport envelope against deployed floor, by approved size",
+        "header": [
+          "Size",
+          "Folded width",
+          "Folded length",
+          "Deployed floor",
+          "Travels as"
+        ],
+        "rows": [
+          [
+            "10 x 20",
+            "8 ft",
+            "10 ft",
+            "200 sq ft",
+            "One load, 20 ft trailer class"
+          ],
+          [
+            "20 x 20",
+            "8 ft",
+            "20 ft",
+            "400 sq ft",
+            "One load, 20 ft trailer class"
+          ],
+          [
+            "30 x 20",
+            "8 ft",
+            "30 ft",
+            "600 sq ft",
+            "One load, 40 ft trailer class"
+          ],
+          [
+            "40 x 20",
+            "8 ft",
+            "40 ft",
+            "800 sq ft",
+            "One load, 40 ft trailer class"
+          ],
+          [
+            "40 x 40",
+            "8 ft",
+            "40 ft per module",
+            "1,600 sq ft",
+            "Two folded loads, joined on site"
+          ],
+          [
+            "60 x 20",
+            "8 ft",
+            "60 ft",
+            "1,200 sq ft",
+            "One long load"
+          ]
+        ]
+      }
+    ],
+    "internal_links": [
+      {
+        "anchor": "container office cabin",
+        "destination": "https://www.samanportable.com/product/container-offices/container-office-cabin",
+        "owns": "The value-line fabricated MS steel cabin in container form",
+        "reason": "The named cheaper alternative when the buyer will never fold the unit again"
+      },
+      {
+        "anchor": "genuine converted freight box",
+        "destination": "https://www.samanportable.com/product/container-offices/shipping-container-office",
+        "owns": "ISO-form freight-box conversion with the original shell retained",
+        "reason": "The buyer who wants a real shipping container, not a fabricated module"
+      },
+      {
+        "anchor": "first delivery a project takes",
+        "destination": "https://www.samanportable.com/product/container-offices/site-office-container",
+        "owns": "Project-duration construction site office placed at the gate",
+        "reason": "The fixed-cabin answer for a single-site posting"
+      }
+    ]
+  },
+  "specifications_tab": {
+    "narrative": "Two things in this specification change what you buy rather than how it is described. The first is that every load case is checked twice, once folded and once deployed, because the same steel carries transport vibration in one state and office loading in the other. The second is that the seals and the locks are separate systems. Locks carry load and are inspectable. Sealant never does either job on its own. Read the two tables with that split in mind, and read the exclusions at the end of the Description tab alongside them.",
+    "tables": [
+      {
+        "id": "spec-t1",
+        "caption": "Structure, envelope and floor",
+        "note": "Built from the folder specification sheet, section Structural Frame and Fabrication and section Walls, Roof, Floor and Insulation.",
+        "header": [
+          "Component",
+          "Specification"
+        ],
+        "rows": [
+          [
+            "Bottom frame",
+            "Central transport chassis with fold-out floor interfaces. ISO-corner or engineered steel chassis carrying hinge beams, jack points and locking pockets. Hinge reactions, deployed supports and the road transport condition are checked separately."
+          ],
+          [
+            "Bottom stiffeners",
+            "Fold-out floor-leaf support grid. RHS or channel members in the centre and wing cassettes, with local reinforcement at hinges, jacks and locks. Locking details prevent differential movement at the centre joint."
+          ],
+          [
+            "Floor frame",
+            "Insulated fold-out deck. Steel cassette with an 18 to 20 mm board or plate deck, articulated joints and adjustable support legs. Joint covers allow movement while keeping a continuous walking surface."
+          ],
+          [
+            "Top frame",
+            "Central roof spine and wing-lock frame. Engineered perimeter with roof hinges, travel locks and deployed alignment points. Locks are positive and inspectable, not dependent on sealant."
+          ],
+          [
+            "Roof stiffeners",
+            "Folding or telescopic insulated roof leaves. Steel PUF or PIR roof cassettes, or framed leaves sized for wind, rain and deployment loads. Leaves deploy in the approved sequence and lock against uplift."
+          ],
+          [
+            "Corner posts and walls",
+            "Central posts and fold-out wall leaves. ISO-corner or heavy posts with hinged wall panels, telescopic supports or framed end walls. Large glazing or door openings need additional frames and cannot be added casually."
+          ],
+          [
+            "Lifting and handling",
+            "Transport-condition lifting only unless otherwise approved. Certified corner fittings or lugs, travel locks, folded centre of gravity and a restraint checklist. Deployment jacks are not lifting points."
+          ],
+          [
+            "Welding and fabrication",
+            "Precision hinge and lock fabrication. Approved WPS, machined or jigged hinge axes, replaceable pins or bushes and inspected locking pockets. Trial deployment verifies alignment before coating and final fit-out."
+          ],
+          [
+            "Exterior walls",
+            "Insulated composite fold-out leaves. Typically 50 to 60 mm PUF or PIR, or mineral-wool composite panels with steel skins and reinforced edges."
+          ],
+          [
+            "Roof",
+            "Insulated fold-down or telescopic roof system. Steel PUF or PIR cassettes with compression seals, gutters or drips and a positive deployed fall."
+          ],
+          [
+            "Wall insulation",
+            "Composite wing-panel insulation, typically 50 to 60 mm PUF or PIR. Mineral wool where the fire strategy requires it."
+          ],
+          [
+            "Roof insulation",
+            "Insulated folding roof leaves, typically 50 to 75 mm PUF or PIR, or an engineered mineral-wool cassette with vapour control."
+          ],
+          [
+            "Interior walls and ceiling",
+            "Pre-finished folding panel surfaces in coated steel, laminated board or serviceable liner, with flexible joint details. Ceiling fixtures sit clear of the folding paths and travel restraints."
+          ],
+          [
+            "Floor base and finish",
+            "Insulated centre and wing deck on a steel frame with moisture-resistant board or plate, sealed at hinge and perimeter edges. Vinyl, SPC or rubber finish in cassettes, divided at movement joints with removable transition strips."
+          ],
+          [
+            "External finish",
+            "Premium vertically corrugated MS sheet, 1.25 to 1.6 mm appearance baseline. Industrial paint or pre-coated steel with replaceable graphics and high-visibility travel-lock markings."
+          ],
+          [
+            "Fasteners and sealing",
+            "Replaceable compression seals and locked mechanical joints. EPDM gaskets, butyl tape, compatible sealants, locking pins, bolts and wear pads. Seals are consumable items with inspection criteria."
+          ]
+        ]
+      },
+      {
+        "id": "spec-t2",
+        "caption": "Openings, services, quality and scope",
+        "note": "Built from the folder specification sheet, section Doors, Windows, Electrical and Services, plus the commercial scope page of the technical PDF.",
+        "header": [
+          "Component",
+          "Specification"
+        ],
+        "rows": [
+          [
+            "Main door and service door",
+            "Door in a fixed or reinforced deployed wall. Insulated steel or glazed commercial door with travel restraint and weather seals. Door position avoids folding paths and provides egress in the deployed state."
+          ],
+          [
+            "Windows and service openings",
+            "Windows in reinforced fixed or wing cassettes. Powder-coated aluminium or uPVC, 5 to 6 mm glass or safety glazing, travel locks and seals. Large windows may need removable braces during travel."
+          ],
+          [
+            "Grills and mesh",
+            "Removable or folding opening accessories. Mesh, guards, louvres and weather hoods designed for travel clearance, locking positively and staying inside the transport envelope when folded."
+          ],
+          [
+            "Electrical wiring",
+            "Flexible or plug-connected modular harness. Copper circuits with protected flexible loops, energy-chain routing or keyed connectors across the moving joints. Cable bend radius, flex life and abrasion protection are verified through deployment cycles."
+          ],
+          [
+            "Electrical protection",
+            "Compact distribution board, bonding and deployment interlocks. Main isolator, MCB and RCCB or RCBO, earth continuity across every leaf, optional travel-lock interlock. The system is retested after each relocation before occupation."
+          ],
+          [
+            "Electrical fittings",
+            "Prewired lighting, sockets and data points. LED lights, sockets, fans, data conduits and an AC point positioned clear of the folding mechanism. Quick-connect circuits are labelled and cannot be mismated."
+          ],
+          [
+            "Ventilation and cooling",
+            "Rapid-deployment comfort cooling. Split or ducted AC or heater provision with flexible condensate and outdoor-unit connection. Natural ventilation follows the opening schedule for that size."
+          ],
+          [
+            "Plumbing and sanitary",
+            "Optional quick-connect wet-service module. Flexible approved hoses or unioned piping, accessible valves and external connection points. The base office price excludes sanitary systems."
+          ],
+          [
+            "Layout and configuration",
+            "Deployed-area and transport-envelope planning: folded dimensions, deployed footprint, wing clearances, support points, furniture plan and deployment exclusion zone. Pricing uses deployed floor area."
+          ],
+          [
+            "Painting and coating",
+            "High-wear hinge and transport coating system. Prepared steel with epoxy or PU, or galvanized components, with lubricated or protected pins and repairable wear zones."
+          ],
+          [
+            "Quality checks",
+            "Trial deployment and cycle-function factory acceptance test: fold, lock, level, seal, water ingress, electrical continuity, interlock and re-fold. At least one complete factory deployment confirms geometry and function."
+          ],
+          [
+            "Warranty",
+            "Mechanism, seal and enclosure warranty split. The final quotation states the hinge, jack, hydraulic or manual mechanism, seals, panels, electrical and relocation coverage. The base rate includes the defined mechanism and enclosure only."
+          ],
+          [
+            "Engineering boundary",
+            "This specification makes no claim of structural adequacy, lifting capacity, stacking capacity, code certification, fire rating, egress compliance or accessibility compliance. Final engineering, foundations, services and fabrication release remain project-controlled."
+          ]
+        ]
+      }
+    ],
+    "diagrams": [
+      {
+        "id": "dia-1",
+        "source": "03 Technical Diagrams/02-expandable-office-20x20-envelope-diagram.png",
+        "caption": "Envelope and deployment intent, 20 x 20 ft reference size. Illustrative, not for construction.",
+        "alt": "Diagram of the 20 by 20 ft expandable office envelope showing chassis and wing datums"
+      },
+      {
+        "id": "dia-2",
+        "source": "03 Technical Diagrams/02-expandable-office-20x20-layout-diagram.png",
+        "caption": "Approved opening coordination, 20 x 20 ft reference size. Illustrative, not for construction.",
+        "alt": "Diagram of the 20 by 20 ft approved wall opening coordination and room layout"
+      }
+    ]
+  },
+  "shipping_instruction": "Reproduce the current approved shared shipping component exactly as it renders on the live sibling pages: the page-specific opening paragraph below, then the free-delivery line, then the 20 ft trailer distance table, then the 40 ft trailer distance table, then the shared closing paragraph. Do not paraphrase. Do not correct the 850 to 900 km band in the 40 ft table, which skips a step on every sibling and is the live component. Do not remove the en dashes in the distance and rupee ranges. Tab heading remains Shipping & Delivery.",
+  "shipping_opening_paragraph": "An expandable container office travels folded at 8 ft wide, so every approved size up to 40 ft long clears a standard open trailer without over-dimensional routing, and the 60 ft run travels as one long load. Dispatch is from Bangalore for the South and Greater Noida for the North. Deployment on site is a separate scope: the wings are lowered, the support legs are set on prepared pads and the seals are checked before handover. Freight follows the distance tables below and is confirmed to your pin code in the quotation.",
+  "reviews_instruction": "Leave the review system untouched. This URL is new and carries no genuine reviews. Retain the approved neutral empty state exactly as it renders on the porta-cabins hub, which shows 0 reviews and No reviews yet. Write no review, no star rating, no customer name, no project location, no date and no verified label. Do not emit aggregateRating in schema.",
+  "precalculator_note": "WITHDRAWN. The reference template carries no 1:1 image before the calculator. It carries a 16:9 image inside section 2 beside a short text block. See section2.media_block. No new asset and no crop is required."
+}

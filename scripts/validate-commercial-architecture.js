@@ -64,10 +64,6 @@ if (nonPublishedApproved.length) {
   const message = `approved live records are not published: ${nonPublishedApproved.join(', ')}`;
   strict ? failures.push(message) : warnings.push(message);
 }
-if (plannedRecords.length) {
-  const message = `${plannedRecords.length} planned-release paths have product records: ${plannedRecords.join(', ')}`;
-  strict ? failures.push(message) : warnings.push(message);
-}
 if (publishedPlannedRecords.length) {
   const message = `${publishedPlannedRecords.length} planned-release paths have publish-status records: ${publishedPlannedRecords.join(', ')}`;
   strict ? failures.push(message) : warnings.push(message);
@@ -79,4 +75,7 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log(`Commercial architecture valid: ${approved.size} approved live paths and ${planned.size} planned-release paths.`);
+console.log(
+  `Commercial architecture valid: ${approved.size} approved live paths and ${planned.size} planned-release paths`
+  + ` (${plannedRecords.length} retained draft record${plannedRecords.length === 1 ? '' : 's'}).`,
+);

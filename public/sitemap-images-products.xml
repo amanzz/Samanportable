@@ -54,10 +54,10 @@
     <loc>https://www.samanportable.com/product</loc>
     <image:image><image:loc>https://www.samanportable.com/images/puf-panel/cold-storage/100mm-dairy-cold-storage-room-interior.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/puf-panel/house/puf-panel-house-installation-wall-roof.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/puf-panel/price-stack-40mm-1200x675.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/puf-panel/spec/50mm-off-white-puf-panel-factory-stack.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/panel-images/metal-roofing-sheet/metal-roofing-sheet-colour-stack.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/puf-panel/wall/40mm-puf-wall-panel-stockyard.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/panel-images/polycarbonate-roofing-sheet/polycarbonate-roofing-sheet-clear-solid.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/panel-images/pvc-roofing-sheet/pvc-upvc-roofing-sheet-corrugated-profile.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/panel-images/roofing-sheet/roofing-sheet-colour-coated-stack.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/panel-images/sandwich-panel/sandwich-panel-stack-facing-finishes.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
@@ -790,6 +790,7 @@
     <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/size-section/co-00-container-office-40x8-general-arrangement-board.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/specifications/co-00-container-office-frame-and-sheet-fixing-detail.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/container-offices/specifications/co-00-container-office-window-electrical-fan-detail.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/gallery/expandable-container-office-10x20-a-1.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/size-20x8/01-shipping-container-office-front-exterior.png</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/site-office-container/20x8/01-site-office-container-20x8-front-exterior.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
@@ -928,6 +929,7 @@
     <image:image><image:loc>https://www.samanportable.com/assets/products/container-marketing-office/gallery/40x8/06-container-marketing-40x8-reverse-interior.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/credentials/optimized/saman-logo-band-cropped.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/container-offices/construction-workers-reviewing-plans-on-site.jpeg</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/gallery/expandable-container-office-10x20-a-1.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/size-20x8/01-shipping-container-office-front-exterior.png</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/site-office-container/20x8/01-site-office-container-20x8-front-exterior.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
@@ -994,6 +996,7 @@
     <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/ga-plans/container-office-cabin-ga-plan-40x10.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/ga-plans/container-office-cabin-ga-plan-40x8.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/container-office-cabin/section2/container-office-cabin-section2-20x10-moss-olive.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/gallery/expandable-container-office-10x20-a-1.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/size-20x8/01-shipping-container-office-front-exterior.png</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/site-office-container/20x8/01-site-office-container-20x8-front-exterior.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
@@ -1062,6 +1065,79 @@
     <image:image><image:loc>https://www.samanportable.com/images/products/containerized-data-center/containerized-data-center-diagram-systems-coordination.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/containerized-data-center/containerized-data-center-section2-card-20ft-high-cube.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/size-20x8/01-shipping-container-office-front-exterior.png</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.samanportable.com/product/container-offices/expandable-container-office</loc>
+    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1216.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1216.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1440.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1440.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1926.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1926.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/saman-logo-band-cropped.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/container-offices/construction-workers-reviewing-plans-on-site.jpeg</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/product-heroes/container-offices/modern-green-container-office-exterior.jpeg</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/description/01-expandable-office-10x20-wide-view.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/description/02-expandable-office-20x20-wide-view.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/description/03-expandable-office-30x20-wide-view.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/description/04-expandable-office-40x20-wide-view.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/description/05-expandable-office-40x40-wide-view.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/description/06-expandable-office-60x20-wide-view.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/ga/01-expandable-office-10x20-approved-ga-full.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/ga/01-expandable-office-10x20-approved-ga-preview.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/ga/02-expandable-office-20x20-approved-ga-full.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/ga/02-expandable-office-20x20-approved-ga-preview.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/ga/03-expandable-office-30x20-approved-ga-full.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/ga/03-expandable-office-30x20-approved-ga-preview.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/ga/04-expandable-office-40x20-approved-ga-full.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/ga/04-expandable-office-40x20-approved-ga-preview.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/ga/05-expandable-office-40x40-approved-ga-full.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/ga/05-expandable-office-40x40-approved-ga-preview.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/ga/06-expandable-office-60x20-approved-ga-full.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/ga/06-expandable-office-60x20-approved-ga-preview.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/gallery/expandable-container-office-10x20-a-1.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/gallery/expandable-container-office-10x20-b-2.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/gallery/expandable-container-office-10x20-detail-3.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/gallery/expandable-container-office-10x20-print-6.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/gallery/expandable-container-office-10x20-reception-5.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/gallery/expandable-container-office-10x20-workspace-4.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/gallery/expandable-container-office-20x20-a-1.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/gallery/expandable-container-office-20x20-b-2.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/gallery/expandable-container-office-20x20-detail-3.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/gallery/expandable-container-office-20x20-manager-5.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/gallery/expandable-container-office-20x20-room-6.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/gallery/expandable-container-office-20x20-workstations-4.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/gallery/expandable-container-office-30x20-a-1.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/gallery/expandable-container-office-30x20-b-2.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/gallery/expandable-container-office-30x20-conference-6.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/gallery/expandable-container-office-30x20-detail-3.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/gallery/expandable-container-office-30x20-manager-5.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/gallery/expandable-container-office-30x20-workstations-4.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/gallery/expandable-container-office-40x20-a-1.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/gallery/expandable-container-office-40x20-b-2.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/gallery/expandable-container-office-40x20-conference-6.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/gallery/expandable-container-office-40x20-detail-3.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/gallery/expandable-container-office-40x20-manager-5.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/gallery/expandable-container-office-40x20-workstations-4.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/gallery/expandable-container-office-40x40-a-1.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/gallery/expandable-container-office-40x40-b-2.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/gallery/expandable-container-office-40x40-conference-6.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/gallery/expandable-container-office-40x40-detail-3.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/gallery/expandable-container-office-40x40-front-workstations-4.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/gallery/expandable-container-office-40x40-rear-workstations-5.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/gallery/expandable-container-office-60x20-a-1.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/gallery/expandable-container-office-60x20-b-2.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/gallery/expandable-container-office-60x20-conference-6.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/gallery/expandable-container-office-60x20-detail-3.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/gallery/expandable-container-office-60x20-manager-5.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/gallery/expandable-container-office-60x20-workstations-4.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/specifications/02-expandable-office-20x20-envelope-diagram.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/specifications/02-expandable-office-20x20-layout-diagram.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/size-20x8/01-shipping-container-office-front-exterior.png</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/site-office-container/20x8/01-site-office-container-20x8-front-exterior.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
   </url>
   <url>
@@ -1221,6 +1297,7 @@
     <image:image><image:loc>https://www.samanportable.com/credentials/optimized/saman-logo-band-cropped.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/container-offices/construction-workers-reviewing-plans-on-site.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/container-offices/modern-green-container-office-exterior.jpeg</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/gallery/expandable-container-office-10x20-a-1.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/description/01-shipping-container-office-20x8-exterior.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/description/02-shipping-container-office-20x10-workstations.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/description/03-shipping-container-office-20x12-exterior.webp</image:loc></image:image>
@@ -1278,6 +1355,7 @@
     <image:image><image:loc>https://www.samanportable.com/credentials/optimized/saman-logo-band-cropped.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/container-offices/construction-workers-reviewing-plans-on-site.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/product-heroes/container-offices/modern-green-container-office-exterior.jpeg</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/expandable-container-office/gallery/expandable-container-office-10x20-a-1.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-office/size-20x8/01-shipping-container-office-front-exterior.png</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/site-office-container/20x10/01-site-office-container-20x10-front-exterior.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/site-office-container/20x10/02-site-office-container-20x10-rear-exterior.webp</image:loc></image:image>
@@ -1585,7 +1663,6 @@
     <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/credentials/optimized/saman-logo-band-cropped.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/ablution-block/12x10/ablution-block-12x10-ft-cornflower-blue-exterior-front-left-hero.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/accommodation-container/20x8/lc05-20x8-hero.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/118x30-gplus1/labour-colony-118x30-gplus1-dormitory-bunk-rows.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/118x30-gplus1/labour-colony-118x30-gplus1-dormitory-entrance-view.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/118x30-gplus1/labour-colony-118x30-gplus1-front-elevation.webp</image:loc></image:image>
@@ -1689,7 +1766,6 @@
     <image:image><image:loc>https://www.samanportable.com/images/products/ablution-block/section2/ablution-block-split-card-camp-context.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/ablution-block/specifications/ablution-block-bank-layout-diagram.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/ablution-block/specifications/ablution-block-wet-service-section-diagram.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/accommodation-container/20x8/lc05-20x8-hero.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/60x24-gplus1/labour-colony-60x24-gplus1-front-three-quarter.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/10x10/labor-hutments-10x10-front-elevation.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/labor-sheds/20x10/labour-shed-20x10-front-left-exterior.webp</image:loc></image:image>
@@ -1710,7 +1786,6 @@
     <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/credentials/optimized/saman-logo-band-cropped.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/ablution-block/12x10/ablution-block-12x10-ft-cornflower-blue-exterior-front-left-hero.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/accommodation-container/20x8/lc05-20x8-hero.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/60x24-gplus1/labour-colony-60x24-gplus1-front-three-quarter.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/10x10/labor-hutments-10x10-front-elevation.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/10x10/labor-hutments-10x10-front-left-three-quarter.webp</image:loc></image:image>
@@ -1764,7 +1839,6 @@
     <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/credentials/optimized/saman-logo-band-cropped.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/ablution-block/12x10/ablution-block-12x10-ft-cornflower-blue-exterior-front-left-hero.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/accommodation-container/20x8/lc05-20x8-hero.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/60x24-gplus1/labour-colony-60x24-gplus1-front-three-quarter.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/10x10/labor-hutments-10x10-front-elevation.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/labor-sheds/20x10/labour-shed-20x10-front-left-exterior.webp</image:loc></image:image>
@@ -1821,7 +1895,6 @@
     <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/credentials/optimized/saman-logo-band-cropped.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/ablution-block/12x10/ablution-block-12x10-ft-cornflower-blue-exterior-front-left-hero.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/accommodation-container/20x8/lc05-20x8-hero.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/60x24-gplus1/labour-colony-60x24-gplus1-front-three-quarter.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/10x10/labor-hutments-10x10-front-elevation.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/labor-sheds/20x10/labour-shed-20x10-front-left-exterior.webp</image:loc></image:image>
@@ -1886,7 +1959,6 @@
     <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/credentials/optimized/saman-logo-band-cropped.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/ablution-block/12x10/ablution-block-12x10-ft-cornflower-blue-exterior-front-left-hero.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/accommodation-container/20x8/lc05-20x8-hero.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/60x24-gplus1/labour-colony-60x24-gplus1-front-three-quarter.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/10x10/labor-hutments-10x10-front-elevation.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/labor-sheds/20x10/labour-shed-20x10-front-left-exterior.webp</image:loc></image:image>
@@ -1950,7 +2022,6 @@
     <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/credentials/optimized/saman-logo-band-cropped.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/ablution-block/12x10/ablution-block-12x10-ft-cornflower-blue-exterior-front-left-hero.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/images/products/accommodation-container/20x8/lc05-20x8-hero.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/labor-colony/60x24-gplus1/labour-colony-60x24-gplus1-front-three-quarter.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/labor-hutments/10x10/labor-hutments-10x10-front-elevation.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/labor-sheds/20x10/labour-shed-20x10-front-left-exterior.webp</image:loc></image:image>
@@ -4331,28 +4402,6 @@
     <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
   </url>
   <url>
-    <loc>https://www.samanportable.com/product/roofing-sheet/metal-roofing-sheet</loc>
-    <image:image><image:loc>https://www.samanportable.com/panel-images/eps-panel/eps-panel-wall-roof-stack-1x1.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/panel-images/metal-roofing-sheet/colour-coated-metal-sheet-factory-roof.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/panel-images/metal-roofing-sheet/gi-corrugated-sheet-utility-shed.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/panel-images/metal-roofing-sheet/metal-roofing-sheet-colour-stack.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/panel-images/metal-roofing-sheet/metal-roofing-sheet-gi-corrugated-texture.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/panel-images/metal-roofing-sheet/metal-roofing-sheet-installation-screws.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/panel-images/metal-roofing-sheet/metal-roofing-sheet-standing-seam-detail.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/panel-images/metal-roofing-sheet/metal-roofing-sheet-supply-yard.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/panel-images/metal-roofing-sheet/metal-roofing-sheet-tile-profile.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/panel-images/metal-roofing-sheet/metal-roofing-sheet-trapezoidal-profile.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/panel-images/metal-roofing-sheet/metal-sheet-fastener-overlap-detail-diagram.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/panel-images/metal-roofing-sheet/metal-sheet-four-families-coating-diagram.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/panel-images/metal-roofing-sheet/metal-sheet-gauge-application-ladder-diagram.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/panel-images/metal-roofing-sheet/tile-profile-metal-sheet-villa-roof.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/panel-images/pir-panel/50mm-black-pir-panel-qc-inspection-cut-section.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/panel-images/puf-panel/50mm-off-white-puf-panel-factory-stack.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/panel-images/roofing-sheet/roofing-sheet-colour-coated-stack.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/panel-images/sandwich-panel/sandwich-panel-stack-facing-finishes.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
-  </url>
-  <url>
     <loc>https://www.samanportable.com/product/roofing-sheet/polycarbonate-roofing-sheet</loc>
     <image:image><image:loc>https://www.samanportable.com/panel-images/eps-panel/eps-panel-wall-roof-stack-1x1.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/panel-images/pir-panel/50mm-black-pir-panel-qc-inspection-cut-section.webp</image:loc></image:image>
@@ -4370,28 +4419,6 @@
     <image:image><image:loc>https://www.samanportable.com/panel-images/polycarbonate-roofing-sheet/polycarbonate-solid-multiwall-corrugated-cross-section-diagram.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/panel-images/polycarbonate-roofing-sheet/polycarbonate-thickness-application-ladder-diagram.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/panel-images/puf-panel/50mm-off-white-puf-panel-factory-stack.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/panel-images/roofing-sheet/roofing-sheet-colour-coated-stack.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/panel-images/sandwich-panel/sandwich-panel-stack-facing-finishes.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://www.samanportable.com/product/roofing-sheet/pvc-roofing-sheet</loc>
-    <image:image><image:loc>https://www.samanportable.com/panel-images/pir-panel/50mm-black-pir-panel-qc-inspection-cut-section.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/panel-images/polycarbonate-roofing-sheet/polycarbonate-roofing-sheet-clear-solid.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/panel-images/puf-panel/50mm-off-white-puf-panel-factory-stack.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/panel-images/pvc-roofing-sheet/pvc-roofing-sheet-stack-factory.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/panel-images/pvc-roofing-sheet/pvc-upvc-profile-coverage-width-diagram.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/panel-images/pvc-roofing-sheet/pvc-upvc-roofing-sheet-corrugated-profile.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/panel-images/pvc-roofing-sheet/pvc-upvc-roofing-sheet-fixing-predrill.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/panel-images/pvc-roofing-sheet/pvc-vs-upvc-layer-cross-section-diagram.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/panel-images/pvc-roofing-sheet/upvc-fixing-expansion-detail-diagram.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/panel-images/pvc-roofing-sheet/upvc-roofing-sheet-coastal-warehouse-installation.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/panel-images/pvc-roofing-sheet/upvc-roofing-sheet-factory-extrusion-stack.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/panel-images/pvc-roofing-sheet/upvc-roofing-sheet-layer-edge-closeup.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/panel-images/pvc-roofing-sheet/upvc-roofing-sheet-poultry-farm-shed.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/panel-images/pvc-roofing-sheet/upvc-roofing-sheet-rain-monsoon-roof.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/panel-images/pvc-roofing-sheet/upvc-roofing-sheet-ridge-fixing-detail.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.samanportable.com/panel-images/pvc-roofing-sheet/upvc-roofing-sheet-shed-roof-detail.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/panel-images/roofing-sheet/roofing-sheet-colour-coated-stack.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/panel-images/sandwich-panel/sandwich-panel-stack-facing-finishes.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
