@@ -68,6 +68,7 @@ const SAFE_PRODUCT_SLUG = /^[a-z0-9-]+$/;
 const CMO_SLUG = 'container-marketing-office';
 const CO07_SLUG = 'flat-pack-container-office';
 const CO06_SLUG = 'multi-story-container-office';
+const CO08_SLUG = 'expandable-container-office';
 const CMO_CALC_ENTRY_PHOTO = {
   webpSrcSet: '/assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-768.webp 768w, /assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-1216.webp 1216w, /assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-1440.webp 1440w, /assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-1926.webp 1926w',
   jpgSrcSet: '/assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-768.jpg 768w, /assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-1216.jpg 1216w, /assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-1440.jpg 1440w, /assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-1926.jpg 1926w',
@@ -176,6 +177,7 @@ const CLUSTER_DESIGN_SLUGS = new Set([
   'containerized-data-center',
   'flat-pack-container-office',
   'multi-story-container-office',
+  'expandable-container-office',
 ]);
 
 // Dynamic import for ProductTabs to avoid SSR issues
@@ -489,7 +491,7 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
       if (urlCategory === 'container-offices') {
         relatedProducts = orderContainerOfficeRail(slug, relatedProducts);
       }
-      if (slug === CMO_SLUG) {
+      if (slug === CMO_SLUG || slug === CO08_SLUG) {
         relatedProducts = normalizeForbiddenDashesInJson(relatedProducts);
       }
       if (urlCategory === 'container-houses') {
@@ -549,6 +551,9 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
     const variantData: VariantProductData | null = slugLower === CO07_SLUG
       ? await import('../../../page-specific/flat-pack-container-office/content')
           .then((mod) => mod.flatPackContainerOfficeData)
+      : slugLower === CO08_SLUG
+      ? await import('../../../page-specific/expandable-container-office/content')
+          .then((mod) => mod.expandableContainerOfficeData)
       : SAFE_PRODUCT_SLUG.test(slug)
       ? await import(`../../../data/products/${slug}.json`)
           .then((mod: { default?: VariantProductData }) => mod.default || null)
@@ -698,7 +703,9 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
         slug,
         // T31 — real tab HTML for the 12 in-scope cluster pages; null otherwise.
         specificationsHtml: (variantData as VariantProductData & { specificationsHtml?: string } | null)?.specificationsHtml || t31Tabs?.specificationsHtml || '',
-        shippingHtml: slugLower === 'containerized-data-center'
+        shippingHtml: variantData?.shippingHtml
+          ? variantData.shippingHtml
+          : slugLower === 'containerized-data-center'
           ? CO04_SHIPPING_HTML
           : (slug === CMO_SLUG || slug === CO07_SLUG || slug === CO06_SLUG) && t31Tabs?.shippingHtml
           ? encodeDashEntitiesForRawHtml(t31Tabs.shippingHtml)
@@ -954,7 +961,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
         .replace(/waterproof/gi, 'sealed');
     }
     if (slug === 'bess-container') return html.replace(/\s*[\u2013\u2014]\s*/g, ' - ');
-    if (slug === CO07_SLUG) {
+    if (slug === CO07_SLUG || slug === CO08_SLUG) {
       return encodeDashEntitiesForRawHtml(html).replace(/waterproof/gi, 'sealed');
     }
     return slug === CMO_SLUG || slug === CO06_SLUG ? encodeDashEntitiesForRawHtml(html) : html;
@@ -1179,20 +1186,20 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   sizeEyebrowText={
                     slug === 'containerized-data-center'
                       ? ''
-                      : slug === 'porta-cabin-with-toilet' || slug === 'soundproof-porta-cabin' || slug === 'puf-porta-cabin' || slug === 'skid-mounted-porta-cabin' || slug === 'porta-cabin-shop' || slug === 'accommodation-container' || slug === 'container-office-cabin' || slug === 'container-marketing-office' || slug === CO06_SLUG || slug === 'bess-container' || slug === 'shipping-container-office' || slug === CO07_SLUG
+                      : slug === 'porta-cabin-with-toilet' || slug === 'soundproof-porta-cabin' || slug === 'puf-porta-cabin' || slug === 'skid-mounted-porta-cabin' || slug === 'porta-cabin-shop' || slug === 'accommodation-container' || slug === 'container-office-cabin' || slug === 'container-marketing-office' || slug === CO06_SLUG || slug === 'bess-container' || slug === 'shipping-container-office' || slug === CO07_SLUG || slug === CO08_SLUG
                       ? 'Choose your size - six factory-built options'
                       : undefined
                   }
                   // CO-09 (22 Aug 2026) — ticket §I requires #size-<slug> DOM
                   // anchors preserved byte-identically. Same existing opt-in
                   // as accommodation-container, additive to this one slug.
-                  emitSizeAnchors={slug === 'accommodation-container' || slug === 'container-office-cabin' || slug === 'container-marketing-office' || slug === CO06_SLUG || slug === 'bess-container' || slug === 'shipping-container-office' || slug === CO07_SLUG}
+                  emitSizeAnchors={slug === 'accommodation-container' || slug === 'container-office-cabin' || slug === 'container-marketing-office' || slug === CO06_SLUG || slug === 'bess-container' || slug === 'shipping-container-office' || slug === CO07_SLUG || slug === CO08_SLUG}
                   explorerHidePanelImages={slug === 'accommodation-container'}
                   deferNonLcpImagesUntilHeroPaint={slug === 'accommodation-container'}
                   renderOnlyActiveExplorerPanel={slug === 'accommodation-container'}
                   syncVariantSelection={slug === CO06_SLUG}
-                  eagerActiveGalleryImages={slug === CO06_SLUG}
-                  renderInactiveGalleryImages={slug === CO06_SLUG}
+                  eagerActiveGalleryImages={slug === CO06_SLUG || slug === CO08_SLUG}
+                  renderInactiveGalleryImages={slug === CO06_SLUG || slug === CO08_SLUG}
                   explorerSingleColumnApplications={slug === CO06_SLUG}
                 />
               ) : (
@@ -1538,6 +1545,12 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   subline="Other container office configurations in the same range."
                 />
               )}
+              {slug === CO08_SLUG && relatedRailItems.length > 0 && (
+                <PortaCabinsYouMayAlsoLike
+                  items={containerOfficeYmalItems(slug, relatedRailItems)}
+                  subline="Other container office configurations in the same range."
+                />
+              )}
 
               {/* PC-01/PC-02/PC-03/PC-04/PC-05 — divider 4, "You may also like" →
                   Section 5 (Product Details tabs). */}
@@ -1552,9 +1565,9 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   specificationsHtml={slug === 'accommodation-container' ? lazyLoadStaticHtmlImages(specificationsHtml) : specificationsHtml}
                   shippingHtml={slug === 'accommodation-container' ? lazyLoadStaticHtmlImages(shippingHtml) : shippingHtml}
                   productTitle={isLaborShedsPage ? 'Labour Sheds' : transformedProduct.title}
-                  reviews={slug === 'accommodation-container' || slug === 'container-marketing-office' || slug === CO06_SLUG || slug === CO07_SLUG ? [] : reviews}
-                  averageRating={slug === 'accommodation-container' || slug === 'container-marketing-office' || slug === CO06_SLUG || slug === CO07_SLUG ? undefined : product.average_rating}
-                  ratingCount={slug === 'accommodation-container' || slug === 'container-marketing-office' || slug === CO06_SLUG || slug === CO07_SLUG ? 0 : product.rating_count}
+                  reviews={slug === 'accommodation-container' || slug === 'container-marketing-office' || slug === CO06_SLUG || slug === CO07_SLUG || slug === CO08_SLUG ? [] : reviews}
+                  averageRating={slug === 'accommodation-container' || slug === 'container-marketing-office' || slug === CO06_SLUG || slug === CO07_SLUG || slug === CO08_SLUG ? undefined : product.average_rating}
+                  ratingCount={slug === 'accommodation-container' || slug === 'container-marketing-office' || slug === CO06_SLUG || slug === CO07_SLUG || slug === CO08_SLUG ? 0 : product.rating_count}
                   productId={product.id}
                   productName={transformedProduct.title}
                   fullMobileLabels={slug === 'containerized-data-center'}
@@ -1576,9 +1589,11 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
               )}
 
               {/* Manufacturer Trust Strip ★ NEW (links to /about-us#certifications) */}
-              <div className="mt-4">
-                <ManufacturerTrustStrip />
-              </div>
+              {slug !== CO08_SLUG && (
+                <div className="mt-4">
+                  <ManufacturerTrustStrip />
+                </div>
+              )}
 
               {/* Related Products Section — SKIPPED for the variant-hero pages
                   (T25, mirroring the hub route): the related rail lives inside the

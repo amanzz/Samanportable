@@ -117,6 +117,8 @@ export interface VariantProductData {
   descriptionHtml?: string;
   /** Owner-approved replacement for the Product Details > Specifications tab. */
   specificationsHtml?: string;
+  /** Page-specific intro combined with the current shared Shipping tab renderer. */
+  shippingHtml?: string;
   /** Owner-approved fixed hero facts table. When present, it replaces the standard
       computed feature cells instead of mixing generated facts into the buy box. */
   heroTable?: string[][];
