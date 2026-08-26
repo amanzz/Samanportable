@@ -95,17 +95,16 @@ const FAQS = [
 
 const PRODUCT_JSONLD = {
   '@context': 'https://schema.org',
-  '@type': 'ProductGroup',
+  '@type': 'Product',
   '@id': 'https://www.samanportable.com/product/rockwool-panel#product',
   name: 'Rockwool Panel',
+  url: 'https://www.samanportable.com/product/rockwool-panel',
   description: SHORT_DESCRIPTION,
   category: 'Insulated Sandwich Panel',
   brand: { '@id': 'https://www.samanportable.com/#organization' },
   manufacturer: { '@id': 'https://www.samanportable.com/#organization' },
   material: 'Non-combustible stone wool (mineral wool) core with steel facing sheets',
   image: GALLERY_IMAGES.map((g) => `https://www.samanportable.com${g.src}`),
-  productGroupID: 'rockwool-panel',
-  variesBy: ['https://schema.org/size'],
   additionalProperty: [
     { '@type': 'PropertyValue', name: 'Standard thickness', value: '30–150 mm' },
     { '@type': 'PropertyValue', name: 'Made-to-order thickness', value: 'to 200 mm' },
@@ -113,7 +112,7 @@ const PRODUCT_JSONLD = {
     { '@type': 'PropertyValue', name: 'Facings', value: 'PPGI / PPGL / Stainless Steel / Aluminium' },
     { '@type': 'PropertyValue', name: 'HSN', value: '940690' },
   ],
-  offers: panelAggregateOffer(1290, 'https://www.samanportable.com/product/rockwool-panel'),
+  offers: panelAggregateOffer(1290, 'https://www.samanportable.com/product/rockwool-panel', 9, false),
 };
 
 const BREADCRUMB_JSONLD = {

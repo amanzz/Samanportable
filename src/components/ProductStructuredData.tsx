@@ -22,12 +22,23 @@ interface ProductStructuredDataProps {
   // Commercial-truth gate for a live route awaiting an owner-approved ladder.
   // ItemPage/BreadcrumbList may remain, but Product and Offer must not emit.
   suppressProductEntity?: boolean;
+  // Approved quote-only product-detail pages still have a real Product entity even
+  // when they intentionally expose no Offer/rating/review rich-result evidence.
+  // This opt-in never creates those commercial fields; it only permits Product.
+  forceProductEntity?: boolean;
+  // Some approved detail pages publish a verified price ladder but no visible
+  // inventory claim. Preserve the Offer while omitting unsupported availability.
+  suppressSchemaAvailability?: boolean;
+  // A route may carry an owner-approved display spelling that differs from the
+  // immutable legacy record (for example Labour/Labor). Keep schema aligned with
+  // the visible H1 and breadcrumb without rewriting the source product record.
+  schemaProductName?: string;
   /** The page's approved meta description. Becomes the schema `description` so the
       Product node carries a concise summary rather than a slice of the body. */
   metaDescription?: string;
 }
 
-export default function ProductStructuredData({ product, category, reviews, breadcrumbItems, variantData, suppressProductEntity = false, metaDescription }: ProductStructuredDataProps) {
+export default function ProductStructuredData({ product, category, reviews, breadcrumbItems, variantData, suppressProductEntity = false, forceProductEntity = false, suppressSchemaAvailability = false, schemaProductName, metaDescription }: ProductStructuredDataProps) {
   if (!product) return null;
   if (isTemporarilyGatedCommercialProduct(product)) return null;
 
@@ -37,6 +48,7 @@ export default function ProductStructuredData({ product, category, reviews, brea
     ? `/product/${categorySlug}`
     : `/product/${categorySlug}/${product.slug}`;
   const productUrl = `${baseUrl}${productPath}`;
+  const approvedProductName = schemaProductName?.trim() || product.name;
   const price = parseFloat(product.price) || parseFloat(product.regular_price) || 0;
   const salePrice = product.on_sale && product.sale_price ? parseFloat(product.sale_price) : null;
   const valueAddedTaxIncluded = (product as any).valueAddedTaxIncluded;
@@ -104,7 +116,7 @@ export default function ProductStructuredData({ product, category, reviews, brea
         })
     : [];
 
-  const schemaAvailability = getSchemaAvailability(product.stock_status);
+  const schemaAvailability = suppressSchemaAvailability ? undefined : getSchemaAvailability(product.stock_status);
   const schemaItemCondition = getSchemaItemCondition(variantData?.schemaItemCondition);
   const offerStructuredData = (salePrice || price) > 0 ? {
     '@type': 'Offer',
@@ -244,11 +256,11 @@ export default function ProductStructuredData({ product, category, reviews, brea
   // node with no offers, aggregateRating, or review.
   const productStructuredData = variantData?.schemaOverride
     ? variantData.schemaOverride
-    : !suppressProductEntity && (hasProductRichResultEvidence || variantData?.emitQuoteOnlyProduct) ? {
+    : !suppressProductEntity && (hasProductRichResultEvidence || variantData?.emitQuoteOnlyProduct || forceProductEntity) ? {
     '@context': 'https://schema.org/',
     '@type': 'Product',
     '@id': `${productUrl}#product`,
-    name: product.name.length > 150 ? product.name.substring(0, 147) + '...' : product.name,
+    name: approvedProductName.length > 150 ? approvedProductName.substring(0, 147) + '...' : approvedProductName,
     ...(description ? { description } : {}),
     ...(productImages.length ? { image: productImages } : {}),
     url: productUrl,
@@ -282,7 +294,7 @@ export default function ProductStructuredData({ product, category, reviews, brea
         { name: 'Home', url: baseUrl },
         { name: 'Products', url: `${baseUrl}/product` },
         { name: product.categories?.[0]?.name || 'Category', url: `${baseUrl}/product/${product.categories?.[0]?.slug || 'uncategorized'}` },
-        { name: product.name, url: productUrl },
+        { name: approvedProductName, url: productUrl },
       ];
   const breadcrumbStructuredData = {
     '@context': 'https://schema.org',
@@ -302,7 +314,7 @@ export default function ProductStructuredData({ product, category, reviews, brea
   const itemPageStructuredData = {
     '@context': 'https://schema.org',
     '@type': 'ItemPage',
-    name: product.name,
+    name: approvedProductName,
     // No `description` here. It belongs on the Product node nested below as
     // mainEntity, and emitting it on both duplicated the whole string in every
     // document. One copy, on the entity the field actually describes.
@@ -320,6 +332,12 @@ export default function ProductStructuredData({ product, category, reviews, brea
             __html: JSON.stringify(productStructuredData)
           }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(breadcrumbStructuredData)
+          }}
+        />
       </Head>
     );
   }
@@ -332,7 +350,8 @@ export default function ProductStructuredData({ product, category, reviews, brea
           __html: JSON.stringify(itemPageStructuredData)
         }}
       />
-      {/* Product and Breadcrumb schemas are now included in ItemPage mainEntity */}
+      {/* Standard output nests Product and Breadcrumb in ItemPage; productOnly
+          output emits those two entities as separate, single JSON-LD blocks. */}
       {videoStructuredData && (
         <script
           type="application/ld+json"

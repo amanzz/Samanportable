@@ -178,11 +178,12 @@ export function getProductBreadcrumb(params: {
   clusterName: string;
   clusterSlug: string;
   isHub: boolean;
+  includeProductsRoot?: boolean;
 }): Crumb[] {
-  const { productName, productSlug, clusterName, clusterSlug, isHub } = params;
+  const { productName, productSlug, clusterName, clusterSlug, isHub, includeProductsRoot = true } = params;
   const base: Crumb[] = [
     { name: 'Home', path: '/' },
-    { name: 'Products', path: '/product' },
+    ...(includeProductsRoot ? [{ name: 'Products', path: '/product' }] : []),
   ];
   if (isHub) {
     return [...base, { name: clusterName, path: `/product/${clusterSlug}` }];

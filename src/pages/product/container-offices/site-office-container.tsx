@@ -388,13 +388,14 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
 
   // SHIKHAR C1 — single source for BOTH the visible breadcrumb and the
   // BreadcrumbList JSON-LD (fed to ProductStructuredData below), so they match
-  // exactly: Home › Products › {Cluster} › {Product}, cluster node linked to its hub.
+  // exactly. This approved productOnly route uses Home › {Cluster} › {Product}.
   const breadcrumbCrumbs = getProductBreadcrumb({
     productName: product?.name || '',
     productSlug: slug,
     clusterName: primaryCategory.name,
     clusterSlug: primaryCategory.slug,
     isHub: false,
+    includeProductsRoot: variantData?.schemaOutputMode !== 'productOnly',
   });
 
   // Handle scroll to top

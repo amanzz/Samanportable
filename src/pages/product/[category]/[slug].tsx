@@ -799,7 +799,8 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
 
   // SHIKHAR C1 — single source for BOTH the visible breadcrumb and the
   // BreadcrumbList JSON-LD (fed to ProductStructuredData below), so they match
-  // exactly: Home › Products › {Cluster} › {Product}, cluster node linked to its hub.
+  // exactly. Standard pages use Home › Products › {Cluster} › {Product}; the three
+  // approved Container Office productOnly routes use Home › {Cluster} › {Product}.
   // LC-02 (16 Aug 2026) - spelling rule (build prompt v1 s2): the URL keeps
   // American "labor" and carries its own equity, but ALL customer-facing
   // copy uses Indian "labour", including the visible breadcrumb the ticket
@@ -814,6 +815,8 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
   // breadcrumb-level override isLaborShedsPage already uses, scoped to this
   // one page only.
   const isPrefabSiteCanteenPage = category === 'labor-colony' && slug === 'prefab-site-canteen';
+  const isFrpSecurityCabinPage = category === 'security-cabins' && slug === 'frp-security-cabin';
+  const shouldEmitApprovedProductEntity = isLaborShedsPage || isPrefabSiteCanteenPage || isFrpSecurityCabinPage;
   const usesIndianLabourBreadcrumb = category === 'labor-colony' && (
     slug === 'labor-sheds' ||
     slug === 'accommodation-container' ||
@@ -830,6 +833,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
     clusterName: usesIndianLabourBreadcrumb ? 'Labour Colony' : primaryCategory.name,
     clusterSlug: primaryCategory.slug,
     isHub: false,
+    includeProductsRoot: variantData?.schemaOutputMode !== 'productOnly',
   });
 
   // Handle scroll to top
@@ -1082,7 +1086,10 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
               reviews={reviews}
               breadcrumbItems={crumbsToJsonLd(breadcrumbCrumbs)}
               variantData={variantData || undefined}
-              suppressProductEntity={suppressLegacyCommercialSurfaces || isPrefabSiteCanteenPage}
+              suppressProductEntity={suppressLegacyCommercialSurfaces && !shouldEmitApprovedProductEntity}
+              forceProductEntity={shouldEmitApprovedProductEntity}
+              suppressSchemaAvailability={shouldEmitApprovedProductEntity}
+              schemaProductName={isLaborShedsPage ? 'Labour Sheds' : undefined}
               metaDescription={rankMathSEO?.description}
             />
           )}
