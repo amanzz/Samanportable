@@ -79,7 +79,7 @@ const HUB_NAMES: Readonly<Record<string, string>> = Object.freeze({
 const LOCAL_FAMILIES: ReadonlyArray<readonly [RegExp, string | null]> = [
   [/^(?:portable-office-cabin-manufacturers-in-|portable-office-cabins-manufacturers-in-)(.+)$/i, 'portable-office'],
   [/^(?:portable-office-cabins-in-)(.+)$/i, 'portable-office'],
-  [/^(?:portable-cabins-in-)(.+)$/i, 'portable-cabin'],
+  [/^(?:portable-cabins-in-)(.+)$/i, 'porta-cabins'],
   [/^(?:porta-cabins-in-|porta-cabin-in-|portacabins-for-sale-in-|affordable-porta-cabins-in-)(.+)$/i, 'porta-cabins'],
   [/^(?:container-cafes-in-|container-cafe-in-)(.+)$/i, 'container-cafe'],
   [/^(?:container-offices-for-sale-in-)(.+)$/i, 'container-offices'],
@@ -123,7 +123,7 @@ const CLUSTER_OVERRIDES: Readonly<Record<string, string>> = Object.freeze({
   'portable-classroom-for-sale-2': 'prefab-buildings',
   'prefab-homes-mumbai': 'prefabricated-houses',
   'temporary-garden-shed': 'prefab-buildings',
-  'top-rated-portable-cabin-supplier-delhi': 'portable-cabin',
+  'top-rated-portable-cabin-supplier-delhi': 'porta-cabins',
 });
 
 /**

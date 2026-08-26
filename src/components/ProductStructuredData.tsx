@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { WooCommerceProduct, ProductReview } from '@/config/api';
 import type { VariantProductData } from '@/components/product-variant-hero/types';
 import { resolveVariantVideo } from '@/components/product-variant-hero/presets';
+import { isTemporarilyGatedCommercialProduct } from '@/lib/unapprovedCommercialGating';
 
 interface ProductStructuredDataProps {
   product: WooCommerceProduct;
@@ -28,6 +29,7 @@ interface ProductStructuredDataProps {
 
 export default function ProductStructuredData({ product, category, reviews, breadcrumbItems, variantData, suppressProductEntity = false, metaDescription }: ProductStructuredDataProps) {
   if (!product) return null;
+  if (isTemporarilyGatedCommercialProduct(product)) return null;
 
   const baseUrl = 'https://www.samanportable.com';
   const categorySlug = category || product.categories?.[0]?.slug || 'uncategorized';
@@ -134,44 +136,7 @@ export default function ProductStructuredData({ product, category, reviews, brea
       refundType: 'https://schema.org/FullRefund',
       merchantReturnLink: 'https://www.samanportable.com/refund-and-return-policy'
     },
-    // Mirrors /delivery-policy: default flat â‚¹3,000 shipping shown in Merchant
-    // Center (final cost quoted), standard estimate 3–5 business days.
-    shippingDetails: {
-      '@type': 'OfferShippingDetails',
-      shippingRate: {
-        '@type': 'MonetaryAmount',
-        value: '3000',
-        currency: 'INR'
-      },
-      shippingDestination: {
-        '@type': 'DefinedRegion',
-        addressCountry: 'IN'
-      },
-      deliveryTime: {
-        '@type': 'ShippingDeliveryTime',
-        handlingTime: {
-          '@type': 'QuantitativeValue',
-          minValue: 1,
-          maxValue: 3,
-          unitCode: 'DAY'
-        },
-        transitTime: {
-          '@type': 'QuantitativeValue',
-          minValue: 3,
-          maxValue: 5,
-          unitCode: 'DAY'
-        }
-      }
-    }
   } : undefined;
-
-  // When the product states real, distance-based freight on-page (shippingHtml),
-  // omit the flat ₹3,000 Merchant-Center shippingDetails so the schema does not
-  // contradict the page. All other products keep the default shippingDetails.
-  if (offerStructuredData && (product as any).shippingHtml) {
-    delete (offerStructuredData as any).shippingDetails;
-  }
-
   const aggregateRatingStructuredData = shouldEmitRatingSchema && !variantData?.suppressAggregateRatingSchema ? {
     '@type': 'AggregateRating',
     ratingValue: product.average_rating,

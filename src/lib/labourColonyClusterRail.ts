@@ -21,8 +21,8 @@ import type { RelatedRailItem } from './c16PanelCatalog';
 type LabourColonyClusterPage = RelatedRailItem & { slug: string };
 
 // Approved-plan order, hub first. This ordering is the single source of
-// truth for every page's panel - each page's own tile is filtered out at
-// render time, so the remaining seven always appear in this relative order.
+// truth for every published page's panel - each page's own tile is filtered out
+// at render time, so the remaining published siblings stay in this order.
 const LABOUR_COLONY_CLUSTER_PAGES: LabourColonyClusterPage[] = [
   {
     slug: 'labor-colony',
@@ -70,15 +70,6 @@ const LABOUR_COLONY_CLUSTER_PAGES: LabourColonyClusterPage[] = [
     imageAlt: 'Prefab labour camp, 60x24 ft G+1, from the front right corner, both floors on a 60 ft footprint of the bolted panel camp build in view.',
   },
   {
-    slug: 'accommodation-container',
-    title: 'Accommodation Container',
-    href: '/product/labor-colony/accommodation-container',
-    category: 'Labour Colony',
-    blurb: 'SAMAN builds the Accommodation Container as a transportable steel sleeping module for project workforces.',
-    imageSrc: '/images/products/accommodation-container/20x8/lc05-20x8-hero.webp',
-    imageAlt: 'Dove grey 20x8 ft converted shipping container with teal corner posts, front left view',
-  },
-  {
     slug: 'prefab-site-canteen',
     title: 'Prefab Site Canteen',
     href: '/product/labor-colony/prefab-site-canteen',
@@ -100,14 +91,14 @@ const LABOUR_COLONY_CLUSTER_PAGES: LabourColonyClusterPage[] = [
 
 const LABOUR_COLONY_CLUSTER_SLUGS = new Set(LABOUR_COLONY_CLUSTER_PAGES.map((p) => p.slug));
 
-/** True for the hub slug and every one of the eight C05 subpage slugs. */
+/** True for the published C05 hub and child slugs exposed through this rail. */
 export const isLabourColonyClusterSlug = (slug: string): boolean =>
   LABOUR_COLONY_CLUSTER_SLUGS.has(slug);
 
 /**
  * The Explore the Range panel for any Labour Colony cluster page: every one
- * of the eight approved pages, hub first, in approved-plan order, with the
- * current page filtered out. Same list for all eight call sites - a page
+ * of the published pages, hub first, in approved-plan order, with the current
+ * page filtered out. Same list for all call sites - a page
  * cannot drift from its siblings or link to itself.
  */
 export const getLabourColonyClusterRail = (currentSlug: string): RelatedRailItem[] =>

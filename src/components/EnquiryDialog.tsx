@@ -145,7 +145,7 @@ const EnquiryDialog: React.FC<EnquiryDialogProps> = ({ isOpen, onClose, prefillM
         <DialogHeader>
           <DialogTitle>Get a Quote</DialogTitle>
         </DialogHeader>
-        <form onSubmit={handleSubmit} className="grid gap-4 py-4">
+        <form action="/api/enquiry" method="post" onSubmit={handleSubmit} className="grid gap-4 py-4">
           <div className="grid grid-cols-4 items-center gap-4">
             <Label htmlFor="firstName" className="text-right">
               First Name

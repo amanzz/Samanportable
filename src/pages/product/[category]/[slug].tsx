@@ -49,6 +49,7 @@ import {
   PORTA_CABIN_SIBLING_YMAL,
 } from '../../../lib/portaCabinClusterRail';
 import PortaCabinsYouMayAlsoLike from '../../../components/product-variant-hero/PortaCabinsYouMayAlsoLike';
+import { rewriteRetiredInternalLinks } from '../../../lib/staticContent';
 import { isLabourColonyClusterSlug, getLabourColonyClusterRail } from '../../../lib/labourColonyClusterRail';
 import { containerOfficeYmalItems, orderContainerOfficeRail } from '../../../lib/containerOfficeClusterRail';
 import { getEmbeddedProductSummary, renderCabinCalculatorSSR, renderCalculatorEntrySection } from '../../../lib/cabinCalculatorSSR';
@@ -61,6 +62,7 @@ import productOpenerOverrides from '../../../data/product-opener-overrides.json'
 import { injectInfoImages } from '../../../lib/infoImageLayout';
 import containerizedDataCenterApplications from '../../../data/products/containerized-data-center-applications.json';
 import containerizedDataCenterRelated from '../../../data/products/containerized-data-center-related.json';
+import { isTemporarilyGatedCommercialPath } from '../../../lib/unapprovedCommercialGating';
 
 // Guards the dynamic data/products import below against path traversal — the slug
 // comes straight from the URL. Same regex as the category hub route.
@@ -383,6 +385,7 @@ interface ProductDetailsProps {
   // the generic ProductSummaryLayout hero, byte-for-byte.
   variantData?: VariantProductData | null;
   opener?: string;
+  isTemporarilyGated: boolean;
 }
 
 function lazyLoadStaticHtmlImages(html: string): string {
@@ -395,7 +398,7 @@ function lazyLoadStaticHtmlImages(html: string): string {
   });
 }
 
-export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async ({ params, res }) => {
+export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async ({ params, req, res }) => {
   try {
     const { category, slug } = params as { category: string; slug: string };
     
@@ -408,6 +411,10 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
     // Check if category and slug are the same (case-insensitive)
     const categoryLower = decodeURIComponent(category).toLowerCase();
     const slugLower = decodeURIComponent(slug).toLowerCase();
+    const isTemporarilyGated = isTemporarilyGatedCommercialPath(
+      `/product/${categoryLower}/${slugLower}`
+    );
+    if (isTemporarilyGated) res.setHeader('X-Robots-Tag', 'noindex, follow');
     const suppressLegacyCommercialSurfaces = PENDING_APPROVED_LADDER_SLUGS.has(slugLower);
     
     if (categoryLower === slugLower) {
@@ -423,9 +430,12 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
     // Static content layer: reads exported product files — no WordPress call.
     // Server-only module, loaded dynamically so fs never reaches the client bundle.
     const staticContent = await import('../../../lib/staticContent');
+    const productLookupOptions = {
+      includeDrafts: staticContent.shouldShowDraftsInListings(req.headers.host),
+    };
 
     // Fetch lightweight product data first
-    const product = await staticContent.fetchLightweightProduct(slug);
+    const product = await staticContent.fetchLightweightProduct(slug, productLookupOptions);
 
     // LC-02 (16 Aug 2026) - spelling rule (build prompt v1 s2): the URL keeps
     // American "labor", but ALL customer-facing copy uses Indian "labour".
@@ -502,7 +512,7 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
     }
 
     // Fetch full description and images separately
-    const descriptionData = await staticContent.fetchProductDescription(slug);
+    const descriptionData = await staticContent.fetchProductDescription(slug, productLookupOptions);
     const productDescriptionWithHeadingCorrection = PRODUCT_DESCRIPTION_H1_DEMOTION_SLUGS.has(slugLower)
       ? demoteHtmlH1ToH2(descriptionData?.description || '')
       : descriptionData?.description || '';
@@ -532,7 +542,7 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
     // Fetch Rank Math SEO data
     let rankMathSEO: RankMathSEOData | null = null;
     try {
-      rankMathSEO = await staticContent.fetchProductRankMathSEO(`${category}/${slug}`);
+      rankMathSEO = await staticContent.fetchProductRankMathSEO(`${category}/${slug}`, productLookupOptions);
     } catch (error) {
       console.warn('Failed to fetch Rank Math SEO data:', error);
     }
@@ -670,10 +680,12 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
             // page HOLDS the tab empty rather than shipping the contradiction. An empty
             // descriptionHtml cannot express that (it is falsy and falls through), so
             // the suppression is an explicit flag.
-            applyDescriptionHtmlAdditions(
-              variantData?.descriptionHtml
-                || (variantData?.suppressLegacyDescription ? '' : productDescriptionWithoutOpener),
-              variantData?.descriptionHtmlAdditions
+            rewriteRetiredInternalLinks(
+              applyDescriptionHtmlAdditions(
+                variantData?.descriptionHtml
+                  || (variantData?.suppressLegacyDescription ? '' : productDescriptionWithoutOpener),
+                variantData?.descriptionHtmlAdditions
+              )
             ),
             variantData?.infoImages
           ),
@@ -718,6 +730,7 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
         reviews,
         variantData: variantDataForPageProps,
         opener,
+        isTemporarilyGated,
       },
     };
   } catch (error) {
@@ -736,7 +749,7 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
   }
 };
 
-const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO, reviews = [], specificationsHtml = '', shippingHtml = '', variantData = null, opener = '' }: ProductDetailsProps) => {
+const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO, reviews = [], specificationsHtml = '', shippingHtml = '', variantData = null, opener = '', isTemporarilyGated }: ProductDetailsProps) => {
   // All hooks must be called FIRST, before any conditional logic
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [showScrollToTop, setShowScrollToTop] = useState(false);
@@ -1056,24 +1069,27 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
           fallbackTwitterDescription={`${transformedProduct.title} - Durable and reliable portable solutions for your business needs.`}
           keywords={`${transformedProduct.title}, ${transformedProduct.category}, portable solutions`}
           structuredData={undefined} // ProductStructuredData component handles this separately
+          noindex={isTemporarilyGated}
         />
           
           {/* Product Structured Data for Google Merchant Center.
               Review JSON-LD is emitted ONLY for the same real approved reviews
               that are rendered in the Customer Reviews section below. */}
-          <ProductStructuredData
-            product={product}
-            category={category}
-            reviews={reviews}
-            breadcrumbItems={crumbsToJsonLd(breadcrumbCrumbs)}
-            variantData={variantData || undefined}
-            suppressProductEntity={suppressLegacyCommercialSurfaces || isPrefabSiteCanteenPage}
-            metaDescription={rankMathSEO?.description}
-          />
+          {!isTemporarilyGated && (
+            <ProductStructuredData
+              product={product}
+              category={category}
+              reviews={reviews}
+              breadcrumbItems={crumbsToJsonLd(breadcrumbCrumbs)}
+              variantData={variantData || undefined}
+              suppressProductEntity={suppressLegacyCommercialSurfaces || isPrefabSiteCanteenPage}
+              metaDescription={rankMathSEO?.description}
+            />
+          )}
 
           {/* FAQ Structured Data: the approved variant dataset owns its rendered
               FAQs; legacy products continue to use RankMath. */}
-          {(variantData?.faqSchema || rankMathSEO?.faqSchema) && (
+          {!isTemporarilyGated && (variantData?.faqSchema || rankMathSEO?.faqSchema) && (
             <Head>
               <script
                 type="application/ld+json"

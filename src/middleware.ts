@@ -1,4 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server';
+import unapprovedCommercialGating from './data/seo/unapprovedCommercialGating.json';
+
+const temporarilyGatedCommercialPaths = new Set(unapprovedCommercialGating.paths);
+
+function applyTemporaryCommercialRobotsHeader(pathname: string, response: NextResponse) {
+  if (temporarilyGatedCommercialPaths.has(pathname)) {
+    response.headers.set('X-Robots-Tag', 'noindex, follow');
+  }
+  return response;
+}
 
 // Environment-level Google block for staging deployments only.
 //
@@ -25,7 +35,7 @@ export function middleware(request: NextRequest) {
   }
 
   if (process.env.STAGING_GOOGLE_BLOCK !== '1') {
-    return NextResponse.next();
+    return applyTemporaryCommercialRobotsHeader(pathname, NextResponse.next());
   }
 
   const expected = process.env.STAGING_GOOGLE_BLOCK_CREDENTIALS || '';
@@ -43,7 +53,7 @@ export function middleware(request: NextRequest) {
   if (authorized) {
     const response = NextResponse.next();
     response.headers.set('X-Robots-Tag', 'noindex, nofollow');
-    return response;
+    return applyTemporaryCommercialRobotsHeader(pathname, response);
   }
 
   return new NextResponse('Staging environment - authentication required.', {

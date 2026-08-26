@@ -176,7 +176,7 @@ const ContactCTA = () => {
             <h4 className="text-xl font-semibold mb-6 text-center">
               Request Quote
             </h4>
-            <form className="space-y-4" onSubmit={handleSubmit}>
+            <form action="/api/contact-form" method="post" className="space-y-4" onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <input
                   type="text"

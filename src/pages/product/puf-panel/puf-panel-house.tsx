@@ -15,6 +15,7 @@ import RelatedProductsRail, { PUF_CATALOG } from '@/components/product-puf/Relat
 import ProductCarousel from '@/components/product-puf/ProductCarousel';
 import { LongImage } from '@/components/product-puf/Gallery';
 import { panelAggregateOffer } from '@/lib/panelSchemaOffers';
+import { isTemporarilyGatedCommercialPath } from '@/lib/unapprovedCommercialGating';
 
 export const getStaticProps: GetStaticProps = async () => ({ props: {} });
 
@@ -316,9 +317,11 @@ export default function PufPanelHouse() {
         publisher="SAMAN POS India Private Limited"
       />
       <Head>
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(PRODUCT_JSONLD) }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_JSONLD) }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_JSONLD) }} />
+        {!isTemporarilyGatedCommercialPath('/product/puf-panel/puf-panel-house') && <>
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(PRODUCT_JSONLD) }} />
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_JSONLD) }} />
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_JSONLD) }} />
+        </>}
       </Head>
 
       <main className="bg-background pb-24 lg:pb-12">

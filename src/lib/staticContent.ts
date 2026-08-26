@@ -28,6 +28,13 @@ import { decodeHtmlEntities } from '@/lib/utils';
 import { PORTA_CABIN_REDIRECTED_SLUGS } from '@/lib/portaCabinClusterRail';
 import { PORTABLE_OFFICE_REDIRECTED_SLUGS } from '@/lib/portableOfficeCluster';
 import { removeMonetaryHtml, removeMonetarySentencesDeep } from '@/lib/monetaryText';
+import {
+  normalizeVerifiedCommercialFacts,
+  normalizeVerifiedCommercialFactsDeep,
+} from '@/lib/verifiedCommercialFacts';
+import commercialArchitecture from '@/data/seo/commercialArchitecture.json';
+import { getCanonicalProductPath } from '@/lib/productCanonicalPaths';
+import { isTemporarilyGatedCommercialProduct } from '@/lib/unapprovedCommercialGating';
 
 const EXPORT_DIR = path.join(process.cwd(), 'src', 'data', 'wp-export');
 
@@ -87,6 +94,23 @@ function readJson(file: string): any | null {
 // event, so approved hrefs are corrected at the static content boundary without
 // changing any visible text, L3 field, schema payload, or winner source byte.
 const RETIRED_INTERNAL_LINKS = new Map<string, string>([
+  ['/product/portable-cabin', '/product/porta-cabins'],
+  ['/product/porta-cabins/portacabin-office', '/product/porta-cabins'],
+  ['/product/porta-cabins/luxury-porta-cabin', '/product/porta-cabins'],
+  ['/product/porta-cabins/steel-porta-cabin', '/product/porta-cabins/ms-porta-cabin'],
+  ['/product/container-cafe/shipping-container-cafe', '/product/container-cafe'],
+  ['/product/porta-cabins/low-cost-porta-cabin', '/product/porta-cabins'],
+  ['/product/porta-cabins/mini-porta-cabin', '/product/porta-cabins'],
+  ['/product/portable-cabin/office-portable-cabin', '/product/porta-cabins'],
+  ['/product/portable-cabin/portable-cabin-with-toilet', '/product/porta-cabins/porta-cabin-with-toilet'],
+  ['/product/portable-cabin/buy-portable-cabin', '/product/porta-cabins'],
+  ['/product/prefabricated-houses/portable-cabin-house', '/product/prefabricated-houses/porta-cabin-house'],
+  ['/portable-cabins-in-bellandur', '/product/porta-cabins'],
+  ['/product/portable-cabin/modular-portable-cabin', '/product/porta-cabins'],
+  ['/product/portable-cabin/portable-cabin-building', '/product/porta-cabins'],
+  ['/product/portable-cabin/ms-portable-cabin', '/product/porta-cabins/ms-porta-cabin'],
+  ['/product/portable-cabin/small-portable-cabin', '/product/porta-cabins'],
+  ['/cheap-porta-cabins-for-sale', '/product/porta-cabins'],
   ['/product/labor-colony/prefab-labor-sheds', '/product/labor-colony/labor-sheds'],
   ['/product/labor-colony/prefab-labor-hutments', '/product/labor-colony/labor-hutments'],
   ['/product/labor-colony/labor-camps', '/product/labor-colony/prefab-labor-camps'],
@@ -609,7 +633,13 @@ export async function fetchBlogPost(slug: string): Promise<any | null> {
   if (typeof rest?.content?.rendered === 'string') {
     rest.content = {
       ...rest.content,
-      rendered: rewriteRetiredInternalLinks(rest.content.rendered),
+      rendered: normalizeVerifiedCommercialFacts(rewriteRetiredInternalLinks(rest.content.rendered)),
+    };
+  }
+  if (typeof rest?.excerpt?.rendered === 'string') {
+    rest.excerpt = {
+      ...rest.excerpt,
+      rendered: normalizeVerifiedCommercialFacts(rewriteRetiredInternalLinks(rest.excerpt.rendered)),
     };
   }
   return rest;
@@ -831,21 +861,47 @@ function getAllListingProductsRaw(): any[] {
   return items;
 }
 
-type ListingOptions = {
+export type ProductLookupOptions = {
   includeDrafts?: boolean;
 };
 
+type ListingOptions = ProductLookupOptions;
+
+const APPROVED_PRODUCTION_PATHS = new Set<string>(commercialArchitecture.approvedProductionPaths);
+const PLANNED_RELEASE_PATHS = new Set<string>(commercialArchitecture.plannedReleasePaths);
+
+function hasPublishedStatus(product: any): boolean {
+  return !product?.status || product.status === 'publish';
+}
+
+/**
+ * One public product decision shared by direct routes, listings, SEO and schema
+ * lookups. The release fixture governs approved-plan URLs; legacy published
+ * products outside that fixture remain unchanged pending their separate owner
+ * dispositions. Draft status always fails closed in ordinary production.
+ */
+export function isProductPubliclyRenderable(product: any): boolean {
+  if (!product?.slug || !hasPublishedStatus(product)) return false;
+  const canonicalPath = getCanonicalProductPath(product);
+  const governedByReleaseFixture = APPROVED_PRODUCTION_PATHS.has(canonicalPath)
+    || PLANNED_RELEASE_PATHS.has(canonicalPath);
+  return !governedByReleaseFixture
+    || (APPROVED_PRODUCTION_PATHS.has(canonicalPath) && !PLANNED_RELEASE_PATHS.has(canonicalPath));
+}
+
 export function shouldShowDraftsInListings(host?: string | null): boolean {
-  if (process.env.SAMAN_SHOW_DRAFTS_IN_LISTINGS === 'true') return true;
   const normalized = String(host || '').toLowerCase();
-  return /^(localhost|127\.0\.0\.1|\[::1\])(?::|$)/.test(normalized);
+  const isLoopback = /^(localhost|127\.0\.0\.1|\[::1\])(?::|$)/.test(normalized);
+  return process.env.NODE_ENV !== 'production'
+    && isLoopback
+    && process.env.SAMAN_SHOW_DRAFTS_IN_LISTINGS !== 'false';
 }
 
 // Buyer-visible production listings only contain published products. Localhost
 // preview can opt into drafts so owners can review listing-card behavior before
 // publish approval.
 function getPublishedProducts(): any[] {
-  return getAllListingProductsRaw().filter((p) => !p.status || p.status === 'publish');
+  return getAllListingProductsRaw().filter(isProductPubliclyRenderable);
 }
 
 function getListingProducts(options: ListingOptions = {}): any[] {
@@ -853,12 +909,20 @@ function getListingProducts(options: ListingOptions = {}): any[] {
     ? getPublishedProducts()
     : getAllListingProductsRaw().filter((p) => !p.status || p.status === 'publish' || p.status === 'draft');
   // C01: drop retired/301'd products so no listing card or rail links to a redirecting URL.
-  return base.filter((p) => !RETIRED_LISTING_SLUGS.has(p.slug));
+  return base.filter(
+    (p) => !RETIRED_LISTING_SLUGS.has(p.slug) && !isTemporarilyGatedCommercialProduct(p)
+  );
 }
 
-function findProductBySlug(slug: string): any | null {
+function findProductBySlug(slug: string, options: ProductLookupOptions = {}): any | null {
   if (!SAFE_SLUG.test(slug)) return null;
-  return getAllProductsRaw().find((p) => p.slug === slug) || null;
+  const product = getAllProductsRaw().find((p) => p.slug === slug) || null;
+  if (!product || options.includeDrafts) return product;
+  return isProductPubliclyRenderable(product) ? product : null;
+}
+
+export function isPublicProductSlug(slug: string): boolean {
+  return Boolean(findProductBySlug(slug));
 }
 
 // Same field subset that api.fetchProducts requested via _fields.
@@ -872,7 +936,9 @@ function toFeedProduct(p: any): WooCommerceProduct {
     sale_price: p.sale_price,
     on_sale: p.on_sale,
     images: p.images || [],
-    short_description: p.short_description || '',
+    short_description: normalizeVerifiedCommercialFacts(
+      rewriteRetiredInternalLinks(p.short_description || '')
+    ),
     stock_status: p.stock_status,
     stock_quantity: p.stock_quantity ?? null,
     average_rating: p.average_rating,
@@ -900,7 +966,9 @@ function toLightweight(p: any, categoryName?: string, categorySlug?: string): Li
     featured_image: p.images?.[0]?.src || '/placeholder.svg',
     category: categoryName || p.categories?.[0]?.name || 'Uncategorized',
     category_slug: categorySlug || p.categories?.[0]?.slug || 'uncategorized',
-    short_description: p.short_description,
+    short_description: normalizeVerifiedCommercialFacts(
+      rewriteRetiredInternalLinks(p.short_description || '')
+    ),
     stock_status: p.stock_status,
     average_rating: p.average_rating,
     rating_count: p.rating_count,
@@ -963,8 +1031,11 @@ export async function fetchProducts(
 }
 
 // Mirrors api.fetchLightweightProduct: product or null (genuinely absent → 404 ok).
-export async function fetchLightweightProduct(slug: string): Promise<LightweightProduct | null> {
-  const p = findProductBySlug(slug);
+export async function fetchLightweightProduct(
+  slug: string,
+  options: ProductLookupOptions = {}
+): Promise<LightweightProduct | null> {
+  const p = findProductBySlug(slug, options);
   return p ? toLightweight(p) : null;
 }
 
@@ -1004,18 +1075,21 @@ export function trimImageAltWhitespaceDeep<T>(value: T, key = ''): T {
 
 // Mirrors api.fetchProductDescription.
 export async function fetchProductDescription(
-  slug: string
+  slug: string,
+  options: ProductLookupOptions = {}
 ): Promise<{ description: string; images: Array<{ src: string; alt: string }>; specificationsHtml?: string; shippingHtml?: string } | null> {
-  const p = findProductBySlug(slug);
+  const p = findProductBySlug(slug, options);
   if (!p) return null;
   return {
-    description: trimImageAltWhitespace(
-      rewriteC04NonL3Punctuation(
-        applyC04GapCloseCopy(
-          rewriteC03RenderPunctuation(rewriteRetiredInternalLinks(p.description || ''), slug),
+    description: normalizeVerifiedCommercialFacts(
+      trimImageAltWhitespace(
+        rewriteC04NonL3Punctuation(
+          applyC04GapCloseCopy(
+            rewriteC03RenderPunctuation(rewriteRetiredInternalLinks(p.description || ''), slug),
+            slug
+          ),
           slug
-        ),
-        slug
+        )
       )
     ),
     images: (p.images || []).map((image: any) =>
@@ -1025,23 +1099,30 @@ export async function fetchProductDescription(
     ),
     // Optional per-product tab overrides — passed through only when present in the
     // product JSON. Absent on all other products, so their tabs render unchanged.
-    ...(p.specificationsHtml ? { specificationsHtml: p.specificationsHtml } : {}),
-    ...(p.shippingHtml ? { shippingHtml: p.shippingHtml } : {}),
+    ...(p.specificationsHtml
+      ? { specificationsHtml: normalizeVerifiedCommercialFacts(p.specificationsHtml) }
+      : {}),
+    ...(p.shippingHtml
+      ? { shippingHtml: normalizeVerifiedCommercialFacts(p.shippingHtml) }
+      : {}),
   };
 }
 
 // Mirrors api.fetchProductRankMathSEO. Accepts "category/slug" or a bare slug —
 // the LAST path segment identifies the product file.
-export async function fetchProductRankMathSEO(categorySlug: string): Promise<RankMathSEOData | null> {
+export async function fetchProductRankMathSEO(
+  categorySlug: string,
+  options: ProductLookupOptions = {}
+): Promise<RankMathSEOData | null> {
   const parts = String(categorySlug).split('/').filter(Boolean);
   const slug = parts[parts.length - 1] || '';
   const productPath = parts.join('/');
   const productUrl = `https://www.samanportable.com/product/${productPath}${productPath.includes('/') ? '/' : ''}`;
-  const product = findProductBySlug(slug);
+  const product = findProductBySlug(slug, options);
   // preferCuratedFaq: PRODUCT path (T25 ruling b — products only in this PR).
   const seoData = headToSeo(product, true) || (product?.faqSchema ? {} : null);
   if (seoData && product?.faqSchema) seoData.faqSchema = product.faqSchema;
-  return applyPublicFaqSchemaUrl(seoData, productUrl);
+  return normalizeVerifiedCommercialFactsDeep(applyPublicFaqSchemaUrl(seoData, productUrl));
 }
 
 // Mirrors api.fetchProductReviews: approved-only, latest first, capped, non-fatal.

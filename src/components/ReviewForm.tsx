@@ -79,7 +79,9 @@ const ReviewForm = forwardRef<HTMLDivElement, ReviewFormProps>(({ productId, rev
         <h3 className="text-lg font-semibold text-foreground">Write a Review{productName ? ` for ${productName}` : ''}</h3>
       </div>
 
-      <form onSubmit={handleSubmit} noValidate className="space-y-4">
+      <form action="/api/submit-review" method="post" onSubmit={handleSubmit} noValidate className="space-y-4">
+        <input type="hidden" name="productId" value={reviewProductId ?? productId} />
+        <input type="hidden" name="rating" value={rating} />
         {/* Star rating (required) */}
         <div>
           <label className="mb-1 block text-sm font-medium text-foreground">Your rating <span className="text-red-500">*</span></label>
@@ -105,12 +107,12 @@ const ReviewForm = forwardRef<HTMLDivElement, ReviewFormProps>(({ productId, rev
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <div>
             <label htmlFor="rv-name" className="mb-1 block text-sm font-medium text-foreground">Name <span className="text-red-500">*</span></label>
-            <input id="rv-name" type="text" value={name} onChange={(e) => setName(e.target.value)} required maxLength={100}
+            <input id="rv-name" name="name" type="text" value={name} onChange={(e) => setName(e.target.value)} required maxLength={100}
               className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" />
           </div>
           <div>
             <label htmlFor="rv-email" className="mb-1 block text-sm font-medium text-foreground">Email <span className="text-red-500">*</span></label>
-            <input id="rv-email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required maxLength={150}
+            <input id="rv-email" name="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required maxLength={150}
               className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" />
             <p className="mt-1 text-xs text-muted-foreground">Your email is not published.</p>
           </div>
@@ -118,7 +120,7 @@ const ReviewForm = forwardRef<HTMLDivElement, ReviewFormProps>(({ productId, rev
 
         <div>
           <label htmlFor="rv-review" className="mb-1 block text-sm font-medium text-foreground">Your review <span className="text-red-500">*</span></label>
-          <textarea id="rv-review" value={review} onChange={(e) => setReview(e.target.value)} required rows={4} maxLength={5000}
+          <textarea id="rv-review" name="review" value={review} onChange={(e) => setReview(e.target.value)} required rows={4} maxLength={5000}
             className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
             placeholder="Share your experience with this product…" />
         </div>
@@ -126,7 +128,7 @@ const ReviewForm = forwardRef<HTMLDivElement, ReviewFormProps>(({ productId, rev
         {/* Honeypot — visually hidden; bots fill it, humans don't. */}
         <div aria-hidden="true" className="hidden">
           <label htmlFor="rv-company">Company</label>
-          <input id="rv-company" type="text" tabIndex={-1} autoComplete="off" value={company} onChange={(e) => setCompany(e.target.value)} />
+          <input id="rv-company" name="company" type="text" tabIndex={-1} autoComplete="off" value={company} onChange={(e) => setCompany(e.target.value)} />
         </div>
 
         {error && <p className="text-sm font-medium text-red-600">{error}</p>}
