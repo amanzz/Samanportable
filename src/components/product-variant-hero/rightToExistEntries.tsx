@@ -639,12 +639,12 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
     heading: 'Which Porta Cabin Should You Buy? Match the Cabin to the Job',
     body: (
       <>
-        Start with the job the cabin must do. A single office, room or guard point fits the standard build on this page, so you only pick the size below. Move to a configuration page when one condition dominates. Heavy industrial duty points to the MS build. Daily wet use needs the toilet-fitted cabin. Customer-facing retail suits the shop and kiosk format. Every configuration shares one chassis platform, so the order stays simple: duty first, then size, then fit-out.
+        Use this hub when comparing the standard Porta Cabin range. When you need a specialist configuration, open its approved child page — for example MS Porta Cabin, Porta Cabin with Toilet, Porta Cabin Shop or another listed configuration. This keeps broad range selection on the hub and specialist requirements on the relevant product page.
       </>
     ),
     comparison: (
       <>
-        Next, fix the budget against published numbers. Prices here are base-specification, ex-GST figures from our costing workbook. Customisations are quoted separately. Our <Link className={linkClass} href="/porta-cabin-price-a-complete-guide-2025">porta cabin price guide</Link> explains how size bands, interiors and transport change the final amount. When your shortlist is ready, share your site pin code and use-case, and <Link className={linkClass} href="/contact">request a fixed 48-hour quotation</Link>.
+        Next, fix the budget against the published price ladder on this page. Our <Link className={linkClass} href="/porta-cabin-price-a-complete-guide-2025">porta cabin price guide</Link> sets out the cost factors behind it in more detail. When your shortlist is ready, share your site pin code and use-case, and <Link className={linkClass} href="/contact">request an itemised quotation</Link>.
       </>
     ),
     // R15 (v1.4) — split card copy is verbatim from the revision ticket; the
