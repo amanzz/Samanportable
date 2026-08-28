@@ -1,6 +1,6 @@
 {
   "h2": "Explore every Porta Cabin size & its applications",
-  "intro": "Six standard sizes, one specification: pick the footprint that matches how you'll use it, with fixed base prices and delivery in 7–21 working days.",
+  "intro": "Six standard sizes, one specification: compare the published footprint and price for each, with delivery in 7–21 working days.",
   "panels": [
     {
       "sizeSlug": "10x10",
@@ -28,7 +28,7 @@
     },
     {
       "sizeSlug": "20x10",
-      "h3": "20x10 ft Porta Cabin — India's 200 sq ft Site Office",
+      "h3": "20x10 ft Porta Cabin — SAMAN's 200 sq ft Reference Site Office",
       "paragraph": "The 20x10 ft cabin is the SAMAN reference configuration. It gives 200 sq ft at ₹2,50,000 ex-GST. Its ₹1,250 per sq ft rate is the costing anchor, and every other size derives from it. The room carries a working site office comfortably: a desk zone at one end, a discussion corner at the other. Compare vendor quotations at this size first. Our published rate and the downloadable specification state exactly what the price includes.",
       "applications": [
         "Project and site offices",
@@ -40,8 +40,8 @@
     },
     {
       "sizeSlug": "20x12",
-      "h3": "20x12 ft Porta Cabin — 240 sq ft Partitioned Office",
-      "paragraph": "Choosing 20x12 ft adds two feet of width over the standard office. You get 240 sq ft for ₹2,88,000 ex-GST, at a reduced ₹1,200 per sq ft band rate. The extra width is what makes an internal partition genuinely usable. Project managers pick this size for a private cabin plus an open working bay. Check the approach road before ordering, because wider bodies can attract over-dimension transport conditions. We confirm this with the delivery quotation.",
+      "h3": "20x12 ft Porta Cabin — 240 sq ft Wide-Aisle Office",
+      "paragraph": "Choosing 20x12 ft adds two feet of width over the standard office. You get 240 sq ft for ₹2,88,000 ex-GST, at a reduced ₹1,200 per sq ft band rate. The extra width widens the central aisle between the two facing workstation runs. The approved GA plan for this size is a single wide-aisle room with five workstations and no partition; a partition follows the drawing approved with your order. Check the approach road before ordering, because wider bodies can attract over-dimension transport conditions. We confirm this with the delivery quotation.",
       "applications": [
         "Manager + staff combined offices",
         "Consultant and engineer cabins with meeting space",
@@ -52,8 +52,8 @@
     },
     {
       "sizeSlug": "30x10",
-      "h3": "30x10 ft Porta Cabin — Two-Zone 300 sq ft Project Office",
-      "paragraph": "The 30x10 ft cabin delivers 300 sq ft for ₹3,60,000 ex-GST, in the same ₹1,200 per sq ft band as the 20x12. The longer body suits a two-zone plan: an open work area at one end, an enclosed cabin or store at the other. It still moves and places as one factory-finished module. Consequently, it is the practical step for teams that have outgrown 200 sq ft but do not need the full 40 ft body or its freight class.",
+      "h3": "30x10 ft Porta Cabin — 300 sq ft High-Capacity Office",
+      "paragraph": "The 30x10 ft cabin delivers 300 sq ft for ₹3,60,000 ex-GST, in the same ₹1,200 per sq ft band as the 20x12. The approved GA plan for this size is a single continuous room with twelve workstations on two facing runs, two doors and central circulation. An enclosed cabin or store follows the drawing approved with your order. It still moves and places as one factory-finished module. Consequently, it is the practical step for teams that have outgrown 200 sq ft but do not need the full 40 ft body or its freight class.",
       "applications": [
         "Project offices with client meeting rooms",
         "Engineering and consultant team offices",
@@ -65,14 +65,14 @@
     {
       "sizeSlug": "40x10",
       "h3": "40x10 ft Porta Cabin — 400 sq ft Multi-Room Module",
-      "paragraph": "At 40x10 ft you reach 400 sq ft for ₹4,75,000 ex-GST, at the ₹1,187.50 per sq ft large-size rate. This is the multi-room module. A typical plan runs reception, office and meeting space along the 40 ft length. Freight follows the 40 ft open-trailer ladder in the Shipping tab. Unloading arrangements are confirmed with your quotation. Share your location early, and we plan the route, placement and lift before dispatch.",
+      "paragraph": "At 40x10 ft you reach 400 sq ft for ₹4,75,000 ex-GST, at the ₹1,187.50 per sq ft large-size rate. This is the multi-room module. The approved GA plan divides the 40 ft length into a 10 ft private manager office and a 30 ft common office with twelve workstations. Freight follows the 40 ft open-trailer ladder in the Shipping tab. Unloading arrangements are confirmed with your quotation. Share your location early, and we plan the route, placement and lift before dispatch.",
       "applications": [
         "Large site and admin offices",
         "Training rooms and classrooms",
         "Multi-team engineering offices",
         "Banking and enrolment outposts"
       ],
-      "imageAlt": "Approved 40x10 ft porta cabin GA plan: manager cabin, partition, three doors, twelve workstations"
+      "imageAlt": "Approved 40x10 ft porta cabin GA plan: manager cabin, one partition, three doors, ten windows, twelve workstations, fifteen seats"
     }
   ]
 }
