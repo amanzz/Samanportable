@@ -20,6 +20,7 @@
     "validate:temporary-commercial-gating": "node scripts/validate-unapproved-commercial-gating.js",
     "validate:container-office-rail": "node scripts/validate-container-office-rail.mjs",
     "validate:stg01b-structured-data": "node scripts/validate-stg01b-structured-data.mjs",
+    "validate:c01-specification-overrides": "node scripts/validate-c01-specification-overrides.mjs",
     "analyze": "ANALYZE=true next build",
     "postbuild": "node scripts/build-image-manifest-and-sitemaps.mjs",
     "image-manifest:collect": "node scripts/collect-image-manifest.mjs",

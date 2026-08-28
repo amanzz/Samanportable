@@ -18,7 +18,6 @@
 //     its entry is never rendered. Its spec content is covered by the separate
 //     `porta-cabin-with-toilet` entry.
 import specsDataset from '@/data/products/specs-tab-dataset.json';
-import c01Specifications from '@/data/products/c01-specifications.json';
 import c06Specifications from '@/data/products/c06-specifications.json';
 import c04Specifications from '@/data/products/c04-specifications.json';
 import c08Specifications from '@/data/products/c08-specifications.json';
@@ -26,6 +25,7 @@ import c05Specifications from '@/data/products/c05-specifications.json';
 import c05SubpageSpecifications from '@/data/products/c05-subpage-specifications.json';
 import c05SubpageSpecifications2 from '@/data/products/c05-subpage-specifications-2.json';
 import cmoSpecifications from '@/data/products/container-marketing-office-specs.json';
+import { getEffectiveC01SpecificationEntry } from '@/lib/c01SpecificationOverrides';
 
 type SpecGroups = Record<string, Record<string, string | number>>;
 export interface SpecsEntry {
@@ -97,9 +97,6 @@ interface C01SpecificationEntry {
       existing plain table markup is byte-identical elsewhere. */
   premiumTables?: boolean;
 }
-const C01_DATASET = c01Specifications as unknown as {
-  products: Record<string, C01SpecificationEntry>;
-};
 const C06_DATASET = c06Specifications as unknown as {
   products: Record<string, C01SpecificationEntry>;
 };
@@ -442,7 +439,7 @@ const DEST_NOTE = 'approximate road distance, find your freight band in the tabl
 // approved description wording used on every one of the 11 pages ("5-year
 // structural warranty and 1-year finishing warranty as standard..."). This is
 // the single shared source for the Shipping tab warranty text on all 11
-// approved Porta Cabins pages (via C01_DATASET, see getProductTabsHtml below)
+// approved Porta Cabins pages (via the effective C01 accessor below)
 // plus every other caller of buildShippingHtml(). Replaced with the exact
 // Fixed Facts (L15) wording, verbatim from the P0 fix instruction.
 const WARRANTY_BLOCK =
@@ -930,9 +927,12 @@ export function getProductTabsHtml(
       shippingHtml: buildContainerOfficesShippingHtml(),
     };
   }
-  if (pageSlug && C01_DATASET.products[pageSlug]) {
+  const c01Entry = pageSlug
+    ? (getEffectiveC01SpecificationEntry(pageSlug) as C01SpecificationEntry | undefined)
+    : undefined;
+  if (pageSlug && c01Entry) {
     return {
-      specificationsHtml: buildC01SpecificationsHtml(C01_DATASET.products[pageSlug]),
+      specificationsHtml: buildC01SpecificationsHtml(c01Entry),
       // PC-05 revision v1.3 — this one page's Shipping tab carries a lead
       // image (owner instruction, 14 Aug 2026). PC-07 build prompt v1 §7 —
       // this one page carries a one-line routing note (which existing band
