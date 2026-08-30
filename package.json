@@ -26,6 +26,8 @@
     "generate:pc01-pdf": "python scripts/generate-pc01-technical-pdf.py",
     "validate:pc01-pdf": "python scripts/validate-pc01-active-pdf.py",
     "test:pc01-pdf": "python scripts/test-pc01-active-pdf.py",
+    "validate:pc01-keyword-ownership": "node scripts/validate-pc01-keyword-ownership.mjs",
+    "test:pc01-keyword-ownership": "node scripts/test-pc01-keyword-ownership.mjs",
     "analyze": "ANALYZE=true next build",
     "postbuild": "node scripts/build-image-manifest-and-sitemaps.mjs",
     "image-manifest:collect": "node scripts/collect-image-manifest.mjs",

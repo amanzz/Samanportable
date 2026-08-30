@@ -644,7 +644,7 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
     ),
     comparison: (
       <>
-        Next, fix the budget against the published price ladder on this page. Our <Link className={linkClass} href="/porta-cabin-price-a-complete-guide-2025">porta cabin price guide</Link> sets out the cost factors behind it in more detail. When your shortlist is ready, share your site pin code and use-case, and <Link className={linkClass} href="/contact">request an itemised quotation</Link>.
+        Next, fix the budget against the published price ladder on this page. Our <Link className={linkClass} href="/porta-cabin-price-a-complete-guide-2025">Porta Cabin price guide</Link> sets out the cost factors behind it in more detail. When your shortlist is ready, share your site pin code and use-case, and <Link className={linkClass} href="/contact">request an itemised quotation</Link>.
       </>
     ),
     // R15 (v1.4) — split card copy is verbatim from the revision ticket; the
