@@ -14,7 +14,6 @@ import { GSTIN_KARNATAKA, GSTIN_UTTAR_PRADESH } from '@/data/certifications';
 import { isTemporarilyGatedCommercialPath } from '@/lib/unapprovedCommercialGating';
 
 const MONEY_STRIP_LINKS = [
-  { label: "Porta Cabin Price Guide", href: "/porta-cabin-price-a-complete-guide-2025" },
   { label: "Porta Cabin in Delhi NCR", href: "/porta-cabins-in-delhi-ncr" },
   { label: "Porta Cabin Sizes India", href: "/porta-cabin-sizes-and-specifications-in-india" },
   { label: "Porta Cabin in Noida", href: "/porta-cabin-in-noida" },

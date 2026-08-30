@@ -151,7 +151,70 @@ const RETIRED_INTERNAL_LINKS = new Map<string, string>([
   ['/used-shipping-container-price-in-india', '/ship-container-price-in-india'],
 ]);
 
-export function rewriteRetiredInternalLinks(html: string): string {
+const PC01_HUB_PATH = '/product/porta-cabins';
+const PC01_GUIDE_PATH = '/porta-cabin-price-a-complete-guide-2025';
+const PC01_GUIDE_SLUG = 'porta-cabin-price-a-complete-guide-2025';
+const PC01_MS_CHILD_PATH = '/product/porta-cabins/ms-porta-cabin';
+
+function pc01AnchorText(innerHtml: string): string {
+  return innerHtml
+    .replace(/<[^>]*>/g, ' ')
+    .replace(/&nbsp;|&#160;/gi, ' ')
+    .replace(/&amp;/gi, '&')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function pc01InternalPath(href: string): string {
+  return href
+    .replace(/^https?:\/\/(?:www\.)?samanportable\.com/i, '')
+    .split(/[?#]/, 1)[0]
+    .replace(/\/+$/, '') || '/';
+}
+
+function replaceAnchorHref(attributes: string, href: string): string {
+  return attributes.replace(
+    /\bhref=(['"])(.*?)\1/i,
+    (_whole, quote: string) => `href=${quote}${href}${quote}`
+  );
+}
+
+/**
+ * PC01-REL-04: normalize only link ownership while preserving all visible source copy.
+ * The retained guide owns information intent; PC-01 owns broad commercial intent; and
+ * the MS child keeps only anchors that explicitly say MS or mild steel.
+ */
+export function rewritePc01KeywordOwnershipLinks(html: string, contextSlug = ''): string {
+  if (!html || !html.includes('href=')) return html;
+  return html.replace(/<a\b([^>]*)>([\s\S]*?)<\/a>/gi, (whole, attributes: string, innerHtml: string) => {
+    const hrefMatch = attributes.match(/\bhref=(['"])(.*?)\1/i);
+    if (!hrefMatch) return whole;
+    const target = pc01InternalPath(hrefMatch[2]);
+    const anchor = pc01AnchorText(innerHtml);
+
+    // The maintained related-product module supplies the guide's one purposeful
+    // commercial-selection link. Existing body words remain, but their six duplicate
+    // links are unwrapped.
+    if (contextSlug === PC01_GUIDE_SLUG && target === PC01_HUB_PATH) return innerHtml;
+
+    const informationalGuideAnchor = /\b(?:guide|how\b[^\n]{0,50}\bpricing\b|pricing\s+(?:works|breakdown|logic)|cost(?:-per-[a-z-]+|\s+per\s+[a-z]+)?\s+(?:factors?|benchmark|breakdown)|understand\b[^\n]{0,50}\bpricing\b)\b/i.test(anchor);
+    if (target === PC01_GUIDE_PATH && !informationalGuideAnchor) {
+      return `<a${replaceAnchorHref(attributes, PC01_HUB_PATH)}>${innerHtml}</a>`;
+    }
+
+    if (target === '/product/portable-office' && /^(?:porta|portable)\s+cabins?\s+range$/i.test(anchor)) {
+      return `<a${replaceAnchorHref(attributes, PC01_HUB_PATH)}>${innerHtml}</a>`;
+    }
+
+    if (target === PC01_MS_CHILD_PATH && !/\bms\b|mild[- ]steel/i.test(anchor)) {
+      return `<a${replaceAnchorHref(attributes, PC01_HUB_PATH)}>${innerHtml}</a>`;
+    }
+
+    return whole;
+  });
+}
+
+export function rewriteRetiredInternalLinks(html: string, contextSlug = ''): string {
   if (!html || !html.includes('href=')) return html;
   let rewritten = html;
   for (const [source, destination] of RETIRED_INTERNAL_LINKS) {
@@ -163,7 +226,7 @@ export function rewriteRetiredInternalLinks(html: string): string {
         .join(`href=${quote}https://www.samanportable.com${destination}${quote}`);
     }
   }
-  return rewritten;
+  return rewritePc01KeywordOwnershipLinks(rewritten, contextSlug);
 }
 
 // C-08 P0 (SAMAN ruling, 03 Aug 2026): a category archive publishes NO price.
@@ -633,13 +696,13 @@ export async function fetchBlogPost(slug: string): Promise<any | null> {
   if (typeof rest?.content?.rendered === 'string') {
     rest.content = {
       ...rest.content,
-      rendered: normalizeVerifiedCommercialFacts(rewriteRetiredInternalLinks(rest.content.rendered)),
+      rendered: normalizeVerifiedCommercialFacts(rewriteRetiredInternalLinks(rest.content.rendered, slug)),
     };
   }
   if (typeof rest?.excerpt?.rendered === 'string') {
     rest.excerpt = {
       ...rest.excerpt,
-      rendered: normalizeVerifiedCommercialFacts(rewriteRetiredInternalLinks(rest.excerpt.rendered)),
+      rendered: normalizeVerifiedCommercialFacts(rewriteRetiredInternalLinks(rest.excerpt.rendered, slug)),
     };
   }
   return rest;
@@ -1085,7 +1148,7 @@ export async function fetchProductDescription(
       trimImageAltWhitespace(
         rewriteC04NonL3Punctuation(
           applyC04GapCloseCopy(
-            rewriteC03RenderPunctuation(rewriteRetiredInternalLinks(p.description || ''), slug),
+            rewriteC03RenderPunctuation(rewriteRetiredInternalLinks(p.description || '', slug), slug),
             slug
           ),
           slug

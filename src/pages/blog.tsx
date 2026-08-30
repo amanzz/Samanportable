@@ -705,6 +705,9 @@ const Blog = ({ posts, pagination, categories, tags, seoCanonical, hreflangSelf,
                             <Link href={navigablePostPath(post.slug)}>
                               <Button variant="outline" size="sm" className="w-full group">
                                 Read More
+                                {/^(?:porta-cabins?-in-|portable-cabins?-in-|portacabins-for-sale-in-|affordable-porta-cabins-in-)/i.test(post.slug) && (
+                                  <span className="sr-only">: {decodeHtmlEntities(post.title.rendered)}</span>
+                                )}
                                 <ArrowRight className="w-3 h-3 ml-2 group-hover:translate-x-1 transition-transform" />
                               </Button>
                             </Link>
