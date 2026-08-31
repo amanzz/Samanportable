@@ -71,7 +71,7 @@ jobs:
           CANDIDATE_DIR: ${{ github.workspace }}/measurement/candidate-b
           RESULTS_DIR: ${{ github.workspace }}/pc01-rel-05e-results
           ACTIONS_RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
-        run: npm --prefix runner/performance-lab/pc01-remote run
+        run: npm --prefix runner/performance-lab/pc01-remote run run
 
       - name: Package authoritative evidence
         if: always()
@@ -102,7 +102,7 @@ jobs:
           result_tree="$RUNNER_TEMP/pc01-rel05e-results-branch"
           git -C runner worktree add --detach "$result_tree" HEAD
           git -C "$result_tree" switch --orphan pc01-rel05e-results
-          git -C "$result_tree" rm -r --cached .
+          git -C "$result_tree" rm -r --cached . || true
           mkdir -p "$result_tree/results"
           for file in PC01-REL-05E-REMOTE-PERFORMANCE-MASTER-REPORT.md PC01-REL-05E-RUN-REGISTER.csv PC01-REL-05E-STATISTICS.csv PC01-REL-05E-PAIRED-DIFFERENCES.csv PC01-REL-05E-LCP-DECOMPOSITION.md PC01-REL-05E-OPTIMIZER-EXPERIMENT.md PC01-REL-05E-APPLICATION-PARITY.md PC01-REL-05E-NO-CHANGE-VERIFICATION.md PC01-REL-05E-ENVIRONMENT.md EVIDENCE-SHA256.csv FINAL-VERDICT.txt; do
             if [ -f "pc01-rel-05e-results/$file" ]; then cp "pc01-rel-05e-results/$file" "$result_tree/results/$file"; fi
