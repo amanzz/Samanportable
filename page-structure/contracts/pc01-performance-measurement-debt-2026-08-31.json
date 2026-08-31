@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 1,
+  "decisionId": "PC01-PERFORMANCE-QUALIFICATION-2026-08-31",
+  "decision": "PC01_PERFORMANCE_IMPROVED_WITH_QUALIFIED_MEASUREMENT_DEBT",
+  "ownerAuthority": "PC01-REL-06B_DIRECT_OWNER_INSTRUCTION",
+  "decisionDate": "2026-08-31",
+  "measurementStatus": "QUALIFIED_UNRESOLVED",
+  "historicalProvenance": {
+    "historicalSourceBranch": "seo/pc01-performance-remediation",
+    "branchSemantics": "HISTORICAL_PROVENANCE_ONLY"
+  },
+  "branchAuthorityStatement": "Current branch names and detached-HEAD state are evidence only. Pinned commits, trees, application files, hashes, deterministic evidence, business-data parity and unresolved owner status control validation.",
+  "productionComparison": {
+    "ref": "origin/static-migration",
+    "commit": "3346a532306c52932aeb2d813591bf95cb37716b"
+  },
+  "checkpoints": {
+    "controlA": {
+      "commit": "4dc9b4e639169b66140416d2237cb71c24fce66e",
+      "tree": "898ec91b66acdee7ba379d39499a1d830c53732b"
+    },
+    "candidateB": {
+      "commit": "c04737f28895ef5296d1ab63e8fd98762fad4557",
+      "tree": "0207136814c1e0cf3b766c2792e19670a1a550da"
+    },
+    "safePhaseAApplication": {
+      "commit": "71fd5b5cd857fe710f19ec29355a34bd116b38ab",
+      "tree": "3b1d2b0d9f2b1db4488071dfa7991b9367dba198"
+    },
+    "portabilitySource": {
+      "commit": "cb4b8ad1c7220c3ade42851a681ee0439e0ab984",
+      "tree": "12db4887563547aee7d80fc034c190b125939498"
+    },
+    "ancestryPolicy": "REQUIRED_ANCESTOR_OF_CURRENT_HEAD"
+  },
+  "phaseAApplication": {
+    "hashNormalization": "CRLF_TO_LF",
+    "changedFileSet": [
+      "src/components/DeferredCabinCalculator.tsx",
+      "src/components/LegacyEmbeddedCalculator.tsx",
+      "src/pages/product/[category]/index.tsx"
+    ],
+    "files": [
+      {
+        "path": "src/components/DeferredCabinCalculator.tsx",
+        "sha256": "86eefd70022d63037f532aeefa160e313250da486b2481e3ba9dd1adf1967665"
+      },
+      {
+        "path": "src/components/LegacyEmbeddedCalculator.tsx",
+        "sha256": "06224af04d9c7a2c4c659c1cf6e1bc6c43f8b721ea41f520fc5a5417dc29a946"
+      },
+      {
+        "path": "src/pages/product/[category]/index.tsx",
+        "sha256": "c5909984b7704ed9e225383d6a6f2380f5d096dd44f29ab99156d8f7ed9ab995"
+      }
+    ]
+  },
+  "deterministicEvidence": {
+    "baselineSummary": {
+      "path": "seo-remediation/reports/evidence/PC01-REL-05/baseline/summary.json",
+      "normalizedSha256": "1bf509cff2dee2db037b53697cdab96e361d80f57548748200b2ce3c7d19d299"
+    },
+    "candidateSummary": {
+      "path": "seo-remediation/reports/evidence/PC01-REL-05/phase-a/summary.json",
+      "normalizedSha256": "e4fd25165a606dcf5b1cb997b71f767e9b9af0f5b3e412cff76111f8e063c3c2"
+    },
+    "dom": {
+      "baseline": 3811,
+      "candidate": 1745,
+      "reductionPercent": 54.2,
+      "minimumReductionPercent": 45
+    },
+    "scriptTransferBytes": {
+      "baseline": 650063,
+      "candidate": 355906,
+      "reductionPercent": 45.3,
+      "minimumReductionPercent": 40
+    },
+    "categoryFirstLoadJavaScriptKb": {
+      "baseline": 581,
+      "candidate": 308,
+      "reductionPercent": 47.0,
+      "minimumReductionPercent": 40
+    }
+  },
+  "serverRenderedEvidence": {
+    "path": "seo-remediation/reports/evidence/PC01-REL-05/phase-a/server-html.html",
+    "normalizedSha256": "1073ba87a58856949d0201752a039baae9aab05b03501c6aa5926b330a6348ce",
+    "urlPath": "/product/porta-cabins",
+    "title": "Porta Cabin & Portable Cabin Manufacturer in India | SAMAN",
+    "canonical": "https://www.samanportable.com/product/porta-cabins",
+    "robots": "index, follow",
+    "h1": "Porta Cabin & Portable Cabin Manufacturer in India",
+    "priceExGst": [143750, 220000, 250000, 288000, 360000, 475000],
+    "faqCount": 8,
+    "specificationCount": 30,
+    "schemaTypes": ["Product", "FAQPage", "BreadcrumbList"],
+    "pdfPath": "/specs/saman-porta-cabins-technical-specification.pdf",
+    "approvedChildPaths": [
+      "/product/porta-cabins/double-story-porta-cabin",
+      "/product/porta-cabins/fire-rated-porta-cabin",
+      "/product/porta-cabins/gi-porta-cabin",
+      "/product/porta-cabins/knock-down-porta-cabin",
+      "/product/porta-cabins/ms-porta-cabin",
+      "/product/porta-cabins/porta-cabin-shop",
+      "/product/porta-cabins/porta-cabin-with-toilet",
+      "/product/porta-cabins/puf-porta-cabin",
+      "/product/porta-cabins/skid-mounted-porta-cabin",
+      "/product/porta-cabins/soundproof-porta-cabin"
+    ],
+    "primaryEnquiryCta": "Get a Quote"
+  },
+  "businessData": {
+    "hashNormalization": "CRLF_TO_LF",
+    "files": [
+      {
+        "path": "src/data/products/porta-cabins.json",
+        "sha256": "f662c379b89f9bb291c1f89cdfe920210788a054e392e7aad5e461e78b69ae2b"
+      },
+      {
+        "path": "src/data/products/c01-specifications.json",
+        "sha256": "0557d6b11c5c938ffdd33e829f646f6a3c2d5fdbdaec13e6da67153f0209c7e5"
+      },
+      {
+        "path": "src/data/products/c01-specification-overrides.json",
+        "sha256": "e660c6b05520e57ab751927bba6e44e72dacd36dfdb3fa9b23f0185c6514263b"
+      }
+    ],
+    "generatedC01RawSha256": "3a35ec7564c8007640b57313efa50a3420e93df0165fedcf80bcc5a056c37099",
+    "activePdfPath": "public/specs/saman-porta-cabins-technical-specification.pdf",
+    "activePdfSha256": "9d67076407aefab9cb43370696e2a8a32985d8ec2e49ea577df08e8b9192ca96"
+  },
+  "remoteMeasurement": {
+    "actionsRunId": 33375322649,
+    "runConclusion": "cancelled",
+    "resultsCommit": "636e56f7d0fe9036f777f4a5373b85d9b9e2838f",
+    "artifactId": 9755113831,
+    "artifactName": "pc01-rel-05e-remote-performance-evidence",
+    "artifactDigest": null,
+    "downloadedZipSha256": "cebc3c4eb5b37b372c53ab1cc6dc83cae61614e9bf91515ff10f2b198956a30d",
+    "validAuthoritativeRuns": 0,
+    "failure": "DOM.getFlattenedDocument was called before the CDP DOM agent was enabled; the task server remained alive and the job was cancelled after 120 minutes."
+  },
+  "prohibitedClaims": [
+    "Synthetic LCP passed.",
+    "Synthetic TBT passed.",
+    "Production INP passed.",
+    "Core Web Vitals passed."
+  ],
+  "resolutionEvidence": {
+    "status": "NOT_AVAILABLE",
+    "fieldDataDays": 0,
+    "stableSyntheticLab": false
+  },
+  "sunsetCondition": "Review or retire this qualification after either at least 28 days of reliable production field data is available for /product/porta-cabins or an independently validated stable synthetic laboratory produces reproducible results.",
+  "requiredPostReleaseEvidence": [
+    "field LCP",
+    "field INP",
+    "field CLS",
+    "Search Console/CrUX where available",
+    "production resource timing",
+    "production CDN/image delivery"
+  ]
+}
