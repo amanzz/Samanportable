@@ -1,0 +1,12 @@
+{
+  "name": "pc01-rel-05e-remote-performance-lab",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": { "run": "node run-paired-ab.mjs" },
+  "dependencies": {
+    "chrome-launcher": "1.0.0",
+    "lighthouse": "13.4.1",
+    "puppeteer-core": "24.16.0"
+  }
+}

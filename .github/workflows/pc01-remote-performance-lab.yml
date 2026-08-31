@@ -1,0 +1,115 @@
+name: PC01 REL-05E remote performance lab
+
+on:
+  push:
+    branches: [ci/pc01-remote-performance-lab-20260831]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  paired-ab:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    steps:
+      - name: Checkout isolated runner branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          path: runner
+
+      - name: Checkout immutable Control A
+        uses: actions/checkout@v4
+        with:
+          ref: 4dc9b4e639169b66140416d2237cb71c24fce66e
+          fetch-depth: 0
+          path: measurement/control-a
+
+      - name: Checkout immutable Candidate B
+        uses: actions/checkout@v4
+        with:
+          ref: c04737f28895ef5296d1ab63e8fd98762fad4557
+          fetch-depth: 0
+          path: measurement/candidate-b
+
+      - name: Pin Node and npm
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+          cache: npm
+          cache-dependency-path: runner/performance-lab/pc01-remote/package-lock.json
+
+      - name: Pin Chrome for Testing
+        id: chrome
+        uses: browser-actions/setup-chrome@v2
+        with:
+          chrome-version: 152.0.7977.65
+
+      - name: Install fixed toolchain and applications
+        shell: bash
+        run: |
+          npm install --global npm@10.9.3
+          npm --prefix runner/performance-lab/pc01-remote ci
+          npm --prefix measurement/control-a ci
+          npm --prefix measurement/candidate-b ci
+
+      - name: Build immutable checkpoints identically
+        shell: bash
+        env:
+          NODE_ENV: production
+        run: |
+          npm --prefix measurement/control-a run build
+          npm --prefix measurement/candidate-b run build
+          test -z "$(git -C measurement/control-a status --porcelain)"
+          test -z "$(git -C measurement/candidate-b status --porcelain)"
+
+      - name: Run paired A/B laboratory
+        shell: bash
+        env:
+          CHROME_PATH: ${{ steps.chrome.outputs.chrome-path }}
+          CONTROL_DIR: ${{ github.workspace }}/measurement/control-a
+          CANDIDATE_DIR: ${{ github.workspace }}/measurement/candidate-b
+          RESULTS_DIR: ${{ github.workspace }}/pc01-rel-05e-results
+          ACTIONS_RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: npm --prefix runner/performance-lab/pc01-remote run
+
+      - name: Package authoritative evidence
+        if: always()
+        shell: bash
+        run: |
+          mkdir -p pc01-rel-05e-results
+          if [ ! -f pc01-rel-05e-results/FINAL-VERDICT.txt ]; then printf '%s\n' BLOCKED_REMOTE_PERFORMANCE_LAB_UNSTABLE > pc01-rel-05e-results/FINAL-VERDICT.txt; fi
+          (cd pc01-rel-05e-results && zip -r ../PC01-REL-05E-REMOTE-PERFORMANCE-EVIDENCE.zip .)
+
+      - name: Upload complete evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pc01-rel-05e-remote-performance-evidence
+          path: |
+            PC01-REL-05E-REMOTE-PERFORMANCE-EVIDENCE.zip
+            pc01-rel-05e-results/
+          retention-days: 90
+          if-no-files-found: error
+
+      - name: Publish compact durable results branch
+        if: always()
+        continue-on-error: true
+        shell: bash
+        env:
+          RESULTS_BRANCH: ci/pc01-remote-performance-results-20260831
+        run: |
+          result_tree="$RUNNER_TEMP/pc01-rel05e-results-branch"
+          git -C runner worktree add --detach "$result_tree" HEAD
+          git -C "$result_tree" switch --orphan pc01-rel05e-results
+          git -C "$result_tree" rm -r --cached .
+          mkdir -p "$result_tree/results"
+          for file in PC01-REL-05E-REMOTE-PERFORMANCE-MASTER-REPORT.md PC01-REL-05E-RUN-REGISTER.csv PC01-REL-05E-STATISTICS.csv PC01-REL-05E-PAIRED-DIFFERENCES.csv PC01-REL-05E-LCP-DECOMPOSITION.md PC01-REL-05E-OPTIMIZER-EXPERIMENT.md PC01-REL-05E-APPLICATION-PARITY.md PC01-REL-05E-NO-CHANGE-VERIFICATION.md PC01-REL-05E-ENVIRONMENT.md EVIDENCE-SHA256.csv FINAL-VERDICT.txt; do
+            if [ -f "pc01-rel-05e-results/$file" ]; then cp "pc01-rel-05e-results/$file" "$result_tree/results/$file"; fi
+          done
+          printf '%s\n' "https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}" > "$result_tree/results/ACTIONS-RUN-URL.txt"
+          printf '%s\n' 'pc01-rel-05e-remote-performance-evidence (90 days requested)' > "$result_tree/results/ARTIFACT.txt"
+          git -C "$result_tree" add results
+          git -C "$result_tree" -c user.name=github-actions -c user.email=41898282+github-actions[bot]@users.noreply.github.com commit -m "ci(perf): publish PC-01 remote performance results"
+          git -C "$result_tree" push origin "HEAD:refs/heads/$RESULTS_BRANCH"
