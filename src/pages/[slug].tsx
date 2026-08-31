@@ -1032,7 +1032,11 @@ const BlogPostPage = ({ post, slug, rankMathSEO, hubLink, siblings }: BlogPostPr
               cluster-resolved page gets it; rendered only when a hub resolves (never forced). */}
           {upLinkHub && (
             <div className="mb-12">
-              <RelatedProductLink hubName={upLinkHub.hubName} hubPath={upLinkHub.hubPath} />
+              <RelatedProductLink
+                hubName={upLinkHub.hubName}
+                hubPath={upLinkHub.hubPath}
+                ctaLabel={slug === 'porta-cabin-price-a-complete-guide-2025' ? 'Explore the Porta Cabins range' : undefined}
+              />
             </div>
           )}
 

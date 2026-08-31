@@ -1,5 +1,6 @@
 ﻿import { NextApiRequest, NextApiResponse } from 'next';
 import { fetchProducts, fetchProductCategories } from '@/lib/staticContent';
+import { isTemporarilyGatedCommercialPath } from '@/lib/unapprovedCommercialGating';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
@@ -53,9 +54,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       if (categories && categories.length > 0) {
         categories.forEach((category: any) => {
           if (category.slug && category.slug !== 'uncategorized') {
+            const categoryPath = `/product/${category.slug}`;
+            if (isTemporarilyGatedCommercialPath(categoryPath)) return;
             sitemap += `  <url>
 `;
-            sitemap += `    <loc>${baseUrl}/product/${category.slug}</loc>
+            sitemap += `    <loc>${baseUrl}${categoryPath}</loc>
 `;
             sitemap += `    <lastmod>${currentDate}</lastmod>
 `;
@@ -90,6 +93,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       allProducts.forEach((product: any) => {
         if (product.slug && product.categories && product.categories.length > 0) {
           const categorySlug = product.categories[0].slug || 'uncategorized';
+          const productPath = product.slug === categorySlug
+            ? `/product/${categorySlug}`
+            : `/product/${categorySlug}/${product.slug}`;
+          if (isTemporarilyGatedCommercialPath(productPath)) return;
           
           // Category listing page for this product
           sitemap += `  <url>
@@ -108,7 +115,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           // Individual product page
           sitemap += `  <url>
 `;
-          sitemap += `    <loc>${baseUrl}/product/${categorySlug}/${product.slug}</loc>
+          sitemap += `    <loc>${baseUrl}${productPath}</loc>
 `;
           sitemap += `    <lastmod>${product.date_modified || currentDate}</lastmod>
 `;

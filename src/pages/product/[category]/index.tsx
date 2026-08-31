@@ -29,13 +29,13 @@ import ProductStructuredData from '../../../components/ProductStructuredData';
 import RelatedProductRail from '../../../components/product/RelatedProductRail';
 import ProductZoneCtas from '../../../components/product/ProductZoneCtas';
 import ProductSummaryLayout from '../../../components/product/ProductSummaryLayout';
+import { isTemporarilyGatedCommercialPath } from '../../../lib/unapprovedCommercialGating';
 import SandwichInfoBox from '../../../components/product-sandwich/SandwichInfoBox';
 import Head from 'next/head';
 import dynamic from 'next/dynamic';
 import { cleanText } from '../../../lib/merchantFeed';
 import { getNavigableProductPath } from '../../../lib/productCanonicalPaths';
 import { sanitizeC08RelatedProductSummary, toRelatedProductSummary } from '../../../lib/relatedProductSummary';
-import { getEmbeddedProductSummary, renderCabinCalculatorSSR, renderCalculatorEntrySection } from '../../../lib/cabinCalculatorSSR';
 import { makeCalculatorPageUrl, resolveEmbeddedCalculatorProduct } from '../../../lib/cabinCalculatorEmbedRoutes';
 import { CLOSED_STATE } from '../../../lib/calculatorCopy';
 import { getC16PanelSiblingRail, isC16PanelSlug, type RelatedRailItem } from '../../../lib/c16PanelCatalog';
@@ -47,6 +47,8 @@ import type { VariantProductData } from '../../../components/product-variant-her
 import { PORTA_CABIN_HUB_RAIL } from '../../../lib/portaCabinClusterRail';
 import { getLabourColonyClusterRail } from '../../../lib/labourColonyClusterRail';
 import PortaCabinsYouMayAlsoLike from '../../../components/product-variant-hero/PortaCabinsYouMayAlsoLike';
+import DeferredCabinCalculator from '../../../components/DeferredCabinCalculator';
+import { rewriteRetiredInternalLinks } from '../../../lib/staticContent';
 
 const SAFE_PRODUCT_SLUG = /^[a-z0-9-]+$/;
 
@@ -54,6 +56,10 @@ const SAFE_PRODUCT_SLUG = /^[a-z0-9-]+$/;
 const ProductTabs = dynamic(() => import('../../../components/ProductTabs'), {
   ssr: true,
   loading: () => <div className="animate-pulse bg-gray-200 h-32 rounded-lg"></div>
+});
+
+const LegacyEmbeddedCalculator = dynamic(() => import('../../../components/LegacyEmbeddedCalculator'), {
+  ssr: true,
 });
 
 
@@ -69,6 +75,14 @@ interface ProductDetailsProps {
   // just porta-cabins). Renders the variant hero instead of ProductSummaryLayout.
   // Every other category page gets `null` here and is completely unaffected.
   variantData?: VariantProductData | null;
+  isTemporarilyGated: boolean;
+  calculatorEntryHtml: string | null;
+  deferredCalculator: {
+    productId: string;
+    ladderKey: string;
+    productName: string;
+    pageUrl: string;
+  } | null;
 }
 
 type PrefabricatedWarehouseLink = {
@@ -114,7 +128,7 @@ const RelatedPrefabricatedWarehouseResource = ({ category }: { category: string 
   );
 };
 
-export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async ({ params }) => {
+export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async ({ params, res }) => {
   try {
     const { category } = params as { category: string };
     
@@ -123,6 +137,9 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
         notFound: true,
       };
     }
+    const normalizedCategory = decodeURIComponent(category).toLowerCase();
+    const isTemporarilyGated = isTemporarilyGatedCommercialPath(`/product/${normalizedCategory}`);
+    if (isTemporarilyGated) res.setHeader('X-Robots-Tag', 'noindex, follow');
 
     // Static content layer: reads exported product files — no WordPress call.
     // Server-only module, loaded dynamically so fs never reaches the client bundle.
@@ -359,6 +376,32 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
     // porta-cabin cluster; null for any other category (tabs unchanged there).
     const t31Tabs = getProductTabsHtml(category);
 
+    // Keep the established renderer server-only for ordinary category hubs.
+    // PC-01 is the one scoped exception: its hidden calculator markup is loaded
+    // at the maintained entry point, instead of hydrating the entire wizard in
+    // the initial page payload.
+    const embeddedCalculatorMapping = resolveEmbeddedCalculatorProduct(category);
+    let calculatorEntryHtml: string | null = null;
+    let deferredCalculator: ProductDetailsProps['deferredCalculator'] = null;
+
+    if (normalizedCategory === 'porta-cabins' && embeddedCalculatorMapping?.productId) {
+      const calculatorSSR = await import('../../../lib/cabinCalculatorSSR');
+      if (embeddedCalculatorMapping.prefill && embeddedCalculatorMapping.productId) {
+        calculatorEntryHtml = calculatorSSR.renderCalculatorEntrySection({
+          productId: embeddedCalculatorMapping.productId,
+          productName: product.name,
+          ladderKey: embeddedCalculatorMapping.ladderKey,
+        });
+      }
+
+      deferredCalculator = {
+        productId: embeddedCalculatorMapping.productId,
+        ladderKey: embeddedCalculatorMapping.ladderKey,
+        productName: product.name,
+        pageUrl: makeCalculatorPageUrl(category),
+      };
+    }
+
     return {
       props: {
         product: {
@@ -366,10 +409,12 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
           // C-08 E3 Step C — same Info-image placement as the sibling route, so
           // the hub's Description panel carries its 16:9 band on the same rules.
           description: injectInfoImages(
-            // Same empty-safe hold as the subpage route (C-05 close-out Part 2).
-            variantData?.descriptionHtml
-              || (variantData?.suppressLegacyDescription ? '' : descriptionData?.description)
-              || '',
+            rewriteRetiredInternalLinks(
+              // Same empty-safe hold as the subpage route (C-05 close-out Part 2).
+              variantData?.descriptionHtml
+                || (variantData?.suppressLegacyDescription ? '' : descriptionData?.description)
+                || ''
+            ),
             variantData?.infoImages
           ),
           // T31 — real Specifications + shared Shipping tab HTML for the porta-cabin
@@ -409,6 +454,9 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
         rankMathSEO,
         reviews,
         variantData,
+        isTemporarilyGated,
+        calculatorEntryHtml,
+        deferredCalculator,
       },
     };
   } catch (error) {
@@ -426,7 +474,17 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
   }
 };
 
-const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, reviews = [], variantData = null }: ProductDetailsProps) => {
+const ProductDetails = ({
+  product,
+  category,
+  relatedProducts,
+  rankMathSEO,
+  reviews = [],
+  variantData = null,
+  isTemporarilyGated,
+  calculatorEntryHtml,
+  deferredCalculator,
+}: ProductDetailsProps) => {
   // All hooks must be called FIRST, before any conditional logic
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [showScrollToTop, setShowScrollToTop] = useState(false);
@@ -578,42 +636,10 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
     }));
   }, [category, transformedProduct?.slug, transformedRelatedProducts]);
 
-  const embeddedCalculatorMapping = useMemo(() => resolveEmbeddedCalculatorProduct(category), [category]);
-  const embeddedCalculatorSummary = useMemo(() => (
-    embeddedCalculatorMapping && embeddedCalculatorMapping.prefill && embeddedCalculatorMapping.productId ? getEmbeddedProductSummary(embeddedCalculatorMapping.productId, embeddedCalculatorMapping.ladderKey, product?.name) : null
-  ), [embeddedCalculatorMapping]);
-
-  const embeddedCalculatorSummaryText = useMemo(() => {
-    if (!embeddedCalculatorSummary) return '';
-    return `${embeddedCalculatorSummary.name} | ${embeddedCalculatorSummary.priceLabel}`;
-  }, [embeddedCalculatorSummary]);
-
-  const embeddedCalculatorHtml = useMemo(() => {
-    if (!embeddedCalculatorMapping) return null;
-    return renderCabinCalculatorSSR({
-      embedded: true,
-      // A NO-PREFILL route mounts the general cabin calculator, exactly as at
-      // /cabin-cost-calculator: no product, no ladder, no product name. It must
-      // not claim to price what this page sells.
-      ...(embeddedCalculatorMapping.prefill && embeddedCalculatorMapping.productId
-        ? { config: { productId: embeddedCalculatorMapping.productId }, ladderKey: embeddedCalculatorMapping.ladderKey, productName: product?.name }
-        : {}),
-      pageUrl: makeCalculatorPageUrl(category),
-    });
-  }, [category, embeddedCalculatorMapping]);
-
-  // The calculator entry band. Sits between the buy box and the description
-  // tabs so a buyer cannot scroll past the tool without meeting it.
-  const calculatorEntryHtml = useMemo(() => {
-    // The entry band names the product and prints its price, so a no-prefill
-    // route gets no band at all rather than a band claiming to price a panel.
-    if (!embeddedCalculatorMapping || !embeddedCalculatorMapping.prefill || !embeddedCalculatorMapping.productId) return null;
-    return renderCalculatorEntrySection({
-      productId: embeddedCalculatorMapping.productId,
-      productName: product?.name || embeddedCalculatorSummary?.name || '',
-      ladderKey: embeddedCalculatorMapping.ladderKey,
-    });
-  }, [embeddedCalculatorMapping, product?.name, embeddedCalculatorSummary?.name]);
+  const legacyEmbeddedCalculatorMapping = useMemo(
+    () => deferredCalculator ? null : resolveEmbeddedCalculatorProduct(category),
+    [category, deferredCalculator]
+  );
 
   if (!product) {
     return (
@@ -653,6 +679,7 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
             fallbackTwitterDescription={`${transformedProduct.title} - Durable and reliable portable solutions for your business needs.`}
             keywords={`${transformedProduct.title}, ${transformedProduct.category}, portable solutions`}
             structuredData={undefined} // ProductStructuredData component handles this separately
+            noindex={isTemporarilyGated}
           />
           
           {/* Product Schema handled by ProductStructuredData component */}
@@ -660,11 +687,13 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
           {/* Product Structured Data for Google Merchant Center.
               Review JSON-LD is emitted ONLY for the same real approved reviews
               that are rendered in the Customer Reviews section below. */}
-          <ProductStructuredData product={product} category={category} reviews={reviews} breadcrumbItems={crumbsToJsonLd(breadcrumbCrumbs)} variantData={variantData || undefined} metaDescription={rankMathSEO?.description} />
+          {!isTemporarilyGated && (
+            <ProductStructuredData product={product} category={category} reviews={reviews} breadcrumbItems={crumbsToJsonLd(breadcrumbCrumbs)} variantData={variantData || undefined} metaDescription={rankMathSEO?.description} />
+          )}
 
           {/* FAQ Structured Data: the approved variant dataset owns its rendered
               FAQs; legacy products continue to use RankMath. */}
-          {(variantData?.faqSchema || rankMathSEO?.faqSchema) && (
+          {!isTemporarilyGated && (variantData?.faqSchema || rankMathSEO?.faqSchema) && (
             <Head>
               <script
                 type="application/ld+json"
@@ -672,12 +701,6 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
               />
             </Head>
           )}
-          {embeddedCalculatorHtml && (
-            <Head>
-              <script defer src="/scripts/cabin-cost-calculator.js" />
-            </Head>
-          )}
-
           <main className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50/30">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
 
@@ -1013,12 +1036,12 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
                   production entry band, which is the calculator's entry point.
                   Hub page only. LC-00 R2 (16 Aug 2026) — labor-colony opts into the
                   identical treatment, so all four dividers match porta-cabins. */}
-              {(category === 'porta-cabins' || category === 'labor-colony') && (calculatorEntryHtml || embeddedCalculatorHtml) && (
+              {(category === 'porta-cabins' || category === 'labor-colony') && (deferredCalculator || legacyEmbeddedCalculatorMapping) && (
                 <hr className="saman-section-divider" aria-hidden="true" />
               )}
 
               {/* The entry band: after the buy box, before the description tabs. */}
-              {calculatorEntryHtml && (
+              {deferredCalculator && calculatorEntryHtml && (
                 <div dangerouslySetInnerHTML={{ __html: calculatorEntryHtml }} />
               )}
 
@@ -1026,10 +1049,16 @@ const ProductDetails = ({ product, category, relatedProducts, rankMathSEO, revie
                   "Estimate your cabin cost / Open the calculator" strip that used
                   to sit here was the entry point the band replaced, so it is gone.
                   The calculator itself is unchanged and still lives here. */}
-              {embeddedCalculatorHtml && (
-                <section className="mt-4" id="cabin-calculator">
-                  <div dangerouslySetInnerHTML={{ __html: embeddedCalculatorHtml }} />
-                </section>
+              {deferredCalculator && (
+                <DeferredCabinCalculator {...deferredCalculator} />
+              )}
+
+              {legacyEmbeddedCalculatorMapping && (
+                <LegacyEmbeddedCalculator
+                  category={category}
+                  mapping={legacyEmbeddedCalculatorMapping}
+                  productName={product.name}
+                />
               )}
 
               {/* R11 (14 Aug 2026) — "You may also like" grid, calculator → tabs,

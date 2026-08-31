@@ -10,6 +10,7 @@ const CONTAINER_OFFICE_KEEP_SLUGS: readonly string[] = [
   'containerized-data-center',
   'bess-container',
   'container-marketing-office',
+  'expandable-container-office',
 ];
 
 type Slugged = { slug?: string };

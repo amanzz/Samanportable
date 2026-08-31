@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element, react/no-unescaped-entities */
 import { useState } from 'react';
+import type { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import Layout from '@/components/Layout';
@@ -12,6 +13,15 @@ import { CheckCircle, Factory, Truck } from 'lucide-react';
 const baseImagePath = '/panel-images/metal-roofing-sheet/';
 const canonicalUrl = 'https://www.samanportable.com/product/roofing-sheet/metal-roofing-sheet';
 const wcReviewProductId = 272773;
+
+export const getServerSideProps: GetServerSideProps = async ({ req }) => {
+  const staticContent = await import('@/lib/staticContent');
+  const allowDraftPreview = staticContent.shouldShowDraftsInListings(req.headers.host);
+  if (!allowDraftPreview && !staticContent.isPublicProductSlug('metal-roofing-sheet')) {
+    return { notFound: true };
+  }
+  return { props: {} };
+};
 
 const galleryImages = [
   {

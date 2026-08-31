@@ -20,8 +20,6 @@ const wcReviewProductId = 272772;
 // here, so we link the real 200 URL, never the redirect. name = each page's real
 // product name (wp-export/products/*.json `name`), used verbatim as anchor text.
 const ROOFING_SUBPAGES: ReadonlyArray<{ name: string; href: string }> = [
-  { name: 'Metal Roofing Sheet', href: '/product/roofing-sheet/metal-roofing-sheet' },
-  { name: 'PVC & uPVC Roofing Sheet', href: '/product/roofing-sheet/pvc-roofing-sheet' },
   { name: 'Polycarbonate Roofing Sheet', href: '/product/roofing-sheet/polycarbonate-roofing-sheet' },
 ];
 

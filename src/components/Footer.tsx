@@ -11,9 +11,9 @@ import {
 } from 'lucide-react';
 import QuoteFormTrigger from './QuoteFormTrigger';
 import { GSTIN_KARNATAKA, GSTIN_UTTAR_PRADESH } from '@/data/certifications';
+import { isTemporarilyGatedCommercialPath } from '@/lib/unapprovedCommercialGating';
 
 const MONEY_STRIP_LINKS = [
-  { label: "Porta Cabin Price Guide", href: "/porta-cabin-price-a-complete-guide-2025" },
   { label: "Porta Cabin in Delhi NCR", href: "/porta-cabins-in-delhi-ncr" },
   { label: "Porta Cabin Sizes India", href: "/porta-cabin-sizes-and-specifications-in-india" },
   { label: "Porta Cabin in Noida", href: "/porta-cabin-in-noida" },
@@ -95,7 +95,8 @@ const Footer = ({
   hideResourceStrip = false,
   companyDescription = 'Saman Portable offers durable, modular, and maintenance-free buildings, designed with high-quality materials for reliability and long-term performance.',
 }: FooterProps) => {
-  const resourceLinks = homepageNeutrality ? HOMEPAGE_POPULAR_RESOURCE_LINKS : MONEY_STRIP_LINKS;
+  const resourceLinks = (homepageNeutrality ? HOMEPAGE_POPULAR_RESOURCE_LINKS : MONEY_STRIP_LINKS)
+    .filter((link) => !isTemporarilyGatedCommercialPath(link.href));
 
   return (
     <footer className="bg-black text-white relative z-20 pb-16 lg:pb-0">
@@ -236,7 +237,7 @@ const Footer = ({
           <div className="lg:col-span-1">
             <h3 className="text-white font-semibold text-lg whitespace-nowrap tracking-wide mb-5">Product Categories</h3>
             <ul className="space-y-1.5">
-              {PRODUCT_CATEGORIES.map((category) => (
+              {PRODUCT_CATEGORIES.filter((category) => !isTemporarilyGatedCommercialPath(category.href)).map((category) => (
                 <li key={category.href}>
                   <Link
                     href={category.href}

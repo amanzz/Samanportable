@@ -12,6 +12,7 @@ import ProductSummaryLayout from '@/components/product/ProductSummaryLayout';
 import { C16_PANEL_CATALOG, ROOFING_SHEET_HUB, type RelatedRailItem } from '@/lib/c16PanelCatalog';
 import { normaliseContentRecord } from '@/lib/contentNormalization';
 import { CheckCircle, Truck } from 'lucide-react';
+import { isTemporarilyGatedCommercialPath } from '@/lib/unapprovedCommercialGating';
 
 const baseImagePath = '/panel-images/wall-sheet/';
 const canonicalUrl = 'https://www.samanportable.com/product/wall-sheet';
@@ -539,9 +540,11 @@ export default function WallSheetPage({
         <meta property="og:description" content={metaDescription} />
         <meta property="og:type" content="product" />
         <meta property="og:url" content={canonicalUrl} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+        {!isTemporarilyGatedCommercialPath('/product/wall-sheet') && <>
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }} />
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+        </>}
       </Head>
 
       <main className="bg-slate-50">

@@ -2363,7 +2363,9 @@ export function computeCalculatorEstimate(input: CalculatorConfig): CalculatorEs
   else if (config.distanceKm > 0 && config.distanceKm < 100) transportNote = 'Under 100 km: confirmed at quotation';
   else if (config.distanceKm >= 100) {
     const bandIndex = Math.min(RATE_CARD.freight.bands20ft.length - 1, Math.max(0, Math.ceil((config.distanceKm - 100) / 50) - 1));
-    const rate = RATE_CARD.freight.bands20ft[bandIndex] + (config.length > 20 || colony ? RATE_CARD.freight.trailer40ftDelta : 0);
+    const rate = config.length > 20 || colony
+      ? RATE_CARD.freight.bands40ft[bandIndex]
+      : RATE_CARD.freight.bands20ft[bandIndex];
     addLine(`Transport ${config.distanceKm} km`, rate * config.quantity, 'published', {
       quantity: config.quantity,
       unitRate: rate,
@@ -2799,8 +2801,8 @@ function renderPriceTables(products: readonly ProductDefinition[] = PRODUCTS, la
 }
 
 function renderFreightTable(): string {
-  const rows = RATE_CARD.freight.bands20ft.map((price, index) => `<tr data-freight-band data-min-km="${100 + index * 50}" data-max-km="${150 + index * 50}" data-price-20="${price}" data-price-40="${price + RATE_CARD.freight.trailer40ftDelta}"><th scope="row">${100 + index * 50}-${150 + index * 50} km</th><td>${money(price)}</td><td>${money(price + RATE_CARD.freight.trailer40ftDelta)}</td></tr>`).join('');
-  return `<table data-freight-table><caption>Delivery freight ladder, ex-GST</caption><thead><tr><th scope="col">Distance</th><th scope="col">20 ft trailer</th><th scope="col">40 ft trailer</th></tr></thead><tbody><tr><th scope="row">Bangalore city</th><td>Free</td><td>Free</td></tr><tr><th scope="row">Delhi NCR</th><td>Free</td><td>Free</td></tr><tr><th scope="row">Under 100 km</th><td>Confirmed at quotation</td><td>Confirmed at quotation</td></tr>${rows}</tbody></table>`;
+  const rows = RATE_CARD.freight.bands20ft.map((price, index) => `<tr data-freight-band data-min-km="${100 + index * 50}" data-max-km="${150 + index * 50}" data-price-20="${price}" data-price-40="${RATE_CARD.freight.bands40ft[index]}"><th scope="row">${100 + index * 50}-${150 + index * 50} km</th><td>${money(price)}</td><td>${money(RATE_CARD.freight.bands40ft[index])}</td></tr>`).join('');
+  return `<table data-freight-table><caption>Delivery freight ladder, ex-GST. Freight figures are tentative and confirmed with the delivery quotation.</caption><thead><tr><th scope="col">Distance</th><th scope="col">20 ft trailer</th><th scope="col">40 ft trailer</th></tr></thead><tbody><tr><th scope="row">Bangalore city</th><td>Free</td><td>Free</td></tr><tr><th scope="row">Delhi NCR</th><td>Free</td><td>Free</td></tr><tr><th scope="row">Under 100 km</th><td>Confirmed at quotation</td><td>Confirmed at quotation</td></tr>${rows}</tbody></table>`;
 }
 
 /**

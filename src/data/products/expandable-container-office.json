@@ -13,7 +13,6 @@
   "schemaOfferType": "aggregateOffer",
   "schemaIncludeVariantOffers": true,
   "schemaBrandName": "SAMAN",
-  "schemaOutputMode": "productOnly",
   "suppressLegacyDescription": true,
   "suppressLegacyFaqSchema": true,
   "suppressAggregateRatingSchema": true,

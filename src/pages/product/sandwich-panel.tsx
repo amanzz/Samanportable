@@ -5,6 +5,7 @@ import Layout from '@/components/Layout';
 import RelatedProductRail from '@/components/product/RelatedProductRail';
 import { getC16PanelSiblingRail } from '@/lib/c16PanelCatalog';
 import { Factory, Mail, Phone, Truck } from 'lucide-react';
+import { isTemporarilyGatedCommercialPath } from '@/lib/unapprovedCommercialGating';
 
 const baseImagePath = '/panel-images/sandwich-panel/';
 const canonicalUrl = 'https://www.samanportable.com/product/sandwich-panel';
@@ -253,9 +254,11 @@ export default function SandwichPanelPage() {
         <meta property="og:type" content="product" />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:image" content={`https://www.samanportable.com${galleryImages[0].src}`} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+        {!isTemporarilyGatedCommercialPath('/product/sandwich-panel') && <>
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }} />
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+        </>}
       </Head>
 
       <main className="bg-slate-50">
