@@ -16,15 +16,19 @@ jobs:
       - name: Checkout isolated runner branch
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 1
           path: runner
 
       - name: Materialize immutable A/B worktrees
         shell: bash
         run: |
           mkdir -p measurement
+          git -C runner fetch --no-tags --depth=3 origin refs/heads/backup/seo-recovery-20260830/pc01-performance-phase-a:refs/remotes/origin/backup/seo-recovery-20260830/pc01-performance-phase-a
           git -C runner cat-file -e 4dc9b4e639169b66140416d2237cb71c24fce66e^{commit}
+          git -C runner cat-file -e 71fd5b5cd857fe710f19ec29355a34bd116b38ab^{commit}
           git -C runner cat-file -e c04737f28895ef5296d1ab63e8fd98762fad4557^{commit}
+          git -C runner merge-base --is-ancestor 4dc9b4e639169b66140416d2237cb71c24fce66e 71fd5b5cd857fe710f19ec29355a34bd116b38ab
+          git -C runner merge-base --is-ancestor 71fd5b5cd857fe710f19ec29355a34bd116b38ab c04737f28895ef5296d1ab63e8fd98762fad4557
           git -C runner worktree add --detach "$GITHUB_WORKSPACE/measurement/control-a" 4dc9b4e639169b66140416d2237cb71c24fce66e
           git -C runner worktree add --detach "$GITHUB_WORKSPACE/measurement/candidate-b" c04737f28895ef5296d1ab63e8fd98762fad4557
 
