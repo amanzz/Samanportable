@@ -16,14 +16,21 @@ export const MANIFEST_PATH = path.join(
 );
 
 export const KNOWN = Object.freeze({
-  schemaVersion: 1,
+  schemaVersion: 2,
   decisionId: 'PC01-REL-02-OPTION-3-2026-08-29',
   decision: 'OPTION_3_QUALIFIED_LEGACY_DEBT',
   ownerAuthority: 'PC01-REL-02_DIRECT_OWNER_INSTRUCTION',
   debtStatus: 'QUALIFIED_UNRESOLVED',
   recoveredCommit: '74ce8bc7e11363be9253d25d582b5347a78b143d',
   recoveredTree: '62bdb5f47e6af7b69ff9ad81c961fbab034367ed',
-  branch: 'seo/pc01-qualified-c01-debt-active-pdf',
+  historicalSourceBranch: 'seo/pc01-qualified-c01-debt-active-pdf',
+  branchSemantics: 'HISTORICAL_PROVENANCE_ONLY',
+  qualificationCommit: 'e2fe1fcccffcc93b9cb3c21d2569738d83074c0c',
+  qualificationTree: 'c298f08137e31892116f4ee774ffbfadb265fd25',
+  qualificationSubject: 'chore(validation): qualify legacy C01 debt for PC-01 release',
+  qualificationAncestryPolicy: 'REQUIRED_ANCESTOR_OF_CURRENT_HEAD',
+  branchAuthorityStatement:
+    'Current branch names and detached-HEAD state are not factual or security authorities. The pinned qualification commit, tree, content hashes, expected legacy failure and owner decisions control validation.',
   productionCommit: '3346a532306c52932aeb2d813591bf95cb37716b',
   generatedSha256: '3a35ec7564c8007640b57313efa50a3420e93df0165fedcf80bcc5a056c37099',
   legacyValidatorSha256: '3cd4cd1323d5cd1974f098b4a063ddadcb38ad0ae84a8590aa7c228e965eb60d',
@@ -93,7 +100,41 @@ export function validateManifest(manifest) {
   assert.equal(manifest.debtStatus, KNOWN.debtStatus, 'debt cannot be marked resolved without evidence');
   assert.equal(manifest.recoveredSource?.commit, KNOWN.recoveredCommit, 'recovered commit changed');
   assert.equal(manifest.recoveredSource?.tree, KNOWN.recoveredTree, 'recovered tree changed');
-  assert.equal(manifest.recoveredSource?.branch, KNOWN.branch, 'release branch changed');
+  assert.equal(
+    manifest.recoveredSource?.historicalSourceBranch,
+    KNOWN.historicalSourceBranch,
+    'historical source branch changed'
+  );
+  assert.equal(
+    manifest.recoveredSource?.branchSemantics,
+    KNOWN.branchSemantics,
+    'historical branch semantics changed'
+  );
+  assert.equal(
+    manifest.qualificationCheckpoint?.commit,
+    KNOWN.qualificationCommit,
+    'qualification commit changed'
+  );
+  assert.equal(
+    manifest.qualificationCheckpoint?.tree,
+    KNOWN.qualificationTree,
+    'qualification tree changed'
+  );
+  assert.equal(
+    manifest.qualificationCheckpoint?.subject,
+    KNOWN.qualificationSubject,
+    'qualification subject changed'
+  );
+  assert.equal(
+    manifest.qualificationCheckpoint?.ancestryPolicy,
+    KNOWN.qualificationAncestryPolicy,
+    'qualification ancestry policy changed'
+  );
+  assert.equal(
+    manifest.branchAuthorityStatement,
+    KNOWN.branchAuthorityStatement,
+    'branch authority statement changed'
+  );
   assert.equal(
     manifest.recoveredSource?.productionCommit,
     KNOWN.productionCommit,
@@ -259,7 +300,7 @@ export function validateEffectiveState(manifest, generated, registry, getEffecti
 }
 
 function renderSpecificationsHtml(root) {
-  const typescript = require(path.join(root, 'node_modules/typescript'));
+  const typescript = require('typescript');
   const sourcePath = path.join(root, 'src/lib/specsShippingTabs.ts');
   const source = readFileSync(sourcePath, 'utf8');
   const compiled = typescript.transpileModule(source, {
@@ -294,31 +335,115 @@ export function validateRenderedPc01Table(root = ROOT) {
   return renderedRows;
 }
 
-function verifyGitState(manifest, root) {
+export function verifyGitState(manifest, root) {
   const branch = run('git', ['branch', '--show-current'], { cwd: root });
   requireSuccessful(branch, 'branch check');
-  assert.equal(branch.stdout.trim(), manifest.recoveredSource.branch, 'unexpected branch');
+
+  const head = run('git', ['rev-parse', 'HEAD'], { cwd: root });
+  requireSuccessful(head, 'HEAD check');
+
+  const recoveredCommit = run(
+    'git',
+    ['cat-file', '-e', `${manifest.recoveredSource.commit}^{commit}`],
+    { cwd: root }
+  );
+  requireSuccessful(recoveredCommit, 'recovered commit existence check');
 
   const tree = run('git', ['rev-parse', `${manifest.recoveredSource.commit}^{tree}`], { cwd: root });
   requireSuccessful(tree, 'recovered tree check');
   assert.equal(tree.stdout.trim(), manifest.recoveredSource.tree, 'recovered source tree changed');
 
-  const ancestor = run(
+  const qualificationCommit = run(
+    'git',
+    ['cat-file', '-e', `${manifest.qualificationCheckpoint.commit}^{commit}`],
+    { cwd: root }
+  );
+  requireSuccessful(qualificationCommit, 'qualification commit existence check');
+
+  const qualificationTree = run(
+    'git',
+    ['rev-parse', `${manifest.qualificationCheckpoint.commit}^{tree}`],
+    { cwd: root }
+  );
+  requireSuccessful(qualificationTree, 'qualification tree check');
+  assert.equal(
+    qualificationTree.stdout.trim(),
+    manifest.qualificationCheckpoint.tree,
+    'qualification checkpoint tree changed'
+  );
+
+  const qualificationSubject = run(
+    'git',
+    ['show', '-s', '--format=%s', manifest.qualificationCheckpoint.commit],
+    { cwd: root }
+  );
+  requireSuccessful(qualificationSubject, 'qualification subject check');
+  assert.equal(
+    qualificationSubject.stdout.trim(),
+    manifest.qualificationCheckpoint.subject,
+    'qualification checkpoint subject changed'
+  );
+
+  const qualificationAncestor = run(
+    'git',
+    ['merge-base', '--is-ancestor', manifest.qualificationCheckpoint.commit, 'HEAD'],
+    { cwd: root }
+  );
+  requireSuccessful(
+    qualificationAncestor,
+    'qualification checkpoint is not an ancestor of current HEAD'
+  );
+
+  const recoveredAncestor = run(
     'git',
     ['merge-base', '--is-ancestor', manifest.recoveredSource.commit, 'HEAD'],
     { cwd: root }
   );
-  requireSuccessful(ancestor, 'recovered source ancestry check');
+  requireSuccessful(recoveredAncestor, 'recovered source ancestry check');
 
   const production = run('git', ['rev-parse', manifest.recoveredSource.productionRef], { cwd: root });
   requireSuccessful(production, 'production ref check');
   assert.equal(production.stdout.trim(), manifest.recoveredSource.productionCommit, 'production ref changed');
+
+  const branchName = branch.stdout.trim();
+  return {
+    head: head.stdout.trim(),
+    branch: branchName || null,
+    detached: branchName.length === 0,
+  };
+}
+
+export const VALIDATION_SOURCE_PATHS = Object.freeze([
+  'page-structure/contracts/pc01-c01-qualified-legacy-debt-2026-08-29.json',
+  'scripts/validate-pc01-qualified-c01-debt.mjs',
+  'scripts/validate-c01-copy-gates.py',
+  'scripts/validate-c01-specification-overrides.mjs',
+  'page-structure/content-drafts/COPY-PACK-C01-porta-cabins-9pages-APPROVED-26Jul2026.md',
+  'src/data/products/c01-specifications.json',
+  'src/data/products/c01-specification-overrides.json',
+  'src/lib/c01SpecificationOverrides.js',
+  'src/lib/specsShippingTabs.ts',
+]);
+
+export function collectValidationSourceHashes(root = ROOT) {
+  return Object.fromEntries(
+    VALIDATION_SOURCE_PATHS.map((relativePath) => [
+      relativePath,
+      sha256(readFileSync(path.join(root, relativePath))),
+    ])
+  );
+}
+
+export function assertValidationSourcesUnchanged(before, after) {
+  assert.deepEqual(after, before, 'validation modified source bytes');
+  return true;
 }
 
 export function validateQualification(root = ROOT) {
   const manifest = readJson(path.join(root, path.relative(ROOT, MANIFEST_PATH)));
   validateManifest(manifest);
-  verifyGitState(manifest, root);
+  const checkout = verifyGitState(manifest, root);
+  const sourceHashesBefore = collectValidationSourceHashes(root);
   validatePinnedHashes(manifest, collectArtifactHashes(root, manifest));
 
   const legacy = runLegacyValidator(manifest, root);
@@ -345,8 +470,9 @@ export function validateQualification(root = ROOT) {
   );
   const renderedRows = validateRenderedPc01Table(root);
   validatePinnedHashes(manifest, collectArtifactHashes(root, manifest));
+  assertValidationSourcesUnchanged(sourceHashesBefore, collectValidationSourceHashes(root));
 
-  return { manifest, signatures, renderedRows };
+  return { manifest, signatures, renderedRows, checkout };
 }
 
 if (path.resolve(process.argv[1] || '') === fileURLToPath(import.meta.url)) {
@@ -354,6 +480,11 @@ if (path.resolve(process.argv[1] || '') === fileURLToPath(import.meta.url)) {
     const result = validateQualification();
     console.log('PC-01 qualified C01 legacy debt validation: PASS');
     console.log(`Recovered source: ${result.manifest.recoveredSource.commit}`);
+    console.log(`Qualification checkpoint: ${result.manifest.qualificationCheckpoint.commit}`);
+    console.log(`Qualification tree: ${result.manifest.qualificationCheckpoint.tree}`);
+    console.log(
+      `Current checkout: ${result.checkout.detached ? 'detached HEAD' : result.checkout.branch} @ ${result.checkout.head}`
+    );
     console.log(`Generated C01 SHA-256: ${KNOWN.generatedSha256}`);
     console.log(`Legacy result: exit ${KNOWN.legacyExitCode}, AssertionError: ${KNOWN.legacyRow}`);
     console.log(`Legacy stdout SHA-256: ${result.signatures.stdoutSha256}`);
