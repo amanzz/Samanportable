@@ -19,19 +19,14 @@ jobs:
           fetch-depth: 0
           path: runner
 
-      - name: Checkout immutable Control A
-        uses: actions/checkout@v4
-        with:
-          ref: 4dc9b4e639169b66140416d2237cb71c24fce66e
-          fetch-depth: 0
-          path: measurement/control-a
-
-      - name: Checkout immutable Candidate B
-        uses: actions/checkout@v4
-        with:
-          ref: c04737f28895ef5296d1ab63e8fd98762fad4557
-          fetch-depth: 0
-          path: measurement/candidate-b
+      - name: Materialize immutable A/B worktrees
+        shell: bash
+        run: |
+          mkdir -p measurement
+          git -C runner cat-file -e 4dc9b4e639169b66140416d2237cb71c24fce66e^{commit}
+          git -C runner cat-file -e c04737f28895ef5296d1ab63e8fd98762fad4557^{commit}
+          git -C runner worktree add --detach "$GITHUB_WORKSPACE/measurement/control-a" 4dc9b4e639169b66140416d2237cb71c24fce66e
+          git -C runner worktree add --detach "$GITHUB_WORKSPACE/measurement/candidate-b" c04737f28895ef5296d1ab63e8fd98762fad4557
 
       - name: Pin Node and npm
         uses: actions/setup-node@v4
