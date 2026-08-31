@@ -44,7 +44,7 @@ jobs:
         id: chrome
         uses: browser-actions/setup-chrome@v2
         with:
-          chrome-version: 152.0.7977.65
+          chrome-version: 152.0.7977.64
 
       - name: Install fixed toolchain and applications
         shell: bash
