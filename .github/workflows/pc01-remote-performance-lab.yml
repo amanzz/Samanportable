@@ -108,9 +108,15 @@ jobs:
           RESULTS_BRANCH: ci/pc01-remote-performance-results-20260831
         run: |
           result_tree="$RUNNER_TEMP/pc01-rel05e-results-branch"
-          git -C runner worktree add --detach "$result_tree" HEAD
-          git -C "$result_tree" switch --orphan pc01-rel05e-results
-          git -C "$result_tree" rm -r --cached . || true
+          if git -C runner fetch --no-tags origin "refs/heads/$RESULTS_BRANCH:refs/remotes/origin/$RESULTS_BRANCH"; then
+            git -C runner worktree add --detach "$result_tree" "refs/remotes/origin/$RESULTS_BRANCH"
+            git -C "$result_tree" switch -C pc01-rel05e-results
+            git -C "$result_tree" rm -r results || true
+          else
+            git -C runner worktree add --detach "$result_tree" HEAD
+            git -C "$result_tree" switch --orphan pc01-rel05e-results
+            git -C "$result_tree" rm -r --cached . || true
+          fi
           mkdir -p "$result_tree/results"
           for file in PC01-REL-05E-REMOTE-PERFORMANCE-MASTER-REPORT.md PC01-REL-05E-RUN-REGISTER.csv PC01-REL-05E-STATISTICS.csv PC01-REL-05E-PAIRED-DIFFERENCES.csv PC01-REL-05E-LCP-DECOMPOSITION.md PC01-REL-05E-OPTIMIZER-EXPERIMENT.md PC01-REL-05E-APPLICATION-PARITY.md PC01-REL-05E-NO-CHANGE-VERIFICATION.md PC01-REL-05E-ENVIRONMENT.md EVIDENCE-SHA256.csv FINAL-VERDICT.txt; do
             if [ -f "pc01-rel-05e-results/$file" ]; then cp "pc01-rel-05e-results/$file" "$result_tree/results/$file"; fi
