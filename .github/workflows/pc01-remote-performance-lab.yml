@@ -17,13 +17,17 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
+          filter: blob:none
+          sparse-checkout: |
+            .github/workflows/pc01-remote-performance-lab.yml
+            performance-lab/pc01-remote
           path: runner
 
       - name: Materialize immutable A/B worktrees
         shell: bash
         run: |
           mkdir -p measurement
-          git -C runner fetch --no-tags --depth=3 origin refs/heads/backup/seo-recovery-20260830/pc01-performance-phase-a:refs/remotes/origin/backup/seo-recovery-20260830/pc01-performance-phase-a
+          git -C runner fetch --no-tags --filter=blob:none --depth=3 origin refs/heads/backup/seo-recovery-20260830/pc01-performance-phase-a:refs/remotes/origin/backup/seo-recovery-20260830/pc01-performance-phase-a
           git -C runner cat-file -e 4dc9b4e639169b66140416d2237cb71c24fce66e^{commit}
           git -C runner cat-file -e 71fd5b5cd857fe710f19ec29355a34bd116b38ab^{commit}
           git -C runner cat-file -e c04737f28895ef5296d1ab63e8fd98762fad4557^{commit}
