@@ -22,7 +22,7 @@ let verdict='BLOCKED_REMOTE_PERFORMANCE_LAB_UNSTABLE';
 let parityResult='NOT_MEASURED';
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 
-async function ensure(){for(const d of ['raw/mobile/A','raw/mobile/B','raw/desktop/A','raw/desktop/B','traces/mobile/A','traces/mobile/B','traces/desktop/A','traces/desktop/B','screenshots','server-logs','browser-profiles','build-evidence/A','build-evidence/B']) await mkdir(path.join(OUT,d),{recursive:true});}
+async function ensure(){for(const d of ['raw/mobile/A','raw/mobile/B','raw/desktop/A','raw/desktop/B','traces/mobile/A','traces/mobile/B','traces/desktop/A','traces/desktop/B','screenshots','server-logs','browser-profiles','build-evidence/A','build-evidence/B','system-counters']) await mkdir(path.join(OUT,d),{recursive:true});}
 const csv=v=>`"${String(v??'').replaceAll('"','""')}"`;
 async function writeCsv(file,headers,data){await writeFile(path.join(OUT,file),[headers.map(csv).join(','),...data.map(r=>headers.map(h=>csv(r[h])).join(','))].join('\n')+'\n');}
 function gitClean(dir){return spawnSync('git',['-C',dir,'status','--porcelain'],{encoding:'utf8'}).stdout.trim()==='';}
