@@ -3,7 +3,7 @@ import {
   PRODUCT_LADDERS,
   RATE_CARD,
 } from '@/lib/calculatorRates';
-import { getRouteLadder, ladderAnchorRate } from '@/lib/calculatorLadders';
+import { getRouteLadder, ladderAnchorRate, ladderPriceFor } from '@/lib/calculatorLadders';
 import { BASE_CABIN_RATE_CARD_DATASET, baseCabinRate } from '@/lib/baseCabinRateCard';
 import {
   CEILINGS_R1, ELECTRICAL_R1, FITOUT_R1, FLOORINGS_R1, FRAME_OPTIONS,
@@ -2203,6 +2203,23 @@ function ladderKeyFor(config: CalculatorConfig): string | null {
   return config.ladderKey ?? productFor(config.productId).ladderKey ?? null;
 }
 
+/** REL-06C-R owner decision: only PC-01 uses its selected published variant as base. */
+export function usesPc01SelectedVariantPriceBase(config: CalculatorConfig): boolean {
+  return ladderKeyFor(config) === 'porta-cabins';
+}
+
+function isPc01IncludedDefaultWindow(config: CalculatorConfig, window: WindowConfig, index: number): boolean {
+  if (!usesPc01SelectedVariantPriceBase(config)) return false;
+  const included = DEFAULT_CALCULATOR_CONFIG.windows[index];
+  return Boolean(
+    included
+    && window.type === included.type
+    && window.width === included.width
+    && window.height === included.height
+    && window.track === included.track
+  );
+}
+
 /**
  * The BASE CABIN figure — a bare cabin, from SAMAN's rate card of 06 Aug 2026.
  *
@@ -2237,6 +2254,15 @@ function calculateBase(config: CalculatorConfig): number | null {
   // A route with no ladder of its own prices on drawing — Security Cabins is
   // the ruled example. The rate card does not override that.
   if (rendersQuoteMode(productFor(config.productId), ladderKeyFor(config))) return null;
+
+  // PC01-CALCULATOR-BASE-PARITY-2026-08-31 supersedes the two-price doctrine
+  // for this route only. The exact selected row comes from porta-cabins.json
+  // through calculatorLadders.ts. A custom/unpublished size asks for a quote;
+  // it is never replaced by an area-rate approximation.
+  if (usesPc01SelectedVariantPriceBase(config)) {
+    const published = ladderPriceFor(ladderKeyFor(config), config.length, config.width);
+    return published === null ? null : published * config.quantity;
+  }
 
   const rate = baseCabinRate(config.length, config.width);
   if (rate === null) return null;
@@ -2330,6 +2356,7 @@ export function computeCalculatorEstimate(input: CalculatorConfig): CalculatorEs
       });
     });
     config.windows.forEach((window, index) => {
+      if (isPc01IncludedDefaultWindow(config, window, index)) return;
       const rate = Math.round(WINDOW_RATES[window.type] * window.width * window.height * (window.track === '2.5 Track' ? 1.12 : 1));
       addLine(`Window ${index + 1}: ${window.type} ${window.width}×${window.height} ft`, rate * config.quantity, 'market', {
         quantity: config.quantity,
@@ -3151,6 +3178,12 @@ export function renderCabinCalculatorSSR(options: RenderCalculatorOptions = {}):
   // prices from the same numbers the server did. The six area-band multipliers
   // that used to sit here are gone with the formula they belonged to.
   let rootRates = `data-base-fixed="${esc(BASE_CABIN_RATE_CARD_DATASET.fixed)}" data-base-bands="${esc(BASE_CABIN_RATE_CARD_DATASET.bands)}" data-base-band-top="${esc(BASE_CABIN_RATE_CARD_DATASET.top)}" data-base-slide="${esc(BASE_CABIN_RATE_CARD_DATASET.slide)}" data-base-cap="${esc(BASE_CABIN_RATE_CARD_DATASET.cap)}" data-base-unrated-ceiling="${esc(BASE_CABIN_RATE_CARD_DATASET.floor)}" data-height-rate-per-foot="0.06" data-partition-rate="300" data-gst-rate="${GST_RATE}" data-freight-bands="${RATE_CARD.freight.bands20ft.join(',')}" data-freight40-delta="${RATE_CARD.freight.trailer40ftDelta}"`;
+  if (usesPc01SelectedVariantPriceBase(config)) {
+    const includedWindows = DEFAULT_CALCULATOR_CONFIG.windows
+      .map((window, index) => [index, window.type, window.width, window.height, window.track].join('|'))
+      .join(';');
+    rootRates += ` data-selected-variant-price-base="true" data-published-base-included-windows="${esc(includedWindows)}"`;
+  }
   if (options.deferEnhancement) rootRates += ' data-defer-enhancement="true"';
   const hiddenProduct = embedded ? `<input type="hidden" name="productId" value="${config.productId}" data-label="${esc(product.name)}" data-quote-only="${rendersQuoteMode(product, config.ladderKey) ? 'true' : 'false'}" data-ladder="${esc(config.ladderKey || product.ladderKey || (isColonyProduct(product.id) ? product.id : 'none'))}">` : '';
   const standardPostFields = `${hiddenProduct}<input type="hidden" name="message" value="${esc(itemisedMessage)}"><input type="hidden" name="productName" value="${esc(product.name)}"><input type="hidden" name="pageUrl" value="${esc(pageUrl)}"><input type="hidden" name="returnTo" value="${esc(pageUrl)}">`;

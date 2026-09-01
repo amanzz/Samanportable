@@ -25,6 +25,8 @@
     "test:pc01-qualified-c01-debt": "node scripts/test-pc01-qualified-c01-debt.mjs",
     "validate:pc01-performance-measurement-debt": "node scripts/validate-pc01-performance-measurement-debt.mjs",
     "test:pc01-performance-measurement-debt": "node scripts/test-pc01-performance-measurement-debt.mjs",
+    "validate:pc01-calculator-price-parity": "node scripts/validate-pc01-calculator-price-parity.mjs",
+    "test:pc01-calculator-price-parity": "node scripts/test-pc01-calculator-price-parity.mjs",
     "generate:pc01-pdf": "python scripts/generate-pc01-technical-pdf.py",
     "validate:pc01-pdf": "python scripts/validate-pc01-active-pdf.py",
     "test:pc01-pdf": "python scripts/test-pc01-active-pdf.py",
