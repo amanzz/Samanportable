@@ -91,3 +91,19 @@ export function sanitizeC08RelatedProductSummary(product: WooCommerceProduct): W
     images: image ? [image] : [],
   };
 }
+
+/** PO-01 and PO-02 render their approved family navigation from curated MT-32
+ * data. The legacy related-product summaries remain available to shared mobile
+ * navigation, but their frozen commercial fields must not leak stale prices,
+ * timing claims, or unsupported ratings into __NEXT_DATA__. */
+export function sanitizePortableOfficeFamilyRelatedProductSummary(
+  product: WooCommerceProduct
+): WooCommerceProduct {
+  return {
+    ...product,
+    price: '',
+    short_description: '',
+    average_rating: '0',
+    rating_count: 0,
+  };
+}

@@ -238,6 +238,10 @@ export interface VariantProductData {
   schemaItemCondition?: 'new' | 'refurbished' | 'used';
   /** Opt-in removal of product AggregateRating for pages whose ticket forbids it. */
   suppressAggregateRatingSchema?: boolean;
+  /** Suppress all legacy visible/schema review claims when provenance is not established. */
+  suppressReviewClaims?: boolean;
+  /** Omit availability from Product/Offer schema for pages without an approved stock ruling. */
+  suppressSchemaAvailability?: boolean;
   /** Optional cap for Product JSON-LD image URLs. Absent keeps current pages unchanged. */
   schemaImageLimit?: number;
   /** Optional schema brand override for route-owned product data. Absent preserves
@@ -267,6 +271,10 @@ export interface VariantProductData {
   /** Middle segment of the buy-box trust strip. Default (absent) → preset, else the
       deployed literal "5-yr structural warranty" (flagship byte-identical). */
   trustWarranty?: string;
+  /** Exact owner-approved trust-strip copy. */
+  trustStripText?: string;
+  /** Suppress the template proof row when its generic claims are not approved. */
+  hideHeroProofRow?: boolean;
   /** Hide the default hero trust row when a page supplies no approved string for it. */
   hideTrustRow?: boolean;
   /** T25 VIDEO OPT-IN. Absent/false (the default) = no video facade thumb and no

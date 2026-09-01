@@ -1467,115 +1467,73 @@
     }
   },
   "readymade-office-cabin": {
-    "h2": "What arrives fitted in each Readymade Office Cabin size",
-    "guidanceLine": "Stock-held sizes dispatch in 1 to 2 working days. Ask which are on the floor today.",
+    "h2": "Compare the six Readymade Office Cabin sizes",
+    "guidanceLine": "Each published size uses the approved fixed inclusion list. Availability is confirmed with the written quotation.",
     "10x10": {
-      "h2": "10x10 ft, one desk, nothing left to decide",
-      "intro": "Our smallest finished unit leaves the floor with a duty desk position, one lighting point, one fan outlet and a pair of 6A sockets already wired and tested. Nobody specifies anything: the inclusion list is fixed, which is exactly why the cabin can be built ahead of an order rather than after one. Weight stays low enough for placement without lifting plant on most ground. Buyers taking one for a gate post or a weighbridge room usually want it inside the week, and a finished unit is the only way that timescale is met.",
-      "h3": "Uses",
+      "h2": "10x10 ft Readymade Office Cabin",
+      "intro": "This published 100 sq ft size uses the approved fixed inclusion list and an 8.5 ft height. The owner-approved recommended occupancy is 2–3 people. Availability is confirmed with the written quotation.",
+      "h3": "Approved facts",
       "applications": [
-        "Gate and weighbridge posts",
-        "Same-week requirements",
-        "Single duty positions",
-        "No-specification orders"
+        "Recommended occupancy 2–3 people",
+        "100 sq ft floor area",
+        "8.5 ft height"
       ],
-      "imageAlt": "Full side view of the readymade office cabin, 10 x 10 ft, the pre-finished wall panels and factory-fitted door across the 10 ft wall."
+      "imageAlt": "Readymade Office Cabin 10 x 10 ft exterior render"
     },
     "20x8": {
-      "h2": "20x8 ft, two fitted positions in a narrow body",
-      "intro": "Eight feet of depth keeps this inside trailer width without permits, and both desk positions arrive pre-wired down the long wall rather than being marked out after delivery. Door at the end, sockets at each position, switchboard where it always sits. Because none of that varies between units, we finish them before anyone asks for one. Sites with a difficult approach road choose the shape first and the fit-out second, and here the fit-out was settled, wired and tested long before the enquiry ever arrived.",
-      "h3": "Uses",
+      "h2": "20x8 ft Readymade Office Cabin",
+      "intro": "This published 160 sq ft size uses the approved fixed inclusion list and an 8.5 ft height. The owner-approved recommended occupancy is 3–4 people. Availability is confirmed with the written quotation.",
+      "h3": "Approved facts",
       "applications": [
-        "Difficult approach roads",
-        "Two-position offices",
-        "Compound boundary lines",
-        "Permit-free transport"
+        "Recommended occupancy 3–4 people",
+        "160 sq ft floor area",
+        "8.5 ft height"
       ],
-      "imageAlt": "Complete exterior of the readymade office cabin, 20 x 8 ft, the standard door set with fixed glazing above the sill along the 20 ft flank."
+      "imageAlt": "Readymade Office Cabin 20 x 8 ft exterior render"
     },
     "20x10": {
-      "h2": "20x10 ft, the size we most often hold ready",
-      "intro": "This is the finished unit we keep on the floor most consistently, simply because it is what most buyers ask for. Four working positions, lighting circuits, fan outlets and sockets all commissioned and tested before loading. The gap between placing an advance and having staff working inside is counted in days rather than weeks. Nothing about it is bespoke, and that is the whole point: a fixed inclusion list is what allows a cabin to exist before its buyer does, and to be handed over on the spot to whoever needs it.",
-      "h3": "Uses",
+      "h2": "20x10 ft Readymade Office Cabin",
+      "intro": "This published 200 sq ft size uses the approved fixed inclusion list and an 8.5 ft height. The owner-approved recommended occupancy is 4–6 people. Availability is confirmed with the written quotation.",
+      "h3": "Approved facts",
       "applications": [
-        "Most-held stock size",
-        "Advance to occupancy in days",
-        "Four working positions",
-        "Urgent replacements"
+        "Recommended occupancy 4–6 people",
+        "200 sq ft floor area",
+        "8.5 ft height"
       ],
-      "imageAlt": "The whole readymade office cabin, 20 x 10 ft, the pre-finished wall panels and factory-fitted door over the 20 ft length."
+      "imageAlt": "Readymade Office Cabin 20 x 10 ft exterior render"
     },
     "20x12": {
-      "h2": "20x12 ft, a fitted corner as well as desks",
-      "intro": "The extra width arrives finished as a seating corner rather than as bare floor: table space, chairs and a socket pair already positioned for a printer or a charging point. Vendors and drivers are handled there instead of at somebody's desk. As with every size on this page the corner position is fixed rather than drawn per order, so the unit can be completed and tested in advance. Buyers stepping up from the smaller body are paying for a finished corner rather than for a longer lead time and a fresh drawing.",
-      "h3": "Uses",
+      "h2": "20x12 ft Readymade Office Cabin",
+      "intro": "This published 240 sq ft size uses the approved fixed inclusion list and an 8.5 ft height. The owner-approved recommended occupancy is 5–7 people. Availability is confirmed with the written quotation.",
+      "h3": "Approved facts",
       "applications": [
-        "Vendor handling corners",
-        "Printer and charge points",
-        "Visitor-facing site offices",
-        "Finished, not drawn"
+        "Recommended occupancy 5–7 people",
+        "240 sq ft floor area",
+        "8.5 ft height"
       ],
-      "imageAlt": "Wide exterior view of the readymade office cabin, 20 x 12 ft, the standard door set with fixed glazing above the sill on the 12 ft end wall."
+      "imageAlt": "Readymade Office Cabin 20 x 12 ft exterior render"
     },
     "30x10": {
-      "h2": "30x10 ft, office and lockable store, both finished",
-      "intro": "Three hundred square feet arriving with the rear partition already built and its lock already fitted, so instruments and consumables have somewhere secure on the day of placement rather than the week after. Five or six positions work the front section, each pre-wired. The partition sits on a preset line, which keeps the electrical layout standard and keeps the unit buildable ahead of demand. Sites that would otherwise take an office and a separate store settle this with one delivery and one connection.",
-      "h3": "Uses",
+      "h2": "30x10 ft Readymade Office Cabin",
+      "intro": "This published 300 sq ft size uses the approved fixed inclusion list and an 8.5 ft height. The owner-approved recommended occupancy is 6–8 people. Availability is confirmed with the written quotation.",
+      "h3": "Approved facts",
       "applications": [
-        "Secure store included",
-        "Instrument holding",
-        "Five to six positions",
-        "One delivery, not two"
+        "Recommended occupancy 6–8 people",
+        "300 sq ft floor area",
+        "8.5 ft height"
       ],
-      "imageAlt": "Overall view of the readymade office cabin, 30 x 10 ft, the standard door set with fixed glazing above the sill down the 30 ft side."
-    },
-    "40x8": {
-      "h2": "40x8 ft, a long finished run for a narrow strip",
-      "intro": "Forty feet of working line on eight of depth, wired end to end before dispatch, with sockets repeating at every position along the long wall. Seven or eight staff work it. Length does not mean assembly here: it arrives as one sealed body on one tested loom, so bringing it live is a single connection rather than a joining job. Where a compound edge or a service corridor is the only ground a project has spare, this shape turns that leftover strip into a working office with no site electrical work required at all.",
-      "h3": "Uses",
-      "applications": [
-        "Compound edges and corridors",
-        "Seven to eight positions",
-        "One-connection handover",
-        "No site electrical work"
-      ],
-      "imageAlt": "Long exterior view of the readymade office cabin, 40 x 8 ft, the pre-finished wall panels and factory-fitted door along the full 40 ft run."
+      "imageAlt": "Readymade Office Cabin 30 x 10 ft exterior render"
     },
     "40x10": {
-      "h2": "40x10 ft, three finished zones, one body",
-      "intro": "Reception, open desks and a manager or records end, every one of them commissioned before the unit leaves us. Ten staff occupy it comfortably. The tested circuit pattern repeats across all three zones, which is why a fit-out that normally occupies an electrician for a week is simply absent from your programme. Projects running two or three years take this length because it holds a growing team without a second placement, and because a finished body starts earning its keep from the day it is set down rather than weeks later.",
-      "h3": "Uses",
+      "h2": "40x10 ft Readymade Office Cabin",
+      "intro": "This published 400 sq ft size uses the approved fixed inclusion list and an 8.5 ft height. The owner-approved recommended occupancy is 8–10 people. Availability is confirmed with the written quotation.",
+      "h3": "Approved facts",
       "applications": [
-        "Reception plus open desks",
-        "Ten-staff occupancy",
-        "Multi-year site bases",
-        "Programme with no fit-out"
+        "Recommended occupancy 8–10 people",
+        "400 sq ft floor area",
+        "8.5 ft height"
       ],
-      "imageAlt": "Side-on view of the readymade office cabin, 40 x 10 ft, the standard door set with fixed glazing above the sill across the 40 ft elevation."
-    },
-    "20x20": {
-      "h2": "20x20 ft, a square room from two finished halves",
-      "intro": "Two factory-completed halves brought together on site as a single square room of four hundred square feet, each half wired and tested separately and designed to pair at the meeting line. The floor strip seals so the room reads as one surface. Mirrored electrical sets on either side keep the fixed-inclusion promise intact even though the unit travels in two pieces. Teams that plan, meet and work in the same room take the square rather than the long plan, and on this page they take it already finished and fully tested.",
-      "h3": "Uses",
-      "applications": [
-        "Planning and control rooms",
-        "Training and induction",
-        "Two pieces, one room",
-        "Mirrored fitted halves"
-      ],
-      "imageAlt": "Full-length view of the readymade office cabin, 20 x 20 ft, the pre-finished wall panels and factory-fitted door around the 20 ft square plan."
-    },
-    "40x12": {
-      "h2": "40x12 ft, our largest single finished unit",
-      "intro": "This is the largest body we complete in a single piece, 480 square feet of it, and it carries the lowest rate anywhere on this page. A middle walkway serves desks along both walls, so a team of twelve to fifteen has room to pass without shifting furniture. Lighting circuits, fan outlets, sockets, the switchboard and a dedicated air-conditioning run are all commissioned before loading. Above this size a layout is quoted from your drawing and made to order, so the finished-in-advance advantage ends right here.",
-      "h3": "Uses",
-      "applications": [
-        "Twelve to fifteen staff",
-        "Walkway-served desks",
-        "Lowest rate on this page",
-        "Largest finished body"
-      ],
-      "imageAlt": "Full elevation of the readymade office cabin, 40 x 12 ft, the pre-finished wall panels and factory-fitted door over the 40 by 12 ft body."
+      "imageAlt": "Readymade Office Cabin 40 x 10 ft exterior render"
     }
   },
   "modern-office-cabin": {

@@ -8,6 +8,7 @@ type LegacyEmbeddedCalculatorProps = {
   category: string;
   mapping: EmbeddedCalculatorProduct;
   productName: string;
+  quoteFreightOutsideFreeZones?: boolean;
 };
 
 /** Preserve the established SSR calculator on every non-PC-01 category hub. */
@@ -15,6 +16,7 @@ export default function LegacyEmbeddedCalculator({
   category,
   mapping,
   productName,
+  quoteFreightOutsideFreeZones = false,
 }: LegacyEmbeddedCalculatorProps) {
   const entryHtml = useMemo(() => {
     if (!mapping.prefill || !mapping.productId) return null;
@@ -35,7 +37,8 @@ export default function LegacyEmbeddedCalculator({
         }
       : {}),
     pageUrl: makeCalculatorPageUrl(category),
-  }), [category, mapping, productName]);
+    quoteFreightOutsideFreeZones,
+  }), [category, mapping, productName, quoteFreightOutsideFreeZones]);
 
   return (
     <>

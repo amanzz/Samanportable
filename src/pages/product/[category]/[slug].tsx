@@ -36,7 +36,11 @@ import { demoteHtmlH1ToH2 } from '../../../lib/seoHtml';
 import { setPublicEdgeCache } from '../../../lib/cacheHeaders';
 import { cleanText } from '../../../lib/merchantFeed';
 import { getNavigableProductPath } from '../../../lib/productCanonicalPaths';
-import { sanitizeC08RelatedProductSummary, toRelatedProductSummary } from '../../../lib/relatedProductSummary';
+import {
+  sanitizeC08RelatedProductSummary,
+  sanitizePortableOfficeFamilyRelatedProductSummary,
+  toRelatedProductSummary,
+} from '../../../lib/relatedProductSummary';
 import { getC16PanelSiblingRail, isC16PanelSlug, type RelatedRailItem } from '../../../lib/c16PanelCatalog';
 import {
   isPortaCabinStripSlug,
@@ -116,6 +120,7 @@ const normalizeForbiddenDashesInJson = <T,>(value: T): T => {
 // Every other page using the shared hero keeps the defaults (false) and renders
 // byte-identically.
 const CLUSTER_DESIGN_SLUGS = new Set([
+  'readymade-office-cabin',
   'ms-porta-cabin',
   'fire-rated-porta-cabin',
   'gi-porta-cabin',
@@ -507,6 +512,9 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
       if (urlCategory === 'container-houses') {
         relatedProducts = relatedProducts.map(sanitizeC08RelatedProductSummary);
       }
+      if (urlCategory === 'portable-office' && slugLower === 'readymade-office-cabin') {
+        relatedProducts = relatedProducts.map(sanitizePortableOfficeFamilyRelatedProductSummary);
+      }
     } catch (error) {
       // Silent error handling for production
     }
@@ -569,6 +577,7 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
           .then((mod: { default?: VariantProductData }) => mod.default || null)
           .catch(() => null)
       : null;
+    if (variantData?.suppressReviewClaims) reviews = [];
     const variantImages = variantData?.variants.flatMap((variant) => variant.images || []) || [];
     const defaultVariantHero = variantData
       ? variantData.variants.find((variant) => variant.sizeSlug === variantData.defaultVariant)?.images?.[0]
@@ -629,6 +638,10 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
       }
       if (variantData.productSku) productForPageProps.sku = variantData.productSku;
       else if (variantData.suppressLegacySku) delete productForPageProps.sku;
+      if (variantData.suppressReviewClaims) {
+        productForPageProps.average_rating = '0';
+        productForPageProps.rating_count = 0;
+      }
       if (defaultVariantHero) productForPageProps.featured_image = defaultVariantHero.src;
     }
     if (suppressLegacyCommercialSurfaces) {
@@ -885,7 +898,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
 
   const relatedRailItems = useMemo<RelatedRailItem[]>(() => {
     const currentSlug = transformedProduct?.slug || slug;
-    if ((currentSlug === 'bess-container' || currentSlug === CO07_SLUG || currentSlug === CO06_SLUG) && variantData?.relatedTiles?.length) {
+    if ((currentSlug === 'bess-container' || currentSlug === CO07_SLUG || currentSlug === CO06_SLUG || currentSlug === 'readymade-office-cabin') && variantData?.relatedTiles?.length) {
       return variantData.relatedTiles;
     }
     if (isC16PanelSlug(currentSlug)) {
@@ -967,6 +980,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
       hidePublishedPriceTable: slug === 'fire-rated-porta-cabin',
       deferEnhancement: slug === 'accommodation-container',
       suppressCommitmentCopy: slug === 'shipping-container-office',
+      quoteFreightOutsideFreeZones: slug === 'readymade-office-cabin',
     });
     // LC-05's acceptance gate is zero U+2014 in built output. Quote-mode logic,
     // controls and calculations remain untouched; only the one shared help-copy
@@ -1047,6 +1061,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
   return (
     <Layout
       hideFooterResourceStrip={category === 'labor-colony' && slug === 'labor-sheds'}
+      primaryFooterPhonesOnly={category === 'portable-office' && slug === 'readymade-office-cabin'}
       footerCompanyDescription={slug === CO06_SLUG ? 'Saman Portable offers durable, modular, and low-maintenance buildings, designed with high-quality materials for reliability and long-term performance.' : undefined}
       hideChrome={slug === 'shipping-container-office' || slug === CO07_SLUG}
     >
@@ -1088,7 +1103,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
               variantData={variantData || undefined}
               suppressProductEntity={suppressLegacyCommercialSurfaces && !shouldEmitApprovedProductEntity}
               forceProductEntity={shouldEmitApprovedProductEntity}
-              suppressSchemaAvailability={shouldEmitApprovedProductEntity}
+              suppressSchemaAvailability={shouldEmitApprovedProductEntity || variantData?.suppressSchemaAvailability}
               schemaProductName={isLaborShedsPage ? 'Labour Sheds' : undefined}
               metaDescription={rankMathSEO?.description}
             />
@@ -1573,6 +1588,9 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   items={containerOfficeYmalItems(slug, relatedRailItems)}
                   subline="Other container office configurations in the same range."
                 />
+              )}
+              {slug === 'readymade-office-cabin' && variantData?.ymalTiles?.length && (
+                <PortaCabinsYouMayAlsoLike items={variantData.ymalTiles} subline={null} />
               )}
 
               {/* PC-01/PC-02/PC-03/PC-04/PC-05 — divider 4, "You may also like" →

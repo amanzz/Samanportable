@@ -15,45 +15,44 @@
       "areaSqft": 100,
       "priceExGst": 148500,
       "priceInclGst": 175230,
-      "useCase": "Gate and plot offices",
-      "sku": "SP-PPO-20-2025",
       "images": [
         {
           "src": "/images/products/portable-office/10x10/portable-office-10x10-front-angle.webp",
-          "alt": "Portable office cabin, 10 x 10 ft, grey and white body viewed from the door corner with two shuttered windows.",
+          "alt": "Portable Office Cabin 10 x 10 ft front angle render.",
           "provenance": "render",
           "width": 1200,
           "height": 1200
         },
         {
           "src": "/images/products/portable-office/10x10/portable-office-10x10-side-elevation.webp",
-          "alt": "Portable office cabin, 10 x 10 ft, white body over an orange base, photographed square on, one barred window.",
+          "alt": "Portable Office Cabin 10 x 10 ft side elevation render.",
           "provenance": "render",
           "width": 1200,
           "height": 1200
         },
         {
           "src": "/images/products/portable-office/10x10/portable-office-10x10-workspace-interior.webp",
-          "alt": "Inside a 10 x 10 ft portable office cabin, two desk runs facing each other with a chair at each position.",
+          "alt": "Portable Office Cabin 10 x 10 ft workspace interior render.",
           "provenance": "render",
           "width": 1200,
           "height": 1200
         },
         {
           "src": "/images/products/portable-office/10x10/portable-office-10x10-reception-interior.webp",
-          "alt": "Inside a 10 x 10 ft portable office cabin, a single desk with two visitor chairs and a wall cabinet.",
+          "alt": "Portable Office Cabin 10 x 10 ft reception interior render.",
           "provenance": "render",
           "width": 1200,
           "height": 1200
         },
         {
           "src": "/images/products/portable-office/10x10/portable-office-10x10-rear-interior.webp",
-          "alt": "Inside a 10 x 10 ft portable office cabin, an open floor with desks along one wall and the door at the far end.",
+          "alt": "Portable Office Cabin 10 x 10 ft rear interior render.",
           "provenance": "render",
           "width": 1200,
           "height": 1200
         }
-      ]
+      ],
+      "capacity": "Recommended occupancy 2–3 people"
     },
     {
       "sizeSlug": "20x8",
@@ -62,45 +61,44 @@
       "areaSqft": 160,
       "priceExGst": 237600,
       "priceInclGst": 280368,
-      "useCase": "Boundary-line offices",
-      "sku": "SP-PPO-20-2025",
       "images": [
         {
           "src": "/images/products/portable-office/20x8/portable-office-20x8-front-angle.webp",
-          "alt": "Portable office cabin, 20 x 8 ft, dark green body viewed from the door corner.",
+          "alt": "Portable Office Cabin 20 x 8 ft front angle render.",
           "provenance": "render",
           "width": 1200,
           "height": 1200
         },
         {
           "src": "/images/products/portable-office/20x8/portable-office-20x8-side-elevation.webp",
-          "alt": "Portable office cabin, 20 x 8 ft, yellow flank photographed square on with two shuttered windows.",
+          "alt": "Portable Office Cabin 20 x 8 ft side elevation render.",
           "provenance": "render",
           "width": 1200,
           "height": 1200
         },
         {
           "src": "/images/products/portable-office/20x8/portable-office-20x8-workspace-interior.webp",
-          "alt": "Inside a 20 x 8 ft portable office cabin, a single desk run down one side of the narrow bay.",
+          "alt": "Portable Office Cabin 20 x 8 ft workspace interior render.",
           "provenance": "render",
           "width": 1200,
           "height": 1200
         },
         {
           "src": "/images/products/portable-office/20x8/portable-office-20x8-reception-interior.webp",
-          "alt": "Inside a 20 x 8 ft portable office cabin, a desk against the end wall with a flue pipe behind.",
+          "alt": "Portable Office Cabin 20 x 8 ft reception interior render.",
           "provenance": "render",
           "width": 1200,
           "height": 1200
         },
         {
           "src": "/images/products/portable-office/20x8/portable-office-20x8-rear-interior.webp",
-          "alt": "Inside a 20 x 8 ft portable office cabin, a desk with two visitor chairs seen from the back of the bay.",
+          "alt": "Portable Office Cabin 20 x 8 ft rear interior render.",
           "provenance": "render",
           "width": 1200,
           "height": 1200
         }
-      ]
+      ],
+      "capacity": "Recommended occupancy 3–4 people"
     },
     {
       "sizeSlug": "20x10",
@@ -109,45 +107,44 @@
       "areaSqft": 200,
       "priceExGst": 270000,
       "priceInclGst": 318600,
-      "useCase": "Four-desk site offices",
-      "sku": "SP-PPO-20-2025",
       "images": [
         {
           "src": "/images/products/portable-office/20x10/portable-office-20x10-front-angle.webp",
-          "alt": "Portable office cabin, 20 x 10 ft, orange-red body viewed from the door corner.",
+          "alt": "Portable Office Cabin 20 x 10 ft front angle render.",
           "provenance": "render",
           "width": 1200,
           "height": 1200
         },
         {
           "src": "/images/products/portable-office/20x10/portable-office-20x10-side-elevation.webp",
-          "alt": "Portable office cabin, 20 x 10 ft, green upper panel over a cream base, photographed square on.",
+          "alt": "Portable Office Cabin 20 x 10 ft side elevation render.",
           "provenance": "render",
           "width": 1200,
           "height": 1200
         },
         {
           "src": "/images/products/portable-office/20x10/portable-office-20x10-workspace-interior.webp",
-          "alt": "Inside a 20 x 10 ft portable office cabin, desk runs down both sides under a ceiling fan.",
+          "alt": "Portable Office Cabin 20 x 10 ft workspace interior render.",
           "provenance": "render",
           "width": 1200,
           "height": 1200
         },
         {
           "src": "/images/products/portable-office/20x10/portable-office-20x10-reception-interior.webp",
-          "alt": "Inside a 20 x 10 ft portable office cabin, a desk with two visitor chairs and a fan overhead.",
+          "alt": "Portable Office Cabin 20 x 10 ft reception interior render.",
           "provenance": "render",
           "width": 1200,
           "height": 1200
         },
         {
           "src": "/images/products/portable-office/20x10/portable-office-20x10-rear-interior.webp",
-          "alt": "Inside a 20 x 10 ft portable office cabin, a counter run and workstations seen from the far end.",
+          "alt": "Portable Office Cabin 20 x 10 ft rear interior render.",
           "provenance": "render",
           "width": 1200,
           "height": 1200
         }
-      ]
+      ],
+      "capacity": "Recommended occupancy 4–6 people"
     },
     {
       "sizeSlug": "20x12",
@@ -156,45 +153,44 @@
       "areaSqft": 240,
       "priceExGst": 311040,
       "priceInclGst": 367027,
-      "useCase": "Visitor and vendor corners",
-      "sku": "SP-PPO-20-2025",
       "images": [
         {
           "src": "/images/products/portable-office/20x12/portable-office-20x12-front-angle.webp",
-          "alt": "Portable office cabin, 20 x 12 ft, white and grey body with a central door and two windows.",
+          "alt": "Portable Office Cabin 20 x 12 ft front angle render.",
           "provenance": "render",
           "width": 1200,
           "height": 1200
         },
         {
           "src": "/images/products/portable-office/20x12/portable-office-20x12-side-elevation.webp",
-          "alt": "Portable office cabin, 20 x 12 ft, white upper panel over a yellow base, photographed square on.",
+          "alt": "Portable Office Cabin 20 x 12 ft side elevation render.",
           "provenance": "render",
           "width": 1200,
           "height": 1200
         },
         {
           "src": "/images/products/portable-office/20x12/portable-office-20x12-workspace-interior.webp",
-          "alt": "Inside a 20 x 12 ft portable office cabin, workstations along one wall with a clear central walkway.",
+          "alt": "Portable Office Cabin 20 x 12 ft workspace interior render.",
           "provenance": "render",
           "width": 1200,
           "height": 1200
         },
         {
           "src": "/images/products/portable-office/20x12/portable-office-20x12-reception-interior.webp",
-          "alt": "Inside a 20 x 12 ft portable office cabin, a desk facing the entrance with storage behind.",
+          "alt": "Portable Office Cabin 20 x 12 ft reception interior render.",
           "provenance": "render",
           "width": 1200,
           "height": 1200
         },
         {
           "src": "/images/products/portable-office/20x12/portable-office-20x12-rear-interior.webp",
-          "alt": "Inside a 20 x 12 ft portable office cabin, a desk and visitor chairs seen from the back of the floor.",
+          "alt": "Portable Office Cabin 20 x 12 ft rear interior render.",
           "provenance": "render",
           "width": 1200,
           "height": 1200
         }
-      ]
+      ],
+      "capacity": "Recommended occupancy 5–7 people"
     },
     {
       "sizeSlug": "30x10",
@@ -203,92 +199,44 @@
       "areaSqft": 300,
       "priceExGst": 388800,
       "priceInclGst": 458784,
-      "useCase": "Office with secure store",
-      "sku": "SP-PPO-20-2025",
       "images": [
         {
           "src": "/images/products/portable-office/30x10/portable-office-30x10-front-angle.webp",
-          "alt": "Portable office cabin, 30 x 10 ft, light blue body viewed from the door corner.",
+          "alt": "Portable Office Cabin 30 x 10 ft front angle render.",
           "provenance": "render",
           "width": 1200,
           "height": 1200
         },
         {
           "src": "/images/products/portable-office/30x10/portable-office-30x10-side-elevation.webp",
-          "alt": "Portable office cabin, 30 x 10 ft, cream flank photographed square on with four windows.",
+          "alt": "Portable Office Cabin 30 x 10 ft side elevation render.",
           "provenance": "render",
           "width": 1200,
           "height": 1200
         },
         {
           "src": "/images/products/portable-office/30x10/portable-office-30x10-workspace-interior.webp",
-          "alt": "Inside a 30 x 10 ft portable office cabin, workstations down both sides of the thirty foot floor.",
+          "alt": "Portable Office Cabin 30 x 10 ft workspace interior render.",
           "provenance": "render",
           "width": 1200,
           "height": 1200
         },
         {
           "src": "/images/products/portable-office/30x10/portable-office-30x10-reception-interior.webp",
-          "alt": "Inside a 30 x 10 ft portable office cabin, a desk with two visitor chairs and a planter beside it.",
+          "alt": "Portable Office Cabin 30 x 10 ft reception interior render.",
           "provenance": "render",
           "width": 1200,
           "height": 1200
         },
         {
           "src": "/images/products/portable-office/30x10/portable-office-30x10-rear-interior.webp",
-          "alt": "Inside a 30 x 10 ft portable office cabin, a counter run and desk seen from the far end.",
+          "alt": "Portable Office Cabin 30 x 10 ft rear interior render.",
           "provenance": "render",
           "width": 1200,
           "height": 1200
         }
-      ]
-    },
-    {
-      "sizeSlug": "40x8",
-      "label": "40×8 ft",
-      "dims": "40×8×8.5 ft",
-      "areaSqft": 320,
-      "priceExGst": 406080,
-      "priceInclGst": 479174,
-      "useCase": "Compound-edge offices",
-      "sku": "SP-PPO-20-2025",
-      "images": [
-        {
-          "src": "/images/products/portable-office/40x8/portable-office-40x8-front-angle.webp",
-          "alt": "Portable office cabin, 40 x 8 ft, cream body over a green base viewed from the corner.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
-        },
-        {
-          "src": "/images/products/portable-office/40x8/portable-office-40x8-side-elevation.webp",
-          "alt": "Portable office cabin, 40 x 8 ft, pink upper panel over a teal base, photographed square on.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
-        },
-        {
-          "src": "/images/products/portable-office/40x8/portable-office-40x8-workspace-interior.webp",
-          "alt": "Inside a 40 x 8 ft portable office cabin, a clear narrow floor running the full forty feet.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
-        },
-        {
-          "src": "/images/products/portable-office/40x8/portable-office-40x8-reception-interior.webp",
-          "alt": "Inside a 40 x 8 ft portable office cabin, a desk against the wall with daylight from the side windows.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
-        },
-        {
-          "src": "/images/products/portable-office/40x8/portable-office-40x8-rear-interior.webp",
-          "alt": "Inside a 40 x 8 ft portable office cabin, a desk and chair with a long window run beyond.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
-        }
-      ]
+      ],
+      "capacity": "Recommended occupancy 6–8 people"
     },
     {
       "sizeSlug": "40x10",
@@ -297,140 +245,176 @@
       "areaSqft": 400,
       "priceExGst": 507600,
       "priceInclGst": 598968,
-      "useCase": "Full project offices",
-      "sku": "SP-PPO-20-2025",
       "images": [
         {
           "src": "/images/products/portable-office/40x10/portable-office-40x10-front-angle.webp",
-          "alt": "Portable office cabin, 40 x 10 ft, grey body viewed from the door corner.",
+          "alt": "Portable Office Cabin 40 x 10 ft front angle render.",
           "provenance": "render",
           "width": 1200,
           "height": 1200
         },
         {
           "src": "/images/products/portable-office/40x10/portable-office-40x10-side-elevation.webp",
-          "alt": "Portable office cabin, 40 x 10 ft, cream upper panel over a green base, photographed square on.",
+          "alt": "Portable Office Cabin 40 x 10 ft side elevation render.",
           "provenance": "render",
           "width": 1200,
           "height": 1200
         },
         {
           "src": "/images/products/portable-office/40x10/portable-office-40x10-workspace-interior.webp",
-          "alt": "Inside a 40 x 10 ft portable office cabin, two desk rows running the full length of the floor.",
+          "alt": "Portable Office Cabin 40 x 10 ft workspace interior render.",
           "provenance": "render",
           "width": 1200,
           "height": 1200
         },
         {
           "src": "/images/products/portable-office/40x10/portable-office-40x10-reception-interior.webp",
-          "alt": "Inside a 40 x 10 ft portable office cabin, a desk and visitor chairs at the entrance end.",
+          "alt": "Portable Office Cabin 40 x 10 ft reception interior render.",
           "provenance": "render",
           "width": 1200,
           "height": 1200
         },
         {
           "src": "/images/products/portable-office/40x10/portable-office-40x10-rear-interior.webp",
-          "alt": "Inside a 40 x 10 ft portable office cabin, paired workstations seen from the back of the floor.",
+          "alt": "Portable Office Cabin 40 x 10 ft rear interior render.",
           "provenance": "render",
           "width": 1200,
           "height": 1200
         }
-      ]
-    },
-    {
-      "sizeSlug": "20x20",
-      "label": "20×20 ft",
-      "dims": "20×20×8.5 ft",
-      "areaSqft": 400,
-      "priceExGst": 507600,
-      "priceInclGst": 598968,
-      "useCase": "Project control rooms",
-      "sku": "SP-PPO-20-2025",
-      "images": [
-        {
-          "src": "/images/products/portable-office/20x20/portable-office-20x20-front-angle.webp",
-          "alt": "Portable office cabin, 20 x 20 ft, teal body viewed from the corner with four windows in the run.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
-        },
-        {
-          "src": "/images/products/portable-office/20x20/portable-office-20x20-side-elevation.webp",
-          "alt": "Portable office cabin, 20 x 20 ft, teal flank photographed square on across the square plan.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
-        },
-        {
-          "src": "/images/products/portable-office/20x20/portable-office-20x20-workspace-interior.webp",
-          "alt": "Inside a 20 x 20 ft portable office cabin, paired workstations set out across the square floor.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
-        },
-        {
-          "src": "/images/products/portable-office/20x20/portable-office-20x20-reception-interior.webp",
-          "alt": "Inside a 20 x 20 ft portable office cabin, a screened desk position with the entrance beyond.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
-        },
-        {
-          "src": "/images/products/portable-office/20x20/portable-office-20x20-rear-interior.webp",
-          "alt": "Inside a 20 x 20 ft portable office cabin, desks and a counter run seen from the rear wall.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
-        }
-      ]
-    },
-    {
-      "sizeSlug": "40x12",
-      "label": "40×12 ft",
-      "dims": "40×12×8.5 ft",
-      "areaSqft": 480,
-      "priceExGst": 596160,
-      "priceInclGst": 703469,
-      "useCase": "Largest single offices",
-      "sku": "SP-PPO-20-2025",
-      "images": [
-        {
-          "src": "/images/products/portable-office/40x12/portable-office-40x12-front-angle.webp",
-          "alt": "Portable office cabin, 40 x 12 ft, green upper panel over a cream base viewed from the corner.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
-        },
-        {
-          "src": "/images/products/portable-office/40x12/portable-office-40x12-side-elevation.webp",
-          "alt": "Portable office cabin, 40 x 12 ft, white body over a maroon base, photographed square on.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
-        },
-        {
-          "src": "/images/products/portable-office/40x12/portable-office-40x12-workspace-interior.webp",
-          "alt": "Inside a 40 x 12 ft portable office cabin, desk banks either side of a central walkway.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
-        },
-        {
-          "src": "/images/products/portable-office/40x12/portable-office-40x12-reception-interior.webp",
-          "alt": "Inside a 40 x 12 ft portable office cabin, a counter run with a desk position at the window.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
-        },
-        {
-          "src": "/images/products/portable-office/40x12/portable-office-40x12-rear-interior.webp",
-          "alt": "Inside a 40 x 12 ft portable office cabin, open-plan desks seen from the rear of the widest floor.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
-        }
-      ]
+      ],
+      "capacity": "Recommended occupancy 8–10 people"
     }
   ],
-  "specPdfHref": "/specs/portable-office-technical-specification.pdf"
+  "specPdfHref": "/specs/portable-office-technical-specification.pdf",
+  "schemaIncludeVariantOffers": true,
+  "suppressLegacySku": true,
+  "suppressAggregateRatingSchema": true,
+  "suppressReviewClaims": true,
+  "suppressLegacyFaqSchema": true,
+  "emitSizeAnchors": true,
+  "deliveryLabel": "7–21 Working Days",
+  "coverageLabel": "Bangalore city · Delhi NCR",
+  "materialLabel": "MS structural frame · insulated office build",
+  "trustStripText": "GST registered · ISO 9001:2015 quality management · 5-year structural warranty · 1-year finishing warranty",
+  "hideHeroProofRow": true,
+  "categoryLabel": "Portable Office",
+  "categoryHref": "/product/portable-office",
+  "specPdfButtonLabel": "Download technical specification",
+  "schemaBrandName": "SAMAN Portable",
+  "schemaImageMode": "variant-first-images",
+  "priceCaption": "Prices exclude GST. GST is 18% under HSN 9406. Free delivery within Bangalore city and Delhi NCR; freight elsewhere is quoted separately.",
+  "shippingHtml": "<div class=\"not-prose\"><p>Delivery is 7–21 working days after the order and site requirements are confirmed. Delivery is free within Bangalore city and Delhi NCR. Freight for all other destinations is quoted separately in the written quotation.</p><p>A written quotation is returned within 48 hours.</p></div>",
+  "h1": "Portable Office Cabin: Six Stocked Standard Sizes",
+  "seoTitle": "Portable Office Cabin | 6 Stocked Sizes | SAMAN",
+  "metaDescription": "Compare six stocked Portable Office Cabin sizes from 100 to 400 sq ft, with published prices, approved specifications and delivery in 7–21 working days.",
+  "canonical": "https://www.samanportable.com/product/portable-office",
+  "opener": "Compare six regularly stocked Portable Office Cabin sizes, published ex-GST and inclusive prices, approved specifications and recommended occupancy.",
+  "ymalTiles": [
+    {
+      "title": "Readymade Office Cabin",
+      "href": "/product/portable-office/readymade-office-cabin",
+      "category": "Portable Office",
+      "blurb": "Explore Readymade Office Cabin",
+      "imageSrc": "/images/products/readymade-office-cabin/20x10/readymade-office-cabin-20x10-front-angle.webp",
+      "imageAlt": "Readymade Office Cabin 20 x 10 ft exterior render"
+    },
+    {
+      "title": "Prefabricated Office Cabins",
+      "href": "/product/portable-office/prefabricated-office-cabins",
+      "category": "Portable Office",
+      "blurb": "Explore Prefabricated Office Cabins",
+      "imageSrc": "/images/products/prefabricated-office-cabins/20x10/prefabricated-office-cabin-20x10-front-angle.webp",
+      "imageAlt": "Prefabricated Office Cabin 20 x 10 ft exterior render"
+    },
+    {
+      "title": "Small Office Cabin",
+      "href": "/product/portable-office/small-office-cabin",
+      "category": "Portable Office",
+      "blurb": "Explore Small Office Cabin",
+      "imageSrc": "/images/products/small-office-cabin/10x10/small-office-cabin-10x10-front-angle.webp",
+      "imageAlt": "Small Office Cabin 10 x 10 ft exterior render"
+    }
+  ],
+  "relatedTiles": [
+    {
+      "title": "Readymade Office Cabin",
+      "href": "/product/portable-office/readymade-office-cabin",
+      "category": "Portable Office",
+      "blurb": "Explore Readymade Office Cabin",
+      "imageSrc": "/images/products/readymade-office-cabin/20x10/readymade-office-cabin-20x10-front-angle.webp",
+      "imageAlt": "Readymade Office Cabin 20 x 10 ft exterior render"
+    },
+    {
+      "title": "Prefabricated Office Cabins",
+      "href": "/product/portable-office/prefabricated-office-cabins",
+      "category": "Portable Office",
+      "blurb": "Explore Prefabricated Office Cabins",
+      "imageSrc": "/images/products/prefabricated-office-cabins/20x10/prefabricated-office-cabin-20x10-front-angle.webp",
+      "imageAlt": "Prefabricated Office Cabin 20 x 10 ft exterior render"
+    },
+    {
+      "title": "Small Office Cabin",
+      "href": "/product/portable-office/small-office-cabin",
+      "category": "Portable Office",
+      "blurb": "Explore Small Office Cabin",
+      "imageSrc": "/images/products/small-office-cabin/10x10/small-office-cabin-10x10-front-angle.webp",
+      "imageAlt": "Small Office Cabin 10 x 10 ft exterior render"
+    }
+  ],
+  "suppressSchemaAvailability": false,
+  "faqSchema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Which standard Portable Office Cabin sizes are published?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Six standard sizes are published: 10x10, 20x8, 20x10, 20x12, 30x10 and 40x10 ft. Their floor areas run from 100 to 400 sq ft, and each published size is 8.5 ft high."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are the six Portable Office Cabin sizes stocked?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The six published standard sizes are regularly stocked. Other or custom sizes are available only on quotation and are made to order."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do the published prices include GST?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The table shows both ex-GST and inclusive prices. GST is 18% under HSN 9406."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How quickly will I receive a quotation and delivery?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "SAMAN returns a written quotation within 48 hours. Delivery is 7–21 working days after the order and site requirements are confirmed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is freight charged?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Delivery is free within Bangalore city and Delhi NCR. Freight for destinations outside those zones is quoted separately."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What warranty applies to a Portable Office Cabin?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The warranty is five years for the structure and one year for finishing, subject to the written warranty and quotation terms."
+        }
+      }
+    ]
+  },
+  "descriptionHtml": "<section><h2>Portable Office Cabin range</h2><p>SAMAN POS India Private Limited supplies six regularly stocked portable office cabin sizes on an approved MS structural frame and insulated office build. Select the footprint first, then confirm the written specification and delivery location with the quotation.</p><h3>Six published sizes and prices</h3><div class=\"overflow-x-auto\"><table><thead><tr><th>Size</th><th>Area</th><th>Price ex-GST</th><th>Price incl. 18% GST</th></tr></thead><tbody><tr><td>10×10 ft</td><td>100 sq ft</td><td>₹1,48,500</td><td>₹1,75,230</td></tr><tr><td>20×8 ft</td><td>160 sq ft</td><td>₹2,37,600</td><td>₹2,80,368</td></tr><tr><td>20×10 ft</td><td>200 sq ft</td><td>₹2,70,000</td><td>₹3,18,600</td></tr><tr><td>20×12 ft</td><td>240 sq ft</td><td>₹3,11,040</td><td>₹3,67,027</td></tr><tr><td>30×10 ft</td><td>300 sq ft</td><td>₹3,88,800</td><td>₹4,58,784</td></tr><tr><td>40×10 ft</td><td>400 sq ft</td><td>₹5,07,600</td><td>₹5,98,968</td></tr></tbody></table></div><p>Prices use HSN 9406. Custom sizes are made to order and priced only in a written quotation.</p></section><section><h2>Quotation and zonal contacts</h2><p>A written quotation is returned within 48 hours. Delivery is 7–21 working days after the order and site requirements are confirmed. Delivery is free within Bangalore city and Delhi NCR; freight outside those zones is quoted separately.</p><p><strong>South India:</strong> <a href=\"tel:+918861622859\">+91 88616 22859</a><br/><strong>North India:</strong> <a href=\"tel:+918796039938\">+91 87960 39938</a></p><p>Warranty: five-year structural warranty and one-year finishing warranty, subject to the written warranty and quotation terms.</p></section><section><h2>Verified company credentials</h2><p>SAMAN POS India Private Limited maintains the following repository-backed credentials:</p><ul><li><a href=\"/certifications/saman-pos-iso-9001-2015-quality-management-certificate.pdf\">ISO 9001:2015 quality management certificate</a>, subject to the conditions stated in the certificate</li><li><a href=\"/certifications/saman-pos-gst-karnataka-certificate.pdf\">GST registration, Karnataka</a> and <a href=\"/certifications/saman-pos-gst-uttar-pradesh-greater-noida-certificate.pdf\">GST registration, Uttar Pradesh</a></li><li><a href=\"/certifications/saman-pos-udyam-registration-certificate.pdf\">Udyam registration</a></li><li><a href=\"/certifications/saman-pos-startup-india-recognition-certificate.pdf\">DPIIT Startup India recognition</a></li><li><a href=\"/certifications/saman-pos-nsic-government-purchase-enlistment.pdf\">NSIC Government Purchase enlistment</a></li></ul></section><section><h2>Frequently asked questions</h2><dl><div><dt><strong>Which standard Portable Office Cabin sizes are published?</strong></dt><dd>Six standard sizes are published: 10x10, 20x8, 20x10, 20x12, 30x10 and 40x10 ft. Their floor areas run from 100 to 400 sq ft, and each published size is 8.5 ft high.</dd></div><div><dt><strong>Are the six Portable Office Cabin sizes stocked?</strong></dt><dd>Yes. The six published standard sizes are regularly stocked. Other or custom sizes are available only on quotation and are made to order.</dd></div><div><dt><strong>Do the published prices include GST?</strong></dt><dd>The table shows both ex-GST and inclusive prices. GST is 18% under HSN 9406.</dd></div><div><dt><strong>How quickly will I receive a quotation and delivery?</strong></dt><dd>SAMAN returns a written quotation within 48 hours. Delivery is 7–21 working days after the order and site requirements are confirmed.</dd></div><div><dt><strong>How is freight charged?</strong></dt><dd>Delivery is free within Bangalore city and Delhi NCR. Freight for destinations outside those zones is quoted separately.</dd></div><div><dt><strong>What warranty applies to a Portable Office Cabin?</strong></dt><dd>The warranty is five years for the structure and one year for finishing, subject to the written warranty and quotation terms.</dd></div></dl></section>"
 }
