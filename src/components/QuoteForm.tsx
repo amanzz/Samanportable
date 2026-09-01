@@ -143,7 +143,7 @@ const QuoteForm = ({ variant = 'default', onClose }: QuoteFormProps) => {
         </div>
       )}
 
-      <form onSubmit={handleSubmit} className="space-y-3">
+      <form action="/api/quote-request" method="post" onSubmit={handleSubmit} className="space-y-3">
         <div className="grid grid-cols-2 gap-3">
           <div className="space-y-1">
             <Label htmlFor="firstName" className="text-xs font-semibold text-gray-700 block text-left">

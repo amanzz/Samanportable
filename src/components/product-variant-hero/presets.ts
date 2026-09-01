@@ -162,7 +162,7 @@ export const VARIANT_PRODUCT_PRESETS: Record<string, VariantProductPreset> = {
   // and `video` (none exist for this page). `productName` resolves from the page title.
   'portable-shop-cabin': {
     categoryLabel: 'Portable Cabin',
-    categoryHref: '/product/portable-cabin',
+    categoryHref: '/product/porta-cabins',
     productSku: 'SP-PSC-15-2024',
     // Explorer tab image = each size's hero-view WebP (FIX-PACKET) — this product ships
     // 5 views (no elevated-view), so the Explorer reuses the gallery hero shot. The hero

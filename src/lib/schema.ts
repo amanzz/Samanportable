@@ -1,5 +1,7 @@
 ﻿import { homepageFaqs } from '@/data/homepageFaqs';
 
+import { normalizeVerifiedCommercialFacts } from '@/lib/verifiedCommercialFacts';
+
 export interface ProductSchema {
   name: string;
   description: string;
@@ -516,7 +518,7 @@ export const extractFAQSchema = (html: string): object | null => {
       name: faq.question,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: faq.answer,
+        text: normalizeVerifiedCommercialFacts(faq.answer),
       },
     })),
   };
@@ -530,7 +532,7 @@ const faqSchemaFromItems = (items: FAQItem[]): object => ({
     name: faq.question,
     acceptedAnswer: {
       '@type': 'Answer',
-      text: faq.answer,
+      text: normalizeVerifiedCommercialFacts(faq.answer),
     },
   })),
 });

@@ -12,6 +12,7 @@ import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuIte
 import { dsCssVariables } from '@/components/ds/tokens';
 import { GST_REGISTRATIONS } from '@/data/certifications';
 import { cn } from '@/lib/utils';
+import { isTemporarilyGatedCommercialPath } from '@/lib/unapprovedCommercialGating';
 
 /**
  * The price calculator icon, CALC-L7 §2.3.
@@ -498,7 +499,7 @@ const Header = () => {
               <div key={col.title}>
                 <h3 className="mb-3 text-sm font-semibold text-gray-900">{col.title}</h3>
                 <ul className="space-y-1">
-                  {col.items.map((it) => (
+                  {col.items.filter((it) => !isTemporarilyGatedCommercialPath(it.href)).map((it) => (
                     <li key={it.href}>
                       <Link
                         href={it.href}
@@ -680,7 +681,7 @@ const Header = () => {
                       </button>
                       {open && (
                         <div className="pb-2 pl-3">
-                          {col.items.map((it) => (
+                          {col.items.filter((it) => !isTemporarilyGatedCommercialPath(it.href)).map((it) => (
                             <Link
                               key={it.href}
                               href={it.href}

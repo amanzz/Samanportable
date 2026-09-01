@@ -13,6 +13,11 @@ const manifestPath = path.join(publicDir, 'image-manifest.json');
 const canonicalPaths = JSON.parse(
   fs.readFileSync(path.join(root, 'src/lib/sitemapCanonicalPaths.json'), 'utf8'),
 );
+const temporarilyGatedCommercialPaths = new Set(
+  JSON.parse(
+    fs.readFileSync(path.join(root, 'src/data/seo/unapprovedCommercialGating.json'), 'utf8'),
+  ).paths,
+);
 
 if (!fs.existsSync(manifestPath)) {
   throw new Error(
@@ -46,7 +51,10 @@ const imageUrlset = entries => `<?xml version="1.0" encoding="UTF-8"?>\n`
   ).join('\n')
   + `\n</urlset>\n`;
 
-const all = [...new Set([...canonicalPaths, '/product-category/container-offices'])].sort();
+const all = [...new Set(canonicalPaths)]
+  .filter(pathname => !pathname.startsWith('/product-category/'))
+  .filter(pathname => !temporarilyGatedCommercialPaths.has(pathname))
+  .sort();
 const productSupplement = new Set([
   '/rental-services',
   '/portable-cabin-price-calculator',
@@ -55,9 +63,7 @@ const productSupplement = new Set([
 ]);
 const products = all.filter(pathname =>
   pathname === '/product'
-  || pathname === '/product-category/container-offices'
   || pathname.startsWith('/product/')
-  || pathname.startsWith('/product-category/')
   || productSupplement.has(pathname)
 );
 const projects = all.filter(pathname => pathname === '/gallery');
@@ -102,7 +108,14 @@ const unfilteredSegments = { products, locations, projects, editorial };
 // four re-verified 200/self-canonical/index,follow immediately before this
 // change. No content, title, H1, redirect, calculator, rental or size change
 // rides with this commit - sitemap inclusion only.
-const expectedSegments = { products: 148, locations: 196, projects: 1, editorial: 65 };
+// SEO-006 remediation: six verified live approved pages joined the product and
+// image sitemap crawl set. RB-01C then adds published Expandable Container
+// Office and removes the two draft roofing-sheet pages, a net product change
+// of minus one. Accommodation Container remains held as draft and excluded.
+// Temporary containment removes every gated path that is still present in the
+// canonical input. Three gated draft/legacy paths were already absent, leaving
+// 94 product candidates before redirect-source exclusion.
+const expectedSegments = { products: 94, locations: 196, projects: 1, editorial: 65 };
 
 const redirectEntries = await nextConfig.redirects();
 const redirectMatchers = redirectEntries
@@ -171,8 +184,8 @@ for (const [name, expected] of Object.entries(expectedSegments)) {
 // 406 = 436 minus the 30 local paths removed by the Phase 2 cleanup (11 redirected,
 // 19 noindex). See the expectedSegments note above for the segment breakdown.
 // 410 = 406 plus the four porta-cabin pages this commit adds to the sitemap.
-if (all.length !== 410) {
-  throw new Error(`Page sitemap total changed from 410 to ${all.length}`);
+if (all.length !== 356) {
+  throw new Error(`Page sitemap total changed from 356 to ${all.length}`);
 }
 
 const pageMap = new Map();

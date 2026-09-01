@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "documentId": "PC01-TECH-SPEC",
+  "revision": "PC01-TECH-SPEC-V1-2026-08-30",
+  "status": "Current website technical reference",
+  "company": "SAMAN POS India Pvt Ltd",
+  "product": "Porta Cabins",
+  "title": "Porta Cabins Technical Specification, Price and GA Reference",
+  "canonicalUrl": "https://www.samanportable.com/product/porta-cabins",
+  "contactUrl": "https://www.samanportable.com/contact-us",
+  "productDataPath": "src/data/products/porta-cabins.json",
+  "effectiveSpecificationModule": "src/lib/c01SpecificationOverrides.js",
+  "activePdfPath": "public/specs/saman-porta-cabins-technical-specification.pdf",
+  "activePdfHref": "/specs/saman-porta-cabins-technical-specification.pdf",
+  "weightQualification": "Approximate completed unit weights only. Actual completed weight varies with the approved configuration, fit-out and optional equipment. These figures are not floor, roof, lifting or structural load capacities.",
+  "scopeStatement": "Final project scope is governed by the accepted quotation and approved drawing.",
+  "commercialBoundary": [
+    "Prices shown are the currently published standard reference prices.",
+    "Customisation and site-specific requirements are confirmed in an itemised quotation.",
+    "Freight, unloading, foundation, utility connections and installation scope must be confirmed for the delivery location and final configuration.",
+    "The final approved drawing and accepted quotation govern the supplied scope."
+  ],
+  "fixedPdfMetadata": {
+    "author": "SAMAN POS India Pvt Ltd",
+    "creator": "SAMAN PC-01 maintained PDF pipeline",
+    "subject": "Porta Cabins technical specification, price and approved GA reference"
+  }
+}

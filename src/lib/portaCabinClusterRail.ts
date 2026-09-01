@@ -45,7 +45,7 @@ export const PORTA_CABIN_HUB_RAIL: import('./c16PanelCatalog').RelatedRailItem[]
     imageAlt: 'MS Porta Cabin by SAMAN — exterior view',
   },
   {
-    title: 'GI (Galvanized Iron) Porta Cabin',
+    title: 'GI Porta Cabin',
     href: '/product/porta-cabins/gi-porta-cabin',
     category: 'Porta Cabins',
     blurb: 'Coastal and high-corrosion sites',
@@ -61,7 +61,7 @@ export const PORTA_CABIN_HUB_RAIL: import('./c16PanelCatalog').RelatedRailItem[]
     imageAlt: 'PUF Porta Cabin by SAMAN — exterior view',
   },
   {
-    title: 'Double Story (G+1) Porta Cabin',
+    title: 'Double Story Porta Cabin',
     href: '/product/porta-cabins/double-story-porta-cabin',
     category: 'Porta Cabins',
     blurb: 'Two floors on one footprint',
@@ -109,7 +109,7 @@ export const PORTA_CABIN_HUB_RAIL: import('./c16PanelCatalog').RelatedRailItem[]
     imageAlt: 'Porta Cabin with Toilet by SAMAN — exterior view',
   },
   {
-    title: 'Porta Cabin Shop & Kiosk',
+    title: 'Porta Cabin Shop',
     href: '/product/porta-cabins/porta-cabin-shop',
     category: 'Porta Cabins',
     blurb: 'Retail counters, kiosks and shopfronts',

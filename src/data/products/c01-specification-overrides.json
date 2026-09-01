@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "overrides": [
+    {
+      "id": "PC01-FASTENERS-SEALING-2026-08-27",
+      "productSlug": "porta-cabins",
+      "rowLabel": "Fasteners & sealing",
+      "expectedSourceWorkbook": "SAMAN_MASTER_64_Products_Detailed_Technical_Specs_9_Sizes_Report-with-price-PR.xlsx",
+      "expectedSourceWorkbookMd5": "2bb681dff71ae744ea4d44418a09476a",
+      "expectedBaseDetail": "Security grill, insect mesh, guard, louver or protection selected only where the approved use and opening schedule requires it.",
+      "replacementDetail": "Approved self-tapping fasteners at floor-board and panel fixings, with welded joints cleaned before panel closure. Weather sealing and roof drainage are verified at pre-dispatch inspection.",
+      "authorityType": "OWNER_APPROVED_CORRECTION",
+      "authorityDecision": "Fasteners = A",
+      "authorityPackage": "PC-01 content package v2.7",
+      "reason": "The generated Fasteners & sealing row incorrectly duplicates the Grills / mosquito mesh row.",
+      "scope": "PC-01 runtime/rendered specification only",
+      "siblingPolicy": "DO_NOT_CHANGE",
+      "sunsetCondition": "Remove this override after the controlled workbook is recovered, corrected and regenerated with an equivalent approved PC-01 value."
+    }
+  ]
+}

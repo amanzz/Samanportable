@@ -18,9 +18,11 @@ export interface RelatedProductLinkProps {
   hubName: string;
   /** Site-relative hub path, e.g. '/product/porta-cabins'. */
   hubPath: string;
+  /** Optional owner-approved CTA label; the established label remains the default. */
+  ctaLabel?: string;
 }
 
-export function RelatedProductLink({ hubName, hubPath }: RelatedProductLinkProps) {
+export function RelatedProductLink({ hubName, hubPath, ctaLabel }: RelatedProductLinkProps) {
   return (
     <aside data-ds-root="" className={styles.card} aria-label="Related product">
       <span className={styles.eyebrow}>RELATED PRODUCT</span>
@@ -28,7 +30,7 @@ export function RelatedProductLink({ hubName, hubPath }: RelatedProductLinkProps
         {`Looking for ${hubName}? See SAMAN's full range, specs and pricing.`}
       </p>
       <Link href={hubPath} className={styles.cta}>
-        {`Explore ${hubName} →`}
+        {ctaLabel || `Explore ${hubName} →`}
       </Link>
     </aside>
   );

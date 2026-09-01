@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -125,6 +125,9 @@ const EnquiryDialog: React.FC<EnquiryDialogProps> = ({ isOpen, onClose, prefillM
         <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>
             <DialogTitle>Enquiry Sent!</DialogTitle>
+            <DialogDescription className="sr-only">
+              Your enquiry has been sent.
+            </DialogDescription>
           </DialogHeader>
           <div className="text-center py-6">
             <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -144,8 +147,11 @@ const EnquiryDialog: React.FC<EnquiryDialogProps> = ({ isOpen, onClose, prefillM
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
           <DialogTitle>Get a Quote</DialogTitle>
+          <DialogDescription className="sr-only">
+            Tell us your Porta Cabin requirement and contact details so the SAMAN team can respond with an itemised quotation.
+          </DialogDescription>
         </DialogHeader>
-        <form onSubmit={handleSubmit} className="grid gap-4 py-4">
+        <form action="/api/enquiry" method="post" onSubmit={handleSubmit} className="grid gap-4 py-4">
           <div className="grid grid-cols-4 items-center gap-4">
             <Label htmlFor="firstName" className="text-right">
               First Name

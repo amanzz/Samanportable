@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 2,
+  "decisionId": "PC01-REL-02-OPTION-3-2026-08-29",
+  "decision": "OPTION_3_QUALIFIED_LEGACY_DEBT",
+  "ownerAuthority": "PC01-REL-02_DIRECT_OWNER_INSTRUCTION",
+  "decisionDate": "2026-08-29",
+  "debtStatus": "QUALIFIED_UNRESOLVED",
+  "recoveredSource": {
+    "commit": "74ce8bc7e11363be9253d25d582b5347a78b143d",
+    "tree": "62bdb5f47e6af7b69ff9ad81c961fbab034367ed",
+    "historicalSourceBranch": "seo/pc01-qualified-c01-debt-active-pdf",
+    "branchSemantics": "HISTORICAL_PROVENANCE_ONLY",
+    "productionRef": "origin/static-migration",
+    "productionCommit": "3346a532306c52932aeb2d813591bf95cb37716b"
+  },
+  "qualificationCheckpoint": {
+    "commit": "e2fe1fcccffcc93b9cb3c21d2569738d83074c0c",
+    "tree": "c298f08137e31892116f4ee774ffbfadb265fd25",
+    "subject": "chore(validation): qualify legacy C01 debt for PC-01 release",
+    "ancestryPolicy": "REQUIRED_ANCESTOR_OF_CURRENT_HEAD"
+  },
+  "branchAuthorityStatement": "Current branch names and detached-HEAD state are not factual or security authorities. The pinned qualification commit, tree, content hashes, expected legacy failure and owner decisions control validation.",
+  "pinnedArtifacts": {
+    "generatedC01": {
+      "path": "src/data/products/c01-specifications.json",
+      "sha256": "3a35ec7564c8007640b57313efa50a3420e93df0165fedcf80bcc5a056c37099"
+    },
+    "legacyCopyValidator": {
+      "path": "scripts/validate-c01-copy-gates.py",
+      "sha256": "3cd4cd1323d5cd1974f098b4a063ddadcb38ad0ae84a8590aa7c228e965eb60d"
+    },
+    "approvedCopyPack": {
+      "path": "page-structure/content-drafts/COPY-PACK-C01-porta-cabins-9pages-APPROVED-26Jul2026.md",
+      "sha256": "22fed88951b15cd7b9f7d861dc1c4efd2f544e2fb1f66567d00d6e401522b132"
+    }
+  },
+  "expectedLegacyFailure": {
+    "command": [
+      "python",
+      "scripts/validate-c01-copy-gates.py",
+      "--draft",
+      "page-structure/content-drafts/COPY-PACK-C01-porta-cabins-9pages-APPROVED-26Jul2026.md"
+    ],
+    "exitCode": 1,
+    "assertion": "assert len(values) == 1, component",
+    "rowLabel": "Electrical protection",
+    "expectedDistinctValueCount": 1,
+    "actualDistinctValueCount": 13,
+    "surfacedFailureCount": 1,
+    "normalizedStdoutSha256": "1c59583f67845b7a486310e884b78c904e6aed17af181d5ad3959ea76988a13b",
+    "normalizedStderrSha256": "e0296b5315561f83805445e19c0d7e71a62cdb2189de1e62a880da12b69a228b",
+    "normalization": [
+      "CRLF_TO_LF",
+      "ABSOLUTE_WORKTREE_TO_<WORKTREE>",
+      "PATH_SEPARATORS_TO_FORWARD_SLASH",
+      "PYTHON_UTF8_OUTPUT"
+    ]
+  },
+  "ownerRowDecisions": {
+    "Electrical protection": "CONTROLLED_WORKBOOK_REQUIRED",
+    "Electrical wiring": "CONTROLLED_WORKBOOK_REQUIRED",
+    "Fasteners & sealing": "CONTROLLED_WORKBOOK_REQUIRED",
+    "Grills / mosquito mesh": "CONTROLLED_WORKBOOK_REQUIRED",
+    "Warranty": "OWNER_FACT_REQUIRED",
+    "Welding & fabrication": "CONTROLLED_WORKBOOK_REQUIRED"
+  },
+  "controlledWorkbook": {
+    "status": "REQUIRED_UNRESOLVED",
+    "expectedFilename": "SAMAN_MASTER_64_Products_Detailed_Technical_Specs_9_Sizes_Report-with-price-PR.xlsx",
+    "expectedMd5": "2bb681dff71ae744ea4d44418a09476a"
+  },
+  "warrantyAuthority": {
+    "status": "OWNER_FACT_REQUIRED",
+    "numericTermApproved": false
+  },
+  "pc01Override": {
+    "id": "PC01-FASTENERS-SEALING-2026-08-27",
+    "productSlug": "porta-cabins",
+    "rowLabel": "Fasteners & sealing",
+    "effectiveDetail": "Approved self-tapping fasteners at floor-board and panel fixings, with welded joints cleaned before panel closure. Weather sealing and roof drainage are verified at pre-dispatch inspection.",
+    "protectedSiblingEntries": [
+      "low-cost-porta-cabin",
+      "luxury-porta-cabin",
+      "mini-porta-cabin",
+      "portacabin-office",
+      "steel-porta-cabin"
+    ]
+  },
+  "activePc01PdfPath": "/specs/saman-porta-cabins-technical-specification.pdf",
+  "sunsetCondition": "Remove this qualification after a controlled workbook programme reconciles the six rows and the legacy validator passes under a new approved contract.",
+  "prohibitedInterpretations": [
+    "This is not engineering approval.",
+    "This does not approve specialist divergences.",
+    "This does not make missing rows not applicable.",
+    "This does not authorize deployment by itself.",
+    "This does not suppress or weaken the legacy validator."
+  ]
+}

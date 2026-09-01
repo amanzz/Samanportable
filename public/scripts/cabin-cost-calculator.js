@@ -444,6 +444,31 @@
     return { rate, base: applyCap(root, area, Math.round(area * rate)) };
   }
 
+  /** PC-01 reads the exact maintained variant price already rendered by SSR. */
+  function selectedVariantPrice(root, length, width) {
+    const rows = Array.from(root.querySelectorAll('[data-published-size]'));
+    const row = rows.find((entry) => {
+      const rowLength = dataNumber(entry, 'length');
+      const rowWidth = dataNumber(entry, 'width');
+      return (rowLength === length && rowWidth === width)
+        || (rowLength === width && rowWidth === length);
+    });
+    return row ? dataNumber(row, 'priceExGst', NaN) : null;
+  }
+
+  function isPublishedBaseIncludedWindow(root, form, type, index) {
+    const included = String(root.dataset.publishedBaseIncludedWindows || '')
+      .split(';')
+      .filter(Boolean)
+      .map((entry) => entry.split('|'))
+      .find((entry) => entry[0] === String(index));
+    if (!included) return false;
+    return type.value === included[1]
+      && num(value(form, `windows[${index}][width]`)) === num(included[2])
+      && num(value(form, `windows[${index}][height]`)) === num(included[3])
+      && value(form, `windows[${index}][track]`) === included[4];
+  }
+
   /**
    * Moves the door and window markers the server drew to the positions the
    * form currently holds. Previously this only resized the shell, so after any
@@ -797,7 +822,13 @@
     // in SAMAN's card (a floor area at or under 50 sq ft that is not one of the
     // five fixed sizes). Both render quote mode; neither invents a figure.
     const quoteProduct = source(product)?.dataset.quoteOnly === 'true';
-    const rateCard = colony ? null : baseCabinRate(root, length, width);
+    const selectedVariantAuthority = root.dataset.selectedVariantPriceBase === 'true';
+    const publishedBase = selectedVariantAuthority ? selectedVariantPrice(root, length, width) : null;
+    const rateCard = colony
+      ? null
+      : selectedVariantAuthority
+        ? (publishedBase === null || Number.isNaN(publishedBase) ? null : { base: publishedBase })
+        : baseCabinRate(root, length, width);
     const quoteOnly = quoteProduct || (!colony && rateCard === null);
     let base = colony
       ? dataNumber(colonyVariant, 'price', dataNumber(colonyVariant, 'priceExGst')) * quantity
@@ -884,6 +915,7 @@
         const match = type.name.match(/^windows\[(\d+)\]/);
         if (!match) return;
         const index = match[1];
+        if (isPublishedBaseIncludedWindow(root, form, type, index)) return;
         const windowWidth = num(value(form, `windows[${index}][width]`, 0));
         const windowHeight = num(value(form, `windows[${index}][height]`, 0));
         const trackFactor = dataNumber(chosen(form, `windows[${index}][track]`), 'rateMultiplier') || 1;
