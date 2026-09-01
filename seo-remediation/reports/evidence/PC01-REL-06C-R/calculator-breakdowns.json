@@ -1,0 +1,73 @@
+{
+  "rootPresent": true,
+  "enhanced": true,
+  "selectedVariantAuthority": "true",
+  "results": [
+    {
+      "size": "10x10",
+      "ex": "₹1,43,750",
+      "incl": "₹1,69,625 incl. GST",
+      "lines": [
+        "Base cabin 10×10 ft₹1,43,750",
+        "Base cabin 10×10 ft₹1,43,750"
+      ],
+      "defaultWindowPaidLines": 0
+    },
+    {
+      "size": "20x8",
+      "ex": "₹2,20,000",
+      "incl": "₹2,59,600 incl. GST",
+      "lines": [
+        "Base cabin 20×8 ft₹2,20,000",
+        "Base cabin 20×8 ft₹2,20,000"
+      ],
+      "defaultWindowPaidLines": 0
+    },
+    {
+      "size": "20x10",
+      "ex": "₹2,50,000",
+      "incl": "₹2,95,000 incl. GST",
+      "lines": [
+        "Base cabin 20×10 ft₹2,50,000",
+        "Base cabin 20×10 ft₹2,50,000"
+      ],
+      "defaultWindowPaidLines": 0
+    },
+    {
+      "size": "20x12",
+      "ex": "₹2,88,000",
+      "incl": "₹3,39,840 incl. GST",
+      "lines": [
+        "Base cabin 20×12 ft₹2,88,000",
+        "Base cabin 20×12 ft₹2,88,000"
+      ],
+      "defaultWindowPaidLines": 0
+    },
+    {
+      "size": "30x10",
+      "ex": "₹3,60,000",
+      "incl": "₹4,24,800 incl. GST",
+      "lines": [
+        "Base cabin 30×10 ft₹3,60,000",
+        "Base cabin 30×10 ft₹3,60,000"
+      ],
+      "defaultWindowPaidLines": 0
+    },
+    {
+      "size": "40x10",
+      "ex": "₹4,75,000",
+      "incl": "₹5,60,500 incl. GST",
+      "lines": [
+        "Base cabin 40×10 ft₹4,75,000",
+        "Base cabin 40×10 ft₹4,75,000"
+      ],
+      "defaultWindowPaidLines": 0
+    }
+  ],
+  "optionSeparate": {
+    "before": "₹2,50,000",
+    "afterOption": "₹2,60,000"
+  },
+  "freightText": "Transport 150 km₹27,500",
+  "formSubmissions": 0
+}

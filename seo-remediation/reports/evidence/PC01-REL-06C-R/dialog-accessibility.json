@@ -1,0 +1,53 @@
+{
+  "dialogAudit": {
+    "opened": true,
+    "describedBy": "radix-:r2:",
+    "description": "Tell us your Porta Cabin requirement and contact details so the SAMAN team can respond with an itemised quotation.",
+    "activeTag": "INPUT",
+    "activeText": "",
+    "focusableCount": 9,
+    "triggerCount": 7,
+    "afterTab": {
+      "tag": "INPUT",
+      "text": "",
+      "insideDialog": true
+    },
+    "afterShiftTab": {
+      "tag": "INPUT",
+      "text": "",
+      "insideDialog": true
+    },
+    "closedByEscape": true
+  },
+  "routeDialogAudits": [
+    {
+      "route": "/product/porta-cabins",
+      "trigger": true,
+      "dialog": true,
+      "describedBy": "radix-:r2:",
+      "description": "Tell us your Porta Cabin requirement and contact details so the SAMAN team can respond with an itemised quotation."
+    },
+    {
+      "route": "/product/container-offices",
+      "trigger": true,
+      "dialog": true,
+      "describedBy": "radix-:r2:",
+      "description": "Tell us your Porta Cabin requirement and contact details so the SAMAN team can respond with an itemised quotation."
+    },
+    {
+      "route": "/product/porta-cabins/ms-porta-cabin",
+      "trigger": true,
+      "dialog": true,
+      "describedBy": "radix-:r2:",
+      "description": "Tell us your Porta Cabin requirement and contact details so the SAMAN team can respond with an itemised quotation."
+    },
+    {
+      "route": "/contact",
+      "trigger": true,
+      "dialog": true,
+      "describedBy": "radix-:r2:",
+      "description": "Tell us your Porta Cabin requirement and contact details so the SAMAN team can respond with an itemised quotation."
+    }
+  ],
+  "formSubmissions": 0
+}

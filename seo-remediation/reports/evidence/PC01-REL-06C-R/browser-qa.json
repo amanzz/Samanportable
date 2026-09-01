@@ -1,0 +1,714 @@
+{
+  "generatedAt": "2026-09-01T09:26:34.704Z",
+  "browser": "Chrome/152.0.7977.65",
+  "formSubmissions": 0,
+  "responsive": [
+    {
+      "requested": {
+        "width": 360,
+        "height": 800
+      },
+      "actual": {
+        "width": 360,
+        "height": 800
+      },
+      "documentWidth": 360,
+      "overflow": 0,
+      "offenders": [
+        {
+          "tag": "DIV",
+          "className": "saman-ymal-track",
+          "left": -312,
+          "right": 16
+        },
+        {
+          "tag": "A",
+          "className": "saman-ymal-card",
+          "left": -312,
+          "right": -42
+        },
+        {
+          "tag": "DIV",
+          "className": "img",
+          "left": -311,
+          "right": -43
+        },
+        {
+          "tag": "IMG",
+          "className": "",
+          "left": -311,
+          "right": -43
+        },
+        {
+          "tag": "DIV",
+          "className": "body",
+          "left": -311,
+          "right": -43
+        },
+        {
+          "tag": "P",
+          "className": "name",
+          "left": -295,
+          "right": -59
+        },
+        {
+          "tag": "P",
+          "className": "for",
+          "left": -295,
+          "right": -59
+        },
+        {
+          "tag": "P",
+          "className": "cta",
+          "left": -295,
+          "right": -59
+        },
+        {
+          "tag": "A",
+          "className": "saman-ymal-card",
+          "left": -22,
+          "right": 248
+        },
+        {
+          "tag": "DIV",
+          "className": "img",
+          "left": -21,
+          "right": 247
+        },
+        {
+          "tag": "IMG",
+          "className": "",
+          "left": -21,
+          "right": 247
+        },
+        {
+          "tag": "DIV",
+          "className": "body",
+          "left": -21,
+          "right": 247
+        },
+        {
+          "tag": "P",
+          "className": "name",
+          "left": -5,
+          "right": 231
+        },
+        {
+          "tag": "P",
+          "className": "for",
+          "left": -5,
+          "right": 231
+        },
+        {
+          "tag": "P",
+          "className": "cta",
+          "left": -5,
+          "right": 231
+        },
+        {
+          "tag": "A",
+          "className": "saman-ymal-card",
+          "left": 268,
+          "right": 538
+        },
+        {
+          "tag": "DIV",
+          "className": "img",
+          "left": 269,
+          "right": 537
+        },
+        {
+          "tag": "IMG",
+          "className": "",
+          "left": 269,
+          "right": 537
+        },
+        {
+          "tag": "DIV",
+          "className": "body",
+          "left": 269,
+          "right": 537
+        },
+        {
+          "tag": "P",
+          "className": "name",
+          "left": 285,
+          "right": 521
+        }
+      ],
+      "failedImages": [],
+      "h1": 1,
+      "sizeSelectors": 12,
+      "priceRows": 6,
+      "gaTabs": 6,
+      "childLinks": 20,
+      "visibleFaqs": 8,
+      "pdfLinks": 1,
+      "calculatorRoot": 0
+    },
+    {
+      "requested": {
+        "width": 390,
+        "height": 844
+      },
+      "actual": {
+        "width": 390,
+        "height": 844
+      },
+      "documentWidth": 390,
+      "overflow": 0,
+      "offenders": [
+        {
+          "tag": "A",
+          "className": "saman-ymal-card",
+          "left": 331,
+          "right": 626
+        },
+        {
+          "tag": "DIV",
+          "className": "img",
+          "left": 332,
+          "right": 625
+        },
+        {
+          "tag": "IMG",
+          "className": "",
+          "left": 332,
+          "right": 625
+        },
+        {
+          "tag": "DIV",
+          "className": "body",
+          "left": 332,
+          "right": 625
+        },
+        {
+          "tag": "P",
+          "className": "name",
+          "left": 348,
+          "right": 609
+        },
+        {
+          "tag": "P",
+          "className": "for",
+          "left": 348,
+          "right": 609
+        },
+        {
+          "tag": "P",
+          "className": "cta",
+          "left": 348,
+          "right": 609
+        },
+        {
+          "tag": "A",
+          "className": "saman-ymal-card",
+          "left": 646,
+          "right": 941
+        },
+        {
+          "tag": "DIV",
+          "className": "img",
+          "left": 647,
+          "right": 940
+        },
+        {
+          "tag": "IMG",
+          "className": "",
+          "left": 647,
+          "right": 940
+        },
+        {
+          "tag": "DIV",
+          "className": "body",
+          "left": 647,
+          "right": 940
+        },
+        {
+          "tag": "P",
+          "className": "name",
+          "left": 663,
+          "right": 924
+        },
+        {
+          "tag": "P",
+          "className": "for",
+          "left": 663,
+          "right": 924
+        },
+        {
+          "tag": "P",
+          "className": "cta",
+          "left": 663,
+          "right": 924
+        },
+        {
+          "tag": "A",
+          "className": "saman-ymal-card",
+          "left": 961,
+          "right": 1256
+        },
+        {
+          "tag": "DIV",
+          "className": "img",
+          "left": 962,
+          "right": 1255
+        },
+        {
+          "tag": "IMG",
+          "className": "",
+          "left": 962,
+          "right": 1255
+        },
+        {
+          "tag": "DIV",
+          "className": "body",
+          "left": 962,
+          "right": 1255
+        },
+        {
+          "tag": "P",
+          "className": "name",
+          "left": 978,
+          "right": 1239
+        },
+        {
+          "tag": "P",
+          "className": "for",
+          "left": 978,
+          "right": 1239
+        }
+      ],
+      "failedImages": [],
+      "h1": 1,
+      "sizeSelectors": 12,
+      "priceRows": 6,
+      "gaTabs": 6,
+      "childLinks": 20,
+      "visibleFaqs": 8,
+      "pdfLinks": 1,
+      "calculatorRoot": 0
+    },
+    {
+      "requested": {
+        "width": 768,
+        "height": 1024
+      },
+      "actual": {
+        "width": 768,
+        "height": 1024
+      },
+      "documentWidth": 760,
+      "overflow": -8,
+      "offenders": [
+        {
+          "tag": "A",
+          "className": "saman-ymal-card",
+          "left": 756,
+          "right": 1102
+        },
+        {
+          "tag": "DIV",
+          "className": "img",
+          "left": 757,
+          "right": 1101
+        },
+        {
+          "tag": "IMG",
+          "className": "",
+          "left": 757,
+          "right": 1101
+        },
+        {
+          "tag": "DIV",
+          "className": "body",
+          "left": 757,
+          "right": 1101
+        },
+        {
+          "tag": "P",
+          "className": "name",
+          "left": 773,
+          "right": 1085
+        },
+        {
+          "tag": "P",
+          "className": "for",
+          "left": 773,
+          "right": 1085
+        },
+        {
+          "tag": "P",
+          "className": "cta",
+          "left": 773,
+          "right": 1085
+        },
+        {
+          "tag": "A",
+          "className": "saman-ymal-card",
+          "left": 1122,
+          "right": 1468
+        },
+        {
+          "tag": "DIV",
+          "className": "img",
+          "left": 1123,
+          "right": 1467
+        },
+        {
+          "tag": "IMG",
+          "className": "",
+          "left": 1123,
+          "right": 1467
+        },
+        {
+          "tag": "DIV",
+          "className": "body",
+          "left": 1123,
+          "right": 1467
+        },
+        {
+          "tag": "P",
+          "className": "name",
+          "left": 1139,
+          "right": 1451
+        },
+        {
+          "tag": "P",
+          "className": "for",
+          "left": 1139,
+          "right": 1451
+        },
+        {
+          "tag": "P",
+          "className": "cta",
+          "left": 1139,
+          "right": 1451
+        },
+        {
+          "tag": "A",
+          "className": "saman-ymal-card",
+          "left": 1488,
+          "right": 1834
+        },
+        {
+          "tag": "DIV",
+          "className": "img",
+          "left": 1489,
+          "right": 1833
+        },
+        {
+          "tag": "IMG",
+          "className": "",
+          "left": 1489,
+          "right": 1833
+        },
+        {
+          "tag": "DIV",
+          "className": "body",
+          "left": 1489,
+          "right": 1833
+        },
+        {
+          "tag": "P",
+          "className": "name",
+          "left": 1505,
+          "right": 1817
+        },
+        {
+          "tag": "P",
+          "className": "for",
+          "left": 1505,
+          "right": 1817
+        }
+      ],
+      "failedImages": [],
+      "h1": 1,
+      "sizeSelectors": 12,
+      "priceRows": 6,
+      "gaTabs": 6,
+      "childLinks": 20,
+      "visibleFaqs": 8,
+      "pdfLinks": 1,
+      "calculatorRoot": 0
+    },
+    {
+      "requested": {
+        "width": 1440,
+        "height": 900
+      },
+      "actual": {
+        "width": 1440,
+        "height": 900
+      },
+      "documentWidth": 1432,
+      "overflow": -8,
+      "offenders": [
+        {
+          "tag": "DIV",
+          "className": "saman-ymal-track",
+          "left": -672,
+          "right": 544
+        },
+        {
+          "tag": "A",
+          "className": "saman-ymal-card",
+          "left": -672,
+          "right": -280
+        },
+        {
+          "tag": "DIV",
+          "className": "img",
+          "left": -671,
+          "right": -281
+        },
+        {
+          "tag": "IMG",
+          "className": "",
+          "left": -671,
+          "right": -281
+        },
+        {
+          "tag": "DIV",
+          "className": "body",
+          "left": -671,
+          "right": -281
+        },
+        {
+          "tag": "P",
+          "className": "name",
+          "left": -655,
+          "right": -297
+        },
+        {
+          "tag": "P",
+          "className": "for",
+          "left": -655,
+          "right": -297
+        },
+        {
+          "tag": "P",
+          "className": "cta",
+          "left": -655,
+          "right": -297
+        },
+        {
+          "tag": "A",
+          "className": "saman-ymal-card",
+          "left": -260,
+          "right": 132
+        },
+        {
+          "tag": "DIV",
+          "className": "img",
+          "left": -259,
+          "right": 131
+        },
+        {
+          "tag": "IMG",
+          "className": "",
+          "left": -259,
+          "right": 131
+        },
+        {
+          "tag": "DIV",
+          "className": "body",
+          "left": -259,
+          "right": 131
+        },
+        {
+          "tag": "P",
+          "className": "name",
+          "left": -243,
+          "right": 115
+        },
+        {
+          "tag": "P",
+          "className": "for",
+          "left": -243,
+          "right": 115
+        },
+        {
+          "tag": "P",
+          "className": "cta",
+          "left": -243,
+          "right": 115
+        },
+        {
+          "tag": "A",
+          "className": "saman-ymal-card",
+          "left": 1388,
+          "right": 1780
+        },
+        {
+          "tag": "DIV",
+          "className": "img",
+          "left": 1389,
+          "right": 1779
+        },
+        {
+          "tag": "IMG",
+          "className": "",
+          "left": 1389,
+          "right": 1779
+        },
+        {
+          "tag": "DIV",
+          "className": "body",
+          "left": 1389,
+          "right": 1779
+        },
+        {
+          "tag": "P",
+          "className": "name",
+          "left": 1405,
+          "right": 1763
+        }
+      ],
+      "failedImages": [],
+      "h1": 1,
+      "sizeSelectors": 12,
+      "priceRows": 6,
+      "gaTabs": 6,
+      "childLinks": 20,
+      "visibleFaqs": 8,
+      "pdfLinks": 1,
+      "calculatorRoot": 0
+    }
+  ],
+  "schemaAudit": {
+    "blocks": 2,
+    "errors": [],
+    "faqPages": 1,
+    "faqQuestions": 8,
+    "products": 1,
+    "reviews": 0
+  },
+  "calculator": {
+    "rootPresent": true,
+    "enhanced": true,
+    "selectedVariantAuthority": "true",
+    "results": [
+      {
+        "size": "10x10",
+        "ex": "₹1,43,750",
+        "incl": "₹1,69,625 incl. GST",
+        "lines": [
+          "Base cabin 10×10 ft₹1,43,750",
+          "Base cabin 10×10 ft₹1,43,750"
+        ],
+        "defaultWindowPaidLines": 0
+      },
+      {
+        "size": "20x8",
+        "ex": "₹2,20,000",
+        "incl": "₹2,59,600 incl. GST",
+        "lines": [
+          "Base cabin 20×8 ft₹2,20,000",
+          "Base cabin 20×8 ft₹2,20,000"
+        ],
+        "defaultWindowPaidLines": 0
+      },
+      {
+        "size": "20x10",
+        "ex": "₹2,50,000",
+        "incl": "₹2,95,000 incl. GST",
+        "lines": [
+          "Base cabin 20×10 ft₹2,50,000",
+          "Base cabin 20×10 ft₹2,50,000"
+        ],
+        "defaultWindowPaidLines": 0
+      },
+      {
+        "size": "20x12",
+        "ex": "₹2,88,000",
+        "incl": "₹3,39,840 incl. GST",
+        "lines": [
+          "Base cabin 20×12 ft₹2,88,000",
+          "Base cabin 20×12 ft₹2,88,000"
+        ],
+        "defaultWindowPaidLines": 0
+      },
+      {
+        "size": "30x10",
+        "ex": "₹3,60,000",
+        "incl": "₹4,24,800 incl. GST",
+        "lines": [
+          "Base cabin 30×10 ft₹3,60,000",
+          "Base cabin 30×10 ft₹3,60,000"
+        ],
+        "defaultWindowPaidLines": 0
+      },
+      {
+        "size": "40x10",
+        "ex": "₹4,75,000",
+        "incl": "₹5,60,500 incl. GST",
+        "lines": [
+          "Base cabin 40×10 ft₹4,75,000",
+          "Base cabin 40×10 ft₹4,75,000"
+        ],
+        "defaultWindowPaidLines": 0
+      }
+    ],
+    "optionSeparate": {
+      "before": "₹2,50,000",
+      "afterOption": "₹2,60,000"
+    },
+    "freightText": "Transport 150 km₹27,500",
+    "formSubmissions": 0
+  },
+  "dialogAudit": {
+    "opened": true,
+    "describedBy": "radix-:r2:",
+    "description": "Tell us your Porta Cabin requirement and contact details so the SAMAN team can respond with an itemised quotation.",
+    "activeTag": "INPUT",
+    "activeText": "",
+    "focusableCount": 9,
+    "triggerCount": 7,
+    "afterTab": {
+      "tag": "INPUT",
+      "text": "",
+      "insideDialog": true
+    },
+    "afterShiftTab": {
+      "tag": "INPUT",
+      "text": "",
+      "insideDialog": true
+    },
+    "closedByEscape": true
+  },
+  "routeDialogAudits": [
+    {
+      "route": "/product/porta-cabins",
+      "trigger": true,
+      "dialog": true,
+      "describedBy": "radix-:r2:",
+      "description": "Tell us your Porta Cabin requirement and contact details so the SAMAN team can respond with an itemised quotation."
+    },
+    {
+      "route": "/product/container-offices",
+      "trigger": true,
+      "dialog": true,
+      "describedBy": "radix-:r2:",
+      "description": "Tell us your Porta Cabin requirement and contact details so the SAMAN team can respond with an itemised quotation."
+    },
+    {
+      "route": "/product/porta-cabins/ms-porta-cabin",
+      "trigger": true,
+      "dialog": true,
+      "describedBy": "radix-:r2:",
+      "description": "Tell us your Porta Cabin requirement and contact details so the SAMAN team can respond with an itemised quotation."
+    },
+    {
+      "route": "/contact",
+      "trigger": true,
+      "dialog": true,
+      "describedBy": "radix-:r2:",
+      "description": "Tell us your Porta Cabin requirement and contact details so the SAMAN team can respond with an itemised quotation."
+    }
+  ],
+  "networkFailures": [],
+  "httpErrors": [],
+  "consoleEntries": [],
+  "exceptions": []
+}

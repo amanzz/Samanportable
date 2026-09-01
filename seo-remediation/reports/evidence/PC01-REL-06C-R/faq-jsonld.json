@@ -1,0 +1,72 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://www.samanportable.com/product/porta-cabins#faq",
+  "url": "https://www.samanportable.com/product/porta-cabins",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does a porta cabin cost per square foot?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The published band runs from ₹1,187.50 to ₹1,437.50 per sq ft ex-GST, depending on size. The 20x10 ft cabin at 200 sq ft works out to ₹1,250 per sq ft. Compare the published price for each standard size in the table and request an itemised quotation for the configuration you need."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What sizes does a porta cabin come in?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Six published sizes: 10x10, 20x8, 20x10, 20x12, 30x10 and 40x10 ft, all 8.5 ft high. Send your requirement with your enquiry if none of the six matches your footprint."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can a porta cabin be installed on a terrace or rooftop?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Rooftop or terrace placement depends on the building. Ask your structural engineer to confirm that the slab can carry the cabin at the planned position, and check that there is lifting access to roof level. Share the building height, slab details and access photos with your enquiry."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need a foundation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The base is set by the project engineering approved for your order, and any base work is outside the published price. Share your site conditions with your enquiry so the base requirement can be confirmed for your location."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does delivery take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Standard delivery takes 7–21 working days from confirmed order, plus transit. Your quotation confirms the schedule that applies to your order."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is GST included in the published prices?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Prices are shown ex-GST with the 18% inclusive figure alongside, under HSN 9406 for prefabricated buildings."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does a porta cabin last?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Service life depends on use, siting and maintenance. Warranty period and exclusions are confirmed in the final quotation for your order."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I customise the layout?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Partitions, furniture, AC provision, colours and openings follow the drawing approved with your order. Send your requirement with your enquiry and it will be quoted against that drawing."
+      }
+    }
+  ]
+}
