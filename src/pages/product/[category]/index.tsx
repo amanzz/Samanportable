@@ -35,7 +35,11 @@ import Head from 'next/head';
 import dynamic from 'next/dynamic';
 import { cleanText } from '../../../lib/merchantFeed';
 import { getNavigableProductPath } from '../../../lib/productCanonicalPaths';
-import { sanitizeC08RelatedProductSummary, toRelatedProductSummary } from '../../../lib/relatedProductSummary';
+import {
+  sanitizeC08RelatedProductSummary,
+  sanitizePortableOfficeFamilyRelatedProductSummary,
+  toRelatedProductSummary,
+} from '../../../lib/relatedProductSummary';
 import { makeCalculatorPageUrl, resolveEmbeddedCalculatorProduct } from '../../../lib/cabinCalculatorEmbedRoutes';
 import { CLOSED_STATE } from '../../../lib/calculatorCopy';
 import { getC16PanelSiblingRail, isC16PanelSlug, type RelatedRailItem } from '../../../lib/c16PanelCatalog';
@@ -237,6 +241,9 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
     if (category === 'container-houses') {
       relatedProducts = relatedProducts.map(sanitizeC08RelatedProductSummary);
     }
+    if (category === 'portable-office') {
+      relatedProducts = relatedProducts.map(sanitizePortableOfficeFamilyRelatedProductSummary);
+    }
 
     // Fetch full description and images separately
     const descriptionData = await staticContent.fetchProductDescription(category);
@@ -314,6 +321,7 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
           .then((mod: { default?: VariantProductData }) => mod.default || null)
           .catch(() => null)
       : null;
+    if (variantData?.suppressReviewClaims) reviews = [];
     const variantImages = variantData?.variants.flatMap((variant) => variant.images || []) || [];
     const defaultVariantHero = variantData
       ? variantData.variants.find((variant) => variant.sizeSlug === variantData.defaultVariant)?.images?.[0]
@@ -369,6 +377,10 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
       }
       if (variantData.productSku) productForPageProps.sku = variantData.productSku;
       else if (variantData.suppressLegacySku) delete productForPageProps.sku;
+      if (variantData.suppressReviewClaims) {
+        productForPageProps.average_rating = '0';
+        productForPageProps.rating_count = 0;
+      }
       if (defaultVariantHero) productForPageProps.featured_image = defaultVariantHero.src;
     }
 
@@ -421,8 +433,8 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
           // cluster (null for every other product → the existing overrides/defaults
           // apply unchanged). The flagship page slug `porta-cabins` maps to the
           // `porta-cabin` dataset key inside getProductTabsHtml.
-          specificationsHtml: t31Tabs?.specificationsHtml || descriptionData?.specificationsHtml || '',
-          shippingHtml: t31Tabs?.shippingHtml || descriptionData?.shippingHtml || '',
+          specificationsHtml: variantData?.specificationsHtml || t31Tabs?.specificationsHtml || descriptionData?.specificationsHtml || '',
+          shippingHtml: variantData?.shippingHtml || t31Tabs?.shippingHtml || descriptionData?.shippingHtml || '',
           images: (variantImages.length ? variantImages : descriptionData?.images || []).map((img, index) => ({
             id: index,
             src: img.src,
@@ -618,6 +630,9 @@ const ProductDetails = ({
     if (category === 'porta-cabins') {
       return PORTA_CABIN_HUB_RAIL;
     }
+    if (category === 'portable-office' && variantData?.relatedTiles?.length) {
+      return variantData.relatedTiles;
+    }
     // LC-07 fix v3 (17 Aug 2026) - SAMAN ruling: the Explore the Range panel
     // shows the current page's own cluster and nothing else. Same derived
     // rail as every labor-colony subpage in [slug].tsx; the hub's own tile
@@ -634,7 +649,7 @@ const ProductDetails = ({
       imageSrc: relatedProduct.image && relatedProduct.image !== '/placeholder.svg' ? relatedProduct.image : undefined,
       imageAlt: relatedProduct.title,
     }));
-  }, [category, transformedProduct?.slug, transformedRelatedProducts]);
+  }, [category, transformedProduct?.slug, transformedRelatedProducts, variantData?.relatedTiles]);
 
   const legacyEmbeddedCalculatorMapping = useMemo(
     () => deferredCalculator ? null : resolveEmbeddedCalculatorProduct(category),
@@ -655,7 +670,7 @@ const ProductDetails = ({
   }
 
   return (
-    <Layout>
+    <Layout primaryFooterPhonesOnly={category === 'portable-office'}>
       {!transformedProduct ? (
         <div className="min-h-screen flex items-center justify-center">
           <div className="text-center">
@@ -688,7 +703,7 @@ const ProductDetails = ({
               Review JSON-LD is emitted ONLY for the same real approved reviews
               that are rendered in the Customer Reviews section below. */}
           {!isTemporarilyGated && (
-            <ProductStructuredData product={product} category={category} reviews={reviews} breadcrumbItems={crumbsToJsonLd(breadcrumbCrumbs)} variantData={variantData || undefined} metaDescription={rankMathSEO?.description} />
+            <ProductStructuredData product={product} category={category} reviews={reviews} breadcrumbItems={crumbsToJsonLd(breadcrumbCrumbs)} variantData={variantData || undefined} suppressSchemaAvailability={variantData?.suppressSchemaAvailability} metaDescription={rankMathSEO?.description} />
           )}
 
           {/* FAQ Structured Data: the approved variant dataset owns its rendered
@@ -736,9 +751,9 @@ const ProductDetails = ({
                   // CO-00 (21 Aug 2026) — container-offices was missed at build time
                   // and shipped with the plain grid selector instead of the reference's
                   // premium chip selector, a visible design-lock deviation. Added here.
-                  showSectionDividers={category === 'porta-cabins' || category === 'labor-colony' || category === 'container-offices'}
+                  showSectionDividers={category === 'porta-cabins' || category === 'labor-colony' || category === 'container-offices' || category === 'portable-office'}
                   // R3 (14 Aug 2026) — same hub-only scoping as the dividers.
-                  usePremiumSizeTabs={category === 'porta-cabins' || category === 'labor-colony' || category === 'container-offices'}
+                  usePremiumSizeTabs={category === 'porta-cabins' || category === 'labor-colony' || category === 'container-offices' || category === 'portable-office'}
                   // LC-00 R1 (16 Aug 2026) — the premium branch shows sizeEyebrowText
                   // (falling back to the porta-cabins hub's own em-dash sentence when
                   // absent), not the plain branch's hardcoded "Choose size". R1 asks
@@ -748,7 +763,7 @@ const ProductDetails = ({
                   // applies to container-offices: the em-dash fallback would violate
                   // the no-em-dash rule, so the existing plain label is reused rather
                   // than inventing new eyebrow copy.
-                  sizeEyebrowText={category === 'labor-colony' || category === 'container-offices' ? 'Choose size' : undefined}
+                  sizeEyebrowText={category === 'labor-colony' || category === 'container-offices' || category === 'portable-office' ? 'Choose size' : undefined}
                   // CO-00 (19 Aug 2026) — data-driven, same forwarding pattern as
                   // suppressLegacyFaqSchema above. Absent/false on every other
                   // product's variantData → no id emitted, byte-identical elsewhere.
@@ -1036,7 +1051,7 @@ const ProductDetails = ({
                   production entry band, which is the calculator's entry point.
                   Hub page only. LC-00 R2 (16 Aug 2026) — labor-colony opts into the
                   identical treatment, so all four dividers match porta-cabins. */}
-              {(category === 'porta-cabins' || category === 'labor-colony') && (deferredCalculator || legacyEmbeddedCalculatorMapping) && (
+              {(category === 'porta-cabins' || category === 'labor-colony' || category === 'portable-office') && (deferredCalculator || legacyEmbeddedCalculatorMapping) && (
                 <hr className="saman-section-divider" aria-hidden="true" />
               )}
 
@@ -1058,6 +1073,7 @@ const ProductDetails = ({
                   category={category}
                   mapping={legacyEmbeddedCalculatorMapping}
                   productName={product.name}
+                  quoteFreightOutsideFreeZones={category === 'portable-office'}
                 />
               )}
 
@@ -1066,6 +1082,9 @@ const ProductDetails = ({
               {category === 'porta-cabins' && (
                 <PortaCabinsYouMayAlsoLike items={PORTA_CABIN_HUB_RAIL} />
               )}
+              {category === 'portable-office' && variantData?.ymalTiles?.length && (
+                <PortaCabinsYouMayAlsoLike items={variantData.ymalTiles} subline={null} />
+              )}
 
               {/* PC-00 (14 Aug 2026) — divider 4, now between the "You may also
                   like" grid and Section 5 (Product Details tabs). Hub page only.
@@ -1073,7 +1092,7 @@ const ProductDetails = ({
                   grid of its own (out of scope for this revision), so this divider
                   sits directly between the calculator and the tabs instead; still
                   the same top-level section boundary the prop is meant to mark. */}
-              {(category === 'porta-cabins' || category === 'labor-colony') && (
+              {(category === 'porta-cabins' || category === 'labor-colony' || category === 'portable-office') && (
                 <hr className="saman-section-divider" aria-hidden="true" />
               )}
 

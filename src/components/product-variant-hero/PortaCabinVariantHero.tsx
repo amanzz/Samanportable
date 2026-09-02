@@ -523,18 +523,6 @@ export const PORTABLE_OFFICE_LINK_MODULES: Record<string, InternalLinkModule> = 
         after: ' bolt together from panel modules.',
       },
       {
-        before: 'When the budget favours a rebuilt shell, a ',
-        anchor: 'portable office container',
-        href: '/product/portable-office/portable-office-container',
-        after: ' reuses a shipping container and is supplied as new.',
-      },
-      {
-        before: 'For a front-of-house position that has to look the part, the ',
-        anchor: 'modern office cabin',
-        href: '/product/portable-office/modern-office-cabin',
-        after: ' carries wide glazing and a flush finish.',
-      },
-      {
         before: 'Where the site has room for only a hundred or two hundred square feet, the ',
         anchor: 'small office cabin',
         href: '/product/portable-office/small-office-cabin',
@@ -547,7 +535,7 @@ export const PORTABLE_OFFICE_LINK_MODULES: Record<string, InternalLinkModule> = 
     rows: [
       {
         before: 'See how this size sits against the rest when you ',
-        anchor: 'compare all nine portable office sizes',
+        anchor: 'compare all six portable office sizes',
         href: '/product/portable-office',
         after: '.',
       },
@@ -556,12 +544,6 @@ export const PORTABLE_OFFICE_LINK_MODULES: Record<string, InternalLinkModule> = 
         anchor: 'bolted panel construction',
         href: '/product/portable-office/prefabricated-office-cabins',
         after: ' does that instead.',
-      },
-      {
-        before: 'Where a reused shell is acceptable, ',
-        anchor: 'offices rebuilt from shipping containers',
-        href: '/product/portable-office/portable-office-container',
-        after: ' cost less for the same footprint.',
       },
       {
         before: 'If a hundred to two hundred square feet is all the site allows, ',
@@ -819,15 +801,16 @@ export function PortaCabinVariantHero({
   const productNameLower = productName.toLowerCase();
   const categoryLabel = data.categoryLabel || preset.categoryLabel;
   const categoryLinkHref = data.categoryHref || preset.categoryHref;
-  const productSku = data.productSku || preset.productSku;
+  const productSku = data.suppressLegacySku ? undefined : data.productSku || preset.productSku;
   const specPdfHref = data.specPdfHref || preset.specPdfHref;
   const hasRightToExist = hasRightToExistEntry(data.productSlug);
   const isC04Product = C04_PRODUCT_SLUGS.has(data.productSlug);
   const isC08Product = C08_PRODUCT_SLUGS.has(data.productSlug);
-  const trustStripText =
+  const trustStripText = data.trustStripText || (
     isC04Product || isC08Product
       ? ['GST registered', 'ISO 9001:2015 certified manufacturer', data.trustWarranty, 'Pan-India delivery'].filter(Boolean).join(' · ')
-      : 'GST registered · ISO 9001:2015 certified manufacturer · 5-year structural and 1-year finishing warranty · Pan-India delivery';
+      : 'GST registered · ISO 9001:2015 certified manufacturer · 5-year structural and 1-year finishing warranty · Pan-India delivery'
+  );
   // Video: null unless the product opted in AND supplied metadata (T25 §4).
   const video = resolveVariantVideo(data);
   // Explorer copy: resolved by dataset key. undefined => the Explorer section is
@@ -1348,12 +1331,14 @@ export function PortaCabinVariantHero({
         )}
 
         {/* Green chips line (verbatim, from the approved short-description footer). */}
+        {!data.hideHeroProofRow && (
         <div className="flex items-center gap-2 rounded-md bg-[var(--ds-color-mist)] px-3 py-2">
           <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--ds-color-leaf)]" aria-hidden="true" />
           <p className="text-xs text-[var(--ds-color-ink)]">
             Custom sizes available · <strong className="text-[var(--ds-color-forest)]">500+ projects delivered</strong> · Factory-tested before dispatch
           </p>
         </div>
+        )}
 
         {/* Product Information (owner ruling: mandatory on every product page) —
             static, not per-variant. Verbatim SKU + category anchor. Fills the

@@ -1214,28 +1214,28 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
     },
   },
   'portable-office': {
-    heading: 'Why the range page and not a single cabin',
+    heading: 'Why use the Portable Office range page',
     body: (
       <>
-        This page carries the whole portable office cabin range so a buyer can compare nine sizes on one screen before choosing a configuration. Every unit here is newly fabricated on an MS frame in Bengaluru or Greater Noida, insulated, fitted and tested before dispatch, and delivered in 7 to 21 working days. Pick the size first on this page, then the configuration on the page that matches how you buy.
+        This broad commercial hub compares six regularly stocked Portable Office Cabin sizes on one screen. Each published size uses the approved MS structural frame and insulated office specification, with a written quotation within 48 hours and delivery in 7 to 21 working days.
       </>
     ),
     comparison: (
       <>
-        Need it from ready stock rather than built to order? The Readymade Office Cabin dispatches from the floor.
+        Choose the footprint here. Use the Readymade Office Cabin page when the approved fixed inclusion list is the deciding requirement.
       </>
     ),
   },
   'readymade-office-cabin': {
-    heading: 'Why choose Readymade over building to order',
+    heading: 'Why choose the Readymade Office Cabin',
     body: (
       <>
-        Every cabin on this page carries one fixed inclusion list, which is what allows us to finish units before anyone orders them rather than after. Sizes we are holding dispatch within 1 to 2 working days of advance; the rest are built to that same list on a 7 to 21 working day lead time. Choose this when the date matters more than the specification.
+        Every published size on this specialist page uses one approved fixed inclusion list. That makes the specification easy to compare without implying stock or dispatch-from-stock availability. Availability is confirmed in the written quotation, and delivery is 7 to 21 working days.
       </>
     ),
     comparison: (
       <>
-        Want a specified finish instead of a fixed one? The Modern Office Cabin is drawn to your brief, not held on the floor.
+        Use the Portable Office hub when you want to compare the broader commercial range before selecting a fixed specification.
       </>
     ),
   },

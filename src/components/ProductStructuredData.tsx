@@ -204,6 +204,7 @@ export default function ProductStructuredData({ product, category, reviews, brea
               url: `${productUrl}#size-${variant.sizeSlug}`,
               priceCurrency: 'INR',
               price: variant.priceExGst,
+              ...(schemaAvailability ? { availability: schemaAvailability } : {}),
               itemCondition: schemaItemCondition,
               priceSpecification: {
                 '@type': 'PriceSpecification',

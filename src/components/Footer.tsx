@@ -88,12 +88,15 @@ interface FooterProps {
       strip stays byte-identical everywhere else. */
   hideResourceStrip?: boolean;
   companyDescription?: string;
+  /** Page-scoped contact policy: show only the approved primary zonal numbers. */
+  primaryPhonesOnly?: boolean;
 }
 
 const Footer = ({
   homepageNeutrality = false,
   hideResourceStrip = false,
   companyDescription = 'Saman Portable offers durable, modular, and maintenance-free buildings, designed with high-quality materials for reliability and long-term performance.',
+  primaryPhonesOnly = false,
 }: FooterProps) => {
   const resourceLinks = (homepageNeutrality ? HOMEPAGE_POPULAR_RESOURCE_LINKS : MONEY_STRIP_LINKS)
     .filter((link) => !isTemporarilyGatedCommercialPath(link.href));
@@ -267,12 +270,12 @@ const Footer = ({
                   +91 88616 22859
                 </a>
               </div>
-              <div className="flex items-center space-x-2.5">
+              {!primaryPhonesOnly && <div className="flex items-center space-x-2.5">
                 <Phone className="w-5 h-5 text-white flex-shrink-0" />
                 <a href="tel:+918088685440" className="text-zinc-200 text-sm font-medium whitespace-nowrap hover:text-green-300 transition-colors duration-200">
                   +91 80886 85440
                 </a>
-              </div>
+              </div>}
               <div className="flex items-center space-x-2.5">
                 <Mail className="w-5 h-5 text-white flex-shrink-0" />
                 <a href="mailto:sales@samanportable.com" className="text-zinc-200 text-sm font-medium whitespace-nowrap hover:text-green-300 transition-colors duration-200">
@@ -312,12 +315,12 @@ const Footer = ({
                   +91 8796039938
                 </a>
               </div>
-              <div className="flex items-center space-x-2.5">
+              {!primaryPhonesOnly && <div className="flex items-center space-x-2.5">
                 <Phone className="w-5 h-5 text-white flex-shrink-0" />
                 <a href="tel:+919708989937" className="text-zinc-200 text-sm font-medium whitespace-nowrap hover:text-green-300 transition-colors duration-200">
                   +91 9708989937
                 </a>
-              </div>
+              </div>}
               <div className="flex items-center space-x-2.5">
                 <Mail className="w-5 h-5 text-white flex-shrink-0" />
                 <a href="mailto:ncr@samanportable.com" className="text-zinc-200 text-sm font-medium whitespace-nowrap hover:text-green-300 transition-colors duration-200">

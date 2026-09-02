@@ -929,6 +929,9 @@
     let transportNote = '';
     if (deliveryZone === 'Bangalore city' || deliveryZone === 'Delhi NCR') transportNote = 'Free delivery zone';
     else if (distance > 0 && distance < 100) transportNote = 'Under 100 km: confirmed at quotation';
+    else if (deliveryZone === 'Other' && root.dataset.quoteFreightOutsideFreeZones === 'true') {
+      transportNote = 'Quoted separately';
+    }
     else if (deliveryZone === 'Other' && distance >= 100) {
       const bands = (root.dataset.freightBands || '').split(',').map(Number).filter(Number.isFinite);
       const band = Math.min(bands.length - 1, Math.max(0, Math.ceil((distance - 100) / 50) - 1));

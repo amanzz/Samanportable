@@ -618,8 +618,8 @@
       "product": "Portable Office Cabin",
       "cluster": "Portable Office",
       "referenceSize": "20x10x8.5 ft",
-      "fullTechnicalDescription": "Factory-built MS portable office cabin supplied as one complete unit across nine standard sizes from 10x10 to 40x12 ft. The structural frame, cladding, insulation, flooring and electrical package are all fitted and tested before dispatch, so the cabin is placed, connected and occupied without site fabrication.",
-      "commonPlatformSummary": "Common platform: MS structural frame with insulated panel construction, factory-fitted electricals, and dispatch from Bengaluru or Greater Noida in 7 to 21 working days. Newly fabricated, not a converted shipping container.",
+      "fullTechnicalDescription": "Factory-built MS Portable Office Cabin supplied as one complete unit across six standard sizes from 10x10 to 40x10 ft, all at an approved 8.5 ft height. The detailed structural frame, cladding, insulation, flooring and electrical package follow the approved current specification.",
+      "commonPlatformSummary": "Common platform: MS structural frame with insulated office construction, factory-fitted electricals, quotation within 48 hours, and delivery in 7 to 21 working days.",
       "groups": {
         "Steel Structure": {
           "Bottom frame": "100×50×3 mm MS C-channel primary base frame, ISI-standard or approved equivalent, fabricated as the load-bearing chassis.",
@@ -652,10 +652,10 @@
           "Electrical fittings": "Porta Cabin electrical package adapted to the approved office load schedule with workstation sockets, data/UPS routes, lighting, fan points and AC provision; circuit quantities are quotation-controlled.",
           "Ventilation / AC": "Cross-ventilation and office-comfort provision coordinated to occupancy, glazing and AC selection without changing the underlying Porta Cabin construction.",
           "Plumbing / sanitary": "Not included unless shown in the approved scope.",
-          "Layout / configuration": "Range-selector configuration on the shared porta cabin platform: this page compares the ready-made, modern, small, prefabricated and container-form office builds so a buyer lands on the right subpage; final workstation count, partitions and circulation follow the approved office plan.",
+          "Layout / configuration": "Six-size Portable Office Cabin range on the approved shared structural platform; final workstation positions, partitions and circulation follow the written quotation.",
           "Painting / coating": "One red-oxide primer coat followed by two compatible anti-rust enamel coats on prepared MS surfaces; project exposure may require an upgraded coating system.",
           "Quality checks": "Pre-dispatch checks cover dimensions, member and sheet identification, welds, coating, roof drainage, weather sealing, doors, windows, electrical continuity and functional operation.",
-          "Warranty": "Warranty period and exclusions are confirmed only in the final quotation; relocation damage, misuse, site services and unapproved alterations remain outside the agreed scope unless stated otherwise."
+          "Warranty": "Five-year structural warranty and one-year finishing warranty, subject to the written warranty and quotation terms."
         }
       }
     },
@@ -663,16 +663,16 @@
       "product": "Readymade Office Cabin",
       "cluster": "Portable Office",
       "referenceSize": "20x10x8.5 ft",
-      "fullTechnicalDescription": "Factory-finished office cabin built to one fixed inclusion list, which is what allows units to be completed before they are ordered. Lighting circuits, fan outlets, socket pairs and the switchboard are positioned and commissioned in the factory, identically on every unit, so a cabin held in stock is ready to hand over on arrival.",
-      "commonPlatformSummary": "Common platform: MS structural frame with insulated panel construction, factory-fitted electricals, and dispatch from Bengaluru or Greater Noida in 7 to 21 working days. Newly fabricated, not a converted shipping container.",
+      "fullTechnicalDescription": "Factory-finished Readymade Office Cabin built to one approved fixed inclusion list across six published sizes. Lighting circuits, fan outlets, socket pairs and the switchboard are positioned and tested in the factory. Availability is confirmed with the written quotation.",
+      "commonPlatformSummary": "Common platform: MS structural frame with insulated office construction, factory-fitted electricals, quotation within 48 hours, and delivery in 7 to 21 working days.",
       "groups": {
         "Steel Structure": {
-          "Bottom frame": "100×50×3 mm MS C-channel primary base frame held to the fixed stock drawing, so fabrication starts without a design cycle",
-          "Bottom stiffeners": "100×50 mm C-channels with 50×50 mm MS angles on the pre-set stock grid used for every ready-made unit",
+          "Bottom frame": "100×50×3 mm MS C-channel primary base frame fabricated to the approved fixed drawing.",
+          "Bottom stiffeners": "100×50 mm C-channels with 50×50 mm MS angles on the approved fixed grid.",
           "Floor frame": "MS base and cross-member grid supporting an 18 mm Bison/cement-fibre floor board fixed with approved self-tapping fasteners; spacing follows the final drawing and design load.",
-          "Top frame": "50×50×1.6 mm MS square-pipe top perimeter frame to the fixed stock drawing",
-          "Roof stiffeners": "50×50×1.2 mm MS square-pipe roof stiffeners at the pre-set stock spacing",
-          "Corner posts / walls": "50×50×2 mm MS square-pipe corner and wall posts in the fixed stock positions",
+          "Top frame": "50×50×1.6 mm MS square-pipe top perimeter frame to the approved fixed drawing.",
+          "Roof stiffeners": "50×50×1.2 mm MS square-pipe roof stiffeners at the approved fixed spacing.",
+          "Corner posts / walls": "50×50×2 mm MS square-pipe corner and wall posts in the approved fixed positions.",
           "Lifting / handling": "Designed MS lifting hooks or lugs matched to the completed unit weight; handle only by the approved lifting and support-point drawing.",
           "Welding & fabrication": "Welded MS fabrication with cleaned joints, safe edges, dimensional inspection and coating touch-up before panel closure and dispatch."
         },
@@ -683,24 +683,24 @@
           "Ceiling": "8 mm pre-laminated MDF ceiling",
           "Floor base": "18 mm Bison panel",
           "Floor finish": "1.3 mm vinyl flooring",
-          "Wall insulation": "12 mm heatlon held as the fixed stock insulation for every ready-made unit",
+          "Wall insulation": "12 mm heatlon in the approved fixed inclusion list.",
           "Roof insulation": "50 mm glass wool, nominal density 42 kg/m³",
-          "Decorative / external finish": "Standard anti-rust enamel in the current stock colour card, applied before the unit enters ready stock",
+          "Decorative / external finish": "Standard anti-rust enamel exterior finish in an approved colour combination.",
           "Fasteners & sealing": "Security grill, insect mesh, guard, louver or protection selected only where the approved use and opening schedule requires it."
         },
         "Doors, Windows, Electrical & Services": {
-          "Main door / service door": "7×3 ft externally opening MS-framed door, 30×30 mm MS tubular section, hung in the fixed stock position",
-          "Windows / service opening": "Two-track powder-coated aluminium sliding windows with 4 mm glass in the predictable pre-cut openings of the stock drawing",
+          "Main door / service door": "7×3 ft externally opening MS-framed door using 30×30 mm MS tubular sections in the approved fixed position.",
+          "Windows / service opening": "Two-track powder-coated aluminium sliding windows with 4 mm glass in the approved fixed openings.",
           "Grills / mosquito mesh": "Security grill, insect mesh, guard, louver or protection selected only where the approved use and opening schedule requires it.",
           "Electrical wiring": "Concealed PVC-insulated copper wiring, typically 1.5 sq.mm lighting, 2.5 sq.mm sockets and 4 sq.mm higher-load or AC circuits, subject to the final load schedule.",
           "Electrical protection": "Distribution board with MCB/RCCB protection, earthing and segregation of lighting, socket, wet-area and AC circuits according to the approved electrical drawing.",
-          "Electrical fittings": "Preplanned electrical points from the fixed inclusion list, terminated and tested before dispatch",
-          "Ventilation / AC": "Cross-ventilation and AC provision built to the stock layout so the unit connects and runs on arrival",
+          "Electrical fittings": "Preplanned electrical points from the approved fixed inclusion list, terminated and tested in the factory.",
+          "Ventilation / AC": "Cross-ventilation and AC provision coordinated to the approved fixed layout.",
           "Plumbing / sanitary": "Not included unless shown in the approved scope.",
-          "Layout / configuration": "Ready-stock configuration: a fixed inclusion list, predictable openings and preplanned electrical points; the unit dispatches from stock without a drawing cycle and customisation is limited to the approved options list.",
+          "Layout / configuration": "Approved fixed-inclusion configuration with predictable openings and preplanned electrical points; other requirements are reviewed and priced separately in the written quotation.",
           "Painting / coating": "One red-oxide primer coat followed by two compatible anti-rust enamel coats on prepared MS surfaces; project exposure may require an upgraded coating system.",
           "Quality checks": "Pre-dispatch checks cover dimensions, member and sheet identification, welds, coating, roof drainage, weather sealing, doors, windows, electrical continuity and functional operation.",
-          "Warranty": "Warranty period and exclusions are confirmed only in the final quotation; relocation damage, misuse, site services and unapproved alterations remain outside the agreed scope unless stated otherwise."
+          "Warranty": "Five-year structural warranty and one-year finishing warranty, subject to the written warranty and quotation terms."
         }
       }
     },
