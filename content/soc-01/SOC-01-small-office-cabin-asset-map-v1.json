@@ -1,0 +1,221 @@
+{
+ "page": "small-office-cabin",
+ "package_root": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\small-office-cabin\\approved-website-assets-v3",
+ "output_root": "public/images/products/small-office-cabin",
+ "rules": {
+  "never_ship_source_png": true,
+  "webp_size_band_kb": [
+   80,
+   120
+  ],
+  "gallery": {
+   "width_px": 1254,
+   "quality_start": 86,
+   "ratio": "1:1",
+   "crop": "none"
+  },
+  "ga_board": {
+   "width_px": 1800,
+   "quality_start": 88,
+   "ratio": "16:9",
+   "crop": "NEVER - downscale proportionally only; dimension text must stay legible"
+  },
+  "section2_card": {
+   "width_px": 1600,
+   "quality_start": 90,
+   "ratio": "16:9",
+   "crop": "none (source is native 16:9)"
+  },
+  "spec_diagram": {
+   "width_px": 1600,
+   "quality_start": 90,
+   "crop": "none"
+  },
+  "loading": "six images of the selected size eager with fetchpriority=high on slide 1 only; other sizes lazy; explicit width/height everywhere; preload link for slide 1 of the default size (10x10) with the same srcset; GA boards lazy",
+  "measure_every_output": "report width, height, KB for every file; anything outside 80-120 KB is re-encoded (adjust quality, then width) and re-measured"
+ },
+ "keep_as_is": {
+  "note": "SAMAN ruling 4 Sep 2026: the three live size galleries are untouched - same files, same encoding, same URLs, no re-crop, no rename, no re-export. Clarified 4 Sep 2026 by Claude: 'untouched' governs the FILES, not the slot count. Five of these six files are live gallery slides today and keep their live alt text. The sixth, <size>-hero-view.webp, is live today as the Section 3 explorer image; Step 4 replaces that slot with the GA board, so hero-view moves into the gallery as slide 3 to give six slides per size as the design lock requires. Its alt text comes from copy.alt_text.gallery_retained.",
+  "10x10": [
+   "small-office-cabin-10x10-front-angle.webp",
+   "small-office-cabin-10x10-side-elevation.webp",
+   "small-office-cabin-10x10-hero-view.webp",
+   "small-office-cabin-10x10-workspace-interior.webp",
+   "small-office-cabin-10x10-entrance-interior.webp",
+   "small-office-cabin-10x10-rear-interior.webp"
+  ],
+  "20x8": [
+   "small-office-cabin-20x8-front-angle.webp",
+   "small-office-cabin-20x8-side-elevation.webp",
+   "small-office-cabin-20x8-hero-view.webp",
+   "small-office-cabin-20x8-workspace-interior.webp",
+   "small-office-cabin-20x8-entrance-interior.webp",
+   "small-office-cabin-20x8-rear-interior.webp"
+  ],
+  "20x10": [
+   "small-office-cabin-20x10-front-angle.webp",
+   "small-office-cabin-20x10-side-elevation.webp",
+   "small-office-cabin-20x10-hero-view.webp",
+   "small-office-cabin-20x10-workspace-interior.webp",
+   "small-office-cabin-20x10-entrance-interior.webp",
+   "small-office-cabin-20x10-rear-interior.webp"
+  ],
+  "verify": "confirm from the repo product JSON that each retained size lists five gallery images and that <size>-hero-view.webp is the explorerImageTemplate source; if any of the eighteen files above is missing from the repo, stop and report - do not substitute",
+  "slide_3_is_hero_view": true,
+  "alt_text_source": "slides 1, 2, 4, 5, 6 = the alt text already live on the page, carried across unchanged; slide 3 (<size>-hero-view.webp) = copy JSON -> alt_text.gallery_retained keyed by file name"
+ },
+ "gallery_new": {
+  "8x6": {
+   "running_order_note": "03 leads because it matches the GA (window on End C, door on Wall A); 01 shows a window on the door wall and is flagged for regeneration but is used as supplied per SAMAN's instruction",
+   "slides": [
+    {
+     "src": "02-square-product-images/size-8x6/03-small-office-cabin-8x6-end.png",
+     "out": "8x6/small-office-cabin-8x6-end-view-window-end-wall-door-long-wall.webp"
+    },
+    {
+     "src": "02-square-product-images/size-8x6/02-small-office-cabin-8x6-rear.png",
+     "out": "8x6/small-office-cabin-8x6-rear-solid-wall-one-way-roof.webp"
+    },
+    {
+     "src": "02-square-product-images/size-8x6/01-small-office-cabin-8x6-front.png",
+     "out": "8x6/small-office-cabin-8x6-front-door-wall.webp"
+    },
+    {
+     "src": "02-square-product-images/size-8x6/04-small-office-8x6-entry-interior.png",
+     "out": "8x6/small-office-cabin-8x6-interior-from-door-desk-window.webp"
+    },
+    {
+     "src": "02-square-product-images/size-8x6/05-small-office-8x6-reverse-interior.png",
+     "out": "8x6/small-office-cabin-8x6-interior-towards-door.webp"
+    },
+    {
+     "src": "02-square-product-images/size-8x6/06-small-office-8x6-workstation-interior.png",
+     "out": "8x6/small-office-cabin-8x6-interior-workstation-corner.webp"
+    }
+   ]
+  },
+  "10x8": {
+   "slides": [
+    {
+     "src": "02-square-product-images/size-10x8/01-small-office-cabin-10x8-front.png",
+     "out": "10x8/small-office-cabin-10x8-front-door-end-window.webp"
+    },
+    {
+     "src": "02-square-product-images/size-10x8/03-small-office-cabin-10x8-end.png",
+     "out": "10x8/small-office-cabin-10x8-end-view-yard.webp"
+    },
+    {
+     "src": "02-square-product-images/size-10x8/02-small-office-cabin-10x8-rear.png",
+     "out": "10x8/small-office-cabin-10x8-rear-two-windows.webp"
+    },
+    {
+     "src": "02-square-product-images/size-10x8/04-small-office-10x8-entry-interior.png",
+     "out": "10x8/small-office-cabin-10x8-interior-four-desks.webp"
+    },
+    {
+     "src": "02-square-product-images/size-10x8/05-small-office-10x8-reverse-interior.png",
+     "out": "10x8/small-office-cabin-10x8-interior-towards-door.webp"
+    },
+    {
+     "src": "02-square-product-images/size-10x8/06-small-office-10x8-workstation-interior.png",
+     "out": "10x8/small-office-cabin-10x8-interior-desk-row.webp"
+    }
+   ]
+  },
+  "20x12": {
+   "slides": [
+    {
+     "src": "02-square-product-images/size-20x12/01-small-office-cabin-20x12-front.png",
+     "out": "20x12/small-office-cabin-20x12-front-window-door-window.webp"
+    },
+    {
+     "src": "02-square-product-images/size-20x12/02-small-office-cabin-20x12-rear.png",
+     "out": "20x12/small-office-cabin-20x12-rear-two-windows-end-window.webp"
+    },
+    {
+     "src": "02-square-product-images/size-20x12/03-small-office-cabin-20x12-end.png",
+     "out": "20x12/small-office-cabin-20x12-end-view-gable.webp"
+    },
+    {
+     "src": "02-square-product-images/size-20x12/04-small-office-20x12-entry-interior.png",
+     "out": "20x12/small-office-cabin-20x12-interior-desk-row-walkway.webp"
+    },
+    {
+     "src": "02-square-product-images/size-20x12/05-small-office-20x12-reverse-interior.png",
+     "out": "20x12/small-office-cabin-20x12-interior-towards-door.webp"
+    },
+    {
+     "src": "02-square-product-images/size-20x12/06-small-office-20x12-workstation-interior.png",
+     "out": "20x12/small-office-cabin-20x12-interior-back-wall-desks.webp"
+    }
+   ]
+  },
+  "alt_text_source": "SOC-01-small-office-cabin-copy-v1.json -> alt_text.gallery_new keyed by output file name"
+ },
+ "ga_boards": {
+  "slot": "Section 3 left column, one per size, lazy",
+  "files": {
+   "8x6": {
+    "src": "01-ga-boards/small-office-cabin-8x6x8-5-ga-specification-board-v3.png",
+    "out": "ga/small-office-cabin-8x6-ga-board.webp"
+   },
+   "10x8": {
+    "src": "01-ga-boards/small-office-cabin-10x8x8-5-ga-specification-board-v3.png",
+    "out": "ga/small-office-cabin-10x8-ga-board.webp"
+   },
+   "10x10": {
+    "src": "01-ga-boards/small-office-cabin-10x10x8-5-ga-specification-board-v3.png",
+    "out": "ga/small-office-cabin-10x10-ga-board.webp"
+   },
+   "20x8": {
+    "src": "01-ga-boards/small-office-cabin-20x8x8-5-ga-specification-board-v3.png",
+    "out": "ga/small-office-cabin-20x8-ga-board.webp"
+   },
+   "20x10": {
+    "src": "01-ga-boards/small-office-cabin-20x10x8-5-ga-specification-board-v3.png",
+    "out": "ga/small-office-cabin-20x10-ga-board.webp"
+   },
+   "20x12": {
+    "src": "01-ga-boards/small-office-cabin-20x12x8-5-ga-specification-board-v3.png",
+    "out": "ga/small-office-cabin-20x12-ga-board.webp"
+   }
+  },
+  "source_note": "use the full-size 3840x2160 PNG named ...-board-v3.png exactly as listed; never the website-preview-960x540 file",
+  "alt_text_source": "copy JSON -> alt_text.ga_boards"
+ },
+ "section2_card": {
+  "src": "01-ga-boards/small-office-cabin-8x6x8-5-ga-specification-board-v3.png",
+  "out": "section2/small-office-cabin-8x6-ga-board-card.webp",
+  "alt_text_source": "copy JSON -> alt_text.section2_card"
+ },
+ "spec_diagrams": {
+  "1": {
+   "src": "04-technical-diagrams/01-small-office-envelope-frame-diagram.png",
+   "out": "specs/small-office-cabin-envelope-coordination-diagram.webp"
+  },
+  "2": {
+   "src": "04-technical-diagrams/02-small-office-opening-electrical-diagram-web.png",
+   "out": "specs/small-office-cabin-opening-electrical-coordination-diagram.webp",
+   "note": "the -web.png file is the cropped buyer version written on 4 Sep 2026; do not use the uncropped 02-...-diagram.png"
+  }
+ },
+ "spec_pdf": {
+  "src": "05-technical-pdf/small-office-cabin-technical-specification-and-price-v3.pdf",
+  "out": "public/downloads/small-office-cabin-technical-specification-and-price.pdf",
+  "link_label": "Download technical specification (PDF)"
+ },
+ "not_used": [
+  "03-long-description-images/* (pillar-boxed squares with a text label; SAMAN ruled no images in the long description)",
+  "01-ga-boards/*.website-preview-960x540.png",
+  "01-ga-boards/*.svg",
+  "01-ga-boards/*.pdf",
+  "approved-website-assets-v1/*",
+  "approved-website-assets-v2/*"
+ ],
+ "change_log_v1_1": [
+  "4 Sep 2026, Claude: keep_as_is clarified - hero-view becomes gallery slide 3 on 10x10, 20x8, 20x10; six slides per size on all six sizes.",
+  "4 Sep 2026, Claude: three hero-view alt strings authored into copy.alt_text.gallery_retained (alt text is Claude's call per project instructions section 8).",
+  "4 Sep 2026, Claude: the 'Gallery: the three live <size> images are retained as they are' bullet removed from section3 on all three retained sizes - a build note in buyer copy, and it said three where the gallery has six. Replaced with a colour bullet describing the retained gallery, matching the other three sizes.",
+  "OPEN FOR SAMAN: the three retained galleries are the flat-roof container family. The page's own approved specs say two-way centred ridge (10x10, 20x10) and one-way slope (20x8), and folder presentation colours pure orange / fern green / orange brown. The retained images show none of that. Recorded, not resolved."
+ ]
+}

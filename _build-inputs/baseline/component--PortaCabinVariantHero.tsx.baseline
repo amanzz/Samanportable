@@ -597,11 +597,12 @@ export const PORTABLE_OFFICE_LINK_MODULES: Record<string, InternalLinkModule> = 
         href: '/product/portable-office/readymade-office-cabin',
         after: ' arrives finished.',
       },
-      // SOC-01 (4 Sep 2026) — this row pointed at modern-office-cabin, which is now
-      // 301'd into small-office-cabin. Its anchor ("the glazed contemporary build")
-      // describes the retired glazed product and would misdescribe the compact steel
-      // cabin, so the row is removed rather than repointed behind false copy. No
-      // replacement anchor is invented; the 301 carries the equity.
+      {
+        before: 'For a customer-facing position, ',
+        anchor: 'the glazed contemporary build',
+        href: '/product/portable-office/modern-office-cabin',
+        after: ' presents better.',
+      },
       {
         before: 'If the shell can be reused rather than fabricated, ',
         anchor: 'rebuilt container offices',
@@ -660,10 +661,12 @@ export const PORTABLE_OFFICE_LINK_MODULES: Record<string, InternalLinkModule> = 
         href: '/product/portable-office/prefabricated-office-cabins',
         after: ' extends on its own module lines.',
       },
-      // SOC-01 (4 Sep 2026) — the fourth row pointed at portable-office-container,
-      // which the signed pack lists in links.never / explore_range.never_list. Row
-      // removed rather than repointed; the remaining three are the approved cluster
-      // destinations and all return 200.
+      {
+        before: 'If a reused shell suits the budget, ',
+        anchor: 'the container-based option',
+        href: '/product/portable-office/portable-office-container',
+        after: ' covers the same sizes.',
+      },
     ],
   },
 };
@@ -1057,7 +1060,7 @@ export function PortaCabinVariantHero({
                     viewport on mobile AND desktop (measured 52-62px boxes, all
                     in-viewport). They still remain lazy so only the main viewer
                     competes in the eager/high-priority LCP lane. */}
-                {nonLcpImagesReady && <Image src={img.src} unoptimized={data.optimizeLocalGalleryImages ? false : shouldBypassOptimizer(img.src)} alt={data.productSlug === 'flat-pack-container-office' && !showVideo && i === activeImageIndex ? `Thumbnail ${i + 1}: ${img.alt}` : data.productSlug === 'shipping-container-office' || (data.productSlug === 'bess-container' && !showVideo && i === activeImageIndex) || (data.labelActiveThumbnailAlt && !showVideo && i === activeImageIndex) ? `Thumbnail ${i + 1}: ${img.alt}` : (isC04Product || isC08Product ? img.alt : (!showVideo && i === activeImageIndex ? '' : img.alt))} width={data.productSlug === 'flat-pack-container-office' || eagerActiveGalleryImages ? 1254 : 150} height={data.productSlug === 'flat-pack-container-office' || eagerActiveGalleryImages ? 1254 : 150} className="w-full h-full object-cover" loading={data.productSlug === 'flat-pack-container-office' || eagerActiveGalleryImages ? 'eager' : 'lazy'} decoding="async" sizes="(max-width: 1023px) 18vw, 80px" />}
+                {nonLcpImagesReady && <Image src={img.src} unoptimized={data.optimizeLocalGalleryImages ? false : shouldBypassOptimizer(img.src)} alt={data.productSlug === 'flat-pack-container-office' && !showVideo && i === activeImageIndex ? `Thumbnail ${i + 1}: ${img.alt}` : data.productSlug === 'shipping-container-office' || (data.productSlug === 'bess-container' && !showVideo && i === activeImageIndex) ? `Thumbnail ${i + 1}: ${img.alt}` : (isC04Product || isC08Product ? img.alt : (!showVideo && i === activeImageIndex ? '' : img.alt))} width={data.productSlug === 'flat-pack-container-office' || eagerActiveGalleryImages ? 1254 : 150} height={data.productSlug === 'flat-pack-container-office' || eagerActiveGalleryImages ? 1254 : 150} className="w-full h-full object-cover" loading={data.productSlug === 'flat-pack-container-office' || eagerActiveGalleryImages ? 'eager' : 'lazy'} decoding="async" sizes="(max-width: 1023px) 18vw, 80px" />}
               </button>
             ))}
 

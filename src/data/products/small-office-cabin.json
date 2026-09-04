@@ -5,19 +5,188 @@
   "defaultVariant": "10x10",
   "hsn": "9406",
   "gstPercent": 18,
-  "applicationsDataset": "small-office-cabin",
-  "explorerImageTemplate": "/images/products/small-office-cabin/{sizeSlug}/small-office-cabin-{sizeSlug}-hero-view.webp",
   "emitAggregateOffer": true,
   "variants": [
+    {
+      "sizeSlug": "8x6",
+      "label": "8×6 ft",
+      "dims": "8×6×8.5 ft",
+      "areaSqft": 48,
+      "priceExGst": 84603,
+      "priceInclGst": 99832,
+      "sku": "SP-SMOC-10-2025",
+      "featureCells": [
+        {
+          "label": "Size",
+          "value": "8×6×8.5 ft · 48 sq ft"
+        },
+        {
+          "label": "Roof",
+          "value": "One-way slope"
+        },
+        {
+          "label": "Openings",
+          "value": "1 door · 1 window"
+        },
+        {
+          "label": "Desks staged",
+          "value": "1"
+        },
+        {
+          "label": "Application",
+          "value": "Gate clerk room"
+        }
+      ],
+      "images": [
+        {
+          "src": "/images/products/small-office-cabin/8x6/small-office-cabin-8x6-end-view-window-end-wall-door-long-wall.webp",
+          "alt": "SAMAN 8x6 ft small office cabin in coral red, end view: one window on the end wall, door on the long wall, one-way roof, corner lifting eye",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/small-office-cabin/8x6/small-office-cabin-8x6-rear-solid-wall-one-way-roof.webp",
+          "alt": "Rear of the 8x6 ft small office cabin: solid corrugated wall with no openings, one-way sloped roof, black skid base",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/small-office-cabin/8x6/small-office-cabin-8x6-front-door-wall.webp",
+          "alt": "Front of the 8x6 ft small office cabin showing the external door on the long wall and the low one-way roof edge",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/small-office-cabin/8x6/small-office-cabin-8x6-interior-from-door-desk-window.webp",
+          "alt": "Inside the 8x6 ft small office cabin from the door: single desk with overhead cabinet against the back wall, one window on the end wall",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/small-office-cabin/8x6/small-office-cabin-8x6-interior-towards-door.webp",
+          "alt": "8x6 ft small office cabin interior looking back at the door, window on the end wall, desk edge in the foreground",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/small-office-cabin/8x6/small-office-cabin-8x6-interior-workstation-corner.webp",
+          "alt": "Workstation corner of the 8x6 ft small office cabin: desk, chair and wall cabinet beside the end-wall window",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "10x8",
+      "label": "10×8 ft",
+      "dims": "10×8×8.5 ft",
+      "areaSqft": 80,
+      "priceExGst": 123379,
+      "priceInclGst": 145587,
+      "sku": "SP-SMOC-10-2025",
+      "featureCells": [
+        {
+          "label": "Size",
+          "value": "10×8×8.5 ft · 80 sq ft"
+        },
+        {
+          "label": "Roof",
+          "value": "One-way slope"
+        },
+        {
+          "label": "Openings",
+          "value": "1 door · 3 windows"
+        },
+        {
+          "label": "Desks staged",
+          "value": "4"
+        },
+        {
+          "label": "Application",
+          "value": "Supervisor room"
+        }
+      ],
+      "images": [
+        {
+          "src": "/images/products/small-office-cabin/10x8/small-office-cabin-10x8-front-door-end-window.webp",
+          "alt": "SAMAN 10x8 ft small office cabin in chrome green: external door on the long wall and one centred window on the end wall, one-way roof",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/small-office-cabin/10x8/small-office-cabin-10x8-end-view-yard.webp",
+          "alt": "End view of the 10x8 ft small office cabin in a factory yard: door on the long wall, centred window on the end wall",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/small-office-cabin/10x8/small-office-cabin-10x8-rear-two-windows.webp",
+          "alt": "Rear corner of the 10x8 ft small office cabin: centred window on the back wall and on the end wall, one-way roof falling across the width",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/small-office-cabin/10x8/small-office-cabin-10x8-interior-four-desks.webp",
+          "alt": "Inside the 10x8 ft small office cabin from the door: two desks under the back-wall window and one under each end window",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/small-office-cabin/10x8/small-office-cabin-10x8-interior-towards-door.webp",
+          "alt": "10x8 ft small office cabin interior looking towards the door, a desk under each end-wall window",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/small-office-cabin/10x8/small-office-cabin-10x8-interior-desk-row.webp",
+          "alt": "Desk row along the back wall of the 10x8 ft small office cabin with overhead cabinets and two windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
     {
       "sizeSlug": "10x10",
       "label": "10×10 ft",
       "dims": "10×10×8.5 ft",
       "areaSqft": 100,
-      "priceExGst": 144000,
-      "priceInclGst": 169920,
-      "useCase": "Two-person duty rooms",
+      "priceExGst": 140760,
+      "priceInclGst": 166097,
       "sku": "SP-SMOC-10-2025",
+      "featureCells": [
+        {
+          "label": "Size",
+          "value": "10×10×8.5 ft · 100 sq ft"
+        },
+        {
+          "label": "Roof",
+          "value": "Two-way, centred ridge"
+        },
+        {
+          "label": "Openings",
+          "value": "1 door · 3 windows"
+        },
+        {
+          "label": "Desks staged",
+          "value": "4"
+        },
+        {
+          "label": "Application",
+          "value": "Two-person office"
+        }
+      ],
       "images": [
         {
           "src": "/images/products/small-office-cabin/10x10/small-office-cabin-10x10-front-angle.webp",
@@ -29,6 +198,13 @@
         {
           "src": "/images/products/small-office-cabin/10x10/small-office-cabin-10x10-side-elevation.webp",
           "alt": "Straight side elevation of the small office cabin, 10 x 10 ft, the whole unit contained in a single frame on the smallest plan in the range.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/small-office-cabin/10x10/small-office-cabin-10x10-hero-view.webp",
+          "alt": "Full side view of the 10x10 ft small office cabin in dark grey: window, door and window along one 10 ft wall, one window on the end wall",
           "provenance": "render",
           "width": 1200,
           "height": 1200
@@ -61,10 +237,31 @@
       "label": "20×8 ft",
       "dims": "20×8×8.5 ft",
       "areaSqft": 160,
-      "priceExGst": 230400,
-      "priceInclGst": 271872,
-      "useCase": "Three-desk slim offices",
+      "priceExGst": 215424,
+      "priceInclGst": 254200,
       "sku": "SP-SMOC-10-2025",
+      "featureCells": [
+        {
+          "label": "Size",
+          "value": "20×8×8.5 ft · 160 sq ft"
+        },
+        {
+          "label": "Roof",
+          "value": "One-way slope"
+        },
+        {
+          "label": "Openings",
+          "value": "1 door · 6 windows"
+        },
+        {
+          "label": "Desks staged",
+          "value": "3"
+        },
+        {
+          "label": "Application",
+          "value": "Three-desk narrow office"
+        }
+      ],
       "images": [
         {
           "src": "/images/products/small-office-cabin/20x8/small-office-cabin-20x8-front-angle.webp",
@@ -76,6 +273,13 @@
         {
           "src": "/images/products/small-office-cabin/20x8/small-office-cabin-20x8-side-elevation.webp",
           "alt": "Flat side view of the small office cabin, 20 x 8 ft, a small footprint that stands almost anywhere on the narrowest 8 ft body.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/small-office-cabin/20x8/small-office-cabin-20x8-hero-view.webp",
+          "alt": "Full side view of the 20x8 ft small office cabin in light blue over a grey base: window, door and window along the 20 ft wall, one end-wall window",
           "provenance": "render",
           "width": 1200,
           "height": 1200
@@ -108,10 +312,31 @@
       "label": "20×10 ft",
       "dims": "20×10×8.5 ft",
       "areaSqft": 200,
-      "priceExGst": 262000,
-      "priceInclGst": 309160,
-      "useCase": "Four-person offices",
+      "priceExGst": 244800,
+      "priceInclGst": 288864,
       "sku": "SP-SMOC-10-2025",
+      "featureCells": [
+        {
+          "label": "Size",
+          "value": "20×10×8.5 ft · 200 sq ft"
+        },
+        {
+          "label": "Roof",
+          "value": "Two-way, centred ridge"
+        },
+        {
+          "label": "Openings",
+          "value": "1 door · 6 windows"
+        },
+        {
+          "label": "Desks staged",
+          "value": "5"
+        },
+        {
+          "label": "Application",
+          "value": "Compact team office"
+        }
+      ],
       "images": [
         {
           "src": "/images/products/small-office-cabin/20x10/small-office-cabin-20x10-front-angle.webp",
@@ -123,6 +348,13 @@
         {
           "src": "/images/products/small-office-cabin/20x10/small-office-cabin-20x10-side-elevation.webp",
           "alt": "Long flank of the small office cabin, 20 x 10 ft, the whole unit contained in a single frame on a plan twice as long as wide.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/small-office-cabin/20x10/small-office-cabin-20x10-hero-view.webp",
+          "alt": "Full side view of the 20x10 ft small office cabin in light grey over a charcoal base: window, door and window along the 20 ft wall, one end-wall window",
           "provenance": "render",
           "width": 1200,
           "height": 1200
@@ -149,7 +381,357 @@
           "height": 1200
         }
       ]
+    },
+    {
+      "sizeSlug": "20x12",
+      "label": "20×12 ft",
+      "dims": "20×12×8.5 ft",
+      "areaSqft": 240,
+      "priceExGst": 282010,
+      "priceInclGst": 332772,
+      "sku": "SP-SMOC-10-2025",
+      "featureCells": [
+        {
+          "label": "Size",
+          "value": "20×12×8.5 ft · 240 sq ft"
+        },
+        {
+          "label": "Roof",
+          "value": "Two-way, centred ridge"
+        },
+        {
+          "label": "Openings",
+          "value": "1 door · 6 windows"
+        },
+        {
+          "label": "Desks staged",
+          "value": "5"
+        },
+        {
+          "label": "Application",
+          "value": "Widest compact office"
+        }
+      ],
+      "images": [
+        {
+          "src": "/images/products/small-office-cabin/20x12/small-office-cabin-20x12-front-window-door-window.webp",
+          "alt": "SAMAN 20x12 ft small office cabin in warm cream: window, door, window on the long wall, one window on the end wall, two-way roof with centred ridge",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/small-office-cabin/20x12/small-office-cabin-20x12-rear-two-windows-end-window.webp",
+          "alt": "Rear of the 20x12 ft small office cabin: two windows on the back wall and one centred window on the end wall under the two-way roof",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/small-office-cabin/20x12/small-office-cabin-20x12-end-view-gable.webp",
+          "alt": "End view of the 20x12 ft small office cabin showing the centred end window and the shallow two-way roof gable",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/small-office-cabin/20x12/small-office-cabin-20x12-interior-desk-row-walkway.webp",
+          "alt": "Inside the 20x12 ft small office cabin from the door: three desks along the back wall with a clear walkway behind them",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/small-office-cabin/20x12/small-office-cabin-20x12-interior-towards-door.webp",
+          "alt": "20x12 ft small office cabin interior looking towards the door wall: desk either side of the door under the windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/small-office-cabin/20x12/small-office-cabin-20x12-interior-back-wall-desks.webp",
+          "alt": "Back-wall desk row in the 20x12 ft small office cabin, overhead cabinets, two windows and the end-wall window",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
     }
   ],
-  "specPdfHref": "/specs/small-office-cabin-technical-specification.pdf"
+  "applicationsContent": {
+    "h2": "Compare the six Small Office Cabin sizes, 48 to 240 sq ft",
+    "intro": "Six compact sizes, one shell family, one price rule. Each size shows its GA board, its openings and what its floor is staged for.",
+    "panels": [
+      {
+        "sizeSlug": "8x6",
+        "h3": "8×6 ft Small Office Cabin: 48 sq ft One-Desk Gate Room",
+        "paragraph": "The smallest cabin SAMAN publishes, and the only one with a single window. The door sits on the 8 ft long wall, the window on one 6 ft end wall, and the other two walls stay solid, which is what lets a desk and chair face the door without a window behind the screen. Buy it for a gate clerk, a weighbridge attendant or a parking checkpoint where one person sits for a shift and visitors stand at the door. It is priced as a shell; a chair and a desk are staged in the drawing, not supplied.",
+        "applications": [
+          "8×6×8.5 ft, 48 sq ft, ₹84,603 ex-GST (₹99,832 incl. GST)",
+          "One-way sloped roof, 5–6 in fall across the 6 ft width",
+          "1 external door on Wall A, 1 window centred on End C, Walls B and D solid",
+          "1 desk staged against Wall B in the GA drawing",
+          "Four corner lifting eyes, single-lift placement",
+          "Colour shown: coral red (presentation colour, confirmed at quotation)"
+        ],
+        "image": {
+          "src": "/images/products/small-office-cabin/ga/small-office-cabin-8x6-ga-board.webp",
+          "alt": "GA specification board for the 8x6x8.5 ft small office cabin: plan with one door on Wall A and one window on End C, four elevations, one-way roof lock",
+          "provenance": "drawing",
+          "width": 1800,
+          "height": 1012,
+          "fit": "contain"
+        }
+      },
+      {
+        "sizeSlug": "10x8",
+        "h3": "10×8 ft Small Office Cabin: 80 sq ft Supervisor Room",
+        "paragraph": "Eighty square feet is where a compact cabin stops being a booth. The door stays on the long wall, and each of the other three walls carries one centred window, so the room reads as an office from every side. The GA stages four desks, two along the back wall and one under each end window; a supervisor, a dispatch assistant and a visitor use it comfortably, and the fourth desk is a paperwork station, not a permanent seat. It keeps the one-way roof of the 8 ft width and lifts on four corner eyes.",
+        "applications": [
+          "10×8×8.5 ft, 80 sq ft, ₹1,23,379 ex-GST (₹1,45,587 incl. GST)",
+          "One-way sloped roof for the 8 ft width",
+          "1 external door on Wall A; 1 centred window each on Wall B, End C and End D",
+          "4 desks staged: 2 on Wall B, 1 on End C, 1 on End D",
+          "With the 8×6, the only office cabin sizes below 100 sq ft on samanportable.com",
+          "Colour shown: chrome green"
+        ],
+        "image": {
+          "src": "/images/products/small-office-cabin/ga/small-office-cabin-10x8-ga-board.webp",
+          "alt": "GA specification board for the 10x8x8.5 ft small office cabin: door on Wall A, centred windows on Wall B, End C and End D, four desks staged",
+          "provenance": "drawing",
+          "width": 1800,
+          "height": 1012,
+          "fit": "contain"
+        }
+      },
+      {
+        "sizeSlug": "10x10",
+        "h3": "10×10 ft Small Office Cabin: 100 sq ft Square Two-Person Room",
+        "paragraph": "The square plan is the size most buyers on this page order, and it is the first size to carry the two-way roof: a centred ridge along the full 10 ft length with two planes falling to the long-wall eaves. Openings match the 10×8, one door on Wall A and one centred window on each of the other three walls, but the extra two feet of depth lets two people work at the back-wall desks facing away from each other. It suits a two-person duty room, a CCTV desk with records, or a clinic side room.",
+        "applications": [
+          "10×10×8.5 ft, 100 sq ft, ₹1,40,760 ex-GST (₹1,66,097 incl. GST)",
+          "Two-way roof, one centred longitudinal ridge, 5–6 in above each eave",
+          "1 external door on Wall A; 1 centred window each on Wall B, End C and End D",
+          "4 desks staged: 2 on Wall B, 1 on End C, 1 on End D",
+          "Same size also sold on the main range at a full-office scope; here it is the compact shell",
+          "Colour shown: dark grey (colour of the retained gallery; final colour confirmed at quotation)"
+        ],
+        "image": {
+          "src": "/images/products/small-office-cabin/ga/small-office-cabin-10x10-ga-board.webp",
+          "alt": "GA specification board for the 10x10x8.5 ft small office cabin: door on Wall A, three centred windows, two-way roof with centred ridge",
+          "provenance": "drawing",
+          "width": 1800,
+          "height": 1012,
+          "fit": "contain"
+        }
+      },
+      {
+        "sizeSlug": "20x8",
+        "h3": "20×8 ft Small Office Cabin: 160 sq ft Three-Desk Narrow Office",
+        "paragraph": "Twenty feet long and eight wide is the answer when the ground has length but no depth: a boundary strip, the side of a gate, the back of a showroom. It is the first size with the 20 ft opening ledger, window–door–window on Wall A and two windows on Wall B, with one centred window on each end, six windows in all. The GA stages three desks in a row against Wall B, each under or beside a window, so three people work side by side without a walkway problem. The 8 ft width keeps the one-way roof.",
+        "applications": [
+          "20×8×8.5 ft, 160 sq ft, ₹2,15,424 ex-GST (₹2,54,200 incl. GST)",
+          "One-way sloped roof for the 8 ft width",
+          "Wall A: window–door–window; Wall B: two windows; End C and End D: one centred window each",
+          "3 desks staged in a row on Wall B",
+          "Fits where a 10 ft wide cabin will not pass or will not sit",
+          "Colour shown: light blue over a grey base (colour of the retained gallery; final colour confirmed at quotation)"
+        ],
+        "image": {
+          "src": "/images/products/small-office-cabin/ga/small-office-cabin-20x8-ga-board.webp",
+          "alt": "GA specification board for the 20x8x8.5 ft small office cabin: window-door-window on Wall A, two windows on Wall B, one per end, three desks",
+          "provenance": "drawing",
+          "width": 1800,
+          "height": 1012,
+          "fit": "contain"
+        }
+      },
+      {
+        "sizeSlug": "20x10",
+        "h3": "20×10 ft Small Office Cabin: 200 sq ft Reference Size Office",
+        "paragraph": "This is the reference size for the price rule: the ₹1,224 per sq ft rate at 200 sq ft is the base from which every other size on this page is adjusted up or down. It shares the 20 ft opening ledger with the 20×8 but the 10 ft width brings the two-way roof and a second desk row: the GA stages three desks on Wall B and two on Wall A either side of the door, five in all. Buy it for a compact team, a site-entry admin office or a dispatch room that receives drivers at the counter.",
+        "applications": [
+          "20×10×8.5 ft, 200 sq ft, ₹2,44,800 ex-GST (₹2,88,864 incl. GST)",
+          "Base rate size: ₹1,224/sq ft, no band adjustment",
+          "Two-way roof, centred ridge along the 20 ft length",
+          "Wall A: window–door–window; Wall B: two windows; one centred window per end",
+          "5 desks staged: 3 on Wall B, 2 on Wall A",
+          "Colour shown: light grey over a charcoal base (colour of the retained gallery; final colour confirmed at quotation)"
+        ],
+        "image": {
+          "src": "/images/products/small-office-cabin/ga/small-office-cabin-20x10-ga-board.webp",
+          "alt": "GA specification board for the 20x10x8.5 ft small office cabin: 20 ft opening ledger, five desks staged, two-way roof",
+          "provenance": "drawing",
+          "width": 1800,
+          "height": 1012,
+          "fit": "contain"
+        }
+      },
+      {
+        "sizeSlug": "20x12",
+        "h3": "20×12 ft Small Office Cabin: 240 sq ft, Largest on This Page",
+        "paragraph": "The 20×12 is the 20×10 with a continuous two-foot strip added across the width, and that strip is the whole reason to buy it: the same five desks, the same six windows and the same door position, but a clear walkway behind the Wall B desks that the 20×10 does not have. At 240 sq ft it is the ceiling of the compact range; anything larger is a full-size office cabin decision and lives on the main range page. Two-way roof, four corner eyes, single-lift placement like every size here.",
+        "applications": [
+          "20×12×8.5 ft, 240 sq ft, ₹2,82,010 ex-GST (₹3,32,772 incl. GST)",
+          "Lowest rate on the page: ₹1,175.04/sq ft",
+          "Same 20 ft opening ledger as the 20×10: window–door–window, two windows, one per end",
+          "5 desks staged with a 2 ft clear strip behind the Wall B row",
+          "Largest compact size; 300 and 400 sq ft are on the main Portable Office Cabin page",
+          "Colour shown: warm cream"
+        ],
+        "image": {
+          "src": "/images/products/small-office-cabin/ga/small-office-cabin-20x12-ga-board.webp",
+          "alt": "GA specification board for the 20x12x8.5 ft small office cabin: same 20 ft opening ledger with a 2 ft clear strip, five desks, two-way roof",
+          "provenance": "drawing",
+          "width": 1800,
+          "height": 1012,
+          "fit": "contain"
+        }
+      }
+    ]
+  },
+  "h1": "Small Office Cabin: Six Compact Sizes from 8×6 to 20×12 ft",
+  "seoTitle": "Small Office Cabin: 6 Sizes from 8×6 ft, Prices | SAMAN",
+  "metaDescription": "Factory-built small office cabin in six sizes from 8×6 ft (48 sq ft) to 20×12 ft, ex-GST prices published, one door and GA-fixed windows, delivered as one unit.",
+  "canonical": "https://www.samanportable.com/product/portable-office/small-office-cabin",
+  "opener": "A small office cabin is a factory-built steel room delivered to site as one finished unit, not a partition built inside an office. This page carries SAMAN's six compact sizes, from an 8×6 ft single-desk gate room to a 20×12 ft five-desk office, every one 8.5 ft high with a sloped non-container roof and four corner lifting eyes. Each size has a fixed door wall and window schedule taken from its approved GA drawing, so the desk, the switchboard and the visitor chair land where the drawing shows them. Prices are published per size ex-GST for the office shell; toilet, extra partition, premium lining, loose furniture, fitted AC and delivery are quoted separately. Built in Bengaluru and Greater Noida.",
+  "materialLabel": "MS frame · corrugated MS shell",
+  "deliveryLabel": "7–21 Working Days",
+  "coverageLabel": "Bangalore · Delhi NCR",
+  "schemaBrandName": "SAMAN Portable",
+  "categoryLabel": "Portable Office",
+  "categoryHref": "/product/portable-office",
+  "specPdfHref": "/downloads/small-office-cabin-technical-specification-and-price.pdf",
+  "specPdfButtonLabel": "Download technical specification (PDF)",
+  "schemaImageMode": "variant-first-images",
+  "labelActiveThumbnailAlt": true,
+  "ymalTiles": [
+    {
+      "title": "Portable Office",
+      "href": "/product/portable-office",
+      "category": "Portable Office",
+      "blurb": "Explore Portable Office",
+      "imageSrc": "/images/products/portable-office/20x10/portable-office-20x10-front-angle.webp",
+      "imageAlt": "Portable Office 20 x 10 ft exterior render"
+    },
+    {
+      "title": "Readymade Office Cabin",
+      "href": "/product/portable-office/readymade-office-cabin",
+      "category": "Portable Office",
+      "blurb": "Explore Readymade Office Cabin",
+      "imageSrc": "/images/products/readymade-office-cabin/20x10/readymade-office-cabin-20x10-front-angle.webp",
+      "imageAlt": "Readymade Office Cabin 20 x 10 ft exterior render"
+    },
+    {
+      "title": "Prefabricated Office Cabins",
+      "href": "/product/portable-office/prefabricated-office-cabins",
+      "category": "Portable Office",
+      "blurb": "Explore Prefabricated Office Cabins",
+      "imageSrc": "/images/products/prefabricated-office-cabins/20x10/prefabricated-office-cabin-20x10-front-angle.webp",
+      "imageAlt": "Prefabricated Office Cabin 20 x 10 ft exterior render"
+    }
+  ],
+  "relatedTiles": [
+    {
+      "title": "Portable Office",
+      "href": "/product/portable-office",
+      "category": "Portable Office",
+      "blurb": "Explore Portable Office",
+      "imageSrc": "/images/products/portable-office/20x10/portable-office-20x10-front-angle.webp",
+      "imageAlt": "Portable Office 20 x 10 ft exterior render"
+    },
+    {
+      "title": "Readymade Office Cabin",
+      "href": "/product/portable-office/readymade-office-cabin",
+      "category": "Portable Office",
+      "blurb": "Explore Readymade Office Cabin",
+      "imageSrc": "/images/products/readymade-office-cabin/20x10/readymade-office-cabin-20x10-front-angle.webp",
+      "imageAlt": "Readymade Office Cabin 20 x 10 ft exterior render"
+    },
+    {
+      "title": "Prefabricated Office Cabins",
+      "href": "/product/portable-office/prefabricated-office-cabins",
+      "category": "Portable Office",
+      "blurb": "Explore Prefabricated Office Cabins",
+      "imageSrc": "/images/products/prefabricated-office-cabins/20x10/prefabricated-office-cabin-20x10-front-angle.webp",
+      "imageAlt": "Prefabricated Office Cabin 20 x 10 ft exterior render"
+    }
+  ],
+  "faqSchema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the minimum size of an office cabin?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The smallest office cabin SAMAN builds as a standalone unit is 8×6×8.5 ft, 48 sq ft, with one door, one window and one staged desk. Below that a unit becomes a guard booth rather than an office; see the Security Cabins range for those."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can three people work in a 10×10 small office cabin?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes for a normal shift. The GA stages four desks, two on the back wall and one under each end window, so three people have a desk each and the fourth position is a paperwork or visitor point. For three people side by side on narrow ground, the 20×8 is the better plan."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the price ex-GST, and does it include delivery?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Prices on this page are ex-GST for the office shell, with the 18% GST-inclusive figure shown beside each size. Delivery is free within Bangalore city and the listed Delhi NCR areas; elsewhere the trailer freight band on the Shipping tab applies. Unloading, placement and site supports are quoted separately."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the AC included?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The standard electrical package includes provision for an AC circuit where the drawing calls for it; the fitted unit is quoted separately, as are the desks and chairs shown in the images."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can a toilet be added to a small office cabin?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not inside these six sizes. A cabin with a toilet needs a wet zone, waste connection and a different lining, and is a different product: the Porta Cabin with Toilet. A separate portable toilet unit beside the office cabin is the usual answer on a compact site."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does the roof look almost flat?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Because the slope is deliberately small: a five-to-six-inch fall on the one-way roof, or a five-to-six-inch centred ridge on the two-way roof. That is enough to drain and low enough to keep the cabin under gate heights and transport limits. It is not a flat container roof and has no ISO corner castings."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is the cabin lifted and placed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "By four corner lifting eyes, one at each top corner, as one rigid box. A crane or a hydraulic tail-lift places it on the prepared supports. The lifting details and capacity for the order are governed by the approved shop drawings."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How should a small office room be arranged?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The GA boards on this page are the arrangement: desk against the wall opposite the door in the 8×6, desks under the windows in the 10 ft sizes, a desk row along Wall B in the 20 ft sizes, and sockets routed clear of the door swing and window frames. Start from the board for your size and tell us what to move."
+        }
+      }
+    ]
+  },
+  "descriptionHtml": "<section><h2>Small office cabin or office cabin design? Read this first</h2><p>Most searches for \"small office cabin\" in India mean one of two different things. The first is a private cabin inside an existing office: a glass-and-board partition that an interior contractor builds around a manager's desk. The second is a small office cabin as a building: a factory-made steel room that arrives on a trailer, is set on supports and is ready to use the same day. This page is about the second thing only.</p><p>If you want the first, an interior designer or a partition contractor is the right call, and nothing on this page will help you. If you want a room where there is no building, or a room that must move when the job moves, keep reading. Everything below assumes a standalone unit: its own floor, its own roof, its own door, its own switchboard.</p><p>The word \"cabin\" also covers container offices and security cabins on this site. A container office is built from or like an ISO container and belongs on the <a href=\"/product/container-offices\">Container Offices pages.</a> A security cabin is a guard post sized for standing and watching rather than sitting and working, and belongs on the <a href=\"/product/security-cabins\">Security Cabins pages.</a> The small office cabin sits between them: an office first, compact second.</p></section><section><h2>Who buys a small office cabin and where it goes</h2><p>The buyers we build these for share one brief: one room, one to three regular users, and a job that does not need anything larger. The gate clerk at a factory entrance who logs vehicles and issues passes. The site supervisor who needs a desk, a drawing on the wall and a door that locks. The dispatch assistant at a contractor yard who receives drivers at the counter. The parking-checkpoint operator. The clinic that needs a side room for a nurse and a visitor.</p><p>The sites are as compact as the users: a factory gate where the cabin must sit beside the boom barrier and not in the truck lane; a parking checkpoint with a two-metre strip of ground; a small contractor yard where the office shares space with material stacks; a school or hospital compound that needs an enquiry room at the entrance for a year.</p><p>What these buyers do not need is a nine-size ladder, a partitioned floor plan or a toilet in the same module. They need the price of one room, the drawing of its openings and a delivery date. That is the whole content of this page.</p></section><section><h2>How to choose the size: 48, 80, 100, 160, 200 or 240 sq ft</h2><p>Start from the number of people who sit inside on a normal day, not the number who might visit. One person sits in an 8×6. Two or three people, with a visitor chair, work in a 10×8 or 10×10. Three people side by side on narrow ground fit a 20×8. A compact team of four or five, or a dispatch counter with a back office, takes the 20×10 or 20×12.</p><p>Then check the ground. The 8 ft wide sizes carry a one-way roof and pass through narrower gates and along boundary strips; the 10 and 12 ft wide sizes carry a two-way roof and need a wider approach and a wider pad. If the plot has length but no depth, the 20×8 beats the 10×10 even at the same seat count. If the plot is square, the 10×10 uses it better than any 20 ft cabin.</p><p>The table below is every size on this page with the facts that decide between them. The prices are ex-GST for the office shell; GST-inclusive figures are shown on the size selector above.</p><div class=\"overflow-x-auto\"><table><thead><tr><th>Size (L×W×H ft)</th><th>Area</th><th>Roof</th><th>Openings</th><th>Desks staged in GA</th><th>Price ex-GST</th></tr></thead><tbody><tr><td>8×6×8.5</td><td>48 sq ft</td><td>One-way</td><td>1 door, 1 window</td><td>1</td><td>₹84,603</td></tr><tr><td>10×8×8.5</td><td>80 sq ft</td><td>One-way</td><td>1 door, 3 windows</td><td>4</td><td>₹1,23,379</td></tr><tr><td>10×10×8.5</td><td>100 sq ft</td><td>Two-way</td><td>1 door, 3 windows</td><td>4</td><td>₹1,40,760</td></tr><tr><td>20×8×8.5</td><td>160 sq ft</td><td>One-way</td><td>1 door, 6 windows</td><td>3</td><td>₹2,15,424</td></tr><tr><td>20×10×8.5</td><td>200 sq ft</td><td>Two-way</td><td>1 door, 6 windows</td><td>5</td><td>₹2,44,800</td></tr><tr><td>20×12×8.5</td><td>240 sq ft</td><td>Two-way</td><td>1 door, 6 windows</td><td>5</td><td>₹2,82,010</td></tr></tbody></table></div><p>Two things the table cannot show. First, the 20×12 is not a bigger 20×10 in every direction; it is the 20×10 with a single two-foot strip added across the width, which becomes a walkway behind the desk row. Second, the 10×8 and 10×10 stage the same four desks, but only the 10×10 gives the two back-wall desks enough separation for two people to work facing away from each other for a full shift.</p></section><section><h2>How the price is built, and what is quoted separately</h2><p>Every size on this page is priced from one visible number: ₹1,224 per sq ft at 200 sq ft, the rate of the 20×10 reference size. Smaller cabins carry a premium per square foot because a door, a switchboard and four lifting eyes cost the same whether the room is 48 or 200 sq ft; larger cabins carry a reduction. The 8×6 works out at ₹1,762.56 per sq ft and the 20×12 at ₹1,175.04. The bands are fixed, so a quotation for any of these six sizes reproduces the published figure rather than a fresh estimate.</p><p>The published price buys the compact office shell, and it is worth being exact about what that means before you compare it with anything else:</p><ul><li>Included: the finished steel cabin in one of the six sizes, its locked roof family and GA opening schedule, the door, the windows in the schedule, the standard electrical package and the four corner lifting eyes.</li><li>Quoted separately: a toilet or any additional internal partition; premium internal lining; loose furniture, including the desks and chairs shown in the images; a fitted air-conditioning unit; delivery, unloading, placement and site supports.</li><li>Confirmed at quotation: the external colour, the electrical load schedule, the warranty period and exclusions, and any coating upgrade for coastal or chemical exposure.</li></ul><p>The desks in the gallery and the GA boards are staging. They show where a desk fits and which wall the switchboard clears, not what is in the box. Buyers who want the cabin delivered furnished ask for the furniture line at quotation and receive it as a separate line.</p></section><section><h2>Roof, walls and lifting: how the compact family is built</h2><p>The small office cabin is a non-container sloped-roof cabin, and the roof is the quickest way to tell it apart from a container office. Cabins 6 and 8 ft wide carry a one-way roof: one plane falling across the width with a total rise of five to six inches from the high eave to the low one. Cabins 10 and 12 ft wide carry a two-way roof: one continuous centred ridge along the full length, with two planes falling to the long-wall eaves, again only five to six inches above each eave. At normal eye height the roof reads as almost level; it still drains. There is no hip, no four-way roof, no gable apex hook and no ISO corner casting on this family.</p><p>The shell follows SAMAN's approved cabin-family material key. The base is a welded mild-steel channel chassis; the upper, wall and roof framing is mild-steel hollow section and angle with reinforced openings. External walls are vertical corrugated mild-steel sheet with coordinated door and window trims; the roof is sloped corrugated sheet with sealed laps and flashings. Inside, the walls and ceiling are prelaminated board with aluminium joint sections over glass-wool insulation, and the floor is cement-fibre board with a resilient vinyl finish. Exposed steel is prepared, primed and enamelled. Member sizes and the standard thicknesses are listed in the Specifications tab.</p><p>Lifting is by four compact eye plates, one at each top corner of the plan, and nowhere else. That is what makes the single-lift placement work: a crane or a hydraulic tail-lift picks the cabin as one rigid box, sets it on the prepared supports and leaves. Hook plate dimensions, hole size and lifting capacity are governed by the approved shop drawings for the order; this page makes no capacity claim.</p></section><section><h2>Doors, windows and sockets follow one wall schedule</h2><p>Each of the six sizes has a GA drawing that names its four walls, Wall A, Wall B, End C and End D, and fixes what each wall carries. Compact sizes put the single external door on Wall A and one centred window on each of the other walls that has one; the 8×6 keeps Walls B and D solid. The 20 ft sizes put window–door–window on Wall A and two windows on Wall B, with one centred window on each end. The exterior photographs and the interior photographs on this page were produced from the same schedule, so a window you see from outside is the window you see from inside, on the same wall, in the same position.</p><p>This matters for more than pictures. Switch and socket routing is set to clear the door swing, the window frames and the staged desk zone, so the desk under the window does not sit on top of the only socket, and the switchboard is not behind the open door. When a buyer asks for a different opening, the change goes onto the drawing before production, and the electrical routing moves with it. Nothing is cut on site.</p></section><section><h2>Site preparation, delivery and placement</h2><p>The cabin needs a level pad and support points as shown on the final drawing for the order; the perimeter base frame carries the module between those points. The buyer provides a single-phase supply to the cabin's distribution board and, where a 20 ft size is ordered with air-conditioning provision, the circuit capacity the electrical drawing calls for.</p><p>Standard delivery from confirmed order is 7 to 21 working days plus transit, with freight for the 20 ft trailer and 40 ft trailer bands published on the Shipping tab. Delivery within Bangalore city and across the listed Delhi NCR areas is free; elsewhere the band applies. Unloading, placement and site supports are quoted separately, and the approach road, gate width and crane or tail-lift access decide the method. Send a photograph of the intended position with the enquiry and the placement is quoted with the cabin.</p></section><section><h2>When a small office cabin is the wrong choice</h2><p>It is the wrong choice when the room must contain a toilet: that is a different module with a wet zone, sold as the <a href=\"/product/porta-cabins/porta-cabin-with-toilet\">Porta Cabin with Toilet.</a> It is the wrong choice above 240 sq ft or beyond five desks; those sizes are on the <a href=\"/product/portable-office\">main Portable Office Cabin page</a> and on the <a href=\"/product/portable-office/readymade-office-cabin\">Readymade Office Cabin page with its fixed specification.</a> It is the wrong choice for an order of three or more identical units across sites, where the <a href=\"/product/portable-office/prefabricated-office-cabins\">Prefabricated Office Cabins page carries tier pricing.</a> And it is the wrong choice for a guard post where someone stands and watches rather than sits and works; the <a href=\"/product/security-cabins\">Security Cabins range</a> is sized and glazed for that.</p></section><section><h2>Frequently asked questions</h2><h3>What is the minimum size of an office cabin?</h3><p>The smallest office cabin SAMAN builds as a standalone unit is 8×6×8.5 ft, 48 sq ft, with one door, one window and one staged desk. Below that a unit becomes a guard booth rather than an office; see the Security Cabins range for those.</p><h3>Can three people work in a 10×10 small office cabin?</h3><p>Yes for a normal shift. The GA stages four desks, two on the back wall and one under each end window, so three people have a desk each and the fourth position is a paperwork or visitor point. For three people side by side on narrow ground, the 20×8 is the better plan.</p><h3>Is the price ex-GST, and does it include delivery?</h3><p>Prices on this page are ex-GST for the office shell, with the 18% GST-inclusive figure shown beside each size. Delivery is free within Bangalore city and the listed Delhi NCR areas; elsewhere the trailer freight band on the Shipping tab applies. Unloading, placement and site supports are quoted separately.</p><h3>Is the AC included?</h3><p>No. The standard electrical package includes provision for an AC circuit where the drawing calls for it; the fitted unit is quoted separately, as are the desks and chairs shown in the images.</p><h3>Can a toilet be added to a small office cabin?</h3><p>Not inside these six sizes. A cabin with a toilet needs a wet zone, waste connection and a different lining, and is a different product: the Porta Cabin with Toilet. A <a href=\"/product/portable-toilet\">separate portable toilet unit</a> beside the office cabin is the usual answer on a compact site.</p><h3>Why does the roof look almost flat?</h3><p>Because the slope is deliberately small: a five-to-six-inch fall on the one-way roof, or a five-to-six-inch centred ridge on the two-way roof. That is enough to drain and low enough to keep the cabin under gate heights and transport limits. It is not a flat container roof and has no ISO corner castings.</p><h3>How is the cabin lifted and placed?</h3><p>By four corner lifting eyes, one at each top corner, as one rigid box. A crane or a hydraulic tail-lift places it on the prepared supports. The lifting details and capacity for the order are governed by the approved shop drawings.</p><h3>How should a small office room be arranged?</h3><p>The GA boards on this page are the arrangement: desk against the wall opposite the door in the 8×6, desks under the windows in the 10 ft sizes, a desk row along Wall B in the 20 ft sizes, and sockets routed clear of the door swing and window frames. Start from the board for your size and tell us what to move.</p></section>",
+  "suppressLegacyFaqSchema": true,
+  "suppressAggregateRatingSchema": true,
+  "suppressReviewClaims": true,
+  "suppressSchemaAvailability": true,
+  "emitSizeAnchors": true,
+  "hideHeroProofRow": true
 }

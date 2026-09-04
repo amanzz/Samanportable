@@ -46,11 +46,13 @@ interface ProductTabsProps {
   reviewProductId?: number;
   productName?: string;
   fullMobileLabels?: boolean;
+  /** SOC-01 - forwarded to ProductReviews; absent keeps the deployed zero-state. */
+  reviewsEmptyStateText?: string;
 }
 
 
 
-const ProductTabs: React.FC<ProductTabsProps> = ({ description, specificationsHtml, shippingHtml, productTitle, reviews = [], averageRating, ratingCount, productId, reviewProductId, productName, fullMobileLabels = false }) => {
+const ProductTabs: React.FC<ProductTabsProps> = ({ description, specificationsHtml, shippingHtml, productTitle, reviews = [], averageRating, ratingCount, productId, reviewProductId, productName, fullMobileLabels = false, reviewsEmptyStateText }) => {
   const [activeTab, setActiveTab] = useState('description');
 
   // Allow a "Write a Review" trigger anywhere on the page to open the Reviews tab
@@ -414,6 +416,7 @@ const ProductTabs: React.FC<ProductTabsProps> = ({ description, specificationsHt
                   productId={productId}
                   reviewProductId={reviewProductId}
                   productName={productName}
+                  emptyStateText={reviewsEmptyStateText}
                 />
               </TabsContent>
 

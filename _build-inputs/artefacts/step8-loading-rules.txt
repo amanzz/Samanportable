@@ -1,0 +1,12 @@
+SOC-01 loading rules vs the design lock
+=======================================
+
+-- SOC-01 preview --
+<link rel="preload" href="/saman-logo.svg" as="image" fetchpriority="high"/>
+<link rel="preload" href="/images/products/small-office-cabin/10x10/small-office-cabin-10x10-front-angle.webp" as="image" fetchpriority="high"/>
+<img alt="Front corner view of the small office cabin at 10 x 10 ft, the short wall run typical of the compact range across the 10 ft wall." fetchpriority="high" width="1200" height="1200" decoding="async" data-nimg="1" class="w-full h-full object-cover" style="color:transparent" src="/images/products/small-office-cabin/10x10/small-office-cabin-10x10-front-angle.webp"/>
+<img alt="Thumbnail 1: Front corner view of the small office cabin at 10 x 10 ft, the short wall run typical of the compact range across the 10 ft wall." loading="lazy" width="150" height="150" decoding="async" data-nimg="1" class="w-full h-full object-cover" style="color:transparent" src="/images/products/small-office-cabin/10x10/small-office-cabin-10x10-front-angle.webp"/>
+
+-- live porta-cabins (design lock) --
+<link rel="preload" href="/saman-logo.svg" as="image" fetchpriority="high"/>
+<link rel="preload" href="/images/products/porta-cabins/20x10/porta-cabin-20x10-01-exterior-front-left.webp" as="image" fetchpriority="high"/>

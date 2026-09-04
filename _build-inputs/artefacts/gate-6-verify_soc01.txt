@@ -1,0 +1,270 @@
+PASS exactly one H1  | ['Small Office Cabin: Six Compact Sizes from 8×6 to 20×12 ft']
+PASS H1 text  | ['Small Office Cabin: Six Compact Sizes from 8×6 to 20×12 ft']
+PASS title text  | ['Small Office Cabin: 6 Sizes from 8×6 ft, Prices | SAMAN']
+PASS meta description  | ['Factory-built small office cabin in six sizes from 8×6 ft (48 sq ft) to 20×12 ft, ex-GST prices published, one door and GA-fixed windows, delivered as one unit.']
+PASS canonical self  | ['https://www.samanportable.com/product/portable-office/small-office-cabin']
+PASS block order hero > explore > section2 > card > section3 > calculator > YMAL > product details  | [('Choose your size - six compact options', 1219), ('Explore the Range', 2421), ('Small Office Cabin: One Room, Six Sizes, Starting Below 100 sq ft', 3025), ('Two compact sizes you will not find on the main range page', 4021), ('Compare the six Small Office Cabin sizes, 48 to 240 sq ft', 4479), ('PRICE IT YOURSELF', 10771), ('You may also like', 28560), ('Product Details', 28849)]
+PASS size 8x6 ex-GST price present  | ₹84,603
+PASS size 8x6 incl-GST price present  | ₹99,832
+PASS size 10x8 ex-GST price present  | ₹1,23,379
+PASS size 10x8 incl-GST price present  | ₹1,45,587
+PASS size 10x10 ex-GST price present  | ₹1,40,760
+PASS size 10x10 incl-GST price present  | ₹1,66,097
+PASS size 20x8 ex-GST price present  | ₹2,15,424
+PASS size 20x8 incl-GST price present  | ₹2,54,200
+PASS size 20x10 ex-GST price present  | ₹2,44,800
+PASS size 20x10 incl-GST price present  | ₹2,88,864
+PASS size 20x12 ex-GST price present  | ₹2,82,010
+PASS size 20x12 incl-GST price present  | ₹3,32,772
+PASS from price
+PASS old-page string absent: ₹1,44,000
+PASS old-page string absent: ₹2,30,400
+PASS old-page string absent: ₹2,62,000
+PASS old-page string absent: ₹1,85,000
+PASS old-page string absent: 10×10×9
+PASS old-page string absent: one to four
+PASS old-page string absent: three compact sizes
+PASS old-page string absent: Three compact sizes
+PASS old-page string absent: 3 Compact Sizes
+PASS section2 paragraph1
+PASS section2 paragraph2
+PASS section2 card paragraph1
+PASS section2 card paragraph2
+PASS section3 8x6 H3
+PASS section3 8x6 paragraph
+PASS section3 8x6 bullet  | 8×6×8.5 ft, 48 sq ft, ₹84,603 ex-GST (₹99,832 incl
+PASS section3 8x6 bullet  | One-way sloped roof, 5–6 in fall across the 6 ft w
+PASS section3 8x6 bullet  | 1 external door on Wall A, 1 window centred on End
+PASS section3 8x6 bullet  | 1 desk staged against Wall B in the GA drawing
+PASS section3 8x6 bullet  | Four corner lifting eyes, single-lift placement
+PASS section3 8x6 bullet  | Colour shown: coral red (presentation colour, conf
+PASS section3 10x8 H3
+PASS section3 10x8 paragraph
+PASS section3 10x8 bullet  | 10×8×8.5 ft, 80 sq ft, ₹1,23,379 ex-GST (₹1,45,587
+PASS section3 10x8 bullet  | One-way sloped roof for the 8 ft width
+PASS section3 10x8 bullet  | 1 external door on Wall A; 1 centred window each o
+PASS section3 10x8 bullet  | 4 desks staged: 2 on Wall B, 1 on End C, 1 on End 
+PASS section3 10x8 bullet  | With the 8×6, the only office cabin sizes below 10
+PASS section3 10x8 bullet  | Colour shown: chrome green
+PASS section3 10x10 H3
+PASS section3 10x10 paragraph
+PASS section3 10x10 bullet  | 10×10×8.5 ft, 100 sq ft, ₹1,40,760 ex-GST (₹1,66,0
+PASS section3 10x10 bullet  | Two-way roof, one centred longitudinal ridge, 5–6 
+PASS section3 10x10 bullet  | 1 external door on Wall A; 1 centred window each o
+PASS section3 10x10 bullet  | 4 desks staged: 2 on Wall B, 1 on End C, 1 on End 
+PASS section3 10x10 bullet  | Same size also sold on the main range at a full-of
+PASS section3 10x10 bullet  | Colour shown: dark grey (colour of the retained ga
+PASS section3 20x8 H3
+PASS section3 20x8 paragraph
+PASS section3 20x8 bullet  | 20×8×8.5 ft, 160 sq ft, ₹2,15,424 ex-GST (₹2,54,20
+PASS section3 20x8 bullet  | One-way sloped roof for the 8 ft width
+PASS section3 20x8 bullet  | Wall A: window–door–window; Wall B: two windows; E
+PASS section3 20x8 bullet  | 3 desks staged in a row on Wall B
+PASS section3 20x8 bullet  | Fits where a 10 ft wide cabin will not pass or wil
+PASS section3 20x8 bullet  | Colour shown: light blue over a grey base (colour 
+PASS section3 20x10 H3
+PASS section3 20x10 paragraph
+PASS section3 20x10 bullet  | 20×10×8.5 ft, 200 sq ft, ₹2,44,800 ex-GST (₹2,88,8
+PASS section3 20x10 bullet  | Base rate size: ₹1,224/sq ft, no band adjustment
+PASS section3 20x10 bullet  | Two-way roof, centred ridge along the 20 ft length
+PASS section3 20x10 bullet  | Wall A: window–door–window; Wall B: two windows; o
+PASS section3 20x10 bullet  | 5 desks staged: 3 on Wall B, 2 on Wall A
+PASS section3 20x10 bullet  | Colour shown: light grey over a charcoal base (col
+PASS section3 20x12 H3
+PASS section3 20x12 paragraph
+PASS section3 20x12 bullet  | 20×12×8.5 ft, 240 sq ft, ₹2,82,010 ex-GST (₹3,32,7
+PASS section3 20x12 bullet  | Lowest rate on the page: ₹1,175.04/sq ft
+PASS section3 20x12 bullet  | Same 20 ft opening ledger as the 20×10: window–doo
+PASS section3 20x12 bullet  | 5 desks staged with a 2 ft clear strip behind the 
+PASS section3 20x12 bullet  | Largest compact size; 300 and 400 sq ft are on the
+PASS section3 20x12 bullet  | Colour shown: warm cream
+PASS tab panel present: Description
+PASS tab panel present: Specifications
+PASS tab panel present: Shipping
+PASS tab panel present: Reviews
+PASS description H2: Small office cabin or office cabin desig
+PASS description paragraph  | Most searches for "small office cabin" in India me
+PASS description paragraph  | If you want the first, an interior designer or a p
+PASS description paragraph  | The word "cabin" also covers container offices and
+PASS description H2: Who buys a small office cabin and where 
+PASS description paragraph  | The buyers we build these for share one brief: one
+PASS description paragraph  | The sites are as compact as the users: a factory g
+PASS description paragraph  | What these buyers do not need is a nine-size ladde
+PASS description H2: How to choose the size: 48, 80, 100, 160
+PASS description paragraph  | Start from the number of people who sit inside on 
+PASS description paragraph  | Then check the ground. The 8 ft wide sizes carry a
+PASS description paragraph  | The table below is every size on this page with th
+PASS description paragraph  | Two things the table cannot show. First, the 20×12
+PASS description H2: How the price is built, and what is quot
+PASS description paragraph  | Every size on this page is priced from one visible
+PASS description paragraph  | The published price buys the compact office shell,
+PASS description paragraph  | The desks in the gallery and the GA boards are sta
+PASS description H2: Roof, walls and lifting: how the compact
+PASS description paragraph  | The small office cabin is a non-container sloped-r
+PASS description paragraph  | The shell follows SAMAN's approved cabin-family ma
+PASS description paragraph  | Lifting is by four compact eye plates, one at each
+PASS description H2: Doors, windows and sockets follow one wa
+PASS description paragraph  | Each of the six sizes has a GA drawing that names 
+PASS description paragraph  | This matters for more than pictures. Switch and so
+PASS description H2: Site preparation, delivery and placement
+PASS description paragraph  | The cabin needs a level pad and support points as 
+PASS description paragraph  | Standard delivery from confirmed order is 7 to 21 
+PASS description H2: When a small office cabin is the wrong c
+PASS description paragraph  | It is the wrong choice when the room must contain 
+PASS description H2: Frequently asked questions
+PASS faq visible: What is the minimum size of an office ca
+PASS faq visible: Can three people work in a 10×10 small o
+PASS faq visible: Is the price ex-GST, and does it include
+PASS faq visible: Is the AC included?
+PASS faq visible: Can a toilet be added to a small office 
+PASS faq visible: Why does the roof look almost flat?
+PASS faq visible: How is the cabin lifted and placed?
+PASS faq visible: How should a small office room be arrang
+PASS spec narrative  | These specifications describe the compact office s
+PASS spec narrative  | Final member sizes, connections, lifting details, 
+PASS spec narrative  | Two coordination diagrams are shown below the tabl
+PASS spec row: SZ-01  | ['SZ-01', '8×6×8.5']
+PASS spec row: SZ-02  | ['SZ-02', '10×8×8.5']
+PASS spec row: SZ-03  | ['SZ-03', '10×10×8.5']
+PASS spec row: SZ-04  | ['SZ-04', '20×8×8.5']
+PASS spec row: SZ-05  | ['SZ-05', '20×10×8.5']
+PASS spec row: SZ-06  | ['SZ-06', '20×12×8.5']
+PASS spec row: Family  | ['Family', 'Non-container sloped-roof portable cabin; not the ISO container flat-roof family']
+PASS spec row: Roof, 6 and 8 ft widths  | ['Roof, 6 and 8 ft widths', 'One-way: one plane falls across the width, 5–6 in total high-eave to low-eave fall']
+PASS spec row: Roof, 10 and 12 ft widths  | ['Roof, 10 and 12 ft widths', 'Two-way: one continuous centred longitudinal ridge, exactly two planes falling to the long-wall eaves, ridge 5–6 in above each eave']
+PASS spec row: Excluded roof forms  | ['Excluded roof forms', 'No hip, four-way or ISO flat roof; no ridge-apex, gable-apex or mid-span hook']
+PASS spec row: Lifting  | ['Lifting', 'Exactly four compact lifting eye plates, one at each top plan corner (H1–H4); no ISO corner castings']
+PASS spec row: External cladding  | ['External cladding', 'Vertical corrugated mild-steel sheet with coordinated door and window trims']
+PASS spec row: Presentation colours  | ['Presentation colours', '8×6 coral red · 10×8 chrome green · 10×10 pure orange · 20×8 fern green · 20×10 orange brown · 20×12 warm cream; final colour confirmed at quotation']
+PASS spec row: Height  | ['Height', '8.5 ft nominal, all sizes']
+PASS spec row: 8×6  | ['8×6', '1 door']
+PASS spec row: 10×8  | ['10×8', '1 door']
+PASS spec row: 10×10  | ['10×10', '1 door']
+PASS spec row: 20×8  | ['20×8', 'window–door–window']
+PASS spec row: 20×10  | ['20×10', 'window–door–window']
+PASS spec row: 20×12  | ['20×12', 'window–door–window']
+PASS spec row: Primary base frame  | ['Primary base frame', 'Welded MS C-channel chassis']
+PASS spec row: Upper, wall and roof frame  | ['Upper, wall and roof frame', 'MS SHS/angle framing with reinforced openings']
+PASS spec row: External walls  | ['External walls', 'Corrugated MS sheet, Tata/Jindal or approved equivalent']
+PASS spec row: Roof sheet  | ['Roof sheet', 'Sloped corrugated MS sheet with sealed laps, flashings and drainage']
+PASS spec row: Internal wall and ceiling  | ['Internal wall and ceiling', 'Prelaminated MDF with aluminium joint sections']
+PASS spec row: Floor system  | ['Floor system', 'Cement-fibre (Bison) board plus resilient finish']
+PASS spec row: Thermal insulation  | ['Thermal insulation', 'Glass wool, or documented Heatlon wall option']
+PASS spec row: Main door  | ['Main door', 'Outward-opening MS-framed door assembly']
+PASS spec row: Windows  | ['Windows', 'Two-track aluminium sliding unit with glazing']
+PASS spec row: Electrical  | ['Electrical', 'Concealed copper wiring with DB, MCB/RCCB and earthing']
+PASS spec row: Corrosion protection  | ['Corrosion protection', 'Prepared MS with red-oxide primer and compatible enamel']
+PASS spec row: Handling and QA  | ['Handling and QA', 'Designed lifting eyes, sealing and pre-dispatch inspection']
+PASS spec row: Compact office shell in one of  | ['Compact office shell in one of the six listed sizes', 'Toilet or additional internal partition']
+PASS spec row: Locked roof family and GA open  | ['Locked roof family and GA opening schedule', 'Premium internal lining unless quoted']
+PASS spec row: Standard door, windows and ele  | ['Standard door, windows and electrical package', 'Loose furniture shown for staging']
+PASS spec row: Four corner lifting eyes  | ['Four corner lifting eyes', 'Fitted AC']
+PASS spec row: Ex-GST and GST-inclusive price  | ['Ex-GST and GST-inclusive price dashboard values', 'Delivery, unloading, placement and site supports']
+PASS reviews empty state
+PASS shipping free-delivery lines
+PASS shipping 20 ft first band
+PASS forbidden absent: 'coming soon'
+PASS forbidden absent: 'available on request'
+PASS forbidden absent: 'contact us for details'
+PASS forbidden absent: 'Lorem'
+PASS forbidden absent: 'TBD'
+PASS forbidden absent: 'placeholder'
+PASS forbidden absent: '—'
+PASS no U+2014 in copy
+PASS no 'Info' tab label
+PASS link present /product/portable-office
+PASS link present /product/portable-office/readymade-office-cabin
+PASS link present /product/portable-office/prefabricated-office-cabins
+PASS link present /product/porta-cabins/porta-cabin-with-toilet
+PASS link present /product/security-cabins
+PASS link present /product/container-offices
+PASS link present /product/portable-toilet
+PASS legacy link absent /product/portable-office/modern-office-cabin
+PASS legacy link absent /product/portable-office/portable-office-container
+PASS internal link 200: /product/container-cafe  | 200
+PASS internal link 200: /product/container-houses  | 200
+PASS internal link 200: /product/container-houses/luxury-container-houses  | 200
+PASS internal link 200: /product/container-houses/prefab-container-homes  | 200
+PASS internal link 200: /product/container-offices  | 200
+PASS internal link 200: /product/industrial-sheds  | 200
+PASS internal link 200: /product/labor-colony  | 200
+PASS internal link 200: /product/porta-cabins  | 200
+PASS internal link 200: /product/porta-cabins/porta-cabin-with-toilet  | 200
+PASS internal link 200: /product/portable-office  | 200
+PASS internal link 200: /product/portable-office/prefabricated-office-cabins  | 200
+PASS internal link 200: /product/portable-office/readymade-office-cabin  | 200
+PASS internal link 200: /product/portable-toilet  | 200
+PASS internal link 200: /product/pre-engineered-buildings  | 200
+PASS internal link 200: /product/prefab-buildings  | 200
+PASS internal link 200: /product/prefabricated-houses  | 200
+PASS internal link 200: /product/puf-panel  | 200
+PASS internal link 200: /product/roofing-sheet  | 200
+PASS internal link 200: /product/security-cabins  | 200
+PASS no empty alt  | 21
+PASS no duplicate alt
+PASS no source PNG served
+PASS explicit width/height on every img  | 21
+PASS webp 8x6/small-office-cabin-8x6-end-view-window-end-wall-door-long-wall.webp exists and 80-120 KB  | 117
+PASS webp 8x6/small-office-cabin-8x6-rear-solid-wall-one-way-roof.webp exists and 80-120 KB  | 113
+PASS webp 8x6/small-office-cabin-8x6-front-door-wall.webp exists and 80-120 KB  | 110
+PASS webp 8x6/small-office-cabin-8x6-interior-from-door-desk-window.webp exists and 80-120 KB  | 111
+PASS webp 8x6/small-office-cabin-8x6-interior-towards-door.webp exists and 80-120 KB  | 114
+PASS webp 8x6/small-office-cabin-8x6-interior-workstation-corner.webp exists and 80-120 KB  | 116
+PASS webp 10x8/small-office-cabin-10x8-front-door-end-window.webp exists and 80-120 KB  | 109
+PASS webp 10x8/small-office-cabin-10x8-end-view-yard.webp exists and 80-120 KB  | 114
+PASS webp 10x8/small-office-cabin-10x8-rear-two-windows.webp exists and 80-120 KB  | 110
+PASS webp 10x8/small-office-cabin-10x8-interior-four-desks.webp exists and 80-120 KB  | 112
+PASS webp 10x8/small-office-cabin-10x8-interior-towards-door.webp exists and 80-120 KB  | 117
+PASS webp 10x8/small-office-cabin-10x8-interior-desk-row.webp exists and 80-120 KB  | 115
+PASS webp 20x12/small-office-cabin-20x12-front-window-door-window.webp exists and 80-120 KB  | 116
+PASS webp 20x12/small-office-cabin-20x12-rear-two-windows-end-window.webp exists and 80-120 KB  | 112
+PASS webp 20x12/small-office-cabin-20x12-end-view-gable.webp exists and 80-120 KB  | 109
+PASS webp 20x12/small-office-cabin-20x12-interior-desk-row-walkway.webp exists and 80-120 KB  | 111
+PASS webp 20x12/small-office-cabin-20x12-interior-towards-door.webp exists and 80-120 KB  | 116
+PASS webp 20x12/small-office-cabin-20x12-interior-back-wall-desks.webp exists and 80-120 KB  | 115
+PASS GA webp 8x6 exists and 80-120 KB  | 111
+PASS GA 8x6 ratio 16:9 (never cropped)  | (1800, 1012)
+PASS GA webp 10x8 exists and 80-120 KB  | 113
+PASS GA 10x8 ratio 16:9 (never cropped)  | (1800, 1012)
+PASS GA webp 10x10 exists and 80-120 KB  | 110
+PASS GA 10x10 ratio 16:9 (never cropped)  | (1800, 1012)
+PASS GA webp 20x8 exists and 80-120 KB  | 115
+PASS GA 20x8 ratio 16:9 (never cropped)  | (1800, 1012)
+PASS GA webp 20x10 exists and 80-120 KB  | 114
+PASS GA 20x10 ratio 16:9 (never cropped)  | (1800, 1012)
+PASS GA webp 20x12 exists and 80-120 KB  | 115
+PASS GA 20x12 ratio 16:9 (never cropped)  | (1800, 1012)
+PASS retained live image referenced: small-office-cabin-10x10-front-angle.webp
+PASS retained live image referenced: small-office-cabin-10x10-side-elevation.webp
+PASS retained live image referenced: small-office-cabin-10x10-hero-view.webp
+PASS retained live image referenced: small-office-cabin-10x10-workspace-interior.webp
+PASS retained live image referenced: small-office-cabin-10x10-entrance-interior.webp
+PASS retained live image referenced: small-office-cabin-10x10-rear-interior.webp
+PASS retained live image referenced: small-office-cabin-20x8-front-angle.webp
+PASS retained live image referenced: small-office-cabin-20x8-side-elevation.webp
+PASS retained live image referenced: small-office-cabin-20x8-hero-view.webp
+PASS retained live image referenced: small-office-cabin-20x8-workspace-interior.webp
+PASS retained live image referenced: small-office-cabin-20x8-entrance-interior.webp
+PASS retained live image referenced: small-office-cabin-20x8-rear-interior.webp
+PASS retained live image referenced: small-office-cabin-20x10-front-angle.webp
+PASS retained live image referenced: small-office-cabin-20x10-side-elevation.webp
+PASS retained live image referenced: small-office-cabin-20x10-hero-view.webp
+PASS retained live image referenced: small-office-cabin-20x10-workspace-interior.webp
+PASS retained live image referenced: small-office-cabin-20x10-entrance-interior.webp
+PASS retained live image referenced: small-office-cabin-20x10-rear-interior.webp
+PASS schema ItemPage
+PASS schema Product
+PASS schema BreadcrumbList
+PASS schema FAQPage
+PASS no review schema
+PASS no shippingDetails
+PASS faq schema matches visible: What is the minimum size of an
+PASS faq schema matches visible: Can three people work in a 10×
+PASS faq schema matches visible: Is the price ex-GST, and does 
+PASS faq schema matches visible: Is the AC included?
+PASS faq schema matches visible: Can a toilet be added to a sma
+PASS faq schema matches visible: Why does the roof look almost 
+PASS faq schema matches visible: How is the cabin lifted and pl
+PASS faq schema matches visible: How should a small office room
+
+RESULT: PASS

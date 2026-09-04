@@ -1,0 +1,497 @@
+{
+  "_note": "Every value in copy_fields is a SHA-256 over the exact UTF-8 bytes of that field in SOC-01-small-office-cabin-copy-v1.json. The builder renders the copy pack verbatim and never retypes, shortens, expands or improves a field. asset_sha256 covers the shipped bytes of every image this page references, including the eighteen retained live files, which are byte-identical to the pre-build repo.",
+  "ticket": "SOC-01",
+  "copy_pack_version": "v1",
+  "copy_pack_sha256": "4c0ce8bf093fc772d378e5644bf8e3638c011f25de29d80126e82863794a1ef1",
+  "copy_pack_declared_sha256_of_copy": "45538d62125bc460be6d73fcff561ee85810c6fddcc25d41db5cb9c08a6c679e",
+  "copy_fields": {
+    "H1": {
+      "chars": 58,
+      "sha256": "b29c51eb98afe6610443cd13799e1a446d8a864062b9a4f5cc4835beca2faacb"
+    },
+    "SEO_TITLE": {
+      "chars": 55,
+      "sha256": "a85a0442dd79139d070218aea8e3225fc9e3e0b22e4f46f0aa3e642aa1a40137"
+    },
+    "META_DESCRIPTION": {
+      "chars": 160,
+      "sha256": "8f94f0f88be2e3f0e9b350574944b055bb9c741c07e7e147a785c2c44a73fdd0"
+    },
+    "CANONICAL": {
+      "chars": 72,
+      "sha256": "1f5a90b505abf70a8d51cc1bbc4690cdc89f7a107143fc697b638e4314b87fd0"
+    },
+    "HERO_SHORT_DESCRIPTION": {
+      "chars": 704,
+      "sha256": "8f3e5bbf283c29695e8dce8eecd5e84a328b1c21160b5c538f554d3a3c534095"
+    },
+    "HERO_SIZE_SELECTOR_LABEL": {
+      "chars": 38,
+      "sha256": "5f2e7f36b9bd2e3d140b95e415342bcfd46f7db7bdf0f1b9e08b83656eeb2e04"
+    },
+    "SECTION2_H2": {
+      "chars": 65,
+      "sha256": "918f749b46e7bbfd575f865ae40b961b5caecb14985a31d43aa8cb50782e423c"
+    },
+    "SECTION2_P1": {
+      "chars": 453,
+      "sha256": "54c1dd0ca4ae06b77db921491d242ca2475bf6685d80d130c2658019ec786880"
+    },
+    "SECTION2_P2": {
+      "chars": 442,
+      "sha256": "e663d8b284a2c14542d7141285d2a1f52a0112b3893ae17e93100fde44ba572a"
+    },
+    "SECTION2_CTA": {
+      "chars": 32,
+      "sha256": "162bf80e7f9baa27b91af8e90ba5cc5129b8784e1448a3c36d045d0638ea834e"
+    },
+    "SECTION2_LINK_ANCHOR": {
+      "chars": 32,
+      "sha256": "360746d1c9c42563fe2262a680061f17a270980f072c22803605cafa47a03e1a"
+    },
+    "SECTION2_LINK_HREF": {
+      "chars": 24,
+      "sha256": "cdef7cb8f1ac089acebff35da8c6aff002a1991e53cbb70d1264ff0b43156bbe"
+    },
+    "SECTION2_CARD_H3": {
+      "chars": 58,
+      "sha256": "7befe2952cca430ac26edd75499d435e242d1ed2c6267a5205427c5f493b8abf"
+    },
+    "SECTION2_CARD_PARAGRAPH": {
+      "chars": 185,
+      "sha256": "7085573cadabae9d745f8f0e03f632b3d27bd44899668a1c0c448363525a957a"
+    },
+    "SECTION2_CARD_PARAGRAPH2": {
+      "chars": 190,
+      "sha256": "959249fcd21b6e0806dfd2dd7a1db504b35a48ea68062b35f2355c66de40bb9a"
+    },
+    "SECTION2_CARD_CTA_TEXT": {
+      "chars": 21,
+      "sha256": "1e425c76eabc088d08e55a839c1818151648d60c9a9b8c5382a38ca63129a92f"
+    },
+    "SECTION2_CARD_IMAGE_ALT": {
+      "chars": 122,
+      "sha256": "4ef05afa038ff4e825e328e6a2b8e07f272d5435710cf4b4f37b3b15a2a984c6"
+    },
+    "SECTION3_H2": {
+      "chars": 57,
+      "sha256": "14f5f9f4bb33b3f38fb0d78aafe109e6dfb473c76448a0d79ba4ecb6e6fd6e00"
+    },
+    "SECTION3_INTRO": {
+      "chars": 129,
+      "sha256": "a1c99043707f84933086589f1c1cb26ec889357a8717c4f292e2364125160380"
+    },
+    "YMAL_INTRO": {
+      "chars": 69,
+      "sha256": "1c433cb6a20b035bc96c6ee801e2b231cbf313ba755684d4536442adccded005"
+    },
+    "REVIEWS_EMPTY_STATE": {
+      "chars": 24,
+      "sha256": "dfc981f14142bf3582a86e5e26b747864f6db2be4473dd393872c02ee12d2f53"
+    },
+    "SECTION3_8x6_H3": {
+      "chars": 54,
+      "sha256": "63d88ff99f7aa0e624d58d4de2df702f21428869b5eb4b71212bc1279e41411f"
+    },
+    "SECTION3_8x6_PARAGRAPH": {
+      "chars": 490,
+      "sha256": "251793329505660a87580227b371be488ad271a52c3660a9ee5e736b74a6a364"
+    },
+    "SECTION3_8x6_BULLETS": {
+      "chars": 369,
+      "sha256": "a2dbc0d43be10b8f246c01236aa875b2d89e23ecb7e12c7ad3044233666dd68d"
+    },
+    "SECTION3_10x8_H3": {
+      "chars": 52,
+      "sha256": "aa222768bd5f890ee98faadade2bd404a376160fdde9ec10b4c945e96ea7da89"
+    },
+    "SECTION3_10x8_PARAGRAPH": {
+      "chars": 498,
+      "sha256": "326855436845f3de89903e997c62ca1e5073074bcf773703bf624f24d79b1b6f"
+    },
+    "SECTION3_10x8_BULLETS": {
+      "chars": 353,
+      "sha256": "5911552c0ef42467006a4dd0bbc202ab253d13cb1b5ada28e4ad959d45426a8e"
+    },
+    "SECTION3_10x10_H3": {
+      "chars": 61,
+      "sha256": "9d108deed0ffde89a06db13b4556410e655407402ea65ae006aedea52d4a8721"
+    },
+    "SECTION3_10x10_PARAGRAPH": {
+      "chars": 491,
+      "sha256": "215ca8572c87e50a3f085ec2a86a5a625407401daa30d2a167550e701180de11"
+    },
+    "SECTION3_10x10_BULLETS": {
+      "chars": 464,
+      "sha256": "98ae3cb691c085fca73db8e74d35214cc3adcabb4165aaa840d9ebc54cf11372"
+    },
+    "SECTION3_20x8_H3": {
+      "chars": 62,
+      "sha256": "d70a3896eb00c1ef06c96d12bd46c165839e6fb159215862c8335b57b6fba224"
+    },
+    "SECTION3_20x8_PARAGRAPH": {
+      "chars": 495,
+      "sha256": "c6df610d25502476e186a434eeb98a65d802aa5bfb8808a4c00f1245a44b3373"
+    },
+    "SECTION3_20x8_BULLETS": {
+      "chars": 416,
+      "sha256": "dfdfeb075deb8eabbc0c167446d05358306db525dc78c1ddc542255164f51a5a"
+    },
+    "SECTION3_20x10_H3": {
+      "chars": 60,
+      "sha256": "8c11afeb2e1b861a725925697608b8858e591e784eda6cb422d827b49c98c0d2"
+    },
+    "SECTION3_20x10_PARAGRAPH": {
+      "chars": 480,
+      "sha256": "81ef22badf000e11a0b694b91395ec59d4b838feebb1362c199d2acec02211c0"
+    },
+    "SECTION3_20x10_BULLETS": {
+      "chars": 415,
+      "sha256": "f8ddc6e707b872899dca7ba96b22934bc74d45927889c13f4e1184a279f01d54"
+    },
+    "SECTION3_20x12_H3": {
+      "chars": 60,
+      "sha256": "7c552dc0cd6f683d8454920e396ee63c4055f965e152c5899407a6b57920d132"
+    },
+    "SECTION3_20x12_PARAGRAPH": {
+      "chars": 485,
+      "sha256": "f4714c6b3616d16b18f61451914e9e9fcf4b4b8783d83a0cba16dd68df60473c"
+    },
+    "SECTION3_20x12_BULLETS": {
+      "chars": 377,
+      "sha256": "4441164381e5322ca639dca5415d22c6f31bf99c766bf432b7a4ed4aa185a608"
+    },
+    "SPECS_NARRATIVE_1": {
+      "chars": 534,
+      "sha256": "3c91624ff0ed60831a0b0898efed320077480f264b18d5a7be7843f69089cd7f"
+    },
+    "SPECS_NARRATIVE_2": {
+      "chars": 296,
+      "sha256": "962a6330d49ae48ff4737dd5e14e4c1055878832561ea421042ffcd3166fe816"
+    },
+    "SPECS_NARRATIVE_3": {
+      "chars": 236,
+      "sha256": "b5f574c4a5302be612b7372e019c76f97a2ee31c789ab3ff3441b65aac75a069"
+    },
+    "SPECS_GROUP_A_TITLE": {
+      "chars": 49,
+      "sha256": "eb88c4151020eb4a648b33da32059f3a4014e41e749405992248eb64c95ad1d0"
+    },
+    "SPECS_GROUP_A_ROWS": {
+      "chars": 470,
+      "sha256": "f720325abcb9d6244a87710defef7de0e8778cb7dfc4411538ab9ab7dfebb8ce"
+    },
+    "SPECS_GROUP_A_NOTE": {
+      "chars": 188,
+      "sha256": "f97cbb1fa5f77c7be1e80b90e4e8849756367327ea290cd51a0ee832a5f7e845"
+    },
+    "SPECS_GROUP_B_TITLE": {
+      "chars": 59,
+      "sha256": "0fe6abb2c32627e4b71419a13888bb243682550d2e371b79035eaf61395ef542"
+    },
+    "SPECS_GROUP_B_ROWS": {
+      "chars": 921,
+      "sha256": "f54ec48217f62011277049096a3a3dc80b8497c919f552bc992a0693fb322271"
+    },
+    "SPECS_GROUP_C_TITLE": {
+      "chars": 73,
+      "sha256": "2c3f1f70fd0848d9d2558bb41847830cac9f23d8ad5a64922f9649700875a869"
+    },
+    "SPECS_GROUP_C_ROWS": {
+      "chars": 844,
+      "sha256": "f445afe4cbe3db050a1c4d2dbd0707e5b4c0392fe3011db1840f42e75e1fa2b1"
+    },
+    "SPECS_GROUP_C_NOTE": {
+      "chars": 152,
+      "sha256": "5d27fe43309f9411019c41c2054f4190ec8a26d21a671009db22b76fda4f2f24"
+    },
+    "SPECS_GROUP_D_TITLE": {
+      "chars": 88,
+      "sha256": "492ef06d19c5628deb1ec6ee1ff8a673c917441bff5c6043619b9200e86e8345"
+    },
+    "SPECS_GROUP_D_ROWS": {
+      "chars": 1997,
+      "sha256": "e49c94a86dec850ae07f8a114a8704df8d05fe4c7f071df1fecc5490b006cdd4"
+    },
+    "SPECS_GROUP_E_TITLE": {
+      "chars": 38,
+      "sha256": "d113b5e349b25fb1d1e32ab54794a7280a5d22ec860ebf9ab2f4d0091d1295b0"
+    },
+    "SPECS_GROUP_E_ROWS": {
+      "chars": 425,
+      "sha256": "19e289d48fb7c91d5a29352eec7be4222d8c84fb8685915f79e83abbef5214ca"
+    },
+    "DESC_SECTION_1_H2": {
+      "chars": 58,
+      "sha256": "7108d59486c1773be645047bad8fefb6b38f528831bb9d78fa84a07ce041be41"
+    },
+    "DESC_SECTION_1_ITEMS": {
+      "chars": 1247,
+      "sha256": "4e0a3ed213b077368d9781d391bc2a2f4b0845d1a6be596b8952687a2b17a564"
+    },
+    "DESC_SECTION_2_H2": {
+      "chars": 47,
+      "sha256": "d21c9dd2e045517f0faa92f723a39e7f8098d188c5b22f2e1a2b2d251ea55b43"
+    },
+    "DESC_SECTION_2_ITEMS": {
+      "chars": 1119,
+      "sha256": "2227a96be624f327cef49a99c4e70359cc4707b7e170195c86eb60b4b2bfdffb"
+    },
+    "DESC_SECTION_3_H2": {
+      "chars": 58,
+      "sha256": "52b5c280f5e875d85f884fa72cd8c493860d1289225bd4c4b197b65ba9ef8d35"
+    },
+    "DESC_SECTION_3_ITEMS": {
+      "chars": 1996,
+      "sha256": "ede94997e5308a7e9d82afd670e9cb366f692e0548a547610e4c84427a74e2e3"
+    },
+    "DESC_SECTION_4_H2": {
+      "chars": 53,
+      "sha256": "c00f85928731b6fd265cd3ebb8134f3ab59fcbb0dee8ef9fb758261fd1dbad9a"
+    },
+    "DESC_SECTION_4_ITEMS": {
+      "chars": 1711,
+      "sha256": "58a70ffec4c74341517636adac234cf10699c038193df603f44399fdafde5d9c"
+    },
+    "DESC_SECTION_5_H2": {
+      "chars": 56,
+      "sha256": "bc01a22bbe6c76065428684870404c36a85fdb057c7ba8005a2c726dcd757381"
+    },
+    "DESC_SECTION_5_ITEMS": {
+      "chars": 1812,
+      "sha256": "2083dd879391224a7f60fcfced47c9fc5139306af7c3b497993ef60d79885617"
+    },
+    "DESC_SECTION_6_H2": {
+      "chars": 51,
+      "sha256": "8c929718107c3d47dd47e9f27e9b64e9f625020a021cd2cac796861a76424533"
+    },
+    "DESC_SECTION_6_ITEMS": {
+      "chars": 1081,
+      "sha256": "9a25e699c17e4e8b8b3288d36d89adab5847faf179c301dd80a416518efac470"
+    },
+    "DESC_SECTION_7_H2": {
+      "chars": 40,
+      "sha256": "dc000cf281af78315855870139f393f0b1fb30665330da6a9b3da60ef6483bdf"
+    },
+    "DESC_SECTION_7_ITEMS": {
+      "chars": 930,
+      "sha256": "cc2c708e517e1fb9c6c8014465de7c4da4f068f58f056486ead8ae6fbbf969f4"
+    },
+    "DESC_SECTION_8_H2": {
+      "chars": 45,
+      "sha256": "77311b20bfbbc5c36c7f068707ebe9d5a5b6065ee1692e899e55b4f9a2d19ed0"
+    },
+    "DESC_SECTION_8_ITEMS": {
+      "chars": 661,
+      "sha256": "3661f3214c90ebe8ff207c361baf7aa5359d08d0ae4ee58b2f46652156ee9cbf"
+    },
+    "DESC_SECTION_9_H2": {
+      "chars": 26,
+      "sha256": "e956a9404b467e6b372e082d28cb9d4710af764c2fa5e56a415211e12166be0e"
+    },
+    "DESC_SECTION_9_ITEMS": {
+      "chars": 2709,
+      "sha256": "1b135d0025295ab02a59a608cf6bcd3994b7525b433457a0c926abcbba08edb6"
+    },
+    "FAQ_SCHEMA": {
+      "chars": 2589,
+      "sha256": "4468bef980ff5460aad59905586514f0286db9a8e6a444a9a17ed513eb680594"
+    },
+    "ALT_GALLERY_NEW": {
+      "chars": 3216,
+      "sha256": "9480285d04cc9f9f99c7fee064320d036a14c7749121827f838df7227a4e1a70"
+    },
+    "ALT_GALLERY_RETAINED": {
+      "chars": 573,
+      "sha256": "da3de929af077bda627484d0b3dde8fe217cb33c0ecf7f41660292216711f0cb"
+    },
+    "ALT_GA_BOARDS": {
+      "chars": 894,
+      "sha256": "5dbed7fe464c77fb8232561abaf4ea37beefbb1c55da9cd9c6cdf86d802830d0"
+    }
+  },
+  "asset_sha256": {
+    "8x6/small-office-cabin-8x6-end-view-window-end-wall-door-long-wall.webp": {
+      "bytes": 119912,
+      "sha256": "fafa9bc3fa9fcc20a7c2f53bccd8f908854d9dc76bc654b91334bc205223bf13"
+    },
+    "8x6/small-office-cabin-8x6-rear-solid-wall-one-way-roof.webp": {
+      "bytes": 116116,
+      "sha256": "26e45c1ccc3a838075cba27c2d8be5719a410244c0d195e02a181b19292d71d7"
+    },
+    "8x6/small-office-cabin-8x6-front-door-wall.webp": {
+      "bytes": 113220,
+      "sha256": "ceabb9b3d7a0a664d6a30d23a70a973bd55d69cc31fa2b2c1804c969185b7a33"
+    },
+    "8x6/small-office-cabin-8x6-interior-from-door-desk-window.webp": {
+      "bytes": 114348,
+      "sha256": "071dffd9fd5e1a442028555e66eadae5dee1ec0a69bb8b2f271119ccbbab5581"
+    },
+    "8x6/small-office-cabin-8x6-interior-towards-door.webp": {
+      "bytes": 117684,
+      "sha256": "6108429ab2a794a32dff13f33c67d5fe999e74c445b08697d79a2d7d66aff656"
+    },
+    "8x6/small-office-cabin-8x6-interior-workstation-corner.webp": {
+      "bytes": 118798,
+      "sha256": "e6e78366c225d91468ca83cab24497dcaa7f1a19f37055c309a4efdbc31107ce"
+    },
+    "10x8/small-office-cabin-10x8-front-door-end-window.webp": {
+      "bytes": 112138,
+      "sha256": "ac9fc6b3870a6c5c5420bbf8b49f91d8780fef9e499630bf9db1a2d0e61350af"
+    },
+    "10x8/small-office-cabin-10x8-end-view-yard.webp": {
+      "bytes": 117502,
+      "sha256": "886ecd51a6bea87ae8f8f36164009b70e41d994ef22cb969edc15c0fc661e2d6"
+    },
+    "10x8/small-office-cabin-10x8-rear-two-windows.webp": {
+      "bytes": 113480,
+      "sha256": "3ee88207b85f8321ea9251e735328e8f7265f7be5bd077ab71977f2ae447cc0a"
+    },
+    "10x8/small-office-cabin-10x8-interior-four-desks.webp": {
+      "bytes": 115272,
+      "sha256": "b325486ec788b5a8d717cc2d1ea110007a4ab3c40edfad1462cb039db4c84774"
+    },
+    "10x8/small-office-cabin-10x8-interior-towards-door.webp": {
+      "bytes": 120702,
+      "sha256": "432c74aa57ec0a92b34b34f3e1e17ecc993642df44a7417ff9714ac8e76b0ada"
+    },
+    "10x8/small-office-cabin-10x8-interior-desk-row.webp": {
+      "bytes": 117928,
+      "sha256": "76e30a60ec4fd89e1b6c9fafeaa950a9794fdad58dc2f45a5c8bed7d15b4ffcb"
+    },
+    "20x12/small-office-cabin-20x12-front-window-door-window.webp": {
+      "bytes": 118920,
+      "sha256": "0d7a13bd9e532d2b05d9df3f00579027724972759524b6afb72edac28dbd0e8e"
+    },
+    "20x12/small-office-cabin-20x12-rear-two-windows-end-window.webp": {
+      "bytes": 115512,
+      "sha256": "4bf6156176c4b4048a03e0efd6e9b7bf493e4803f1825e2c7c328ccc3b216c6f"
+    },
+    "20x12/small-office-cabin-20x12-end-view-gable.webp": {
+      "bytes": 112542,
+      "sha256": "bb3a7a5b9246daaf2b57da112d8113bcaa869c7d25e8b67eafff9668bd1dab90"
+    },
+    "20x12/small-office-cabin-20x12-interior-desk-row-walkway.webp": {
+      "bytes": 113824,
+      "sha256": "7f2a22052ee80952c35c65ecc5bbb943fdc2ef510f05864f987b150cbbc29041"
+    },
+    "20x12/small-office-cabin-20x12-interior-towards-door.webp": {
+      "bytes": 119192,
+      "sha256": "396e2e64bd7ef74b866c82c426d012f39659adc1140e9790599eb7939e029dba"
+    },
+    "20x12/small-office-cabin-20x12-interior-back-wall-desks.webp": {
+      "bytes": 118740,
+      "sha256": "c6e34960a2b991ec931ff128242112257d9e8a1a8122bec76a3cd8cdb6ee1c29"
+    },
+    "ga/small-office-cabin-8x6-ga-board.webp": {
+      "bytes": 114028,
+      "sha256": "34af1d255b995eb471c6150cc62b06b4ba37e40670c5a3a64daf7fca67c5eab0"
+    },
+    "ga/small-office-cabin-10x8-ga-board.webp": {
+      "bytes": 116220,
+      "sha256": "e3c5ba3c2c78b94751752d1f8f51916888b85bc404daeec823e54f5186510034"
+    },
+    "ga/small-office-cabin-10x10-ga-board.webp": {
+      "bytes": 113654,
+      "sha256": "e45fcc6665d526f07f8f0c08ed418d5996c6cc5184cd7ce9a1a3dae2089178ff"
+    },
+    "ga/small-office-cabin-20x8-ga-board.webp": {
+      "bytes": 118126,
+      "sha256": "8820461a74944adc2d4e08f88e166e62aa85d597d8e2fc580bf25f8fb406baa0"
+    },
+    "ga/small-office-cabin-20x10-ga-board.webp": {
+      "bytes": 117310,
+      "sha256": "44ff49386b3f3a6d4fef34d30f624514e4f1250b2cae09bbf4ba0349de2cc303"
+    },
+    "ga/small-office-cabin-20x12-ga-board.webp": {
+      "bytes": 118684,
+      "sha256": "1956dd8a570eab714a9ae07e1708645b642ab86e9b3e8c2fae22c9cddf541995"
+    },
+    "section2/small-office-cabin-10x10-exterior-card.webp": {
+      "bytes": 116964,
+      "sha256": "9b9d6a9f5a3527e11d490b69d3f1adb21e117f99e845fcb139a25b244486c178"
+    },
+    "specs/small-office-cabin-envelope-coordination-diagram.webp": {
+      "bytes": 71978,
+      "sha256": "99a9f5a2518fd64fa7bbe580b16c3fd2659517b2a9d4b74fe0271a3e9f7cb315"
+    },
+    "specs/small-office-cabin-opening-electrical-coordination-diagram.webp": {
+      "bytes": 113202,
+      "sha256": "03ef127cf77a90c6a4832fb14735b3e052850e39ba0cdf44d8264fb61eae0b33"
+    },
+    "10x10/small-office-cabin-10x10-front-angle.webp": {
+      "bytes": 98282,
+      "sha256": "dd1615fac637ddd9f8d4a56f59718a9a983b83c6a931a0504f2e7166163728b5"
+    },
+    "10x10/small-office-cabin-10x10-side-elevation.webp": {
+      "bytes": 204250,
+      "sha256": "a42a9f5eae561710e0b89243d2ecdd280872086e5da9087d39a31b428bbaf2a3"
+    },
+    "10x10/small-office-cabin-10x10-hero-view.webp": {
+      "bytes": 125644,
+      "sha256": "3ca67074f9649817989f026b174649b504f7b31bacd4cd7f5770999b4f93e66b"
+    },
+    "10x10/small-office-cabin-10x10-workspace-interior.webp": {
+      "bytes": 72280,
+      "sha256": "1ff0b4e30b08b8f2c20da0e83e221048a396bf90cd2b6b922fe337959574fe71"
+    },
+    "10x10/small-office-cabin-10x10-entrance-interior.webp": {
+      "bytes": 69724,
+      "sha256": "4cb1b0dd54475876517ec4ca0dfb870e6aa4f193e663759ef108aeb86c2b1e3e"
+    },
+    "10x10/small-office-cabin-10x10-rear-interior.webp": {
+      "bytes": 71092,
+      "sha256": "5afd6cf9c34ed84ab505834872dded5658a270e07e235741fd524296d3d16bfc"
+    },
+    "20x8/small-office-cabin-20x8-front-angle.webp": {
+      "bytes": 239000,
+      "sha256": "a759955a1f8b7f7c5ec702878de4e19c7db6212fd3078d93e2ec3fdc297b4a7a"
+    },
+    "20x8/small-office-cabin-20x8-side-elevation.webp": {
+      "bytes": 130924,
+      "sha256": "e3eaf55314323ac5f052e2ba86ce0a4dd5274c678c8ec5bad0326fea2289f623"
+    },
+    "20x8/small-office-cabin-20x8-hero-view.webp": {
+      "bytes": 161586,
+      "sha256": "df66e4aa3dab04b4e30f23584e58d28ef576c2b24fbf696ca89b981bc3ebf3d8"
+    },
+    "20x8/small-office-cabin-20x8-workspace-interior.webp": {
+      "bytes": 103478,
+      "sha256": "992838c2477203324062bad6a4a2e59bb0b669c09c09b6ed23d1d02c977b50b0"
+    },
+    "20x8/small-office-cabin-20x8-entrance-interior.webp": {
+      "bytes": 71908,
+      "sha256": "b384f80dd5784e15cd4c8e1388d0a12020512b10439eddaef7d941c8d24a1d07"
+    },
+    "20x8/small-office-cabin-20x8-rear-interior.webp": {
+      "bytes": 90868,
+      "sha256": "7b3c637bd89d4ccde91862bf99f73d6ec0bae151649d1e2d80246fd014a4362a"
+    },
+    "20x10/small-office-cabin-20x10-front-angle.webp": {
+      "bytes": 85986,
+      "sha256": "69ff85d5a1106c17f27e11a122653c49cab64a57e0b4f801468da6280c6658e3"
+    },
+    "20x10/small-office-cabin-20x10-side-elevation.webp": {
+      "bytes": 107900,
+      "sha256": "e54c9ec83db1a15c134a9d4ab96626b9413b985a85b0ff1e74bf8a55b6eb7844"
+    },
+    "20x10/small-office-cabin-20x10-hero-view.webp": {
+      "bytes": 154378,
+      "sha256": "07c9a502b1105302a59ad595c15f6613c0ac7b9467d8fdd199cf981b2d9ce8a4"
+    },
+    "20x10/small-office-cabin-20x10-workspace-interior.webp": {
+      "bytes": 80776,
+      "sha256": "5b629736250b67a9663271c648d73c975dad5decb60f6d807cee2fed4112c45f"
+    },
+    "20x10/small-office-cabin-20x10-entrance-interior.webp": {
+      "bytes": 101358,
+      "sha256": "d30ca64250db41e6a971b4d9e9a3e6a6b4db250ee6d75c54f9dde85a66b980b3"
+    },
+    "20x10/small-office-cabin-20x10-rear-interior.webp": {
+      "bytes": 105316,
+      "sha256": "07fbc3235fe25e5465653fa173e21be4c41fc5beade1c39f6a5b7226ad9dbb88"
+    }
+  },
+  "assets_hashed": 45,
+  "assets_missing_from_manifest": []
+}

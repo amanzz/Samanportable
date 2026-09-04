@@ -268,6 +268,11 @@ export interface VariantProductData {
       gallery assets are local WebPs. Absent/false preserves the deployed bypass
       decision byte-for-byte on every sibling product. */
   optimizeLocalGalleryImages?: boolean;
+  /** SOC-01 (4 Sep 2026) — give the ACTIVE gallery thumbnail the same
+      "Thumbnail N: <alt>" label that flat-pack/shipping-container/bess already
+      render, instead of the decorative alt="". Opt-in and absent everywhere else,
+      so every other product keeps its empty active-thumb alt byte-identical. */
+  labelActiveThumbnailAlt?: boolean;
   /** Middle segment of the buy-box trust strip. Default (absent) → preset, else the
       deployed literal "5-yr structural warranty" (flagship byte-identical). */
   trustWarranty?: string;

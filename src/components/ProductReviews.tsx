@@ -17,6 +17,10 @@ interface ProductReviewsProps {
    *  WooCommerce product yet — submitting would silently fail against the
    *  live API. The zero-state / approved-review list still render normally. */
   showSubmissionForm?: boolean;
+  /** SOC-01 (4 Sep 2026) - opt-in zero-review copy for a page whose signed copy pack
+      supplies its own empty-state line. Absent everywhere else, so every other
+      product keeps the deployed literal byte-identical. */
+  emptyStateText?: string;
 }
 
 // Strip HTML/entities so review text renders as plain, safe text (no
@@ -78,7 +82,7 @@ function Stars({ rating }: { rating: number }) {
  * approval) via /api/submit-review; nothing here changes the approved-review
  * fetch or the Review/AggregateRating schema.
  */
-export default function ProductReviews({ reviews, averageRating, ratingCount, productId, reviewProductId, productName, showSubmissionForm = true }: ProductReviewsProps) {
+export default function ProductReviews({ reviews, averageRating, ratingCount, productId, reviewProductId, productName, showSubmissionForm = true, emptyStateText }: ProductReviewsProps) {
   const list = Array.isArray(reviews) ? reviews : [];
   const hasReviews = list.length > 0;
   const count = typeof ratingCount === 'number' && ratingCount > 0 ? ratingCount : 0;
@@ -160,7 +164,7 @@ export default function ProductReviews({ reviews, averageRating, ratingCount, pr
         ) : (
           // Zero-review state: clear, honest, no fake reviewer cards / stars.
           <div className="bg-slate-50 rounded-xl border border-dashed border-slate-300 p-6 text-center">
-            <p className="text-sm font-medium text-foreground">No reviews yet. Be the first to review this product.</p>
+            <p className="text-sm font-medium text-foreground">{emptyStateText || 'No reviews yet. Be the first to review this product.'}</p>
           </div>
         )}
 

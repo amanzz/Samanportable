@@ -1339,10 +1339,21 @@ const nextConfig = {
         destination: 'https://www.samanportable.com/product/container-houses',
         permanent: true,
       },
+      // SOC-01 (4 Sep 2026, approved by SAMAN) — modern-office-cabin is retired into
+      // small-office-cabin. This legacy source previously pointed at the retired URL,
+      // which would now chain through a second 301; it is retargeted so every entry
+      // reaches the destination in ONE hop.
       {
         source: '/product/modern-office-cabin',
-        destination: 'https://www.samanportable.com/product/portable-office/modern-office-cabin',
+        destination: 'https://www.samanportable.com/product/portable-office/small-office-cabin',
         permanent: true,
+      },
+      {
+        source: '/product/portable-office/modern-office-cabin',
+        destination: 'https://www.samanportable.com/product/portable-office/small-office-cabin',
+        // SOC-01 ticket names a 301 explicitly and asserts on it. `permanent: true`
+        // emits 308 in Next, so the status code is stated outright here.
+        statusCode: 301,
       },
       {
         source: '/product/modular-container-cafe',

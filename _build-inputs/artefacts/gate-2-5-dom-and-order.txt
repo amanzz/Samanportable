@@ -1,0 +1,39 @@
+==============================================================================
+GATE 2 - COMPONENT ORDER ASSERTION (eleven canonical blocks)
+==============================================================================
+  1  three-column hero (region)    at     1023   
+  2  contact/location bar          at     1088   
+  2b hero H1 (inside block 1)      at     1160   
+  3  size selector tabs            at     1219   
+  4  price display                 at     1362   
+  5  Explore the Range             at     2421   
+  6  Section 2 RightToExist        at     3025   
+  7  media / finished-work band    at     4021   
+  8  Section 3 explorer            at     4479   
+  9  Section 4 calculator          at    10771   
+  10 You may also like             at    28560   
+  11 Product Details tabs          at    28849   
+PASS all eleven blocks present
+PASS blocks render in canonical order  | [1023, 1088, 1160, 1219, 1362, 2421, 3025, 4021, 4479, 10771, 28560, 28849]
+
+==============================================================================
+GATE 5 - DOM CHECKS
+==============================================================================
+PASS exactly one H1  | 1
+PASS no empty heading  | []
+PASS every img has an alt attribute  | 21/21
+PASS no empty alt  | []
+PASS no duplicate alt  | []
+PASS explicit width+height on every img  | []
+PASS no U+2014 em dash in body  | 0
+PASS tab panel present in fetched HTML: Description
+PASS tab panel present in fetched HTML: Specifications
+PASS tab panel present in fetched HTML: Shipping
+PASS tab panel present in fetched HTML: Reviews
+PASS zero hits for 'coming soon'  | 0
+PASS zero hits for 'available on request'  | 0
+PASS zero hits for 'contact us for details'  | 0
+PASS zero hits for 'placeholder'  | 0
+PASS zero hits for 'TBD'  | 0
+
+GATE RESULT: PASS

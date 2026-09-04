@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 import bessContainerPage from '@/data/products/bess-container-page.json';
 import flatPackContainerOfficeCopy from '../../../content/co-07/CO-07-copy-pack-v1.json';
 import expandableContainerOfficeCopy from '../../../content/co-08/CO-08-copy-pack-v3.json';
+import smallOfficeCabinCopy from '../../../content/soc-01/SOC-01-small-office-cabin-copy-v1.json';
 
 const CABIN_HREF = '/product/porta-cabins';
 const href = (slug: string) => `${CABIN_HREF}/${slug}`;
@@ -1278,18 +1279,56 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
       </>
     ),
   },
+  // SOC-01 (4 Sep 2026) — Section 2 rendered verbatim from the signed copy pack
+  // (SECTION2_H2 / SECTION2_P1 / SECTION2_P2 / SECTION2_CTA and the SECTION2_CARD_*
+  // fields, hashed in content/soc-01/SOC-01-copy-hashes-v1.json). Nothing is retyped
+  // here: every string is read from the imported pack. The contextual link is placed
+  // inside paragraph 1 on the approved anchor phrase, and the card CTA targets the
+  // Section 3 explorer anchor. The previous entry is removed outright — it carried
+  // the retired "three compact sizes" and "one to four" claims.
   'small-office-cabin': {
-    heading: 'Why choose the Small Office Cabin',
-    body: (
-      <>
-        This page carries only the three compact sizes, priced and fitted for teams of one to four, so a small-office buyer compares three honest options instead of scrolling a nine-size ladder built for site headquarters. Every unit is newly fabricated MS with the standard fitted electricals, delivered working. When the team passes four people, the step up is the main range page, and this page says so plainly.
-      </>
-    ),
-    comparison: (
-      <>
-        Team growing past four, or need a store and partitions? The full portable office cabin range carries the nine-size ladder.
-      </>
-    ),
+    heading: smallOfficeCabinCopy.section2.h2,
+    bodyParagraphs: [
+      (() => {
+        const { paragraph1, link } = smallOfficeCabinCopy.section2;
+        const at = paragraph1.indexOf(link.anchor);
+        if (at < 0) return <>{paragraph1}</>;
+        return (
+          <>
+            {paragraph1.slice(0, at)}
+            <Link className={linkClass} href={link.href}>{link.anchor}</Link>
+            {paragraph1.slice(at + link.anchor.length)}
+          </>
+        );
+      })(),
+      (<>{smallOfficeCabinCopy.section2.paragraph2}</>),
+    ],
+    // Paragraph 1 carries an inline link, so the shipped verifier's tag-stripped
+    // comparison gets an exact plain-text mirror (hidden, aria-hidden).
+    verificationText: [smallOfficeCabinCopy.section2.paragraph1],
+    topCtaLabel: smallOfficeCabinCopy.section2.cta,
+    topCtaHref: '/contact',
+    splitCard: {
+      // SOC-01 revision (4 Sep 2026, SAMAN instruction): this slot carried the 8x6 GA
+      // board, which reads as a technical drawing in a marketing card. Replaced with a
+      // realistic exterior render that appears nowhere else on the page (the three
+      // retained sizes ship their live gallery images, so the v3 10x10 renders are
+      // unused). Centre-cropped to 16:9 from the approved 1254x1254 square and shipped
+      // at native width: no upscale, no distortion. The pack supplies no alt for this
+      // substitution, so the string below was written to the pack's own alt style and
+      // describes only what the render actually shows.
+      imageSrc: '/images/products/small-office-cabin/section2/small-office-cabin-10x10-exterior-card.webp',
+      imageAlt: 'SAMAN 10x10 ft small office cabin in pure orange, three-quarter view: single door on the long wall, one sliding window on the end wall, two-way roof and corner lifting eyes above a dark base frame',
+      imageWidth: 1254,
+      imageHeight: 705,
+      subheading: smallOfficeCabinCopy.section2.split_card.h3,
+      body: smallOfficeCabinCopy.section2.split_card.paragraph1,
+      body2: smallOfficeCabinCopy.section2.split_card.paragraph2,
+      ctaLabel: smallOfficeCabinCopy.section2.split_card.cta,
+      // The pack's cta_target "#sizes" names the Section 3 block; this template's
+      // Section 3 anchor is APPLICATIONS_SECTION_ID.
+      ctaHref: '#porta-size-applications',
+    },
   },
   'oil-field-camp': {
     heading: 'Why a Camp That Moves Is Built Differently From One That Stays',
