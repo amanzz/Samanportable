@@ -1309,10 +1309,18 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
     topCtaLabel: smallOfficeCabinCopy.section2.cta,
     topCtaHref: '/contact',
     splitCard: {
-      imageSrc: '/images/products/small-office-cabin/section2/small-office-cabin-8x6-ga-board-card.webp',
-      imageAlt: smallOfficeCabinCopy.alt_text.section2_card,
-      imageWidth: 1600,
-      imageHeight: 900,
+      // SOC-01 revision (4 Sep 2026, SAMAN instruction): this slot carried the 8x6 GA
+      // board, which reads as a technical drawing in a marketing card. Replaced with a
+      // realistic exterior render that appears nowhere else on the page (the three
+      // retained sizes ship their live gallery images, so the v3 10x10 renders are
+      // unused). Centre-cropped to 16:9 from the approved 1254x1254 square and shipped
+      // at native width: no upscale, no distortion. The pack supplies no alt for this
+      // substitution, so the string below was written to the pack's own alt style and
+      // describes only what the render actually shows.
+      imageSrc: '/images/products/small-office-cabin/section2/small-office-cabin-10x10-exterior-card.webp',
+      imageAlt: 'SAMAN 10x10 ft small office cabin in pure orange, three-quarter view: single door on the long wall, one sliding window on the end wall, two-way roof and corner lifting eyes above a dark base frame',
+      imageWidth: 1254,
+      imageHeight: 705,
       subheading: smallOfficeCabinCopy.section2.split_card.h3,
       body: smallOfficeCabinCopy.section2.split_card.paragraph1,
       body2: smallOfficeCabinCopy.section2.split_card.paragraph2,
