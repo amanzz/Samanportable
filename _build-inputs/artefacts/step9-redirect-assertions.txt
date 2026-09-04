@@ -1,0 +1,8 @@
+SOC-01 Step 9 - redirect assertions (production build, next start)
+===============================================================
+/product/portable-office/modern-office-cabin   301  ->  https://www.samanportable.com/product/portable-office/small-office-cabin
+/product/modern-office-cabin                   308  ->  https://www.samanportable.com/product/portable-office/small-office-cabin
+/product/portable-office/small-office-cabin    200 (destination)
+
+One hop each: neither source chains through another redirect.
+sitemap-products.xml: modern-office-cabin=0, small-office-cabin=1

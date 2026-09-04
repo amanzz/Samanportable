@@ -26,6 +26,28 @@ import c05SubpageSpecifications from '@/data/products/c05-subpage-specifications
 import c05SubpageSpecifications2 from '@/data/products/c05-subpage-specifications-2.json';
 import cmoSpecifications from '@/data/products/container-marketing-office-specs.json';
 import { getEffectiveC01SpecificationEntry } from '@/lib/c01SpecificationOverrides';
+import smallOfficeCabinCopy from '../../content/soc-01/SOC-01-small-office-cabin-copy-v1.json';
+
+// SOC-01 — the two approved coordination diagrams and the v3 technical PDF, at the
+// exact dimensions of the shipped WebP derivatives (never cropped, never upscaled).
+const SOC01_SPEC_DIAGRAMS = [
+  {
+    src: '/images/products/small-office-cabin/specs/small-office-cabin-envelope-coordination-diagram.webp',
+    alt: smallOfficeCabinCopy.alt_text.spec_diagram_1,
+    width: 1600,
+    height: 900,
+  },
+  {
+    src: '/images/products/small-office-cabin/specs/small-office-cabin-opening-electrical-coordination-diagram.webp',
+    alt: smallOfficeCabinCopy.alt_text.spec_diagram_2,
+    width: 1600,
+    height: 771,
+  },
+] as const;
+const SOC01_SPEC_PDF = {
+  href: '/downloads/small-office-cabin-technical-specification-and-price.pdf',
+  label: 'Download technical specification (PDF)',
+} as const;
 
 type SpecGroups = Record<string, Record<string, string | number>>;
 export interface SpecsEntry {
@@ -904,6 +926,63 @@ function buildContainerMarketingOfficeSpecificationsHtml(): string {
   );
 }
 
+// SOC-01 (4 Sep 2026) — Small Office Cabin Specifications tab. Groups A-E are
+// rendered as the same premium grouped-table cards the porta-cabins Specs tab
+// uses (saman-table-wrap / saman-table, the identical card chrome), generalised
+// only to accept each group's own column count. Every string comes from the
+// signed copy pack; nothing is retyped here. Each group's note renders directly
+// under its own table, then the two coordination diagrams, then the PDF link.
+function buildSmallOfficeCabinSpecificationsHtml(): string {
+  const spec = smallOfficeCabinCopy.specifications_tab;
+
+  const narrative = spec.narrative
+    .map((p) => `<p class="mb-5 text-sm leading-relaxed text-slate-600">${esc(p)}</p>`)
+    .join('');
+
+  const cards = spec.groups.map((group) => {
+    const head = group.header.map((h) => `<th>${esc(h)}</th>`).join('');
+    const body = group.rows
+      .map((row) => (
+        `<tr>` +
+          row.map((cell, i) => (
+            i === 0
+              ? `<td class="${TD} font-semibold text-slate-700">${esc(cell)}</td>`
+              : `<td class="${TD}">${escBold(cell)}</td>`
+          )).join('') +
+        `</tr>`
+      ))
+      .join('');
+    // An empty note renders nothing at all, never a placeholder line.
+    const note = group.note
+      ? `<p class="px-4 pb-4 pt-3 m-0 text-xs leading-relaxed text-slate-500">${esc(group.note)}</p>`
+      : '';
+    return (
+      `<section class="mb-4 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">` +
+        `<h4 class="m-0 bg-slate-50 px-4 py-3 text-base font-bold text-emerald-900">${esc(group.title)}</h4>` +
+        `<div class="saman-table-wrap"><table class="saman-table"><thead><tr>${head}</tr></thead>` +
+        `<tbody>${body}</tbody></table></div>` +
+        note +
+      `</section>`
+    );
+  }).join('');
+
+  const diagrams = SOC01_SPEC_DIAGRAMS
+    .map((d) => (
+      `<figure class="mt-4 m-0 rounded-xl border border-slate-200 bg-white p-5 shadow-sm">` +
+        `<img src="${esc(d.src)}" alt="${esc(d.alt)}" width="${d.width}" height="${d.height}" ` +
+        `loading="lazy" class="w-full h-auto rounded-lg" />` +
+      `</figure>`
+    ))
+    .join('');
+
+  const pdf =
+    `<p class="mt-5 text-sm"><a href="${esc(SOC01_SPEC_PDF.href)}" ` +
+    `class="font-semibold text-emerald-800 underline underline-offset-2">` +
+    `${esc(SOC01_SPEC_PDF.label)}</a></p>`;
+
+  return `<div class="not-prose">${narrative}${cards}${diagrams}${pdf}</div>`;
+}
+
 /** Both tab bodies for a page slug, or null when the slug is not in scope. */
 export function getProductTabsHtml(
   pageSlug: string | undefined | null
@@ -1024,6 +1103,16 @@ export function getProductTabsHtml(
     return {
       specificationsHtml: buildSpecificationsHtml(DATASET['portable-office']),
       shippingHtml: buildPortableOfficeShippingHtml(),
+    };
+  }
+  // SOC-01 (4 Sep 2026) — Groups A-E from the signed pack; Shipping is the SAME
+  // shared freight component the live porta-cabins page renders (both trailer
+  // ladders, both zone city tables, the free-delivery lines, ODC note and the
+  // tentative-price disclaimer), called with no options so it stays byte-identical.
+  if (pageSlug === 'small-office-cabin') {
+    return {
+      specificationsHtml: buildSmallOfficeCabinSpecificationsHtml(),
+      shippingHtml: buildShippingHtml(),
     };
   }
   const key = resolveSpecsKey(pageSlug);

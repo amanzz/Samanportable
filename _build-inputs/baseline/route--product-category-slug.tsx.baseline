@@ -63,7 +63,6 @@ import { PortaCabinVariantHero } from '../../../components/product-variant-hero/
 import type { VariantProductData } from '../../../components/product-variant-hero/types';
 import { removeMonetaryHtml, removeMonetarySentencesDeep } from '../../../lib/monetaryText';
 import productOpenerOverrides from '../../../data/product-opener-overrides.json';
-import smallOfficeCabinCopy from '../../../../content/soc-01/SOC-01-small-office-cabin-copy-v1.json';
 import { injectInfoImages } from '../../../lib/infoImageLayout';
 import containerizedDataCenterApplications from '../../../data/products/containerized-data-center-applications.json';
 import containerizedDataCenterRelated from '../../../data/products/containerized-data-center-related.json';
@@ -186,11 +185,6 @@ const CLUSTER_DESIGN_SLUGS = new Set([
   'flat-pack-container-office',
   'multi-story-container-office',
   'expandable-container-office',
-  // SOC-01 (4 Sep 2026) - design lock: this page renders the same premium
-  // chip/tab, divider and H2-explorer treatment as the live porta-cabins
-  // reference. Reuses the existing usePremiumSizeTabs / showSectionDividers /
-  // explorerPanelHeadingAsH2 opt-ins byte-for-byte; no new styling.
-  'small-office-cabin',
 ]);
 
 // Dynamic import for ProductTabs to avoid SSR issues
@@ -904,7 +898,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
 
   const relatedRailItems = useMemo<RelatedRailItem[]>(() => {
     const currentSlug = transformedProduct?.slug || slug;
-    if ((currentSlug === 'bess-container' || currentSlug === CO07_SLUG || currentSlug === CO06_SLUG || currentSlug === 'readymade-office-cabin' || currentSlug === 'small-office-cabin') && variantData?.relatedTiles?.length) {
+    if ((currentSlug === 'bess-container' || currentSlug === CO07_SLUG || currentSlug === CO06_SLUG || currentSlug === 'readymade-office-cabin') && variantData?.relatedTiles?.length) {
       return variantData.relatedTiles;
     }
     if (isC16PanelSlug(currentSlug)) {
@@ -1230,11 +1224,6 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   sizeEyebrowText={
                     slug === 'containerized-data-center'
                       ? ''
-                      // SOC-01 — the signed pack supplies this page's own selector
-                      // label; the shared default carries an em dash, which this
-                      // page's acceptance gate bans.
-                      : slug === 'small-office-cabin'
-                      ? smallOfficeCabinCopy.hero.size_selector_label
                       : slug === 'porta-cabin-with-toilet' || slug === 'soundproof-porta-cabin' || slug === 'puf-porta-cabin' || slug === 'skid-mounted-porta-cabin' || slug === 'porta-cabin-shop' || slug === 'accommodation-container' || slug === 'container-office-cabin' || slug === 'container-marketing-office' || slug === CO06_SLUG || slug === 'bess-container' || slug === 'shipping-container-office' || slug === CO07_SLUG || slug === CO08_SLUG
                       ? 'Choose your size - six factory-built options'
                       : undefined
@@ -1603,16 +1592,6 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
               {slug === 'readymade-office-cabin' && variantData?.ymalTiles?.length && (
                 <PortaCabinsYouMayAlsoLike items={variantData.ymalTiles} subline={null} />
               )}
-              {/* SOC-01 (4 Sep 2026) — cluster-scoped YMAL for Portable Office. The
-                  tiles are built in the product data file from the pack's approved
-                  order, self excluded, never_list excluded, and only destinations
-                  returning 200 today. The shared YMAL constants are untouched. */}
-              {slug === 'small-office-cabin' && variantData?.ymalTiles?.length && (
-                <PortaCabinsYouMayAlsoLike
-                  items={variantData.ymalTiles}
-                  subline={smallOfficeCabinCopy.ymal.intro}
-                />
-              )}
 
               {/* PC-01/PC-02/PC-03/PC-04/PC-05 — divider 4, "You may also like" →
                   Section 5 (Product Details tabs). */}
@@ -1627,13 +1606,12 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   specificationsHtml={slug === 'accommodation-container' ? lazyLoadStaticHtmlImages(specificationsHtml) : specificationsHtml}
                   shippingHtml={slug === 'accommodation-container' ? lazyLoadStaticHtmlImages(shippingHtml) : shippingHtml}
                   productTitle={isLaborShedsPage ? 'Labour Sheds' : transformedProduct.title}
-                  reviews={slug === 'accommodation-container' || slug === 'container-marketing-office' || slug === CO06_SLUG || slug === CO07_SLUG || slug === CO08_SLUG || slug === 'small-office-cabin' ? [] : reviews}
-                  averageRating={slug === 'accommodation-container' || slug === 'container-marketing-office' || slug === CO06_SLUG || slug === CO07_SLUG || slug === CO08_SLUG || slug === 'small-office-cabin' ? undefined : product.average_rating}
-                  ratingCount={slug === 'accommodation-container' || slug === 'container-marketing-office' || slug === CO06_SLUG || slug === CO07_SLUG || slug === CO08_SLUG || slug === 'small-office-cabin' ? 0 : product.rating_count}
+                  reviews={slug === 'accommodation-container' || slug === 'container-marketing-office' || slug === CO06_SLUG || slug === CO07_SLUG || slug === CO08_SLUG ? [] : reviews}
+                  averageRating={slug === 'accommodation-container' || slug === 'container-marketing-office' || slug === CO06_SLUG || slug === CO07_SLUG || slug === CO08_SLUG ? undefined : product.average_rating}
+                  ratingCount={slug === 'accommodation-container' || slug === 'container-marketing-office' || slug === CO06_SLUG || slug === CO07_SLUG || slug === CO08_SLUG ? 0 : product.rating_count}
                   productId={product.id}
                   productName={transformedProduct.title}
-                  fullMobileLabels={slug === 'containerized-data-center' || slug === 'small-office-cabin'}
-                  reviewsEmptyStateText={slug === 'small-office-cabin' ? smallOfficeCabinCopy.reviews_tab.empty_state : undefined}
+                  fullMobileLabels={slug === 'containerized-data-center'}
                 />
               </div>
 

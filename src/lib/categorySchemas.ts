@@ -1344,12 +1344,6 @@ export const categorySchemas: Record<string, any> = {
           {
             "@type": "ListItem",
             "position": 7,
-            "name": "Modern Office Cabin",
-            "url": "https://www.samanportable.com/product/portable-office/modern-office-cabin"
-          },
-          {
-            "@type": "ListItem",
-            "position": 8,
             "name": "Prefab Portable Office",
             "url": "https://www.samanportable.com/product/portable-office/prefab-portable-office"
           }

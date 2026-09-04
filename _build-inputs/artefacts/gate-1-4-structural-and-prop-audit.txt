@@ -1,0 +1,87 @@
+========================================================================================
+GATE 1 / GATE 4 - SHARED COMPONENT STRUCTURAL + PROP AUDIT
+  design lock : src/pages/product/[category]/index.tsx   -> /product/porta-cabins
+  this page   : src/pages/product/[category]/[slug].tsx  -> /product/portable-office/small-office-cabin
+  Effective values evaluated for slug='small-office-cabin' (hub evaluated for category='porta-cabins').
+========================================================================================
+
+--- PortaCabinVariantHero ---
+     averageRating                      hub=content                      this=content                      <- CONTENT PROP (permitted)
+     compactMobileDividers              hub=(not passed -> default)      this=False                       
+     currentHref                        hub=content                      this=content                      <- CONTENT PROP (permitted)
+     data                               hub=content                      this=content                      <- CONTENT PROP (permitted)
+     deferNonLcpImagesUntilHeroPaint    hub=(not passed -> default)      this=False                       
+     eagerActiveGalleryImages           hub=(not passed -> default)      this=False                       
+     emitSizeAnchors                    hub=(dynamic)                    this=(dynamic)                   
+     explorerHidePanelImages            hub=(not passed -> default)      this=False                       
+  !! explorerPanelHeadingAsH2           hub=(not passed -> default)      this=True                        
+     explorerSingleColumnApplications   hub=(not passed -> default)      this=False                       
+     productTitle                       hub=content                      this=content                      <- CONTENT PROP (permitted)
+     railItems                          hub=content                      this=content                      <- CONTENT PROP (permitted)
+     ratingCount                        hub=content                      this=content                      <- CONTENT PROP (permitted)
+     renderInactiveGalleryImages        hub=(not passed -> default)      this=False                       
+     renderOnlyActiveExplorerPanel      hub=(not passed -> default)      this=False                       
+     showSectionDividers                hub=True                         this=True                        
+     sizeEyebrowText                    hub=content                      this=content                      <- CONTENT PROP (permitted)
+     syncVariantSelection               hub=(not passed -> default)      this=False                       
+     usePremiumSizeTabs                 hub=True                         this=True                        
+
+--- RelatedProductRail ---
+     className                          hub=content                      this=content                      <- CONTENT PROP (permitted)
+     currentHref                        hub=content                      this=content                      <- CONTENT PROP (permitted)
+     items                              hub=content                      this=content                      <- CONTENT PROP (permitted)
+
+--- PortaCabinsYouMayAlsoLike ---
+     items                              hub=content                      this=content                      <- CONTENT PROP (permitted)
+     subline                            hub=content                      this=content                      <- CONTENT PROP (permitted)
+
+--- ProductTabs ---
+     averageRating                      hub=content                      this=content                      <- CONTENT PROP (permitted)
+     description                        hub=content                      this=content                      <- CONTENT PROP (permitted)
+  !! fullMobileLabels                   hub=(not passed -> default)      this=True                        
+     productId                          hub=content                      this=content                      <- CONTENT PROP (permitted)
+     productName                        hub=content                      this=content                      <- CONTENT PROP (permitted)
+     productTitle                       hub=content                      this=content                      <- CONTENT PROP (permitted)
+     ratingCount                        hub=content                      this=content                      <- CONTENT PROP (permitted)
+     reviewProductId                    hub=content                      this=content                      <- CONTENT PROP (permitted)
+     reviews                            hub=content                      this=content                      <- CONTENT PROP (permitted)
+     reviewsEmptyStateText              hub=content                      this=content                      <- CONTENT PROP (permitted)
+     shippingHtml                       hub=content                      this=content                      <- CONTENT PROP (permitted)
+     specificationsHtml                 hub=content                      this=content                      <- CONTENT PROP (permitted)
+
+--- ProductStructuredData ---
+     breadcrumbItems                    hub=content                      this=content                      <- CONTENT PROP (permitted)
+     category                           hub=content                      this=content                      <- CONTENT PROP (permitted)
+     forceProductEntity                 hub=(dynamic)                    this=(dynamic)                   
+     metaDescription                    hub=content                      this=content                      <- CONTENT PROP (permitted)
+     product                            hub=content                      this=content                      <- CONTENT PROP (permitted)
+     reviews                            hub=content                      this=content                      <- CONTENT PROP (permitted)
+     schemaProductName                  hub=content                      this=content                      <- CONTENT PROP (permitted)
+     suppressProductEntity              hub=(dynamic)                    this=(dynamic)                   
+     suppressSchemaAvailability         hub=(dynamic)                    this=(dynamic)                   
+     variantData                        hub=content                      this=content                      <- CONTENT PROP (permitted)
+
+--- MobileBottomNav ---
+     relatedProducts                    hub=content                      this=content                      <- CONTENT PROP (permitted)
+
+--- Breadcrumb ---
+     className                          hub=content                      this=content                      <- CONTENT PROP (permitted)
+     items                              hub=content                      this=content                      <- CONTENT PROP (permitted)
+
+--- UnifiedSEO ---
+     fallbackCanonical                  hub=content                      this=content                      <- CONTENT PROP (permitted)
+     fallbackDescription                hub=content                      this=content                      <- CONTENT PROP (permitted)
+     fallbackOgDescription              hub=content                      this=content                      <- CONTENT PROP (permitted)
+     fallbackOgImage                    hub=content                      this=content                      <- CONTENT PROP (permitted)
+     fallbackTitle                      hub=content                      this=content                      <- CONTENT PROP (permitted)
+     fallbackTwitterDescription         hub=content                      this=content                      <- CONTENT PROP (permitted)
+     keywords                           hub=content                      this=content                      <- CONTENT PROP (permitted)
+     noindex                            hub=(dynamic)                    this=(dynamic)                   
+     rankMathSEO                        hub=content                      this=content                      <- CONTENT PROP (permitted)
+     structuredData                     hub=content                      this=content                      <- CONTENT PROP (permitted)
+
+========================================================================================
+BEHAVIOUR (non-content) PROP DELTAS vs the design lock:
+  PortaCabinVariantHero.explorerPanelHeadingAsH2 : hub=(not passed -> default)  this=True
+  ProductTabs.fullMobileLabels : hub=(not passed -> default)  this=True
+========================================================================================
