@@ -1,0 +1,38 @@
+GATE 2 - COMPONENT-ORDER ASSERTION
+
+Eleven canonical blocks, located by DOM character offset inside <body>, for
+this build alongside the design lock and the most recently approved cluster
+sibling. A block is 'ok' when it appears at or after the previous block.
+
+BLOCK                                     PO-01 (this build)   porta-cabins (lock)     SOC-01 (approved)
+--------------------------------------------------------------------------------------------------------
+1  three-column hero                           43083 ok              42573 ok              43182 ok     
+2  contact / location bar                      40743 BAD             40233 BAD             40842 BAD    
+3  size selector tabs                          43304 ok              42795 ok              43408 ok     
+4  price display for selected size             44273 ok              43741 ok              44359 ok     
+5  H2 Explore the Range panel                  49153 ok              49143 ok              49041 ok     
+6  Section 2 RightToExist                      53021 ok              58741 ok              52850 ok     
+7  Section 2 split card media band             54395 ok              59799 ok              54173 ok     
+8  Section 3 SizeApplicationsExplorer          55813 ok              61109 ok              55660 ok     
+9  Section 4 calculator                        93893 ok              93439 ok              94009 ok     
+10 You may also like                          305690 ok              94967 ok             309465 ok     
+11 Section 5 Product Details tabs             309156 ok             103101 ok             312965 ok     
+
+STRICTLY MONOTONIC:  PO-01 False   porta-cabins False   SOC-01 False
+
+CONFORMANCE VERDICT: PASS - all eleven blocks present, and the ordering
+pattern (including the single block-2 template inversion) is IDENTICAL on
+this build, the design lock and the approved sibling. Zero ordering delta.
+
+NOTES
+
+Block 2 precedes block 1 in DOM on ALL THREE pages. The shared three-column
+hero emits the gallery column and the contact/location bar before the right
+column that carries the H1. That is template behaviour, identical on the
+design lock; visual reading order is unaffected.
+
+Block 7 is the media band inside the Section 2 split card
+(div.saman-s2-split-media). The design lock carries no separate media
+component between Section 2 and Section 3; on both pages the finished-work
+media is the card's own 16:9 image slot. PO-01 fills it with the approved
+native-16:9 site exterior of the default 20x10 size.

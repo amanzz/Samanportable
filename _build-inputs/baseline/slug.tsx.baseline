@@ -65,7 +65,6 @@ import type { VariantProductData } from '../../../components/product-variant-her
 import { removeMonetaryHtml, removeMonetarySentencesDeep } from '../../../lib/monetaryText';
 import productOpenerOverrides from '../../../data/product-opener-overrides.json';
 import smallOfficeCabinCopy from '../../../../content/soc-01/SOC-01-small-office-cabin-copy-v1.json';
-import readymadeOfficeCabinCopy from '../../../../content/po-01/PO-01-readymade-office-cabin-copy-v1.json';
 import { injectInfoImages } from '../../../lib/infoImageLayout';
 import containerizedDataCenterApplications from '../../../data/products/containerized-data-center-applications.json';
 import containerizedDataCenterRelated from '../../../data/products/containerized-data-center-related.json';
@@ -1236,9 +1235,6 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                       // page's acceptance gate bans.
                       : slug === 'small-office-cabin'
                       ? smallOfficeCabinCopy.hero.size_selector_label
-                      // PO-01 - the signed pack supplies this page's own selector label.
-                      : slug === 'readymade-office-cabin'
-                      ? readymadeOfficeCabinCopy.hero.size_selector_label
                       : slug === 'porta-cabin-with-toilet' || slug === 'soundproof-porta-cabin' || slug === 'puf-porta-cabin' || slug === 'skid-mounted-porta-cabin' || slug === 'porta-cabin-shop' || slug === 'accommodation-container' || slug === 'container-office-cabin' || slug === 'container-marketing-office' || slug === CO06_SLUG || slug === 'bess-container' || slug === 'shipping-container-office' || slug === CO07_SLUG || slug === CO08_SLUG
                       ? 'Choose your size - six factory-built options'
                       : undefined
@@ -1591,16 +1587,8 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   subline="Other container office configurations in the same range."
                 />
               )}
-              {/* PO-01 (4 Sep 2026) - cluster-scoped YMAL for Portable Office. The tiles
-                  are built in the product data file from the pack's approved order, self
-                  excluded, never_list excluded, and only destinations returning 200
-                  today. The shared YMAL constants are untouched. The subline is the
-                  pack's approved intro, which this branch previously suppressed. */}
               {slug === 'readymade-office-cabin' && variantData?.ymalTiles?.length && (
-                <PortaCabinsYouMayAlsoLike
-                  items={variantData.ymalTiles}
-                  subline={readymadeOfficeCabinCopy.ymal.intro}
-                />
+                <PortaCabinsYouMayAlsoLike items={variantData.ymalTiles} subline={null} />
               )}
               {/* SOC-01 (4 Sep 2026) — cluster-scoped YMAL for Portable Office. The
                   tiles are built in the product data file from the pack's approved
@@ -1626,13 +1614,13 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   specificationsHtml={slug === 'accommodation-container' ? lazyLoadStaticHtmlImages(specificationsHtml) : specificationsHtml}
                   shippingHtml={slug === 'accommodation-container' ? lazyLoadStaticHtmlImages(shippingHtml) : shippingHtml}
                   productTitle={isLaborShedsPage ? 'Labour Sheds' : transformedProduct.title}
-                  reviews={slug === 'accommodation-container' || slug === 'container-marketing-office' || slug === CO06_SLUG || slug === CO07_SLUG || slug === CO08_SLUG || slug === 'small-office-cabin' || slug === 'readymade-office-cabin' ? [] : reviews}
-                  averageRating={slug === 'accommodation-container' || slug === 'container-marketing-office' || slug === CO06_SLUG || slug === CO07_SLUG || slug === CO08_SLUG || slug === 'small-office-cabin' || slug === 'readymade-office-cabin' ? undefined : product.average_rating}
-                  ratingCount={slug === 'accommodation-container' || slug === 'container-marketing-office' || slug === CO06_SLUG || slug === CO07_SLUG || slug === CO08_SLUG || slug === 'small-office-cabin' || slug === 'readymade-office-cabin' ? 0 : product.rating_count}
+                  reviews={slug === 'accommodation-container' || slug === 'container-marketing-office' || slug === CO06_SLUG || slug === CO07_SLUG || slug === CO08_SLUG || slug === 'small-office-cabin' ? [] : reviews}
+                  averageRating={slug === 'accommodation-container' || slug === 'container-marketing-office' || slug === CO06_SLUG || slug === CO07_SLUG || slug === CO08_SLUG || slug === 'small-office-cabin' ? undefined : product.average_rating}
+                  ratingCount={slug === 'accommodation-container' || slug === 'container-marketing-office' || slug === CO06_SLUG || slug === CO07_SLUG || slug === CO08_SLUG || slug === 'small-office-cabin' ? 0 : product.rating_count}
                   productId={product.id}
                   productName={transformedProduct.title}
-                  fullMobileLabels={slug === 'containerized-data-center' || slug === 'small-office-cabin' || slug === 'readymade-office-cabin'}
-                  reviewsEmptyStateText={slug === 'small-office-cabin' ? smallOfficeCabinCopy.reviews_tab.empty_state : slug === 'readymade-office-cabin' ? readymadeOfficeCabinCopy.reviews_tab.empty_state : undefined}
+                  fullMobileLabels={slug === 'containerized-data-center' || slug === 'small-office-cabin'}
+                  reviewsEmptyStateText={slug === 'small-office-cabin' ? smallOfficeCabinCopy.reviews_tab.empty_state : undefined}
                 />
               </div>
 

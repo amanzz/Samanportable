@@ -1,0 +1,34 @@
+AUDIT TABLE - BEFORE (live, measured 4 Sep 2026) vs AFTER (this build)
+
+ROW                     BEFORE (live)                                 AFTER (this build)
+------------------------------------------------------------------------------------------------------------------------------------------------------
+Meta title              50 chars                                      56 chars
+                                                                      (required: 55-60)
+Hero short description  144 chars                                     716 chars
+                                                                      (required: 700-800)
+Section 2 H2            37 chars                                      68 chars
+                                                                      (required: 55-70)
+Section 2 body          1 short para + link sentence                  2 paragraphs, 891 chars
+                                                                      (required: exactly 2, 800-900)
+Section 2 split card    absent                                        present, 16:9 image left (1600x900)
+                                                                      (required: present)
+Section 3 H2            43 chars                                      51 chars
+                                                                      (required: 50-60)
+Section 3 per size      401-406 chars incl. H3 + 3 bullets            842-922 chars, H3 50-58, para 450-494, 6 bullets each
+                                                                      (required: H3 50-62, para 400-500, 5-6 bullets)
+Section 3 GA board      absent (no GA board anywhere)                 6 GA boards, 1800x1012, never cropped, image LEFT
+                                                                      (required: present per size)
+Description tab         2,744 chars / ~430 words, generic headings    2288 words, 9 buyer-question H2s + FAQ H2, intent disambiguation first
+                                                                      (required: 2000-3000 words)
+Specifications tab      0 tables, 0 diagrams, 0 links, 4 paragraphs   5 tables, 2 diagrams, 1 link (PDF), 3 narrative paragraphs
+                                                                      (required: narrative + Groups A-E, 2 diagrams, PDF link)
+Shipping tab            318 chars, generic panel, no tables           3035 chars, 4 tables, 64 rows
+                                                                      (required: shared freight component: 4 tables, 64 rows)
+Structured data         ItemPage, FAQPage                             AggregateOffer, BreadcrumbList, FAQPage, ItemPage, Product
+                                                                      (required: ItemPage, Product+AggregateOffer, BreadcrumbList, FAQPage)
+Images                  17                                            45 shipped (36 gallery + 6 GA + 1 card + 2 diagrams), all 80-120 KB
+                                                                      (required: 45)
+Unsourced claims        5-yr structural / 1-yr finishing warranty, R  all removed; no warranty duration published anywhere on the page
+                                                                      (required: removed)
+
+Every row moves from the measured live defect to the required state.

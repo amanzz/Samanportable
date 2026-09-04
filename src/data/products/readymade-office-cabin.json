@@ -5,311 +5,476 @@
   "defaultVariant": "20x10",
   "hsn": "9406",
   "gstPercent": 18,
-  "applicationsDataset": "readymade-office-cabin",
-  "explorerImageTemplate": "/images/products/readymade-office-cabin/{sizeSlug}/readymade-office-cabin-{sizeSlug}-hero-view.webp",
   "emitAggregateOffer": true,
   "variants": [
     {
       "sizeSlug": "10x10",
       "label": "10×10 ft",
-      "dims": "10×10×8.5 ft",
+      "dims": "10x10x8.5 ft",
       "areaSqft": 100,
-      "priceExGst": 141100,
-      "priceInclGst": 166498,
-      "images": [
+      "priceExGst": 143750,
+      "priceInclGst": 169625,
+      "featureCells": [
         {
-          "src": "/images/products/readymade-office-cabin/10x10/readymade-office-cabin-10x10-front-angle.webp",
-          "alt": "Readymade Office Cabin 10 x 10 ft front angle render.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
+          "label": "Size",
+          "value": "10x10x8.5 ft"
         },
         {
-          "src": "/images/products/readymade-office-cabin/10x10/readymade-office-cabin-10x10-side-elevation.webp",
-          "alt": "Readymade Office Cabin 10 x 10 ft side elevation render.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
+          "label": "Roof",
+          "value": "Centred-ridge two-way slope"
         },
         {
-          "src": "/images/products/readymade-office-cabin/10x10/readymade-office-cabin-10x10-workspace-interior.webp",
-          "alt": "Readymade Office Cabin 10 x 10 ft workspace interior render.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
+          "label": "Openings",
+          "value": "1 external door, 3 windows"
         },
         {
-          "src": "/images/products/readymade-office-cabin/10x10/readymade-office-cabin-10x10-entrance-interior.webp",
-          "alt": "Readymade Office Cabin 10 x 10 ft entrance interior render.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
+          "label": "Desks staged",
+          "value": "4 workstations, 4 seats"
         },
         {
-          "src": "/images/products/readymade-office-cabin/10x10/readymade-office-cabin-10x10-rear-interior.webp",
-          "alt": "Readymade Office Cabin 10 x 10 ft rear interior render.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
+          "label": "Application",
+          "value": "Four-workstation compact office"
         }
       ],
-      "capacity": "Recommended occupancy 2–3 people"
+      "images": [
+        {
+          "src": "/images/products/readymade-office-cabin/10x10/readymade-office-cabin-10x10-front.webp",
+          "alt": "10x10x8.5 ft readymade office cabin in Burgundy Wine, three-quarter view of the door wall, 4 workstations and 3 windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/readymade-office-cabin/10x10/readymade-office-cabin-10x10-rear.webp",
+          "alt": "10x10x8.5 ft readymade office cabin in Burgundy Wine, rear long wall, 4 workstations and 3 windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/readymade-office-cabin/10x10/readymade-office-cabin-10x10-end.webp",
+          "alt": "10x10x8.5 ft readymade office cabin in Burgundy Wine, end elevation, 4 workstations and 3 windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/readymade-office-cabin/10x10/readymade-office-cabin-10x10-entry-interior.webp",
+          "alt": "10x10x8.5 ft readymade office cabin in Burgundy Wine, interior from the entrance, 4 workstations and 3 windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/readymade-office-cabin/10x10/readymade-office-cabin-10x10-reverse-interior.webp",
+          "alt": "10x10x8.5 ft readymade office cabin in Burgundy Wine, interior looking back toward the entrance, 4 workstations and 3 windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/readymade-office-cabin/10x10/readymade-office-cabin-10x10-workstation-interior.webp",
+          "alt": "10x10x8.5 ft readymade office cabin in Burgundy Wine, interior workstation run, 4 workstations and 3 windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
     },
     {
       "sizeSlug": "20x8",
       "label": "20×8 ft",
-      "dims": "20×8×8.5 ft",
+      "dims": "20x8x8.5 ft",
       "areaSqft": 160,
-      "priceExGst": 225760,
-      "priceInclGst": 266397,
-      "images": [
+      "priceExGst": 220000,
+      "priceInclGst": 259600,
+      "featureCells": [
         {
-          "src": "/images/products/readymade-office-cabin/20x8/readymade-office-cabin-20x8-front-angle.webp",
-          "alt": "Readymade Office Cabin 20 x 8 ft front angle render.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
+          "label": "Size",
+          "value": "20x8x8.5 ft"
         },
         {
-          "src": "/images/products/readymade-office-cabin/20x8/readymade-office-cabin-20x8-side-elevation.webp",
-          "alt": "Readymade Office Cabin 20 x 8 ft side elevation render.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
+          "label": "Roof",
+          "value": "One-way slope"
         },
         {
-          "src": "/images/products/readymade-office-cabin/20x8/readymade-office-cabin-20x8-workspace-interior.webp",
-          "alt": "Readymade Office Cabin 20 x 8 ft workspace interior render.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
+          "label": "Openings",
+          "value": "1 external door, 6 windows"
         },
         {
-          "src": "/images/products/readymade-office-cabin/20x8/readymade-office-cabin-20x8-entrance-interior.webp",
-          "alt": "Readymade Office Cabin 20 x 8 ft entrance interior render.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
+          "label": "Desks staged",
+          "value": "3 workstations, 3 seats"
         },
         {
-          "src": "/images/products/readymade-office-cabin/20x8/readymade-office-cabin-20x8-rear-interior.webp",
-          "alt": "Readymade Office Cabin 20 x 8 ft rear interior render.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
+          "label": "Application",
+          "value": "Narrow office, Wall A furniture-free"
         }
       ],
-      "capacity": "Recommended occupancy 3–4 people"
+      "images": [
+        {
+          "src": "/images/products/readymade-office-cabin/20x8/readymade-office-cabin-20x8-front.webp",
+          "alt": "20x8x8.5 ft readymade office cabin in Slate Blue-Grey, three-quarter view of the door wall, 3 workstations and 6 windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/readymade-office-cabin/20x8/readymade-office-cabin-20x8-rear.webp",
+          "alt": "20x8x8.5 ft readymade office cabin in Slate Blue-Grey, rear long wall, 3 workstations and 6 windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/readymade-office-cabin/20x8/readymade-office-cabin-20x8-end.webp",
+          "alt": "20x8x8.5 ft readymade office cabin in Slate Blue-Grey, end elevation, 3 workstations and 6 windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/readymade-office-cabin/20x8/readymade-office-cabin-20x8-entry-interior.webp",
+          "alt": "20x8x8.5 ft readymade office cabin in Slate Blue-Grey, interior from the entrance, 3 workstations and 6 windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/readymade-office-cabin/20x8/readymade-office-cabin-20x8-reverse-interior.webp",
+          "alt": "20x8x8.5 ft readymade office cabin in Slate Blue-Grey, interior looking back toward the entrance, 3 workstations and 6 windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/readymade-office-cabin/20x8/readymade-office-cabin-20x8-workstation-interior.webp",
+          "alt": "20x8x8.5 ft readymade office cabin in Slate Blue-Grey, interior workstation run, 3 workstations and 6 windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
     },
     {
       "sizeSlug": "20x10",
       "label": "20×10 ft",
-      "dims": "20×10×8.5 ft",
+      "dims": "20x10x8.5 ft",
       "areaSqft": 200,
-      "priceExGst": 256400,
-      "priceInclGst": 302552,
-      "images": [
+      "priceExGst": 250000,
+      "priceInclGst": 295000,
+      "featureCells": [
         {
-          "src": "/images/products/readymade-office-cabin/20x10/readymade-office-cabin-20x10-front-angle.webp",
-          "alt": "Readymade Office Cabin 20 x 10 ft front angle render.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
+          "label": "Size",
+          "value": "20x10x8.5 ft"
         },
         {
-          "src": "/images/products/readymade-office-cabin/20x10/readymade-office-cabin-20x10-side-elevation.webp",
-          "alt": "Readymade Office Cabin 20 x 10 ft side elevation render.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
+          "label": "Roof",
+          "value": "Centred-ridge two-way slope"
         },
         {
-          "src": "/images/products/readymade-office-cabin/20x10/readymade-office-cabin-20x10-workspace-interior.webp",
-          "alt": "Readymade Office Cabin 20 x 10 ft workspace interior render.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
+          "label": "Openings",
+          "value": "1 external door, 6 windows"
         },
         {
-          "src": "/images/products/readymade-office-cabin/20x10/readymade-office-cabin-20x10-entrance-interior.webp",
-          "alt": "Readymade Office Cabin 20 x 10 ft entrance interior render.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
+          "label": "Desks staged",
+          "value": "5 workstations, 5 seats"
         },
         {
-          "src": "/images/products/readymade-office-cabin/20x10/readymade-office-cabin-20x10-rear-interior.webp",
-          "alt": "Readymade Office Cabin 20 x 10 ft rear interior render.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
+          "label": "Application",
+          "value": "Five-workstation office"
         }
       ],
-      "capacity": "Recommended occupancy 4–6 people"
+      "images": [
+        {
+          "src": "/images/products/readymade-office-cabin/20x10/readymade-office-cabin-20x10-front.webp",
+          "alt": "20x10x8.5 ft readymade office cabin in Muted Teal, three-quarter view of the door wall, 5 workstations and 6 windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/readymade-office-cabin/20x10/readymade-office-cabin-20x10-rear.webp",
+          "alt": "20x10x8.5 ft readymade office cabin in Muted Teal, rear long wall, 5 workstations and 6 windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/readymade-office-cabin/20x10/readymade-office-cabin-20x10-end.webp",
+          "alt": "20x10x8.5 ft readymade office cabin in Muted Teal, end elevation, 5 workstations and 6 windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/readymade-office-cabin/20x10/readymade-office-cabin-20x10-entry-interior.webp",
+          "alt": "20x10x8.5 ft readymade office cabin in Muted Teal, interior from the entrance, 5 workstations and 6 windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/readymade-office-cabin/20x10/readymade-office-cabin-20x10-reverse-interior.webp",
+          "alt": "20x10x8.5 ft readymade office cabin in Muted Teal, interior looking back toward the entrance, 5 workstations and 6 windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/readymade-office-cabin/20x10/readymade-office-cabin-20x10-workstation-interior.webp",
+          "alt": "20x10x8.5 ft readymade office cabin in Muted Teal, interior workstation run, 5 workstations and 6 windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
     },
     {
       "sizeSlug": "20x12",
       "label": "20×12 ft",
-      "dims": "20×12×8.5 ft",
+      "dims": "20x12x8.5 ft",
       "areaSqft": 240,
-      "priceExGst": 295440,
-      "priceInclGst": 348619,
-      "images": [
+      "priceExGst": 288000,
+      "priceInclGst": 339840,
+      "featureCells": [
         {
-          "src": "/images/products/readymade-office-cabin/20x12/readymade-office-cabin-20x12-front-angle.webp",
-          "alt": "Readymade Office Cabin 20 x 12 ft front angle render.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
+          "label": "Size",
+          "value": "20x12x8.5 ft"
         },
         {
-          "src": "/images/products/readymade-office-cabin/20x12/readymade-office-cabin-20x12-side-elevation.webp",
-          "alt": "Readymade Office Cabin 20 x 12 ft side elevation render.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
+          "label": "Roof",
+          "value": "Centred-ridge two-way slope"
         },
         {
-          "src": "/images/products/readymade-office-cabin/20x12/readymade-office-cabin-20x12-workspace-interior.webp",
-          "alt": "Readymade Office Cabin 20 x 12 ft workspace interior render.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
+          "label": "Openings",
+          "value": "1 external door, 6 windows"
         },
         {
-          "src": "/images/products/readymade-office-cabin/20x12/readymade-office-cabin-20x12-entrance-interior.webp",
-          "alt": "Readymade Office Cabin 20 x 12 ft entrance interior render.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
+          "label": "Desks staged",
+          "value": "5 workstations, 5 seats"
         },
         {
-          "src": "/images/products/readymade-office-cabin/20x12/readymade-office-cabin-20x12-rear-interior.webp",
-          "alt": "Readymade Office Cabin 20 x 12 ft rear interior render.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
+          "label": "Application",
+          "value": "20x10 layout widened symmetrically; clear aisle only"
         }
       ],
-      "capacity": "Recommended occupancy 5–7 people"
+      "images": [
+        {
+          "src": "/images/products/readymade-office-cabin/20x12/readymade-office-cabin-20x12-front.webp",
+          "alt": "20x12x8.5 ft readymade office cabin in Warm Stone Taupe, three-quarter view of the door wall, 5 workstations and 6 windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/readymade-office-cabin/20x12/readymade-office-cabin-20x12-rear.webp",
+          "alt": "20x12x8.5 ft readymade office cabin in Warm Stone Taupe, rear long wall, 5 workstations and 6 windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/readymade-office-cabin/20x12/readymade-office-cabin-20x12-end.webp",
+          "alt": "20x12x8.5 ft readymade office cabin in Warm Stone Taupe, end elevation, 5 workstations and 6 windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/readymade-office-cabin/20x12/readymade-office-cabin-20x12-entry-interior.webp",
+          "alt": "20x12x8.5 ft readymade office cabin in Warm Stone Taupe, interior from the entrance, 5 workstations and 6 windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/readymade-office-cabin/20x12/readymade-office-cabin-20x12-reverse-interior.webp",
+          "alt": "20x12x8.5 ft readymade office cabin in Warm Stone Taupe, interior looking back toward the entrance, 5 workstations and 6 windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/readymade-office-cabin/20x12/readymade-office-cabin-20x12-workstation-interior.webp",
+          "alt": "20x12x8.5 ft readymade office cabin in Warm Stone Taupe, interior workstation run, 5 workstations and 6 windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
     },
     {
       "sizeSlug": "30x10",
       "label": "30×10 ft",
-      "dims": "30×10×8.5 ft",
+      "dims": "30x10x8.5 ft",
       "areaSqft": 300,
-      "priceExGst": 369300,
-      "priceInclGst": 435774,
-      "images": [
+      "priceExGst": 360000,
+      "priceInclGst": 424800,
+      "featureCells": [
         {
-          "src": "/images/products/readymade-office-cabin/30x10/readymade-office-cabin-30x10-front-angle.webp",
-          "alt": "Readymade Office Cabin 30 x 10 ft front angle render.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
+          "label": "Size",
+          "value": "30x10x8.5 ft"
         },
         {
-          "src": "/images/products/readymade-office-cabin/30x10/readymade-office-cabin-30x10-side-elevation.webp",
-          "alt": "Readymade Office Cabin 30 x 10 ft side elevation render.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
+          "label": "Roof",
+          "value": "Centred-ridge two-way slope"
         },
         {
-          "src": "/images/products/readymade-office-cabin/30x10/readymade-office-cabin-30x10-workspace-interior.webp",
-          "alt": "Readymade Office Cabin 30 x 10 ft workspace interior render.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
+          "label": "Openings",
+          "value": "2 external doors, 8 windows"
         },
         {
-          "src": "/images/products/readymade-office-cabin/30x10/readymade-office-cabin-30x10-entrance-interior.webp",
-          "alt": "Readymade Office Cabin 30 x 10 ft entrance interior render.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
+          "label": "Desks staged",
+          "value": "8 workstations, 8 seats"
         },
         {
-          "src": "/images/products/readymade-office-cabin/30x10/readymade-office-cabin-30x10-rear-interior.webp",
-          "alt": "Readymade Office Cabin 30 x 10 ft rear interior render.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
+          "label": "Application",
+          "value": "Standard eight-workstation layout"
         }
       ],
-      "capacity": "Recommended occupancy 6–8 people"
+      "images": [
+        {
+          "src": "/images/products/readymade-office-cabin/30x10/readymade-office-cabin-30x10-front.webp",
+          "alt": "30x10x8.5 ft readymade office cabin in Deep Bottle Green, three-quarter view of the door wall, 8 workstations and 8 windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/readymade-office-cabin/30x10/readymade-office-cabin-30x10-rear.webp",
+          "alt": "30x10x8.5 ft readymade office cabin in Deep Bottle Green, rear long wall, 8 workstations and 8 windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/readymade-office-cabin/30x10/readymade-office-cabin-30x10-end.webp",
+          "alt": "30x10x8.5 ft readymade office cabin in Deep Bottle Green, end elevation, 8 workstations and 8 windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/readymade-office-cabin/30x10/readymade-office-cabin-30x10-entry-interior.webp",
+          "alt": "30x10x8.5 ft readymade office cabin in Deep Bottle Green, interior from the entrance, 8 workstations and 8 windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/readymade-office-cabin/30x10/readymade-office-cabin-30x10-reverse-interior.webp",
+          "alt": "30x10x8.5 ft readymade office cabin in Deep Bottle Green, interior looking back toward the entrance, 8 workstations and 8 windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/readymade-office-cabin/30x10/readymade-office-cabin-30x10-workstation-interior.webp",
+          "alt": "30x10x8.5 ft readymade office cabin in Deep Bottle Green, interior workstation run, 8 workstations and 8 windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
     },
     {
       "sizeSlug": "40x10",
       "label": "40×10 ft",
-      "dims": "40×10×8.5 ft",
+      "dims": "40x10x8.5 ft",
       "areaSqft": 400,
-      "priceExGst": 482400,
-      "priceInclGst": 569232,
-      "images": [
+      "priceExGst": 475000,
+      "priceInclGst": 560500,
+      "featureCells": [
         {
-          "src": "/images/products/readymade-office-cabin/40x10/readymade-office-cabin-40x10-front-angle.webp",
-          "alt": "Readymade Office Cabin 40 x 10 ft front angle render.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
+          "label": "Size",
+          "value": "40x10x8.5 ft"
         },
         {
-          "src": "/images/products/readymade-office-cabin/40x10/readymade-office-cabin-40x10-side-elevation.webp",
-          "alt": "Readymade Office Cabin 40 x 10 ft side elevation render.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
+          "label": "Roof",
+          "value": "Centred-ridge two-way slope"
         },
         {
-          "src": "/images/products/readymade-office-cabin/40x10/readymade-office-cabin-40x10-workspace-interior.webp",
-          "alt": "Readymade Office Cabin 40 x 10 ft workspace interior render.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
+          "label": "Openings",
+          "value": "2 external doors, 1 internal door, 9 windows"
         },
         {
-          "src": "/images/products/readymade-office-cabin/40x10/readymade-office-cabin-40x10-entrance-interior.webp",
-          "alt": "Readymade Office Cabin 40 x 10 ft entrance interior render.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
+          "label": "Desks staged",
+          "value": "12 workstations, 15 seats"
         },
         {
-          "src": "/images/products/readymade-office-cabin/40x10/readymade-office-cabin-40x10-rear-interior.webp",
-          "alt": "Readymade Office Cabin 40 x 10 ft rear interior render.",
-          "provenance": "render",
-          "width": 1200,
-          "height": 1200
+          "label": "Application",
+          "value": "10x10 manager room plus 30x10 common office"
         }
       ],
-      "capacity": "Recommended occupancy 8–10 people"
+      "images": [
+        {
+          "src": "/images/products/readymade-office-cabin/40x10/readymade-office-cabin-40x10-front.webp",
+          "alt": "40x10x8.5 ft readymade office cabin in Deep Oxford Blue, three-quarter view of the door wall, 12 workstations and 9 windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/readymade-office-cabin/40x10/readymade-office-cabin-40x10-rear.webp",
+          "alt": "40x10x8.5 ft readymade office cabin in Deep Oxford Blue, rear long wall, 12 workstations and 9 windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/readymade-office-cabin/40x10/readymade-office-cabin-40x10-end.webp",
+          "alt": "40x10x8.5 ft readymade office cabin in Deep Oxford Blue, end elevation, 12 workstations and 9 windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/readymade-office-cabin/40x10/readymade-office-cabin-40x10-entry-interior.webp",
+          "alt": "40x10x8.5 ft readymade office cabin in Deep Oxford Blue, interior from the entrance, 12 workstations and 9 windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/readymade-office-cabin/40x10/readymade-office-cabin-40x10-reverse-interior.webp",
+          "alt": "40x10x8.5 ft readymade office cabin in Deep Oxford Blue, interior looking back toward the entrance, 12 workstations and 9 windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/readymade-office-cabin/40x10/readymade-office-cabin-40x10-workstation-interior.webp",
+          "alt": "40x10x8.5 ft readymade office cabin in Deep Oxford Blue, interior workstation run, 12 workstations and 9 windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
     }
   ],
-  "specPdfHref": "/specs/readymade-office-cabin-technical-specification.pdf",
+  "specPdfHref": "/images/products/readymade-office-cabin/docs/readymade-office-cabin-technical-specification-and-price-v3.pdf",
   "schemaIncludeVariantOffers": true,
   "suppressLegacySku": true,
   "suppressAggregateRatingSchema": true,
   "suppressReviewClaims": true,
   "suppressLegacyFaqSchema": true,
   "emitSizeAnchors": true,
-  "deliveryLabel": "7–21 Working Days",
-  "coverageLabel": "Bangalore city · Delhi NCR",
-  "materialLabel": "MS structural frame · insulated office build",
-  "trustStripText": "GST registered · ISO 9001:2015 quality management · 5-year structural warranty · 1-year finishing warranty",
+  "deliveryLabel": "7 to 21 working days",
+  "coverageLabel": "Bangalore city, Delhi NCR",
+  "materialLabel": "MS structural frame, insulated office build",
+  "trustStripText": "GST registered · ISO 9001:2015 quality management",
   "hideHeroProofRow": true,
   "categoryLabel": "Portable Office",
   "categoryHref": "/product/portable-office",
-  "specPdfButtonLabel": "Download technical specification",
+  "specPdfButtonLabel": "Download technical specification (PDF)",
   "schemaBrandName": "SAMAN Portable",
   "schemaImageMode": "variant-first-images",
-  "priceCaption": "Prices exclude GST. GST is 18% under HSN 9406. Free delivery within Bangalore city and Delhi NCR; freight elsewhere is quoted separately.",
-  "shippingHtml": "<div class=\"not-prose\"><p>Delivery is 7–21 working days after the order and site requirements are confirmed. Delivery is free within Bangalore city and Delhi NCR. Freight for all other destinations is quoted separately in the written quotation.</p><p>A written quotation is returned within 48 hours.</p></div>",
-  "h1": "Readymade Office Cabin: Six Fixed-Specification Sizes",
-  "seoTitle": "Readymade Office Cabin | 6 Published Sizes | SAMAN",
-  "metaDescription": "Compare six Readymade Office Cabin sizes with published prices and an approved fixed specification. Quotation within 48 hours; delivery in 7–21 working days.",
+  "priceCaption": "Prices exclude GST. GST is 18 per cent under HSN 9406. Free delivery within Bangalore city and Delhi NCR; freight elsewhere is quoted separately.",
+  "h1": "Readymade Office Cabin: Six Approved Sizes and Prices",
+  "seoTitle": "Office Cabin Price in India: Six Readymade Sizes | SAMAN",
+  "metaDescription": "Readymade office cabin sizes from 10x10 to 40x10 ft with published ex-GST prices, approved window and workstation schedules, and GA drawings from SAMAN.",
   "canonical": "https://www.samanportable.com/product/portable-office/readymade-office-cabin",
-  "opener": "Compare six Readymade Office Cabin sizes with an approved fixed inclusion list, published ex-GST and inclusive prices, and recommended occupancy.",
+  "opener": "A readymade office cabin is a factory-built steel office you place and use, not a partition put up inside an existing floor. SAMAN builds it to one approved specification across six sizes, from a 100 sq ft 10x10 ft cabin at 1,437.50 per sq ft to a 400 sq ft 40x10 ft cabin at 1,187.50 per sq ft, every one of them 8.5 ft high. What separates this page from a made-to-order cabin is that the layout is already decided: each size carries a fixed window and door schedule, a fixed desk count from four workstations at 10x10 ft to twelve at 40x10 ft, and a published price you can compare before you enquire. Purchase teams, dealers and site supervisors use it when the decision is which size to buy, not what to design.",
   "ymalTiles": [
     {
       "title": "Portable Office",
@@ -369,53 +534,203 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Which Readymade Office Cabin sizes are published?",
+        "name": "What is the standard size of an office cabin in India?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Six standard sizes are published: 10x10, 20x8, 20x10, 20x12, 30x10 and 40x10 ft. Their floor areas run from 100 to 400 sq ft, and each published size is 8.5 ft high."
+          "text": "There is no legal standard. In practice road transport sets the range: widths of 8, 10 and 12 ft, lengths of 10, 20, 30 and 40 ft, and a height around 8.5 ft. All six sizes on this page are 8.5 ft high."
         }
       },
       {
         "@type": "Question",
-        "name": "How is a Readymade Office Cabin different from the Portable Office range?",
+        "name": "How much does a readymade office cabin cost?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "This specialist page uses one approved fixed inclusion list for its six published sizes. Availability is confirmed with the written quotation; this page does not make a stock or dispatch-from-stock claim."
+          "text": "Published prices run from 1,43,750 ex-GST for a 100 sq ft 10x10 ft cabin to 4,75,000 for a 400 sq ft 40x10 ft cabin. The rate ladder is anchored at 1,250 per sq ft for the 200 sq ft size."
         }
       },
       {
         "@type": "Question",
-        "name": "Do the published prices include GST?",
+        "name": "How many people fit in a 20x10 ft office cabin?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The table shows both ex-GST and inclusive prices. GST is 18% under HSN 9406."
+          "text": "Five. The approved plan places two workstations on the door wall clear of the entrance and three on the rear wall, each with a ceiling-flush cabinet. Desk count, not floor area, is what limits occupancy."
         }
       },
       {
         "@type": "Question",
-        "name": "Can the fixed inclusion list be changed?",
+        "name": "Is a readymade office cabin available from stock?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The published prices apply to the approved fixed inclusion list. Other requirements are reviewed and priced separately in the written quotation."
+          "text": "No stock or dispatch-from-stock claim is made here. Readymade means the specification and price are already fixed against an approved drawing. Availability for your order is confirmed in the written quotation."
         }
       },
       {
         "@type": "Question",
-        "name": "How quickly will I receive a quotation and delivery?",
+        "name": "Which office cabin size has a separate manager room?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "SAMAN returns a written quotation within 48 hours. Delivery is 7–21 working days after the order and site requirements are confirmed."
+          "text": "Only the 40x10 ft size. A partition at 10 ft creates a 10x10 ft manager room alongside a 30x10 ft common office, linked by one internal door near the door wall. The partition carries no window."
         }
       },
       {
         "@type": "Question",
-        "name": "How are freight and warranty handled?",
+        "name": "Why does the 20x12 ft cabin cost more but seat the same?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Delivery is free within Bangalore city and Delhi NCR, while freight outside those zones is quoted separately. The warranty is five years for the structure and one year for finishing, subject to the written terms."
+          "text": "The 20x12 is the 20x10 plan widened one foot on each long wall. The extra 40 sq ft becomes a clear central aisle rather than more desks, so the workstation count stays at five."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do the published prices include GST and delivery?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Prices are ex-GST under HSN 9406; 18 per cent GST applies. Delivery is free within Bangalore city and Delhi NCR. Freight elsewhere is quoted by distance band and is tentative until the address is confirmed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is not included in the published office cabin price?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Custom opening positions, premium linings and finishes, sanitary and plumbing work, and repeated relocation are all quoted separately. Foundations, site levelling and the incoming electrical supply are the buyer's scope."
         }
       }
     ]
   },
-  "descriptionHtml": "<section><h2>Readymade Office Cabin range</h2><p>This specialist range uses one approved fixed inclusion list across six published sizes. Availability is confirmed with the written quotation; no stock or dispatch-from-stock promise is made on this page.</p><h3>Six published sizes and prices</h3><div class=\"overflow-x-auto\"><table><thead><tr><th>Size</th><th>Area</th><th>Price ex-GST</th><th>Price incl. 18% GST</th></tr></thead><tbody><tr><td>10×10 ft</td><td>100 sq ft</td><td>₹1,41,100</td><td>₹1,66,498</td></tr><tr><td>20×8 ft</td><td>160 sq ft</td><td>₹2,25,760</td><td>₹2,66,397</td></tr><tr><td>20×10 ft</td><td>200 sq ft</td><td>₹2,56,400</td><td>₹3,02,552</td></tr><tr><td>20×12 ft</td><td>240 sq ft</td><td>₹2,95,440</td><td>₹3,48,619</td></tr><tr><td>30×10 ft</td><td>300 sq ft</td><td>₹3,69,300</td><td>₹4,35,774</td></tr><tr><td>40×10 ft</td><td>400 sq ft</td><td>₹4,82,400</td><td>₹5,69,232</td></tr></tbody></table></div><p>Prices use HSN 9406 and apply to the approved fixed inclusion list. Other requirements are priced separately in writing.</p></section><section><h2>Quotation and zonal contacts</h2><p>A written quotation is returned within 48 hours. Delivery is 7–21 working days after the order and site requirements are confirmed. Delivery is free within Bangalore city and Delhi NCR; freight outside those zones is quoted separately.</p><p><strong>South India:</strong> <a href=\"tel:+918861622859\">+91 88616 22859</a><br/><strong>North India:</strong> <a href=\"tel:+918796039938\">+91 87960 39938</a></p><p>Warranty: five-year structural warranty and one-year finishing warranty, subject to the written warranty and quotation terms.</p></section><section><h2>Verified company credentials</h2><p>SAMAN POS India Private Limited maintains the following repository-backed credentials:</p><ul><li><a href=\"/certifications/saman-pos-iso-9001-2015-quality-management-certificate.pdf\">ISO 9001:2015 quality management certificate</a>, subject to the conditions stated in the certificate</li><li><a href=\"/certifications/saman-pos-gst-karnataka-certificate.pdf\">GST registration, Karnataka</a> and <a href=\"/certifications/saman-pos-gst-uttar-pradesh-greater-noida-certificate.pdf\">GST registration, Uttar Pradesh</a></li><li><a href=\"/certifications/saman-pos-udyam-registration-certificate.pdf\">Udyam registration</a></li><li><a href=\"/certifications/saman-pos-startup-india-recognition-certificate.pdf\">DPIIT Startup India recognition</a></li><li><a href=\"/certifications/saman-pos-nsic-government-purchase-enlistment.pdf\">NSIC Government Purchase enlistment</a></li></ul></section><section><h2>Frequently asked questions</h2><dl><div><dt><strong>Which Readymade Office Cabin sizes are published?</strong></dt><dd>Six standard sizes are published: 10x10, 20x8, 20x10, 20x12, 30x10 and 40x10 ft. Their floor areas run from 100 to 400 sq ft, and each published size is 8.5 ft high.</dd></div><div><dt><strong>How is a Readymade Office Cabin different from the Portable Office range?</strong></dt><dd>This specialist page uses one approved fixed inclusion list for its six published sizes. Availability is confirmed with the written quotation; this page does not make a stock or dispatch-from-stock claim.</dd></div><div><dt><strong>Do the published prices include GST?</strong></dt><dd>The table shows both ex-GST and inclusive prices. GST is 18% under HSN 9406.</dd></div><div><dt><strong>Can the fixed inclusion list be changed?</strong></dt><dd>The published prices apply to the approved fixed inclusion list. Other requirements are reviewed and priced separately in the written quotation.</dd></div><div><dt><strong>How quickly will I receive a quotation and delivery?</strong></dt><dd>SAMAN returns a written quotation within 48 hours. Delivery is 7–21 working days after the order and site requirements are confirmed.</dd></div><div><dt><strong>How are freight and warranty handled?</strong></dt><dd>Delivery is free within Bangalore city and Delhi NCR, while freight outside those zones is quoted separately. The warranty is five years for the structure and one year for finishing, subject to the written terms.</dd></div></dl></section>"
+  "descriptionHtml": "<section><h2>Is an office cabin a building, or a room inside one?</h2><p>Search for an office cabin in India and two completely different products come back. One is an interior job: a glazed or partitioned room built inside an existing floor plate, usually for a manager, priced by the interior contractor and inseparable from the building it sits in. The other is what this page sells: a complete steel structure, built in a factory, craned onto a plot or a slab and used as an office from the day it lands. It has its own floor, roof, walls, windows, wiring and door.</p><p>The distinction decides almost everything that follows. An interior cabin has no delivery, no freight, no foundation question and no resale value of its own. A readymade office cabin has all four, and it can be lifted and moved to the next site when the current one closes. If you are laying out cabins inside a leased floor, nothing on this page applies. If you need a working office where there is currently open ground, a yard, a rooftop or a construction site, this is the right product page.</p></section><section><h2>What readymade means here, and what it does not mean</h2><p>Readymade on this page means the specification is already decided, not that a finished cabin is sitting in a yard waiting for you. Every one of the six sizes is built to one approved inclusion list against an approved general arrangement drawing. The door wall, the window positions along each wall, the desk run, the cabinet run and the roof form are all fixed before you enquire, and the price that follows from that specification is published on this page rather than quoted on request.</p><p>That is a real difference from a made-to-order cabin, and it is a narrower claim than stock availability. SAMAN does not promise dispatch from stock here. Availability for your order is confirmed in the written quotation. What the readymade route removes is the design loop: the fortnight of drawings, revisions and approvals that sits between a first enquiry and a made-to-order cabin entering production. If your requirement genuinely is bespoke, that loop is worth the time and you should ask for it.</p></section><section><h2>What size an office cabin should be, in practice</h2><p>There is no legally standard office cabin size in India, but there is a working range, and it is set by road transport rather than by architecture. A cabin has to travel on an open trailer, so widths cluster at 8, 10 and 12 ft and lengths at 10, 20, 30 and 40 ft. Heights settle around 8.5 ft, which is what all six sizes on this page use. Anything wider than about 12 ft starts to attract over-dimensional cargo handling and its freight cost changes character.</p><p>Within that range the practical question is not area, it is desk count. A 10x10 ft cabin takes four workstations because three of its four walls carry a desk run and the fourth is the entrance. A 20x8 ft cabin has more floor area but fewer desks, three, because its narrow width forces a single desk run along one wall. A 20x10 ft cabin takes five. If you size by square feet alone you can easily buy a bigger cabin that seats fewer people, which is the single most common ordering error on this product.</p><p>The other size trap is circulation. Going from 20x10 to 20x12 adds 40 sq ft and no desks at all: the extra foot on each long wall becomes a central aisle wide enough to walk two abreast and to pull a chair back from a desk without hitting the person behind. That is worth paying for in a room people work in all day and worth skipping in a room used for storage and short visits.</p></section><section><h2>How the six published office cabin prices are built</h2><p>All six prices come from one rate ladder rather than six separate quotations. The anchor is the 200 sq ft cabin at 1,250 per sq ft. Below that area the rate rises, because the fixed content of a cabin, one door, the frame corners, the distribution board, the lifting lugs, does not shrink with the floor. Above it the rate falls, because that fixed content spreads over more area. The 100 sq ft size therefore carries a 15 per cent uplift to 1,437.50 per sq ft, and the 400 sq ft size settles at 1,187.50.</p><p>Reading the ladder that way tells you something useful before you enquire: the cheapest cabin is not the cheapest office. A 10x10 ft cabin at 1,43,750 works out at 35,938 per workstation across its four desks. A 30x10 ft cabin at 3,60,000 works out at 45,000 per desk but buys a second door and a room people can actually be laid out in. A 40x10 ft cabin at 4,75,000 is 39,583 per common workstation and includes a separate manager room. Price per seat and price per square foot move in different directions, and the published ladder lets you see both before anyone quotes you.</p><table><caption>Six published sizes, areas, rates and prices</caption><thead><tr><th>Size (L x W x H)</th><th>Area</th><th>Rate per sq ft</th><th>Price ex-GST</th><th>Incl. 18% GST</th></tr></thead><tbody><tr><td>10x10x8.5 ft</td><td>100 sq ft</td><td>1,437.50</td><td>1,43,750</td><td>1,69,625</td></tr><tr><td>20x8x8.5 ft</td><td>160 sq ft</td><td>1,375.00</td><td>2,20,000</td><td>2,59,600</td></tr><tr><td>20x10x8.5 ft</td><td>200 sq ft</td><td>1,250.00</td><td>2,50,000</td><td>2,95,000</td></tr><tr><td>20x12x8.5 ft</td><td>240 sq ft</td><td>1,200.00</td><td>2,88,000</td><td>3,39,840</td></tr><tr><td>30x10x8.5 ft</td><td>300 sq ft</td><td>1,200.00</td><td>3,60,000</td><td>4,24,800</td></tr><tr><td>40x10x8.5 ft</td><td>400 sq ft</td><td>1,187.50</td><td>4,75,000</td><td>5,60,500</td></tr></tbody></table><p>Prices are ex-GST under HSN 9406 and apply to the approved fixed inclusion list.</p></section><section><h2>Reading the opening schedule before you fix a size</h2><p>Every size on this page has a buyer-facing general arrangement board, and five minutes with it prevents most of the problems that surface after delivery. The board names the four walls, places every door and window on them by its distance along the wall, and shows where the desks and ceiling-flush cabinets sit. It is written for a purchaser, not for a fabricator, so you do not need to read structural drawings to use it. What you are checking is whether the plan matches how the cabin will actually stand on your ground.</p><ul><li>Which wall carries the door, and whether that wall will face your approach once the cabin is craned in</li><li>Whether the door wall also carries workstations: at 10x10 and 20x8 ft it does not, at 20x10 ft it does</li><li>How many windows fall on the wall that will face a boundary or a neighbouring structure</li><li>Whether the desk count, not the floor area, matches the number of people who will sit there daily</li><li>Where the internal door sits at 40x10 ft, and that the partition itself carries no window</li><li>Which end wall you will approach from, since both end walls carry one centred window and no door</li></ul><p>The two mistakes worth naming are ordering a footprint that fits the plot but not the desk count, and ordering a cabin whose door opens onto the wrong side once it is placed. Neither is expensive to avoid at drawing stage and both are expensive to correct after fabrication, because moving an opening means cutting and re-sealing a wall that has already been clad and wired.</p></section><section><h2>Office cabin, porta cabin or container office: which one</h2><p>These three are frequently searched as if they were the same product and they are not. A readymade office cabin is a purpose-built steel cabin whose interior is laid out for desk work: workstation runs, cabinets, office lighting and socket density, and a window count set for daylight at a desk. A porta cabin is the wider family the same shell belongs to, covering site offices, stores, rooms and service uses in the same structural build, and it is the right page if your use is not specifically an office.</p><p>A container office is a different starting point again: a shipping container converted into a workspace. It brings container proportions, container corner castings and container handling with it, which is an advantage where lifting and stacking matter and a constraint where daylight and layout matter. If your decision is really about container form, that intent is served by the <a href=\"/product/container-offices\">container offices range</a> rather than by this page.</p><p>The practical rule is straightforward. Choose this page when the room is an office and you want the specification and the price already fixed. Choose the <a href=\"/product/porta-cabins\">wider porta cabin range</a> when the use is not office work. Choose a container office when the container shell itself is what you need.</p></section><section><h2>What the published price includes, and what it does not</h2><p>The published price covers the cabin as the approved specification defines it: the welded mild-steel frame and chassis, the corrugated external wall and roof skin with sealed laps and flashings, the insulated envelope, the internal lining and ceiling, the floor build-up, the doors and sliding windows in their approved positions, the concealed wiring with its distribution board and protection, the approved lighting and socket points, the corrosion protection system, and factory quality checks before dispatch.</p><p>Four things sit outside it, and they are named here rather than raised later. Custom opening positions different from the approved schedule are priced separately, because moving an opening changes the framing around it. Premium linings and finishes beyond the standard schedule are priced separately. Sanitary work, water supply and waste are not included at all unless the approved scope shows them. Repeated relocation, as opposed to the single delivery, is quoted separately because it changes how the unit has to be built for handling.</p><p>Foundations, site levelling, the incoming electrical supply and any statutory permission remain on the buyer&#x27;s side of the line for every size. The cabin arrives complete; the ground it stands on and the supply it connects to do not come with it.</p></section><section><h2>Delivery, freight and getting the site ready</h2><p>Cabins leave from the Bengaluru unit for southern destinations and from the Greater Noida unit for northern ones. Delivery within Bangalore city and across Delhi NCR, including Ghaziabad, Gurugram, Faridabad, Noida and Greater Noida, is free. Everywhere else moves on an open trailer and is quoted by distance band, with the 20 ft and 40 ft trailer ladders published in full on the Shipping tab of this page so you can estimate freight before you ask for a quotation.</p><p>Freight figures are tentative until the delivery address is confirmed, because the real cost moves with the route and with whether a returning vehicle is available. Over-dimensional cargo charges depend on the state being crossed. Standard delivery is 7 to 21 working days from confirmed order, plus transit time.</p><p>What has to be ready before the trailer arrives is access and support. The crane or hydra needs room to stand and to swing the full length of the cabin, which at 40x10 ft is a serious constraint on a tight urban plot. The bearing points need to be level and firm. The lifting points marked on the approved drawing are the only ones the unit should be handled by.</p></section><section><h2>Quality checks, warranty and honest scope</h2><p>Before a cabin is loaded it is checked against a fixed list: dimensional accuracy against the approved drawing, weld condition, sheet fixing and lap sealing, coating coverage, roof drainage and weather seals, opening operation, and electrical continuity and function. Circuit identification and device fixing are recorded, and the functional test happens before dispatch rather than on your site.</p><p>On warranty, this page publishes no duration, and that is deliberate. Warranty period and exclusions are confirmed in the final quotation for your order, because they depend on the specification, the exposure and the use. A vendor who publishes a headline warranty figure without its exclusions has told you less than one who tells you where the terms live.</p><p>The same applies to the engineering boundary. The general arrangement boards on this page are buyer-facing drawings covering layout and visual geometry. Structural member sizes, fabrication detail, services design and any foundation or interface engineering are governed by the approved project engineering documents and the signed quotation, not by a web page.</p></section><section><h2>Frequently asked questions</h2><h3>What is the standard size of an office cabin in India?</h3><p>There is no legal standard. In practice road transport sets the range: widths of 8, 10 and 12 ft, lengths of 10, 20, 30 and 40 ft, and a height around 8.5 ft. All six sizes on this page are 8.5 ft high.</p><h3>How much does a readymade office cabin cost?</h3><p>Published prices run from 1,43,750 ex-GST for a 100 sq ft 10x10 ft cabin to 4,75,000 for a 400 sq ft 40x10 ft cabin. The rate ladder is anchored at 1,250 per sq ft for the 200 sq ft size.</p><h3>How many people fit in a 20x10 ft office cabin?</h3><p>Five. The approved plan places two workstations on the door wall clear of the entrance and three on the rear wall, each with a ceiling-flush cabinet. Desk count, not floor area, is what limits occupancy.</p><h3>Is a readymade office cabin available from stock?</h3><p>No stock or dispatch-from-stock claim is made here. Readymade means the specification and price are already fixed against an approved drawing. Availability for your order is confirmed in the written quotation.</p><h3>Which office cabin size has a separate manager room?</h3><p>Only the 40x10 ft size. A partition at 10 ft creates a 10x10 ft manager room alongside a 30x10 ft common office, linked by one internal door near the door wall. The partition carries no window.</p><h3>Why does the 20x12 ft cabin cost more but seat the same?</h3><p>The 20x12 is the 20x10 plan widened one foot on each long wall. The extra 40 sq ft becomes a clear central aisle rather than more desks, so the workstation count stays at five.</p><h3>Do the published prices include GST and delivery?</h3><p>Prices are ex-GST under HSN 9406; 18 per cent GST applies. Delivery is free within Bangalore city and Delhi NCR. Freight elsewhere is quoted by distance band and is tentative until the address is confirmed.</p><h3>What is not included in the published office cabin price?</h3><p>Custom opening positions, premium linings and finishes, sanitary and plumbing work, and repeated relocation are all quoted separately. Foundations, site levelling and the incoming electrical supply are the buyer&#x27;s scope.</p></section>",
+  "applicationsContent": {
+    "h2": "Compare six readymade office cabin sizes and prices",
+    "intro": "Every size below is 8.5 ft high and carries its own approved opening, workstation and roof schedule.",
+    "panels": [
+      {
+        "sizeSlug": "10x10",
+        "h3": "10x10 ft Office Cabin: 100 sq ft for Four Workstations",
+        "paragraph": "The smallest published size is a square 100 sq ft room and the only one of the six with no window on its entrance wall. Wall A carries the single outward-opening door and nothing else, which keeps the approach clear, and each of the three remaining walls takes one centred 3 to 7 ft window. Four workstations and four ceiling-flush cabinets run along those three walls. At 1,437.50 per sq ft it is the highest rate in the ladder, because the price rule adds 15 per cent below 150 sq ft.",
+        "applications": [
+          "100 sq ft at 1,43,750 ex-GST, 1,437.50 per sq ft",
+          "Wall A carries D1 only: no window on the entrance wall",
+          "Three centred 3 to 7 ft windows, one each on Walls B, C and D",
+          "Four workstations and four ceiling-flush cabinets, no partition",
+          "Centred-ridge two-way roof falling to both long-wall eaves",
+          "Burgundy Wine exterior with a Porcelain Sage interior"
+        ],
+        "image": {
+          "src": "/images/products/readymade-office-cabin/ga/readymade-office-cabin-10x10-ga-board.webp",
+          "alt": "General arrangement board, 10x10x8.5 ft readymade office cabin: 1 external door, 3 windows, 4 workstations, centred-ridge two-way slope",
+          "provenance": "drawing",
+          "width": 1800,
+          "height": 1012,
+          "fit": "contain"
+        }
+      },
+      {
+        "sizeSlug": "20x8",
+        "h3": "20x8 ft Office Cabin: 160 sq ft on the Narrowest Footprint",
+        "paragraph": "This is the narrow-plot size and the only one of the six built under a one-way sloping roof rather than a centred ridge, which matters where the cabin sits hard against a boundary wall and rainwater has to fall one way. Wall A runs window, door, window with the entrance zone deliberately left free of furniture, so all three workstations and their cabinets sit along Wall B between its two windows. Both 8 ft ends carry one centred 2 to 6 ft window.",
+        "applications": [
+          "160 sq ft at 2,20,000 ex-GST, 1,375 per sq ft",
+          "One-way sloping roof: the only mono-pitch size in this range",
+          "Wall A schedule W1, D1, W2 with the entrance kept furniture-free",
+          "Three workstations and three cabinets, all on Wall B",
+          "Six windows in total, one centred window on each 8 ft end",
+          "Slate Blue-Grey exterior with a Champagne Cream interior"
+        ],
+        "image": {
+          "src": "/images/products/readymade-office-cabin/ga/readymade-office-cabin-20x8-ga-board.webp",
+          "alt": "General arrangement board, 20x8x8.5 ft readymade office cabin: 1 external door, 6 windows, 3 workstations, one-way slope",
+          "provenance": "drawing",
+          "width": 1800,
+          "height": 1012,
+          "fit": "contain"
+        }
+      },
+      {
+        "sizeSlug": "20x10",
+        "h3": "20x10 ft Office Cabin: the 200 sq ft Costing Anchor Size",
+        "paragraph": "Every price on this page is derived from this size. Two hundred square feet at 1,250 per sq ft is the zero point of the rate ladder, so smaller cabins carry an uplift and larger ones a reduction against it. It is also the size most buyers should price first when comparing vendor quotations. The plan puts two workstations on the door wall clear of the entrance and three on the rear wall, giving five desks with five cabinets, lit by six windows including one centred window on each 10 ft end.",
+        "applications": [
+          "200 sq ft at 2,50,000 ex-GST, 1,250 per sq ft, the ladder anchor",
+          "Wall A schedule W1, D1, W2 with the entrance kept clear",
+          "Two workstations on Wall A and three on Wall B, five in total",
+          "Six windows, including one centred 3 to 7 ft window per end wall",
+          "Single external door, no internal partition",
+          "Muted Teal exterior with a Soft Clay Greige interior"
+        ],
+        "image": {
+          "src": "/images/products/readymade-office-cabin/ga/readymade-office-cabin-20x10-ga-board.webp",
+          "alt": "General arrangement board, 20x10x8.5 ft readymade office cabin: 1 external door, 6 windows, 5 workstations, centred-ridge two-way slope",
+          "provenance": "drawing",
+          "width": 1800,
+          "height": 1012,
+          "fit": "contain"
+        }
+      },
+      {
+        "sizeSlug": "20x12",
+        "h3": "20x12 ft Office Cabin: 240 sq ft of Widened Circulation",
+        "paragraph": "The 20x12 is the 20x10 plan widened by one foot on each long wall, and the honest way to describe the extra 40 sq ft is circulation rather than capacity. The opening schedule is unchanged, the desk count stays at five, and what the extra width buys is a clear central aisle you can walk two abreast and pull a chair back into. The end windows widen to 4 to 8 ft to suit the wider gable. The rate falls to 1,200 per sq ft, so the added area costs less per foot than the 20x10 it grew from.",
+        "applications": [
+          "240 sq ft at 2,88,000 ex-GST, 1,200 per sq ft",
+          "Same five workstations as the 20x10: extra width is aisle, not desks",
+          "End windows widened to 4 to 8 ft, six windows in total",
+          "Wall A schedule W1, D1, W2, unchanged from the 20x10 plan",
+          "Widened symmetrically by one foot on each long wall",
+          "Warm Stone Taupe exterior with a Mist Blue-Grey interior"
+        ],
+        "image": {
+          "src": "/images/products/readymade-office-cabin/ga/readymade-office-cabin-20x12-ga-board.webp",
+          "alt": "General arrangement board, 20x12x8.5 ft readymade office cabin: 1 external door, 6 windows, 5 workstations, centred-ridge two-way slope",
+          "provenance": "drawing",
+          "width": 1800,
+          "height": 1012,
+          "fit": "contain"
+        }
+      },
+      {
+        "sizeSlug": "30x10",
+        "h3": "30x10 ft Office Cabin: 300 sq ft with Two External Doors",
+        "paragraph": "At 30 ft long the plan changes character: a second external door appears, one near each end of Wall A at 1.5 to 4.5 ft and 25.5 to 28.5 ft, so a thirty-foot room no longer has a single point of entry and exit. Two windows sit between them and four more run along Wall B, giving eight windows across a room that would otherwise read as a corridor. Eight workstations and eight cabinets are split three on the door wall and five on the rear wall, still with no internal partition.",
+        "applications": [
+          "300 sq ft at 3,60,000 ex-GST, 1,200 per sq ft",
+          "Two external doors on Wall A, one near each end",
+          "Eight windows: two on Wall A, four on Wall B, one per end",
+          "Eight workstations and eight cabinets, three front and five rear",
+          "Open plan throughout: no internal partition at this size",
+          "Deep Bottle Green exterior with a Champagne Linen interior"
+        ],
+        "image": {
+          "src": "/images/products/readymade-office-cabin/ga/readymade-office-cabin-30x10-ga-board.webp",
+          "alt": "General arrangement board, 30x10x8.5 ft readymade office cabin: 2 external doors, 8 windows, 8 workstations, centred-ridge two-way slope",
+          "provenance": "drawing",
+          "width": 1800,
+          "height": 1012,
+          "fit": "contain"
+        }
+      },
+      {
+        "sizeSlug": "40x10",
+        "h3": "40x10 ft Office Cabin with a 10x10 ft Manager Room",
+        "paragraph": "The largest published size is the only one that is two rooms. A partition at 10 ft divides a 10x10 ft manager room from a 30x10 ft common office, joined by one internal door set near Wall A and carrying no window. That is why the seat count and the desk count differ: twelve common workstations plus a manager table with one manager chair and two guest chairs, fifteen seats in all. Nine windows serve both rooms, three of them dedicated manager windows on Wall A, Wall B and the manager end.",
+        "applications": [
+          "400 sq ft at 4,75,000 ex-GST, 1,187.50 per sq ft, the lowest rate",
+          "Partition at 10 ft: a 10x10 manager room plus a 30x10 common office",
+          "Twelve common workstations, fifteen seats including the manager room",
+          "One internal door near Wall A, window-free, plus two external doors",
+          "Nine windows, including three manager windows MW1, MW2 and MW3",
+          "Deep Oxford Blue exterior with a Pale Sand interior"
+        ],
+        "image": {
+          "src": "/images/products/readymade-office-cabin/ga/readymade-office-cabin-40x10-ga-board.webp",
+          "alt": "General arrangement board, 40x10x8.5 ft readymade office cabin: 2 external doors, 9 windows, 12 workstations, centred-ridge two-way slope",
+          "provenance": "drawing",
+          "width": 1800,
+          "height": 1012,
+          "fit": "contain"
+        }
+      }
+    ]
+  },
+  "labelActiveThumbnailAlt": true,
+  "optimizeLocalGalleryImages": false
 }

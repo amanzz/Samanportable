@@ -1,0 +1,276 @@
+{
+ "page": "readymade-office-cabin",
+ "page_id": "PO-01",
+ "package_root": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\readymade-office-cabin\\approved-website-assets-v3",
+ "package_version_note": "v3 is the current package (readymade-office-cabin-package-spec-v3.json, status USER-APPROVED-GA / FINAL PRODUCTION, ruleset 1.0.14). 07-on-hold holds superseded v2 material and is audit-only.",
+ "output_root": "public/images/products/readymade-office-cabin",
+ "rules": {
+  "never_ship_source_png": true,
+  "webp_size_band_kb": [
+   80,
+   120
+  ],
+  "gallery": {
+   "width_px": 1254,
+   "quality_start": 86,
+   "ratio": "1:1",
+   "crop": "none (sources are native 1254x1254)"
+  },
+  "ga_board": {
+   "width_px": 1800,
+   "quality_start": 88,
+   "crop": "NEVER - downscale proportionally only; dimension text must stay legible when the output is opened"
+  },
+  "section2_card": {
+   "width_px": 1600,
+   "quality_start": 90,
+   "ratio": "16:9",
+   "crop": "none (source is native 1920x1080)"
+  },
+  "spec_diagram": {
+   "width_px": 1600,
+   "quality_start": 90,
+   "crop": "none (sources are native 1920x1080)"
+  },
+  "loading": "the six images of the selected size eager with fetchpriority=high on slide 1 only; the other thirty lazy; explicit width and height on every img; a preload link for slide 1 of the default size (20x10) carrying the same imagesrcset; GA boards lazy",
+  "measure_every_output": "report width, height and KB for every file; anything outside 80-120 KB is re-encoded (adjust quality first, then width) and re-measured",
+  "forbidden_sources": [
+   "*.website-preview-960x540.png",
+   "07-on-hold/**"
+  ]
+ },
+ "keep_as_is": {},
+ "gallery_new": {
+  "10x10": {
+   "running_order_note": "three exteriors then three interiors, as supplied in the approved v3 package; sequence verified against the GA wall schedule from the contact sheet",
+   "slides": [
+    {
+     "src": "02-square-product-images/size-10x10/01-readymade-office-cabin-10x10-front.png",
+     "out": "10x10/readymade-office-cabin-10x10-front.webp"
+    },
+    {
+     "src": "02-square-product-images/size-10x10/02-readymade-office-cabin-10x10-rear.png",
+     "out": "10x10/readymade-office-cabin-10x10-rear.webp"
+    },
+    {
+     "src": "02-square-product-images/size-10x10/03-readymade-office-cabin-10x10-end.png",
+     "out": "10x10/readymade-office-cabin-10x10-end.webp"
+    },
+    {
+     "src": "02-square-product-images/size-10x10/04-readymade-office-10x10-entry-interior.png",
+     "out": "10x10/readymade-office-cabin-10x10-entry-interior.webp"
+    },
+    {
+     "src": "02-square-product-images/size-10x10/05-readymade-office-10x10-reverse-interior.png",
+     "out": "10x10/readymade-office-cabin-10x10-reverse-interior.webp"
+    },
+    {
+     "src": "02-square-product-images/size-10x10/06-readymade-office-10x10-workstation-interior.png",
+     "out": "10x10/readymade-office-cabin-10x10-workstation-interior.webp"
+    }
+   ]
+  },
+  "20x8": {
+   "running_order_note": "three exteriors then three interiors, as supplied in the approved v3 package; sequence verified against the GA wall schedule from the contact sheet",
+   "slides": [
+    {
+     "src": "02-square-product-images/size-20x8/01-readymade-office-cabin-20x8-front.png",
+     "out": "20x8/readymade-office-cabin-20x8-front.webp"
+    },
+    {
+     "src": "02-square-product-images/size-20x8/02-readymade-office-cabin-20x8-rear.png",
+     "out": "20x8/readymade-office-cabin-20x8-rear.webp"
+    },
+    {
+     "src": "02-square-product-images/size-20x8/03-readymade-office-cabin-20x8-end.png",
+     "out": "20x8/readymade-office-cabin-20x8-end.webp"
+    },
+    {
+     "src": "02-square-product-images/size-20x8/04-readymade-office-20x8-entry-interior.png",
+     "out": "20x8/readymade-office-cabin-20x8-entry-interior.webp"
+    },
+    {
+     "src": "02-square-product-images/size-20x8/05-readymade-office-20x8-reverse-interior.png",
+     "out": "20x8/readymade-office-cabin-20x8-reverse-interior.webp"
+    },
+    {
+     "src": "02-square-product-images/size-20x8/06-readymade-office-20x8-workstation-interior.png",
+     "out": "20x8/readymade-office-cabin-20x8-workstation-interior.webp"
+    }
+   ]
+  },
+  "20x10": {
+   "running_order_note": "three exteriors then three interiors, as supplied in the approved v3 package; sequence verified against the GA wall schedule from the contact sheet",
+   "slides": [
+    {
+     "src": "02-square-product-images/size-20x10/01-readymade-office-cabin-20x10-front.png",
+     "out": "20x10/readymade-office-cabin-20x10-front.webp"
+    },
+    {
+     "src": "02-square-product-images/size-20x10/02-readymade-office-cabin-20x10-rear.png",
+     "out": "20x10/readymade-office-cabin-20x10-rear.webp"
+    },
+    {
+     "src": "02-square-product-images/size-20x10/03-readymade-office-cabin-20x10-end.png",
+     "out": "20x10/readymade-office-cabin-20x10-end.webp"
+    },
+    {
+     "src": "02-square-product-images/size-20x10/04-readymade-office-20x10-entry-interior.png",
+     "out": "20x10/readymade-office-cabin-20x10-entry-interior.webp"
+    },
+    {
+     "src": "02-square-product-images/size-20x10/05-readymade-office-20x10-reverse-interior.png",
+     "out": "20x10/readymade-office-cabin-20x10-reverse-interior.webp"
+    },
+    {
+     "src": "02-square-product-images/size-20x10/06-readymade-office-20x10-workstation-interior.png",
+     "out": "20x10/readymade-office-cabin-20x10-workstation-interior.webp"
+    }
+   ]
+  },
+  "20x12": {
+   "running_order_note": "three exteriors then three interiors, as supplied in the approved v3 package; sequence verified against the GA wall schedule from the contact sheet",
+   "slides": [
+    {
+     "src": "02-square-product-images/size-20x12/01-readymade-office-cabin-20x12-front.png",
+     "out": "20x12/readymade-office-cabin-20x12-front.webp"
+    },
+    {
+     "src": "02-square-product-images/size-20x12/02-readymade-office-cabin-20x12-rear.png",
+     "out": "20x12/readymade-office-cabin-20x12-rear.webp"
+    },
+    {
+     "src": "02-square-product-images/size-20x12/03-readymade-office-cabin-20x12-end.png",
+     "out": "20x12/readymade-office-cabin-20x12-end.webp"
+    },
+    {
+     "src": "02-square-product-images/size-20x12/04-readymade-office-20x12-entry-interior.png",
+     "out": "20x12/readymade-office-cabin-20x12-entry-interior.webp"
+    },
+    {
+     "src": "02-square-product-images/size-20x12/05-readymade-office-20x12-reverse-interior.png",
+     "out": "20x12/readymade-office-cabin-20x12-reverse-interior.webp"
+    },
+    {
+     "src": "02-square-product-images/size-20x12/06-readymade-office-20x12-workstation-interior.png",
+     "out": "20x12/readymade-office-cabin-20x12-workstation-interior.webp"
+    }
+   ]
+  },
+  "30x10": {
+   "running_order_note": "three exteriors then three interiors, as supplied in the approved v3 package; sequence verified against the GA wall schedule from the contact sheet",
+   "slides": [
+    {
+     "src": "02-square-product-images/size-30x10/01-readymade-office-cabin-30x10-front.png",
+     "out": "30x10/readymade-office-cabin-30x10-front.webp"
+    },
+    {
+     "src": "02-square-product-images/size-30x10/02-readymade-office-cabin-30x10-rear.png",
+     "out": "30x10/readymade-office-cabin-30x10-rear.webp"
+    },
+    {
+     "src": "02-square-product-images/size-30x10/03-readymade-office-cabin-30x10-end.png",
+     "out": "30x10/readymade-office-cabin-30x10-end.webp"
+    },
+    {
+     "src": "02-square-product-images/size-30x10/04-readymade-office-30x10-entry-interior.png",
+     "out": "30x10/readymade-office-cabin-30x10-entry-interior.webp"
+    },
+    {
+     "src": "02-square-product-images/size-30x10/05-readymade-office-30x10-reverse-interior.png",
+     "out": "30x10/readymade-office-cabin-30x10-reverse-interior.webp"
+    },
+    {
+     "src": "02-square-product-images/size-30x10/06-readymade-office-30x10-workstation-interior.png",
+     "out": "30x10/readymade-office-cabin-30x10-workstation-interior.webp"
+    }
+   ]
+  },
+  "40x10": {
+   "running_order_note": "three exteriors then three interiors, as supplied in the approved v3 package; sequence verified against the GA wall schedule from the contact sheet",
+   "slides": [
+    {
+     "src": "02-square-product-images/size-40x10/01-readymade-office-cabin-40x10-front.png",
+     "out": "40x10/readymade-office-cabin-40x10-front.webp"
+    },
+    {
+     "src": "02-square-product-images/size-40x10/02-readymade-office-cabin-40x10-rear.png",
+     "out": "40x10/readymade-office-cabin-40x10-rear.webp"
+    },
+    {
+     "src": "02-square-product-images/size-40x10/03-readymade-office-cabin-40x10-end.png",
+     "out": "40x10/readymade-office-cabin-40x10-end.webp"
+    },
+    {
+     "src": "02-square-product-images/size-40x10/04-readymade-office-40x10-entry-interior.png",
+     "out": "40x10/readymade-office-cabin-40x10-entry-interior.webp"
+    },
+    {
+     "src": "02-square-product-images/size-40x10/05-readymade-office-40x10-reverse-interior.png",
+     "out": "40x10/readymade-office-cabin-40x10-reverse-interior.webp"
+    },
+    {
+     "src": "02-square-product-images/size-40x10/06-readymade-office-40x10-workstation-interior.png",
+     "out": "40x10/readymade-office-cabin-40x10-workstation-interior.webp"
+    }
+   ]
+  }
+ },
+ "ga_boards": {
+  "10x10": {
+   "src": "01-ga-boards/readymade-office-cabin-10x10x8-5-premium-ga-specification-board-v3.png",
+   "out": "ga/readymade-office-cabin-10x10-ga-board.webp",
+   "note": "full-resolution master only; never the website-preview-960x540 file; never cropped"
+  },
+  "20x8": {
+   "src": "01-ga-boards/readymade-office-cabin-20x8x8-5-premium-ga-specification-board-v3.png",
+   "out": "ga/readymade-office-cabin-20x8-ga-board.webp",
+   "note": "full-resolution master only; never the website-preview-960x540 file; never cropped"
+  },
+  "20x10": {
+   "src": "01-ga-boards/readymade-office-cabin-20x10x8-5-premium-ga-specification-board-v3.png",
+   "out": "ga/readymade-office-cabin-20x10-ga-board.webp",
+   "note": "full-resolution master only; never the website-preview-960x540 file; never cropped"
+  },
+  "20x12": {
+   "src": "01-ga-boards/readymade-office-cabin-20x12x8-5-premium-ga-specification-board-v3.png",
+   "out": "ga/readymade-office-cabin-20x12-ga-board.webp",
+   "note": "full-resolution master only; never the website-preview-960x540 file; never cropped"
+  },
+  "30x10": {
+   "src": "01-ga-boards/readymade-office-cabin-30x10x8-5-premium-ga-specification-board-v3.png",
+   "out": "ga/readymade-office-cabin-30x10-ga-board.webp",
+   "note": "full-resolution master only; never the website-preview-960x540 file; never cropped"
+  },
+  "40x10": {
+   "src": "01-ga-boards/readymade-office-cabin-40x10x8-5-premium-ga-specification-board-v3.png",
+   "out": "ga/readymade-office-cabin-40x10-ga-board.webp",
+   "note": "full-resolution master only; never the website-preview-960x540 file; never cropped"
+  }
+ },
+ "section2_card": {
+  "src": "03-long-description-images/03-readymade-office-20x10-site-exterior.png",
+  "out": "cards/readymade-office-cabin-section2-card.webp",
+  "note": "native 16:9 site exterior of the default 20x10 size; matches the default selected variant"
+ },
+ "spec_diagrams": [
+  {
+   "src": "04-technical-diagrams/01-readymade-office-frame-joint-diagram.png",
+   "out": "diagrams/readymade-office-cabin-frame-joint-diagram.webp",
+   "defect": "source PNG has an overlapping label: 'Engineering boundary:' collides with 'This diagram explains control steps'. Re-render or nudge the label before conversion; do not crop."
+  },
+  {
+   "src": "04-technical-diagrams/02-readymade-office-window-electrical-diagram.png",
+   "out": "diagrams/readymade-office-cabin-window-electrical-diagram.webp",
+   "defect": null
+  }
+ ],
+ "spec_pdf": {
+  "src": "05-technical-pdf/readymade-office-cabin-technical-specification-and-price-v3.pdf",
+  "out": "docs/readymade-office-cabin-technical-specification-and-price-v3.pdf",
+  "link_label": "Download technical specification (PDF)"
+ },
+ "unused_from_package": {
+  "03-long-description-images (5 of 6)": "SAMAN ruling required: the Description tab spec says no images unless SAMAN rules otherwise for this page. The porta-cabins reference Description tab carries six. Held pending ruling; only image 03 is used, as the Section 2 card."
+ }
+}
