@@ -19,6 +19,7 @@
     "validate:publication-gate": "node scripts/validate-rb01c-publication-gate.mjs",
     "validate:temporary-commercial-gating": "node scripts/validate-unapproved-commercial-gating.js",
     "validate:container-office-rail": "node scripts/validate-container-office-rail.mjs",
+    "validate:cod16-quotation-wording": "node scripts/validate-cod16-quotation-wording.mjs",
     "validate:stg01b-structured-data": "node scripts/validate-stg01b-structured-data.mjs",
     "validate:c01-specification-overrides": "node scripts/validate-c01-specification-overrides.mjs",
     "validate:pc01-qualified-c01-debt": "node scripts/validate-pc01-qualified-c01-debt.mjs",

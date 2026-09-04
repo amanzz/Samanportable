@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { useMemo } from 'react';
 import type { EmbeddedCalculatorProduct } from '@/lib/cabinCalculatorEmbedRoutes';
-import { makeCalculatorPageUrl } from '@/lib/cabinCalculatorEmbedRoutes';
+import { makeCalculatorPageUrl, containerOfficeDefaultDims } from '@/lib/cabinCalculatorEmbedRoutes';
 import { renderCabinCalculatorSSR, renderCalculatorEntrySection } from '@/lib/cabinCalculatorSSR';
 
 type LegacyEmbeddedCalculatorProps = {
@@ -31,7 +31,7 @@ export default function LegacyEmbeddedCalculator({
     embedded: true,
     ...(mapping.prefill && mapping.productId
       ? {
-          config: { productId: mapping.productId },
+          config: { productId: mapping.productId, ...(containerOfficeDefaultDims(mapping.ladderKey) || {}) },
           ladderKey: mapping.ladderKey,
           productName,
         }

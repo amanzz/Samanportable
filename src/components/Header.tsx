@@ -306,7 +306,7 @@ const Header = () => {
               </div>
             </div>
             <span className="text-white/30">|</span>
-            <span className="text-white/80">Fixed-price quote in 48 hours</span>
+            <span className="text-white/80">Custom quote target: 48 business hours</span>
           </div>
         </div>
       </div>
@@ -514,7 +514,7 @@ const Header = () => {
                   {col.title === 'Panels & Sheets' && (
                     <li className="mt-4 rounded-xl bg-[var(--ds-color-mist)] p-4">
                       <p className="text-sm font-bold text-[var(--ds-color-forest)]">Not sure which fits?</p>
-                      <p className="mt-1 text-xs text-gray-600">Send your size, get a fixed-price quote in 48 hours.</p>
+                      <p className="mt-1 text-xs text-gray-600">Send your size. Custom quote target: 48 business hours.</p>
                       <button
                         type="button"
                         onClick={() => {
