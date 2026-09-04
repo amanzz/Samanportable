@@ -4,7 +4,6 @@ import bessContainerPage from '@/data/products/bess-container-page.json';
 import flatPackContainerOfficeCopy from '../../../content/co-07/CO-07-copy-pack-v1.json';
 import expandableContainerOfficeCopy from '../../../content/co-08/CO-08-copy-pack-v3.json';
 import smallOfficeCabinCopy from '../../../content/soc-01/SOC-01-small-office-cabin-copy-v1.json';
-import readymadeOfficeCabinCopy from '../../../content/po-01/PO-01-readymade-office-cabin-copy-v1.json';
 
 const CABIN_HREF = '/product/porta-cabins';
 const href = (slug: string) => `${CABIN_HREF}/${slug}`;
@@ -1228,50 +1227,18 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
       </>
     ),
   },
-  // PO-01 (4 Sep 2026) - Section 2 rendered verbatim from the signed copy pack
-  // (content/po-01). Nothing is retyped here: heading, both paragraphs, the CTA and
-  // every split-card field are read from the pack. The contextual link is placed
-  // inside paragraph 1 on the approved anchor phrase, and the card CTA targets the
-  // Section 3 explorer anchor. The previous entry is replaced outright - it carried
-  // a single short paragraph plus a link sentence, which the audit measured as the
-  // live defect.
   'readymade-office-cabin': {
-    heading: readymadeOfficeCabinCopy.section2.h2,
-    bodyParagraphs: [
-      (() => {
-        const { paragraph1, inline_link: link } = readymadeOfficeCabinCopy.section2;
-        const at = paragraph1.indexOf(link.anchor);
-        if (at < 0) return <>{paragraph1}</>;
-        return (
-          <>
-            {paragraph1.slice(0, at)}
-            <Link className={linkClass} href={link.href}>{link.anchor}</Link>
-            {paragraph1.slice(at + link.anchor.length)}
-          </>
-        );
-      })(),
-      (<>{readymadeOfficeCabinCopy.section2.paragraph2}</>),
-    ],
-    // Paragraph 1 carries an inline link, so the shipped verifier's tag-stripped
-    // comparison gets an exact plain-text mirror (hidden, aria-hidden).
-    verificationText: [readymadeOfficeCabinCopy.section2.paragraph1],
-    topCtaLabel: readymadeOfficeCabinCopy.section2.cta,
-    topCtaHref: '#porta-size-applications',
-    splitCard: {
-      // The pack's Section 2 card image: the native 16:9 site exterior of the default
-      // 20x10 size, shipped at 1600 px wide and never cropped.
-      imageSrc: '/images/products/readymade-office-cabin/cards/readymade-office-cabin-section2-card.webp',
-      imageAlt: readymadeOfficeCabinCopy.alt_text.section2_card,
-      imageWidth: 1600,
-      imageHeight: 900,
-      subheading: readymadeOfficeCabinCopy.section2.split_card.h3,
-      body: readymadeOfficeCabinCopy.section2.split_card.paragraph1,
-      body2: readymadeOfficeCabinCopy.section2.split_card.paragraph2,
-      ctaLabel: readymadeOfficeCabinCopy.section2.split_card.cta,
-      // The card CTA scrolls to the Section 3 explorer, where every size shows its
-      // GA board - which is exactly what the CTA promises.
-      ctaHref: '#porta-size-applications',
-    },
+    heading: 'Why choose the Readymade Office Cabin',
+    body: (
+      <>
+        Every published size on this specialist page uses one approved fixed inclusion list. That makes the specification easy to compare without implying stock or dispatch-from-stock availability. Availability is confirmed in the written quotation, and delivery is 7 to 21 working days.
+      </>
+    ),
+    comparison: (
+      <>
+        Use the Portable Office hub when you want to compare the broader commercial range before selecting a fixed specification.
+      </>
+    ),
   },
   'modern-office-cabin': {
     heading: 'Why choose the Modern Office Cabin',

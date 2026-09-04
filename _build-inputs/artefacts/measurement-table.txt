@@ -1,0 +1,65 @@
+MEASUREMENT TABLE - every image output shipped by this PR
+
+Required band 80-120 KB. No crop anywhere. Proportional downscale only.
+
+FILE                                                               W     H    KB    q  STATUS
+--------------------------------------------------------------------------------------------
+10x10/readymade-office-cabin-10x10-front.webp                   1254  1254   100   81  OK
+10x10/readymade-office-cabin-10x10-rear.webp                    1254  1254    98   83  OK
+10x10/readymade-office-cabin-10x10-end.webp                     1254  1254   101   87  OK
+10x10/readymade-office-cabin-10x10-entry-interior.webp          1254  1254   100   85  OK
+10x10/readymade-office-cabin-10x10-reverse-interior.webp        1254  1254   104   91  OK
+10x10/readymade-office-cabin-10x10-workstation-interior.webp    1254  1254    97   86  OK
+20x8/readymade-office-cabin-20x8-front.webp                     1254  1254    99   76  OK
+20x8/readymade-office-cabin-20x8-rear.webp                      1254  1254   100   62  OK
+20x8/readymade-office-cabin-20x8-end.webp                       1254  1254   100   75  OK
+20x8/readymade-office-cabin-20x8-entry-interior.webp            1254  1254   104   89  OK
+20x8/readymade-office-cabin-20x8-reverse-interior.webp          1254  1254    97   86  OK
+20x8/readymade-office-cabin-20x8-workstation-interior.webp      1254  1254   100   84  OK
+20x10/readymade-office-cabin-20x10-front.webp                   1254  1254   103   81  OK
+20x10/readymade-office-cabin-20x10-rear.webp                    1254  1254   101   82  OK
+20x10/readymade-office-cabin-20x10-end.webp                     1254  1254    99   57  OK
+20x10/readymade-office-cabin-20x10-entry-interior.webp          1254  1254    97   87  OK
+20x10/readymade-office-cabin-20x10-reverse-interior.webp        1254  1254    98   83  OK
+20x10/readymade-office-cabin-20x10-workstation-interior.webp    1254  1254    98   82  OK
+20x12/readymade-office-cabin-20x12-front.webp                   1254  1254   100   56  OK
+20x12/readymade-office-cabin-20x12-rear.webp                    1254  1254    98   78  OK
+20x12/readymade-office-cabin-20x12-end.webp                     1254  1254   101   82  OK
+20x12/readymade-office-cabin-20x12-entry-interior.webp          1254  1254   101   82  OK
+20x12/readymade-office-cabin-20x12-reverse-interior.webp        1254  1254   102   84  OK
+20x12/readymade-office-cabin-20x12-workstation-interior.webp    1254  1254   102   82  OK
+30x10/readymade-office-cabin-30x10-front.webp                   1254  1254    98   79  OK
+30x10/readymade-office-cabin-30x10-rear.webp                    1254  1254    98   79  OK
+30x10/readymade-office-cabin-30x10-end.webp                     1254  1254   101   81  OK
+30x10/readymade-office-cabin-30x10-entry-interior.webp          1254  1254    99   87  OK
+30x10/readymade-office-cabin-30x10-reverse-interior.webp        1254  1254    99   83  OK
+30x10/readymade-office-cabin-30x10-workstation-interior.webp    1254  1254    99   86  OK
+40x10/readymade-office-cabin-40x10-front.webp                   1254  1254   101   84  OK
+40x10/readymade-office-cabin-40x10-rear.webp                    1254  1254    99   77  OK
+40x10/readymade-office-cabin-40x10-end.webp                     1254  1254   100   87  OK
+40x10/readymade-office-cabin-40x10-entry-interior.webp          1254  1254   100   89  OK
+40x10/readymade-office-cabin-40x10-reverse-interior.webp        1254  1254   103   88  OK
+40x10/readymade-office-cabin-40x10-workstation-interior.webp    1254  1254   104   88  OK
+ga/readymade-office-cabin-10x10-ga-board.webp                   1800  1012   100   95  OK
+ga/readymade-office-cabin-20x8-ga-board.webp                    1800  1012    99   95  OK
+ga/readymade-office-cabin-20x10-ga-board.webp                   1800  1012   100   94  OK
+ga/readymade-office-cabin-20x12-ga-board.webp                   1800  1012   102   94  OK
+ga/readymade-office-cabin-30x10-ga-board.webp                   1800  1012   101   93  OK
+ga/readymade-office-cabin-40x10-ga-board.webp                   1800  1012   101   91  OK
+cards/readymade-office-cabin-section2-card.webp                 1600   900   102   87  OK
+diagrams/readymade-office-cabin-frame-joint-diagram.webp        1600   900   100   97  OK
+diagrams/readymade-office-cabin-window-electrical-diagram.webp  1600   900    99   97  OK
+
+TOTAL OUTPUTS: 45    ALL IN BAND: True
+MIN 97 KB    MAX 104 KB    MEAN 100 KB
+
+PDF: docs/readymade-office-cabin-technical-specification-and-price-v3.pdf
+     1782 KB, copied verbatim from the approved package.
+
+GA boards: 3840x2160 source -> 1800x1012, 16:9 preserved (verifier ratio gate
+  |w/h - 16/9| < 0.01 passes at 0.0009). Dimension text confirmed legible by
+  opening the outputs.
+Gallery: native 1254x1254, no resize, no crop.
+Section 2 card and both diagrams: native 1920x1080 -> 1600x900, no crop.
+
+Source PNGs are never copied into public/.

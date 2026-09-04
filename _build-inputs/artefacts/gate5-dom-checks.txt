@@ -1,0 +1,68 @@
+GATE 5 - DOM CHECKS ON THE PREVIEW HTML
+Source: http://localhost:3417/product/portable-office/readymade-office-cabin
+
+exactly one H1                                       PASS  | 1
+H1 text matches pack                                 PASS
+no empty heading                                     PASS  | 0
+every img has an alt attribute                       PASS  | 21/21
+no empty alt                                         PASS
+no duplicate alt                                     PASS  | []
+explicit width and height on every img               PASS  | 21
+no U+2014 em dash in body text                       PASS
+tab panel present in fetched HTML: Description       PASS
+tab panel present in fetched HTML: Specifications    PASS
+tab panel present in fetched HTML: Shipping          PASS
+tab panel present in fetched HTML: Reviews           PASS
+no Info tab label                                    PASS
+placeholder grep returns zero hits                   PASS  | []
+
+FORBIDDEN STRINGS (pack forbidden_strings)
+  absent: 'five-year structural warranty'            PASS
+  absent: '5-year structural warranty'               PASS
+  absent: 'one-year finishing warranty'              PASS
+  absent: '1-year finishing warranty'                PASS
+  absent: 'Recommended occupancy'                    PASS
+  absent: 'Ready to Dispatch'                        PASS
+  absent: 'coming soon'                              PASS
+  absent: 'available on request'                     PASS
+  absent: 'contact us for details'                   PASS
+  absent: 'placeholder'                              PASS
+  absent: 'TBD'                                      PASS
+
+OLD-PAGE STRINGS (pack old_page_strings_absent)
+  absent: 'five-year structural warranty'            PASS
+  absent: 'one-year finishing warranty'              PASS
+  absent: 'Recommended occupancy 4-6 people'         PASS
+  absent: 'No reviews yet. Be the first to review this product.' PASS
+  absent: 'Freight tables and delivery terms'        FAIL
+
+SUPERSEDED PRICES (must not survive)
+  absent: 1,41,100                                   PASS
+  absent: 2,25,760                                   PASS
+  absent: 2,56,400                                   PASS
+  absent: 2,95,440                                   PASS
+  absent: 3,69,300                                   PASS
+  absent: 4,82,400                                   PASS
+
+APPROVED PRICES (must all be present)
+  10x10 ex-GST 1,43,750                              PASS
+  10x10 incl-GST 1,69,625                            PASS
+  20x8 ex-GST 2,20,000                               PASS
+  20x8 incl-GST 2,59,600                             PASS
+  20x10 ex-GST 2,50,000                              PASS
+  20x10 incl-GST 2,95,000                            PASS
+  20x12 ex-GST 2,88,000                              PASS
+  20x12 incl-GST 3,39,840                            PASS
+  30x10 ex-GST 3,60,000                              PASS
+  30x10 incl-GST 4,24,800                            PASS
+  40x10 ex-GST 4,75,000                              PASS
+  40x10 incl-GST 5,60,500                            PASS
+
+NEVER-LINK LIST (pack links.never)
+  no href to /product/portable-office/modern-office-cabin PASS
+  no href to /product/portable-office/portable-office-container PASS
+  no href to /product/portable-office/modular-portable-office-cabin PASS
+  no href to /product/portable-office/ms-portable-office-cabin PASS
+  no href to /product/portable-office/prefabricated-portable-office-cabin PASS
+
+GATE 5 RESULT: FAIL (1)

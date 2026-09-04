@@ -1,0 +1,65 @@
+GATE 4 - PROP AUDIT
+
+Every prop reaching a shared component for this page comes from the product
+data file (variantData) plus a small number of route-level slug switches.
+
+KIND KEY: [copy] copy strings   [img] images and alt text
+          [rows] variant rows and prices   [link] internal-link destinations
+          [behav] existing opt-in prop, default false everywhere else
+
+FIELD                           KIND     CHANGE
+------------------------------------------------------------------------------
+applicationsContent             [copy]   ADDED
+applicationsDataset             [behav]  REMOVED - generic override that masked shared output
+coverageLabel                   [copy]   CONTENT CHANGED
+deliveryLabel                   [copy]   CONTENT CHANGED
+descriptionHtml                 [copy]   CONTENT CHANGED
+explorerImageTemplate           [behav]  REMOVED - generic override that masked shared output
+faqSchema                       [copy]   CONTENT CHANGED
+h1                              [copy]   CONTENT CHANGED
+labelActiveThumbnailAlt         [behav]  ADDED
+materialLabel                   [copy]   CONTENT CHANGED
+metaDescription                 [copy]   CONTENT CHANGED
+opener                          [copy]   CONTENT CHANGED
+optimizeLocalGalleryImages      [behav]  ADDED
+priceCaption                    [copy]   CONTENT CHANGED
+seoTitle                        [copy]   CONTENT CHANGED
+shippingHtml                    [behav]  REMOVED - generic override that masked shared output
+specPdfButtonLabel              [copy]   CONTENT CHANGED
+specPdfHref                     [copy]   CONTENT CHANGED
+trustStripText                  [copy]   CONTENT CHANGED
+variants                        [rows]   CONTENT CHANGED
+
+UNCHANGED STRUCTURAL FLAGS (identical to baseline):
+  canonical = "https://www.samanportable.com/product/portable-office/readymade-o
+  categoryHref = "/product/portable-office"
+  categoryLabel = "Portable Office"
+  defaultVariant = "20x10"
+  emitAggregateOffer = true
+  emitSizeAnchors = true
+  gstPercent = 18
+  hideHeroProofRow = true
+  hsn = "9406"
+  productName = "Readymade Office Cabin"
+  productSlug = "readymade-office-cabin"
+  relatedTiles = [{"title": "Portable Office", "href": "/product/portable-office", 
+  schemaBrandName = "SAMAN Portable"
+  schemaImageMode = "variant-first-images"
+  schemaIncludeVariantOffers = true
+  suppressAggregateRatingSchema = true
+  suppressLegacyFaqSchema = true
+  suppressLegacySku = true
+  suppressReviewClaims = true
+  suppressSchemaAvailability = true
+  variantAxis = "size"
+  ymalTiles = [{"title": "Portable Office", "href": "/product/portable-office", 
+
+ROUTE-LEVEL SWITCHES ADDED IN [slug].tsx (each mirrors the approved SOC-01 pattern):
+  sizeEyebrowText                        [copy]   pack hero.size_selector_label
+  PortaCabinsYouMayAlsoLike subline      [copy]   pack ymal.intro (branch previously passed null)
+  reviews / averageRating / ratingCount  [behav]  suppress rating markup, no Review schema
+  fullMobileLabels                       [behav]  four full tab labels on mobile
+  reviewsEmptyStateText                  [copy]   pack reviews_tab.empty_state
+
+NO OTHER PROP DIFFERS. No design token, shared constant, shipping component,
+calculator formula, label or styling was touched.

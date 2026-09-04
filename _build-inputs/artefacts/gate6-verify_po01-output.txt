@@ -1,0 +1,382 @@
+PASS exactly one H1  | ['Readymade Office Cabin: Six Approved Sizes and Prices']
+PASS H1 text  | ['Readymade Office Cabin: Six Approved Sizes and Prices']
+PASS title text  | ['Office Cabin Price in India: Six Readymade Sizes | SAMAN']
+PASS meta description  | ['Readymade office cabin sizes from 10x10 to 40x10 ft with published ex-GST prices, approved window and workstation schedules, and GA drawings from SAMAN.']
+PASS canonical self  | ['https://www.samanportable.com/product/portable-office/readymade-office-cabin']
+PASS block order hero > explore > section2 > card > section3 > calculator > YMAL > product details  | [('Choose your size, six approved configurations', 1231), ('Explore the Range', 2559), ('Why a readymade office cabin decides faster than a made-to-order one', 3230), ('Read the GA drawing before you fix a size', 4214), ('Compare six readymade office cabin sizes and prices', 4718), ('PRICE IT YOURSELF', 10716), ('You may also like', 28281), ('Product Details', 28552)]
+PASS size 10x10 ex-GST price present  | ₹1,43,750
+PASS size 10x10 incl-GST price present  | ₹1,69,625
+PASS size 20x8 ex-GST price present  | ₹2,20,000
+PASS size 20x8 incl-GST price present  | ₹2,59,600
+PASS size 20x10 ex-GST price present  | ₹2,50,000
+PASS size 20x10 incl-GST price present  | ₹2,95,000
+PASS size 20x12 ex-GST price present  | ₹2,88,000
+PASS size 20x12 incl-GST price present  | ₹3,39,840
+PASS size 30x10 ex-GST price present  | ₹3,60,000
+PASS size 30x10 incl-GST price present  | ₹4,24,800
+PASS size 40x10 ex-GST price present  | ₹4,75,000
+PASS size 40x10 incl-GST price present  | ₹5,60,500
+PASS from price
+PASS old-page string absent: five-year structural warranty
+PASS old-page string absent: one-year finishing warranty
+PASS old-page string absent: Recommended occupancy 4-6 people
+PASS old-page string absent: No reviews yet. Be the first to review this product.
+FAIL old-page string absent: Freight tables and delivery terms
+PASS section2 paragraph1
+PASS section2 paragraph2
+PASS section2 card paragraph1
+PASS section2 card paragraph2
+PASS section3 10x10 H3
+PASS section3 10x10 paragraph
+PASS section3 10x10 bullet  | 100 sq ft at 1,43,750 ex-GST, 1,437.50 per sq ft
+PASS section3 10x10 bullet  | Wall A carries D1 only: no window on the entrance 
+PASS section3 10x10 bullet  | Three centred 3 to 7 ft windows, one each on Walls
+PASS section3 10x10 bullet  | Four workstations and four ceiling-flush cabinets,
+PASS section3 10x10 bullet  | Centred-ridge two-way roof falling to both long-wa
+PASS section3 10x10 bullet  | Burgundy Wine exterior with a Porcelain Sage inter
+PASS section3 20x8 H3
+PASS section3 20x8 paragraph
+PASS section3 20x8 bullet  | 160 sq ft at 2,20,000 ex-GST, 1,375 per sq ft
+PASS section3 20x8 bullet  | One-way sloping roof: the only mono-pitch size in 
+PASS section3 20x8 bullet  | Wall A schedule W1, D1, W2 with the entrance kept 
+PASS section3 20x8 bullet  | Three workstations and three cabinets, all on Wall
+PASS section3 20x8 bullet  | Six windows in total, one centred window on each 8
+PASS section3 20x8 bullet  | Slate Blue-Grey exterior with a Champagne Cream in
+PASS section3 20x10 H3
+PASS section3 20x10 paragraph
+PASS section3 20x10 bullet  | 200 sq ft at 2,50,000 ex-GST, 1,250 per sq ft, the
+PASS section3 20x10 bullet  | Wall A schedule W1, D1, W2 with the entrance kept 
+PASS section3 20x10 bullet  | Two workstations on Wall A and three on Wall B, fi
+PASS section3 20x10 bullet  | Six windows, including one centred 3 to 7 ft windo
+PASS section3 20x10 bullet  | Single external door, no internal partition
+PASS section3 20x10 bullet  | Muted Teal exterior with a Soft Clay Greige interi
+PASS section3 20x12 H3
+PASS section3 20x12 paragraph
+PASS section3 20x12 bullet  | 240 sq ft at 2,88,000 ex-GST, 1,200 per sq ft
+PASS section3 20x12 bullet  | Same five workstations as the 20x10: extra width i
+PASS section3 20x12 bullet  | End windows widened to 4 to 8 ft, six windows in t
+PASS section3 20x12 bullet  | Wall A schedule W1, D1, W2, unchanged from the 20x
+PASS section3 20x12 bullet  | Widened symmetrically by one foot on each long wal
+PASS section3 20x12 bullet  | Warm Stone Taupe exterior with a Mist Blue-Grey in
+PASS section3 30x10 H3
+PASS section3 30x10 paragraph
+PASS section3 30x10 bullet  | 300 sq ft at 3,60,000 ex-GST, 1,200 per sq ft
+PASS section3 30x10 bullet  | Two external doors on Wall A, one near each end
+PASS section3 30x10 bullet  | Eight windows: two on Wall A, four on Wall B, one 
+PASS section3 30x10 bullet  | Eight workstations and eight cabinets, three front
+PASS section3 30x10 bullet  | Open plan throughout: no internal partition at thi
+PASS section3 30x10 bullet  | Deep Bottle Green exterior with a Champagne Linen 
+PASS section3 40x10 H3
+PASS section3 40x10 paragraph
+PASS section3 40x10 bullet  | 400 sq ft at 4,75,000 ex-GST, 1,187.50 per sq ft, 
+PASS section3 40x10 bullet  | Partition at 10 ft: a 10x10 manager room plus a 30
+PASS section3 40x10 bullet  | Twelve common workstations, fifteen seats includin
+PASS section3 40x10 bullet  | One internal door near Wall A, window-free, plus t
+PASS section3 40x10 bullet  | Nine windows, including three manager windows MW1,
+PASS section3 40x10 bullet  | Deep Oxford Blue exterior with a Pale Sand interio
+PASS tab panel present: Description
+PASS tab panel present: Specifications
+PASS tab panel present: Shipping
+PASS tab panel present: Reviews
+PASS description H2: Is an office cabin a building, or a room
+PASS description paragraph  | Search for an office cabin in India and two comple
+PASS description paragraph  | The distinction decides almost everything that fol
+PASS description H2: What readymade means here, and what it d
+PASS description paragraph  | Readymade on this page means the specification is 
+PASS description paragraph  | That is a real difference from a made-to-order cab
+PASS description H2: What size an office cabin should be, in 
+PASS description paragraph  | There is no legally standard office cabin size in 
+PASS description paragraph  | Within that range the practical question is not ar
+PASS description paragraph  | The other size trap is circulation. Going from 20x
+PASS description H2: How the six published office cabin price
+PASS description paragraph  | All six prices come from one rate ladder rather th
+PASS description paragraph  | Reading the ladder that way tells you something us
+PASS description H2: Reading the opening schedule before you 
+PASS description paragraph  | Every size on this page has a buyer-facing general
+PASS description paragraph  | The two mistakes worth naming are ordering a footp
+PASS description H2: Office cabin, porta cabin or container o
+PASS description paragraph  | These three are frequently searched as if they wer
+PASS description paragraph  | A container office is a different starting point a
+PASS description paragraph  | The practical rule is straightforward. Choose this
+PASS description H2: What the published price includes, and w
+PASS description paragraph  | The published price covers the cabin as the approv
+PASS description paragraph  | Four things sit outside it, and they are named her
+PASS description paragraph  | Foundations, site levelling, the incoming electric
+PASS description H2: Delivery, freight and getting the site r
+PASS description paragraph  | Cabins leave from the Bengaluru unit for southern 
+PASS description paragraph  | Freight figures are tentative until the delivery a
+PASS description paragraph  | What has to be ready before the trailer arrives is
+PASS description H2: Quality checks, warranty and honest scop
+PASS description paragraph  | Before a cabin is loaded it is checked against a f
+PASS description paragraph  | On warranty, this page publishes no duration, and 
+PASS description paragraph  | The same applies to the engineering boundary. The 
+PASS description H2: Frequently asked questions
+PASS faq visible: What is the standard size of an office c
+PASS faq visible: How much does a readymade office cabin c
+PASS faq visible: How many people fit in a 20x10 ft office
+PASS faq visible: Is a readymade office cabin available fr
+PASS faq visible: Which office cabin size has a separate m
+PASS faq visible: Why does the 20x12 ft cabin cost more bu
+PASS faq visible: Do the published prices include GST and 
+PASS faq visible: What is not included in the published of
+PASS spec narrative  | The specifications below separate what changes bet
+PASS spec narrative  | Two figures do most of the selection work. The fir
+PASS spec narrative  | Everything in Group D is drawing-controlled rather
+PASS spec row: SZ-01  | ['SZ-01', '10x10x8.5 ft']
+PASS spec row: SZ-02  | ['SZ-02', '20x8x8.5 ft']
+PASS spec row: SZ-03  | ['SZ-03', '20x10x8.5 ft']
+PASS spec row: SZ-04  | ['SZ-04', '20x12x8.5 ft']
+PASS spec row: SZ-05  | ['SZ-05', '30x10x8.5 ft']
+PASS spec row: SZ-06  | ['SZ-06', '40x10x8.5 ft']
+PASS spec row: Nominal height  | ['Nominal height', '8.5 ft on all six published sizes, without exception']
+PASS spec row: Roof family, five sizes  | ['Roof family, five sizes', 'Centred-ridge two-way slope; the ridge runs the full length end to end and both planes fall to the long-wall eaves']
+PASS spec row: Roof family, 20x8 ft  | ['Roof family, 20x8 ft', 'One-way slope: the only mono-pitch size in this range']
+PASS spec row: Long-wall eave line  | ['Long-wall eave line', 'One straight level eave and gutter line along each long wall; no slope along its length']
+PASS spec row: End-wall form  | ['End-wall form', 'Restrained shallow centred gable on every centred-ridge size; no hip, four-way or pyramidal roof']
+PASS spec row: Shell configuration  | ['Shell configuration', 'One approved fixed inclusion list applied identically across all six sizes']
+PASS spec row: Partitioning  | ['Partitioning', 'No internal partition on five sizes; a single partition at 10 ft on the 40x10 ft size only']
+PASS spec row: Handling  | ['Handling', 'Designed MS lifting hooks or lugs matched to the completed unit weight; handle only by the approved lifting and support-point drawing']
+PASS spec row: Approved colourways  | ['Approved colourways', 'One locked exterior and interior pairing per size, listed in Group C']
+PASS spec row: 10x10x8.5 ft  | ['10x10x8.5 ft', 'Wall A: D1 outward external door only, no window, no furniture']
+PASS spec row: 20x8x8.5 ft  | ['20x8x8.5 ft', 'Wall A: W1 at 1.5 to 5.5 ft, D1 at 8.5 to 11.5 ft, W2 at 14.5 to 18.5 ft; entrance kept furniture-free']
+PASS spec row: 20x10x8.5 ft  | ['20x10x8.5 ft', 'Wall A: W1 at 1.5 to 5.5 ft, D1 at 8.5 to 11.5 ft, W2 at 14.5 to 18.5 ft; 2 workstations and 2 cabinets, entrance clear']
+PASS spec row: 20x12x8.5 ft  | ['20x12x8.5 ft', 'Wall A: W1 at 1.5 to 5.5 ft, D1 at 8.5 to 11.5 ft, W2 at 14.5 to 18.5 ft; 2 workstations and 2 cabinets, entrance clear']
+PASS spec row: 30x10x8.5 ft  | ['30x10x8.5 ft', 'Wall A: D1 at 1.5 to 4.5 ft, W1 at 8 to 12 ft, W2 at 18 to 22 ft, D2 at 25.5 to 28.5 ft; 3 workstations and 3 cabinets']
+PASS spec row: 40x10x8.5 ft  | ['40x10x8.5 ft', 'Wall A: MW1 at 3 to 7 ft, D1 at 11.5 to 14.5 ft, W1 at 18 to 22 ft, W2 at 28 to 32 ft, D2 at 35.5 to 38.5 ft; 5 common workstations and 5 cabinets, manager table clear of MW1']
+PASS spec row: Primary base frame  | ['Primary base frame', 'Welded MS C-channel chassis']
+PASS spec row: Upper, wall and roof frame  | ['Upper, wall and roof frame', 'MS square hollow section and angle framing with reinforced openings']
+PASS spec row: External walls  | ['External walls', 'Corrugated MS sheet, Tata or Jindal or approved equivalent']
+PASS spec row: Roof  | ['Roof', 'Sloped corrugated MS sheet with sealed laps, flashings and drainage']
+PASS spec row: Internal wall and ceiling  | ['Internal wall and ceiling', 'Prelaminated MDF with aluminium joint sections']
+PASS spec row: Floor system  | ['Floor system', 'Bison or cement-fibre board plus resilient finish']
+PASS spec row: Thermal insulation  | ['Thermal insulation', 'Glass wool or documented Heatlon wall option']
+PASS spec row: Main door  | ['Main door', 'Outward-opening MS-framed door assembly']
+PASS spec row: Windows  | ['Windows', 'Two-track powder-coated aluminium sliding unit with glazing']
+PASS spec row: Electrical  | ['Electrical', 'Concealed copper wiring with distribution board, MCB and RCCB protection and earthing']
+PASS spec row: Corrosion protection  | ['Corrosion protection', 'Prepared MS with red-oxide primer and compatible enamel']
+PASS spec row: Handling and QA  | ['Handling and QA', 'Designed lifting hooks and lugs, sealing and pre-dispatch inspection']
+PASS spec row: Basis of the published price  | ['Basis of the published price', 'The approved fixed inclusion list at the size selected; the stock specification controls the price']
+PASS spec row: Custom opening positions  | ['Custom opening positions', 'Quoted separately: moving an opening changes the framing around it']
+PASS spec row: Premium finishes and linings  | ['Premium finishes and linings', 'Quoted separately, beyond the standard schedule in Group D']
+PASS spec row: Sanitary, water supply and was  | ['Sanitary, water supply and waste', 'Not included unless shown in the approved scope']
+PASS spec row: Repeated relocation  | ['Repeated relocation', 'Quoted separately; single delivery only is within the published price']
+PASS spec row: Foundations, levelling and bea  | ['Foundations, levelling and bearing', "Buyer's scope on every size"]
+PASS spec row: Incoming electrical supply and  | ['Incoming electrical supply and statutory permissions', "Buyer's scope on every size"]
+PASS spec row: Freight  | ['Freight', 'Free within Bangalore city and Delhi NCR; quoted by distance band elsewhere']
+PASS spec row: Warranty  | ['Warranty', 'Period and exclusions are confirmed in the final quotation for your order']
+PASS spec row: Engineering boundary  | ['Engineering boundary', 'Buyer-facing layout and visual geometry only. Approved project engineering, shop drawings, load schedules, services and statutory requirements govern fabrication']
+PASS reviews empty state
+PASS shipping free-delivery lines
+PASS shipping 20 ft first band
+PASS forbidden absent: 'five-year structural warranty'
+PASS forbidden absent: '5-year structural warranty'
+PASS forbidden absent: 'one-year finishing warranty'
+PASS forbidden absent: '1-year finishing warranty'
+PASS forbidden absent: 'Recommended occupancy'
+PASS forbidden absent: 'Ready to Dispatch'
+PASS forbidden absent: 'coming soon'
+PASS forbidden absent: 'available on request'
+PASS forbidden absent: 'contact us for details'
+PASS forbidden absent: 'placeholder'
+PASS forbidden absent: 'TBD'
+PASS no U+2014 in copy
+PASS no 'Info' tab label
+PASS link present /product/portable-office
+PASS link present /product/porta-cabins
+PASS link present /product/container-offices
+PASS link present /product/portable-office/prefabricated-office-cabins
+PASS link present /product/portable-office/small-office-cabin
+PASS legacy link absent /product/portable-office/modern-office-cabin
+PASS legacy link absent /product/portable-office/portable-office-container
+PASS legacy link absent /product/portable-office/modular-portable-office-cabin
+PASS legacy link absent /product/portable-office/ms-portable-office-cabin
+PASS legacy link absent /product/portable-office/prefabricated-portable-office-cabin
+PASS internal link 200: /product/container-cafe  | 200
+PASS internal link 200: /product/container-houses  | 200
+PASS internal link 200: /product/container-houses/luxury-container-houses  | 200
+PASS internal link 200: /product/container-houses/prefab-container-homes  | 200
+PASS internal link 200: /product/container-offices  | 200
+PASS internal link 200: /product/industrial-sheds  | 200
+PASS internal link 200: /product/labor-colony  | 200
+PASS internal link 200: /product/porta-cabins  | 200
+PASS internal link 200: /product/portable-office  | 200
+PASS internal link 200: /product/portable-office/prefabricated-office-cabins  | 200
+PASS internal link 200: /product/portable-office/small-office-cabin  | 200
+PASS internal link 200: /product/portable-toilet  | 200
+PASS internal link 200: /product/pre-engineered-buildings  | 200
+PASS internal link 200: /product/prefab-buildings  | 200
+PASS internal link 200: /product/prefabricated-houses  | 200
+PASS internal link 200: /product/puf-panel  | 200
+PASS internal link 200: /product/roofing-sheet  | 200
+PASS internal link 200: /product/security-cabins  | 200
+PASS no empty alt  | 21
+PASS no duplicate alt
+PASS no source PNG served
+PASS explicit width/height on every img  | 21
+PASS webp 10x10/readymade-office-cabin-10x10-front.webp exists and 80-120 KB  | 100
+PASS webp 10x10/readymade-office-cabin-10x10-rear.webp exists and 80-120 KB  | 98
+PASS webp 10x10/readymade-office-cabin-10x10-end.webp exists and 80-120 KB  | 101
+PASS webp 10x10/readymade-office-cabin-10x10-entry-interior.webp exists and 80-120 KB  | 100
+PASS webp 10x10/readymade-office-cabin-10x10-reverse-interior.webp exists and 80-120 KB  | 104
+PASS webp 10x10/readymade-office-cabin-10x10-workstation-interior.webp exists and 80-120 KB  | 97
+PASS webp 20x8/readymade-office-cabin-20x8-front.webp exists and 80-120 KB  | 99
+PASS webp 20x8/readymade-office-cabin-20x8-rear.webp exists and 80-120 KB  | 100
+PASS webp 20x8/readymade-office-cabin-20x8-end.webp exists and 80-120 KB  | 100
+PASS webp 20x8/readymade-office-cabin-20x8-entry-interior.webp exists and 80-120 KB  | 104
+PASS webp 20x8/readymade-office-cabin-20x8-reverse-interior.webp exists and 80-120 KB  | 97
+PASS webp 20x8/readymade-office-cabin-20x8-workstation-interior.webp exists and 80-120 KB  | 100
+PASS webp 20x10/readymade-office-cabin-20x10-front.webp exists and 80-120 KB  | 103
+PASS webp 20x10/readymade-office-cabin-20x10-rear.webp exists and 80-120 KB  | 101
+PASS webp 20x10/readymade-office-cabin-20x10-end.webp exists and 80-120 KB  | 99
+PASS webp 20x10/readymade-office-cabin-20x10-entry-interior.webp exists and 80-120 KB  | 97
+PASS webp 20x10/readymade-office-cabin-20x10-reverse-interior.webp exists and 80-120 KB  | 98
+PASS webp 20x10/readymade-office-cabin-20x10-workstation-interior.webp exists and 80-120 KB  | 98
+PASS webp 20x12/readymade-office-cabin-20x12-front.webp exists and 80-120 KB  | 100
+PASS webp 20x12/readymade-office-cabin-20x12-rear.webp exists and 80-120 KB  | 98
+PASS webp 20x12/readymade-office-cabin-20x12-end.webp exists and 80-120 KB  | 101
+PASS webp 20x12/readymade-office-cabin-20x12-entry-interior.webp exists and 80-120 KB  | 101
+PASS webp 20x12/readymade-office-cabin-20x12-reverse-interior.webp exists and 80-120 KB  | 102
+PASS webp 20x12/readymade-office-cabin-20x12-workstation-interior.webp exists and 80-120 KB  | 102
+PASS webp 30x10/readymade-office-cabin-30x10-front.webp exists and 80-120 KB  | 98
+PASS webp 30x10/readymade-office-cabin-30x10-rear.webp exists and 80-120 KB  | 98
+PASS webp 30x10/readymade-office-cabin-30x10-end.webp exists and 80-120 KB  | 101
+PASS webp 30x10/readymade-office-cabin-30x10-entry-interior.webp exists and 80-120 KB  | 99
+PASS webp 30x10/readymade-office-cabin-30x10-reverse-interior.webp exists and 80-120 KB  | 99
+PASS webp 30x10/readymade-office-cabin-30x10-workstation-interior.webp exists and 80-120 KB  | 99
+PASS webp 40x10/readymade-office-cabin-40x10-front.webp exists and 80-120 KB  | 101
+PASS webp 40x10/readymade-office-cabin-40x10-rear.webp exists and 80-120 KB  | 99
+PASS webp 40x10/readymade-office-cabin-40x10-end.webp exists and 80-120 KB  | 100
+PASS webp 40x10/readymade-office-cabin-40x10-entry-interior.webp exists and 80-120 KB  | 100
+PASS webp 40x10/readymade-office-cabin-40x10-reverse-interior.webp exists and 80-120 KB  | 103
+PASS webp 40x10/readymade-office-cabin-40x10-workstation-interior.webp exists and 80-120 KB  | 104
+PASS GA webp 10x10 exists and 80-120 KB  | 100
+PASS GA 10x10 ratio 16:9 (never cropped)  | (1800, 1012)
+PASS GA webp 20x8 exists and 80-120 KB  | 99
+PASS GA 20x8 ratio 16:9 (never cropped)  | (1800, 1012)
+PASS GA webp 20x10 exists and 80-120 KB  | 100
+PASS GA 20x10 ratio 16:9 (never cropped)  | (1800, 1012)
+PASS GA webp 20x12 exists and 80-120 KB  | 102
+PASS GA 20x12 ratio 16:9 (never cropped)  | (1800, 1012)
+PASS GA webp 30x10 exists and 80-120 KB  | 101
+PASS GA 30x10 ratio 16:9 (never cropped)  | (1800, 1012)
+PASS GA webp 40x10 exists and 80-120 KB  | 101
+PASS GA 40x10 ratio 16:9 (never cropped)  | (1800, 1012)
+PASS schema ItemPage
+PASS schema Product
+PASS schema BreadcrumbList
+PASS schema FAQPage
+PASS no review schema
+PASS no shippingDetails
+PASS faq schema matches visible: What is the standard size of a
+PASS faq schema matches visible: How much does a readymade offi
+PASS faq schema matches visible: How many people fit in a 20x10
+PASS faq schema matches visible: Is a readymade office cabin av
+PASS faq schema matches visible: Which office cabin size has a 
+PASS faq schema matches visible: Why does the 20x12 ft cabin co
+PASS faq schema matches visible: Do the published prices includ
+PASS faq schema matches visible: What is not included in the pu
+PASS meta title 55-60  | 56
+PASS H1 50-60  | 53
+PASS meta description 150-160  | 152
+PASS hero short description 700-800  | 716
+PASS hero short description rendered
+PASS section2 H2 55-70  | 68
+PASS section2 two paragraphs 800-900 combined  | 891
+PASS section2 card h3 35-65
+PASS section2 card paragraph1 150-220  | 220
+PASS section2 card paragraph2 150-220  | 207
+PASS section3 H2 50-60  | 51
+PASS section3 intro 100-140  | 100
+PASS section3 six sizes in folder order
+PASS section3 10x10 H3 50-62  | 54
+PASS section3 10x10 paragraph 400-500  | 486
+PASS section3 10x10 five or six bullets  | 6
+PASS section3 10x10 bullet does not restate paragraph  | 100 sq ft at 1,43,750 ex-GST, 1,437.50 p
+PASS section3 10x10 bullet does not restate paragraph  | Wall A carries D1 only: no window on the
+PASS section3 10x10 bullet does not restate paragraph  | Three centred 3 to 7 ft windows, one eac
+PASS section3 10x10 bullet does not restate paragraph  | Four workstations and four ceiling-flush
+PASS section3 10x10 bullet does not restate paragraph  | Centred-ridge two-way roof falling to bo
+PASS section3 10x10 bullet does not restate paragraph  | Burgundy Wine exterior with a Porcelain 
+PASS section3 20x8 H3 50-62  | 58
+PASS section3 20x8 paragraph 400-500  | 450
+PASS section3 20x8 five or six bullets  | 6
+PASS section3 20x8 bullet does not restate paragraph  | 160 sq ft at 2,20,000 ex-GST, 1,375 per 
+PASS section3 20x8 bullet does not restate paragraph  | One-way sloping roof: the only mono-pitc
+PASS section3 20x8 bullet does not restate paragraph  | Wall A schedule W1, D1, W2 with the entr
+PASS section3 20x8 bullet does not restate paragraph  | Three workstations and three cabinets, a
+PASS section3 20x8 bullet does not restate paragraph  | Six windows in total, one centred window
+PASS section3 20x8 bullet does not restate paragraph  | Slate Blue-Grey exterior with a Champagn
+PASS section3 20x10 H3 50-62  | 56
+PASS section3 20x10 paragraph 400-500  | 494
+PASS section3 20x10 five or six bullets  | 6
+PASS section3 20x10 bullet does not restate paragraph  | 200 sq ft at 2,50,000 ex-GST, 1,250 per 
+PASS section3 20x10 bullet does not restate paragraph  | Wall A schedule W1, D1, W2 with the entr
+PASS section3 20x10 bullet does not restate paragraph  | Two workstations on Wall A and three on 
+PASS section3 20x10 bullet does not restate paragraph  | Six windows, including one centred 3 to 
+PASS section3 20x10 bullet does not restate paragraph  | Single external door, no internal partit
+PASS section3 20x10 bullet does not restate paragraph  | Muted Teal exterior with a Soft Clay Gre
+PASS section3 20x12 H3 50-62  | 55
+PASS section3 20x12 paragraph 400-500  | 488
+PASS section3 20x12 five or six bullets  | 6
+PASS section3 20x12 bullet does not restate paragraph  | 240 sq ft at 2,88,000 ex-GST, 1,200 per 
+PASS section3 20x12 bullet does not restate paragraph  | Same five workstations as the 20x10: ext
+PASS section3 20x12 bullet does not restate paragraph  | End windows widened to 4 to 8 ft, six wi
+PASS section3 20x12 bullet does not restate paragraph  | Wall A schedule W1, D1, W2, unchanged fr
+PASS section3 20x12 bullet does not restate paragraph  | Widened symmetrically by one foot on eac
+PASS section3 20x12 bullet does not restate paragraph  | Warm Stone Taupe exterior with a Mist Bl
+PASS section3 30x10 H3 50-62  | 56
+PASS section3 30x10 paragraph 400-500  | 478
+PASS section3 30x10 five or six bullets  | 6
+PASS section3 30x10 bullet does not restate paragraph  | 300 sq ft at 3,60,000 ex-GST, 1,200 per 
+PASS section3 30x10 bullet does not restate paragraph  | Two external doors on Wall A, one near e
+PASS section3 30x10 bullet does not restate paragraph  | Eight windows: two on Wall A, four on Wa
+PASS section3 30x10 bullet does not restate paragraph  | Eight workstations and eight cabinets, t
+PASS section3 30x10 bullet does not restate paragraph  | Open plan throughout: no internal partit
+PASS section3 30x10 bullet does not restate paragraph  | Deep Bottle Green exterior with a Champa
+PASS section3 40x10 H3 50-62  | 50
+PASS section3 40x10 paragraph 400-500  | 492
+PASS section3 40x10 five or six bullets  | 6
+PASS section3 40x10 bullet does not restate paragraph  | 400 sq ft at 4,75,000 ex-GST, 1,187.50 p
+PASS section3 40x10 bullet does not restate paragraph  | Partition at 10 ft: a 10x10 manager room
+PASS section3 40x10 bullet does not restate paragraph  | Twelve common workstations, fifteen seat
+PASS section3 40x10 bullet does not restate paragraph  | One internal door near Wall A, window-fr
+PASS section3 40x10 bullet does not restate paragraph  | Nine windows, including three manager wi
+PASS section3 40x10 bullet does not restate paragraph  | Deep Oxford Blue exterior with a Pale Sa
+PASS ymal intro under 90  | 59
+PASS description tab 2000-3000 words  | 2288
+PASS description tab exactly one bullet block  | 1
+PASS description tab zero or one table  | 1
+PASS description H2 40-60: Is an office cabin a building, or a  | 52
+PASS description H2 40-60: What readymade means here, and what  | 52
+PASS description H2 40-60: What size an office cabin should be  | 48
+PASS description H2 40-60: How the six published office cabin   | 51
+PASS description H2 40-60: Reading the opening schedule before  | 50
+PASS description H2 40-60: Office cabin, porta cabin or contai  | 56
+PASS description H2 40-60: What the published price includes,   | 55
+PASS description H2 40-60: Delivery, freight and getting the s  | 44
+PASS description H2 40-60: Quality checks, warranty and honest  | 41
+PASS six to eight FAQs  | 8
+PASS faq answer 100-300: What is the standard size of a  | 202
+PASS faq answer 100-300: How much does a readymade offi  | 187
+PASS faq answer 100-300: How many people fit in a 20x10  | 203
+PASS faq answer 100-300: Is a readymade office cabin av  | 209
+PASS faq answer 100-300: Which office cabin size has a   | 193
+PASS faq answer 100-300: Why does the 20x12 ft cabin co  | 176
+PASS faq answer 100-300: Do the published prices includ  | 206
+PASS faq answer 100-300: What is not included in the pu  | 220
+PASS description tab has no images
+PASS spec narrative two or three paragraphs  | 3
+PASS spec groups A-E present
+PASS spec PDF link rendered
+PASS shipping free delivery Bangalore line
+PASS shipping free delivery NCR line
+PASS shipping ODC note
+PASS shipping four freight tables  | 16
+PASS no shippingDetails schema
+PASS AggregateOffer present
+PASS AggregateOffer lowPrice 143750
+PASS AggregateOffer highPrice 475000
+PASS priceCurrency INR
+PASS price flag cleared  | SAMAN APPROVED - option (a), folder workbook prices, ruled 4 September 2026
+
+RESULT: FAIL (1 checks)

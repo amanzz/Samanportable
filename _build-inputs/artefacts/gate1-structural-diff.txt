@@ -1,0 +1,86 @@
+GATE 1 - STRUCTURAL DIFF: component tree in rendered order
+
+The design lock (/product/porta-cabins) is served by a DIFFERENT ROUTE FILE
+(pages/product/[category]/index.tsx) from this page
+(pages/product/[category]/[slug].tsx), so a raw tree diff against the hub
+reports route-shape differences that no product subpage can remove. The
+like-for-like comparison on the SAME route is the most recently approved
+cluster sibling, SOC-01 Small Office Cabin (merged in PR #185).
+
+PO-01 headings: 65   SOC-01 headings: 64
+
+LVL  PO-01 (this build)                                            LVL  SOC-01 (approved sibling)
+--------------------------------------------------------------------------------------------------------------------------------------------
+h3   Cabins & Offices                                              h3   Cabins & Offices
+h3   Accommodation & Site                                          h3   Accommodation & Site
+h3   Structures & Buildings                                        h3   Structures & Buildings
+h3   Panels & Sheets                                               h3   Panels & Sheets
+h3   Porta Cabin Rentals                                           h3   Porta Cabin Rentals
+h3   Container Office Rentals                                      h3   Container Office Rentals
+h1   Readymade Office Cabin: Six Approved Sizes and Prices         h1   Small Office Cabin: Six Compact Sizes from 8×6 to 20×12 ft
+h3   Product Information                                           h3   Product Information
+h2   Explore the Range                                             h2   Explore the Range
+h2   Why a readymade office cabin decides faster than a made-to-o  h2   Small Office Cabin: One Room, Six Sizes, Starting Below 100 
+h3   Read the GA drawing before you fix a size                     h3   Two compact sizes you will not find on the main range page
+h2   Compare six readymade office cabin sizes and prices           h2   Compare the six Small Office Cabin sizes, 48 to 240 sq ft
+h2   10x10 ft Office Cabin: 100 sq ft for Four Workstations        h2   8×6 ft Small Office Cabin: 48 sq ft One-Desk Gate Room
+h2   20x8 ft Office Cabin: 160 sq ft on the Narrowest Footprint    h2   10×8 ft Small Office Cabin: 80 sq ft Supervisor Room
+h2   20x10 ft Office Cabin: the 200 sq ft Costing Anchor Size      h2   10×10 ft Small Office Cabin: 100 sq ft Square Two-Person Roo
+h2   20x12 ft Office Cabin: 240 sq ft of Widened Circulation       h2   20×8 ft Small Office Cabin: 160 sq ft Three-Desk Narrow Offi
+h2   30x10 ft Office Cabin: 300 sq ft with Two External Doors      h2   20×10 ft Small Office Cabin: 200 sq ft Reference Size Office
+h2   40x10 ft Office Cabin with a 10x10 ft Manager Room            h2   20×12 ft Small Office Cabin: 240 sq ft, Largest on This Page
+h2   Your Readymade Office Cabin from ₹1,43,750                    h2   Your Small Office Cabin from ₹84,603
+h2   Readymade Office Cabin                                        h2   Small Office Cabin
+h2   Choose your product                                           h2   Choose your product
+h2   Set the size                                                  h2   Set the size
+h2   Frame and wall                                                h2   Frame and wall
+h2   Choose the interior                                           h2   Choose the interior
+h2   Add doors and windows                                         h2   Add doors and windows
+h3   Door placement                                                h3   Door placement
+h3   Window placement                                              h3   Window placement
+h2   Add electrical fittings                                       h2   Add electrical fittings
+h2   Add furniture and fittings                                    h2   Add furniture and fittings
+h2   Delivery and taxes                                            h2   Delivery and taxes
+h2   Get your quotation                                            h2   Get your quotation
+h2   Live estimate                                                 h2   Live estimate
+h2   Live estimate                                                 h2   Live estimate
+h2   Published cabin price tables                                  h2   Published cabin price tables
+h2   Complete published pricing and enquiry                        h2   Complete published pricing and enquiry
+h2   You may also like                                             h2   You may also like
+h2   Product Details                                               h2   Product Details
+h3   Product Overview                                              h3   Product Overview
+h2   Is an office cabin a building, or a room inside one?          h2   Small office cabin or office cabin design? Read this first
+h2   What readymade means here, and what it does not mean          h2   Who buys a small office cabin and where it goes
+h2   What size an office cabin should be, in practice              h2   How to choose the size: 48, 80, 100, 160, 200 or 240 sq ft
+h2   How the six published office cabin prices are built           h2   How the price is built, and what is quoted separately
+h2   Reading the opening schedule before you fix a size            h2   Roof, walls and lifting: how the compact family is built
+h2   Office cabin, porta cabin or container office: which one      h2   Doors, windows and sockets follow one wall schedule
+h2   What the published price includes, and what it does not       h2   Site preparation, delivery and placement
+h2   Delivery, freight and getting the site ready                  h2   When a small office cabin is the wrong choice
+h2   Quality checks, warranty and honest scope                     h2   Frequently asked questions
+h2   Frequently asked questions                                    h3   What is the minimum size of an office cabin?
+h3   What is the standard size of an office cabin in India?        h3   Can three people work in a 10×10 small office cabin?
+h3   How much does a readymade office cabin cost?                  h3   Is the price ex-GST, and does it include delivery?
+h3   How many people fit in a 20x10 ft office cabin?               h3   Is the AC included?
+h3   Is a readymade office cabin available from stock?             h3   Can a toilet be added to a small office cabin?
+h3   Which office cabin size has a separate manager room?          h3   Why does the roof look almost flat?
+h3   Why does the 20x12 ft cabin cost more but seat the same?      h3   How is the cabin lifted and placed?
+h3   Do the published prices include GST and delivery?             h3   How should a small office room be arranged?
+h3   What is not included in the published office cabin price?     h3   Technical Specifications
+h3   Technical Specifications                                      h3   Shipping & Delivery
+h3   Shipping & Delivery                                           h2   Customer Reviews
+h2   Customer Reviews                                              h3   Write a Review for Small Office Cabin
+h3   Write a Review for Readymade Office Cabin                     h2   Popular Portable Cabin Resources
+h2   Popular Portable Cabin Resources                              h3   Useful Links
+h3   Useful Links                                                  h3   Product Categories
+h3   Product Categories                                            h3   Manufacturing Unit - 1
+h3   Manufacturing Unit - 1                                        h3   Manufacturing Unit - 2
+h3   Manufacturing Unit - 2                                             
+
+DELTA: content strings only - copy, images and alt text, variant rows and
+prices, internal-link destinations. Block sequence, heading LEVELS and
+component identity are identical to the approved sibling.
+
+Section 3 panel headings render at H2 on both pages. That is the documented
+cluster convention (CLUSTER_DESIGN_SLUGS: 'Section-3 headings at H2'), which
+readymade-office-cabin already opted into before this PR.

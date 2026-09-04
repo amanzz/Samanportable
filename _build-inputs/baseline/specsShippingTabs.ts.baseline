@@ -27,7 +27,6 @@ import c05SubpageSpecifications2 from '@/data/products/c05-subpage-specification
 import cmoSpecifications from '@/data/products/container-marketing-office-specs.json';
 import { getEffectiveC01SpecificationEntry } from '@/lib/c01SpecificationOverrides';
 import smallOfficeCabinCopy from '../../content/soc-01/SOC-01-small-office-cabin-copy-v1.json';
-import readymadeOfficeCabinCopy from '../../content/po-01/PO-01-readymade-office-cabin-copy-v1.json';
 
 // SOC-01 — the two approved coordination diagrams and the v3 technical PDF, at the
 // exact dimensions of the shipped WebP derivatives (never cropped, never upscaled).
@@ -984,86 +983,6 @@ function buildSmallOfficeCabinSpecificationsHtml(): string {
   return `<div class="not-prose">${narrative}${cards}${diagrams}${pdf}</div>`;
 }
 
-// PO-01 - the two approved technical diagrams and the v3 technical PDF, at the exact
-// dimensions of the shipped WebP derivatives (never cropped, never upscaled). Diagram 1
-// is the package-defect source whose colliding "Engineering boundary:" label was
-// repaired (label re-set with a word space) before conversion; the drawing is untouched.
-const PO01_SPEC_DIAGRAMS = [
-  {
-    src: '/images/products/readymade-office-cabin/diagrams/readymade-office-cabin-frame-joint-diagram.webp',
-    alt: readymadeOfficeCabinCopy.alt_text.spec_diagrams['diagrams/readymade-office-cabin-frame-joint-diagram.webp'],
-    width: 1600,
-    height: 900,
-  },
-  {
-    src: '/images/products/readymade-office-cabin/diagrams/readymade-office-cabin-window-electrical-diagram.webp',
-    alt: readymadeOfficeCabinCopy.alt_text.spec_diagrams['diagrams/readymade-office-cabin-window-electrical-diagram.webp'],
-    width: 1600,
-    height: 900,
-  },
-] as const;
-const PO01_SPEC_PDF = {
-  href: '/images/products/readymade-office-cabin/docs/readymade-office-cabin-technical-specification-and-price-v3.pdf',
-  label: readymadeOfficeCabinCopy.specifications_tab.pdf_link_label,
-} as const;
-
-// PO-01 (4 Sep 2026) - Readymade Office Cabin Specifications tab. Groups A-E render as
-// the same premium grouped-table cards the porta-cabins Specs tab uses (identical card
-// chrome, saman-table-wrap / saman-table), generalised only to accept each group's own
-// column count. Every string comes from the signed copy pack; nothing is retyped here.
-// Each group's note renders directly under its own table, then the two diagrams, then
-// the PDF link. The live page carried 0 tables, 0 diagrams and 0 links.
-function buildReadymadeOfficeCabinSpecificationsHtml(): string {
-  const spec = readymadeOfficeCabinCopy.specifications_tab;
-
-  const narrative = spec.narrative
-    .map((p) => `<p class="mb-5 text-sm leading-relaxed text-slate-600">${esc(p)}</p>`)
-    .join('');
-
-  const cards = spec.groups.map((group) => {
-    const head = group.head.map((h) => `<th>${esc(h)}</th>`).join('');
-    const body = group.rows
-      .map((row) => (
-        `<tr>` +
-          row.map((cell, i) => (
-            i === 0
-              ? `<td class="${TD} font-semibold text-slate-700">${esc(cell)}</td>`
-              : `<td class="${TD}">${escBold(cell)}</td>`
-          )).join('') +
-        `</tr>`
-      ))
-      .join('');
-    // An empty note renders nothing at all, never a placeholder line.
-    const note = group.note
-      ? `<p class="px-4 pb-4 pt-3 m-0 text-xs leading-relaxed text-slate-500">${esc(group.note)}</p>`
-      : '';
-    return (
-      `<section class="mb-4 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">` +
-        `<h4 class="m-0 bg-slate-50 px-4 py-3 text-base font-bold text-emerald-900">${esc(group.title)}</h4>` +
-        `<div class="saman-table-wrap"><table class="saman-table"><thead><tr>${head}</tr></thead>` +
-        `<tbody>${body}</tbody></table></div>` +
-        note +
-      `</section>`
-    );
-  }).join('');
-
-  const diagrams = PO01_SPEC_DIAGRAMS
-    .map((d) => (
-      `<figure class="mt-4 m-0 rounded-xl border border-slate-200 bg-white p-5 shadow-sm">` +
-        `<img src="${esc(d.src)}" alt="${esc(d.alt)}" width="${d.width}" height="${d.height}" ` +
-        `loading="lazy" class="w-full h-auto rounded-lg" />` +
-      `</figure>`
-    ))
-    .join('');
-
-  const pdf =
-    `<p class="mt-5 text-sm"><a href="${esc(PO01_SPEC_PDF.href)}" ` +
-    `class="font-semibold text-emerald-800 underline underline-offset-2">` +
-    `${esc(PO01_SPEC_PDF.label)}</a></p>`;
-
-  return `<div class="not-prose">${narrative}${cards}${diagrams}${pdf}</div>`;
-}
-
 /** Both tab bodies for a page slug, or null when the slug is not in scope. */
 export function getProductTabsHtml(
   pageSlug: string | undefined | null
@@ -1193,18 +1112,6 @@ export function getProductTabsHtml(
   if (pageSlug === 'small-office-cabin') {
     return {
       specificationsHtml: buildSmallOfficeCabinSpecificationsHtml(),
-      shippingHtml: buildShippingHtml(),
-    };
-  }
-  // PO-01 (4 Sep 2026) - Groups A-E from the signed pack; Shipping is the SAME shared
-  // freight component the live porta-cabins page renders (both trailer ladders with
-  // eighteen bands each, both zone city tables, the two free-delivery lines, the ODC
-  // note and the tentative-price disclaimer), called with no options so it stays
-  // byte-identical. The generic two-paragraph panel this page shipped came from
-  // variantData.shippingHtml, which the product data file no longer sets.
-  if (pageSlug === 'readymade-office-cabin') {
-    return {
-      specificationsHtml: buildReadymadeOfficeCabinSpecificationsHtml(),
       shippingHtml: buildShippingHtml(),
     };
   }
