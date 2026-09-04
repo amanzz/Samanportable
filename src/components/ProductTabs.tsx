@@ -125,7 +125,7 @@ const ProductTabs: React.FC<ProductTabsProps> = ({ description, specificationsHt
             </div>
             <div className="flex items-center gap-3 p-3 bg-white/70 rounded-lg">
               <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-              <span className="text-sm font-medium text-green-800">Fixed-price quote within 48 hours</span>
+              <span className="text-sm font-medium text-green-800">We aim to send your fixed-price quotation within 48 business hours after receiving complete dimensions, specifications, delivery PIN code and scope. Complex engineered configurations may require additional time, which we will confirm.</span>
             </div>
             <div className="flex items-center gap-3 p-3 bg-white/70 rounded-lg">
               <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />

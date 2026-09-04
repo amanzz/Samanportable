@@ -4,6 +4,7 @@
   "variantAxis": "Deployed size",
   "defaultVariant": "10x20",
   "gstPercent": 18,
+  "hsn": "9406",
   "categoryLabel": "Container Offices",
   "categoryHref": "https://www.samanportable.com/product/container-offices",
   "canonical": "https://www.samanportable.com/product/container-offices/expandable-container-office",
@@ -33,7 +34,7 @@
       "areaSqft": 200,
       "priceExGst": 375000,
       "priceInclGst": 442500,
-      "sku": "EX-10X20-COMPACT-DRY-OFFICE-V1"
+      "availability": "in-stock"
     },
     {
       "sizeSlug": "20x20",
@@ -43,7 +44,7 @@
       "areaSqft": 400,
       "priceExGst": 712500,
       "priceInclGst": 840750,
-      "sku": "EX-20X20-MANAGER-MEETING-SIX-V1"
+      "availability": "in-stock"
     },
     {
       "sizeSlug": "30x20",
@@ -53,7 +54,7 @@
       "areaSqft": 600,
       "priceExGst": 1046250,
       "priceInclGst": 1234575,
-      "sku": "EX-30X20-MANAGER-CONFERENCE-EIGHT-SERVICE-V1"
+      "availability": "in-stock"
     },
     {
       "sizeSlug": "40x20",
@@ -63,7 +64,7 @@
       "areaSqft": 800,
       "priceExGst": 1365000,
       "priceInclGst": 1610700,
-      "sku": "EX-40X20-CORPORATE-EIGHT-DUAL-SERVICE-V1"
+      "availability": "in-stock"
     },
     {
       "sizeSlug": "40x40",
@@ -73,7 +74,7 @@
       "areaSqft": 1600,
       "priceExGst": 2700000,
       "priceInclGst": 3186000,
-      "sku": "EX-40X40-CORPORATE-TWENTYFOUR-SERVICE-V1"
+      "availability": "in-stock"
     },
     {
       "sizeSlug": "60x20",
@@ -83,7 +84,8 @@
       "areaSqft": 1200,
       "priceExGst": 2025000,
       "priceInclGst": 2389500,
-      "sku": "EX-60X20-CORPORATE-EIGHTEEN-SERVICE-V1"
+      "availability": "in-stock"
     }
-  ]
+  ],
+  "suppressLegacySku": true
 }

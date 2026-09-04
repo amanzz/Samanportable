@@ -56,8 +56,9 @@ import PortaCabinsYouMayAlsoLike from '../../../components/product-variant-hero/
 import { rewriteRetiredInternalLinks } from '../../../lib/staticContent';
 import { isLabourColonyClusterSlug, getLabourColonyClusterRail } from '../../../lib/labourColonyClusterRail';
 import { containerOfficeYmalItems, orderContainerOfficeRail } from '../../../lib/containerOfficeClusterRail';
+import { containerOfficeMt32Items, hasContainerOfficeMt32 } from '../../../lib/containerOfficeMt32';
 import { getEmbeddedProductSummary, renderCabinCalculatorSSR, renderCalculatorEntrySection } from '../../../lib/cabinCalculatorSSR';
-import { makeCalculatorPageUrl, resolveEmbeddedCalculatorProduct } from '../../../lib/cabinCalculatorEmbedRoutes';
+import { makeCalculatorPageUrl, resolveEmbeddedCalculatorProduct, containerOfficeDefaultDims } from '../../../lib/cabinCalculatorEmbedRoutes';
 import { CLOSED_STATE } from '../../../lib/calculatorCopy';
 import { PortaCabinVariantHero } from '../../../components/product-variant-hero/PortaCabinVariantHero';
 import type { VariantProductData } from '../../../components/product-variant-hero/types';
@@ -215,7 +216,6 @@ const CO04_CANONICAL_LINKS = [
 ] as const;
 
 const CO04_RELATED_RAIL_ITEMS = containerizedDataCenterRelated.exploreItems as RelatedRailItem[];
-const CO04_YMAL_ITEMS = containerizedDataCenterRelated.ymalItems as RelatedRailItem[];
 
 const CO04_SHIPPING_HTML = `
   <section class="space-y-4">
@@ -969,7 +969,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
       // /cabin-cost-calculator: no product, no ladder, no product name. It must
       // not claim to price what this page sells.
       ...(embeddedCalculatorMapping.prefill && embeddedCalculatorMapping.productId
-        ? { config: { productId: embeddedCalculatorMapping.productId }, ladderKey: embeddedCalculatorMapping.ladderKey, productName: product?.name }
+        ? { config: { productId: embeddedCalculatorMapping.productId, ...(containerOfficeDefaultDims(embeddedCalculatorMapping.ladderKey) || {}) }, ladderKey: embeddedCalculatorMapping.ladderKey, productName: product?.name }
         : {}),
       pageUrl: makeCalculatorPageUrl(category, slug),
       // PC-05 revision v1.3, R5 — this route has no registered calculator
@@ -1558,28 +1558,15 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   subline="Other container office configurations in the same range."
                 />
               )}
-              {slug === 'containerized-data-center' && (
+              {/* MT-32 (04 Sep 2026) - BESS, containerized data center, multi-story and
+                  flat-pack rendered this rail from their own short sibling data
+                  (variantData.ymalTiles / relatedTiles), so they showed three or four cards
+                  where the rest of the family shows the whole approved range. They now take
+                  the canonical eight-card MT-32 set. Their "Explore the Range" sibling rail
+                  is a separate contract and is deliberately left exactly as it was. */}
+              {hasContainerOfficeMt32(slug) && (
                 <PortaCabinsYouMayAlsoLike
-                  items={CO04_YMAL_ITEMS}
-                  subline={containerizedDataCenterRelated.ymalIntro}
-                  useItemImageAltVerbatim
-                />
-              )}
-              {slug === 'bess-container' && variantData?.ymalTiles?.length && (
-                <PortaCabinsYouMayAlsoLike
-                  items={variantData.ymalTiles}
-                  subline={null}
-                />
-              )}
-              {slug === CO07_SLUG && variantData?.ymalTiles?.length && (
-                <PortaCabinsYouMayAlsoLike
-                  items={variantData.ymalTiles}
-                  subline={null}
-                />
-              )}
-              {slug === CO06_SLUG && relatedRailItems.length > 0 && (
-                <PortaCabinsYouMayAlsoLike
-                  items={relatedRailItems}
+                  items={containerOfficeMt32Items(slug)}
                   subline="Other container office configurations in the same range."
                 />
               )}

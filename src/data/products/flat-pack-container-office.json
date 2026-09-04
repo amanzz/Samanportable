@@ -4,6 +4,7 @@
   "variantAxis": "size",
   "defaultVariant": "10x8",
   "gstPercent": 18,
+  "hsn": "9406",
   "categoryLabel": "Container Offices",
   "categoryHref": "/product/container-offices",
   "canonical": "https://www.samanportable.com/product/container-offices/flat-pack-container-office",
@@ -79,7 +80,8 @@
           "width": 1254,
           "height": 1254
         }
-      ]
+      ],
+      "availability": "in-stock"
     },
     {
       "sizeSlug": "20x8",
@@ -132,7 +134,8 @@
           "width": 1254,
           "height": 1254
         }
-      ]
+      ],
+      "availability": "in-stock"
     },
     {
       "sizeSlug": "20x10",
@@ -185,7 +188,8 @@
           "width": 1254,
           "height": 1254
         }
-      ]
+      ],
+      "availability": "in-stock"
     },
     {
       "sizeSlug": "30x10",
@@ -238,7 +242,8 @@
           "width": 1254,
           "height": 1254
         }
-      ]
+      ],
+      "availability": "in-stock"
     },
     {
       "sizeSlug": "40x10",
@@ -291,7 +296,8 @@
           "width": 1254,
           "height": 1254
         }
-      ]
+      ],
+      "availability": "in-stock"
     },
     {
       "sizeSlug": "40x20",
@@ -344,7 +350,8 @@
           "width": 1254,
           "height": 1254
         }
-      ]
+      ],
+      "availability": "in-stock"
     }
   ]
 }

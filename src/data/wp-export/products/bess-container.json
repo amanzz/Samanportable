@@ -31,7 +31,7 @@
   "tax_class": "",
   "manage_stock": false,
   "stock_quantity": null,
-  "stock_status": "",
+  "stock_status": "instock",
   "reviews_allowed": false,
   "average_rating": "0.00",
   "rating_count": 0,

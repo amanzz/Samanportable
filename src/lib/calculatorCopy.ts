@@ -24,7 +24,7 @@ export const STEP_COPY = [
   { key: 'electrical', heading: 'Add electrical fittings', help: 'Tick what you need. Quantities are suggested from the floor area and you can change every one.' },
   { key: 'addons', heading: 'Add furniture and fittings', help: 'Everything here is optional. Add only what you want fitted before delivery.' },
   { key: 'delivery', heading: 'Delivery and taxes', help: 'Transport and installation are optional and depend on your site. GST is shown as its own line.' },
-  { key: 'quotation', heading: 'Get your quotation', help: 'Send us this configuration and we will confirm it with a fixed price within 48 hours.' },
+  { key: 'quotation', heading: 'Get your quotation', help: 'We aim to send your fixed-price quotation within 48 business hours after receiving complete dimensions, specifications, delivery PIN code and scope. Complex engineered configurations may require additional time, which we will confirm.' },
 ] as const;
 
 export type StepKey = typeof STEP_COPY[number]['key'];
@@ -80,11 +80,11 @@ export const ESTIMATE_PANEL = {
   subtotal: 'Subtotal',
   gst: 'GST at 18%',
   total: 'Estimated total',
-  finePrint: 'Indicative estimate from our base-cabin rate card, ex-factory and ex-GST. Fittings are added as you choose them. Your fixed price is confirmed on the drawing within 48 hours.',
+  finePrint: 'Indicative estimate from our base-cabin rate card, ex-factory and ex-GST. Fittings are added as you choose them. Your fixed price is confirmed on the drawing. Custom quote target: 48 business hours.',
 } as const;
 
 /** Shown wherever a route has no approved ladder. Carries no number. */
-export const QUOTE_MODE = 'We price this product on drawing. Send your requirement and we will confirm a fixed price within 48 hours.';
+export const QUOTE_MODE = 'We price this product on drawing. Send your requirement. Custom quote target: 48 business hours.';
 
 /** The closed bar the calculator renders as on a product page. */
 export const CLOSED_STATE = {

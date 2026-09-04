@@ -52,7 +52,7 @@ const DESCRIPTION_TABLE_A = table(
   ],
 );
 
-const DESCRIPTION_TABLE_A_NOTE = 'Sibling rates are quoted with their basis stated: each is that page\'s own published figure at the same 200 sq ft reference, read from the live page on 24 August 2026. All are budgetary.';
+const DESCRIPTION_TABLE_A_NOTE = 'Sibling rates are quoted with their basis stated: each is that page\'s own published figure at the same 200 sq ft reference, read from the live page on 24 August 2026. All are published firm.';
 
 const DESCRIPTION_TABLE_B = table(
   ['Scope', 'Items'],

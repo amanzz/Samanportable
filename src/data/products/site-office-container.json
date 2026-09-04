@@ -11,7 +11,6 @@
   "opener": "A site office container is the room your project runs from. Engineers mark up drawings there, the contractor signs the day's work, and clients sit down without walking the slab. SAMAN builds it as a welded steel box on a 125 x 75 x 4 mm base channel, clad in corrugated sheet. So it survives being lifted and moved as the work front shifts. Six approved sizes run from 160 to 480 sq ft.\n\nEach one carries a signed general arrangement plan, so you know the door and window positions and the exact workstation count before you order. The two 40 ft wide layouts add a manager cabin behind a partition. Prices below are ex GST and cover the finished cabin.",
   "categoryLabel": "Container Offices",
   "categoryHref": "/product/container-offices",
-  "productSku": "SP-CO-01-SOC",
   "pricePerSqft": {
     "20x8": "1,485.00",
     "20x10": "1,350.00",
@@ -56,6 +55,7 @@
       "lowPrice": "237600",
       "highPrice": "609120",
       "offerCount": "6",
+      "availability": "https://schema.org/InStock",
       "url": "https://www.samanportable.com/product/container-offices/site-office-container"
     }
   },
@@ -71,7 +71,6 @@
       "priceInclGst": 280368,
       "capacity": "3 workstations / 3 seats",
       "useCase": "Construction site project office",
-      "sku": "SP-CO-01-SOC",
       "featureCells": [
         {
           "label": "Approved sizes",
@@ -138,7 +137,8 @@
           "width": 1254,
           "height": 1254
         }
-      ]
+      ],
+      "availability": "in-stock"
     },
     {
       "sizeSlug": "20x10",
@@ -149,7 +149,6 @@
       "priceInclGst": 318600,
       "capacity": "5 workstations / 5 seats",
       "useCase": "Construction site project office",
-      "sku": "SP-CO-01-SOC",
       "featureCells": [
         {
           "label": "Approved sizes",
@@ -216,7 +215,8 @@
           "width": 1254,
           "height": 1254
         }
-      ]
+      ],
+      "availability": "in-stock"
     },
     {
       "sizeSlug": "30x10",
@@ -227,7 +227,6 @@
       "priceInclGst": 458784,
       "capacity": "8 workstations / 8 seats",
       "useCase": "Construction site project office",
-      "sku": "SP-CO-01-SOC",
       "featureCells": [
         {
           "label": "Approved sizes",
@@ -294,7 +293,8 @@
           "width": 1254,
           "height": 1254
         }
-      ]
+      ],
+      "availability": "in-stock"
     },
     {
       "sizeSlug": "40x8",
@@ -305,7 +305,6 @@
       "priceInclGst": 484272,
       "capacity": "7 workstations / 10 seats",
       "useCase": "Construction site project office",
-      "sku": "SP-CO-01-SOC",
       "featureCells": [
         {
           "label": "Approved sizes",
@@ -372,7 +371,8 @@
           "width": 1254,
           "height": 1254
         }
-      ]
+      ],
+      "availability": "in-stock"
     },
     {
       "sizeSlug": "40x10",
@@ -383,7 +383,6 @@
       "priceInclGst": 605340,
       "capacity": "12 workstations / 15 seats",
       "useCase": "Construction site project office",
-      "sku": "SP-CO-01-SOC",
       "featureCells": [
         {
           "label": "Approved sizes",
@@ -450,7 +449,8 @@
           "width": 1254,
           "height": 1254
         }
-      ]
+      ],
+      "availability": "in-stock"
     },
     {
       "sizeSlug": "40x12",
@@ -461,7 +461,6 @@
       "priceInclGst": 718762,
       "capacity": "12 workstations / 15 seats",
       "useCase": "Construction site project office",
-      "sku": "SP-CO-01-SOC",
       "featureCells": [
         {
           "label": "Approved sizes",
@@ -528,7 +527,9 @@
           "width": 1254,
           "height": 1254
         }
-      ]
+      ],
+      "availability": "in-stock"
     }
-  ]
+  ],
+  "suppressLegacySku": true
 }

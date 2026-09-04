@@ -1,3 +1,4 @@
+import { getRouteLadder } from '@/lib/calculatorLadders';
 ﻿import type { ProductId } from './cabinCalculatorSSR';
 
 type CategorySlug = string;
@@ -343,4 +344,49 @@ export function resolveEmbeddedCalculatorProduct(
     productId: undefined,
     ladderKey: klass.prefill ? ladderKeyFor(category, slug) : '',
   };
+}
+
+/**
+ * CO-D01/T-12 (04 Sep 2026). Each Container Office route must open its embedded
+ * calculator at that route's OWN governed default size, not at the shared
+ * DEFAULT_CALCULATOR_CONFIG of 20 x 10. Measured before this fix: all ten CO
+ * routes server-rendered an identical "Base cabin 20x10 ft / 200 sq ft" state,
+ * which is only correct for the three routes whose default happens to be 20x10.
+ *
+ * The default size per route is declared here rather than derived, because
+ * `src/lib/calculatorLadders.ts` is SHA-256 protected by the PC-01 parity gate
+ * and must not gain an export. Dimensions themselves are read from that route's
+ * own ladder row, so no price or geometry is duplicated or invented here.
+ *
+ * Container Offices only. No other family's default is altered.
+ */
+const CONTAINER_OFFICE_DEFAULT_SIZE_SLUG: Record<string, string> = {
+  'container-offices': '20x10',
+  'shipping-container-office': '20x8',
+  'site-office-container': '20x10',
+  'bess-container': '20ft-standard',
+  'containerized-data-center': '10ft-edge',
+  'container-marketing-office': '20x8',
+  'multi-story-container-office': '20x8',
+  'flat-pack-container-office': '10x8',
+  'expandable-container-office': '10x20',
+  'container-office-cabin': '20x10',
+};
+
+/**
+ * Length/width of a Container Office route's governed default size, or null.
+ * Returns null for every non-Container-Office route, so callers outside this
+ * family keep the shared default untouched.
+ */
+export function containerOfficeDefaultDims(
+  ladderKey: string | null | undefined
+): { length: number; width: number } | null {
+  if (!ladderKey) return null;
+  const wanted = CONTAINER_OFFICE_DEFAULT_SIZE_SLUG[ladderKey];
+  if (!wanted) return null;
+  const ladder = getRouteLadder(ladderKey);
+  if (!ladder) return null;
+  const row = ladder.find((r) => r.sizeSlug === wanted) || null;
+  if (!row || row.length == null || row.width == null) return null;
+  return { length: row.length, width: row.width };
 }

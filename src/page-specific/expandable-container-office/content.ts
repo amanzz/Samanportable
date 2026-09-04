@@ -150,10 +150,15 @@ const schemaOverride = {
     highPrice: 2700000,
     priceCurrency: 'INR',
     offerCount: 6,
+    // CO-D01:B (04 Sep 2026) - all 60 published Container Office rows are In stock.
+    // schemaOverride replaces the built Product node wholesale, so availability has
+    // to be declared here or it is silently omitted.
+    availability: 'https://schema.org/InStock',
     offers: variants.map((variant) => ({
       '@type': 'Offer',
       price: variant.priceExGst,
       priceCurrency: 'INR',
+      availability: 'https://schema.org/InStock',
       url: `${copyPack.canonical}#size-${variant.sizeSlug}`,
     })),
   },

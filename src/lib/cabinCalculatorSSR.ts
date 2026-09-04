@@ -4,6 +4,7 @@ import {
   RATE_CARD,
 } from '@/lib/calculatorRates';
 import { getRouteLadder, ladderAnchorRate, ladderPriceFor } from '@/lib/calculatorLadders';
+import { containerOfficeBuildLabel, hasContainerOfficeBuildLabels } from '@/lib/containerOfficeBuildLabels';
 import { BASE_CABIN_RATE_CARD_DATASET, baseCabinRate } from '@/lib/baseCabinRateCard';
 import {
   CEILINGS_R1, ELECTRICAL_R1, FITOUT_R1, FLOORINGS_R1, FRAME_OPTIONS,
@@ -405,7 +406,7 @@ export const CALCULATOR_MESSAGES = {
   saved: 'Design saved on this device.',
   restored: 'Your saved design has been restored. Start over to begin fresh.',
   linkCopied: 'Link copied. Anyone who opens it sees this exact configuration.',
-  submitSuccess: 'Configuration received. Our sales team will send your fixed, itemised quotation within 48 hours.',
+  submitSuccess: 'Configuration received. We aim to send your fixed-price quotation within 48 business hours after receiving complete dimensions, specifications, delivery PIN code and scope. Complex engineered configurations may require additional time, which we will confirm.',
   submitFailure: 'We could not submit right now. Please try again, or WhatsApp us at +91 88616 22859 and we will take it from there.',
 } as const;
 
@@ -2826,7 +2827,7 @@ export function getEmbeddedProductSummary(productId: ProductId, ladderKey?: stri
 }
 
 function renderPriceTables(products: readonly ProductDefinition[] = PRODUCTS, ladderKey?: string | null): string {
-  return `<section class="price-tables" aria-labelledby="published-price-tables"><h2 id="published-price-tables">Published cabin price tables</h2><p>All primary prices are ex-GST. Including-GST figures apply 18 percent GST.</p>${products.map((product) => `<details><summary>${esc(product.name)} price table</summary><table data-product-price-table="${product.id}"><caption>${esc(product.name)} published size and price ladder</caption><thead><tr><th scope="col">Size</th><th scope="col">Area</th>${isColonyProduct(product.id) ? '<th scope="col">Workers housed</th>' : ''}<th scope="col">Price ex-GST</th><th scope="col">Including 18% GST</th></tr></thead><tbody>${productPriceRows(product, products.length === 1 ? ladderKey : product.ladderKey).map((row) => `<tr${row.length !== undefined && row.width !== undefined && row.ex !== null ? ` data-published-size data-length="${row.length}" data-width="${row.width}" data-price-ex-gst="${row.ex}"` : ''}><th scope="row">${esc(row.label)}</th><td>${row.area.toLocaleString('en-IN')} sq ft</td>${isColonyProduct(product.id) ? `<td>${esc(row.capacity || '')}</td>` : ''}<td>${row.ex === null ? 'price on request' : money(row.ex)}</td><td>${row.ex === null ? 'itemised in quotation' : money(Math.round(row.ex * (1 + GST_RATE)))}</td></tr>`).join('')}</tbody></table></details>`).join('')}</section>`;
+  return `<section class="price-tables" aria-labelledby="published-price-tables"><h2 id="published-price-tables">Published cabin price tables</h2><p>All primary prices are ex-GST. Including-GST figures apply 18 percent GST.</p>${products.map((product) => { const tableLadderKey = products.length === 1 ? (ladderKey ?? product.ladderKey) : product.ladderKey; const tableRows = productPriceRows(product, tableLadderKey); const showBuild = hasContainerOfficeBuildLabels(tableLadderKey, tableRows.map((r) => r.label)); return `<details><summary>${esc(product.name)} price table</summary><table data-product-price-table="${product.id}"><caption>${esc(product.name)} published size and price ladder</caption><thead><tr><th scope="col">Size</th><th scope="col">Area</th>${isColonyProduct(product.id) ? '<th scope="col">Workers housed</th>' : ''}${showBuild ? '<th scope="col">Build</th>' : ''}<th scope="col">Price ex-GST</th><th scope="col">Including 18% GST</th></tr></thead><tbody>${tableRows.map((row) => `<tr${row.length !== undefined && row.width !== undefined && row.ex !== null ? ` data-published-size data-length="${row.length}" data-width="${row.width}" data-price-ex-gst="${row.ex}"` : ''}><th scope="row">${esc(row.label)}</th><td>${row.area.toLocaleString('en-IN')} sq ft</td>${isColonyProduct(product.id) ? `<td>${esc(row.capacity || '')}</td>` : ''}${showBuild ? `<td>${esc(containerOfficeBuildLabel(tableLadderKey, row.label) || '')}</td>` : ''}<td>${row.ex === null ? 'price on request' : money(row.ex)}</td><td>${row.ex === null ? 'itemised in quotation' : money(Math.round(row.ex * (1 + GST_RATE)))}</td></tr>`).join('')}</tbody></table></details>`; }).join('')}</section>`;
 }
 
 function renderFreightTable(): string {
@@ -2843,13 +2844,13 @@ function renderFreightTable(): string {
  * entirely (see renderCalculatorFaq, rendered by the page further down).
  */
 function renderIntro(): string {
-  return `<section class="calculator-intro" aria-labelledby="calculator-copy-title"><h2 id="calculator-copy-title">What this calculator does</h2><p>This tool builds a live estimate for a SAMAN portable cabin from our base-cabin rate card. Pick the product, enter any size in feet, choose the structure, finishes, doors, windows, electrical items and add-ons, and the estimate updates line by line as you select. Every base price comes from our base-cabin rate card, not from the finished-product price our product pages publish, transport follows our freight ladder, and branded third-party items are shown at current vendor rates plus a 5 percent handling margin.</p><p>The figure you see is an indicative ex-factory estimate with GST shown separately. It is not a quotation. When you submit your configuration, our sales team verifies it against your drawing and location and returns a fixed, itemised quotation within 48 hours. Delivery timing is confirmed in the fixed quotation after the site and order are reviewed.</p></section>`;
+  return `<section class="calculator-intro" aria-labelledby="calculator-copy-title"><h2 id="calculator-copy-title">What this calculator does</h2><p>This tool builds a live estimate for a SAMAN portable cabin from our base-cabin rate card. Pick the product, enter any size in feet, choose the structure, finishes, doors, windows, electrical items and add-ons, and the estimate updates line by line as you select. Every base price comes from our base-cabin rate card, not from the finished-product price our product pages publish, transport follows our freight ladder, and branded third-party items are shown at current vendor rates plus a 5 percent handling margin.</p><p>The figure you see is an indicative ex-factory estimate with GST shown separately. It is not a quotation. When you submit your configuration, our sales team verifies it against your drawing and location and returns a fixed, itemised quotation. Custom quote target: 48 business hours for custom configurations. Delivery timing is confirmed in the fixed quotation after the site and order are reviewed.</p></section>`;
 }
 
 /** FAQ block. Rendered by the page BELOW the calculator section, not inside it. */
 export function renderCalculatorFaq(): string {
   const faqs = [
-    ['Is the calculator price final?', 'No. It is an indicative estimate from our base-cabin rate card. Your fixed quotation arrives within 48 hours and is the figure we stand behind.'],
+    ['Is the calculator price final?', 'No. It is an indicative estimate from our base-cabin rate card. Your fixed quotation is targeted within 48 business hours for custom configurations and is the figure we stand behind.'],
     ['Can I price a custom size?', 'Yes. Enter any length and width in feet. The base cabin prices from our rate card by floor area, at a lower rate per square foot as the cabin gets larger.'],
     ['Does the price include GST and transport?', 'GST at 18 percent is always shown separately. Transport is estimated from our freight ladder by distance and confirmed in the quotation; Bangalore city and Delhi NCR are free-delivery zones.'],
     ['What warranty applies?', '5-year structural warranty and 1-year finishing warranty as standard; finishing warranty extendable to 2 years on request, confirmed at quotation.'],
@@ -2859,7 +2860,7 @@ export function renderCalculatorFaq(): string {
 
 function renderEstimate(estimate: CalculatorEstimate): string {
   const totalWithGST = estimate.quoteOnly
-    ? 'Fixed quotation within 48 hours'
+    ? 'Custom quote target: 48 business hours'
     : (estimate.includeGst ? `${money(estimate.totalInclGst)} incl. 18% GST` : 'GST line shown above');
   return `<aside class="estimate-card" aria-label="Live itemised estimate"><h2>${esc(ESTIMATE_PANEL.heading)}</h2><p><span>${esc(ESTIMATE_PANEL.floorArea)}</span> <span data-estimate-area>${estimate.areaSqft.toLocaleString('en-IN')} sq ft</span></p><dl class="estimate-lines" data-estimate-lines>${estimate.lines.map((line) => `<div data-estimate-line><dt>${esc(line.label)}</dt><dd>${line.amount === null ? 'in quotation' : money(line.amount)}</dd></div>`).join('')}${estimate.transportNote ? `<div><dt>Transport</dt><dd>${esc(estimate.transportNote)}</dd></div>` : ''}<div><dt>${esc(ESTIMATE_PANEL.subtotal)}</dt><dd>${estimate.quoteOnly ? 'in quotation' : money(estimate.totalExGst)}</dd></div><div><dt>${esc(ESTIMATE_PANEL.gst)}</dt><dd>${estimate.quoteOnly ? 'in quotation' : money(estimate.gst)}</dd></div></dl><div class="total"><small>${esc(ESTIMATE_PANEL.total)}</small><strong data-estimate-total>${estimate.quoteOnly ? 'Price on request' : money(estimate.totalExGst)}</strong><small data-estimate-total-note>${esc(totalWithGST)}</small></div>${estimate.quoteOnly ? `<p class="quote-mode">${esc(QUOTE_MODE)}</p>` : ''}<p class="estimate-fine-print"><small>${esc(ESTIMATE_PANEL.finePrint)}</small></p></aside>`;
 }
@@ -3104,7 +3105,7 @@ export function renderCalculatorEntrySection(options: {
     + `<p class="calc-entry-line" data-copy-slot="subline">`
     + `Set the size, choose the finish, watch the price move as you go.</p>`
     + `<a class="calc-entry-cta" href="${esc(href)}" data-copy-slot="cta" aria-controls="cabin-calculator" aria-expanded="true">Start your design</a>`
-    + (options.suppressCommitmentCopy ? '' : `<p class="calc-entry-trust" data-copy-slot="trust">Fixed-price quote within 48 hours. Built in our own works.</p>`)
+    + (options.suppressCommitmentCopy ? '' : `<p class="calc-entry-trust" data-copy-slot="trust">Custom quote target: 48 business hours. Built in our own works.</p>`)
     + `</div></div></section>`;
 }
 
@@ -3178,7 +3179,7 @@ export function renderCabinCalculatorSSR(options: RenderCalculatorOptions = {}):
   const electricalStep = section(5, `${renderStepGuidance('electrical')}${colony ? '<p class="scope-note">Quantities are quotation items per building.</p>' : ''}<div class="ec-left"><div class="ec-cards">${ELECTRICAL_R1.map((item) => electricalCard(item, config.electrical[item.label] || 0, colony)).join('')}</div><div class="ec-chip-groups"><fieldset><legend>Light colour</legend>${radio('lightColour', 'White', 'White light', config.lightColour === 'White')}${radio('lightColour', 'Warm', 'Warm light', config.lightColour === 'Warm')}</fieldset><fieldset><legend>LED shape</legend>${radio('lightShape', 'Square', 'Square fitting', config.lightShape === 'Square')}${radio('lightShape', 'Round', 'Round fitting', config.lightShape === 'Round')}</fieldset></div></div><div class="ec-right"><fieldset class="socket-rooms"><legend>Socket placement, no cost impact</legend>${socketRoomChips}</fieldset><p class="step-tip"><small>${esc(TIPS.socketPlacement)}</small></p>${socketPanels}${renderDrawing(config, basePriceForDrawing)}</div>`);
   const addOnsStep = section(6, `${renderStepGuidance('addons')}${FITOUT_R1.map((item) => quantityRow('addOns', item.label, item.rate || 0, config.addOns[item.label] || 0, item.specification || '', colony)).join('')}<p class="step-tip"><small>Some fit-out components are being confirmed and show as Quoted separately.</small></p><fieldset><legend>Furniture position</legend>${radio('furniturePosition', 'Wall attached', 'Wall attached', config.furniturePosition === 'Wall attached')}${radio('furniturePosition', 'Centre', 'Centre', config.furniturePosition === 'Centre')}</fieldset>`);
   const deliveryCommitment = options.suppressCommitmentCopy ? 'Freight is confirmed once the exact delivery location and order are approved.' : 'Delivery in 7 to 21 working days. Freight is confirmed once the exact delivery location and order are approved.';
-  const quotationCommitment = options.suppressCommitmentCopy ? 'Submit the exact configuration for an itemised quotation.' : 'Submit the exact configuration for a fixed, itemised quotation within 48 hours.';
+  const quotationCommitment = options.suppressCommitmentCopy ? 'Submit the exact configuration for an itemised quotation.' : 'Submit the exact configuration for an itemised quotation. Custom quote target: 48 business hours.';
   const freightControls = options.quoteFreightOutsideFreeZones
     ? '<p>Delivery is free within Bangalore city and Delhi NCR. Freight for every other destination is quoted separately.</p>'
     : `<label>Road distance in km<input type="number" inputmode="numeric" min="0" max="5000" step="1" name="distanceKm" value="${config.distanceKm}"></label><details class="freight-ladder"><summary>See the full distance ladder</summary>${renderFreightTable()}</details>`;
@@ -3216,11 +3217,11 @@ export function renderCabinCalculatorSSR(options: RenderCalculatorOptions = {}):
     ? `<small data-general-estimate-disclosure>${esc(GENERAL_ESTIMATE_DISCLOSURE)}</small>`
     : '';
   const summaryIncl = estimate.quoteOnly
-    ? (options.suppressCommitmentCopy ? 'Confirmed in quotation' : 'Fixed quotation within 48 hours')
+    ? (options.suppressCommitmentCopy ? 'Confirmed in quotation' : 'Custom quote target: 48 business hours')
     : `${money(estimate.totalInclGst)} incl. GST`;
   const printFooter = options.suppressCommitmentCopy
     ? `Indicative estimate ${esc(reference)} · ${esc(date)} · Itemised quotation confirmed after submission.`
-    : `Indicative estimate ${esc(reference)} · ${esc(date)} · Fixed, itemised quotation within 48 hours of submission.`;
+    : `Indicative estimate ${esc(reference)} · ${esc(date)} · Custom quote target: 48 business hours after submission.`;
   const noscriptContent = options.quoteFreightOutsideFreeZones
     ? '<noscript><section class="noscript-content"><h2>Complete published pricing and enquiry</h2><p>All calculator steps, options, published prices, approved delivery-zone terms and the working quotation form are shown above. Use the native controls and submit the form to request your quotation.</p></section></noscript>'
     : '<noscript><section class="noscript-content"><h2>Complete published pricing and enquiry</h2><p>All calculator steps, options, published prices, freight rates and the working quotation form are shown above. Use the native controls and submit the form to request your quotation.</p></section></noscript>';

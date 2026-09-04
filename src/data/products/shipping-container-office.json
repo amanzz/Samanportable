@@ -7,7 +7,6 @@
   "productName": "Shipping Container Office Built on a Reinforced Steel Shell",
   "categoryLabel": "Container Offices",
   "categoryHref": "/product/container-offices",
-  "productSku": "SP-CO-01-SCO",
   "pricePerSqft": {
     "20x8": "1980",
     "20x10": "1800",
@@ -35,7 +34,6 @@
       "priceInclGst": 373824,
       "capacity": "See approved GA drawing",
       "useCase": "Shipping container office",
-      "sku": "SP-CO-01-SCO",
       "images": [
         {
           "src": "/images/products/shipping-container-office/size-20x8/01-shipping-container-office-front-exterior.png",
@@ -74,7 +72,10 @@
           "height": 1254
         }
       ],
-      "shortDescription": "The narrowest approved shell suits a gate office, a stores desk or a two-shift site cabin. Its general arrangement puts all three workstations on the rear long wall. The front wall stays clear apart from the entrance, so nobody works with their back to the door. Six windows light the room: two on each long wall and one centred on each 8 ft end. At 8 ft wide the aisle is tight, so we keep both end walls free of furniture."
+      "shortDescription": "The narrowest approved shell suits a gate office, a stores desk or a two-shift site cabin. Its general arrangement puts all three workstations on the rear long wall. The front wall stays clear apart from the entrance, so nobody works with their back to the door. Six windows light the room: two on each long wall and one centred on each 8 ft end. At 8 ft wide the aisle is tight, so we keep both end walls free of furniture.",
+      "build": "converted-iso",
+      "buildLabel": "Converted ISO shipping container — used donor",
+      "availability": "in-stock"
     },
     {
       "sizeSlug": "20x10",
@@ -85,7 +86,6 @@
       "priceInclGst": 424800,
       "capacity": "See approved GA drawing",
       "useCase": "Shipping container office",
-      "sku": "SP-CO-01-SCO",
       "images": [
         {
           "src": "/images/products/shipping-container-office/size-20x10/01-shipping-container-office-front-exterior.png",
@@ -124,7 +124,10 @@
           "height": 1254
         }
       ],
-      "shortDescription": "This is the reference size, and the rate card is anchored here at Rs 1,800 per sq ft. Two extra feet of width change the room completely. Now five people work in it: three along the rear wall and two either side of the door. A clear aisle runs down the middle, so a chair can push back without blocking traffic. Most first-time buyers order this size, then scale up or down from its drawing. Six windows and one door keep the opening count identical to the 20 x 8 ft plan."
+      "shortDescription": "This is the reference size, and the rate card is anchored here at Rs 1,800 per sq ft. Two extra feet of width change the room completely. Now five people work in it: three along the rear wall and two either side of the door. A clear aisle runs down the middle, so a chair can push back without blocking traffic. Most first-time buyers order this size, then scale up or down from its drawing. Six windows and one door keep the opening count identical to the 20 x 8 ft plan.",
+      "build": "fabricated-ms",
+      "buildLabel": "Newly fabricated MS",
+      "availability": "in-stock"
     },
     {
       "sizeSlug": "20x12",
@@ -135,7 +138,6 @@
       "priceInclGst": 489370,
       "capacity": "See approved GA drawing",
       "useCase": "Shipping container office",
-      "sku": "SP-CO-01-SCO",
       "images": [
         {
           "src": "/images/products/shipping-container-office/size-20x12/01-shipping-container-office-front-exterior.png",
@@ -174,7 +176,10 @@
           "height": 1254
         }
       ],
-      "shortDescription": "The 12 ft shell is the 20 x 10 drawing widened by one foot on each long wall. Nothing else moves. The door keeps its position, the six windows keep theirs, and the desk count stays at five. Every added inch becomes floor. Choose it when a survey table, a plan chest or a visitor chair must sit clear of the working aisle. Because the width grows and the seat count does not, the price per seat rises."
+      "shortDescription": "The 12 ft shell is the 20 x 10 drawing widened by one foot on each long wall. Nothing else moves. The door keeps its position, the six windows keep theirs, and the desk count stays at five. Every added inch becomes floor. Choose it when a survey table, a plan chest or a visitor chair must sit clear of the working aisle. Because the width grows and the seat count does not, the price per seat rises.",
+      "build": "fabricated-ms",
+      "buildLabel": "Newly fabricated MS",
+      "availability": "in-stock"
     },
     {
       "sizeSlug": "30x10",
@@ -185,7 +190,6 @@
       "priceInclGst": 611712,
       "capacity": "See approved GA drawing",
       "useCase": "Shipping container office",
-      "sku": "SP-CO-01-SCO",
       "images": [
         {
           "src": "/images/products/shipping-container-office/size-30x10/01-shipping-container-office-front-exterior.png",
@@ -224,7 +228,10 @@
           "height": 1254
         }
       ],
-      "shortDescription": "Thirty feet is where a site office becomes a team room. Twelve workstations line the two long walls, seven at the back and five at the front. Two doors sit near the ends of the front wall, so a crew can enter one end while a meeting runs at the other. Eight windows keep the middle of a 30 ft box from going dark. The centre bay between the two window pairs stays solid, which is where we run services."
+      "shortDescription": "Thirty feet is where a site office becomes a team room. Twelve workstations line the two long walls, seven at the back and five at the front. Two doors sit near the ends of the front wall, so a crew can enter one end while a meeting runs at the other. Eight windows keep the middle of a 30 ft box from going dark. The centre bay between the two window pairs stays solid, which is where we run services.",
+      "build": "fabricated-ms",
+      "buildLabel": "Newly fabricated MS",
+      "availability": "in-stock"
     },
     {
       "sizeSlug": "40x8",
@@ -235,7 +242,6 @@
       "priceInclGst": 645696,
       "capacity": "See approved GA drawing",
       "useCase": "Shipping container office",
-      "sku": "SP-CO-01-SCO",
       "images": [
         {
           "src": "/images/products/shipping-container-office/size-40x8/01-shipping-container-office-front-exterior.png",
@@ -274,7 +280,10 @@
           "height": 1254
         }
       ],
-      "shortDescription": "The first ten feet at one end become a private manager cabin, and the remaining thirty stay open. A partition with a single 3 x 7 ft internal door separates them. The manager has no outside door of their own. Visitors come through the common office, which is exactly how a site supervisor wants it. At 8 ft wide the common run carries seven desks on one wall only, and the front wall stays clear. Ten seats sit down in total once you count the manager and two visitors."
+      "shortDescription": "The first ten feet at one end become a private manager cabin, and the remaining thirty stay open. A partition with a single 3 x 7 ft internal door separates them. The manager has no outside door of their own. Visitors come through the common office, which is exactly how a site supervisor wants it. At 8 ft wide the common run carries seven desks on one wall only, and the front wall stays clear. Ten seats sit down in total once you count the manager and two visitors.",
+      "build": "converted-iso",
+      "buildLabel": "Converted ISO shipping container — used donor",
+      "availability": "in-stock"
     },
     {
       "sizeSlug": "40x10",
@@ -285,7 +294,6 @@
       "priceInclGst": 807120,
       "capacity": "See approved GA drawing",
       "useCase": "Shipping container office",
-      "sku": "SP-CO-01-SCO",
       "images": [
         {
           "src": "/images/products/shipping-container-office/size-40x10/01-shipping-container-office-front-exterior.png",
@@ -324,12 +332,16 @@
           "height": 1254
         }
       ],
-      "shortDescription": "The largest approved shell gives the manager a true 10 x 10 ft room with three outside windows. Behind the partition, twelve workstations fill the 30 ft common office, seven at the rear and five at the front. Fifteen people can sit down at once, counting the manager and two visitor chairs. Two external doors serve the common office at either end. Order this size when one shell must hold a whole project team."
+      "shortDescription": "The largest approved shell gives the manager a true 10 x 10 ft room with three outside windows. Behind the partition, twelve workstations fill the 30 ft common office, seven at the rear and five at the front. Fifteen people can sit down at once, counting the manager and two visitor chairs. Two external doors serve the common office at either end. Order this size when one shell must hold a whole project team.",
+      "build": "fabricated-ms",
+      "buildLabel": "Newly fabricated MS",
+      "availability": "in-stock"
     }
   ],
   "h1": "Shipping Container Office Built on a Reinforced Steel Shell",
   "seoTitle": "Shipping Container Office Price, Six Approved Sizes | SAMAN",
   "specPdfButtonLabel": "Download the technical specification and all six GA drawings (PDF)",
   "priceCaption": "Ex-GST starting price. GST at 18% extra.",
-  "suppressLegacyFaqSchema": true
+  "suppressLegacyFaqSchema": true,
+  "suppressLegacySku": true
 }

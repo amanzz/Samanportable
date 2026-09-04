@@ -79,11 +79,11 @@
       "lowPrice": "471200",
       "highPrice": "3571200",
       "offerCount": 6,
+      "availability": "https://schema.org/InStock",
       "offers": [
         {
           "@type": "Offer",
           "name": "20 x 8 ft G+1",
-          "sku": "MSCO-20X08-G1-OPEN-V1",
           "url": "https://www.samanportable.com/product/container-offices/multi-story-container-office#size-20x8",
           "priceCurrency": "INR",
           "price": "471200",
@@ -98,7 +98,6 @@
         {
           "@type": "Offer",
           "name": "20 x 16 ft G+1",
-          "sku": "MSCO-20X16-G1-SERVICE-V1",
           "url": "https://www.samanportable.com/product/container-offices/multi-story-container-office#size-20x16",
           "priceCurrency": "INR",
           "price": "912640",
@@ -113,7 +112,6 @@
         {
           "@type": "Offer",
           "name": "40 x 8 ft G+1",
-          "sku": "MSCO-40X08-G1-MANAGER-V1",
           "url": "https://www.samanportable.com/product/container-offices/multi-story-container-office#size-40x8",
           "priceCurrency": "INR",
           "price": "912640",
@@ -128,7 +126,6 @@
         {
           "@type": "Offer",
           "name": "40 x 16 ft G+1",
-          "sku": "MSCO-40X16-G1-CORPORATE-V1",
           "url": "https://www.samanportable.com/product/container-offices/multi-story-container-office#size-40x16",
           "priceCurrency": "INR",
           "price": "1785600",
@@ -143,7 +140,6 @@
         {
           "@type": "Offer",
           "name": "40 x 24 ft G+1",
-          "sku": "MSCO-40X24-G1-CORPORATE-V1",
           "url": "https://www.samanportable.com/product/container-offices/multi-story-container-office#size-40x24",
           "priceCurrency": "INR",
           "price": "2678400",
@@ -158,7 +154,6 @@
         {
           "@type": "Offer",
           "name": "40 x 32 ft G+1",
-          "sku": "MSCO-40X32-G1-CORPORATE-V1",
           "url": "https://www.samanportable.com/product/container-offices/multi-story-container-office#size-40x32",
           "priceCurrency": "INR",
           "price": "3571200",
@@ -182,13 +177,27 @@
       "areaSqft": 320,
       "priceExGst": 471200,
       "priceInclGst": 556016,
-      "sku": "MSCO-20X08-G1-OPEN-V1",
       "featureCells": [
-        { "label": "Size", "value": "20 x 8 ft per floor, G+1" },
-        { "label": "Gross floor area", "value": "320 sq ft over two levels" },
-        { "label": "Price from", "value": "Rs 4,71,200 ex GST" },
-        { "label": "Workstations", "value": "6 across both floors" },
-        { "label": "Upper floor access", "value": "Wall A deck, external stair at the End D corner" }
+        {
+          "label": "Size",
+          "value": "20 x 8 ft per floor, G+1"
+        },
+        {
+          "label": "Gross floor area",
+          "value": "320 sq ft over two levels"
+        },
+        {
+          "label": "Price from",
+          "value": "Rs 4,71,200 ex GST"
+        },
+        {
+          "label": "Workstations",
+          "value": "6 across both floors"
+        },
+        {
+          "label": "Upper floor access",
+          "value": "Wall A deck, external stair at the End D corner"
+        }
       ],
       "images": [
         {
@@ -233,7 +242,8 @@
           "width": 1254,
           "height": 1254
         }
-      ]
+      ],
+      "availability": "in-stock"
     },
     {
       "sizeSlug": "20x16",
@@ -242,13 +252,27 @@
       "areaSqft": 640,
       "priceExGst": 912640,
       "priceInclGst": 1076915,
-      "sku": "MSCO-20X16-G1-SERVICE-V1",
       "featureCells": [
-        { "label": "Size", "value": "20 x 16 ft per floor, G+1" },
-        { "label": "Gross floor area", "value": "640 sq ft over two levels" },
-        { "label": "Price from", "value": "Rs 9,12,640 ex GST" },
-        { "label": "Workstations", "value": "8 across both floors" },
-        { "label": "Upper floor access", "value": "Wall A deck, external stair at the End D corner" }
+        {
+          "label": "Size",
+          "value": "20 x 16 ft per floor, G+1"
+        },
+        {
+          "label": "Gross floor area",
+          "value": "640 sq ft over two levels"
+        },
+        {
+          "label": "Price from",
+          "value": "Rs 9,12,640 ex GST"
+        },
+        {
+          "label": "Workstations",
+          "value": "8 across both floors"
+        },
+        {
+          "label": "Upper floor access",
+          "value": "Wall A deck, external stair at the End D corner"
+        }
       ],
       "images": [
         {
@@ -293,7 +317,8 @@
           "width": 1254,
           "height": 1254
         }
-      ]
+      ],
+      "availability": "in-stock"
     },
     {
       "sizeSlug": "40x8",
@@ -302,13 +327,27 @@
       "areaSqft": 640,
       "priceExGst": 912640,
       "priceInclGst": 1076915,
-      "sku": "MSCO-40X08-G1-MANAGER-V1",
       "featureCells": [
-        { "label": "Size", "value": "40 x 8 ft per floor, G+1" },
-        { "label": "Gross floor area", "value": "640 sq ft over two levels" },
-        { "label": "Price from", "value": "Rs 9,12,640 ex GST" },
-        { "label": "Workstations", "value": "14 across both floors" },
-        { "label": "Upper floor access", "value": "Wall A deck, external stair at the End D corner" }
+        {
+          "label": "Size",
+          "value": "40 x 8 ft per floor, G+1"
+        },
+        {
+          "label": "Gross floor area",
+          "value": "640 sq ft over two levels"
+        },
+        {
+          "label": "Price from",
+          "value": "Rs 9,12,640 ex GST"
+        },
+        {
+          "label": "Workstations",
+          "value": "14 across both floors"
+        },
+        {
+          "label": "Upper floor access",
+          "value": "Wall A deck, external stair at the End D corner"
+        }
       ],
       "images": [
         {
@@ -353,7 +392,8 @@
           "width": 1254,
           "height": 1254
         }
-      ]
+      ],
+      "availability": "in-stock"
     },
     {
       "sizeSlug": "40x16",
@@ -362,13 +402,27 @@
       "areaSqft": 1280,
       "priceExGst": 1785600,
       "priceInclGst": 2107008,
-      "sku": "MSCO-40X16-G1-CORPORATE-V1",
       "featureCells": [
-        { "label": "Size", "value": "40 x 16 ft per floor, G+1" },
-        { "label": "Gross floor area", "value": "1,280 sq ft over two levels" },
-        { "label": "Price from", "value": "Rs 17,85,600 ex GST" },
-        { "label": "Workstations", "value": "14 across both floors" },
-        { "label": "Upper floor access", "value": "Wall A deck, external stair at the End D corner" }
+        {
+          "label": "Size",
+          "value": "40 x 16 ft per floor, G+1"
+        },
+        {
+          "label": "Gross floor area",
+          "value": "1,280 sq ft over two levels"
+        },
+        {
+          "label": "Price from",
+          "value": "Rs 17,85,600 ex GST"
+        },
+        {
+          "label": "Workstations",
+          "value": "14 across both floors"
+        },
+        {
+          "label": "Upper floor access",
+          "value": "Wall A deck, external stair at the End D corner"
+        }
       ],
       "images": [
         {
@@ -413,7 +467,8 @@
           "width": 1254,
           "height": 1254
         }
-      ]
+      ],
+      "availability": "in-stock"
     },
     {
       "sizeSlug": "40x24",
@@ -422,13 +477,27 @@
       "areaSqft": 1920,
       "priceExGst": 2678400,
       "priceInclGst": 3160512,
-      "sku": "MSCO-40X24-G1-CORPORATE-V1",
       "featureCells": [
-        { "label": "Size", "value": "40 x 24 ft per floor, G+1" },
-        { "label": "Gross floor area", "value": "1,920 sq ft over two levels" },
-        { "label": "Price from", "value": "Rs 26,78,400 ex GST" },
-        { "label": "Workstations", "value": "28 across both floors" },
-        { "label": "Upper floor access", "value": "Wall A deck, external stair at the End D corner" }
+        {
+          "label": "Size",
+          "value": "40 x 24 ft per floor, G+1"
+        },
+        {
+          "label": "Gross floor area",
+          "value": "1,920 sq ft over two levels"
+        },
+        {
+          "label": "Price from",
+          "value": "Rs 26,78,400 ex GST"
+        },
+        {
+          "label": "Workstations",
+          "value": "28 across both floors"
+        },
+        {
+          "label": "Upper floor access",
+          "value": "Wall A deck, external stair at the End D corner"
+        }
       ],
       "images": [
         {
@@ -473,7 +542,8 @@
           "width": 1254,
           "height": 1254
         }
-      ]
+      ],
+      "availability": "in-stock"
     },
     {
       "sizeSlug": "40x32",
@@ -482,13 +552,27 @@
       "areaSqft": 2560,
       "priceExGst": 3571200,
       "priceInclGst": 4214016,
-      "sku": "MSCO-40X32-G1-CORPORATE-V1",
       "featureCells": [
-        { "label": "Size", "value": "40 x 32 ft per floor, G+1" },
-        { "label": "Gross floor area", "value": "2,560 sq ft over two levels" },
-        { "label": "Price from", "value": "Rs 35,71,200 ex GST" },
-        { "label": "Workstations", "value": "40 across both floors" },
-        { "label": "Upper floor access", "value": "Wall A deck, external stair at the End D corner" }
+        {
+          "label": "Size",
+          "value": "40 x 32 ft per floor, G+1"
+        },
+        {
+          "label": "Gross floor area",
+          "value": "2,560 sq ft over two levels"
+        },
+        {
+          "label": "Price from",
+          "value": "Rs 35,71,200 ex GST"
+        },
+        {
+          "label": "Workstations",
+          "value": "40 across both floors"
+        },
+        {
+          "label": "Upper floor access",
+          "value": "Wall A deck, external stair at the End D corner"
+        }
       ],
       "images": [
         {
@@ -533,7 +617,9 @@
           "width": 1254,
           "height": 1254
         }
-      ]
+      ],
+      "availability": "in-stock"
     }
-  ]
+  ],
+  "suppressLegacySku": true
 }
