@@ -1,0 +1,437 @@
+{
+  "productSlug": "prefabricated-office-cabins",
+  "productName": "Prefabricated Office Cabins",
+  "variantAxis": "size",
+  "defaultVariant": "20x10",
+  "hsn": "9406",
+  "gstPercent": 18,
+  "applicationsDataset": "prefabricated-office-cabins",
+  "explorerImageTemplate": "/images/products/prefabricated-office-cabins/{sizeSlug}/prefabricated-office-cabin-{sizeSlug}-hero-view.webp",
+  "emitAggregateOffer": true,
+  "variants": [
+    {
+      "sizeSlug": "10x10",
+      "label": "10×10 ft",
+      "dims": "10×10×8.5 ft",
+      "areaSqft": 100,
+      "priceExGst": 145500,
+      "priceInclGst": 171690,
+      "useCase": "Multi-gate campuses",
+      "sku": "SP-PFOC-20-2025",
+      "images": [
+        {
+          "src": "/images/products/prefabricated-office-cabins/10x10/prefabricated-office-cabin-10x10-front-angle.webp",
+          "alt": "Front corner view of the prefabricated office cabin at 10 x 10 ft, the joint lines marking each factory-made section across the 10 ft wall.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefabricated-office-cabins/10x10/prefabricated-office-cabin-10x10-side-elevation.webp",
+          "alt": "Straight side elevation of the prefabricated office cabin, 10 x 10 ft (100 sq ft), a base frame carrying the wall panels above it.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefabricated-office-cabins/10x10/prefabricated-office-cabin-10x10-workspace-interior.webp",
+          "alt": "Inside the prefabricated office cabin, 10 x 10 ft, internal joints on the same grid as the outer face on a 100 sq ft floor.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefabricated-office-cabins/10x10/prefabricated-office-cabin-10x10-entrance-interior.webp",
+          "alt": "Looking in from the doorway of the prefabricated office cabin at 10 x 10 ft, a floor deck spanning between the frame members on a 100 sq ft floor.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefabricated-office-cabins/10x10/prefabricated-office-cabin-10x10-rear-interior.webp",
+          "alt": "Looking back down the prefabricated office cabin, 10 x 10 ft, wall panels bolted back to the structural posts on the smallest plan in the range.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        }
+      ]
+    },
+    {
+      "sizeSlug": "20x8",
+      "label": "20×8 ft",
+      "dims": "20×8×8.5 ft",
+      "areaSqft": 160,
+      "priceExGst": 232800,
+      "priceInclGst": 274704,
+      "useCase": "Metro and rail packages",
+      "sku": "SP-PFOC-20-2025",
+      "images": [
+        {
+          "src": "/images/products/prefabricated-office-cabins/20x8/prefabricated-office-cabin-20x8-front-angle.webp",
+          "alt": "Three-quarter front view of the prefabricated office cabin at 20 x 8 ft, the corner assembly where two panel runs meet along the 20 ft flank.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefabricated-office-cabins/20x8/prefabricated-office-cabin-20x8-side-elevation.webp",
+          "alt": "Flat side view of the prefabricated office cabin, 20 x 8 ft, the roof panel edge seated over the wall head on the narrowest 8 ft body.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefabricated-office-cabins/20x8/prefabricated-office-cabin-20x8-workspace-interior.webp",
+          "alt": "Working area inside the prefabricated office cabin, 20 x 8 ft, ceiling panels laid to the wall module in a bay 8 ft deep.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefabricated-office-cabins/20x8/prefabricated-office-cabin-20x8-entrance-interior.webp",
+          "alt": "Entrance end inside the prefabricated office cabin at 20 x 8 ft, the service run carried along a panel joint in a bay 8 ft deep.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefabricated-office-cabins/20x8/prefabricated-office-cabin-20x8-rear-interior.webp",
+          "alt": "Rear end inside the prefabricated office cabin, 20 x 8 ft, an interior that re-partitions on the module lines on the narrowest 8 ft body.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        }
+      ]
+    },
+    {
+      "sizeSlug": "20x10",
+      "label": "20×10 ft",
+      "dims": "20×10×8.5 ft",
+      "areaSqft": 200,
+      "priceExGst": 264600,
+      "priceInclGst": 312228,
+      "useCase": "Fleet standardisation",
+      "sku": "SP-PFOC-20-2025",
+      "images": [
+        {
+          "src": "/images/products/prefabricated-office-cabins/20x10/prefabricated-office-cabin-20x10-front-angle.webp",
+          "alt": "Angled front view of the prefabricated office cabin at 20 x 10 ft, the joint lines marking each factory-made section over the 20 ft length.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefabricated-office-cabins/20x10/prefabricated-office-cabin-20x10-side-elevation.webp",
+          "alt": "Long flank of the prefabricated office cabin, 20 x 10 ft, a base frame carrying the wall panels above it on a plan twice as long as wide.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefabricated-office-cabins/20x10/prefabricated-office-cabin-20x10-workspace-interior.webp",
+          "alt": "Interior of the prefabricated office cabin, 20 x 10 ft, internal joints on the same grid as the outer face down a 20 ft working run.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefabricated-office-cabins/20x10/prefabricated-office-cabin-20x10-entrance-interior.webp",
+          "alt": "Seen from the door of the prefabricated office cabin at 20 x 10 ft, a floor deck spanning between the frame members down a 20 ft working run.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefabricated-office-cabins/20x10/prefabricated-office-cabin-20x10-rear-interior.webp",
+          "alt": "Seen from the far end of the prefabricated office cabin, 20 x 10 ft, wall panels bolted back to the structural posts on a plan twice as long as wide.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        }
+      ]
+    },
+    {
+      "sizeSlug": "20x12",
+      "label": "20×12 ft",
+      "dims": "20×12×8.5 ft",
+      "areaSqft": 240,
+      "priceExGst": 304800,
+      "priceInclGst": 359664,
+      "useCase": "Programme review offices",
+      "sku": "SP-PFOC-20-2025",
+      "images": [
+        {
+          "src": "/images/products/prefabricated-office-cabins/20x12/prefabricated-office-cabin-20x12-front-angle.webp",
+          "alt": "Front and side together on the prefabricated office cabin at 20 x 12 ft, the corner assembly where two panel runs meet on the 12 ft end wall.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefabricated-office-cabins/20x12/prefabricated-office-cabin-20x12-side-elevation.webp",
+          "alt": "Square-on side view of the prefabricated office cabin, 20 x 12 ft, the roof panel edge seated over the wall head on the wider 12 ft body.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefabricated-office-cabins/20x12/prefabricated-office-cabin-20x12-workspace-interior.webp",
+          "alt": "The desk area within the prefabricated office cabin, 20 x 12 ft, ceiling panels laid to the wall module in a room 12 ft wide.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefabricated-office-cabins/20x12/prefabricated-office-cabin-20x12-entrance-interior.webp",
+          "alt": "The door end within the prefabricated office cabin at 20 x 12 ft, the service run carried along a panel joint in a room 12 ft wide.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefabricated-office-cabins/20x12/prefabricated-office-cabin-20x12-rear-interior.webp",
+          "alt": "Back of the working floor inside the prefabricated office cabin, 20 x 12 ft (240 sq ft), an interior that re-partitions on the module lines.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        }
+      ]
+    },
+    {
+      "sizeSlug": "30x10",
+      "label": "30×10 ft",
+      "dims": "30×10×8.5 ft",
+      "areaSqft": 300,
+      "priceExGst": 381000,
+      "priceInclGst": 449580,
+      "useCase": "Per-site secure stores",
+      "sku": "SP-PFOC-20-2025",
+      "images": [
+        {
+          "src": "/images/products/prefabricated-office-cabins/30x10/prefabricated-office-cabin-30x10-front-angle.webp",
+          "alt": "Front quarter of the prefabricated office cabin at 30 x 10 ft, the corner assembly where two panel runs meet down the 30 ft side.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefabricated-office-cabins/30x10/prefabricated-office-cabin-30x10-side-elevation.webp",
+          "alt": "Profile view of the prefabricated office cabin, 30 x 10 ft, the roof panel edge seated over the wall head on the 30 ft mid-length body.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefabricated-office-cabins/30x10/prefabricated-office-cabin-30x10-workspace-interior.webp",
+          "alt": "Office floor inside the prefabricated office cabin, 30 x 10 ft, ceiling panels laid to the wall module along a 30 ft floor.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefabricated-office-cabins/30x10/prefabricated-office-cabin-30x10-entrance-interior.webp",
+          "alt": "Inside the entrance of the prefabricated office cabin at 30 x 10 ft, the service run carried along a panel joint along a 30 ft floor.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefabricated-office-cabins/30x10/prefabricated-office-cabin-30x10-rear-interior.webp",
+          "alt": "Reverse interior view of the prefabricated office cabin, 30 x 10 ft, an interior that re-partitions on the module lines on the 30 ft mid-length body.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        }
+      ]
+    },
+    {
+      "sizeSlug": "40x8",
+      "label": "40×8 ft",
+      "dims": "40×8×8.5 ft",
+      "areaSqft": 320,
+      "priceExGst": 398080,
+      "priceInclGst": 469734,
+      "useCase": "Alignment work fronts",
+      "sku": "SP-PFOC-20-2025",
+      "images": [
+        {
+          "src": "/images/products/prefabricated-office-cabins/40x8/prefabricated-office-cabin-40x8-front-angle.webp",
+          "alt": "Oblique front view of the prefabricated office cabin at 40 x 8 ft, the joint lines marking each factory-made section along the full 40 ft run.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefabricated-office-cabins/40x8/prefabricated-office-cabin-40x8-side-elevation.webp",
+          "alt": "Lateral elevation of the prefabricated office cabin, 40 x 8 ft, a base frame carrying the wall panels above it on a 40 ft length just 8 ft wide.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefabricated-office-cabins/40x8/prefabricated-office-cabin-40x8-workspace-interior.webp",
+          "alt": "Internal view of the prefabricated office cabin, 40 x 8 ft, internal joints on the same grid as the outer face in a narrow 8 ft span.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefabricated-office-cabins/40x8/prefabricated-office-cabin-40x8-entrance-interior.webp",
+          "alt": "Doorway view into the prefabricated office cabin at 40 x 8 ft, a floor deck spanning between the frame members in a narrow 8 ft span.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefabricated-office-cabins/40x8/prefabricated-office-cabin-40x8-rear-interior.webp",
+          "alt": "Inside the rear of the prefabricated office cabin, 40 x 8 ft, wall panels bolted back to the structural posts on a 40 ft length just 8 ft wide.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        }
+      ]
+    },
+    {
+      "sizeSlug": "40x10",
+      "label": "40×10 ft",
+      "dims": "40×10×8.5 ft",
+      "areaSqft": 400,
+      "priceExGst": 497600,
+      "priceInclGst": 587168,
+      "useCase": "One office per package",
+      "sku": "SP-PFOC-20-2025",
+      "images": [
+        {
+          "src": "/images/products/prefabricated-office-cabins/40x10/prefabricated-office-cabin-40x10-front-angle.webp",
+          "alt": "Front face and flank of the prefabricated office cabin at 40 x 10 ft, the corner assembly where two panel runs meet across the 40 ft elevation.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefabricated-office-cabins/40x10/prefabricated-office-cabin-40x10-side-elevation.webp",
+          "alt": "Broadside view of the prefabricated office cabin, 40 x 10 ft, the roof panel edge seated over the wall head on the usual 10 ft width.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefabricated-office-cabins/40x10/prefabricated-office-cabin-40x10-workspace-interior.webp",
+          "alt": "The working interior of the prefabricated office cabin, 40 x 10 ft, ceiling panels laid to the wall module down a 40 ft floor.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefabricated-office-cabins/40x10/prefabricated-office-cabin-40x10-entrance-interior.webp",
+          "alt": "Entry side inside the prefabricated office cabin at 40 x 10 ft, the service run carried along a panel joint down a 40 ft floor.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefabricated-office-cabins/40x10/prefabricated-office-cabin-40x10-rear-interior.webp",
+          "alt": "Back end within the prefabricated office cabin, 40 x 10 ft, an interior that re-partitions on the module lines on the usual 10 ft width.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        }
+      ]
+    },
+    {
+      "sizeSlug": "20x20",
+      "label": "20×20 ft",
+      "dims": "20×20×8.5 ft",
+      "areaSqft": 400,
+      "priceExGst": 497600,
+      "priceInclGst": 587168,
+      "useCase": "Site induction rooms",
+      "sku": "SP-PFOC-20-2025",
+      "images": [
+        {
+          "src": "/images/products/prefabricated-office-cabins/20x20/prefabricated-office-cabin-20x20-front-angle.webp",
+          "alt": "Corner view of the prefabricated office cabin at 20 x 20 ft, the joint lines marking each factory-made section around the 20 ft square plan.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefabricated-office-cabins/20x20/prefabricated-office-cabin-20x20-side-elevation.webp",
+          "alt": "Side wall of the prefabricated office cabin, 20 x 20 ft, a base frame carrying the wall panels above it with length and width equal.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefabricated-office-cabins/20x20/prefabricated-office-cabin-20x20-workspace-interior.webp",
+          "alt": "Main working space inside the prefabricated office cabin, 20 x 20 ft, internal joints on the same grid as the outer face on a square plan.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefabricated-office-cabins/20x20/prefabricated-office-cabin-20x20-entrance-interior.webp",
+          "alt": "View from the threshold of the prefabricated office cabin at 20 x 20 ft, a floor deck spanning between the frame members on a square plan.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefabricated-office-cabins/20x20/prefabricated-office-cabin-20x20-rear-interior.webp",
+          "alt": "Far wall inside the prefabricated office cabin, 20 x 20 ft, wall panels bolted back to the structural posts with length and width equal.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        }
+      ]
+    },
+    {
+      "sizeSlug": "40x12",
+      "label": "40×12 ft",
+      "dims": "40×12×8.5 ft",
+      "areaSqft": 480,
+      "priceExGst": 584160,
+      "priceInclGst": 689309,
+      "useCase": "Lead-site anchors",
+      "sku": "SP-PFOC-20-2025",
+      "images": [
+        {
+          "src": "/images/products/prefabricated-office-cabins/40x12/prefabricated-office-cabin-40x12-front-angle.webp",
+          "alt": "Diagonal front view of the prefabricated office cabin at 40 x 12 ft, the joint lines marking each factory-made section over the 40 by 12 ft body.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefabricated-office-cabins/40x12/prefabricated-office-cabin-40x12-side-elevation.webp",
+          "alt": "Side face of the prefabricated office cabin, 40 x 12 ft, a base frame carrying the wall panels above it on the largest plan in the range.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefabricated-office-cabins/40x12/prefabricated-office-cabin-40x12-workspace-interior.webp",
+          "alt": "Floor area inside the prefabricated office cabin, 40 x 12 ft, internal joints on the same grid as the outer face across the widest floor in the range.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefabricated-office-cabins/40x12/prefabricated-office-cabin-40x12-entrance-interior.webp",
+          "alt": "From the door, looking into the prefabricated office cabin at 40 x 12 ft, a floor deck spanning between the frame members across the widest floor in the range.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/images/products/prefabricated-office-cabins/40x12/prefabricated-office-cabin-40x12-rear-interior.webp",
+          "alt": "Rear of the interior of the prefabricated office cabin, 40 x 12 ft, wall panels bolted back to the structural posts on the largest plan in the range.",
+          "provenance": "render",
+          "width": 1200,
+          "height": 1200
+        }
+      ]
+    }
+  ],
+  "specPdfHref": "/specs/prefabricated-office-cabins-technical-specification.pdf"
+}

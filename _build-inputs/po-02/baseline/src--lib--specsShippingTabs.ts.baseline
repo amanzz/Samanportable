@@ -28,8 +28,6 @@ import cmoSpecifications from '@/data/products/container-marketing-office-specs.
 import { getEffectiveC01SpecificationEntry } from '@/lib/c01SpecificationOverrides';
 import smallOfficeCabinCopy from '../../content/soc-01/SOC-01-small-office-cabin-copy-v1.json';
 import readymadeOfficeCabinCopy from '../../content/po-01/PO-01-readymade-office-cabin-copy-v1.json';
-import prefabricatedOfficeCabinsCopy from '../../content/po-02/PO-02-prefabricated-office-cabins-copy-v1.json';
-import prefabricatedOfficeCabinsAssets from '../../content/po-02/PO-02-prefabricated-office-cabins-asset-map-v1.json';
 
 // SOC-01 — the two approved coordination diagrams and the v3 technical PDF, at the
 // exact dimensions of the shipped WebP derivatives (never cropped, never upscaled).
@@ -1066,87 +1064,6 @@ function buildReadymadeOfficeCabinSpecificationsHtml(): string {
   return `<div class="not-prose">${narrative}${cards}${diagrams}${pdf}</div>`;
 }
 
-// PO-02 - the two approved technical diagrams and the v1 twelve-page technical PDF, at
-// the exact dimensions of the shipped WebP derivatives (never cropped, never upscaled).
-// The PDF keeps the public path the repo already serves for this page; only the file
-// behind it is replaced.
-const PO02_IMG_ROOT = `/${prefabricatedOfficeCabinsAssets.output_root.replace('public/', '')}`;
-const PO02_SPEC_DIAGRAMS = [
-  {
-    src: `${PO02_IMG_ROOT}/${prefabricatedOfficeCabinsAssets.spec_diagrams['1'].out}`,
-    alt: prefabricatedOfficeCabinsCopy.alt_text.spec_diagram_1,
-    width: 1600,
-    height: 900,
-  },
-  {
-    src: `${PO02_IMG_ROOT}/${prefabricatedOfficeCabinsAssets.spec_diagrams['2'].out}`,
-    alt: prefabricatedOfficeCabinsCopy.alt_text.spec_diagram_2,
-    width: 1600,
-    height: 900,
-  },
-] as const;
-const PO02_SPEC_PDF = {
-  href: '/specs/prefabricated-office-cabins-technical-specification.pdf',
-  label: prefabricatedOfficeCabinsAssets.spec_pdf.link_label,
-} as const;
-
-// PO-02 (4 Sep 2026) - Prefabricated Office Cabins Specifications tab. Groups A-E
-// render as the same premium grouped-table cards the porta-cabins Specs tab uses
-// (identical card chrome, saman-table-wrap / saman-table), generalised only to accept
-// each group's own column count. Every string comes from the signed copy pack; nothing
-// is retyped here. Each group's note renders directly under its own table, then the two
-// diagrams, then the PDF link.
-function buildPrefabricatedOfficeCabinsSpecificationsHtml(): string {
-  const spec = prefabricatedOfficeCabinsCopy.specifications_tab;
-
-  const narrative = spec.narrative
-    .map((p) => `<p class="mb-5 text-sm leading-relaxed text-slate-600">${esc(p)}</p>`)
-    .join('');
-
-  const cards = spec.groups.map((group) => {
-    const head = group.header.map((h) => `<th>${esc(h)}</th>`).join('');
-    const body = group.rows
-      .map((row) => (
-        `<tr>` +
-          row.map((cell, i) => (
-            i === 0
-              ? `<td class="${TD} font-semibold text-slate-700">${esc(cell)}</td>`
-              : `<td class="${TD}">${escBold(cell)}</td>`
-          )).join('') +
-        `</tr>`
-      ))
-      .join('');
-    // An empty note renders nothing at all, never a placeholder line.
-    const note = group.note
-      ? `<p class="px-4 pb-4 pt-3 m-0 text-xs leading-relaxed text-slate-500">${esc(group.note)}</p>`
-      : '';
-    return (
-      `<section class="mb-4 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">` +
-        `<h4 class="m-0 bg-slate-50 px-4 py-3 text-base font-bold text-emerald-900">${esc(group.title)}</h4>` +
-        `<div class="saman-table-wrap"><table class="saman-table"><thead><tr>${head}</tr></thead>` +
-        `<tbody>${body}</tbody></table></div>` +
-        note +
-      `</section>`
-    );
-  }).join('');
-
-  const diagrams = PO02_SPEC_DIAGRAMS
-    .map((d) => (
-      `<figure class="mt-4 m-0 rounded-xl border border-slate-200 bg-white p-5 shadow-sm">` +
-        `<img src="${esc(d.src)}" alt="${esc(d.alt)}" width="${d.width}" height="${d.height}" ` +
-        `loading="lazy" class="w-full h-auto rounded-lg" />` +
-      `</figure>`
-    ))
-    .join('');
-
-  const pdf =
-    `<p class="mt-5 text-sm"><a href="${esc(PO02_SPEC_PDF.href)}" ` +
-    `class="font-semibold text-emerald-800 underline underline-offset-2">` +
-    `${esc(PO02_SPEC_PDF.label)}</a></p>`;
-
-  return `<div class="not-prose">${narrative}${cards}${diagrams}${pdf}</div>`;
-}
-
 /** Both tab bodies for a page slug, or null when the slug is not in scope. */
 export function getProductTabsHtml(
   pageSlug: string | undefined | null
@@ -1288,18 +1205,6 @@ export function getProductTabsHtml(
   if (pageSlug === 'readymade-office-cabin') {
     return {
       specificationsHtml: buildReadymadeOfficeCabinSpecificationsHtml(),
-      shippingHtml: buildShippingHtml(),
-    };
-  }
-  // PO-02 (4 Sep 2026) - Groups A-E from the signed pack; Shipping is the SAME shared
-  // freight component the live porta-cabins page renders (both trailer ladders with
-  // eighteen bands each, both zone city tables, the two free-delivery lines, the ODC
-  // note and the tentative-price disclaimer), called with no options so it stays
-  // byte-identical. A generic "Shipping & Delivery" panel with no figures would be a
-  // regression against the design lock.
-  if (pageSlug === 'prefabricated-office-cabins') {
-    return {
-      specificationsHtml: buildPrefabricatedOfficeCabinsSpecificationsHtml(),
       shippingHtml: buildShippingHtml(),
     };
   }

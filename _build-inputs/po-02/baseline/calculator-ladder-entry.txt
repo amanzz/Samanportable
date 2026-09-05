@@ -1,0 +1,4 @@
+PO-02 calculator ladder entry, baseline at origin/static-migration (6dcb946f)
+
+38:import prefabricatedOfficeCabins from '@/data/products/prefabricated-office-cabins.json';
+229:  'prefabricated-office-cabins': toRows(prefabricatedOfficeCabins),

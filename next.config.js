@@ -1538,9 +1538,13 @@ const nextConfig = {
         destination: 'https://www.samanportable.com/product/container-cafe/container-restaurant',
         permanent: true,
       },
+      // PO-02 (SAMAN ruling, 4 Sep 2026). REPLACED, not stacked: this flat form used
+      // to point at the nested legacy page, which is itself now retired into
+      // Prefabricated Office Cabins. Pointing it straight at the final keeper is what
+      // keeps the chain at one hop.
       {
         source: '/product/saman-prefab-office',
-        destination: 'https://www.samanportable.com/product/prefabricated-houses/saman-prefab-office',
+        destination: 'https://www.samanportable.com/product/portable-office/prefabricated-office-cabins',
         permanent: true,
       },
       // C-05 consolidation, wave 1 (CC-TICKET-C05-CLOSE-OUT, 08 Aug 2026, Part C).
@@ -2065,6 +2069,17 @@ const nextConfig = {
       { source: '/product/portable-office/prefabricated-portable-office-cabin', destination: 'https://www.samanportable.com/product/portable-office/prefabricated-office-cabins', statusCode: 301 },
       { source: '/product/portable-office/ms-portable-office-cabin', destination: 'https://www.samanportable.com/product/porta-cabins/ms-porta-cabin', statusCode: 301 },
       { source: '/product/prefabricated-houses/prefabricated-site-office', destination: 'https://www.samanportable.com/product/prefabricated-houses/prefab-site-office', statusCode: 301 },
+
+      // ─── PO-02 — saman-prefab-office retirement (SAMAN ruling, 4 Sep 2026)
+      // The source holds position 5 in India for "prefabricated office" and 101 GSC
+      // clicks in three months, so the hop must land on the rebuilt Prefabricated
+      // Office Cabins page and nowhere else. This replaces the destination recorded in
+      // SAMAN-105-product-redirect-map-v1.csv, which read /product/portable-office.
+      // Single hop: the flat /product/saman-prefab-office predecessor above was
+      // repointed at the same final keeper in the same change. The product record moves
+      // to wp-export/redirected-products/, which drops it from routing, and its entries
+      // leave sitemapCanonicalPaths.json and unapprovedCommercialGating.json.
+      { source: '/product/prefabricated-houses/saman-prefab-office', destination: 'https://www.samanportable.com/product/portable-office/prefabricated-office-cabins', statusCode: 301 },
 
       /* ------------------------------------------------------------------ *
        * C-05 CONSOLIDATION — nine legacy children into the six winners.

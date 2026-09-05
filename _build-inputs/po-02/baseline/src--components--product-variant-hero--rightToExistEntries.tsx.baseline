@@ -5,7 +5,6 @@ import flatPackContainerOfficeCopy from '../../../content/co-07/CO-07-copy-pack-
 import expandableContainerOfficeCopy from '../../../content/co-08/CO-08-copy-pack-v3.json';
 import smallOfficeCabinCopy from '../../../content/soc-01/SOC-01-small-office-cabin-copy-v1.json';
 import readymadeOfficeCabinCopy from '../../../content/po-01/PO-01-readymade-office-cabin-copy-v1.json';
-import prefabricatedOfficeCabinsCopy from '../../../content/po-02/PO-02-prefabricated-office-cabins-copy-v1.json';
 
 const CABIN_HREF = '/product/porta-cabins';
 const href = (slug: string) => `${CABIN_HREF}/${slug}`;
@@ -1287,60 +1286,18 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
       </>
     ),
   },
-  // PO-02 (4 Sep 2026) - Section 2 rendered verbatim from the signed copy pack
-  // (content/po-02). Nothing is retyped here: heading, both paragraphs, the CTA and
-  // every split-card field are read from the pack. The contextual link is placed
-  // inside paragraph 1 on the approved anchor phrase, and the card CTA targets the
-  // Section 3 explorer anchor. The previous entry is replaced outright - it carried
-  // the bulk-order positioning ("orders of three units and more", tier pricing, one
-  // purchase order) that SAMAN withdrew on 4 September.
   'prefabricated-office-cabins': {
-    heading: prefabricatedOfficeCabinsCopy.section2.h2,
-    bodyParagraphs: [
-      (() => {
-        const { paragraph1, link } = prefabricatedOfficeCabinsCopy.section2;
-        const at = paragraph1.indexOf(link.anchor);
-        if (at < 0) return <>{paragraph1}</>;
-        return (
-          <>
-            {paragraph1.slice(0, at)}
-            <Link className={linkClass} href={link.href}>{link.anchor}</Link>
-            {paragraph1.slice(at + link.anchor.length)}
-          </>
-        );
-      })(),
-      (<>{prefabricatedOfficeCabinsCopy.section2.paragraph2}</>),
-    ],
-    // Paragraph 1 carries an inline link, so the shipped verifier's tag-stripped
-    // comparison gets an exact plain-text mirror (hidden, aria-hidden).
-    verificationText: [prefabricatedOfficeCabinsCopy.section2.paragraph1],
-    topCtaLabel: prefabricatedOfficeCabinsCopy.section2.cta,
-    topCtaHref: '#porta-size-applications',
-    splitCard: {
-      // SAMAN instruction, 5 Sep 2026 (same correction as SOC-01 commit 0c19817d):
-      // this is a marketing slot, so it carries a realistic exterior render, not a
-      // technical drawing. Source is the approved package's native 1920x1080
-      // 03-long-description-images/08-...-10x10-compact-exterior.png, downscaled
-      // proportionally to 1600x900 - already 16:9, so nothing is cropped. It appears
-      // nowhere else on the page (the long-description set is otherwise unused under
-      // the no-images-in-Description ruling). The 20x10 GA board still renders in
-      // Section 3, where a drawing belongs.
-      imageSrc: '/images/products/prefabricated-office-cabins/section2/prefabricated-office-cabins-section2-card.webp',
-      // The pack's alt_text.section2_card describes the GA board and no longer applies
-      // to this image, so this is written to the pack's own alt style and states only
-      // what the render actually shows.
-      imageAlt: 'Slate navy 10×10 ft prefabricated office cabin standing alone in a factory yard, its bolted wall panels meeting in vertical seams, top-corner interface plates and a steel skid base',
-      imageWidth: 1600,
-      imageHeight: 900,
-      subheading: prefabricatedOfficeCabinsCopy.section2.split_card.h3,
-      body: prefabricatedOfficeCabinsCopy.section2.split_card.paragraph1,
-      body2: prefabricatedOfficeCabinsCopy.section2.split_card.paragraph2,
-      ctaLabel: prefabricatedOfficeCabinsCopy.section2.split_card.cta,
-      // The pack names the target as the sizes section; on this route that section's
-      // id is #porta-size-applications (the pack's literal "#sizes" exists only on
-      // the unrelated panel routes). Same target as PO-01 and SOC-01.
-      ctaHref: '#porta-size-applications',
-    },
+    heading: 'Why choose Prefabricated Office Cabins',
+    body: (
+      <>
+        This page exists for orders of three units and more: identical offices fabricated as a batch, priced in tiers, and delivered to one site or ten cities on a single purchase order. Every unit matches the approved drawing, so a multi-site programme gets consistency that one-at-a-time buying cannot deliver. Order one cabin and a sibling page serves you better; order a fleet and this is the page.
+      </>
+    ),
+    comparison: (
+      <>
+        Buying a single office for one site? Start at our portable office range page and pick the size that fits.
+      </>
+    ),
   },
   'portable-office-container': {
     heading: 'Why choose the Portable Office Container',

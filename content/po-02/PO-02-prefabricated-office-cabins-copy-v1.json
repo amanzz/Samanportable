@@ -1,0 +1,1066 @@
+{
+ "page": "prefabricated-office-cabins",
+ "page_id": "PO-02",
+ "ruling_log": [
+  "SAMAN ruled 4 Sep 2026: proceed with the approved v1 assets as supplied; every GA deviation is recorded in the draft's deviation register for a later re-render batch.",
+  "SAMAN ruled 4 Sep 2026: 301 /product/prefabricated-houses/saman-prefab-office to this URL (it holds #5 in India for 'prefabricated office'), replacing the redirect map's destination of /product/portable-office.",
+  "SAMAN ruled 4 Sep 2026: rewrite the page to the bolted-panel-system intent. The live bulk-order positioning, the nine-size ladder and the three unapproved sizes (40x8, 20x20, 40x12) are withdrawn.",
+  "Standing ruling carried from PO-01 and SOC-01: no images in the Description tab."
+ ],
+ "meta": {
+  "title": "Prefabricated Office Cabins: 6 Bolted Sizes, Prices | SAMAN",
+  "h1": "Prefabricated Office Cabins: Six Bolted, Demountable Sizes",
+  "description": "Prefabricated office cabins in six sizes, 10×10 ft to 40×10 ft, ex-GST prices published. Bolted panel modules that dismantle, move and join into bays.",
+  "canonical": "https://www.samanportable.com/product/portable-office/prefabricated-office-cabins",
+  "breadcrumb": [
+   "Home",
+   "Products",
+   "Portable Office Cabin",
+   "Prefabricated Office Cabins"
+  ]
+ },
+ "hero": {
+  "size_selector_label": "Choose your size - six bolted panel modules",
+  "default_size": "20x10",
+  "from_price_ex_gst": 149500,
+  "short_description": "A prefabricated office cabin is an office built as numbered steel panels, bolted together on a module grid rather than welded shut in one piece. Panels arrive on a transport break seam, bolt up at spline joints, and can be unbolted again when the site closes, so the same cabin moves to the next project or joins a neighbour through a site joining strip to form a multi-bay office. It is bought by project buyers, layout planners and installation crews who expect the office to be dismantled, extended or relocated inside its working life. Six approved sizes run from 10×10 ft at 100 sq ft to 40×10 ft at 400 sq ft, each with its own general arrangement drawing, opening schedule and staged desk count, priced ex-GST for the office module framework.",
+  "fixed_cells": {
+   "Material": "MS frame · bolted MS panel shell",
+   "Delivery": "7–21 Working Days",
+   "Coverage": "Bangalore · Delhi NCR",
+   "Brand": "SAMAN Portable"
+  },
+  "variants": [
+   {
+    "slug": "10x10",
+    "label": "10×10 ft",
+    "size_label": "10×10×8.5 ft",
+    "area_sqft": 100,
+    "price_ex_gst": 149500,
+    "price_incl_gst": 176410,
+    "rate_per_sqft": 1495.0,
+    "feature_cells": {
+     "Size": "10×10×8.5 ft · 100 sq ft",
+     "Roof": "Two-way centred ridge",
+     "Openings": "1 door · 3 windows",
+     "Desks staged": "4",
+     "Application": "Compact four-desk office"
+    },
+    "presentation_colour": "slate navy"
+   },
+   {
+    "slug": "20x8",
+    "label": "20×8 ft",
+    "size_label": "20×8×8.5 ft",
+    "area_sqft": 160,
+    "price_ex_gst": 228800,
+    "price_incl_gst": 269984,
+    "rate_per_sqft": 1430.0,
+    "feature_cells": {
+     "Size": "20×8×8.5 ft · 160 sq ft",
+     "Roof": "One-way slope",
+     "Openings": "1 door · 6 windows",
+     "Desks staged": "3",
+     "Application": "Open office on narrow ground"
+    },
+    "presentation_colour": "premium taupe"
+   },
+   {
+    "slug": "20x10",
+    "label": "20×10 ft",
+    "size_label": "20×10×8.5 ft",
+    "area_sqft": 200,
+    "price_ex_gst": 260000,
+    "price_incl_gst": 306800,
+    "rate_per_sqft": 1300.0,
+    "feature_cells": {
+     "Size": "20×10×8.5 ft · 200 sq ft",
+     "Roof": "Two-way centred ridge",
+     "Openings": "1 door · 6 windows",
+     "Desks staged": "5 + manager",
+     "Application": "Manager room plus five-desk team"
+    },
+    "presentation_colour": "deep bottle green"
+   },
+   {
+    "slug": "20x12",
+    "label": "20×12 ft",
+    "size_label": "20×12×8.5 ft",
+    "area_sqft": 240,
+    "price_ex_gst": 299520,
+    "price_incl_gst": 353434,
+    "rate_per_sqft": 1248.0,
+    "feature_cells": {
+     "Size": "20×12×8.5 ft · 240 sq ft",
+     "Roof": "Two-way centred ridge",
+     "Openings": "1 door · 6 windows",
+     "Desks staged": "5 + manager",
+     "Application": "Widened manager and team office"
+    },
+    "presentation_colour": "burgundy"
+   },
+   {
+    "slug": "30x10",
+    "label": "30×10 ft",
+    "size_label": "30×10×8.5 ft",
+    "area_sqft": 300,
+    "price_ex_gst": 374400,
+    "price_incl_gst": 441792,
+    "rate_per_sqft": 1248.0,
+    "feature_cells": {
+     "Size": "30×10×8.5 ft · 300 sq ft",
+     "Roof": "Two-way centred ridge",
+     "Openings": "2 doors · 8 windows",
+     "Desks staged": "12",
+     "Application": "Maximum-capacity open office"
+    },
+    "presentation_colour": "blue-grey"
+   },
+   {
+    "slug": "40x10",
+    "label": "40×10 ft",
+    "size_label": "40×10×8.5 ft",
+    "area_sqft": 400,
+    "price_ex_gst": 494000,
+    "price_incl_gst": 582920,
+    "rate_per_sqft": 1235.0,
+    "feature_cells": {
+     "Size": "40×10×8.5 ft · 400 sq ft",
+     "Roof": "Two-way centred ridge",
+     "Openings": "2 doors · 10 windows",
+     "Desks staged": "8 + two managers",
+     "Application": "Twin manager rooms plus common office"
+    },
+    "presentation_colour": "teal"
+   }
+  ]
+ },
+ "explore_range": {
+  "order": [
+   "/product/portable-office",
+   "/product/portable-office/readymade-office-cabin",
+   "/product/portable-office/portable-weighbridge-office",
+   "/product/portable-office/executive-portable-office",
+   "/product/portable-office/portable-mobile-laboratory",
+   "/product/portable-office/construction-site-cabin",
+   "/product/portable-office/portable-control-room",
+   "/product/portable-office/portable-conference-cabin",
+   "/product/portable-office/small-office-cabin"
+  ],
+  "render_only_200": true,
+  "never_list": [
+   "/product/portable-office/modern-office-cabin",
+   "/product/portable-office/portable-office-container",
+   "/product/prefabricated-houses/saman-prefab-office",
+   "/product/portable-office/modular-portable-office-cabin",
+   "/product/portable-office/prefabricated-portable-office-cabin"
+  ]
+ },
+ "section2": {
+  "h2": "Why a Bolted Panel Office Cabin Costs More Than a Welded One",
+  "paragraph1": "Every cabin here is priced from a base rate of ₹1,300 per sq ft at 200 sq ft, against ₹1,250 on the Readymade Office Cabin range for the same six sizes at the same 8.5 ft height. The difference is the joint, not the finish. A readymade cabin is welded into one unit and craned into place whole. A prefabricated office cabin is drawn as a panel module grid: panels numbered, every junction a bolted spline joint, with a transport break seam that lets the shell come apart in planned pieces.",
+  "paragraph2": "That buys a second life. The cabin unbolts when the project closes, stacks flat, and re-erects on a new datum; it widens by adding a bay through the site joining strip instead of buying a second unit; a damaged cassette is a panel swap, not cutting work. Against that, the quoted price covers the module framework only: craneage, site joining, sanitary fit-out and multi-unit integration are quoted separately.",
+  "link": {
+   "anchor": "Readymade Office Cabin range",
+   "href": "/product/portable-office/readymade-office-cabin",
+   "in": "paragraph1"
+  },
+  "cta": "Send your size and site for a fixed quote",
+  "split_card": {
+   "image_slot": "section2_card",
+   "h3": "One module today, a multi-bay office next year",
+   "paragraph1": "The 20×10 ft cabin is drawn around a module grid datum, not a fixed outline. Its corner interface plates and site joining strip repeat on all six sizes, so a second module lands on that datum without re-cutting a shell.",
+   "paragraph2": "That is why every opening is fixed per size and published below. A bay you may join later must know today which wall carries the door and where the partition lands. The GA drawing settles both before production release.",
+   "cta": "Compare the six sizes",
+   "cta_target": "#sizes"
+  }
+ },
+ "section3": {
+  "h2": "Compare the Six Prefabricated Office Cabin Sizes and Prices",
+  "intro": "Six approved sizes, one bolted panel platform, one price rule. Each shows its GA drawing, its opening schedule and its staged desks.",
+  "sizes": [
+   {
+    "slug": "10x10",
+    "h3": "10×10 ft Prefabricated Office Cabin: 100 sq ft, Four Desks",
+    "paragraph": "The smallest module on the panel platform and the only one whose entrance wall carries no glazing at all. Wall A is a door and nothing else, which leaves three solid panel runs a fit-out can use for a board, a switchboard or shelving without working around a window head. Buy it as the repeatable unit: a gate office, a stores office or a supervisor's room that will be unbolted and moved when the phase ends. Four desks are staged in the drawing; the price is for the module framework.",
+    "bullets": [
+     "10×10×8.5 ft, 100 sq ft, ₹1,49,500 ex-GST (₹1,76,410 incl. 18% GST)",
+     "Rate ₹1,495 per sq ft: the 100–149 sq ft band adds 15% to the ₹1,300 base",
+     "1 external door on Wall A at 3.5–6.5 ft; no window on the entrance wall",
+     "3 windows, one each on Wall B, End C and End D, all centred on their wall",
+     "4 desks staged, no partition; centred-ridge roof, 5–6 in rise across 10 ft",
+     "Presentation colours: slate navy outside, champagne cream inside"
+    ],
+    "ga_board_slot": "ga_10x10"
+   },
+   {
+    "slug": "20x8",
+    "h3": "20×8 ft Prefabricated Office Cabin: 160 sq ft on Narrow Ground",
+    "paragraph": "The only one-way roof in the set, and the size to choose when the plot has length but no depth. An 8 ft body clears a narrow gate and sits along a boundary strip where a 10 ft module will not, and the roof sheds across the width in a single plane with no ridge, so the panel run above the eaves stays uninterrupted. Three desks work in a single open bay with the door landing centrally between two window pairs. Nothing is partitioned, so the whole 160 sq ft reads as one room.",
+    "bullets": [
+     "20×8×8.5 ft, 160 sq ft, ₹2,28,800 ex-GST (₹2,69,984 incl. 18% GST)",
+     "Rate ₹1,430 per sq ft: the 150–199 sq ft band adds 10% to the ₹1,300 base",
+     "Wall A from End C: window 1.5–5.5 ft, door 8.5–11.5 ft, window 14.5–18.5 ft",
+     "Wall B carries two windows at 1.5–5.5 ft and 14.5–18.5 ft; both ends centred",
+     "One-way roof, 5–6 in total fall across the 8 ft width, no ridge, no long fall",
+     "3 desks staged, open plan, no partition; premium taupe outside, sage grey inside"
+    ],
+    "ga_board_slot": "ga_20x8"
+   },
+   {
+    "slug": "20x10",
+    "h3": "20×10 ft Prefabricated Office Cabin: Manager Room Plus Five",
+    "paragraph": "The reference module of the platform and the size the base rate is set on. A full-width partition at 11 ft 10 in from End C splits the shell into an 11 ft 10 in team zone and an 8 ft 2 in manager room, with a 2 ft 6 in internal door centred on the aisle so the two zones share one circulation line. Three desks sit along Wall B under a run of three ceiling-fixed cabinet modules and two along Wall A. The manager room takes a desk and two guest chairs and is served by the far window pair.",
+    "bullets": [
+     "20×10×8.5 ft, 200 sq ft, ₹2,60,000 ex-GST (₹3,06,800 incl. 18% GST)",
+     "Rate ₹1,300 per sq ft: this is the 200 sq ft base, no band adjustment applied",
+     "Wall A from End C: window 1.5–5.5 ft, door 8.5–11.5 ft, window 14.5–18.5 ft",
+     "Wall B carries two windows at 1.5–5.5 ft and 14.5–18.5 ft; both ends centred",
+     "Partition P1 at 11 ft 10 in with a 2 ft 6 in centred internal door, no partition glazing",
+     "5 team desks, three on Wall B and two on Wall A, plus manager desk and two guest chairs"
+    ],
+    "ga_board_slot": "ga_20x10"
+   },
+   {
+    "slug": "20x12",
+    "h3": "20×12 ft Prefabricated Office Cabin: the Same Plan, 2 ft Wider",
+    "paragraph": "A deliberate derivative rather than a new plan. It keeps the 20×10 longitudinal ledger unchanged, the same partition at 11 ft 10 in, the same five team desks and the same manager set, and spends the extra two feet entirely on clear width. That produces a continuous 2 ft strip down the length: a chair pushes back from a Wall B desk without blocking the aisle, and two people pass behind a seated colleague. Choose it when the seat count is right but the circulation in a 10 ft body is not.",
+    "bullets": [
+     "20×12×8.5 ft, 240 sq ft, ₹2,99,520 ex-GST (₹3,53,434 incl. 18% GST)",
+     "Rate ₹1,248 per sq ft: the 201–300 sq ft band takes 4% off the ₹1,300 base",
+     "Openings identical to the 20×10 on both long walls; end windows sit in the 4–8 ft span",
+     "Continuous 2 ft clear width strip is the whole difference from the 20×10",
+     "Same ledger: partition at 11 ft 10 in, 5 team desks, manager desk and two guest chairs",
+     "Centred-ridge roof across the 12 ft width; burgundy outside, sand inside"
+    ],
+    "ga_board_slot": "ga_20x12"
+   },
+   {
+    "slug": "30x10",
+    "h3": "30×10 ft Prefabricated Office Cabin: 12 Desks, Two Doors",
+    "paragraph": "The maximum-capacity open plan. Nothing is partitioned across 300 sq ft, so the seat count rises to twelve, seven along Wall B and five along Wall A, and two external doors near the opposite ends give the room two ways out instead of one bottleneck at the middle. Wall B carries four windows to daylight the longer desk run; Wall A takes two, sitting between the doors. Buy it as a drawing office, a billing hall or a survey team room where the whole point is one undivided floor.",
+    "bullets": [
+     "30×10×8.5 ft, 300 sq ft, ₹3,74,400 ex-GST (₹4,41,792 incl. 18% GST)",
+     "Rate ₹1,248 per sq ft: the 201–300 sq ft band takes 4% off the ₹1,300 base",
+     "Wall A from End C: door 1.5–4.5, window 8–12, window 18–22, door 25.5–28.5 ft",
+     "Wall B carries four windows at 1.5–5.5, 8.5–12.5, 17.5–21.5 and 24.5–28.5 ft",
+     "12 desks staged, seven on Wall B and five on Wall A, no partition anywhere",
+     "8 windows and 2 doors in total; blue-grey outside, warm beige inside"
+    ],
+    "ga_board_slot": "ga_30x10"
+   },
+   {
+    "slug": "40x10",
+    "h3": "40×10 ft Prefabricated Office Cabin: Twin Manager Rooms",
+    "paragraph": "The largest module published here, and the only one drawn with two partitions. P1 lands at 8 ft 2 in and P2 at 31 ft 10 in from End C, cutting a manager room off each end and leaving a common office of eight desks between them, five along Wall B and three along Wall A. Each manager room keeps its own window pair and its own internal door near Wall A, so neither manager walks through the other's room. Two external doors serve the common office. It is a package-office plan, not a scaled-up 20×10.",
+    "bullets": [
+     "40×10×8.5 ft, 400 sq ft, ₹4,94,000 ex-GST (₹5,82,920 incl. 18% GST)",
+     "Rate ₹1,235 per sq ft: the 301–400 sq ft band takes 5% off the ₹1,300 base",
+     "Two partitions: P1 at 8 ft 2 in, P2 at 31 ft 10 in, internal doors ID1 and ID2 near Wall A",
+     "Wall A: window 2–6, door 9–12, window 16–20, window 22–26, door 28–31, window 34–38 ft",
+     "Wall B carries four windows at 2–6, 14–18, 22–26 and 34–38 ft; both ends centred",
+     "8 common desks plus two manager desks and four guest chairs; teal outside, taupe inside"
+    ],
+    "ga_board_slot": "ga_40x10"
+   }
+  ]
+ },
+ "ymal": {
+  "intro": "Eight more office configurations on the same portable cabin platform.",
+  "cluster": "portable-office",
+  "render_only_200": true
+ },
+ "description_tab": {
+  "intro": "Detailed information about Prefabricated Office Cabins",
+  "sections": [
+   {
+    "h2": "Prefabricated office cabin or prefab office building?",
+    "items": [
+     {
+      "type": "p",
+      "text": "Two quite different things are searched for with the words prefabricated office. The first is a prefabricated office building: a steel-frame structure erected on a foundation, sized in thousands of square feet, competing with conventional construction. The second is a prefabricated office cabin: a finished steel room of 100 to 400 square feet that arrives on a trailer, is set on supports and is working the same day. This page is the second thing only, and every figure below describes a cabin."
+     },
+     {
+      "type": "p",
+      "text": "If a foundation, a design team and a building permit are already part of the plan, the Prefab Buildings and Pre-Engineered Buildings ranges are where that requirement belongs. If the office has to exist on ground that will be handed back, or has to follow a project from one alignment to the next, a cabin is the right instrument and the whole page applies."
+     },
+     {
+      "type": "p",
+      "text": "The word prefabricated does a second job here that portable does not. Every steel cabin SAMAN builds is portable, because it lifts and travels. Only some are prefabricated in the strict sense of being assembled on site from separately manufactured panels. That distinction is the reason this page exists as its own product rather than as a synonym of the Portable Office Cabin hub, and it is what the next section describes."
+     }
+    ]
+   },
+   {
+    "h2": "What makes a cabin prefabricated rather than portable",
+    "items": [
+     {
+      "type": "p",
+      "text": "A readymade office cabin leaves the works as one welded box. The frame is welded, the sheets are fixed to the frame, the interior is finished inside the finished shell, and the unit is craned onto a trailer complete. It is a good product and it is the cheaper of the two, because welding a shell once is less work than detailing a shell that must come apart."
+     },
+     {
+      "type": "p",
+      "text": "A prefabricated office cabin is drawn the other way round. The shell is set out on a module grid datum, and the walls, roof and floor are made as separately numbered panels that meet at bolted spline joints. A transport break seam is drawn where the shell is intended to divide. Corner interface plates locate the panels against each other, and a site joining strip closes the junction between one module and the next."
+     },
+     {
+      "type": "p",
+      "text": "The consequences are practical rather than theoretical. A panel that is bolted can be unbolted, so the cabin can be taken down, stacked flat and re-erected rather than being craned whole down a road that may not take it. A junction that is drawn can be repeated, so a second module can be brought against the first later without cutting either shell. A numbered panel can be replaced, so a wall damaged by a reversing truck is a panel swap and not a fabrication job on a live site."
+     },
+     {
+      "type": "p",
+      "text": "None of that removes the crane from the first delivery. These cabins are still lifted by four corner eye plates, one at each top corner, and still travel on an open trailer. What changes is what happens after the first placement, which is the part of the cost a project buyer usually meets twice."
+     }
+    ]
+   },
+   {
+    "h2": "Prefabricated, readymade or small: which page you need",
+    "items": [
+     {
+      "type": "p",
+      "text": "SAMAN publishes three office cabin pages that a buyer can reasonably confuse, and the six sizes on this page appear on two of them. The difference is not the size ladder; it is the construction and the price rule."
+     },
+     {
+      "type": "p",
+      "text": "The Readymade Office Cabin range carries the same six sizes as welded units at a base rate of ₹1,250 per sq ft at 200 sq ft. Buy from that page when the office is going to one place and staying there, when the budget matters more than the second move, and when nobody expects to add a bay."
+     },
+     {
+      "type": "p",
+      "text": "This page carries the same six sizes as bolted panel modules at ₹1,300 per sq ft at 200 sq ft, roughly four per cent more. Buy from this page when the office is expected to be dismantled, relocated or extended, when the site has an access route that argues for delivering a shell in pieces, or when a multi-bay run is already on the drawing board."
+     },
+     {
+      "type": "p",
+      "text": "The Small Office Cabin page is a different question again. It starts at 8×6 ft and 48 square feet and covers the one-person and two-person rooms this page does not publish at all. If the whole requirement is a gate clerk or a single supervisor, that page is cheaper and better fitted. This page starts at 100 square feet because a panel module below that size costs more to detail than it saves."
+     },
+     {
+      "type": "p",
+      "text": "Container Offices sit outside all three. A container office is built from or like an ISO shipping container, with corner castings and a container frame. Nothing on this page is a container: the base is a plain steel skid and the corner fitting is a compact one-hole lifting eye plate. If a container shell is what is wanted, the Container Offices range is the right cluster."
+     }
+    ]
+   },
+   {
+    "h2": "How to choose between 100 and 400 square feet",
+    "items": [
+     {
+      "type": "p",
+      "text": "Start from the number of people who sit inside on an ordinary working day, then check what the plot allows, then read the opening schedule to confirm the walls suit the fit-out."
+     },
+     {
+      "type": "p",
+      "text": "One to four people at fixed desks fit the 10×10 ft at 100 square feet. Three people on ground that is long and narrow fit the 20×8 ft, which is the only 8 ft body on the page and the only one-way roof. A team of five with a manager who needs a door takes the 20×10 ft, and the 20×12 ft is the same plan for the same team where the circulation in a 10 ft body is too tight. Twelve people in one undivided room take the 30×10 ft. Eight people plus two managers who each need their own room take the 40×10 ft."
+     },
+     {
+      "type": "p",
+      "text": "The opening schedule matters more than it looks. The 10×10 ft is the only size whose entrance wall carries no window at all, which makes it the easiest size to line with boards, racking or a switchboard. Every other size puts a window either side of the door on the entrance wall, which is better for daylight and worse for wall-mounted equipment. The two largest sizes carry two external doors rather than one, which is what allows a twelve-desk room and a package office to be evacuated sensibly."
+     },
+     {
+      "type": "p",
+      "text": "The table below is every published size with the facts that decide between them. Prices are ex-GST for the module framework; the GST-inclusive figure for each size is shown on the size selector above."
+     },
+     {
+      "type": "table",
+      "header": [
+       "Size (ft)",
+       "Area (sq ft)",
+       "Roof",
+       "Doors",
+       "Windows",
+       "Desks staged",
+       "Partitions",
+       "Price ex-GST"
+      ],
+      "rows": [
+       [
+        "10×10×8.5 ft",
+        "100",
+        "Two-way centred ridge",
+        "1",
+        "3",
+        "4",
+        "None",
+        "₹1,49,500"
+       ],
+       [
+        "20×8×8.5 ft",
+        "160",
+        "One-way slope",
+        "1",
+        "6",
+        "3",
+        "None",
+        "₹2,28,800"
+       ],
+       [
+        "20×10×8.5 ft",
+        "200",
+        "Two-way centred ridge",
+        "1",
+        "6",
+        "5 + manager",
+        "1",
+        "₹2,60,000"
+       ],
+       [
+        "20×12×8.5 ft",
+        "240",
+        "Two-way centred ridge",
+        "1",
+        "6",
+        "5 + manager",
+        "1",
+        "₹2,99,520"
+       ],
+       [
+        "30×10×8.5 ft",
+        "300",
+        "Two-way centred ridge",
+        "2",
+        "8",
+        "12",
+        "None",
+        "₹3,74,400"
+       ],
+       [
+        "40×10×8.5 ft",
+        "400",
+        "Two-way centred ridge",
+        "2",
+        "10",
+        "8 + two managers",
+        "2",
+        "₹4,94,000"
+       ]
+      ],
+      "note": "Prices are ex-GST for the office module framework. GST at 18% is shown per size on the selector above."
+     }
+    ]
+   },
+   {
+    "h2": "What the bolted joint changes on your site",
+    "items": [
+     {
+      "type": "p",
+      "text": "Four details on the general arrangement drawings are what a site actually handles, and each of them is drawn before production rather than resolved on site."
+     },
+     {
+      "type": "p",
+      "text": "The module grid datum is the line everything else is measured from. It is why a second module can be set against the first years later and still meet it squarely, and it is why the opening positions on this page are published as coordinates from End C rather than as a description."
+     },
+     {
+      "type": "p",
+      "text": "The bolted spline joint is the junction between two panels. It is designed to be opened, which is a different requirement from a joint that only has to be closed once, and it is the reason the panel schedule and the panel numbering exist as a document handed over with the cabin."
+     },
+     {
+      "type": "p",
+      "text": "The transport break seam is where the shell is intended to divide for a road move. Knowing where it is before the first delivery is what turns a second move from an improvisation into a planned operation."
+     },
+     {
+      "type": "p",
+      "text": "The site joining strip closes the gap when two modules stand side by side. It is the same detail on all six sizes, which is the whole reason a 20×10 ft office bought this year can grow into a two-bay office next year rather than being replaced."
+     },
+     {
+      "type": "bullet",
+      "items": [
+       "Module grid datum: every opening on this page is dimensioned from End C, so a later bay meets the first squarely",
+       "Bolted spline joint: panel junctions are designed to be opened, not only closed once",
+       "Transport break seam: the shell divides where the drawing says, so a second move is planned rather than improvised",
+       "Site joining strip: the same junction detail on all six sizes, which is what lets one module become two bays",
+       "Corner interface plates and panel numbering: a damaged wall is a panel swap, not fabrication on a live site"
+      ]
+     }
+    ]
+   },
+   {
+    "h2": "Roof, lifting and transport across the six sizes",
+    "items": [
+     {
+      "type": "p",
+      "text": "Five of the six sizes carry a centred ridge running the full length of the cabin, with two planes falling across the width and a ridge rise of only five to six inches above each eave. The roof reads almost level and is drawn that way deliberately: a shallow fall keeps the transport height down and keeps the panel run above the eaves uninterrupted, which matters on a shell that is meant to come apart."
+     },
+     {
+      "type": "p",
+      "text": "The 20×8 ft is the exception. Its roof is a single one-way plane falling across the 8 ft width with the same five to six inches of total fall, no ridge, and straight eaves on both long walls. On a body only eight feet wide a ridge would buy nothing and would complicate the panel run."
+     },
+     {
+      "type": "p",
+      "text": "Lifting is identical across all six. Four compact one-hole eye plates sit at the four top corners, H1 to H4, and nowhere else. There is no mid-span hook and no ridge hook, and there are no ISO corner castings, because these are not container-derived units. Every size is 8.5 ft nominal in height, which is what keeps the loaded trailer inside normal road clearances."
+     }
+    ]
+   },
+   {
+    "h2": "What the price covers and what is quoted separately",
+    "items": [
+     {
+      "type": "p",
+      "text": "The published price is the office module framework in the approved size, with its drawn openings, its internal finish and its electrical provision as scheduled on the general arrangement drawing. It is quoted ex-GST; 18 per cent GST is added at invoice and both figures are shown on the size selector."
+     },
+     {
+      "type": "p",
+      "text": "The price rule is arithmetic, not negotiation. A base rate of ₹1,300 per square foot applies at 200 square feet. Below that, smaller areas carry a band uplift because the fixed content of a cabin does not shrink with its floor: 100 to 149 square feet adds 15 per cent, 150 to 199 adds 10 per cent. Above 200, larger areas take a band reduction: 201 to 300 takes 4 per cent off, 301 to 400 takes 5 per cent off. That is where each of the six rates on this page comes from and it can be checked against the area in the table above."
+     },
+     {
+      "type": "p",
+      "text": "What is not in the price is stated rather than implied. Craneage and offloading at your site, joining two or more modules together, any sanitary or plumbing fit-out, special performance evidence such as certified test data for a particular exposure, and multi-unit integration works are quotation items. Site preparation, the supporting pad and the incoming electrical supply are the buyer's scope."
+     },
+     {
+      "type": "p",
+      "text": "Warranty period and exclusions are confirmed in the final quotation for your order. The general arrangement drawings on this page are buyer-facing control drawings and are marked not for fabrication: approved shop drawings, project engineering, the final load schedule and the signed quotation govern what is built."
+     }
+    ]
+   },
+   {
+    "h2": "Frequently asked questions about prefab office cabins",
+    "items": [
+     {
+      "type": "faq",
+      "q": "What is a prefabricated office cabin?",
+      "a": "A steel office room made as numbered panels that bolt together on a module grid, rather than being welded into one box. It arrives on a trailer, is lifted by four corner eye plates and can be unbolted and re-erected on another site."
+     },
+     {
+      "type": "faq",
+      "q": "What is the price of a prefabricated office cabin in India?",
+      "a": "SAMAN publishes six sizes ex-GST: 10×10 ft at ₹1,49,500, 20×8 ft at ₹2,28,800, 20×10 ft at ₹2,60,000, 20×12 ft at ₹2,99,520, 30×10 ft at ₹3,74,400 and 40×10 ft at ₹4,94,000. GST at 18% is added at invoice."
+     },
+     {
+      "type": "faq",
+      "q": "What sizes do prefabricated office cabins come in?",
+      "a": "Six approved sizes from 100 to 400 square feet: 10×10, 20×8, 20×10, 20×12, 30×10 and 40×10 ft, all 8.5 ft nominal in height. Each has its own general arrangement drawing, opening schedule and staged desk count."
+     },
+     {
+      "type": "faq",
+      "q": "What is the difference between prefabricated and readymade office cabins?",
+      "a": "A readymade cabin is welded into one finished unit and costs less. A prefabricated cabin is bolted from numbered panels, so it can be dismantled, moved and joined to a second module later. The bolted version is priced about four per cent higher."
+     },
+     {
+      "type": "faq",
+      "q": "Can a prefabricated office cabin be dismantled and moved?",
+      "a": "Yes. The panels meet at bolted spline joints and the shell divides at a drawn transport break seam, so the cabin can be taken down, stacked flat and re-erected on a new datum. Craneage and site joining for the move are quoted separately."
+     },
+     {
+      "type": "faq",
+      "q": "Can two prefabricated office cabins be joined together?",
+      "a": "Yes. All six sizes carry the same corner interface plates and site joining strip, so a second module can be brought against the first and closed at the junction. Multi-unit integration is a quotation item, not part of the published price."
+     },
+     {
+      "type": "faq",
+      "q": "Is a prefabricated office cabin the same as a container office?",
+      "a": "No. A container office is built from or like an ISO shipping container with corner castings. These cabins sit on a plain steel skid and use compact one-hole lifting eye plates. Container-derived offices are on the Container Offices pages."
+     },
+     {
+      "type": "faq",
+      "q": "What is not included in the published cabin price?",
+      "a": "Craneage and offloading, joining modules together, sanitary or plumbing fit-out, special performance evidence and multi-unit integration are quotation items. Site preparation, the supporting pad and the incoming electrical supply are the buyer's scope."
+     }
+    ]
+   }
+  ]
+ },
+ "faq_schema": [
+  {
+   "q": "What is a prefabricated office cabin?",
+   "a": "A steel office room made as numbered panels that bolt together on a module grid, rather than being welded into one box. It arrives on a trailer, is lifted by four corner eye plates and can be unbolted and re-erected on another site."
+  },
+  {
+   "q": "What is the price of a prefabricated office cabin in India?",
+   "a": "SAMAN publishes six sizes ex-GST: 10×10 ft at ₹1,49,500, 20×8 ft at ₹2,28,800, 20×10 ft at ₹2,60,000, 20×12 ft at ₹2,99,520, 30×10 ft at ₹3,74,400 and 40×10 ft at ₹4,94,000. GST at 18% is added at invoice."
+  },
+  {
+   "q": "What sizes do prefabricated office cabins come in?",
+   "a": "Six approved sizes from 100 to 400 square feet: 10×10, 20×8, 20×10, 20×12, 30×10 and 40×10 ft, all 8.5 ft nominal in height. Each has its own general arrangement drawing, opening schedule and staged desk count."
+  },
+  {
+   "q": "What is the difference between prefabricated and readymade office cabins?",
+   "a": "A readymade cabin is welded into one finished unit and costs less. A prefabricated cabin is bolted from numbered panels, so it can be dismantled, moved and joined to a second module later. The bolted version is priced about four per cent higher."
+  },
+  {
+   "q": "Can a prefabricated office cabin be dismantled and moved?",
+   "a": "Yes. The panels meet at bolted spline joints and the shell divides at a drawn transport break seam, so the cabin can be taken down, stacked flat and re-erected on a new datum. Craneage and site joining for the move are quoted separately."
+  },
+  {
+   "q": "Can two prefabricated office cabins be joined together?",
+   "a": "Yes. All six sizes carry the same corner interface plates and site joining strip, so a second module can be brought against the first and closed at the junction. Multi-unit integration is a quotation item, not part of the published price."
+  },
+  {
+   "q": "Is a prefabricated office cabin the same as a container office?",
+   "a": "No. A container office is built from or like an ISO shipping container with corner castings. These cabins sit on a plain steel skid and use compact one-hole lifting eye plates. Container-derived offices are on the Container Offices pages."
+  },
+  {
+   "q": "What is not included in the published cabin price?",
+   "a": "Craneage and offloading, joining modules together, sanitary or plumbing fit-out, special performance evidence and multi-unit integration are quotation items. Site preparation, the supporting pad and the incoming electrical supply are the buyer's scope."
+  }
+ ],
+ "specifications_tab": {
+  "narrative": [
+   "These specifications describe a panelised office module, so they are read in a different order from a welded cabin's. Group B is the one that decides the product: it records the joint, the panel schedule and the lifting arrangement that make the shell demountable. Group C then fixes what those panels contain, size by size, because a panel run cannot be numbered until the openings in it are settled.",
+   "Group A is the commercial ladder and the arithmetic behind it. The rate for any size is the ₹1,300 per sq ft base at 200 sq ft with one band adjustment applied for area, so a rate can be checked rather than taken on trust. Group D is the platform material key shared with every SAMAN cabin family; nothing in it is specific to this page and nothing in it changes because the shell bolts rather than welds.",
+   "Group E is the scope boundary, and on a demountable product it is the group most worth reading before ordering. Joining modules, craning them, and integrating more than one unit are the operations this construction makes possible, and they are quoted separately from the module framework in every case."
+  ],
+  "groups": [
+   {
+    "title": "Group A - Approved sizes, price rule and prices",
+    "header": [
+     "Code",
+     "Size (ft)",
+     "Area (sq ft)",
+     "Band applied",
+     "Rate ₹/sq ft",
+     "Price ex-GST",
+     "Price incl. 18% GST"
+    ],
+    "rows": [
+     [
+      "SZ-01",
+      "10×10×8.5 ft",
+      "100",
+      "100–149 sq ft, +15%",
+      "1,495.00",
+      "₹1,49,500",
+      "₹1,76,410"
+     ],
+     [
+      "SZ-02",
+      "20×8×8.5 ft",
+      "160",
+      "150–199 sq ft, +10%",
+      "1,430.00",
+      "₹2,28,800",
+      "₹2,69,984"
+     ],
+     [
+      "SZ-03",
+      "20×10×8.5 ft",
+      "200",
+      "200 sq ft, base",
+      "1,300.00",
+      "₹2,60,000",
+      "₹3,06,800"
+     ],
+     [
+      "SZ-04",
+      "20×12×8.5 ft",
+      "240",
+      "201–300 sq ft, −4%",
+      "1,248.00",
+      "₹2,99,520",
+      "₹3,53,434"
+     ],
+     [
+      "SZ-05",
+      "30×10×8.5 ft",
+      "300",
+      "201–300 sq ft, −4%",
+      "1,248.00",
+      "₹3,74,400",
+      "₹4,41,792"
+     ],
+     [
+      "SZ-06",
+      "40×10×8.5 ft",
+      "400",
+      "301–400 sq ft, −5%",
+      "1,235.00",
+      "₹4,94,000",
+      "₹5,82,920"
+     ]
+    ],
+    "note": "Base rate ₹1,300 per sq ft at 200 sq ft. Bands: 40–59 +44%, 60–79 +36%, 80–99 +26%, 100–149 +15%, 150–199 +10%, 200 unchanged, 201–300 −4%, 301–400 −5%, 401–500 −6%. Above 900 sq ft is manual quotation and is not sold on this page. Source: approved price dashboard workbook, Price_Dashboard and Scope_And_Assumptions."
+   },
+   {
+    "title": "Group B - Panel system, joints, roof and lifting (specific to this page)",
+    "header": [
+     "Item",
+     "Specification on this page",
+     "Why it is drawn this way"
+    ],
+    "rows": [
+     [
+      "Assembly principle",
+      "Panelised office module set out on a module grid datum; walls, roof and floor made as separately numbered panels",
+      "A numbered panel can be scheduled, replaced and re-erected; a welded shell cannot"
+     ],
+     [
+      "Panel junction",
+      "Bolted spline joint at every panel-to-panel junction",
+      "Designed to be opened, not only closed once, which is what makes the shell demountable"
+     ],
+     [
+      "Transport division",
+      "Transport break seam drawn on the shell before production release",
+      "The shell divides where the drawing says, so a later road move is planned rather than improvised"
+     ],
+     [
+      "Module-to-module",
+      "Corner interface plates plus a site joining strip, identical detail on all six sizes",
+      "One module can be joined to a second later to form a multi-bay office without cutting either shell"
+     ],
+     [
+      "Wall panels",
+      "Demountable wall cassettes, numbered to the panel schedule handed over with the cabin",
+      "A damaged wall is a cassette swap rather than fabrication work on a live site"
+     ],
+     [
+      "Roof, five sizes",
+      "Full-length centred ridge, exactly two planes falling across the width, 5–6 in ridge rise above each eave",
+      "A shallow fall keeps transport height down and leaves the panel run above the eaves uninterrupted"
+     ],
+     [
+      "Roof, 20×8 ft only",
+      "Single one-way plane across the 8 ft width, 5–6 in total fall, no ridge, straight eaves both long walls",
+      "On an 8 ft body a ridge buys nothing and complicates the panel run"
+     ],
+     [
+      "Lifting",
+      "Exactly four compact one-hole eye plates, H1 to H4, at the four top corners only",
+      "No mid-span or ridge hook, and no ISO corner castings: this is not a container-derived unit"
+     ],
+     [
+      "Nominal height",
+      "8.5 ft on all six sizes",
+      "Keeps the loaded open trailer inside normal road clearances"
+     ]
+    ],
+    "note": "Source: approved GA boards and GA opening ledger v1.0.23, the 20×10 pilot control brief and the Deep_Technical_Details sheet of the page's own approved workbook."
+   },
+   {
+    "title": "Group C - Opening schedule and staged layout, by size",
+    "header": [
+     "Size",
+     "Wall A (entrance), from End C",
+     "Wall B, from End C",
+     "End C / End D",
+     "Partitions",
+     "Desks staged"
+    ],
+    "rows": [
+     [
+      "10×10×8.5 ft",
+      "D1 only, 3.5–6.5 ft from End C",
+      "W1 at 3.0–7.0 ft",
+      "W2 centred / W3 centred",
+      "None",
+      "4"
+     ],
+     [
+      "20×8×8.5 ft",
+      "W1 1.5–5.5, D1 8.5–11.5, W2 14.5–18.5 ft",
+      "W3 1.5–5.5, W4 14.5–18.5 ft",
+      "W5 centred / W6 centred",
+      "None",
+      "3"
+     ],
+     [
+      "20×10×8.5 ft",
+      "W1 1.5–5.5, D1 8.5–11.5, W2 14.5–18.5 ft",
+      "W3 1.5–5.5, W4 14.5–18.5 ft",
+      "W5 centred / W6 centred",
+      "P1 at 11 ft 10 in, ID1 2 ft 6 in centred",
+      "5 + manager"
+     ],
+     [
+      "20×12×8.5 ft",
+      "W1 1.5–5.5, D1 8.5–11.5, W2 14.5–18.5 ft",
+      "W3 1.5–5.5, W4 14.5–18.5 ft",
+      "W5 centred / W6 centred",
+      "P1 at 11 ft 10 in, ID1 2 ft 6 in centred",
+      "5 + manager"
+     ],
+     [
+      "30×10×8.5 ft",
+      "D1 1.5–4.5, W1 8–12, W2 18–22, D2 25.5–28.5 ft",
+      "W3 1.5–5.5, W4 8.5–12.5, W5 17.5–21.5, W6 24.5–28.5 ft",
+      "W7 centred / W8 centred",
+      "None",
+      "12"
+     ],
+     [
+      "40×10×8.5 ft",
+      "MW1 2–6, D1 9–12, W1 16–20, W2 22–26, D2 28–31, MW2 34–38 ft",
+      "MW3 2–6, W3 14–18, W4 22–26, MW4 34–38 ft",
+      "MW5 centred / MW6 centred",
+      "P1 at 8 ft 2 in, P2 at 31 ft 10 in, ID1 and ID2 near Wall A",
+      "8 + two managers"
+     ]
+    ],
+    "note": "Wall A is the external entrance long wall, Wall B the opposite long wall, End C the left end and End D the right end. Coordinates are the approved opening spans in feet measured from End C. End walls carry no doors and no furniture on any size. Source: GA opening ledger v1.0.23."
+   },
+   {
+    "title": "Group D - Platform material key (common to SAMAN cabin families)",
+    "header": [
+     "Component / system",
+     "Approved standard",
+     "Typical size / thickness"
+    ],
+    "rows": [
+     [
+      "Primary base frame",
+      "Welded MS C-channel chassis",
+      "100×50×3 mm"
+     ],
+     [
+      "Upper, wall and roof frame",
+      "MS SHS/angle framing with reinforced openings",
+      "Top 50×50×1.6 mm; roof 50×50×1.2 mm; posts 50×50×2 mm or approved 60×60 angle"
+     ],
+     [
+      "External walls",
+      "Corrugated MS sheet, Tata/Jindal or approved equivalent",
+      "1.2 mm"
+     ],
+     [
+      "Roof sheet",
+      "Sloped corrugated MS with sealed laps, flashings and drainage",
+      "1.4 mm"
+     ],
+     [
+      "Internal wall and ceiling",
+      "Prelaminated MDF with aluminium joint sections",
+      "8 mm"
+     ],
+     [
+      "Floor system",
+      "Bison/cement-fibre board plus resilient finish",
+      "18 mm board + 1.3 mm vinyl"
+     ],
+     [
+      "Thermal insulation",
+      "Glass wool, or documented Heatlon wall option",
+      "Roof 50 mm at 42 kg/m³; wall 25 mm glass wool or 12 mm Heatlon"
+     ],
+     [
+      "Main door",
+      "Outward-opening MS-framed door assembly",
+      "Approximately 7×3 ft"
+     ],
+     [
+      "Windows",
+      "Two-track aluminium sliding unit with glazing",
+      "4 mm glass"
+     ],
+     [
+      "Electrical",
+      "Concealed copper wiring with DB, MCB/RCCB and earthing",
+      "Typical 1.5 / 2.5 / 4 sq mm circuits"
+     ],
+     [
+      "Corrosion protection",
+      "Prepared MS with red-oxide primer and compatible enamel",
+      "One primer coat plus two enamel coats"
+     ]
+    ],
+    "note": "Source: SAMAN master workbook, Common Material Key. This key is common to the Porta Cabin, Portable Cabin, Portable Office, Prefabricated House and Security Cabin families; technical substitutions require an approved BOM and quotation. FRP cabin construction is excluded."
+   },
+   {
+    "title": "Group E - Scope boundary and engineering control",
+    "header": [
+     "Item",
+     "Position"
+    ],
+    "rows": [
+     [
+      "Included in the published price",
+      "The office module framework in the approved size, with the openings, internal finish and electrical provision scheduled on its GA drawing"
+     ],
+     [
+      "Craneage and offloading",
+      "Quotation item, priced against the confirmed site and access"
+     ],
+     [
+      "Joining modules on site",
+      "Quotation item; the site joining strip detail is standard, the joining works are not in the module price"
+     ],
+     [
+      "Sanitary and plumbing fit-out",
+      "Quotation item; not scheduled on any GA drawing on this page"
+     ],
+     [
+      "Special performance evidence",
+      "Quotation item, for example certified test data for a specified exposure"
+     ],
+     [
+      "Multi-unit integration",
+      "Quotation item, covering set-out, levelling and closure between two or more modules"
+     ],
+     [
+      "Buyer's scope",
+      "Site preparation, the supporting pad, access for the trailer and crane, and the incoming electrical supply"
+     ],
+     [
+      "Warranty",
+      "Warranty period and exclusions are confirmed in the final quotation for your order"
+     ],
+     [
+      "Engineering status",
+      "GA drawings on this page are buyer-facing control drawings, marked not for fabrication. Approved shop drawings, project engineering, the final load schedule and the signed quotation govern"
+     ]
+    ],
+    "note": "Source: approved price dashboard workbook (product boundary and Scope_And_Assumptions), completion manifest engineering boundary, and the shared quotation terms rendered on /product/porta-cabins."
+   }
+  ],
+  "diagram_slots": [
+   "spec_diagram_1",
+   "spec_diagram_2"
+  ],
+  "pdf_slot": "spec_pdf"
+ },
+ "shipping_tab": {
+  "component": "shared freight component as rendered on /product/porta-cabins",
+  "free_delivery_lines_required": true,
+  "schema_shippingDetails": false
+ },
+ "reviews_tab": {
+  "empty_state": "No verified reviews yet.",
+  "schema": false
+ },
+ "links": {
+  "internal": [
+   {
+    "href": "/product/portable-office",
+    "anchors": [
+     "Portable Office Cabin hub"
+    ]
+   },
+   {
+    "href": "/product/portable-office/readymade-office-cabin",
+    "anchors": [
+     "Readymade Office Cabin range"
+    ]
+   },
+   {
+    "href": "/product/portable-office/small-office-cabin",
+    "anchors": [
+     "Small Office Cabin page"
+    ]
+   },
+   {
+    "href": "/product/container-offices",
+    "anchors": [
+     "Container Offices range",
+     "Container Offices pages"
+    ]
+   },
+   {
+    "href": "/product/prefab-buildings",
+    "anchors": [
+     "Prefab Buildings"
+    ]
+   },
+   {
+    "href": "/product/pre-engineered-buildings",
+    "anchors": [
+     "Pre-Engineered Buildings ranges"
+    ]
+   }
+  ],
+  "never": [
+   "/product/portable-office/modern-office-cabin",
+   "/product/portable-office/portable-office-container",
+   "/product/prefabricated-houses/saman-prefab-office",
+   "/product/portable-office/modular-portable-office-cabin",
+   "/product/portable-office/prefabricated-portable-office-cabin"
+  ]
+ },
+ "schema": {
+  "types": [
+   "ItemPage",
+   "Product",
+   "AggregateOffer",
+   "BreadcrumbList",
+   "FAQPage"
+  ],
+  "offer_low": 149500,
+  "offer_high": 494000,
+  "currency": "INR",
+  "price_basis": "ex-GST",
+  "no_review_schema": true
+ },
+ "alt_text": {
+  "gallery_new": {
+   "10x10/prefabricated-office-cabins-10x10-wall-a-door-only.webp": "SAMAN 10x10 ft ft prefabricated office cabin in slate navy, entrance wall: door only, no window on this wall, plain steel skid base and corner lifting eye plates",
+   "10x10/prefabricated-office-cabins-10x10-end-wall-centred-window-ridge.webp": "SAMAN 10x10 ft ft prefabricated office cabin in slate navy, end wall with one centred window and the centred ridge roof, 5-6 in rise",
+   "10x10/prefabricated-office-cabins-10x10-wall-b-single-window.webp": "SAMAN 10x10 ft ft prefabricated office cabin in slate navy, opposite long wall with one window and no door",
+   "10x10/prefabricated-office-cabins-10x10-four-desks.webp": "Inside the 10x10 ft ft prefabricated office cabin, champagne cream interior: four staged desks with overhead cabinets",
+   "10x10/prefabricated-office-cabins-10x10-entrance-wall-from-inside.webp": "Inside the 10x10 ft ft prefabricated office cabin, champagne cream interior: the entrance wall seen from inside, door centred with no window on this wall",
+   "10x10/prefabricated-office-cabins-10x10-corner-view.webp": "Inside the 10x10 ft ft prefabricated office cabin, champagne cream interior: corner view showing two walls, their windows and the staged desks",
+   "20x8/prefabricated-office-cabins-20x8-wall-a-window-door-window.webp": "SAMAN 20x8 ft ft prefabricated office cabin in premium taupe, entrance wall: external door between windows, plain steel skid base and corner lifting eye plates",
+   "20x8/prefabricated-office-cabins-20x8-end-wall-one-way-roof.webp": "SAMAN 20x8 ft ft prefabricated office cabin in premium taupe, end wall with one centred window and the one-way roof falling across the width",
+   "20x8/prefabricated-office-cabins-20x8-wall-b-two-windows.webp": "SAMAN 20x8 ft ft prefabricated office cabin in premium taupe, opposite long wall with two windows and no door",
+   "20x8/prefabricated-office-cabins-20x8-three-desks-open-plan.webp": "Inside the 20x8 ft ft prefabricated office cabin, sage grey interior: three desks in one open bay along the long wall",
+   "20x8/prefabricated-office-cabins-20x8-entrance-wall-from-inside.webp": "Inside the 20x8 ft ft prefabricated office cabin, sage grey interior: the entrance wall seen from inside, window, door and window in order",
+   "20x8/prefabricated-office-cabins-20x8-reverse-view.webp": "Inside the 20x8 ft ft prefabricated office cabin, sage grey interior: reverse view back along the open bay towards the far end window",
+   "20x10/prefabricated-office-cabins-20x10-wall-a-window-door-window.webp": "SAMAN 20x10 ft ft prefabricated office cabin in deep bottle green, entrance wall: external door between windows, plain steel skid base and corner lifting eye plates",
+   "20x10/prefabricated-office-cabins-20x10-end-wall-centred-ridge.webp": "SAMAN 20x10 ft ft prefabricated office cabin in deep bottle green, end wall with one centred window and the centred ridge roof, 5-6 in rise",
+   "20x10/prefabricated-office-cabins-20x10-wall-b-two-windows.webp": "SAMAN 20x10 ft ft prefabricated office cabin in deep bottle green, opposite long wall with two windows and no door",
+   "20x10/prefabricated-office-cabins-20x10-five-desk-team-zone-partition.webp": "Inside the 20x10 ft ft prefabricated office cabin, warm grey-blue interior: five-desk team zone looking at partition P1 and its centred internal door",
+   "20x10/prefabricated-office-cabins-20x10-manager-room.webp": "Inside the 20x10 ft ft prefabricated office cabin, warm grey-blue interior: manager room with desk and two guest chairs, served by the far window pair",
+   "20x10/prefabricated-office-cabins-20x10-team-zone-towards-end-c.webp": "Inside the 20x10 ft ft prefabricated office cabin, warm grey-blue interior: team zone looking towards End C and its centred window",
+   "20x12/prefabricated-office-cabins-20x12-wall-a-window-door-window.webp": "SAMAN 20x12 ft ft prefabricated office cabin in burgundy, entrance wall: external door between windows, plain steel skid base and corner lifting eye plates",
+   "20x12/prefabricated-office-cabins-20x12-end-wall-twelve-foot-width.webp": "SAMAN 20x12 ft ft prefabricated office cabin in burgundy, end wall with one centred window and the centred ridge roof, 5-6 in rise",
+   "20x12/prefabricated-office-cabins-20x12-wall-b-two-windows.webp": "SAMAN 20x12 ft ft prefabricated office cabin in burgundy, opposite long wall with two windows and no door",
+   "20x12/prefabricated-office-cabins-20x12-five-desk-team-zone-partition.webp": "Inside the 20x12 ft ft prefabricated office cabin, sand interior: five-desk team zone with the wider clear circulation strip and partition P1",
+   "20x12/prefabricated-office-cabins-20x12-manager-room.webp": "Inside the 20x12 ft ft prefabricated office cabin, sand interior: manager room with desk and two guest chairs in the widened body",
+   "20x12/prefabricated-office-cabins-20x12-team-zone-towards-end-c.webp": "Inside the 20x12 ft ft prefabricated office cabin, sand interior: team zone looking towards End C in the wider body",
+   "30x10/prefabricated-office-cabins-30x10-wall-a-two-doors-two-windows.webp": "SAMAN 30x10 ft ft prefabricated office cabin in blue-grey, entrance wall: external door between windows, plain steel skid base and corner lifting eye plates",
+   "30x10/prefabricated-office-cabins-30x10-end-wall-centred-ridge.webp": "SAMAN 30x10 ft ft prefabricated office cabin in blue-grey, end wall with one centred window and the centred ridge roof, 5-6 in rise",
+   "30x10/prefabricated-office-cabins-30x10-wall-b-four-windows.webp": "SAMAN 30x10 ft ft prefabricated office cabin in blue-grey, opposite long wall with four windows and no door",
+   "30x10/prefabricated-office-cabins-30x10-open-plan-desk-runs.webp": "Inside the 30x10 ft ft prefabricated office cabin, warm beige interior: open-plan desk runs on both long walls with no partition",
+   "30x10/prefabricated-office-cabins-30x10-towards-end-d.webp": "Inside the 30x10 ft ft prefabricated office cabin, warm beige interior: view along the room towards End D with its centred window",
+   "30x10/prefabricated-office-cabins-30x10-towards-end-c.webp": "Inside the 30x10 ft ft prefabricated office cabin, warm beige interior: view along the room towards End C with its centred window",
+   "40x10/prefabricated-office-cabins-40x10-wall-a-two-doors-four-windows.webp": "SAMAN 40x10 ft ft prefabricated office cabin in teal, entrance wall: external door between windows, plain steel skid base and corner lifting eye plates",
+   "40x10/prefabricated-office-cabins-40x10-end-wall-centred-ridge.webp": "SAMAN 40x10 ft ft prefabricated office cabin in teal, end wall with one centred window and the centred ridge roof, 5-6 in rise",
+   "40x10/prefabricated-office-cabins-40x10-wall-b-four-windows.webp": "SAMAN 40x10 ft ft prefabricated office cabin in teal, opposite long wall with four windows and no door",
+   "40x10/prefabricated-office-cabins-40x10-eight-desk-common-office.webp": "Inside the 40x10 ft ft prefabricated office cabin, taupe interior: common office desk runs between the two partitions",
+   "40x10/prefabricated-office-cabins-40x10-manager-room-m1.webp": "Inside the 40x10 ft ft prefabricated office cabin, taupe interior: manager room M1 at the End C end with its own window pair",
+   "40x10/prefabricated-office-cabins-40x10-manager-room-m2.webp": "Inside the 40x10 ft ft prefabricated office cabin, taupe interior: manager room M2 at the End D end, mirrored from M1"
+  },
+  "ga_boards": {
+   "10x10": "GA board for the 10x10 ft prefabricated office cabin: plan with four staged desks, Wall A door-only elevation and one centred window on each of the other three walls",
+   "20x8": "GA board for the 20x8 ft prefabricated office cabin: open plan with three staged desks, window-door-window on Wall A and the one-way roof orientation",
+   "20x10": "GA board for the 20x10 ft prefabricated office cabin: team zone and manager room split by partition P1 at 11 ft 10 in, with the six-window opening schedule",
+   "20x12": "GA board for the 20x12 ft prefabricated office cabin: the 20x10 ledger with a continuous 2 ft clear width strip, partition P1 and six windows",
+   "30x10": "GA board for the 30x10 ft prefabricated office cabin: twelve staged desks in one open room, two external doors on Wall A and four windows on Wall B",
+   "40x10": "GA board for the 40x10 ft prefabricated office cabin: twin manager rooms at each end, an eight-desk common office between partitions P1 and P2"
+  },
+  "section2_card": "GA board for the 20x10 ft prefabricated office cabin: dimensioned plan with partition P1, the four wall elevations and the centred-ridge roof orientation",
+  "spec_diagram_1": "Frame, sheet and joint diagram for the prefabricated office cabin: base chassis, wall and roof framing, sheet fixing line and the bolted panel joint",
+  "spec_diagram_2": "Window, electrical and fan coordination diagram: sliding window unit, distribution board, socket and lighting circuits and the ceiling fan point"
+ },
+ "price_flag": {
+  "status": "SAMAN APPROVED - folder workbook prices (price dashboard base rate Rs 1,300/sq ft at 200 sq ft), ruled 4 September 2026",
+  "live_prices_replaced": true
+ },
+ "forbidden_strings": [
+  "coming soon",
+  "available on request",
+  "contact us for details",
+  "placeholder",
+  "TBD",
+  "5 year warranty",
+  "five-year structural warranty",
+  "tier pricing",
+  "three units or more"
+ ],
+ "old_page_strings_absent": [
+  "₹1,45,500",
+  "₹2,32,800",
+  "₹2,64,600",
+  "₹3,04,800",
+  "₹3,81,000",
+  "₹3,98,080",
+  "₹4,97,600",
+  "₹5,84,160",
+  "9 Sizes",
+  "40×8 ft",
+  "20×20 ft",
+  "40×12 ft",
+  "Three Procurement Triggers That Push an Office Cabin Order from One Unit to Several",
+  "How Per-Unit Pricing Shifts Across 3, 5, and 10-Cabin Orders",
+  "What Stays Identical Across Every Cabin in Your Order: The Five Factory Locks",
+  "Dispatching to One Address vs Multiple Addresses: What the Configuration Implies",
+  "Mixing Roles Inside One Bulk Order: Manager, Staff, and Reception Cabins from One PO",
+  "Lead Time When the Order Size Grows: Why 5 Cabins Take Around 12 Days, Not 50",
+  "Ordering Several Cabins at Once vs Building One Cabin to Spec: Which Page You Need",
+  "Get a Multi-Unit Quote for Your Office Cabin Rollout",
+  "orders of three units or more",
+  "single-cabin build process page"
+ ],
+ "sha256_of_copy": "a7cf0cbc1204521d3223973e05b7d512d4b771847a9df7ce9df4e08501b18931",
+ "sha256_method": "sha256 of json.dumps(copy, sort_keys=True, ensure_ascii=False) with this field and sha256_method absent"
+}

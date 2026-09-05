@@ -1,0 +1,39 @@
+====================================================================================================
+GATE 2 - component-order assertion: the eleven canonical blocks in rendered order
+====================================================================================================
+  offset    1185   1  three-column hero (H1)
+  offset    1244   3  size selector tabs
+  offset    1404   4  price display for the selected size
+  offset    2609   5  Explore the Range panel
+  offset    3240   6  Section 2 RightToExist
+  offset    4244   7  Section 2 split card
+  offset    4753   8  Section 3 SizeApplicationsExplorer
+  offset   11520   9  Section 4 calculator
+  offset   29720   10 You may also like
+  offset   29991   11 Product Details tabs
+  offset    1131   2  contact/location bar (renders above the H1 in DOM order)
+PASS every canonical block present  | []
+PASS blocks render in canonical order
+PASS contact/location bar adjoins the hero  | (1131, 1185)
+
+====================================================================================================
+GATE 1 - structural diff: block skeleton vs the design lock and the approved sibling
+====================================================================================================
+  this page                       : 63 headings
+  /product/porta-cabins (lock)    : 45 headings   [category]/index.tsx  (hub route)
+  PO-01 readymade-office-cabin    : 65 headings   [category]/[slug].tsx (same route as this page)
+
+  block-role sequence vs the approved sibling on the SAME route:
+  (consecutive runs of one role collapsed - run length is copy, not structure)
+    this page: ['nav-group', 'H1', 'product-information', 'explore-the-range', 'content-heading', 'explorer-size-panel', 'calculator-band', 'content-heading', 'you-may-also-like', 'product-details', 'tab-description', 'content-heading', 'tab-specifications', 'tab-shipping', 'tab-reviews', 'reviews-form', 'footer']
+    sibling  : ['nav-group', 'H1', 'product-information', 'explore-the-range', 'content-heading', 'explorer-size-panel', 'calculator-band', 'content-heading', 'you-may-also-like', 'product-details', 'tab-description', 'content-heading', 'tab-specifications', 'tab-shipping', 'tab-reviews', 'reviews-form', 'footer']
+    identical: True
+PASS block skeleton identical to the approved sibling on the same route
+
+  explorer size-panel heading level:
+    this page ['h2']   sibling ['h2']   hub lock ['h3']
+    (explorerPanelHeadingAsH2 is the existing cluster opt-in every
+     CLUSTER_DESIGN_SLUGS product page takes; the hub route does not.)
+PASS explorer heading level matches the approved sibling  | ({'h2'}, {'h2'})
+
+RESULT: PASS
