@@ -29,6 +29,7 @@
     "validate:pc01-calculator-price-parity": "node scripts/validate-pc01-calculator-price-parity.mjs",
     "test:pc01-calculator-price-parity": "node scripts/test-pc01-calculator-price-parity.mjs",
     "validate:pc01-static-faq": "node scripts/validate-pc01-static-faq-presentation.mjs",
+    "validate:cc01-faq-parity": "node scripts/validate-cc01-faq-parity.mjs",
     "validate:enquiry-dialog-a11y": "node scripts/validate-enquiry-dialog-accessibility.mjs",
     "generate:pc01-pdf": "python scripts/generate-pc01-technical-pdf.py",
     "generate:po-family-pdfs": "python scripts/generate-po-family-technical-pdfs.py",

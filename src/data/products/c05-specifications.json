@@ -177,12 +177,6 @@
           "component": "Quality checks",
           "detail": "Pre-dispatch checks cover dimensions, member and sheet identification, welds, coating, roof drainage, weather sealing, doors, windows, electrical continuity and functional operation.",
           "differsFromHub": false
-        },
-        {
-          "group": "Doors, Windows, Electrical & Services",
-          "component": "Warranty",
-          "detail": "5-year structural warranty and 1-year finishing warranty as standard; finishing warranty extendable to 2 years on request, confirmed at quotation. Relocation damage, misuse, site services and unapproved alterations remain outside the agreed scope unless stated otherwise.",
-          "differsFromHub": false
         }
       ]
     }
