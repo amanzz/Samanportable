@@ -281,21 +281,21 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
       ctaHref: 'https://www.samanportable.com/contact',
     },
   },
-  // C-05 container-cafe HUB — §5 of the 08 Aug draft of record, verbatim. The
-  // comparison line's anchor is exactly the ruled §9 string; it is neither
-  // extended nor shortened. No `appendix`: the draft supplies none.
+  // C-05 container-cafe HUB. CC-01 (05 Sep 2026) — the §5 body and comparison of the
+  // 08 Aug draft are withdrawn by owner ruling: the body asserted a size count and the
+  // comparison's ruled §9 anchor ended in "larger covers", a capacity claim with no
+  // approved drawing behind it (OF-03). Capacity is withdrawn, not relabelled, so the
+  // pair is replaced by the single approved navigation sentence rather than rewritten
+  // around the anchor. `bodyParagraphs` renders it without the comparison slot.
   'container-cafe': {
     heading: 'Why this page, and not one of the five below',
-    body: (
-      <>
-        This hub is where you compare the whole container cafe range and settle on a size before you narrow down to a use. It carries the six published sizes, the rate at each of them, and the specification that every unit in this cluster is built from. If you already know the trade you are opening, one of the five pages below will answer you faster than this one.
-      </>
-    ),
-    comparison: (
-      <>
-        Opening a full-service kitchen with table seating? <Link className={linkClass} href={containerCafeHref('container-restaurant')}>Container Restaurant carries the heavier ladder and larger covers</Link>.
-      </>
-    ),
+    bodyParagraphs: [
+      (
+        <>
+          Compare the currently published size options and price table, then review the approved specialist formats before requesting an itemised quotation.
+        </>
+      ),
+    ],
   },
   // C-05 subpages — section 2 of their 08 Aug drafts of record, verbatim. The two
   // anchors in each comparison line are exactly the section 6 link plan: one

@@ -6,8 +6,14 @@ product set, the price-table columns (§7 carries a rate per sq ft and covers) a
 the warranty string differ:
 
   * six approved sizes, not nine;
-  * WARRANTY is the draft's §8 row-30 override for this route, NOT the SSOT's
-    quotation-deferred formulation (retired under L15);
+  * WARRANTY is the draft's §8 row-30 override, NOT the SSOT's quotation-deferred
+    formulation (retired under L15). CC-01 (05 Sep 2026): the warranty row is
+    withdrawn for `container-cafe` only, so the sheet carries neither the row nor
+    the closing warranty paragraph. Warranty is read from the spec dataset rather
+    than assumed, so the five subpages are unaffected;
+  * CC-01: the COVERS column is already data-driven via `has_capacity`, so removing
+    `capacity` from the product JSON removes the column with no change here;
+  * `--only <slug>` regenerates one sheet, leaving the others byte-identical;
   * every specification detail is transcribed byte-exact from
     src/data/products/c05-specifications.json, itself generated from the SSOT.
 
@@ -17,6 +23,7 @@ approved draft, the SSOT, or the C-04 template it mirrors.
 
 from __future__ import annotations
 
+import argparse
 import hashlib
 import json
 import re
@@ -74,6 +81,27 @@ WARRANTY = (
     "outside the agreed scope unless stated otherwise."
 )
 PRICE_CAPTION = "Base specification price - customisations quoted separately. Ex-factory, ex-GST."
+# CC-01 (05 Sep 2026). The sheet's warranty statement is derived from the route's own
+# specification rows, not from the WARRANTY constant directly. A route whose dataset
+# carries no Warranty row publishes no warranty statement -- the CC-01 owner ruling --
+# and every route that still carries one is byte-identical to before.
+WITHDRAWN_WARRANTY_SLUGS = ("container-cafe",)
+# CC-01 (05 Sep 2026). The header strap is per-route. Every sheet keeps the deployed
+# manufacturing/supply line except container-cafe, whose owner ruling withdraws it as
+# an unverified manufacturing claim (OF-07). Scoped by slug so the five sibling sheets
+# stay byte-identical.
+DEFAULT_HEADER_STRAP = "Bengaluru and Greater Noida | Pan-India supply"
+HEADER_STRAP_BY_SLUG = {
+    "container-cafe": "SAMAN Portable | Container Cafe technical specification",
+}
+
+
+def warranty_for(spec: dict[str, Any]) -> str | None:
+    rows = spec["summary"] if spec.get("exemptClass") else spec["specifications"]
+    for row in rows:
+        if (row.get("item") or row.get("component")) == "Warranty":
+            return str(row["detail"])
+    return None
 CONTACTS = (
     "South: +91 88616 22859 | sales@samanportable.com",
     "North: +91 87960 39938 | ncr@samanportable.com",
@@ -126,7 +154,7 @@ def build(slug: str, spec: dict[str, Any], product: dict[str, Any], output: Path
         canvas.drawString(18 * mm, height - 12 * mm, "SAMAN PORTABLE")
         canvas.setFont(regular, 7.5)
         canvas.setFillColor(colors.HexColor("#D5E8DE"))
-        canvas.drawString(18 * mm, height - 18 * mm, "Bengaluru and Greater Noida | Pan-India supply")
+        canvas.drawString(18 * mm, height - 18 * mm, HEADER_STRAP_BY_SLUG.get(slug, DEFAULT_HEADER_STRAP))
         canvas.setFont(bold, 8)
         canvas.setFillColor(colors.white)
         canvas.drawRightString(width - 18 * mm, height - 12 * mm, name.upper())
@@ -197,9 +225,10 @@ def build(slug: str, spec: dict[str, Any], product: dict[str, Any], output: Path
         table.setStyle(TableStyle([("BACKGROUND", (0, 0), (-1, 0), forest), ("GRID", (0, 0), (-1, -1), 0.35, line), ("VALIGN", (0, 0), (-1, -1), "TOP"), ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, pale]), ("PADDING", (0, 0), (-1, -1), 4)]))
         story.append(table)
 
+    warranty = warranty_for(spec)
     story.extend([
-        Paragraph("Warranty and contacts", h2),
-        Paragraph(f"<b>Warranty:</b> {escape(WARRANTY)}", body),
+        Paragraph("Warranty and contacts" if warranty else "Contacts", h2),
+        *([Paragraph(f"<b>Warranty:</b> {escape(warranty)}", body)] if warranty else []),
         *[Paragraph(f"<b>{escape(entry)}</b>", body) for entry in CONTACTS],
         Paragraph(f"<b>Generated:</b> {date.today().strftime('%d %B %Y')}", body),
     ])
@@ -207,20 +236,33 @@ def build(slug: str, spec: dict[str, Any], product: dict[str, Any], output: Path
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--only", action="append", choices=sorted(PRODUCTS),
+                        help="regenerate only this slug; repeatable. Omitted, all six are built.")
+    args = parser.parse_args()
+    wanted = tuple(args.only) if args.only else tuple(PRODUCTS)
+
     specs = {}
     for path in SPEC_PATHS:
         specs.update(json.loads(path.read_text(encoding="utf-8"))["products"])
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     for slug, (name, canonical) in PRODUCTS.items():
+        if slug not in wanted:
+            continue
         spec = specs[slug]
         product = json.loads((ROOT / f"src/data/products/{slug}.json").read_text(encoding="utf-8"))
         exempt = bool(spec.get("exemptClass"))
+        warranty = warranty_for(spec)
+        if slug in WITHDRAWN_WARRANTY_SLUGS:
+            # CC-01 owner ruling: withdrawn, and not replaced by any substitute claim.
+            assert warranty is None, f"{slug}: warranty row must stay withdrawn"
+        else:
+            assert warranty == WARRANTY, f"{slug}: warranty row is not the ruled override"
         if exempt:
             assert len(spec["summary"]) == 6, len(spec["summary"])
-            assert next(r["detail"] for r in spec["summary"] if r["item"] == "Warranty") == WARRANTY
         else:
-            assert len(spec["specifications"]) == 30, len(spec["specifications"])
-            assert next(row["detail"] for row in spec["specifications"] if row["component"] == "Warranty") == WARRANTY
+            expected_rows = 29 if slug in WITHDRAWN_WARRANTY_SLUGS else 30
+            assert len(spec["specifications"]) == expected_rows, len(spec["specifications"])
         assert len(product["variants"]) == 6, len(product["variants"])
         output = OUTPUT_DIR / f"{slug}-technical-specification.pdf"
         build(slug, spec, product, output)
@@ -228,11 +270,18 @@ def main() -> None:
         digest = hashlib.sha256(output.read_bytes()).hexdigest()
         reader = PdfReader(str(output))
         extracted = re.sub(r"\s+", " ", " ".join(page.extract_text() or "" for page in reader.pages))
-        for required in (name, canonical, WARRANTY, PRICE_CAPTION, *CONTACTS):
+        for required in (name, canonical, PRICE_CAPTION, *CONTACTS, *( (warranty,) if warranty else () )):
             assert re.sub(r"\s+", " ", required) in extracted, f"{slug}: missing {required}"
         # Retired strings must not reach the sheet (draft §11 gate 10).
         banned_common = ("+91 62009 09435", "8,50,000", "9,15,000", "24/7",
                          "12-month workmanship warranty")
+        if slug in WITHDRAWN_WARRANTY_SLUGS:
+            # CC-01: capacity and warranty are withdrawn, so neither the COVERS column,
+            # any cover count, nor any warranty wording may reach the sheet.
+            assert not any(v.get("capacity") for v in product["variants"]), f"{slug}: capacity re-entered the data"
+            for gone in ("COVERS", "diners", "Warranty", "warranty", "structural warranty",
+                         DEFAULT_HEADER_STRAP, "Bengaluru", "Greater Noida", "Pan-India"):
+                assert gone not in extracted, f"{slug}: withdrawn string present: {gone}"
         banned_route = {
             "container-restaurant": ("15,55,000", "16,95,000", "11,85,000"),
             "food-truck-containers": ("4,55,000", "4,95,000", "6,40,000"),

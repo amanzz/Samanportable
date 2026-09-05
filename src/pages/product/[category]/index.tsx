@@ -322,6 +322,14 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
           .catch(() => null)
       : null;
     if (variantData?.suppressReviewClaims) reviews = [];
+    else if (variantData?.excludeReviewIds?.length) {
+      // CC-01 (05 Sep 2026) - withhold a named review from this route only. The archived
+      // record is untouched; it is the republication that stops. Rating and count are
+      // recomputed below from what survives, so the panel can never show a count that
+      // disagrees with the cards beneath it.
+      const withheld = new Set(variantData.excludeReviewIds);
+      reviews = reviews.filter((review) => !withheld.has(review.id));
+    }
     const variantImages = variantData?.variants.flatMap((variant) => variant.images || []) || [];
     const defaultVariantHero = variantData
       ? variantData.variants.find((variant) => variant.sizeSlug === variantData.defaultVariant)?.images?.[0]
@@ -380,6 +388,15 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
       if (variantData.suppressReviewClaims) {
         productForPageProps.average_rating = '0';
         productForPageProps.rating_count = 0;
+      } else if (variantData.excludeReviewIds?.length) {
+        // Derived from the retained reviews, never from the legacy aggregate: every
+        // number here is the arithmetic of ratings still on the page. At zero retained
+        // reviews this collapses to 0/0 and the panel stops rendering, which is the
+        // correct outcome rather than a revised figure.
+        productForPageProps.rating_count = reviews.length;
+        productForPageProps.average_rating = reviews.length
+          ? (reviews.reduce((total, review) => total + review.rating, 0) / reviews.length).toFixed(2)
+          : '0';
       }
       if (defaultVariantHero) productForPageProps.featured_image = defaultVariantHero.src;
     }
@@ -1084,6 +1101,19 @@ const ProductDetails = ({
               )}
               {category === 'portable-office' && variantData?.ymalTiles?.length && (
                 <PortaCabinsYouMayAlsoLike items={variantData.ymalTiles} subline={null} />
+              )}
+              {/* CC-01 (05 Sep 2026) — MT-32 on the container cafe hub, Pattern B: the
+                  five approved children only, each card reusing that child's own shipped
+                  gallery hero and its own alt string verbatim. The list is data, not a
+                  hand-written rail, so a planned child cannot reach a card. `subline`
+                  is null for the same reason as the portable-office branch above: the
+                  hub's "Ten more…" sentence is untrue here. */}
+              {category === 'container-cafe' && variantData?.ymalTiles?.length && (
+                <PortaCabinsYouMayAlsoLike
+                  items={variantData.ymalTiles}
+                  subline={null}
+                  useItemImageAltVerbatim
+                />
               )}
 
               {/* PC-00 (14 Aug 2026) — divider 4, now between the "You may also

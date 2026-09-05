@@ -240,6 +240,13 @@ export interface VariantProductData {
   suppressAggregateRatingSchema?: boolean;
   /** Suppress all legacy visible/schema review claims when provenance is not established. */
   suppressReviewClaims?: boolean;
+  /** CC-01 (05 Sep 2026) - page-scoped review exclusion by review id. A review whose
+      text carries a claim the page has withdrawn is withheld from the visible list,
+      and the rating and count then follow the reviews actually published rather than
+      the legacy record. The archived review is never edited, paraphrased or deleted;
+      it is simply not republished here. Absent everywhere else, so no other product
+      changes. Use `suppressReviewClaims` instead to withhold the whole set. */
+  excludeReviewIds?: number[];
   /** Omit availability from Product/Offer schema for pages without an approved stock ruling. */
   suppressSchemaAvailability?: boolean;
   /** Optional cap for Product JSON-LD image URLs. Absent keeps current pages unchanged. */

@@ -6,17 +6,102 @@
   "gstPercent": 18,
   "emitAggregateOffer": true,
   "specPdfHref": "/specs/container-cafe-technical-specification.pdf",
-  "metaDescription": "Container cafe units fabricated in container form at our own works. Six sizes, 100 to 400 sq ft, from Rs 2,03,500 ex-GST. Delivered ready to trade in 7-21 days.",
-  "opener": "A container cafe from SAMAN is a food-service unit built in container form at our Bengaluru and Greater Noida works, then delivered ready to trade. Every unit is newly fabricated on a corrugated MS structural shell rather than converted from a used shipping container, so the counter line, the service opening and the equipment loads are set before the steel is cut. Six sizes are published, from a 100 sq ft single-counter kiosk to a 400 sq ft unit seating 33. The 20x10 ft reference size is Rs 3,70,000 ex-GST.",
+  "specPdfButtonLabel": "Download technical specification (PDF)",
+  "metaDescription": "The broad Container Cafe selection page: the currently published size options and price table, the approved specialist formats, and an itemised quotation path.",
+  "opener": "This is the broad Container Cafe selection page. It brings together the currently published size options, price table and approved specialist formats so buyers can compare the range before requesting an itemised quotation.",
   "priceCaption": "Base specification price - customisations quoted separately. Ex-factory, ex-GST.",
+  "trustStripText": "Published size and price options · Project scope confirmed through an itemised quotation",
+  "deliveryLabel": "Delivery timing: confirmed with quotation",
+  "coverageLabel": "Project location: confirmed with quotation",
+  "materialLabel": "Confirmed for the quoted configuration",
+  "hideHeroProofRow": true,
+  "excludeReviewIds": [
+    3164
+  ],
   "suppressLegacyFaqSchema": true,
+  "descriptionHtml": "<h2>What this page helps you compare</h2><p>This is the selection page for the SAMAN container cafe range. It carries the currently published size options with the currently published price table, links the technical specification PDF, and points to the approved specialist formats — so you can settle two decisions in order: which format fits your business, then which published size fits your plot. Your order itself is confirmed through an itemised quotation.</p><h2>Using the published size and price table</h2><p>The selector above shows the currently published size options, each with its currently published price. Treat the published figure as the starting point for a like-for-like comparison, not the whole answer: ask the quotation to confirm what the figure for your size contains, what is quoted separately, and how tax is shown — line by line, in writing — before you compare it against any other supplier's number.</p><h2>The approved specialist formats</h2><p>Five approved specialist pages sit alongside this one. If your plan matches one of them, read it before you settle here:</p><ul><li><a href=\"/product/container-cafe/container-coffee-shop\">Explore Container Coffee Shop</a></li><li><a href=\"/product/container-cafe/container-restaurant\">Explore Container Restaurant</a></li><li><a href=\"/product/container-cafe/food-truck-containers\">Explore Food Truck Containers</a></li><li><a href=\"/product/container-cafe/modular-container-cafe\">Explore Modular Container Cafe</a></li><li><a href=\"/product/container-cafe/container-hotel\">Explore Container Hotel</a></li></ul><p>Choose this page when what you want is the general cafe unit from the published range.</p><h2>What to ask before you order: a buyer checklist</h2><p>A container cafe is a food-service building, and most of what decides whether it works at your site is settled in the quotation stage. Put these questions in writing:</p><ul><li><strong>Kitchen scope.</strong> Ask the quotation to confirm which kitchen provisions, if any, are included for your size, and which are quoted separately.</li><li><strong>Equipment.</strong> Ask for the electrical provision to be confirmed against your actual appliance list rather than assumed.</li><li><strong>Power.</strong> Ask for the supply your menu needs and the provision the unit will carry to be stated side by side.</li><li><strong>Ventilation and exhaust.</strong> Ask what your cooking process requires and what the unit will be fitted with, before fabrication.</li><li><strong>Water and drainage.</strong> Ask where supply and waste connect at your plot, and what the unit's connection points need from your side.</li><li><strong>Licences and permissions.</strong> Ask which food-business and site permissions apply for your municipality and plot, and confirm them before you commit to a delivery position.</li></ul><h2>Price, delivery and site readiness: questions to settle</h2><p>Ask the quotation to confirm, as separate written lines: the unit price for your chosen published size; any item beyond the base scope; how transport and unloading will be quoted for your location; any work required on your side of the site; and how tax is shown. Before a delivery date is discussed, ask what the delivery vehicle and unloading method need from your access, what base the unit should stand on, and which utility connection points must be within reach of the unit's position.</p><h2>Questions buyers ask</h2><h4>Where can I compare the approved Container Cafe formats?</h4><p>On this page. The five approved specialist formats are linked above — Container Coffee Shop, Container Restaurant, Food Truck Containers, Modular Container Cafe and Container Hotel — and this page carries the published size and price table for the general cafe unit.</p><h4>What information should I include in a quotation request?</h4><p>The published size you are considering, your site location, your intended use, and the questions from the checklist above that matter most to your project — kitchen scope, equipment list, power, ventilation, water and drainage, and access for delivery. Asking for the answers as separate written lines makes quotations comparable across suppliers.</p><h4>Where are the currently published size and price options shown?</h4><p>In the selector and price table at the top of this page. Each published size shows its currently published price; the itemised quotation then confirms the scope that applies to your order.</p>",
+  "faqSchema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://www.samanportable.com/product/container-cafe#faq",
+    "url": "https://www.samanportable.com/product/container-cafe",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Where can I compare the approved Container Cafe formats?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "On this page. The five approved specialist formats are linked above, Container Coffee Shop, Container Restaurant, Food Truck Containers, Modular Container Cafe and Container Hotel, and this page carries the published size and price table for the general cafe unit."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What information should I include in a quotation request?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The published size you are considering, your site location, your intended use, and the questions from the checklist above that matter most to your project: kitchen scope, equipment list, power, ventilation, water and drainage, and access for delivery. Asking for the answers as separate written lines makes quotations comparable across suppliers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where are the currently published size and price options shown?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In the selector and price table at the top of this page. Each published size shows its currently published price; the itemised quotation then confirms the scope that applies to your order."
+        }
+      }
+    ]
+  },
   "explorerImageTemplate": {
     "10x10": "/images/products/container-cafe/10x10/container-cafe-10x10x8-5-ft-front-left-hero.webp",
+    "20x8": "/images/products/container-cafe/20x8/container-cafe-20x8x8-5-ft-front-left-hero.webp",
     "20x10": "/images/products/container-cafe/20x10/container-cafe-20x10x8-5-ft-front-left-hero.webp",
     "20x12": "/images/products/container-cafe/20x12/container-cafe-20x12x8-5-ft-front-left-hero.webp",
     "30x10": "/images/products/container-cafe/30x10/container-cafe-30x10x8-5-ft-front-left-hero.webp",
     "40x10": "/images/products/container-cafe/40x10/container-cafe-40x10x8-5-ft-front-left-hero.webp"
   },
+  "ymalTiles": [
+    {
+      "title": "Container Coffee Shop",
+      "href": "/product/container-cafe/container-coffee-shop",
+      "category": "container-cafe",
+      "blurb": "Explore Container Coffee Shop",
+      "imageSrc": "/images/products/container-coffee-shop/10x10/container-coffee-shop-10x10x8-5-ft-front-left-hero.webp",
+      "imageAlt": "SAMAN container coffee shop 10x10x8.5 ft, 100 sq ft, front left three-quarter exterior view"
+    },
+    {
+      "title": "Container Restaurant",
+      "href": "/product/container-cafe/container-restaurant",
+      "category": "container-cafe",
+      "blurb": "Explore Container Restaurant",
+      "imageSrc": "/images/products/container-restaurant/10x10/container-restaurant-10x10x8-5-ft-front-left-hero.webp",
+      "imageAlt": "SAMAN container restaurant 10x10x8.5 ft, front left three-quarter hero view"
+    },
+    {
+      "title": "Food Truck Containers",
+      "href": "/product/container-cafe/food-truck-containers",
+      "category": "container-cafe",
+      "blurb": "Explore Food Truck Containers",
+      "imageSrc": "/images/products/food-truck-containers/10x10/food-truck-containers-10x10x8-5-ft-front-left-hero.webp",
+      "imageAlt": "SAMAN food truck container 10x10x8.5 ft, front left three-quarter hero view"
+    },
+    {
+      "title": "Modular Container Cafe",
+      "href": "/product/container-cafe/modular-container-cafe",
+      "category": "container-cafe",
+      "blurb": "Explore Modular Container Cafe",
+      "imageSrc": "/images/products/modular-container-cafe/10x10/modular-container-cafe-10x10x8-5-ft-front-left-hero.webp",
+      "imageAlt": "SAMAN modular container cafe module 10x10x8.5 ft, 100 sq ft, front left three-quarter exterior view"
+    },
+    {
+      "title": "Container Hotel",
+      "href": "/product/container-cafe/container-hotel",
+      "category": "container-cafe",
+      "blurb": "Explore Container Hotel",
+      "imageSrc": "/images/products/container-hotel/10x10/container-hotel-10x10x8-5-ft-front-left-hero.webp",
+      "imageAlt": "SAMAN container hotel module 10x10x8.5 ft, 100 sq ft, front left three-quarter exterior view"
+    }
+  ],
   "variants": [
     {
       "sizeSlug": "10x10",
@@ -25,46 +110,45 @@
       "areaSqft": 100,
       "priceExGst": 203500,
       "priceInclGst": 240130,
-      "capacity": "8 diners",
       "images": [
         {
           "src": "/images/products/container-cafe/10x10/container-cafe-10x10x8-5-ft-front-left-hero.webp",
-          "alt": "SAMAN container cafe 10x10x8.5 ft, 100 sq ft seating 8, front left three-quarter exterior view",
+          "alt": "SAMAN container cafe 10x10x8.5 ft, 100 sq ft, front left three-quarter exterior view",
           "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/container-cafe/10x10/container-cafe-10x10x8-5-ft-front-elevation.webp",
-          "alt": "SAMAN container cafe 10x10x8.5 ft, 100 sq ft seating 8, straight-on front elevation",
+          "alt": "SAMAN container cafe 10x10x8.5 ft, 100 sq ft, straight-on front elevation",
           "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/container-cafe/10x10/container-cafe-10x10x8-5-ft-front-right-aerial.webp",
-          "alt": "SAMAN container cafe 10x10x8.5 ft, 100 sq ft seating 8, elevated front right exterior view",
+          "alt": "SAMAN container cafe 10x10x8.5 ft, 100 sq ft, elevated front right exterior view",
           "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/container-cafe/10x10/container-cafe-10x10x8-5-ft-left-side-elevation.webp",
-          "alt": "SAMAN container cafe 10x10x8.5 ft, 100 sq ft seating 8, left side elevation",
+          "alt": "SAMAN container cafe 10x10x8.5 ft, 100 sq ft, left side elevation",
           "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/container-cafe/10x10/container-cafe-10x10x8-5-ft-entrance-axis-interior.webp",
-          "alt": "SAMAN container cafe 10x10x8.5 ft, 100 sq ft seating 8, interior looking along the entrance axis",
+          "alt": "SAMAN container cafe 10x10x8.5 ft, 100 sq ft, interior looking along the entrance axis",
           "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/container-cafe/10x10/container-cafe-10x10x8-5-ft-service-zone-interior.webp",
-          "alt": "SAMAN container cafe 10x10x8.5 ft, 100 sq ft seating 8, interior of the service counter zone",
+          "alt": "SAMAN container cafe 10x10x8.5 ft, 100 sq ft, interior of the service counter zone",
           "provenance": "render",
           "width": 1254,
           "height": 1254
@@ -78,8 +162,50 @@
       "areaSqft": 160,
       "priceExGst": 325600,
       "priceInclGst": 384208,
-      "capacity": "13 diners",
-      "imagesPending": true
+      "images": [
+        {
+          "src": "/images/products/container-cafe/20x8/container-cafe-20x8x8-5-ft-front-left-hero.webp",
+          "alt": "SAMAN container cafe 20x8x8.5 ft, 160 sq ft, front left three-quarter exterior view",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-cafe/20x8/container-cafe-20x8x8-5-ft-front-elevation.webp",
+          "alt": "SAMAN container cafe 20x8x8.5 ft, 160 sq ft, straight-on front elevation",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-cafe/20x8/container-cafe-20x8x8-5-ft-front-right-aerial.webp",
+          "alt": "SAMAN container cafe 20x8x8.5 ft, 160 sq ft, elevated front right exterior view",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-cafe/20x8/container-cafe-20x8x8-5-ft-left-side-elevation.webp",
+          "alt": "SAMAN container cafe 20x8x8.5 ft, 160 sq ft, left side elevation",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-cafe/20x8/container-cafe-20x8x8-5-ft-entrance-axis-interior.webp",
+          "alt": "SAMAN container cafe 20x8x8.5 ft, 160 sq ft, interior looking along the entrance axis",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/container-cafe/20x8/container-cafe-20x8x8-5-ft-service-zone-interior.webp",
+          "alt": "SAMAN container cafe 20x8x8.5 ft, 160 sq ft, interior of the service counter zone",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
     },
     {
       "sizeSlug": "20x10",
@@ -88,46 +214,45 @@
       "areaSqft": 200,
       "priceExGst": 370000,
       "priceInclGst": 436600,
-      "capacity": "17 diners",
       "images": [
         {
           "src": "/images/products/container-cafe/20x10/container-cafe-20x10x8-5-ft-front-left-hero.webp",
-          "alt": "SAMAN container cafe 20x10x8.5 ft, 200 sq ft seating 17, front left three-quarter exterior view",
+          "alt": "SAMAN container cafe 20x10x8.5 ft, 200 sq ft, front left three-quarter exterior view",
           "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/container-cafe/20x10/container-cafe-20x10x8-5-ft-front-elevation.webp",
-          "alt": "SAMAN container cafe 20x10x8.5 ft, 200 sq ft seating 17, straight-on front elevation",
+          "alt": "SAMAN container cafe 20x10x8.5 ft, 200 sq ft, straight-on front elevation",
           "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/container-cafe/20x10/container-cafe-20x10x8-5-ft-front-right-aerial.webp",
-          "alt": "SAMAN container cafe 20x10x8.5 ft, 200 sq ft seating 17, elevated front right exterior view",
+          "alt": "SAMAN container cafe 20x10x8.5 ft, 200 sq ft, elevated front right exterior view",
           "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/container-cafe/20x10/container-cafe-20x10x8-5-ft-left-side-elevation.webp",
-          "alt": "SAMAN container cafe 20x10x8.5 ft, 200 sq ft seating 17, left side elevation",
+          "alt": "SAMAN container cafe 20x10x8.5 ft, 200 sq ft, left side elevation",
           "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/container-cafe/20x10/container-cafe-20x10x8-5-ft-entrance-axis-interior.webp",
-          "alt": "SAMAN container cafe 20x10x8.5 ft, 200 sq ft seating 17, interior looking along the entrance axis",
+          "alt": "SAMAN container cafe 20x10x8.5 ft, 200 sq ft, interior looking along the entrance axis",
           "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/container-cafe/20x10/container-cafe-20x10x8-5-ft-service-zone-interior.webp",
-          "alt": "SAMAN container cafe 20x10x8.5 ft, 200 sq ft seating 17, interior of the service counter zone",
+          "alt": "SAMAN container cafe 20x10x8.5 ft, 200 sq ft, interior of the service counter zone",
           "provenance": "render",
           "width": 1254,
           "height": 1254
@@ -141,46 +266,45 @@
       "areaSqft": 240,
       "priceExGst": 426240,
       "priceInclGst": 502963,
-      "capacity": "20 diners",
       "images": [
         {
           "src": "/images/products/container-cafe/20x12/container-cafe-20x12x8-5-ft-front-left-hero.webp",
-          "alt": "SAMAN container cafe 20x12x8.5 ft, 240 sq ft seating 20, front left three-quarter exterior view",
+          "alt": "SAMAN container cafe 20x12x8.5 ft, 240 sq ft, front left three-quarter exterior view",
           "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/container-cafe/20x12/container-cafe-20x12x8-5-ft-front-elevation.webp",
-          "alt": "SAMAN container cafe 20x12x8.5 ft, 240 sq ft seating 20, straight-on front elevation",
+          "alt": "SAMAN container cafe 20x12x8.5 ft, 240 sq ft, straight-on front elevation",
           "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/container-cafe/20x12/container-cafe-20x12x8-5-ft-front-right-aerial.webp",
-          "alt": "SAMAN container cafe 20x12x8.5 ft, 240 sq ft seating 20, elevated front right exterior view",
+          "alt": "SAMAN container cafe 20x12x8.5 ft, 240 sq ft, elevated front right exterior view",
           "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/container-cafe/20x12/container-cafe-20x12x8-5-ft-left-side-elevation.webp",
-          "alt": "SAMAN container cafe 20x12x8.5 ft, 240 sq ft seating 20, left side elevation",
+          "alt": "SAMAN container cafe 20x12x8.5 ft, 240 sq ft, left side elevation",
           "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/container-cafe/20x12/container-cafe-20x12x8-5-ft-entrance-axis-interior.webp",
-          "alt": "SAMAN container cafe 20x12x8.5 ft, 240 sq ft seating 20, interior looking along the entrance axis",
+          "alt": "SAMAN container cafe 20x12x8.5 ft, 240 sq ft, interior looking along the entrance axis",
           "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/container-cafe/20x12/container-cafe-20x12x8-5-ft-service-zone-interior.webp",
-          "alt": "SAMAN container cafe 20x12x8.5 ft, 240 sq ft seating 20, interior of the service counter zone",
+          "alt": "SAMAN container cafe 20x12x8.5 ft, 240 sq ft, interior of the service counter zone",
           "provenance": "render",
           "width": 1254,
           "height": 1254
@@ -194,46 +318,45 @@
       "areaSqft": 300,
       "priceExGst": 532800,
       "priceInclGst": 628704,
-      "capacity": "25 diners",
       "images": [
         {
           "src": "/images/products/container-cafe/30x10/container-cafe-30x10x8-5-ft-front-left-hero.webp",
-          "alt": "SAMAN container cafe 30x10x8.5 ft, 300 sq ft seating 25, front left three-quarter exterior view",
+          "alt": "SAMAN container cafe 30x10x8.5 ft, 300 sq ft, front left three-quarter exterior view",
           "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/container-cafe/30x10/container-cafe-30x10x8-5-ft-front-elevation.webp",
-          "alt": "SAMAN container cafe 30x10x8.5 ft, 300 sq ft seating 25, straight-on front elevation",
+          "alt": "SAMAN container cafe 30x10x8.5 ft, 300 sq ft, straight-on front elevation",
           "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/container-cafe/30x10/container-cafe-30x10x8-5-ft-front-right-aerial.webp",
-          "alt": "SAMAN container cafe 30x10x8.5 ft, 300 sq ft seating 25, elevated front right exterior view",
+          "alt": "SAMAN container cafe 30x10x8.5 ft, 300 sq ft, elevated front right exterior view",
           "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/container-cafe/30x10/container-cafe-30x10x8-5-ft-left-side-elevation.webp",
-          "alt": "SAMAN container cafe 30x10x8.5 ft, 300 sq ft seating 25, left side elevation",
+          "alt": "SAMAN container cafe 30x10x8.5 ft, 300 sq ft, left side elevation",
           "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/container-cafe/30x10/container-cafe-30x10x8-5-ft-entrance-axis-interior.webp",
-          "alt": "SAMAN container cafe 30x10x8.5 ft, 300 sq ft seating 25, interior looking along the entrance axis",
+          "alt": "SAMAN container cafe 30x10x8.5 ft, 300 sq ft, interior looking along the entrance axis",
           "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/container-cafe/30x10/container-cafe-30x10x8-5-ft-service-zone-interior.webp",
-          "alt": "SAMAN container cafe 30x10x8.5 ft, 300 sq ft seating 25, interior of the service counter zone",
+          "alt": "SAMAN container cafe 30x10x8.5 ft, 300 sq ft, interior of the service counter zone",
           "provenance": "render",
           "width": 1254,
           "height": 1254
@@ -247,46 +370,45 @@
       "areaSqft": 400,
       "priceExGst": 695600,
       "priceInclGst": 820808,
-      "capacity": "33 diners",
       "images": [
         {
           "src": "/images/products/container-cafe/40x10/container-cafe-40x10x8-5-ft-front-left-hero.webp",
-          "alt": "SAMAN container cafe 40x10x8.5 ft, 400 sq ft seating 33, front left three-quarter exterior view",
+          "alt": "SAMAN container cafe 40x10x8.5 ft, 400 sq ft, front left three-quarter exterior view",
           "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/container-cafe/40x10/container-cafe-40x10x8-5-ft-front-elevation.webp",
-          "alt": "SAMAN container cafe 40x10x8.5 ft, 400 sq ft seating 33, straight-on front elevation",
+          "alt": "SAMAN container cafe 40x10x8.5 ft, 400 sq ft, straight-on front elevation",
           "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/container-cafe/40x10/container-cafe-40x10x8-5-ft-front-right-aerial.webp",
-          "alt": "SAMAN container cafe 40x10x8.5 ft, 400 sq ft seating 33, elevated front right exterior view",
+          "alt": "SAMAN container cafe 40x10x8.5 ft, 400 sq ft, elevated front right exterior view",
           "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/container-cafe/40x10/container-cafe-40x10x8-5-ft-left-side-elevation.webp",
-          "alt": "SAMAN container cafe 40x10x8.5 ft, 400 sq ft seating 33, left side elevation",
+          "alt": "SAMAN container cafe 40x10x8.5 ft, 400 sq ft, left side elevation",
           "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/container-cafe/40x10/container-cafe-40x10x8-5-ft-entrance-axis-interior.webp",
-          "alt": "SAMAN container cafe 40x10x8.5 ft, 400 sq ft seating 33, interior looking along the entrance axis",
+          "alt": "SAMAN container cafe 40x10x8.5 ft, 400 sq ft, interior looking along the entrance axis",
           "provenance": "render",
           "width": 1254,
           "height": 1254
         },
         {
           "src": "/images/products/container-cafe/40x10/container-cafe-40x10x8-5-ft-service-zone-interior.webp",
-          "alt": "SAMAN container cafe 40x10x8.5 ft, 400 sq ft seating 33, interior of the service counter zone",
+          "alt": "SAMAN container cafe 40x10x8.5 ft, 400 sq ft, interior of the service counter zone",
           "provenance": "render",
           "width": 1254,
           "height": 1254
