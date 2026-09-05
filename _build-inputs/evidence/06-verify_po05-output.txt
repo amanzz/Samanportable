@@ -1,0 +1,319 @@
+PASS exactly one H1  | ['Portable Mobile Laboratory: Six Sizes, 100 to 400 sq ft']
+PASS H1 text  | ['Portable Mobile Laboratory: Six Sizes, 100 to 400 sq ft']
+PASS title text  | ['Portable Mobile Laboratory Cabin: 6 Sizes, Prices │ SAMAN']
+PASS meta description  | ['Lab-ready portable laboratory cabin in six sizes, 100 to 400 sq ft, ex-GST prices published, coved vinyl floor, washable liner and a scheduled bench and sink.']
+PASS canonical self  | ['https://www.samanportable.com/product/portable-office/portable-mobile-laboratory']
+PASS block order hero > explore > section2 > card > section3 > calculator > YMAL > product details  | [('Choose your size - six approved laboratory sizes', 1238), ('Explore the Range', 2595), ('Portable Mobile Laboratory: A Cleanable Room, Not an Office Cabin', 3339), ('One sink, one sealed sleeve, and a cleaning aisle you can measure', 4312), ('Compare the six laboratory sizes, 100 to 400 sq ft', 4811), ('PRICE IT YOURSELF', 11169), ('You may also like', 29367), ('Product Details', 29865)]
+PASS size 10x10 ex-GST price present  | ₹2,30,000
+PASS size 10x10 incl-GST price present  | ₹2,71,400
+PASS size 20x8 ex-GST price present  | ₹3,52,000
+PASS size 20x8 incl-GST price present  | ₹4,15,360
+PASS size 20x10 ex-GST price present  | ₹4,00,000
+PASS size 20x10 incl-GST price present  | ₹4,72,000
+PASS size 20x12 ex-GST price present  | ₹4,60,800
+PASS size 20x12 incl-GST price present  | ₹5,43,744
+PASS size 30x10 ex-GST price present  | ₹5,76,000
+PASS size 30x10 incl-GST price present  | ₹6,79,680
+PASS size 40x10 ex-GST price present  | ₹7,60,000
+PASS size 40x10 incl-GST price present  | ₹8,96,800
+PASS from price
+PASS old-page string absent: (new page; no legacy strings)
+PASS section2 paragraph1
+PASS section2 paragraph2
+PASS section2 card paragraph1
+PASS section2 card paragraph2
+PASS section3 10x10 H3
+PASS section3 10x10 paragraph
+PASS section3 10x10 bullet  | 10×10×8.5 ft, 100 sq ft, ₹2,30,000 ex-GST (₹2,71,4
+PASS section3 10x10 bullet  | Clear cleaning aisle ≈ 7.34 ft, the widest on this
+PASS section3 10x10 bullet  | 1 fixed bench run, 1 sink or service interface, 2 
+PASS section3 10x10 bullet  | 1 door on Wall A at 3.5–6.5 ft; 1 window on Wall B
+PASS section3 10x10 bullet  | Two-way roof, centred ridge 5–6 in above each long
+PASS section3 10x10 bullet  | Highest rate on the page at ₹2,300/sq ft, because 
+PASS section3 20x8 H3
+PASS section3 20x8 paragraph
+PASS section3 20x8 bullet  | 20×8×8.5 ft, 160 sq ft, ₹3,52,000 ex-GST (₹4,15,36
+PASS section3 20x8 bullet  | Clear cleaning aisle ≈ 5.34 ft against a single 18
+PASS section3 20x8 bullet  | 1 fixed bench run, 1 sink at 16.75–18.25 ft, 3 upp
+PASS section3 20x8 bullet  | Wall A: window 1.5-5.5 ft, door 8.5-11.5 ft, windo
+PASS section3 20x8 bullet  | One-way roof, 5–6 in total fall across the 8 ft wi
+PASS section3 20x8 bullet  | Fits where a 10 ft wide unit will not pass the gat
+PASS section3 20x10 H3
+PASS section3 20x10 paragraph
+PASS section3 20x10 bullet  | 20×10×8.5 ft, 200 sq ft, ₹4,00,000 ex-GST (₹4,72,0
+PASS section3 20x10 bullet  | Base rate size: ₹2,000/sq ft, no area-band adjustm
+PASS section3 20x10 bullet  | 3 fixed bench runs, 1 sink at 16.75–18.25 ft, 4 up
+PASS section3 20x10 bullet  | 7 ft sample intake bench and 7 ft equipment allowa
+PASS section3 20x10 bullet  | Clear cleaning aisle ≈ 5.34 ft between the Wall A 
+PASS section3 20x10 bullet  | Two-way roof, centred ridge along the 20 ft length
+PASS section3 20x12 H3
+PASS section3 20x12 paragraph
+PASS section3 20x12 bullet  | 20×12×8.5 ft, 240 sq ft, ₹4,60,800 ex-GST (₹5,43,7
+PASS section3 20x12 bullet  | Clear cleaning aisle ≈ 7.34 ft, two feet wider tha
+PASS section3 20x12 bullet  | 3 fixed bench runs, 1 sink at 16.75–18.25 ft, 4 up
+PASS section3 20x12 bullet  | Same opening schedule as the 20×10: window, door, 
+PASS section3 20x12 bullet  | Rate drops to ₹1,920/sq ft, the 201–300 sq ft band
+PASS section3 20x12 bullet  | Two-way roof with a 5-6 in centred ridge, four top
+PASS section3 30x10 H3
+PASS section3 30x10 paragraph
+PASS section3 30x10 bullet  | 30×10×8.5 ft, 300 sq ft, ₹5,76,000 ex-GST (₹6,79,6
+PASS section3 30x10 bullet  | 2 external doors on Wall A, at 1.5–4.5 ft and 25.5
+PASS section3 30x10 bullet  | 2 fixed bench runs: 4.5 ft sample intake on Wall A
+PASS section3 30x10 bullet  | 1 sink at 25.5–27 ft, 4 upper storage modules, 8 w
+PASS section3 30x10 bullet  | Clear cleaning aisle ≈ 5.34 ft along the full 30 f
+PASS section3 30x10 bullet  | Same ₹1,920/sq ft band rate as the 20×12 on 60 sq 
+PASS section3 40x10 H3
+PASS section3 40x10 paragraph
+PASS section3 40x10 bullet  | 40×10×8.5 ft, 400 sq ft, ₹7,60,000 ex-GST (₹8,96,8
+PASS section3 40x10 bullet  | Lowest rate on the page: ₹1,900/sq ft, the 301–400
+PASS section3 40x10 bullet  | 2 fixed bench runs totalling 67.5 ft of bench, 1 s
+PASS section3 40x10 bullet  | 2 external doors on Wall A; 9 windows in all, 4 of
+PASS section3 40x10 bullet  | Clear cleaning aisle ≈ 5.34 ft between two fully b
+PASS section3 40x10 bullet  | Largest published size; above 900 sq ft is a manua
+PASS tab panel present: Description
+PASS tab panel present: Specifications
+PASS tab panel present: Shipping
+PASS tab panel present: Reviews
+PASS description H2: Portable mobile laboratory, or a laborat
+PASS description paragraph  | Search for a mobile laboratory in India and most o
+PASS description paragraph  | A SAMAN portable mobile laboratory is a factory-bu
+PASS description paragraph  | If instead your testing happens in one place for m
+PASS description paragraph  | The word cabin also appears on other parts of this
+PASS description H2: Who orders a portable mobile laboratory,
+PASS description paragraph  | The enquiries that end in an order share one shape
+PASS description paragraph  | In practice that means a quality control room at a
+PASS description paragraph  | The people using it are a lab technician, a sample
+PASS description H2: What lab-ready means on this page, and w
+PASS description paragraph  | Lab-ready here means the enclosure and the fixed p
+PASS description paragraph  | What the price on this page covers is the steel sh
+PASS description paragraph  | What it does not cover, and what is quoted separat
+PASS description paragraph  | If a requirement is not in the first list and not 
+PASS description H2: Choosing between 100, 160, 200, 240, 300
+PASS description paragraph  | Floor area is the wrong first question. The right 
+PASS description paragraph  | Read it this way. One person, routine screening, s
+PASS description paragraph  | Above that the decision changes again. The 30×10 g
+PASS description H2: Why the cleaning aisle decides the width
+PASS description paragraph  | Every GA board on this page prints one figure that
+PASS description paragraph  | At 5.34 ft, which is what the 10 ft widths give on
+PASS description paragraph  | This is also why none of the six sizes carries an 
+PASS description paragraph  | The end walls follow the same logic. Each carries 
+PASS description H2: How the price is built, and what is quot
+PASS description paragraph  | The price on this page is built from one editable 
+PASS description paragraph  | The bands applied on this page are +15 per cent be
+PASS description paragraph  | Every figure on this page is ex-GST for the lab-re
+PASS description paragraph  | If the requirement is an office rather than a labo
+PASS description H2: Water, drainage, power and the one seale
+PASS description paragraph  | Services are the part of a portable laboratory tha
+PASS description paragraph  | Penetrations through the envelope are controlled t
+PASS description paragraph  | Electrically, the unit is wired in concealed coppe
+PASS description paragraph  | Before dispatch the unit is checked for dimensions
+PASS description H2: When a portable mobile laboratory is the
+PASS description paragraph  | It is the wrong choice when the testing has to tra
+PASS description paragraph  | It is the wrong choice when the room is really an 
+PASS description paragraph  | It is the wrong choice when the process needs cont
+PASS description paragraph  | And it is the wrong choice when the requirement in
+PASS description H2: Frequently asked questions
+PASS faq visible: What is a mobile laboratory?
+PASS faq visible: What is a mobile testing laboratory?
+PASS faq visible: What is a portable lab?
+PASS faq visible: What are the three types of laboratories
+PASS faq visible: How much does a portable mobile laborato
+PASS faq visible: Is the sink connected, and is water incl
+PASS faq visible: Can a fume hood be fitted?
+PASS faq visible: How is the laboratory lifted and placed?
+PASS spec narrative  | These specifications describe the lab-ready enclos
+PASS spec narrative  | Final member sizes, connections, lifting details a
+PASS spec narrative  | Two coordination diagrams follow the tables. The f
+PASS spec row: SZ-01  | ['SZ-01', '10×10×8.5']
+PASS spec row: SZ-02  | ['SZ-02', '20×8×8.5']
+PASS spec row: SZ-03  | ['SZ-03', '20×10×8.5']
+PASS spec row: SZ-04  | ['SZ-04', '20×12×8.5']
+PASS spec row: SZ-05  | ['SZ-05', '30×10×8.5']
+PASS spec row: SZ-06  | ['SZ-06', '40×10×8.5']
+PASS spec row: Product boundary  | ['Product boundary', 'Lab-ready enclosure and scheduled fixed provisions; non-container material and roof family']
+PASS spec row: Floor finish  | ['Floor finish', 'Coved vinyl: the floor-to-wall junction is formed as a radius, not a square corner']
+PASS spec row: Wall and ceiling liner  | ['Wall and ceiling liner', 'Washable liner with cleanable junctions over a non-absorbent substrate']
+PASS spec row: Bench substrate  | ['Bench substrate', 'Non-absorbent, scheduled by run on the approved GA drawing']
+PASS spec row: Service penetration  | ['Service penetration', 'One sealed utility sleeve, position frozen on the drawing before fabrication; nothing field-cut']
+PASS spec row: Exhaust  | ['Exhaust', 'Cowl position held on the drawing as a placeholder only; cowl, duct, fan and containment excluded']
+PASS spec row: Contamination control  | ['Contamination control', 'Open lab room, no internal partitions and no island bench in any size; contamination break point named on the drawing']
+PASS spec row: Reagent storage  | ['Reagent storage', 'Allowance scheduled as upper storage modules: 2 at 10×10, 3 at 20×8, 4 at 20×10, 20×12 and 30×10, 5 at 40×10']
+PASS spec row: Roof, 8 ft width  | ['Roof, 8 ft width', 'One-way: one plane falling across the width, 5-6 in total high-to-low fall (20×8 only)']
+PASS spec row: Roof, 10 and 12 ft widths  | ['Roof, 10 and 12 ft widths', 'Two-way: one continuous centred longitudinal ridge, two planes falling to the long-wall eaves, ridge 5-6 in above each eave']
+PASS spec row: Lifting  | ['Lifting', 'Exactly four compact top-corner lifting eyes; no ISO corner castings']
+PASS spec row: Wall thickness  | ['Wall thickness', '100 mm']
+PASS spec row: Height  | ['Height', '8.5 ft nominal, all sizes']
+PASS spec row: Presentation colours  | ['Presentation colours', '10×10 deep bottle green · 20×8 muted teal · 20×10 pearl off-white · 20×12 deep oxford blue · 30×10 burgundy wine · 40×10 slate blue-grey; final colour confirmed at quotation']
+PASS spec row: 10×10  | ['10×10', '1 door at 3.5-6.5 ft']
+PASS spec row: 20×8  | ['20×8', 'window 1.5-5.5, door 8.5-11.5, window 14.5-18.5 ft']
+PASS spec row: 20×10  | ['20×10', 'window 1.5-5.5, door 8.5-11.5, window 14.5-18.5 ft']
+PASS spec row: 20×12  | ['20×12', 'window 1.5-5.5, door 8.5-11.5, window 14.5-18.5 ft']
+PASS spec row: 30×10  | ['30×10', 'door 1.5-4.5, window 8-12, window 18-22, door 25.5-28.5 ft']
+PASS spec row: 40×10  | ['40×10', 'door 1.5-4.5, window 8-12, window 18-22, window 28-32, door 35.5-38.5 ft']
+PASS spec row: Primary base frame  | ['Primary base frame', 'Welded MS C-channel chassis']
+PASS spec row: Upper, wall and roof frame  | ['Upper, wall and roof frame', 'MS SHS/angle framing with reinforced openings']
+PASS spec row: External walls  | ['External walls', 'Corrugated MS sheet, Tata/Jindal or approved equivalent']
+PASS spec row: Roof sheet  | ['Roof sheet', 'Sloped corrugated MS sheet with sealed laps, flashings and drainage']
+PASS spec row: Internal wall and ceiling  | ['Internal wall and ceiling', 'Prelaminated MDF with aluminium joint sections is the dry-cabin standard; wet and hygienic areas use approved moisture-tolerant fibre-cement hygienic lining']
+PASS spec row: Floor system  | ['Floor system', 'Cement-fibre (Bison) board plus resilient finish']
+PASS spec row: Thermal insulation  | ['Thermal insulation', 'Glass wool, or documented Heatlon wall option']
+PASS spec row: Main door  | ['Main door', 'Outward-opening MS-framed door assembly']
+PASS spec row: Windows  | ['Windows', 'Two-track aluminium sliding unit with glazing']
+PASS spec row: Electrical  | ['Electrical', 'Concealed copper wiring with DB, MCB/RCCB, earthing and circuit segregation']
+PASS spec row: Corrosion protection  | ['Corrosion protection', 'Prepared MS with red-oxide primer and compatible enamel']
+PASS spec row: Handling and QA  | ['Handling and QA', 'Designed lifting eyes, sealing and pre-dispatch inspection']
+PASS spec row: Lab-ready enclosure in one of   | ['Lab-ready enclosure in one of the six listed sizes', 'Instruments, analysers and all loose equipment']
+PASS spec row: Coved vinyl floor, washable li  | ['Coved vinyl floor, washable liner, non-absorbent substrate', 'Fume hoods, biosafety cabinets and any containment']
+PASS spec row: Fixed bench runs and upper sto  | ['Fixed bench runs and upper storage modules per the GA schedule', 'Process exhaust: cowl, duct, fan and controls']
+PASS spec row: One sink or service interface   | ['One sink or service interface at the scheduled coordinate', 'Laboratory gases, lines, cylinders and manifolds']
+PASS spec row: One sealed utility sleeve, fro  | ['One sealed utility sleeve, frozen on the drawing', 'RO or DI water plant, storage and distribution']
+PASS spec row: Standard electrical package wi  | ['Standard electrical package with DB, RCCB/MCB and earthing', 'Waste and effluent treatment']
+PASS spec row: GA-fixed door and window sched  | ['GA-fixed door and window schedule', 'Validation, qualification and accreditation']
+PASS spec row: Four compact top-corner liftin  | ['Four compact top-corner lifting eyes', 'Site water, drainage, incoming supply and licensed connection']
+PASS spec row: Ex-GST and GST-inclusive price  | ['Ex-GST and GST-inclusive prices for the six approved sizes', 'Delivery, unloading, placement, site supports and fitted AC']
+PASS reviews empty state
+PASS shipping free-delivery lines
+PASS shipping 20 ft first band
+PASS forbidden absent: 'coming soon'
+PASS forbidden absent: 'available on request'
+PASS forbidden absent: 'contact us for details'
+PASS forbidden absent: 'TBD'
+PASS forbidden absent: 'fume hood included'
+PASS forbidden absent: 'NABL'
+PASS forbidden absent: 'accredited by'
+PASS forbidden absent: 'is accredited'
+PASS forbidden absent: 'certified laboratory'
+PASS forbidden absent: 'warranty period'
+PASS forbidden absent: 'lead time guarantee'
+PASS forbidden absent: 'GMP compliant'
+PASS forbidden absent: 'validated laboratory'
+PASS forbidden absent: 'turnkey laboratory'
+PASS forbidden absent: 'lab on wheels'
+PASS forbidden absent: 'mobile laboratory van'
+PASS forbidden absent: '—'
+PASS no U+2014 in copy
+PASS no 'Info' tab label
+PASS link present /product/portable-office
+PASS link present /product/container-offices
+PASS link present /product/portable-office/readymade-office-cabin
+PASS link present /product/portable-office/prefabricated-office-cabins
+PASS link present /product/porta-cabins/porta-cabin-with-toilet
+PASS legacy link absent /product/portable-office/modern-office-cabin
+PASS legacy link absent /product/portable-office/portable-office-container
+PASS legacy link absent any redirected legacy URL
+PASS internal link 200: /product/container-cafe  | 200
+PASS internal link 200: /product/container-houses  | 200
+PASS internal link 200: /product/container-houses/luxury-container-houses  | 200
+PASS internal link 200: /product/container-houses/prefab-container-homes  | 200
+PASS internal link 200: /product/container-offices  | 200
+PASS internal link 200: /product/industrial-sheds  | 200
+PASS internal link 200: /product/labor-colony  | 200
+PASS internal link 200: /product/porta-cabins  | 200
+PASS internal link 200: /product/porta-cabins/porta-cabin-with-toilet  | 200
+PASS internal link 200: /product/portable-office  | 200
+PASS internal link 200: /product/portable-office/executive-portable-office  | 200
+PASS internal link 200: /product/portable-office/portable-weighbridge-office  | 200
+PASS internal link 200: /product/portable-office/prefabricated-office-cabins  | 200
+PASS internal link 200: /product/portable-office/readymade-office-cabin  | 200
+PASS internal link 200: /product/portable-office/small-office-cabin  | 200
+PASS internal link 200: /product/portable-toilet  | 200
+PASS internal link 200: /product/pre-engineered-buildings  | 200
+PASS internal link 200: /product/prefab-buildings  | 200
+PASS internal link 200: /product/prefabricated-houses  | 200
+PASS internal link 200: /product/puf-panel  | 200
+PASS internal link 200: /product/roofing-sheet  | 200
+PASS internal link 200: /product/security-cabins  | 200
+PASS no empty alt  | 33
+PASS no duplicate alt
+PASS no source PNG served
+PASS explicit width/height on every img  | 33
+PASS webp 10x10/portable-mobile-laboratory-10x10-front-door-wall.webp exists and 80-120 KB  | 117
+PASS webp 10x10/portable-mobile-laboratory-10x10-interior-from-door.webp exists and 80-120 KB  | 117
+PASS webp 10x10/portable-mobile-laboratory-10x10-interior-bench-run.webp exists and 80-120 KB  | 119
+PASS webp 10x10/portable-mobile-laboratory-10x10-sink-service-interface.webp exists and 80-120 KB  | 115
+PASS webp 20x8/portable-mobile-laboratory-20x8-front-window-door-window.webp exists and 80-120 KB  | 119
+PASS webp 20x8/portable-mobile-laboratory-20x8-wall-a-elevation.webp exists and 80-120 KB  | 119
+PASS webp 20x8/portable-mobile-laboratory-20x8-rear-two-windows.webp exists and 80-120 KB  | 116
+PASS webp 20x8/portable-mobile-laboratory-20x8-interior-from-door.webp exists and 80-120 KB  | 104
+PASS webp 20x8/portable-mobile-laboratory-20x8-interior-linear-bench.webp exists and 80-120 KB  | 92
+PASS webp 20x8/portable-mobile-laboratory-20x8-sink-service-interface.webp exists and 80-120 KB  | 109
+PASS webp 20x10/portable-mobile-laboratory-20x10-front-window-door-window.webp exists and 80-120 KB  | 113
+PASS webp 20x10/portable-mobile-laboratory-20x10-wall-a-elevation.webp exists and 80-120 KB  | 80
+PASS webp 20x10/portable-mobile-laboratory-20x10-rear-two-windows.webp exists and 80-120 KB  | 87
+PASS webp 20x10/portable-mobile-laboratory-20x10-interior-from-door.webp exists and 80-120 KB  | 115
+PASS webp 20x10/portable-mobile-laboratory-20x10-interior-dual-bench.webp exists and 80-120 KB  | 119
+PASS webp 20x10/portable-mobile-laboratory-20x10-sink-service-interface.webp exists and 80-120 KB  | 114
+PASS webp 20x12/portable-mobile-laboratory-20x12-front-window-door-window.webp exists and 80-120 KB  | 117
+PASS webp 20x12/portable-mobile-laboratory-20x12-wall-a-elevation.webp exists and 80-120 KB  | 112
+PASS webp 20x12/portable-mobile-laboratory-20x12-rear-two-windows.webp exists and 80-120 KB  | 120
+PASS webp 20x12/portable-mobile-laboratory-20x12-interior-from-door.webp exists and 80-120 KB  | 119
+PASS webp 20x12/portable-mobile-laboratory-20x12-interior-wide-aisle.webp exists and 80-120 KB  | 118
+PASS webp 20x12/portable-mobile-laboratory-20x12-sink-service-interface.webp exists and 80-120 KB  | 81
+PASS webp 30x10/portable-mobile-laboratory-30x10-front-two-doors.webp exists and 80-120 KB  | 116
+PASS webp 30x10/portable-mobile-laboratory-30x10-wall-a-elevation.webp exists and 80-120 KB  | 114
+PASS webp 30x10/portable-mobile-laboratory-30x10-rear-four-windows.webp exists and 80-120 KB  | 115
+PASS webp 30x10/portable-mobile-laboratory-30x10-interior-from-door.webp exists and 80-120 KB  | 82
+PASS webp 30x10/portable-mobile-laboratory-30x10-interior-sample-flow.webp exists and 80-120 KB  | 88
+PASS webp 30x10/portable-mobile-laboratory-30x10-sink-service-interface.webp exists and 80-120 KB  | 84
+PASS webp 40x10/portable-mobile-laboratory-40x10-front-two-doors.webp exists and 80-120 KB  | 120
+PASS webp 40x10/portable-mobile-laboratory-40x10-wall-a-elevation.webp exists and 80-120 KB  | 115
+PASS webp 40x10/portable-mobile-laboratory-40x10-rear-four-windows.webp exists and 80-120 KB  | 119
+PASS webp 40x10/portable-mobile-laboratory-40x10-interior-from-door.webp exists and 80-120 KB  | 84
+PASS webp 40x10/portable-mobile-laboratory-40x10-interior-capacity-bench.webp exists and 80-120 KB  | 83
+PASS webp 40x10/portable-mobile-laboratory-40x10-sink-service-interface.webp exists and 80-120 KB  | 86
+PASS GA webp 10x10 exists and 80-120 KB  | 82
+PASS GA 10x10 ratio 16:9 (never cropped)  | (1800, 1012)
+PASS GA webp 20x8 exists and 80-120 KB  | 88
+PASS GA 20x8 ratio 16:9 (never cropped)  | (1800, 1012)
+PASS GA webp 20x10 exists and 80-120 KB  | 86
+PASS GA 20x10 ratio 16:9 (never cropped)  | (1800, 1012)
+PASS GA webp 20x12 exists and 80-120 KB  | 90
+PASS GA 20x12 ratio 16:9 (never cropped)  | (1800, 1012)
+PASS GA webp 30x10 exists and 80-120 KB  | 87
+PASS GA 30x10 ratio 16:9 (never cropped)  | (1800, 1012)
+PASS GA webp 40x10 exists and 80-120 KB  | 89
+PASS GA 40x10 ratio 16:9 (never cropped)  | (1800, 1012)
+PASS media-band webp 10x10 exists and 80-120 KB  | 114
+PASS media-band webp 20x8 exists and 80-120 KB  | 88
+PASS media-band webp 20x10 exists and 80-120 KB  | 120
+PASS media-band webp 20x12 exists and 80-120 KB  | 119
+PASS media-band webp 30x10 exists and 80-120 KB  | 91
+PASS media-band webp 40x10 exists and 80-120 KB  | 109
+PASS spec diagram 1 exists and 80-120 KB  | 80
+PASS spec diagram 2 exists and 80-120 KB  | 87
+PASS section 2 card webp exists and 80-120 KB  | 80
+PASS held-out source not published: 02-mobile-laboratory-10x10-rear-angle  | 02-mobile-laboratory-10x10-rear-angle
+PASS held-out source not published: 03-mobile-laboratory-10x10-side-elevation  | 03-mobile-laboratory-10x10-side-elevation
+PASS 10x10 gallery ships four slides (SAMAN ruling, deliberate)  | {'10x10': 4, '20x8': 6, '20x10': 6, '20x12': 6, '30x10': 6, '40x10': 6}
+PASS every other size ships six slides  | {'10x10': 4, '20x8': 6, '20x10': 6, '20x12': 6, '30x10': 6, '40x10': 6}
+PASS unsafe claim absent: 'NABL'  | NABL
+PASS unsafe claim absent: 'accredited by'  | accredited by
+PASS unsafe claim absent: 'is accredited'  | is accredited
+PASS unsafe claim absent: 'fume hood included'  | fume hood included
+PASS unsafe claim absent: 'GMP compliant'  | GMP compliant
+PASS unsafe claim absent: 'validated laboratory'  | validated laboratory
+PASS unsafe claim absent: 'turnkey laboratory'  | turnkey laboratory
+PASS unsafe claim absent: 'lab on wheels'  | lab on wheels
+PASS unsafe claim absent: 'mobile laboratory van'  | mobile laboratory van
+PASS required string present: 'no ISO corner castings'  | no ISO corner castings
+PASS required string present: '7.34'  | 7.34
+PASS required string present: '5.34'  | 5.34
+PASS required string present: 'fume hood'  | fume hood
+PASS required string present: 'accreditation'  | accreditation
+PASS placeholder word absent outside the exhaust-cowl control row  | 2
+PASS schema ItemPage
+PASS schema Product
+PASS schema BreadcrumbList
+PASS schema FAQPage
+PASS no review schema
+PASS no shippingDetails
+PASS faq schema matches visible: What is a mobile laboratory?
+PASS faq schema matches visible: What is a mobile testing labor
+PASS faq schema matches visible: What is a portable lab?
+PASS faq schema matches visible: What are the three types of la
+PASS faq schema matches visible: How much does a portable mobil
+PASS faq schema matches visible: Is the sink connected, and is 
+PASS faq schema matches visible: Can a fume hood be fitted?
+PASS faq schema matches visible: How is the laboratory lifted a
+
+RESULT: PASS

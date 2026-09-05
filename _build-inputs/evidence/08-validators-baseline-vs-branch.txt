@@ -1,0 +1,61 @@
+ARTEFACT 8 - REPO VALIDATORS: PRISTINE BASELINE vs THIS BRANCH
+
+Baseline worktree: 3c538299 (origin/static-migration at the branch point), pristine,
+same node_modules, same machine. Server-probing validators were pointed at the same
+local build in both runs (RB01C_BASE_URL / STG01B_BASE_URL = http://127.0.0.1:3105).
+
+  validator                                 baseline   branch
+  validate:commercial-architecture          PASS       PASS
+  validate:pc01-calculator-price-parity     PASS       PASS   (hash re-pinned, see below)
+  validate:publication-gate                 FAIL       FAIL   (pre-existing; one line FIXED)
+  validate:stg01b-structured-data           FAIL       FAIL   (pre-existing; one line FIXED)
+  validate:po-family-release                FAIL       FAIL   (pre-existing, identical)
+  validate:temporary-commercial-gating      FAIL       FAIL   (pre-existing, identical)
+  validate:merchant-feed                    FAIL       FAIL   (pre-existing, identical)
+
+This branch introduces NO new validator failure. Two pre-existing failure lines are
+repaired by it.
+
+--- validate:publication-gate
+baseline:
+  - architecture counts are 63/62 approved and 41/42 planned        <-- REPAIRED here
+  - temporary gating fixture is TEMPORARY_OWNER_DISPOSITION_PENDING with 62 paths
+  - planned path /product/portable-office/portable-mobile-laboratory returned 200
+branch:
+  - temporary gating fixture is TEMPORARY_OWNER_DISPOSITION_PENDING with 62 paths
+  - temporarily gated path /product/portable-office/modern-office-cabin returned 301 ...
+  - temporarily gated path /product/portable-office/modern-office-cabin lacks noindex,follow
+The count line is gone: PO-03 published a 63rd approved path without moving this pin,
+so it was already failing on pristine HEAD; PO-05 moves it to 64/40. The remaining
+lines are the pre-existing temporary-gating fixture drift and local-harness artefacts
+(the baseline run probed the same local server, where this page already renders).
+
+--- validate:stg01b-structured-data
+baseline:
+  - architecture is 63/41, expected 62/42                           <-- REPAIRED here
+  - protected content/product/rail/gating/freight sources changed: <37 files>
+branch:
+  - protected content/product/rail/gating/freight sources changed: <37 files>
+The protected-source list is 37 files on BOTH runs and the set is IDENTICAL (comm -13
+of the two sorted lists is empty). Of those 37, this branch touches exactly one
+(src/data/seo/commercialArchitecture.json), which the baseline already reported as
+drifted; the other 36 are untouched by this branch.
+
+--- validate:pc01-calculator-price-parity
+FAILS before the re-pin ("calculatorLadders.ts protected bytes changed"), PASSES after.
+The pin is a tamper tripwire over a whole-file SHA256. Evidence the change is additive:
+  ROUTE_LADDERS toRows keys 40 -> 41; added ['portable-mobile-laboratory']; removed [].
+  The complete diff of calculatorLadders.ts is FIVE ADDED LINES (one import, three
+  comment lines, one entry) and ZERO modified or deleted lines.
+  old ladders hash e411213ba17d60ee1697cc16df74fd6e43cd0c89ac012b305aec8b625edda001
+  new ladders hash 4225b1be7cb70704f525e2fc6aae4f3ec9caa3df371cd5118eeff2e5a1215338
+Every substantive PC-01 assertion (the live per-variant calculator computation and the
+six published prices checked against porta-cabins.json) is separate and still passes:
+  "PC-01 calculator price parity validation: PASS  Variants: 6/6".
+
+--- npm run build
+Passes, including the postbuild sitemap generator with its moved guards
+(expectedSegments.products 96 -> 97, total 358 -> 359). Sitemap diff is purely
+additive and scoped to this page: sitemap-products.xml +1 url, +0 removed;
+sitemap-images-products.xml +63 lines, +0 removed. Every other sitemap file is
+byte-identical once line endings are normalised.

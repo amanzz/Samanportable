@@ -1,0 +1,1000 @@
+[
+ {
+  "slot": "gallery/10x10",
+  "file": "/images/products/portable-mobile-laboratory/10x10/portable-mobile-laboratory-10x10-front-door-wall.webp",
+  "source": "10x10/_master/01-mobile-laboratory-10x10-front-hero.png",
+  "width": 1254,
+  "height": 1254,
+  "quality": 83,
+  "bytes": 120454,
+  "kb": 117,
+  "attempts": [
+   [
+    1254,
+    86,
+    138
+   ],
+   [
+    1254,
+    83,
+    117
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/10x10",
+  "file": "/images/products/portable-mobile-laboratory/10x10/portable-mobile-laboratory-10x10-interior-from-door.webp",
+  "source": "10x10/_master/04-mobile-laboratory-10x10-entry-interior.png",
+  "width": 1254,
+  "height": 1254,
+  "quality": 82,
+  "bytes": 119930,
+  "kb": 117,
+  "attempts": [
+   [
+    1254,
+    86,
+    144
+   ],
+   [
+    1254,
+    82,
+    117
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/10x10",
+  "file": "/images/products/portable-mobile-laboratory/10x10/portable-mobile-laboratory-10x10-interior-bench-run.webp",
+  "source": "10x10/_master/05-mobile-laboratory-10x10-workbench-interior.png",
+  "width": 1254,
+  "height": 1254,
+  "quality": 85,
+  "bytes": 122462,
+  "kb": 119,
+  "attempts": [
+   [
+    1254,
+    86,
+    129
+   ],
+   [
+    1254,
+    85,
+    119
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/10x10",
+  "file": "/images/products/portable-mobile-laboratory/10x10/portable-mobile-laboratory-10x10-sink-service-interface.webp",
+  "source": "10x10/_master/06-mobile-laboratory-10x10-sink-detail.png",
+  "width": 1254,
+  "height": 1254,
+  "quality": 86,
+  "bytes": 118476,
+  "kb": 115,
+  "attempts": [
+   [
+    1254,
+    86,
+    115
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/20x8",
+  "file": "/images/products/portable-mobile-laboratory/20x8/portable-mobile-laboratory-20x8-front-window-door-window.webp",
+  "source": "20x8/_master/01-mobile-laboratory-20x8-front-hero.png",
+  "width": 1254,
+  "height": 1254,
+  "quality": 79,
+  "bytes": 122756,
+  "kb": 119,
+  "attempts": [
+   [
+    1254,
+    86,
+    167
+   ],
+   [
+    1254,
+    79,
+    119
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/20x8",
+  "file": "/images/products/portable-mobile-laboratory/20x8/portable-mobile-laboratory-20x8-wall-a-elevation.webp",
+  "source": "20x8/_master/03-mobile-laboratory-20x8-side-elevation.png",
+  "width": 1254,
+  "height": 1254,
+  "quality": 84,
+  "bytes": 122684,
+  "kb": 119,
+  "attempts": [
+   [
+    1254,
+    86,
+    132
+   ],
+   [
+    1254,
+    84,
+    119
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/20x8",
+  "file": "/images/products/portable-mobile-laboratory/20x8/portable-mobile-laboratory-20x8-rear-two-windows.webp",
+  "source": "20x8/_master/02-mobile-laboratory-20x8-rear-angle.png",
+  "width": 1254,
+  "height": 1254,
+  "quality": 80,
+  "bytes": 119310,
+  "kb": 116,
+  "attempts": [
+   [
+    1254,
+    86,
+    156
+   ],
+   [
+    1254,
+    80,
+    116
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/20x8",
+  "file": "/images/products/portable-mobile-laboratory/20x8/portable-mobile-laboratory-20x8-interior-from-door.webp",
+  "source": "20x8/_master/04-mobile-laboratory-20x8-entry-interior.png",
+  "width": 1254,
+  "height": 1254,
+  "quality": 86,
+  "bytes": 107252,
+  "kb": 104,
+  "attempts": [
+   [
+    1254,
+    86,
+    104
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/20x8",
+  "file": "/images/products/portable-mobile-laboratory/20x8/portable-mobile-laboratory-20x8-interior-linear-bench.webp",
+  "source": "20x8/_master/05-mobile-laboratory-20x8-workbench-interior.png",
+  "width": 1254,
+  "height": 1254,
+  "quality": 86,
+  "bytes": 95006,
+  "kb": 92,
+  "attempts": [
+   [
+    1254,
+    86,
+    92
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/20x8",
+  "file": "/images/products/portable-mobile-laboratory/20x8/portable-mobile-laboratory-20x8-sink-service-interface.webp",
+  "source": "20x8/_master/06-mobile-laboratory-20x8-sink-detail.png",
+  "width": 1254,
+  "height": 1254,
+  "quality": 86,
+  "bytes": 112286,
+  "kb": 109,
+  "attempts": [
+   [
+    1254,
+    86,
+    109
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/20x10",
+  "file": "/images/products/portable-mobile-laboratory/20x10/portable-mobile-laboratory-20x10-front-window-door-window.webp",
+  "source": "20x10/_master/01-mobile-laboratory-20x10-front-hero.png",
+  "width": 1254,
+  "height": 1254,
+  "quality": 86,
+  "bytes": 115794,
+  "kb": 113,
+  "attempts": [
+   [
+    1254,
+    86,
+    113
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/20x10",
+  "file": "/images/products/portable-mobile-laboratory/20x10/portable-mobile-laboratory-20x10-wall-a-elevation.webp",
+  "source": "20x10/_master/03-mobile-laboratory-20x10-side-elevation.png",
+  "width": 1254,
+  "height": 1254,
+  "quality": 88,
+  "bytes": 82026,
+  "kb": 80,
+  "attempts": [
+   [
+    1254,
+    86,
+    68
+   ],
+   [
+    1254,
+    88,
+    80
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/20x10",
+  "file": "/images/products/portable-mobile-laboratory/20x10/portable-mobile-laboratory-20x10-rear-two-windows.webp",
+  "source": "20x10/_master/02-mobile-laboratory-20x10-rear-angle.png",
+  "width": 1254,
+  "height": 1254,
+  "quality": 86,
+  "bytes": 90002,
+  "kb": 87,
+  "attempts": [
+   [
+    1254,
+    86,
+    87
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/20x10",
+  "file": "/images/products/portable-mobile-laboratory/20x10/portable-mobile-laboratory-20x10-interior-from-door.webp",
+  "source": "20x10/_master/04-mobile-laboratory-20x10-entry-interior.png",
+  "width": 1254,
+  "height": 1254,
+  "quality": 78,
+  "bytes": 118656,
+  "kb": 115,
+  "attempts": [
+   [
+    1254,
+    86,
+    174
+   ],
+   [
+    1254,
+    78,
+    115
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/20x10",
+  "file": "/images/products/portable-mobile-laboratory/20x10/portable-mobile-laboratory-20x10-interior-dual-bench.webp",
+  "source": "20x10/_master/05-mobile-laboratory-20x10-workbench-interior.png",
+  "width": 1254,
+  "height": 1254,
+  "quality": 80,
+  "bytes": 122474,
+  "kb": 119,
+  "attempts": [
+   [
+    1254,
+    86,
+    157
+   ],
+   [
+    1254,
+    80,
+    119
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/20x10",
+  "file": "/images/products/portable-mobile-laboratory/20x10/portable-mobile-laboratory-20x10-sink-service-interface.webp",
+  "source": "20x10/_master/06-mobile-laboratory-20x10-sink-detail.png",
+  "width": 1254,
+  "height": 1254,
+  "quality": 85,
+  "bytes": 117412,
+  "kb": 114,
+  "attempts": [
+   [
+    1254,
+    86,
+    122
+   ],
+   [
+    1254,
+    85,
+    114
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/20x12",
+  "file": "/images/products/portable-mobile-laboratory/20x12/portable-mobile-laboratory-20x12-front-window-door-window.webp",
+  "source": "20x12/_master/01-mobile-laboratory-20x12-front-hero.png",
+  "width": 1254,
+  "height": 1254,
+  "quality": 83,
+  "bytes": 119996,
+  "kb": 117,
+  "attempts": [
+   [
+    1254,
+    86,
+    138
+   ],
+   [
+    1254,
+    83,
+    117
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/20x12",
+  "file": "/images/products/portable-mobile-laboratory/20x12/portable-mobile-laboratory-20x12-wall-a-elevation.webp",
+  "source": "20x12/_master/03-mobile-laboratory-20x12-side-elevation.png",
+  "width": 1254,
+  "height": 1254,
+  "quality": 85,
+  "bytes": 114832,
+  "kb": 112,
+  "attempts": [
+   [
+    1254,
+    86,
+    121
+   ],
+   [
+    1254,
+    85,
+    112
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/20x12",
+  "file": "/images/products/portable-mobile-laboratory/20x12/portable-mobile-laboratory-20x12-rear-two-windows.webp",
+  "source": "20x12/_master/02-mobile-laboratory-20x12-rear-angle.png",
+  "width": 1254,
+  "height": 1254,
+  "quality": 85,
+  "bytes": 122978,
+  "kb": 120,
+  "attempts": [
+   [
+    1254,
+    86,
+    127
+   ],
+   [
+    1254,
+    85,
+    120
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/20x12",
+  "file": "/images/products/portable-mobile-laboratory/20x12/portable-mobile-laboratory-20x12-interior-from-door.webp",
+  "source": "20x12/_master/04-mobile-laboratory-20x12-entry-interior.png",
+  "width": 1254,
+  "height": 1254,
+  "quality": 81,
+  "bytes": 122444,
+  "kb": 119,
+  "attempts": [
+   [
+    1254,
+    86,
+    157
+   ],
+   [
+    1254,
+    81,
+    119
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/20x12",
+  "file": "/images/products/portable-mobile-laboratory/20x12/portable-mobile-laboratory-20x12-interior-wide-aisle.webp",
+  "source": "20x12/_master/05-mobile-laboratory-20x12-workbench-interior.png",
+  "width": 1254,
+  "height": 1254,
+  "quality": 83,
+  "bytes": 121114,
+  "kb": 118,
+  "attempts": [
+   [
+    1254,
+    86,
+    140
+   ],
+   [
+    1254,
+    83,
+    118
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/20x12",
+  "file": "/images/products/portable-mobile-laboratory/20x12/portable-mobile-laboratory-20x12-sink-service-interface.webp",
+  "source": "20x12/_master/06-mobile-laboratory-20x12-sink-detail.png",
+  "width": 1254,
+  "height": 1254,
+  "quality": 88,
+  "bytes": 83536,
+  "kb": 81,
+  "attempts": [
+   [
+    1254,
+    86,
+    69
+   ],
+   [
+    1254,
+    88,
+    81
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/30x10",
+  "file": "/images/products/portable-mobile-laboratory/30x10/portable-mobile-laboratory-30x10-front-two-doors.webp",
+  "source": "30x10/_master/01-mobile-laboratory-30x10-front-hero.png",
+  "width": 1254,
+  "height": 1254,
+  "quality": 77,
+  "bytes": 119612,
+  "kb": 116,
+  "attempts": [
+   [
+    1254,
+    86,
+    171
+   ],
+   [
+    1254,
+    77,
+    116
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/30x10",
+  "file": "/images/products/portable-mobile-laboratory/30x10/portable-mobile-laboratory-30x10-wall-a-elevation.webp",
+  "source": "30x10/_master/03-mobile-laboratory-30x10-side-elevation.png",
+  "width": 1254,
+  "height": 1254,
+  "quality": 83,
+  "bytes": 116882,
+  "kb": 114,
+  "attempts": [
+   [
+    1254,
+    86,
+    135
+   ],
+   [
+    1254,
+    83,
+    114
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/30x10",
+  "file": "/images/products/portable-mobile-laboratory/30x10/portable-mobile-laboratory-30x10-rear-four-windows.webp",
+  "source": "30x10/_master/02-mobile-laboratory-30x10-rear-angle.png",
+  "width": 1254,
+  "height": 1254,
+  "quality": 79,
+  "bytes": 118176,
+  "kb": 115,
+  "attempts": [
+   [
+    1254,
+    86,
+    157
+   ],
+   [
+    1254,
+    79,
+    115
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/30x10",
+  "file": "/images/products/portable-mobile-laboratory/30x10/portable-mobile-laboratory-30x10-interior-from-door.webp",
+  "source": "30x10/_master/04-mobile-laboratory-30x10-entry-interior.png",
+  "width": 1254,
+  "height": 1254,
+  "quality": 88,
+  "bytes": 84254,
+  "kb": 82,
+  "attempts": [
+   [
+    1254,
+    86,
+    69
+   ],
+   [
+    1254,
+    88,
+    82
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/30x10",
+  "file": "/images/products/portable-mobile-laboratory/30x10/portable-mobile-laboratory-30x10-interior-sample-flow.webp",
+  "source": "30x10/_master/05-mobile-laboratory-30x10-workbench-interior.png",
+  "width": 1254,
+  "height": 1254,
+  "quality": 89,
+  "bytes": 90566,
+  "kb": 88,
+  "attempts": [
+   [
+    1254,
+    86,
+    71
+   ],
+   [
+    1254,
+    89,
+    88
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/30x10",
+  "file": "/images/products/portable-mobile-laboratory/30x10/portable-mobile-laboratory-30x10-sink-service-interface.webp",
+  "source": "30x10/_master/06-mobile-laboratory-30x10-sink-detail.png",
+  "width": 1254,
+  "height": 1254,
+  "quality": 87,
+  "bytes": 86920,
+  "kb": 84,
+  "attempts": [
+   [
+    1254,
+    86,
+    79
+   ],
+   [
+    1254,
+    87,
+    84
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/40x10",
+  "file": "/images/products/portable-mobile-laboratory/40x10/portable-mobile-laboratory-40x10-front-two-doors.webp",
+  "source": "40x10/_master/01-mobile-laboratory-40x10-front-hero.png",
+  "width": 1254,
+  "height": 1254,
+  "quality": 83,
+  "bytes": 123518,
+  "kb": 120,
+  "attempts": [
+   [
+    1254,
+    86,
+    140
+   ],
+   [
+    1254,
+    83,
+    120
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/40x10",
+  "file": "/images/products/portable-mobile-laboratory/40x10/portable-mobile-laboratory-40x10-wall-a-elevation.webp",
+  "source": "40x10/_master/03-mobile-laboratory-40x10-side-elevation.png",
+  "width": 1254,
+  "height": 1254,
+  "quality": 80,
+  "bytes": 118102,
+  "kb": 115,
+  "attempts": [
+   [
+    1254,
+    86,
+    161
+   ],
+   [
+    1254,
+    80,
+    115
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/40x10",
+  "file": "/images/products/portable-mobile-laboratory/40x10/portable-mobile-laboratory-40x10-rear-four-windows.webp",
+  "source": "40x10/_master/02-mobile-laboratory-40x10-rear-angle.png",
+  "width": 1254,
+  "height": 1254,
+  "quality": 85,
+  "bytes": 121980,
+  "kb": 119,
+  "attempts": [
+   [
+    1254,
+    86,
+    124
+   ],
+   [
+    1254,
+    85,
+    119
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/40x10",
+  "file": "/images/products/portable-mobile-laboratory/40x10/portable-mobile-laboratory-40x10-interior-from-door.webp",
+  "source": "40x10/_master/04-mobile-laboratory-40x10-entry-interior.png",
+  "width": 1254,
+  "height": 1254,
+  "quality": 88,
+  "bytes": 86970,
+  "kb": 84,
+  "attempts": [
+   [
+    1254,
+    86,
+    71
+   ],
+   [
+    1254,
+    88,
+    84
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/40x10",
+  "file": "/images/products/portable-mobile-laboratory/40x10/portable-mobile-laboratory-40x10-interior-capacity-bench.webp",
+  "source": "40x10/_master/05-mobile-laboratory-40x10-workbench-interior.png",
+  "width": 1254,
+  "height": 1254,
+  "quality": 88,
+  "bytes": 85644,
+  "kb": 83,
+  "attempts": [
+   [
+    1254,
+    86,
+    71
+   ],
+   [
+    1254,
+    88,
+    83
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/40x10",
+  "file": "/images/products/portable-mobile-laboratory/40x10/portable-mobile-laboratory-40x10-sink-service-interface.webp",
+  "source": "40x10/_master/06-mobile-laboratory-40x10-sink-detail.png",
+  "width": 1254,
+  "height": 1254,
+  "quality": 91,
+  "bytes": 88348,
+  "kb": 86,
+  "attempts": [
+   [
+    1254,
+    86,
+    58
+   ],
+   [
+    1254,
+    91,
+    86
+   ]
+  ]
+ },
+ {
+  "slot": "ga/10x10",
+  "file": "/images/products/portable-mobile-laboratory/ga/portable-mobile-laboratory-10x10-ga-board.webp",
+  "source": "_approved-ga-v1/portable-mobile-laboratory-10x10x8-5-premium-ga-specification-board-v1.png",
+  "width": 1800,
+  "height": 1012,
+  "quality": 91,
+  "bytes": 84288,
+  "kb": 82,
+  "attempts": [
+   [
+    1800,
+    88,
+    74
+   ],
+   [
+    1800,
+    91,
+    82
+   ]
+  ]
+ },
+ {
+  "slot": "ga/20x8",
+  "file": "/images/products/portable-mobile-laboratory/ga/portable-mobile-laboratory-20x8-ga-board.webp",
+  "source": "_approved-ga-v1/portable-mobile-laboratory-20x8x8-5-premium-ga-specification-board-v1.png",
+  "width": 1800,
+  "height": 1012,
+  "quality": 88,
+  "bytes": 90350,
+  "kb": 88,
+  "attempts": [
+   [
+    1800,
+    88,
+    88
+   ]
+  ]
+ },
+ {
+  "slot": "ga/20x10",
+  "file": "/images/products/portable-mobile-laboratory/ga/portable-mobile-laboratory-20x10-ga-board.webp",
+  "source": "_approved-ga-v1/portable-mobile-laboratory-20x10x8-5-premium-ga-specification-board-v1.png",
+  "width": 1800,
+  "height": 1012,
+  "quality": 88,
+  "bytes": 88898,
+  "kb": 86,
+  "attempts": [
+   [
+    1800,
+    88,
+    86
+   ]
+  ]
+ },
+ {
+  "slot": "ga/20x12",
+  "file": "/images/products/portable-mobile-laboratory/ga/portable-mobile-laboratory-20x12-ga-board.webp",
+  "source": "_approved-ga-v1/portable-mobile-laboratory-20x12x8-5-premium-ga-specification-board-v1.png",
+  "width": 1800,
+  "height": 1012,
+  "quality": 88,
+  "bytes": 93100,
+  "kb": 90,
+  "attempts": [
+   [
+    1800,
+    88,
+    90
+   ]
+  ]
+ },
+ {
+  "slot": "ga/30x10",
+  "file": "/images/products/portable-mobile-laboratory/ga/portable-mobile-laboratory-30x10-ga-board.webp",
+  "source": "_approved-ga-v1/portable-mobile-laboratory-30x10x8-5-premium-ga-specification-board-v1.png",
+  "width": 1800,
+  "height": 1012,
+  "quality": 88,
+  "bytes": 89694,
+  "kb": 87,
+  "attempts": [
+   [
+    1800,
+    88,
+    87
+   ]
+  ]
+ },
+ {
+  "slot": "ga/40x10",
+  "file": "/images/products/portable-mobile-laboratory/ga/portable-mobile-laboratory-40x10-ga-board.webp",
+  "source": "_approved-ga-v1/portable-mobile-laboratory-40x10x8-5-premium-ga-specification-board-v1.png",
+  "width": 1800,
+  "height": 1012,
+  "quality": 88,
+  "bytes": 91710,
+  "kb": 89,
+  "attempts": [
+   [
+    1800,
+    88,
+    89
+   ]
+  ]
+ },
+ {
+  "slot": "section2",
+  "file": "/images/products/portable-mobile-laboratory/section2/portable-mobile-laboratory-20x10-ga-board-card.webp",
+  "source": "_approved-ga-v1/portable-mobile-laboratory-20x10x8-5-premium-ga-specification-board-v1.png",
+  "width": 1600,
+  "height": 900,
+  "quality": 91,
+  "bytes": 82924,
+  "kb": 80,
+  "attempts": [
+   [
+    1600,
+    90,
+    77
+   ],
+   [
+    1600,
+    91,
+    80
+   ]
+  ]
+ },
+ {
+  "slot": "media/10x10",
+  "file": "/images/products/portable-mobile-laboratory/media/portable-mobile-laboratory-10x10-compact-workflow.webp",
+  "source": "_long-description/_master/01-mobile-laboratory-10x10-compact-workflow.png",
+  "width": 1600,
+  "height": 900,
+  "quality": 90,
+  "bytes": 117696,
+  "kb": 114,
+  "attempts": [
+   [
+    1600,
+    90,
+    114
+   ]
+  ]
+ },
+ {
+  "slot": "media/20x8",
+  "file": "/images/products/portable-mobile-laboratory/media/portable-mobile-laboratory-20x8-linear-workflow.webp",
+  "source": "_long-description/_master/02-mobile-laboratory-20x8-linear-workflow.png",
+  "width": 1600,
+  "height": 900,
+  "quality": 90,
+  "bytes": 90618,
+  "kb": 88,
+  "attempts": [
+   [
+    1600,
+    90,
+    88
+   ]
+  ]
+ },
+ {
+  "slot": "media/20x10",
+  "file": "/images/products/portable-mobile-laboratory/media/portable-mobile-laboratory-20x10-dual-bench-workflow.webp",
+  "source": "_long-description/_master/03-mobile-laboratory-20x10-dual-workflow.png",
+  "width": 1600,
+  "height": 900,
+  "quality": 88,
+  "bytes": 123430,
+  "kb": 120,
+  "attempts": [
+   [
+    1600,
+    90,
+    136
+   ],
+   [
+    1600,
+    88,
+    120
+   ]
+  ]
+ },
+ {
+  "slot": "media/20x12",
+  "file": "/images/products/portable-mobile-laboratory/media/portable-mobile-laboratory-20x12-wide-aisle-workflow.webp",
+  "source": "_long-description/_master/04-mobile-laboratory-20x12-wide-workflow.png",
+  "width": 1600,
+  "height": 900,
+  "quality": 88,
+  "bytes": 122540,
+  "kb": 119,
+  "attempts": [
+   [
+    1600,
+    90,
+    130
+   ],
+   [
+    1600,
+    88,
+    119
+   ]
+  ]
+ },
+ {
+  "slot": "media/30x10",
+  "file": "/images/products/portable-mobile-laboratory/media/portable-mobile-laboratory-30x10-sample-flow-workflow.webp",
+  "source": "_long-description/_master/05-mobile-laboratory-30x10-sample-workflow.png",
+  "width": 1600,
+  "height": 900,
+  "quality": 90,
+  "bytes": 93902,
+  "kb": 91,
+  "attempts": [
+   [
+    1600,
+    90,
+    91
+   ]
+  ]
+ },
+ {
+  "slot": "media/40x10",
+  "file": "/images/products/portable-mobile-laboratory/media/portable-mobile-laboratory-40x10-capacity-workflow.webp",
+  "source": "_long-description/_master/06-mobile-laboratory-40x10-capacity-workflow.png",
+  "width": 1600,
+  "height": 900,
+  "quality": 90,
+  "bytes": 111982,
+  "kb": 109,
+  "attempts": [
+   [
+    1600,
+    90,
+    109
+   ]
+  ]
+ },
+ {
+  "slot": "diagram/1",
+  "file": "/images/products/portable-mobile-laboratory/specs/portable-mobile-laboratory-frame-envelope-diagram.webp",
+  "source": "_technical-diagrams/01-mobile-laboratory-frame-envelope-workflow.png",
+  "width": 1600,
+  "height": 900,
+  "quality": 91,
+  "bytes": 82804,
+  "kb": 80,
+  "attempts": [
+   [
+    1600,
+    90,
+    76
+   ],
+   [
+    1600,
+    91,
+    80
+   ]
+  ]
+ },
+ {
+  "slot": "diagram/2",
+  "file": "/images/products/portable-mobile-laboratory/specs/portable-mobile-laboratory-openings-services-diagram.webp",
+  "source": "_technical-diagrams/02-mobile-laboratory-services-coordination-guide.png",
+  "width": 1600,
+  "height": 900,
+  "quality": 90,
+  "bytes": 89534,
+  "kb": 87,
+  "attempts": [
+   [
+    1600,
+    90,
+    87
+   ]
+  ]
+ }
+]

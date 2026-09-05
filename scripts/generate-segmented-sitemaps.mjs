@@ -122,7 +122,10 @@ const unfilteredSegments = { products, locations, projects, editorial };
 // PO-03 (5 Sep 2026): products 95 -> 96 for /product/portable-office/portable-weighbridge-office,
 // published in this commit and added to sitemapCanonicalPaths.json in the same commit (Ruling 6).
 // Both this guard and the total below move with it - see the PC-07 / PR #132 incident note below.
-const expectedSegments = { products: 96, locations: 196, projects: 1, editorial: 65 };
+// PO-05 (5 Sep 2026): products 96 -> 97 for /product/portable-office/portable-mobile-laboratory,
+// published in this commit and added to sitemapCanonicalPaths.json in the same commit (Ruling 6).
+// Both this guard and the total below move with it - see the PC-07 / PR #132 incident note below.
+const expectedSegments = { products: 97, locations: 196, projects: 1, editorial: 65 };
 
 const redirectEntries = await nextConfig.redirects();
 const redirectMatchers = redirectEntries
@@ -193,8 +196,9 @@ for (const [name, expected] of Object.entries(expectedSegments)) {
 // 410 = 406 plus the four porta-cabin pages this commit adds to the sitemap.
 // 357 = 356 plus /product/portable-office/executive-portable-office (PO-04).
 // 358 = 357 plus /product/portable-office/portable-weighbridge-office (PO-03).
-if (all.length !== 358) {
-  throw new Error(`Page sitemap total changed from 358 to ${all.length}`);
+// 359 = 358 plus /product/portable-office/portable-mobile-laboratory (PO-05).
+if (all.length !== 359) {
+  throw new Error(`Page sitemap total changed from 359 to ${all.length}`);
 }
 
 const pageMap = new Map();

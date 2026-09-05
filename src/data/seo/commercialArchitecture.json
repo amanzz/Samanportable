@@ -46,6 +46,7 @@
     "/product/porta-cabins/soundproof-porta-cabin",
     "/product/portable-office",
     "/product/portable-office/executive-portable-office",
+    "/product/portable-office/portable-mobile-laboratory",
     "/product/portable-office/portable-weighbridge-office",
     "/product/portable-office/prefabricated-office-cabins",
     "/product/portable-office/readymade-office-cabin",
@@ -66,7 +67,6 @@
   ],
   "plannedReleasePaths": [
     "/product/labor-colony/accommodation-container",
-    "/product/portable-office/portable-mobile-laboratory",
     "/product/portable-office/construction-site-cabin",
     "/product/portable-office/portable-control-room",
     "/product/portable-office/portable-conference-cabin",
@@ -108,6 +108,6 @@
     "/product/roofing-sheet/curved-roofing-sheet"
   ],
   "plannedReleaseBacklogBaselineCount": 45,
-  "plannedReleaseBacklogCurrentCount": 41,
+  "plannedReleaseBacklogCurrentCount": 40,
   "sourceAuditDate": "2026-08-24"
 }

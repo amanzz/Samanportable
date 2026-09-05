@@ -1,0 +1,20 @@
+ARTEFACT 5 - DOM CHECKS ON THE FETCHED PREVIEW HTML
+url: http://localhost:3105/product/portable-office/portable-mobile-laboratory
+
+PASS  exactly one H1  | ['Portable Mobile Laboratory: Six Sizes, 100 to 400 sq ft']
+PASS  no empty heading  | 73
+PASS  every img has an alt attribute  | (33, 33)
+PASS  no empty alt
+PASS  no duplicate alt
+PASS  explicit width and height on every img  | 33
+PASS  no U+2014 in body text
+PASS  tab panel present in the fetched HTML: Description
+PASS  tab panel present in the fetched HTML: Specifications
+PASS  tab panel present in the fetched HTML: Shipping
+PASS  tab panel present in the fetched HTML: Reviews
+PASS  no 'Info' tab label
+PASS  zero hits for 'coming soon'
+PASS  zero hits for 'available on request'
+PASS  zero hits for 'contact us for details'
+PASS  placeholder only as the approved GA control term (<= 2)  | 2
+PASS  zero hits for 'TBD'

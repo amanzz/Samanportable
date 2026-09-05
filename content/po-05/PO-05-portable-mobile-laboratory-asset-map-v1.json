@@ -1,0 +1,307 @@
+{
+ "page": "portable-mobile-laboratory",
+ "package_root": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\portable-mobile-laboratory",
+ "package_note": "The register expects an approved-website-assets-v<latest> subfolder. It does not exist. The single flat package at the folder root is the current one (manifest 1.0, ruleset 2026-08-23, GA approval record USER-APPROVED-GA 23 Aug 2026).",
+ "output_root": "public/images/products/portable-mobile-laboratory",
+ "rules": {
+  "never_ship_source_png": true,
+  "webp_size_band_kb": [
+   80,
+   120
+  ],
+  "gallery": {
+   "width_px": 1254,
+   "quality_start": 86,
+   "ratio": "1:1",
+   "crop": "none",
+   "source": "re-encode from the PNG master in <size>/_master/, not from the supplied full-size WebP (those run 88-236 KB)"
+  },
+  "ga_board": {
+   "width_px": 1800,
+   "quality_start": 88,
+   "ratio": "16:9",
+   "crop": "NEVER - downscale proportionally only; dimension text must stay legible"
+  },
+  "section2_card": {
+   "width_px": 1600,
+   "quality_start": 90,
+   "ratio": "16:9",
+   "crop": "none (source is native 16:9)"
+  },
+  "media_band": {
+   "width_px": 1600,
+   "quality_start": 90,
+   "ratio": "16:9",
+   "crop": "none"
+  },
+  "spec_diagram": {
+   "width_px": 1600,
+   "quality_start": 90,
+   "crop": "none"
+  },
+  "loading": "the six (four for 10x10) images of the selected size eager with fetchpriority=high on slide 1 only; every other size lazy; explicit width and height on every img; preload link for slide 1 of the default size (20x10) carrying the same imagesrcset; GA boards, media band and diagrams lazy",
+  "measure_every_output": "report width, height and KB for every file; anything outside 80-120 KB is re-encoded (quality first, then width) and re-measured"
+ },
+ "keep_as_is": {
+  "note": "New page. Nothing is retained; there is no live gallery for this URL."
+ },
+ "held_out": {
+  "ruling": "SAMAN ruling 5 Sep 2026, PO-05 asset audit Defect A.",
+  "files": [
+   "10x10/02-mobile-laboratory-10x10-rear-angle.webp",
+   "10x10/03-mobile-laboratory-10x10-side-elevation.webp"
+  ],
+  "reason": "The rendered body is roughly 12 to 14 ft long against a GA that fixes 10 ft 0 in square. Not published. The 10x10 exterior schedule is carried by its GA board in Section 3.",
+  "consequence": "The 10x10 gallery ships four slides, not six. This is deliberate and is not a defect to report."
+ },
+ "gallery_new": {
+  "10x10": {
+   "slides": [
+    {
+     "src": "10x10/_master/01-mobile-laboratory-10x10-front-hero.png",
+     "out": "10x10/portable-mobile-laboratory-10x10-front-door-wall.webp"
+    },
+    {
+     "src": "10x10/_master/04-mobile-laboratory-10x10-entry-interior.png",
+     "out": "10x10/portable-mobile-laboratory-10x10-interior-from-door.webp"
+    },
+    {
+     "src": "10x10/_master/05-mobile-laboratory-10x10-workbench-interior.png",
+     "out": "10x10/portable-mobile-laboratory-10x10-interior-bench-run.webp"
+    },
+    {
+     "src": "10x10/_master/06-mobile-laboratory-10x10-sink-detail.png",
+     "out": "10x10/portable-mobile-laboratory-10x10-sink-service-interface.webp"
+    }
+   ]
+  },
+  "20x8": {
+   "slides": [
+    {
+     "src": "20x8/_master/01-mobile-laboratory-20x8-front-hero.png",
+     "out": "20x8/portable-mobile-laboratory-20x8-front-window-door-window.webp"
+    },
+    {
+     "src": "20x8/_master/03-mobile-laboratory-20x8-side-elevation.png",
+     "out": "20x8/portable-mobile-laboratory-20x8-wall-a-elevation.webp"
+    },
+    {
+     "src": "20x8/_master/02-mobile-laboratory-20x8-rear-angle.png",
+     "out": "20x8/portable-mobile-laboratory-20x8-rear-two-windows.webp"
+    },
+    {
+     "src": "20x8/_master/04-mobile-laboratory-20x8-entry-interior.png",
+     "out": "20x8/portable-mobile-laboratory-20x8-interior-from-door.webp"
+    },
+    {
+     "src": "20x8/_master/05-mobile-laboratory-20x8-workbench-interior.png",
+     "out": "20x8/portable-mobile-laboratory-20x8-interior-linear-bench.webp"
+    },
+    {
+     "src": "20x8/_master/06-mobile-laboratory-20x8-sink-detail.png",
+     "out": "20x8/portable-mobile-laboratory-20x8-sink-service-interface.webp"
+    }
+   ]
+  },
+  "20x10": {
+   "slides": [
+    {
+     "src": "20x10/_master/01-mobile-laboratory-20x10-front-hero.png",
+     "out": "20x10/portable-mobile-laboratory-20x10-front-window-door-window.webp"
+    },
+    {
+     "src": "20x10/_master/03-mobile-laboratory-20x10-side-elevation.png",
+     "out": "20x10/portable-mobile-laboratory-20x10-wall-a-elevation.webp"
+    },
+    {
+     "src": "20x10/_master/02-mobile-laboratory-20x10-rear-angle.png",
+     "out": "20x10/portable-mobile-laboratory-20x10-rear-two-windows.webp"
+    },
+    {
+     "src": "20x10/_master/04-mobile-laboratory-20x10-entry-interior.png",
+     "out": "20x10/portable-mobile-laboratory-20x10-interior-from-door.webp"
+    },
+    {
+     "src": "20x10/_master/05-mobile-laboratory-20x10-workbench-interior.png",
+     "out": "20x10/portable-mobile-laboratory-20x10-interior-dual-bench.webp"
+    },
+    {
+     "src": "20x10/_master/06-mobile-laboratory-20x10-sink-detail.png",
+     "out": "20x10/portable-mobile-laboratory-20x10-sink-service-interface.webp"
+    }
+   ]
+  },
+  "20x12": {
+   "slides": [
+    {
+     "src": "20x12/_master/01-mobile-laboratory-20x12-front-hero.png",
+     "out": "20x12/portable-mobile-laboratory-20x12-front-window-door-window.webp"
+    },
+    {
+     "src": "20x12/_master/03-mobile-laboratory-20x12-side-elevation.png",
+     "out": "20x12/portable-mobile-laboratory-20x12-wall-a-elevation.webp"
+    },
+    {
+     "src": "20x12/_master/02-mobile-laboratory-20x12-rear-angle.png",
+     "out": "20x12/portable-mobile-laboratory-20x12-rear-two-windows.webp"
+    },
+    {
+     "src": "20x12/_master/04-mobile-laboratory-20x12-entry-interior.png",
+     "out": "20x12/portable-mobile-laboratory-20x12-interior-from-door.webp"
+    },
+    {
+     "src": "20x12/_master/05-mobile-laboratory-20x12-workbench-interior.png",
+     "out": "20x12/portable-mobile-laboratory-20x12-interior-wide-aisle.webp"
+    },
+    {
+     "src": "20x12/_master/06-mobile-laboratory-20x12-sink-detail.png",
+     "out": "20x12/portable-mobile-laboratory-20x12-sink-service-interface.webp"
+    }
+   ]
+  },
+  "30x10": {
+   "slides": [
+    {
+     "src": "30x10/_master/01-mobile-laboratory-30x10-front-hero.png",
+     "out": "30x10/portable-mobile-laboratory-30x10-front-two-doors.webp"
+    },
+    {
+     "src": "30x10/_master/03-mobile-laboratory-30x10-side-elevation.png",
+     "out": "30x10/portable-mobile-laboratory-30x10-wall-a-elevation.webp"
+    },
+    {
+     "src": "30x10/_master/02-mobile-laboratory-30x10-rear-angle.png",
+     "out": "30x10/portable-mobile-laboratory-30x10-rear-four-windows.webp"
+    },
+    {
+     "src": "30x10/_master/04-mobile-laboratory-30x10-entry-interior.png",
+     "out": "30x10/portable-mobile-laboratory-30x10-interior-from-door.webp"
+    },
+    {
+     "src": "30x10/_master/05-mobile-laboratory-30x10-workbench-interior.png",
+     "out": "30x10/portable-mobile-laboratory-30x10-interior-sample-flow.webp"
+    },
+    {
+     "src": "30x10/_master/06-mobile-laboratory-30x10-sink-detail.png",
+     "out": "30x10/portable-mobile-laboratory-30x10-sink-service-interface.webp"
+    }
+   ]
+  },
+  "40x10": {
+   "slides": [
+    {
+     "src": "40x10/_master/01-mobile-laboratory-40x10-front-hero.png",
+     "out": "40x10/portable-mobile-laboratory-40x10-front-two-doors.webp"
+    },
+    {
+     "src": "40x10/_master/03-mobile-laboratory-40x10-side-elevation.png",
+     "out": "40x10/portable-mobile-laboratory-40x10-wall-a-elevation.webp"
+    },
+    {
+     "src": "40x10/_master/02-mobile-laboratory-40x10-rear-angle.png",
+     "out": "40x10/portable-mobile-laboratory-40x10-rear-four-windows.webp"
+    },
+    {
+     "src": "40x10/_master/04-mobile-laboratory-40x10-entry-interior.png",
+     "out": "40x10/portable-mobile-laboratory-40x10-interior-from-door.webp"
+    },
+    {
+     "src": "40x10/_master/05-mobile-laboratory-40x10-workbench-interior.png",
+     "out": "40x10/portable-mobile-laboratory-40x10-interior-capacity-bench.webp"
+    },
+    {
+     "src": "40x10/_master/06-mobile-laboratory-40x10-sink-detail.png",
+     "out": "40x10/portable-mobile-laboratory-40x10-sink-service-interface.webp"
+    }
+   ]
+  }
+ },
+ "ga_boards": {
+  "slot": "Section 3 left column, one per size, lazy",
+  "files": {
+   "10x10": {
+    "src": "_approved-ga-v1/portable-mobile-laboratory-10x10x8-5-premium-ga-specification-board-v1.png",
+    "out": "ga/portable-mobile-laboratory-10x10-ga-board.webp"
+   },
+   "20x8": {
+    "src": "_approved-ga-v1/portable-mobile-laboratory-20x8x8-5-premium-ga-specification-board-v1.png",
+    "out": "ga/portable-mobile-laboratory-20x8-ga-board.webp"
+   },
+   "20x10": {
+    "src": "_approved-ga-v1/portable-mobile-laboratory-20x10x8-5-premium-ga-specification-board-v1.png",
+    "out": "ga/portable-mobile-laboratory-20x10-ga-board.webp"
+   },
+   "20x12": {
+    "src": "_approved-ga-v1/portable-mobile-laboratory-20x12x8-5-premium-ga-specification-board-v1.png",
+    "out": "ga/portable-mobile-laboratory-20x12-ga-board.webp"
+   },
+   "30x10": {
+    "src": "_approved-ga-v1/portable-mobile-laboratory-30x10x8-5-premium-ga-specification-board-v1.png",
+    "out": "ga/portable-mobile-laboratory-30x10-ga-board.webp"
+   },
+   "40x10": {
+    "src": "_approved-ga-v1/portable-mobile-laboratory-40x10x8-5-premium-ga-specification-board-v1.png",
+    "out": "ga/portable-mobile-laboratory-40x10-ga-board.webp"
+   }
+  },
+  "source_note": "use the full-size 3840x2160 PNG named ...-premium-ga-specification-board-v1.png; never the -preview.png and never the .svg",
+  "alt_text_source": "copy JSON -> alt_text.ga_boards"
+ },
+ "section2_card": {
+  "src": "_approved-ga-v1/portable-mobile-laboratory-20x10x8-5-premium-ga-specification-board-v1.png",
+  "out": "section2/portable-mobile-laboratory-20x10-ga-board-card.webp",
+  "alt_text_source": "copy JSON -> alt_text.section2_card"
+ },
+ "media_band": {
+  "slot": "Block 7, six 16:9 frames in size order",
+  "files": {
+   "10x10": {
+    "src": "_long-description/_master/01-mobile-laboratory-10x10-compact-workflow.png",
+    "out": "media/portable-mobile-laboratory-10x10-compact-workflow.webp"
+   },
+   "20x8": {
+    "src": "_long-description/_master/02-mobile-laboratory-20x8-linear-workflow.png",
+    "out": "media/portable-mobile-laboratory-20x8-linear-workflow.webp"
+   },
+   "20x10": {
+    "src": "_long-description/_master/03-mobile-laboratory-20x10-dual-workflow.png",
+    "out": "media/portable-mobile-laboratory-20x10-dual-bench-workflow.webp"
+   },
+   "20x12": {
+    "src": "_long-description/_master/04-mobile-laboratory-20x12-wide-workflow.png",
+    "out": "media/portable-mobile-laboratory-20x12-wide-aisle-workflow.webp"
+   },
+   "30x10": {
+    "src": "_long-description/_master/05-mobile-laboratory-30x10-sample-workflow.png",
+    "out": "media/portable-mobile-laboratory-30x10-sample-flow-workflow.webp"
+   },
+   "40x10": {
+    "src": "_long-description/_master/06-mobile-laboratory-40x10-capacity-workflow.png",
+    "out": "media/portable-mobile-laboratory-40x10-capacity-workflow.webp"
+   }
+  },
+  "alt_text_source": "copy JSON -> alt_text.media_band"
+ },
+ "spec_diagrams": {
+  "1": {
+   "src": "_technical-diagrams/01-mobile-laboratory-frame-envelope-workflow.png",
+   "out": "specs/portable-mobile-laboratory-frame-envelope-diagram.webp"
+  },
+  "2": {
+   "src": "_technical-diagrams/02-mobile-laboratory-services-coordination-guide.png",
+   "out": "specs/portable-mobile-laboratory-openings-services-diagram.webp"
+  }
+ },
+ "spec_pdf": {
+  "src": "_technical-pdf/saman-portable-mobile-laboratory-technical-specification-and-price-v1.pdf",
+  "out": "public/downloads/portable-mobile-laboratory-technical-specification-and-price.pdf",
+  "link_label": "Download technical specification (PDF)"
+ },
+ "not_used": [
+  "_approval-ga-candidates-v1/* (superseded by _approved-ga-v1)",
+  "_approved-ga-v1/*-preview.png and *.svg",
+  "_contact-sheets/* (audit aids, not page assets)",
+  "<size>/1200/* and <size>/800/* (the build re-encodes from _master)",
+  "10x10/02-... and 10x10/03-... (held out, see held_out)"
+ ]
+}
