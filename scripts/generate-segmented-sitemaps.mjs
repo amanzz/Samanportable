@@ -119,7 +119,10 @@ const unfilteredSegments = { products, locations, projects, editorial };
 // /product/portable-office/executive-portable-office, which this release publishes
 // and adds to sitemapCanonicalPaths.json in the same commit (the PC-07 incident
 // noted below is why the guard moves with the canonical-paths entry, not after it).
-const expectedSegments = { products: 95, locations: 196, projects: 1, editorial: 65 };
+// PO-03 (5 Sep 2026): products 95 -> 96 for /product/portable-office/portable-weighbridge-office,
+// published in this commit and added to sitemapCanonicalPaths.json in the same commit (Ruling 6).
+// Both this guard and the total below move with it - see the PC-07 / PR #132 incident note below.
+const expectedSegments = { products: 96, locations: 196, projects: 1, editorial: 65 };
 
 const redirectEntries = await nextConfig.redirects();
 const redirectMatchers = redirectEntries
@@ -189,8 +192,9 @@ for (const [name, expected] of Object.entries(expectedSegments)) {
 // 19 noindex). See the expectedSegments note above for the segment breakdown.
 // 410 = 406 plus the four porta-cabin pages this commit adds to the sitemap.
 // 357 = 356 plus /product/portable-office/executive-portable-office (PO-04).
-if (all.length !== 357) {
-  throw new Error(`Page sitemap total changed from 357 to ${all.length}`);
+// 358 = 357 plus /product/portable-office/portable-weighbridge-office (PO-03).
+if (all.length !== 358) {
+  throw new Error(`Page sitemap total changed from 358 to ${all.length}`);
 }
 
 const pageMap = new Map();

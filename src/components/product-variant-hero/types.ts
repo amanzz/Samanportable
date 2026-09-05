@@ -291,6 +291,13 @@ export interface VariantProductData {
       deployed literal "5-yr structural warranty" (flagship byte-identical). */
   trustWarranty?: string;
   /** Exact owner-approved trust-strip copy. */
+  /** PO-03 (5 Sep 2026) — opt-in, default false. When a product ships NO gallery
+      images at all, the gallery's 1:1 frame would otherwise still paint as an empty
+      slate-gradient box. SAMAN's ruling for a page with no photographs is that an
+      empty slot renders NOTHING (no grey box, no placeholder, no alt-only stub), so
+      this suppresses the frame itself when there is no image and no video to show.
+      Absent on every other product -> the frame always renders, byte-identically. */
+  suppressEmptyGalleryFrame?: boolean;
   trustStripText?: string;
   /** Suppress the template proof row when its generic claims are not approved. */
   hideHeroProofRow?: boolean;

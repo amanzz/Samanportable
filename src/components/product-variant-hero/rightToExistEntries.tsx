@@ -6,6 +6,7 @@ import expandableContainerOfficeCopy from '../../../content/co-08/CO-08-copy-pac
 import smallOfficeCabinCopy from '../../../content/soc-01/SOC-01-small-office-cabin-copy-v1.json';
 import readymadeOfficeCabinCopy from '../../../content/po-01/PO-01-readymade-office-cabin-copy-v1.json';
 import prefabricatedOfficeCabinsCopy from '../../../content/po-02/PO-02-prefabricated-office-cabins-copy-v1.json';
+import portableWeighbridgeOfficeCopy from '../../../content/po-03/PO-03-portable-weighbridge-office-copy-v1.json';
 import executivePortableOfficeCopy from '../../../content/po-04/PO-04-executive-portable-office-copy-v1.json';
 
 const CABIN_HREF = '/product/porta-cabins';
@@ -1420,6 +1421,51 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
       // The pack names the target as the sizes section; on this route that section's
       // id is #porta-size-applications (the pack's literal "#sizes" exists only on
       // the unrelated panel routes). Same target as PO-01 and SOC-01.
+      ctaHref: '#porta-size-applications',
+    },
+  },
+  // PO-03 (5 Sep 2026) - Section 2 rendered verbatim from the signed copy pack
+  // (content/po-03). Nothing is retyped here: heading, both paragraphs, the CTA and
+  // every split-card field are read from the pack. The approved contextual link sits
+  // in paragraph 2 (the pack's section2.link.in says "paragraph2"), not paragraph 1
+  // as on PO-02, and the anchor falls at index 231 so the verifier's tag-stripped
+  // first-70-character comparison matches without a hidden plain-text mirror.
+  'portable-weighbridge-office': {
+    heading: portableWeighbridgeOfficeCopy.section2.h2,
+    bodyParagraphs: [
+      (<>{portableWeighbridgeOfficeCopy.section2.paragraph1}</>),
+      (() => {
+        const { paragraph2, link } = portableWeighbridgeOfficeCopy.section2;
+        const at = paragraph2.indexOf(link.anchor);
+        if (at < 0) return <>{paragraph2}</>;
+        return (
+          <>
+            {paragraph2.slice(0, at)}
+            <Link className={linkClass} href={link.href}>{link.anchor}</Link>
+            {paragraph2.slice(at + link.anchor.length)}
+          </>
+        );
+      })(),
+    ],
+    topCtaLabel: portableWeighbridgeOfficeCopy.section2.cta,
+    topCtaHref: '#porta-size-applications',
+    splitCard: {
+      // SAMAN ruling, 5 Sep 2026: the Section 2 slot carries the 20x10 GA board (20x10
+      // is the default size), at its native 16:9 and never cropped. The restored
+      // 36-image gallery belongs to the hero, not to this slot.
+      imageSrc: '/images/products/portable-weighbridge-office/cards/portable-weighbridge-office-section2-card.webp',
+      // alt_text.section2_card was rewritten by SAMAN on 5 Sep 2026 for THIS slot and
+      // is deliberately different from alt_text.ga_boards['20x10'], so the 20x10 board
+      // rendering again in Section 3 does not give the page a duplicate alt.
+      imageAlt: portableWeighbridgeOfficeCopy.alt_text.section2_card,
+      imageWidth: 1600,
+      imageHeight: 900,
+      subheading: portableWeighbridgeOfficeCopy.section2.split_card.h3,
+      body: portableWeighbridgeOfficeCopy.section2.split_card.paragraph1,
+      body2: portableWeighbridgeOfficeCopy.section2.split_card.paragraph2,
+      ctaLabel: portableWeighbridgeOfficeCopy.section2.split_card.cta,
+      // The pack's cta_target is "section3"; on this route that section's id is
+      // #porta-size-applications. Same target as PO-01, PO-02 and SOC-01.
       ctaHref: '#porta-size-applications',
     },
   },

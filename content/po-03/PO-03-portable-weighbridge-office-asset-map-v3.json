@@ -1,0 +1,302 @@
+{
+ "page": "portable-weighbridge-office",
+ "page_id": "PO-03",
+ "version": "v3",
+ "supersedes": "asset-map-v2.json (no-images build) and asset-map-v1.json",
+ "ruling": {
+  "date": "2026-05-09 superseded; final 5 September 2026",
+  "by": "SAMAN",
+  "text": "Restore the 36-image gallery and use the images as they are. This reverses the no-photographs ruling for the hero gallery only.",
+  "scope": "Hero gallery only. The Section 2 card stays the 20x10 GA board and the six long-description photographs stay unused.",
+  "recorded_consequence": "27 of these 36 images fail GA conformance; the register is section 15 of the draft. The page will therefore show, for several sizes, a photograph whose long wall carries fewer openings than the approved GA board rendered one scroll below it in Section 3. SAMAN has ruled to accept that. No copy claims anything the images contradict, because every published fact comes from the GA and the workbook, not from a photograph."
+ },
+ "package_root": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\portable-weighbridge-office",
+ "package_version_note": "The folder root IS the approved package; there is no approved-website-assets-v<n> wrapper. _archive-portable-weighbridge-office, _approval-ga-candidates-v1, _contact-sheets, _control-geometry-v1 and _technical-pdf/_qa-render-v1 are audit-only and are never read from.",
+ "output_root": "public/images/products/portable-weighbridge-office",
+ "rules": {
+  "never_ship_source_png": true,
+  "webp_size_band_kb": [
+   80,
+   120
+  ],
+  "ga_board": {
+   "width_px": 1800,
+   "quality_start": 88,
+   "crop": "NEVER - downscale proportionally only; open every output and confirm the opening schedule text is still legible"
+  },
+  "section2_card": {
+   "width_px": 1600,
+   "quality_start": 90,
+   "ratio": "native",
+   "crop": "none - the GA board is used uncropped; it is not forced to 16:9"
+  },
+  "spec_diagram": {
+   "width_px": 1600,
+   "quality_start": 90,
+   "crop": "none (sources are native 1920x1080); do not crop the ENGINEERING BOUNDARY footer, it is the disclaimer"
+  },
+  "loading": "The six images of the selected size eager with fetchpriority=high on slide 1 only; the other thirty lazy; explicit width and height on every img; a preload link for slide 1 of the default size (20x10) carrying the same imagesrcset. GA boards lazy. The Section 2 card is LAZY: it was measured at y=1786 px against a 900 px fold, so it is below the fold and must not be preloaded against the real LCP.",
+  "measure_every_output": "report width, height and KB for every file; anything outside 80-120 KB is re-encoded (quality first, then width) and re-measured",
+  "forbidden_sources": [
+   "_archive-portable-weighbridge-office/**",
+   "*-preview.png",
+   "_approval-ga-candidates-v1/**",
+   "_technical-pdf/_qa-render-v1/**",
+   "_control-geometry-v1/**"
+  ],
+  "gallery": {
+   "width_px": 1254,
+   "quality_start": 86,
+   "ratio": "1:1",
+   "crop": "none (sources are native 1254x1254). Never crop a gallery image: cropping risks removing a wall the GA check recorded."
+  }
+ },
+ "hero_gallery": {
+  "status": "IMAGES RESTORED, used as supplied",
+  "instruction": "Six slides per size from gallery_new, in the listed running order, alt from copy.alt_text.gallery_new keyed by output file name. The empty-gallery opt-in prop added during the no-images build must be OFF; the frame and the T28 shells render normally.",
+  "running_order_note": "The package supplies three exteriors then three interiors. The design lock's canonical order is four exteriors then two. Applied as supplied, per the assets-as-supplied rule and the PO-01 precedent."
+ },
+ "ga_boards": {
+  "10x10": {
+   "src": "_approved-ga-v1/portable-weighbridge-office-10x10x8-5-premium-ga-specification-board-v1.png",
+   "out": "ga/portable-weighbridge-office-10x10-ga-board.webp",
+   "note": "full-resolution master only; never the -preview file; never cropped, downscale proportionally only"
+  },
+  "20x8": {
+   "src": "_approved-ga-v1/portable-weighbridge-office-20x8x8-5-premium-ga-specification-board-v1.png",
+   "out": "ga/portable-weighbridge-office-20x8-ga-board.webp",
+   "note": "full-resolution master only; never the -preview file; never cropped, downscale proportionally only"
+  },
+  "20x10": {
+   "src": "_approved-ga-v1/portable-weighbridge-office-20x10x8-5-premium-ga-specification-board-v1.png",
+   "out": "ga/portable-weighbridge-office-20x10-ga-board.webp",
+   "note": "full-resolution master only; never the -preview file; never cropped, downscale proportionally only"
+  },
+  "20x12": {
+   "src": "_approved-ga-v1/portable-weighbridge-office-20x12x8-5-premium-ga-specification-board-v1.png",
+   "out": "ga/portable-weighbridge-office-20x12-ga-board.webp",
+   "note": "full-resolution master only; never the -preview file; never cropped, downscale proportionally only"
+  },
+  "30x10": {
+   "src": "_approved-ga-v1/portable-weighbridge-office-30x10x8-5-premium-ga-specification-board-v1.png",
+   "out": "ga/portable-weighbridge-office-30x10-ga-board.webp",
+   "note": "full-resolution master only; never the -preview file; never cropped, downscale proportionally only"
+  },
+  "40x10": {
+   "src": "_approved-ga-v1/portable-weighbridge-office-40x10x8-5-premium-ga-specification-board-v1.png",
+   "out": "ga/portable-weighbridge-office-40x10-ga-board.webp",
+   "note": "full-resolution master only; never the -preview file; never cropped, downscale proportionally only"
+  }
+ },
+ "section2_card": {
+  "src": "_approved-ga-v1/portable-weighbridge-office-20x10x8-5-premium-ga-specification-board-v1.png",
+  "out": "cards/portable-weighbridge-office-section2-card.webp",
+  "alt_key": "copy.alt_text.section2_card",
+  "note": "The design lock permits a GA board as the Section 2 split-card image. The 20x10 board is used because 20x10 is the default selected size. It is NOT cropped to 16:9; the card renders it at its native ratio. It is BELOW the fold (measured y=1786 px) and is loaded lazily, matching the identical slot on PO-02. Its alt is copy.alt_text.section2_card, which was rewritten on 5 Sep 2026 for this slot and is deliberately different from copy.alt_text.ga_boards['20x10'] so the page carries no duplicate alt."
+ },
+ "spec_diagrams": [
+  {
+   "src": "_technical-diagrams/01-portable-weighbridge-frame-joint-diagram.png",
+   "out": "diagrams/portable-weighbridge-office-frame-joint-diagram.webp",
+   "defect": null
+  },
+  {
+   "src": "_technical-diagrams/02-portable-weighbridge-electrical-installation-diagram.png",
+   "out": "diagrams/portable-weighbridge-office-electrical-installation-diagram.webp",
+   "defect": null
+  }
+ ],
+ "spec_pdf": {
+  "src": "_technical-pdf/saman-portable-weighbridge-office-technical-specification-and-price-v1.pdf",
+  "out": "docs/portable-weighbridge-office-technical-specification-and-price-v1.pdf",
+  "link_label": "Download technical specification (PDF)",
+  "gate": "13 pages, sha256 8cac1b6983a3e6a33002f41e707ee53134d09a0b162b463167f337dd4a5e4f09. Verify before copying; if it differs, stop and report."
+ },
+ "image_inventory": {
+  "total_images_shipped": 45,
+  "breakdown": "36 gallery photographs + 6 GA boards + 1 Section 2 card (the 20x10 GA board, separately encoded) + 2 technical diagrams",
+  "photographs_shipped": 36
+ },
+ "not_used": {
+  "6 long-description images": "Not shipped. The Section 2 card is the 20x10 GA board.",
+  "_control-geometry-v1 (30 files)": "Control drawings for image generation. Never shipped to the browser.",
+  "_contact-sheets": "QA artefacts."
+ },
+ "no_build_gate": "There is no build_gate and none is required.",
+ "gallery_new": {
+  "10x10": {
+   "running_order_note": "three exteriors then three interiors, as supplied in the approved package; the design lock's four-then-two order is not achievable from this package and the supplied order is used per the assets-as-supplied rule",
+   "slides": [
+    {
+     "src": "10x10/01-portable-weighbridge-10x10-yard-exterior.png",
+     "out": "10x10/portable-weighbridge-office-10x10-yard-exterior-wall-a-entry.webp"
+    },
+    {
+     "src": "10x10/02-portable-weighbridge-10x10-deck-exterior.png",
+     "out": "10x10/portable-weighbridge-office-10x10-deck-exterior-wall-b-weighbridge.webp"
+    },
+    {
+     "src": "10x10/03-portable-weighbridge-10x10-roof-exterior.png",
+     "out": "10x10/portable-weighbridge-office-10x10-roof-and-lifting-eyes.webp"
+    },
+    {
+     "src": "10x10/04-portable-weighbridge-10x10-operator-interior.png",
+     "out": "10x10/portable-weighbridge-office-10x10-interior-operator-consoles.webp"
+    },
+    {
+     "src": "10x10/05-portable-weighbridge-10x10-entry-interior.png",
+     "out": "10x10/portable-weighbridge-office-10x10-interior-from-entry-door.webp"
+    },
+    {
+     "src": "10x10/06-portable-weighbridge-10x10-workflow-interior.png",
+     "out": "10x10/portable-weighbridge-office-10x10-interior-workflow-end-wall.webp"
+    }
+   ]
+  },
+  "20x8": {
+   "running_order_note": "three exteriors then three interiors, as supplied in the approved package; the design lock's four-then-two order is not achievable from this package and the supplied order is used per the assets-as-supplied rule",
+   "slides": [
+    {
+     "src": "20x8/01-portable-weighbridge-20x8-yard-exterior.png",
+     "out": "20x8/portable-weighbridge-office-20x8-yard-exterior-wall-a-entry.webp"
+    },
+    {
+     "src": "20x8/02-portable-weighbridge-20x8-deck-exterior.png",
+     "out": "20x8/portable-weighbridge-office-20x8-deck-exterior-wall-b-weighbridge.webp"
+    },
+    {
+     "src": "20x8/03-portable-weighbridge-20x8-roof-exterior.png",
+     "out": "20x8/portable-weighbridge-office-20x8-roof-and-lifting-eyes.webp"
+    },
+    {
+     "src": "20x8/04-portable-weighbridge-20x8-operator-interior.png",
+     "out": "20x8/portable-weighbridge-office-20x8-interior-operator-consoles.webp"
+    },
+    {
+     "src": "20x8/05-portable-weighbridge-20x8-entry-interior.png",
+     "out": "20x8/portable-weighbridge-office-20x8-interior-from-entry-door.webp"
+    },
+    {
+     "src": "20x8/06-portable-weighbridge-20x8-workflow-interior.png",
+     "out": "20x8/portable-weighbridge-office-20x8-interior-workflow-end-wall.webp"
+    }
+   ]
+  },
+  "20x10": {
+   "running_order_note": "three exteriors then three interiors, as supplied in the approved package; the design lock's four-then-two order is not achievable from this package and the supplied order is used per the assets-as-supplied rule",
+   "slides": [
+    {
+     "src": "20x10/01-portable-weighbridge-20x10-yard-exterior.png",
+     "out": "20x10/portable-weighbridge-office-20x10-yard-exterior-wall-a-entry.webp"
+    },
+    {
+     "src": "20x10/02-portable-weighbridge-20x10-deck-exterior.png",
+     "out": "20x10/portable-weighbridge-office-20x10-deck-exterior-wall-b-weighbridge.webp"
+    },
+    {
+     "src": "20x10/03-portable-weighbridge-20x10-roof-exterior.png",
+     "out": "20x10/portable-weighbridge-office-20x10-roof-and-lifting-eyes.webp"
+    },
+    {
+     "src": "20x10/04-portable-weighbridge-20x10-operator-interior.png",
+     "out": "20x10/portable-weighbridge-office-20x10-interior-operator-consoles.webp"
+    },
+    {
+     "src": "20x10/05-portable-weighbridge-20x10-entry-interior.png",
+     "out": "20x10/portable-weighbridge-office-20x10-interior-from-entry-door.webp"
+    },
+    {
+     "src": "20x10/06-portable-weighbridge-20x10-workflow-interior.png",
+     "out": "20x10/portable-weighbridge-office-20x10-interior-workflow-end-wall.webp"
+    }
+   ]
+  },
+  "20x12": {
+   "running_order_note": "three exteriors then three interiors, as supplied in the approved package; the design lock's four-then-two order is not achievable from this package and the supplied order is used per the assets-as-supplied rule",
+   "slides": [
+    {
+     "src": "20x12/01-portable-weighbridge-20x12-yard-exterior.png",
+     "out": "20x12/portable-weighbridge-office-20x12-yard-exterior-wall-a-entry.webp"
+    },
+    {
+     "src": "20x12/02-portable-weighbridge-20x12-deck-exterior.png",
+     "out": "20x12/portable-weighbridge-office-20x12-deck-exterior-wall-b-weighbridge.webp"
+    },
+    {
+     "src": "20x12/03-portable-weighbridge-20x12-roof-exterior.png",
+     "out": "20x12/portable-weighbridge-office-20x12-roof-and-lifting-eyes.webp"
+    },
+    {
+     "src": "20x12/04-portable-weighbridge-20x12-operator-interior.png",
+     "out": "20x12/portable-weighbridge-office-20x12-interior-operator-consoles.webp"
+    },
+    {
+     "src": "20x12/05-portable-weighbridge-20x12-entry-interior.png",
+     "out": "20x12/portable-weighbridge-office-20x12-interior-from-entry-door.webp"
+    },
+    {
+     "src": "20x12/06-portable-weighbridge-20x12-workflow-interior.png",
+     "out": "20x12/portable-weighbridge-office-20x12-interior-workflow-end-wall.webp"
+    }
+   ]
+  },
+  "30x10": {
+   "running_order_note": "three exteriors then three interiors, as supplied in the approved package; the design lock's four-then-two order is not achievable from this package and the supplied order is used per the assets-as-supplied rule",
+   "slides": [
+    {
+     "src": "30x10/01-portable-weighbridge-30x10-yard-exterior.png",
+     "out": "30x10/portable-weighbridge-office-30x10-yard-exterior-wall-a-entry.webp"
+    },
+    {
+     "src": "30x10/02-portable-weighbridge-30x10-deck-exterior.png",
+     "out": "30x10/portable-weighbridge-office-30x10-deck-exterior-wall-b-weighbridge.webp"
+    },
+    {
+     "src": "30x10/03-portable-weighbridge-30x10-roof-exterior.png",
+     "out": "30x10/portable-weighbridge-office-30x10-roof-and-lifting-eyes.webp"
+    },
+    {
+     "src": "30x10/04-portable-weighbridge-30x10-operator-interior.png",
+     "out": "30x10/portable-weighbridge-office-30x10-interior-operator-consoles.webp"
+    },
+    {
+     "src": "30x10/05-portable-weighbridge-30x10-entry-interior.png",
+     "out": "30x10/portable-weighbridge-office-30x10-interior-from-entry-door.webp"
+    },
+    {
+     "src": "30x10/06-portable-weighbridge-30x10-workflow-interior.png",
+     "out": "30x10/portable-weighbridge-office-30x10-interior-workflow-end-wall.webp"
+    }
+   ]
+  },
+  "40x10": {
+   "running_order_note": "three exteriors then three interiors, as supplied in the approved package; the design lock's four-then-two order is not achievable from this package and the supplied order is used per the assets-as-supplied rule",
+   "slides": [
+    {
+     "src": "40x10/01-portable-weighbridge-40x10-yard-exterior.png",
+     "out": "40x10/portable-weighbridge-office-40x10-yard-exterior-wall-a-entry.webp"
+    },
+    {
+     "src": "40x10/02-portable-weighbridge-40x10-deck-exterior.png",
+     "out": "40x10/portable-weighbridge-office-40x10-deck-exterior-wall-b-weighbridge.webp"
+    },
+    {
+     "src": "40x10/03-portable-weighbridge-40x10-roof-exterior.png",
+     "out": "40x10/portable-weighbridge-office-40x10-roof-and-lifting-eyes.webp"
+    },
+    {
+     "src": "40x10/04-portable-weighbridge-40x10-operator-interior.png",
+     "out": "40x10/portable-weighbridge-office-40x10-interior-operator-consoles.webp"
+    },
+    {
+     "src": "40x10/05-portable-weighbridge-40x10-entry-interior.png",
+     "out": "40x10/portable-weighbridge-office-40x10-interior-from-entry-door.webp"
+    },
+    {
+     "src": "40x10/06-portable-weighbridge-40x10-workflow-interior.png",
+     "out": "40x10/portable-weighbridge-office-40x10-interior-workflow-end-wall.webp"
+    }
+   ]
+  }
+ }
+}
