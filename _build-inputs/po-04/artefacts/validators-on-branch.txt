@@ -1,0 +1,218 @@
+===== validate:merchant-feed EXIT=1 =====
+Merchant feed products: 96
+Validation errors: 6
+Validation warnings: 0
+Shipping labels:
+  freight_quote_required: 89
+  freight_panels_quote_required: 5
+  freight_compact_unit: 2
+Report: reports\google-merchant-feed-validation-2026-09-05.md
+990005: affected image product missing from feed
+990008: affected image product missing from feed
+990003: affected image product missing from feed
+990002: affected image product missing from feed
+990004: affected image product missing from feed
+990007: affected image product missing from feed
+===== validate:local-inventory EXIT=1 =====
+Primary Merchant feed products: 96
+Local inventory rows: 190
+Validation errors: 3
+Validation warnings: 1
+TSV: reports\google-local-inventory.tsv
+Report: reports\google-local-inventory-validation-2026-09-05.md
+Expected 192 local inventory rows, got 190
+990023: local price 497800.00 INR does not match primary feed price 330000.00 INR
+990023: local price 497800.00 INR does not match primary feed price 330000.00 INR
+===== validate:commercial-architecture EXIT=0 =====
+Commercial architecture valid: 62 approved live paths and 42 planned-release paths (1 retained draft record).
+===== validate:publication-gate EXIT=1 =====
+RB-01C publication-gate validation failed:
+- temporary gating fixture is TEMPORARY_OWNER_DISPOSITION_PENDING with 62 paths
+- approved path /product/portable-office/executive-portable-office returned 404
+- temporarily gated path /product/portable-office/modern-office-cabin returned 301 -> https://www.samanportable.com/product/portable-office/small-office-cabin
+- temporarily gated path /product/portable-office/modern-office-cabin lacks noindex,follow
+===== validate:temporary-commercial-gating EXIT=1 =====
+Temporary commercial gating invalid:
+- expected exactly 63 gated paths, found 62
+===== validate:container-office-rail EXIT=0 =====
+Container Office rail validation passed.
+{
+  "hub": "/product/container-offices",
+  "children": [
+    {
+      "pathname": "/product/container-offices/container-office-cabin",
+      "status": 200,
+      "canonical": "https://www.samanportable.com/product/container-offices/container-office-cabin",
+      "robots": "index, follow",
+      "label": "Container Office Cabin"
+    },
+    {
+      "pathname": "/product/container-offices/shipping-container-office",
+      "status": 200,
+      "canonical": "https://www.samanportable.com/product/container-offices/shipping-container-office",
+      "robots": "index, follow",
+      "label": "Shipping Container Office"
+    },
+    {
+      "pathname": "/product/container-offices/site-office-container",
+      "status": 200,
+      "canonical": "https://www.samanportable.com/product/container-offices/site-office-container",
+      "robots": "index, follow",
+      "label": "Site Office Container"
+    },
+    {
+      "pathname": "/product/container-offices/flat-pack-container-office",
+      "status": 200,
+      "canonical": "https://www.samanportable.com/product/container-offices/flat-pack-container-office",
+      "robots": "index, follow",
+      "label": "Flat-Pack Container Office"
+    },
+    {
+      "pathname": "/product/container-offices/multi-story-container-office",
+      "status": 200,
+      "canonical": "https://www.samanportable.com/product/container-offices/multi-story-container-office",
+      "robots": "index, follow",
+      "label": "Multi-Story Container Office"
+    },
+    {
+      "pathname": "/product/container-offices/containerized-data-center",
+      "status": 200,
+      "canonical": "https://www.samanportable.com/product/container-offices/containerized-data-center",
+      "robots": "index, follow",
+      "label": "Containerized Data Center"
+    },
+    {
+      "pathname": "/product/container-offices/bess-container",
+      "status": 200,
+      "canonical": "https://www.samanportable.com/product/container-offices/bess-container",
+      "robots": "index, follow",
+      "label": "BESS Container"
+    },
+    {
+      "pathname": "/product/container-offices/container-marketing-office",
+      "status": 200,
+      "canonical": "https://www.samanportable.com/product/container-offices/container-marketing-office",
+      "robots": "index, follow",
+      "label": "Container Marketing Office"
+    },
+    {
+      "pathname": "/product/container-offices/expandable-container-office",
+      "status": 200,
+      "canonical": "https://www.samanportable.com/product/container-offices/expandable-container-office",
+      "robots": "index, follow",
+      "label": "Expandable Container Office"
+    }
+  ],
+  "primaryRailChildCount": 9
+}
+===== validate:cod16-quotation-wording EXIT=0 =====
+  note: 23 "…quotation within 48 hours" string(s) present (not retired by CO-D16): fixed quotation within 48 hours | fixed-price quotation within 48 business hours | fixed-price quotation within 48 hours | fixed-price quotation in 48 hours
+CO-D16 quotation-wording validation: PASS
+  retired-guarantee matches (case-insensitive): 0
+  approved wording present in calculatorCopy.ts: yes
+===== validate:stg01b-structured-data EXIT=1 =====
+warning: in the working copy of 'src/data/seo/commercialArchitecture.json', LF will be replaced by CRLF the next time Git touches it
+STG-01B structured-data validation failed:
+- protected content/product/rail/gating/freight sources changed: src/data/products/bess-container.json, src/data/products/c01-specification-overrides.json, src/data/products/c05-specifications.json, src/data/products/container-cafe-applications.json, src/data/products/container-cafe.json, src/data/products/container-marketing-office.json, src/data/products/container-office-cabin.json, src/data/products/container-offices.json, src/data/products/containerized-data-center.json, src/data/products/expandable-container-office.json, src/data/products/flat-pack-container-office.json, src/data/products/gi-porta-cabin.json, src/data/products/luxury-container-houses.json, src/data/products/multi-story-container-office.json, src/data/products/porta-cabins-applications.json, src/data/products/porta-cabins.json, src/data/products/portable-office-applications.json, src/data/products/portable-office.json, src/data/products/prefabricated-container-house.json, src/data/products/prefabricated-office-cabins.json, src/data/products/readymade-office-cabin.json, src/data/products/section-h-datasets.json, src/data/products/shipping-container-office.json, src/data/products/site-office-container.json, src/data/products/small-office-cabin.json, src/data/products/specs-tab-dataset.json, src/data/seo/commercialArchitecture.json, src/data/seo/unapprovedCommercialGating.json, src/data/wp-export/products/bess-container.json, src/data/wp-export/products/container-marketing-office.json, src/data/wp-export/products/containerized-data-center.json, src/data/wp-export/products/portable-office.json, src/data/wp-export/redirected-products/saman-prefab-office.json
+- /product/portable-office/executive-portable-office has 0 Product entities in approved-page SSR
+- /product/portable-office/executive-portable-office has 0 BreadcrumbList entities in approved-page SSR
+===== validate:c01-specification-overrides EXIT=0 =====
+C01 specification override validation: PASS
+Generated SHA-256: 3a35ec7564c8007640b57313efa50a3420e93df0165fedcf80bcc5a056c37099
+Effective target: porta-cabins / Fasteners & sealing
+Sibling entries unchanged: 5/5
+Fail-closed simulations: base detail, MD5, duplicate override PASS
+===== validate:pc01-qualified-c01-debt EXIT=1 =====
+PC-01 qualified C01 legacy debt validation: FAIL
+AssertionError [ERR_ASSERTION]: production ref changed
++ actual - expected
+
++ '2b36300b0fda5208a07d8ffc5630db6b7a37da66'
+- '3346a532306c52932aeb2d813591bf95cb37716b'
+
+    at verifyGitState (file:///C:/Users/Saman%20Pos/Desktop/SAMAN-SESSION-RECOVERY-2026-08-28/worktrees/po04-executive-portable-office-20260905/scripts/validate-pc01-qualified-c01-debt.mjs:406:10)
+    at validateQualification (file:///C:/Users/Saman%20Pos/Desktop/SAMAN-SESSION-RECOVERY-2026-08-28/worktrees/po04-executive-portable-office-20260905/scripts/validate-pc01-qualified-c01-debt.mjs:445:20)
+    at file:///C:/Users/Saman%20Pos/Desktop/SAMAN-SESSION-RECOVERY-2026-08-28/worktrees/po04-executive-portable-office-20260905/scripts/validate-pc01-qualified-c01-debt.mjs:480:20
+    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)
+    at async node:internal/modules/esm/loader:633:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+===== validate:pc01-performance-measurement-debt EXIT=1 =====
+PC-01 performance measurement debt validation: FAIL
+AssertionError [ERR_ASSERTION]: production ref changed
++ actual - expected
+
++ '2b36300b0fda5208a07d8ffc5630db6b7a37da66'
+- '3346a532306c52932aeb2d813591bf95cb37716b'
+
+    at verifyGitState (file:///C:/Users/Saman%20Pos/Desktop/SAMAN-SESSION-RECOVERY-2026-08-28/worktrees/po04-executive-portable-office-20260905/scripts/validate-pc01-performance-measurement-debt.mjs:224:10)
+    at validateQualification (file:///C:/Users/Saman%20Pos/Desktop/SAMAN-SESSION-RECOVERY-2026-08-28/worktrees/po04-executive-portable-office-20260905/scripts/validate-pc01-performance-measurement-debt.mjs:267:20)
+    at file:///C:/Users/Saman%20Pos/Desktop/SAMAN-SESSION-RECOVERY-2026-08-28/worktrees/po04-executive-portable-office-20260905/scripts/validate-pc01-performance-measurement-debt.mjs:289:20
+    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)
+    at async node:internal/modules/esm/loader:633:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+===== validate:pc01-calculator-price-parity EXIT=0 =====
+PC-01 calculator price parity validation: PASS
+Variants: 6/6
+Bases: 143750, 220000, 250000, 288000, 360000, 475000
+No-freight incl-GST: 169625, 259600, 295000, 339840, 424800, 560500
+===== validate:pc01-static-faq EXIT=0 =====
+PC-01 static FAQ presentation validation: PASS
+Presentation: STATIC_VISIBLE_BLOCKS
+Visible/schema pairs: 8/8
+===== validate:cc01-faq-parity EXIT=0 =====
+CC-01 FAQ parity OK — 3 visible and 3 schema entries, questions and answers byte-identical after rendering.
+===== validate:enquiry-dialog-a11y EXIT=0 =====
+Enquiry dialog accessibility contract validation: PASS
+Dialog descriptions: 2/2
+Shared importers checked: 2; labour-colony delegation preserved
+===== validate:po-family-pdfs EXIT=1 =====
+Traceback (most recent call last):
+  File "C:\Users\Saman Pos\Desktop\SAMAN-SESSION-RECOVERY-2026-08-28\worktrees\po04-executive-portable-office-20260905\scripts\validate-po-family-pdfs.py", line 71, in <module>
+    print(json.dumps({"status": "PASS", "files": [validate(slug) for slug in SLUGS]}, indent=2))
+                                                  ~~~~~~~~^^^^^^
+  File "C:\Users\Saman Pos\Desktop\SAMAN-SESSION-RECOVERY-2026-08-28\worktrees\po04-executive-portable-office-20260905\scripts\validate-po-family-pdfs.py", line 37, in validate
+    assert item["capacity"] in text
+           ~~~~^^^^^^^^^^^^
+KeyError: 'capacity'
+===== validate:po-family-release EXIT=1 =====
+file:///C:/Users/Saman%20Pos/Desktop/SAMAN-SESSION-RECOVERY-2026-08-28/worktrees/po04-executive-portable-office-20260905/scripts/validate-po-family-release.mjs:7
+const fail = (message) => { throw new Error(`PO_FAMILY_INVALID: ${message}`); };
+                                  ^
+
+Error: PO_FAMILY_INVALID: readymade-office-cabin: ex-GST ladder
+    at fail (file:///C:/Users/Saman%20Pos/Desktop/SAMAN-SESSION-RECOVERY-2026-08-28/worktrees/po04-executive-portable-office-20260905/scripts/validate-po-family-release.mjs:7:35)
+    at assert (file:///C:/Users/Saman%20Pos/Desktop/SAMAN-SESSION-RECOVERY-2026-08-28/worktrees/po04-executive-portable-office-20260905/scripts/validate-po-family-release.mjs:8:58)
+    at file:///C:/Users/Saman%20Pos/Desktop/SAMAN-SESSION-RECOVERY-2026-08-28/worktrees/po04-executive-portable-office-20260905/scripts/validate-po-family-release.mjs:35:3
+    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)
+    at async node:internal/modules/esm/loader:633:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+
+Node.js v24.16.0
+===== validate:pc01-pdf EXIT=0 =====
+{
+  "status": "PASS",
+  "path": "C:\\Users\\Saman Pos\\Desktop\\SAMAN-SESSION-RECOVERY-2026-08-28\\worktrees\\po04-executive-portable-office-20260905\\public\\specs\\saman-porta-cabins-technical-specification.pdf",
+  "sha256": "9d67076407aefab9cb43370696e2a8a32985d8ec2e49ea577df08e8b9192ca96",
+  "pages": 11,
+  "images": 6,
+  "textCharacters": 10211
+}
+===== validate:pc01-keyword-ownership EXIT=0 =====
+{
+  "sitemapPages": 322,
+  "relevantOccurrences": 6381,
+  "relevantAnchorGroups": 444,
+  "broadHub": 792,
+  "retiredHub": 0,
+  "approvedChildren": 240,
+  "priceGuide": 8,
+  "localPages": 2427,
+  "productCategoryArchives": 0,
+  "gatedOrUnapproved": 0,
+  "contextual": 1292,
+  "repeatedOrSitewide": 5323,
+  "header": 2234,
+  "footer": 2855,
+  "findings": []
+}
+PASS: PC-01 keyword ownership and internal-link contract.

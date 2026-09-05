@@ -158,7 +158,9 @@ function internalPaths(html) {
 async function main() {
   const approved = new Set(architecture.approvedProductionPaths);
   const planned = new Set(architecture.plannedReleasePaths);
-  if (approved.size !== 61 || planned.size !== 43) fail(`architecture counts are ${approved.size}/61 approved and ${planned.size}/43 planned`);
+  // PO-04 (5 Sep 2026): /product/portable-office/executive-portable-office ships, so it
+  // moves from the planned-release backlog into the approved production list. 61/43 -> 62/42.
+  if (approved.size !== 62 || planned.size !== 42) fail(`architecture counts are ${approved.size}/62 approved and ${planned.size}/42 planned`);
   if (!approved.has(EXPANDABLE_OFFICE) || planned.has(EXPANDABLE_OFFICE)) fail('Expandable Container Office release classification is wrong');
   if (!planned.has(ACCOMMODATION) || approved.has(ACCOMMODATION)) fail('Accommodation Container release classification is wrong');
   if (!planned.has(EXPANDABLE_HOUSE) || approved.has(EXPANDABLE_HOUSE)) fail('Expandable Container House release classification is wrong');

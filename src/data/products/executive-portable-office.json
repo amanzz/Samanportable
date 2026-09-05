@@ -1,0 +1,860 @@
+{
+  "productSlug": "executive-portable-office",
+  "productName": "Executive Portable Office",
+  "variantAxis": "size",
+  "defaultVariant": "20x10",
+  "hsn": "9406",
+  "gstPercent": 18,
+  "emitAggregateOffer": true,
+  "schemaIncludeVariantOffers": true,
+  "variants": [
+    {
+      "sizeSlug": "10x10",
+      "label": "10×10 ft",
+      "dims": "10×10×8.5 ft",
+      "areaSqft": 100,
+      "priceExGst": 223388,
+      "priceInclGst": 263598,
+      "featureCells": [
+        {
+          "label": "Size",
+          "value": "10×10×8.5 ft · 100 sq ft"
+        },
+        {
+          "label": "Roof",
+          "value": "Centred-ridge two-way"
+        },
+        {
+          "label": "Openings",
+          "value": "1 door · 3 windows"
+        },
+        {
+          "label": "Workstations",
+          "value": "4 staged"
+        },
+        {
+          "label": "Application",
+          "value": "Single-room front office"
+        },
+        {
+          "label": "Material",
+          "value": "MS frame · corrugated MS shell"
+        },
+        {
+          "label": "Delivery",
+          "value": "7–21 Working Days"
+        },
+        {
+          "label": "Coverage",
+          "value": "Bangalore · Delhi NCR"
+        },
+        {
+          "label": "Brand",
+          "value": "SAMAN Portable"
+        }
+      ],
+      "images": [
+        {
+          "src": "/images/products/executive-portable-office/gallery/10x10/executive-portable-office-10x10-front-door-wall-a.webp",
+          "alt": "10x10 ft executive portable office, approach face: Wall A carries the external door alone and no window, in Graphite Charcoal",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/executive-portable-office/gallery/10x10/executive-portable-office-10x10-rear-wall-b-window.webp",
+          "alt": "Rear of the 10x10 ft executive portable office showing the single Wall B window and one end-wall window",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/executive-portable-office/gallery/10x10/executive-portable-office-10x10-gable-end-window.webp",
+          "alt": "Gable end of the 10x10 ft executive portable office: centred-ridge two-way roof and one end-wall window",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/executive-portable-office/gallery/10x10/executive-portable-office-10x10-interior-four-desks.webp",
+          "alt": "Inside the 10x10 ft executive portable office: four staged workstations, two on Wall B and one against each end wall",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/executive-portable-office/gallery/10x10/executive-portable-office-10x10-interior-reverse.webp",
+          "alt": "Reverse view inside the 10x10 ft executive portable office showing light from three walls and the clear door wall",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/executive-portable-office/gallery/10x10/executive-portable-office-10x10-interior-workstation.webp",
+          "alt": "Workstation detail in the 10x10 ft executive portable office with overhead cabinets above a Champagne Linen lined wall",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "20x8",
+      "label": "20×8 ft",
+      "dims": "20×8×8.5 ft",
+      "areaSqft": 160,
+      "priceExGst": 341880,
+      "priceInclGst": 403418,
+      "featureCells": [
+        {
+          "label": "Size",
+          "value": "20×8×8.5 ft · 160 sq ft"
+        },
+        {
+          "label": "Roof",
+          "value": "One-way slope across 8 ft"
+        },
+        {
+          "label": "Openings",
+          "value": "1 door · 6 windows"
+        },
+        {
+          "label": "Workstations",
+          "value": "3 staged"
+        },
+        {
+          "label": "Application",
+          "value": "Narrow-plot frontage"
+        },
+        {
+          "label": "Material",
+          "value": "MS frame · corrugated MS shell"
+        },
+        {
+          "label": "Delivery",
+          "value": "7–21 Working Days"
+        },
+        {
+          "label": "Coverage",
+          "value": "Bangalore · Delhi NCR"
+        },
+        {
+          "label": "Brand",
+          "value": "SAMAN Portable"
+        }
+      ],
+      "images": [
+        {
+          "src": "/images/products/executive-portable-office/gallery/20x8/executive-portable-office-20x8-front-window-door-window.webp",
+          "alt": "20x8 ft executive portable office frontage: window, door, window across Wall A under a one-way sloped roof",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/executive-portable-office/gallery/20x8/executive-portable-office-20x8-rear-two-windows.webp",
+          "alt": "Rear of the 20x8 ft executive portable office with two Wall B windows and one window on the end wall",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/executive-portable-office/gallery/20x8/executive-portable-office-20x8-end-one-way-roof.webp",
+          "alt": "End view of the 20x8 ft executive portable office showing the single fall of the one-way roof across the 8 ft width",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/executive-portable-office/gallery/20x8/executive-portable-office-20x8-interior-three-desks.webp",
+          "alt": "Inside the 20x8 ft executive portable office: three workstations on Wall B with the opposite wall left as circulation",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/executive-portable-office/gallery/20x8/executive-portable-office-20x8-interior-reverse.webp",
+          "alt": "Reverse interior of the 20x8 ft executive portable office looking back to the door on the frontage wall",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/executive-portable-office/gallery/20x8/executive-portable-office-20x8-interior-workstation.webp",
+          "alt": "Workstation run in the 20x8 ft executive portable office, six windows lighting a 160 sq ft plan",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "20x10",
+      "label": "20×10 ft",
+      "dims": "20×10×8.5 ft",
+      "areaSqft": 200,
+      "priceExGst": 388500,
+      "priceInclGst": 458430,
+      "featureCells": [
+        {
+          "label": "Size",
+          "value": "20×10×8.5 ft · 200 sq ft"
+        },
+        {
+          "label": "Roof",
+          "value": "Centred-ridge two-way"
+        },
+        {
+          "label": "Openings",
+          "value": "1 door · 6 windows"
+        },
+        {
+          "label": "Workstations",
+          "value": "5 staged"
+        },
+        {
+          "label": "Application",
+          "value": "Client-facing sales office"
+        },
+        {
+          "label": "Material",
+          "value": "MS frame · corrugated MS shell"
+        },
+        {
+          "label": "Delivery",
+          "value": "7–21 Working Days"
+        },
+        {
+          "label": "Coverage",
+          "value": "Bangalore · Delhi NCR"
+        },
+        {
+          "label": "Brand",
+          "value": "SAMAN Portable"
+        }
+      ],
+      "images": [
+        {
+          "src": "/images/products/executive-portable-office/gallery/20x10/executive-portable-office-20x10-front-centred-door.webp",
+          "alt": "20x10 ft executive portable office frontage with the external door centred between two Wall A windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/executive-portable-office/gallery/20x10/executive-portable-office-20x10-rear-wall-b-windows.webp",
+          "alt": "Rear of the 20x10 ft executive portable office showing both Wall B windows and one end-wall window",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/executive-portable-office/gallery/20x10/executive-portable-office-20x10-gable-end-window.webp",
+          "alt": "Gable end of the 20x10 ft executive portable office, centred-ridge two-way roof, one end-wall window",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/executive-portable-office/gallery/20x10/executive-portable-office-20x10-interior-five-desks.webp",
+          "alt": "Inside the 20x10 ft executive portable office: five workstations, two on Wall A and three on Wall B, with a working aisle",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/executive-portable-office/gallery/20x10/executive-portable-office-20x10-interior-reverse.webp",
+          "alt": "Reverse interior of the 20x10 ft executive portable office showing seating on both long walls",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/executive-portable-office/gallery/20x10/executive-portable-office-20x10-interior-workstation.webp",
+          "alt": "Workstation detail in the 20x10 ft executive portable office, the 200 sq ft base-rate footprint",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "20x12",
+      "label": "20×12 ft",
+      "dims": "20×12×8.5 ft",
+      "areaSqft": 240,
+      "priceExGst": 447552,
+      "priceInclGst": 528111,
+      "featureCells": [
+        {
+          "label": "Size",
+          "value": "20×12×8.5 ft · 240 sq ft"
+        },
+        {
+          "label": "Roof",
+          "value": "Centred-ridge two-way"
+        },
+        {
+          "label": "Openings",
+          "value": "1 door · 6 windows"
+        },
+        {
+          "label": "Workstations",
+          "value": "5 staged"
+        },
+        {
+          "label": "Application",
+          "value": "Meeting-led review room"
+        },
+        {
+          "label": "Material",
+          "value": "MS frame · corrugated MS shell"
+        },
+        {
+          "label": "Delivery",
+          "value": "7–21 Working Days"
+        },
+        {
+          "label": "Coverage",
+          "value": "Bangalore · Delhi NCR"
+        },
+        {
+          "label": "Brand",
+          "value": "SAMAN Portable"
+        }
+      ],
+      "images": [
+        {
+          "src": "/images/products/executive-portable-office/gallery/20x12/executive-portable-office-20x12-front-centred-door.webp",
+          "alt": "20x12 ft executive portable office frontage in Mineral Bronze, door centred between two Wall A windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/executive-portable-office/gallery/20x12/executive-portable-office-20x12-rear-wall-b-windows.webp",
+          "alt": "Rear of the 20x12 ft executive portable office with two Wall B windows and one end-wall window",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/executive-portable-office/gallery/20x12/executive-portable-office-20x12-gable-end-window.webp",
+          "alt": "Gable end of the 20x12 ft executive portable office, the widest 12 ft span published in this range",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/executive-portable-office/gallery/20x12/executive-portable-office-20x12-interior-widened-aisle.webp",
+          "alt": "Inside the 20x12 ft executive portable office: five workstations with the extra width spent on a widened central aisle",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/executive-portable-office/gallery/20x12/executive-portable-office-20x12-interior-reverse.webp",
+          "alt": "Reverse interior of the 20x12 ft executive portable office showing the meeting aisle between the two desk runs",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/executive-portable-office/gallery/20x12/executive-portable-office-20x12-interior-workstation.webp",
+          "alt": "Workstation detail in the 20x12 ft executive portable office, 240 sq ft planned for standing discussion",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "30x10",
+      "label": "30×10 ft",
+      "dims": "30×10×8.5 ft",
+      "areaSqft": 300,
+      "priceExGst": 559440,
+      "priceInclGst": 660139,
+      "featureCells": [
+        {
+          "label": "Size",
+          "value": "30×10×8.5 ft · 300 sq ft"
+        },
+        {
+          "label": "Roof",
+          "value": "Centred-ridge two-way"
+        },
+        {
+          "label": "Openings",
+          "value": "2 doors · 8 windows"
+        },
+        {
+          "label": "Workstations",
+          "value": "8 staged"
+        },
+        {
+          "label": "Application",
+          "value": "Two-entry department office"
+        },
+        {
+          "label": "Material",
+          "value": "MS frame · corrugated MS shell"
+        },
+        {
+          "label": "Delivery",
+          "value": "7–21 Working Days"
+        },
+        {
+          "label": "Coverage",
+          "value": "Bangalore · Delhi NCR"
+        },
+        {
+          "label": "Brand",
+          "value": "SAMAN Portable"
+        }
+      ],
+      "images": [
+        {
+          "src": "/images/products/executive-portable-office/gallery/30x10/executive-portable-office-30x10-front-two-doors-solid-bay.webp",
+          "alt": "30x10 ft executive portable office frontage: two external doors and two windows either side of a solid centre bay",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/executive-portable-office/gallery/30x10/executive-portable-office-30x10-rear-four-windows.webp",
+          "alt": "Rear of the 30x10 ft executive portable office with four Wall B windows and a matching solid centre bay",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/executive-portable-office/gallery/30x10/executive-portable-office-30x10-gable-end-window.webp",
+          "alt": "Gable end of the 30x10 ft executive portable office showing the ridge running the full 30 ft length",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/executive-portable-office/gallery/30x10/executive-portable-office-30x10-interior-eight-desks.webp",
+          "alt": "Inside the 30x10 ft executive portable office: the approved eight-workstation split, three on Wall A and five on Wall B",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/executive-portable-office/gallery/30x10/executive-portable-office-30x10-interior-reverse.webp",
+          "alt": "Reverse interior of the 30x10 ft executive portable office looking back towards the second external door",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/executive-portable-office/gallery/30x10/executive-portable-office-30x10-interior-workstation.webp",
+          "alt": "Workstation run in the 30x10 ft executive portable office, eight stations across a 300 sq ft plan",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "40x10",
+      "label": "40×10 ft",
+      "dims": "40×10×8.5 ft",
+      "areaSqft": 400,
+      "priceExGst": 738152,
+      "priceInclGst": 871019,
+      "featureCells": [
+        {
+          "label": "Size",
+          "value": "40×10×8.5 ft · 400 sq ft"
+        },
+        {
+          "label": "Roof",
+          "value": "Centred-ridge two-way"
+        },
+        {
+          "label": "Openings",
+          "value": "2 doors · 9 windows"
+        },
+        {
+          "label": "Workstations",
+          "value": "12 + manager room"
+        },
+        {
+          "label": "Application",
+          "value": "Partitioned executive suite"
+        },
+        {
+          "label": "Material",
+          "value": "MS frame · corrugated MS shell"
+        },
+        {
+          "label": "Delivery",
+          "value": "7–21 Working Days"
+        },
+        {
+          "label": "Coverage",
+          "value": "Bangalore · Delhi NCR"
+        },
+        {
+          "label": "Brand",
+          "value": "SAMAN Portable"
+        }
+      ],
+      "images": [
+        {
+          "src": "/images/products/executive-portable-office/gallery/40x10/executive-portable-office-40x10-front-two-doors-manager-window.webp",
+          "alt": "40x10 ft executive portable office frontage: manager-room window, two external doors and a solid centre bay on Wall A",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/executive-portable-office/gallery/40x10/executive-portable-office-40x10-rear-four-windows.webp",
+          "alt": "Rear of the 40x10 ft executive portable office with four Wall B windows and the manager-room window at the end",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/executive-portable-office/gallery/40x10/executive-portable-office-40x10-gable-end-window.webp",
+          "alt": "Gable end of the 40x10 ft executive portable office showing the manager-room end wall and its window",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/executive-portable-office/gallery/40x10/executive-portable-office-40x10-interior-twelve-desks.webp",
+          "alt": "Inside the open bay of the 40x10 ft executive portable office: twelve workstations, five on Wall A and seven on Wall B",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/executive-portable-office/gallery/40x10/executive-portable-office-40x10-interior-open-bay.webp",
+          "alt": "Open bay of the 40x10 ft executive portable office looking towards the manager-room partition",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/executive-portable-office/gallery/40x10/executive-portable-office-40x10-manager-room-partition-door.webp",
+          "alt": "The 10 x 10 ft manager room in the 40x10 ft executive portable office: internal door, three external windows, no window in the partition",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    }
+  ],
+  "specPdfHref": "/images/products/executive-portable-office/saman-executive-portable-office-technical-specification-and-prices.pdf",
+  "specPdfButtonLabel": "Download technical specification (PDF)",
+  "suppressLegacySku": true,
+  "suppressReviewClaims": true,
+  "suppressLegacyFaqSchema": true,
+  "suppressSchemaAvailability": true,
+  "emitSizeAnchors": true,
+  "emitVariantFactCompleteness": true,
+  "hideTrustRow": true,
+  "hideHeroProofRow": true,
+  "categoryLabel": "Portable Office Cabin",
+  "categoryHref": "/product/portable-office",
+  "schemaBrandName": "SAMAN Portable",
+  "schemaImageMode": "variant-first-images",
+  "h1": "Executive Portable Office: Six Sizes with a Manager Room",
+  "seoTitle": "Executive Portable Office: Manager Room, 6 Sizes | SAMAN",
+  "metaDescription": "Executive portable office in six sizes from 10×10 to 40×10 ft, ex-GST prices published. The 40×10 carries a partitioned 10×10 ft manager room. Built by SAMAN.",
+  "canonical": "https://www.samanportable.com/product/portable-office/executive-portable-office",
+  "opener": "An executive portable office is a factory-built steel room finished to be seen by the people who decide, not only used by the people who work. SAMAN builds it for the head-office frontage, the sales yard and the project review area, where a director, a client visitor or a sales head walks in and the finish is part of the argument. Six sizes are published, 10×10 through 40×10 ft, all at 8.5 ft nominal height, each with its own approved wall schedule and its own price. The 40×10 is the only one in this range that arrives partitioned: a 10×10 ft manager room with its own door and three windows, twelve workstations in the open bay beyond it. Prices below are ex-GST for the premium shell and fixed finishes.",
+  "ymalTiles": [
+    {
+      "title": "Portable Office Cabin",
+      "href": "/product/portable-office",
+      "category": "Portable Office",
+      "blurb": "Explore Portable Office Cabin",
+      "imageSrc": "/images/products/portable-office/20x10/portable-office-20x10-front-angle.webp",
+      "imageAlt": "Portable Office Cabin 20 x 10 ft exterior render"
+    },
+    {
+      "title": "Readymade Office Cabin",
+      "href": "/product/portable-office/readymade-office-cabin",
+      "category": "Portable Office",
+      "blurb": "Explore Readymade Office Cabin",
+      "imageSrc": "/images/products/readymade-office-cabin/20x10/readymade-office-cabin-20x10-front.webp",
+      "imageAlt": "Readymade Office Cabin 20 x 10 ft exterior render"
+    },
+    {
+      "title": "Small Office Cabin",
+      "href": "/product/portable-office/small-office-cabin",
+      "category": "Portable Office",
+      "blurb": "Explore Small Office Cabin",
+      "imageSrc": "/images/products/small-office-cabin/10x10/small-office-cabin-10x10-front-angle.webp",
+      "imageAlt": "Small Office Cabin 10 x 10 ft exterior render"
+    },
+    {
+      "title": "Portable Office Container",
+      "href": "/product/portable-office/portable-office-container",
+      "category": "Portable Office",
+      "blurb": "Explore Portable Office Container",
+      "imageSrc": "/images/products/portable-office-container/20x10/portable-office-container-20x10-front-angle.webp",
+      "imageAlt": "Portable Office Container 20 x 10 ft exterior render"
+    },
+    {
+      "title": "Prefabricated Office Cabins",
+      "href": "/product/portable-office/prefabricated-office-cabins",
+      "category": "Portable Office",
+      "blurb": "Explore Prefabricated Office Cabins",
+      "imageSrc": "/images/products/prefabricated-office-cabins/20x10/prefabricated-office-cabin-20x10-front-angle.webp",
+      "imageAlt": "Prefabricated Office Cabins 20 x 10 ft exterior render"
+    }
+  ],
+  "relatedTiles": [
+    {
+      "title": "Portable Office Cabin",
+      "href": "/product/portable-office",
+      "category": "Portable Office",
+      "blurb": "Explore Portable Office Cabin",
+      "imageSrc": "/images/products/portable-office/20x10/portable-office-20x10-front-angle.webp",
+      "imageAlt": "Portable Office Cabin 20 x 10 ft exterior render"
+    },
+    {
+      "title": "Readymade Office Cabin",
+      "href": "/product/portable-office/readymade-office-cabin",
+      "category": "Portable Office",
+      "blurb": "Explore Readymade Office Cabin",
+      "imageSrc": "/images/products/readymade-office-cabin/20x10/readymade-office-cabin-20x10-front.webp",
+      "imageAlt": "Readymade Office Cabin 20 x 10 ft exterior render"
+    },
+    {
+      "title": "Small Office Cabin",
+      "href": "/product/portable-office/small-office-cabin",
+      "category": "Portable Office",
+      "blurb": "Explore Small Office Cabin",
+      "imageSrc": "/images/products/small-office-cabin/10x10/small-office-cabin-10x10-front-angle.webp",
+      "imageAlt": "Small Office Cabin 10 x 10 ft exterior render"
+    },
+    {
+      "title": "Portable Office Container",
+      "href": "/product/portable-office/portable-office-container",
+      "category": "Portable Office",
+      "blurb": "Explore Portable Office Container",
+      "imageSrc": "/images/products/portable-office-container/20x10/portable-office-container-20x10-front-angle.webp",
+      "imageAlt": "Portable Office Container 20 x 10 ft exterior render"
+    },
+    {
+      "title": "Prefabricated Office Cabins",
+      "href": "/product/portable-office/prefabricated-office-cabins",
+      "category": "Portable Office",
+      "blurb": "Explore Prefabricated Office Cabins",
+      "imageSrc": "/images/products/prefabricated-office-cabins/20x10/prefabricated-office-cabin-20x10-front-angle.webp",
+      "imageAlt": "Prefabricated Office Cabins 20 x 10 ft exterior render"
+    }
+  ],
+  "faqSchema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is an executive portable office?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A steel-framed office room built complete in a factory and delivered as one finished unit, specified for places where it will be seen by clients as well as used by staff. It can be lifted and relocated."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does an executive portable office cost in India?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "SAMAN publishes six sizes from ₹2,23,388 ex-GST for 10 × 10 ft to ₹7,38,152 ex-GST for 40 × 10 ft. GST at 18% is shown alongside each figure. Freight is quoted separately by distance."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which size seats the most people?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The 40 × 10 ft, with twelve workstations in the open bay plus a separate 10 × 10 ft manager room. The 30 × 10 ft is next at eight, in an approved layout of three on Wall A and five on Wall B."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does any size come with a separate manager room?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Only the 40 × 10 ft. It carries a 10 × 10 ft manager room behind a full-height partition with one internal door and no window through it, lit by three of its own external windows."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is included in the price and what is not?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Included: the premium shell, roof, insulation, internal lining, floor and finish, doors and windows, and the concealed electrical scope. Excluded: furniture, curtains, appliances, AV, fitted AC, special facade work and freight."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can the door and window positions be changed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Each size ships to a fixed wall schedule shown on its approved general arrangement, and the images match it. Changes are possible but are a drawing and quotation matter, decided before the drawing is frozen."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is this different from a container office?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "This is a purpose-built MS cabin with a corrugated MS skin, not a converted shipping container. Container-derived offices are a separate SAMAN range with their own sizes and prices."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are portable offices also called?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Portable office cabin, porta cabin office, prefabricated office cabin and readymade office cabin all describe the same kind of relocatable factory-built room. SAMAN publishes each as its own configuration."
+        }
+      }
+    ]
+  },
+  "descriptionHtml": "<section><h2>Executive office cabin or portable office? Start here</h2><p>Two very different things share the word cabin, and the search results for them are mixed together. An executive office cabin, in most Indian usage, is a room inside an existing building: a director&#x27;s room formed with glass partitions and a desk, fitted out by an interior contractor. That is furniture and partition work, and SAMAN does not sell it.</p><p>An executive portable office is a building. It is a steel-framed room fabricated complete in a factory, lifted onto a trailer and set down on your ground as one finished unit, with its walls, roof, floor, lining, wiring and openings already in place. It can be lifted again and moved. It does not need a building around it, and it does not need an interior contractor to make it usable.</p><p>This page is about the second thing, in the version specified for places where the cabin will be looked at as well as worked in. If what you actually need is a room built inside an existing office, nothing on this page will help you. If you need a relocatable office that a client can walk into without apology, the six footprints below are the ones SAMAN publishes with prices.</p></section><section><h2>What the premium specification actually pays for</h2><p>Every SAMAN cabin family is built on the same approved platform. The base frame is a welded MS C-channel chassis at 100 × 50 × 3 mm. The wall and roof skeleton is MS square hollow section and angle with reinforced openings, 50 × 50 × 1.6 mm at the top frame, 50 × 50 × 1.2 mm at the roof and 50 × 50 × 2 mm posts or an approved 60 × 60 angle. The external skin is 1.2 mm corrugated MS sheet and the roof is 1.4 mm sloped corrugated sheet with sealed laps, flashings and drainage. Those numbers do not change because a page is called executive.</p><p>What changes is everything that is visible and everything that is judged. The interior is lined in 8 mm prelaminated MDF with aluminium joint sections, and on this product the joint lines, the trim reveals and the ceiling line are set out to be looked at rather than merely closed. The floor is an 18 mm cement-fibre board deck with a 1.3 mm resilient vinyl finish, and the junctions at thresholds and skirtings are held to a tighter tolerance than a working site cabin needs.</p><p>The plan is the other half of it. On a site office the openings go where the structure is easiest. Here the openings are placed first and the plan is drawn around them, which is why each of the six sizes has a fixed wall schedule rather than a window count. On the 10 × 10 the whole of Wall A is kept blank except the door, so the face a visitor approaches has no glazing breaking it up. On the 30 × 10 and the 40 × 10 a solid centre bay is drawn into both long walls, which is the wall a board, a screen or a company mark goes on.</p><p>Conduit is run concealed rather than surface-clipped, and the electrical scope is the platform standard: concealed copper wiring with a distribution board, MCB, RCCB and earthing, on typical 1.5, 2.5 and 4 sq mm circuits for lights, sockets, fans and an AC provision. Insulation is the platform standard too, 50 mm glass wool at 42 kg per cubic metre in the roof and 25 mm glass wool or a documented 12 mm Heatlon option in the walls. Corrosion protection is prepared MS with red-oxide primer and two enamel coats.</p></section><section><h2>How many people each of the six footprints seats</h2><p>Workstation counts on this page are not estimates from a floor area. They are the staged layouts drawn on each size&#x27;s approved general arrangement, which is also what the images show. A workstation means a desk run with a chair and a pedestal against a named wall, not a notional square metre per person.</p><div class=\"saman-table-wrap\"><table class=\"saman-table\"><thead><tr><th>Size</th><th>Area</th><th>Workstations</th><th>Doors and windows</th><th>What it suits</th></tr></thead><tbody><tr><td>10 × 10 ft</td><td>100 sq ft</td><td>4</td><td>1 door, 3 windows</td><td>Gate-side front office, single-manager cabin</td></tr><tr><td>20 × 8 ft</td><td>160 sq ft</td><td>3</td><td>1 door, 6 windows</td><td>Narrow plot, cabin tight to a boundary</td></tr><tr><td>20 × 10 ft</td><td>200 sq ft</td><td>5</td><td>1 door, 6 windows</td><td>Client-facing sales office</td></tr><tr><td>20 × 12 ft</td><td>240 sq ft</td><td>5</td><td>1 door, 6 windows</td><td>Meeting and project review room</td></tr><tr><td>30 × 10 ft</td><td>300 sq ft</td><td>8</td><td>2 doors, 8 windows</td><td>Two-entry department office</td></tr><tr><td>40 × 10 ft</td><td>400 sq ft</td><td>12 plus manager room</td><td>2 doors, 9 windows</td><td>Partitioned executive suite</td></tr></tbody></table></div><p>Two things in that table are worth reading twice. The 20 × 8 seats fewer people than the 10 × 10 despite having sixty per cent more floor, because at 8 ft of width a desk run will only fit on one long wall and the other has to stay as circulation. And the 20 × 12 seats the same five as the 20 × 10 although it is forty square feet larger, because the extra width is deliberately spent on the aisle rather than on a sixth desk. If the requirement is headcount per rupee, the 30 × 10 at eight stations is the efficient point in the range.</p></section><section><h2>The 40 × 10 manager room and what a partition buys</h2><p>Only the 40 × 10 arrives with an internal room already drawn. It is 10 × 10 ft, taken out of one end, closed by a full-height partition carrying a single internal door and no window through it. That last detail is the point: a partition with a vision panel in it is a supervisor&#x27;s window, and a partition without one is a room where a conversation stays inside. The manager room is lit instead by three of the unit&#x27;s nine external windows, one on each long wall and one on the end wall.</p><p>Beyond the partition, the remaining 300 sq ft is an open bay staging twelve workstations, five along Wall A and seven along Wall B. It carries two external doors and a solid centre bay on each long wall, so the department can come and go through one door while the manager room and the visitor route use the other. That is a working arrangement you would otherwise have to build on site by dividing a plain 40 ft cabin, with a partition that was never in the drawing and never in the price.</p><p>The alternative, if a private room matters more than headcount, is to place two cabins. A 10 × 10 beside a 30 × 10 gives you a separate room and eight open stations in two units rather than twelve and a room in one. That is a real option and sometimes the right one, particularly where access will not take a 40 ft trailer. It is also two deliveries, two placements and two sets of levelling.</p></section><section><h2>How the price is calculated and what it excludes</h2><p>Every price on this page comes out of one rule rather than out of a quotation. The base rate is ₹1,942.50 per square foot at 200 sq ft, and every other size is that rate with a band adjustment applied for its area. Smaller footprints cost more per square foot because the fixed content of a cabin, the chassis, the door, the electrical distribution and the finishing labour, does not shrink with the floor. Larger ones cost less per square foot for the same reason in reverse.</p><p>The bands run 40 to 59 sq ft at plus forty-four per cent, 60 to 79 at plus thirty-six, 80 to 99 at plus twenty-six, 100 to 149 at plus fifteen, 150 to 199 at plus ten, 200 sq ft at the base rate with no adjustment, then 201 to 300 at minus four, 301 to 400 at minus five, 401 to 500 at minus six and so on to minus ten at 801 to 900 sq ft. Anything above 900 sq ft is quoted manually. That is why the 10 × 10 is quoted at ₹2,233.88 per sq ft and the 40 × 10 at ₹1,845.38.</p><p>Every figure shown is ex-GST, with the GST-inclusive figure at eighteen per cent alongside it. The price covers the premium shell and the fixed finishes: the frame, the external skin, the roof, the insulation, the internal lining and ceiling, the floor and its finish, the doors and windows in their approved positions, the concealed electrical scope, and the factory coating and quality checks.</p><p>It does not cover loose furniture. Desks, chairs, curtains, appliances, audio-visual equipment, a fitted air conditioner and any special facade work are quoted separately, and are excluded from every figure on this page. Nor does the price include site preparation, foundations or the crane or hydra at your end. Freight is calculated separately by distance and trailer size, and is set out in full on the Shipping tab.</p></section><section><h2>Where an executive portable office earns its place</h2><p>The honest test is whether anyone who is not an employee will see it. A cabin at the back of a batching plant does not need a specified colourway or a blank presentation wall. A cabin at the head-office frontage does, because it is the first built thing a visitor reads about the company, and a site-grade cabin parked there says something the company did not intend to say.</p><p>The four settings this product is specified for are a head-office frontage, a sales yard, a project review area and an executive compound. In a sales yard the cabin is the sales office and often the only building on the plot, so the 20 × 10 at five stations with a centred door between two windows is the common choice. In a project review area the meeting matters more than the desks, which is the argument for the 20 × 12 and its widened aisle.</p><p>At a head-office frontage the constraint is usually the plot rather than the headcount. A 20 × 8 will sit against a boundary where nothing wider fits, and its one-way roof keeps the run-off falling to one side rather than to both. In an executive compound, where the unit has to hold a department and a director together, the 40 × 10 is the only size that does it in one delivery.</p><p>Each size is issued in its own approved colourway, exterior and interior: Graphite Charcoal with Champagne Linen at 10 × 10, Sandstone Beige with Pearl Grey at 20 × 8, Eucalyptus Grey-Green with Almond Beige at 20 × 10, Mineral Bronze with Dove Light Grey at 20 × 12, Burnt Terracotta with Porcelain White at 30 × 10 and Pearl Off-White with Light Greige at 40 × 10. Those are the pairings the images show and the ones the approved package carries.</p></section><section><h2>What to confirm before the drawing is frozen</h2><p>A portable office is fabricated complete before it ever reaches you, which means the drawing freeze is the last point at which anything can change without a new quotation. Everything below is decided at that moment, and every item on it has caught somebody out at least once.</p><ul><li>Which of the six footprints, confirmed against the plot dimension and not against the floor area you think you need</li><li>Which wall faces the approach, because the door and the blank presentation face are fixed to named walls in the plan</li><li>Whether a second external door is required, which in this range means the 30 × 10 or the 40 × 10</li><li>Whether the manager room is required, which means the 40 × 10, the only size with a partition drawn</li><li>The workstation count you actually need against the staged count for that size, since the staged layout is what is built</li><li>Access for the trailer and for the crane or hydra at your end, including gate width, overhead lines and turning room</li><li>The ground the unit will stand on, which must be level and load-bearing before the unit arrives</li><li>Which items you are buying elsewhere, since furniture, curtains, appliances, AV and fitted AC are outside this price</li></ul><p>One point on scope that is worth stating plainly. What SAMAN publishes for each size is an architectural layout and a visual geometry. Signed engineering calculations, approved shop drawings, final load schedules, foundations, the lifting method and any site-specific statutory requirement govern the built unit and are handled at quotation, not on a web page. If a figure matters structurally, ask for it in writing against your own site conditions.</p></section><section><h2>Executive Portable Office: your questions answered</h2><h3>What is an executive portable office?</h3><p>A steel-framed office room built complete in a factory and delivered as one finished unit, specified for places where it will be seen by clients as well as used by staff. It can be lifted and relocated.</p><h3>How much does an executive portable office cost in India?</h3><p>SAMAN publishes six sizes from ₹2,23,388 ex-GST for 10 × 10 ft to ₹7,38,152 ex-GST for 40 × 10 ft. GST at 18% is shown alongside each figure. Freight is quoted separately by distance.</p><h3>Which size seats the most people?</h3><p>The 40 × 10 ft, with twelve workstations in the open bay plus a separate 10 × 10 ft manager room. The 30 × 10 ft is next at eight, in an approved layout of three on Wall A and five on Wall B.</p><h3>Does any size come with a separate manager room?</h3><p>Only the 40 × 10 ft. It carries a 10 × 10 ft manager room behind a full-height partition with one internal door and no window through it, lit by three of its own external windows.</p><h3>What is included in the price and what is not?</h3><p>Included: the premium shell, roof, insulation, internal lining, floor and finish, doors and windows, and the concealed electrical scope. Excluded: furniture, curtains, appliances, AV, fitted AC, special facade work and freight.</p><h3>Can the door and window positions be changed?</h3><p>Each size ships to a fixed wall schedule shown on its approved general arrangement, and the images match it. Changes are possible but are a drawing and quotation matter, decided before the drawing is frozen.</p><h3>How is this different from a container office?</h3><p>This is a purpose-built MS cabin with a corrugated MS skin, not a converted shipping container. <a href=\"/product/container-offices\">Container-derived offices</a> are a separate SAMAN range with their own sizes and prices.</p><h3>What are portable offices also called?</h3><p>Portable office cabin, porta cabin office, prefabricated office cabin and <a href=\"/product/portable-office/readymade-office-cabin\">readymade office cabin</a> all describe the same kind of relocatable factory-built room. SAMAN publishes each as its own configuration.</p></section>",
+  "applicationsContent": {
+    "h2": "Compare the six sizes, 100 to 400 sq ft, plan by plan",
+    "intro": "Six approved footprints, one premium shell, one price rule. Each shows its GA plan, its wall schedule and what it seats.",
+    "panels": [
+      {
+        "sizeSlug": "10x10",
+        "h3": "10×10 ft Executive Portable Office: 100 sq ft Front Room",
+        "paragraph": "The only square plan in the range and the smallest premium footprint here. One external door sits on Wall A and nothing else does, which leaves that whole wall as the presentation face a visitor sees on approach. The three windows sit one per remaining wall, lighting the room from three sides without a glare axis across the desk. Four workstations are staged around the walls rather than in a row. It suits a gate-side front office or a single-manager compound cabin.",
+        "applications": [
+          "100 sq ft at ₹2,233.88 per sq ft, the highest rate in the range because it sits in the 100–149 sq ft band at +15%",
+          "Wall A carries the door alone, D1, and no window, so the approach face stays clean",
+          "Three windows, one each on Wall B, End C and End D, giving light on three sides",
+          "Four workstations staged 2 on Wall B, 1 on End C, 1 on End D",
+          "Graphite Charcoal exterior against a Champagne Linen interior",
+          "Shallow centred-ridge two-way roof, ridge running the full 10 ft length"
+        ],
+        "image": {
+          "src": "/images/products/executive-portable-office/ga/10x10-ga-board.webp",
+          "alt": "Approved GA plan of the 10x10 ft executive portable office: door D1 on Wall A, windows W1 to W3, four staged workstations",
+          "provenance": "drawing",
+          "width": 1800,
+          "height": 1012,
+          "fit": "contain"
+        }
+      },
+      {
+        "sizeSlug": "20x8",
+        "h3": "20×8 ft Executive Portable Office: 160 sq ft Narrow Plot",
+        "paragraph": "The narrow-frontage option, and the only size here that uses a one-way sloped roof. At 8 ft width the plan will not carry desks on both long walls, so all three workstations sit along Wall B and the opposite wall stays as circulation and a clear approach to the door. Wall A takes the full window, door, window sequence, which is what gives a 20 ft frontage its symmetry. Use it where the plot is long and shallow and the cabin sits tight to a boundary.",
+        "applications": [
+          "160 sq ft at ₹2,136.75 per sq ft, in the 150–199 sq ft band at +10%",
+          "The only size with a one-way slope, falling across the 8 ft width, not a centred ridge",
+          "Wall A runs W1, D1, W2, so the door is centred between two windows on the frontage",
+          "Three workstations, all on Wall B, leaving Wall A clear for circulation",
+          "Six windows on 160 sq ft, the highest glazing density of the six sizes",
+          "Sandstone Beige exterior against a Pearl Grey interior"
+        ],
+        "image": {
+          "src": "/images/products/executive-portable-office/ga/20x8-ga-board.webp",
+          "alt": "Approved GA plan of the 20x8 ft executive portable office: W1, D1, W2 on Wall A, three workstations on Wall B",
+          "provenance": "drawing",
+          "width": 1800,
+          "height": 1012,
+          "fit": "contain"
+        }
+      },
+      {
+        "sizeSlug": "20x10",
+        "h3": "20×10 ft Executive Portable Office: 200 sq ft Sales Office",
+        "paragraph": "The reference size for the range: 200 sq ft is where the price rule applies no band adjustment at all, so it is quoted at the base rate of ₹1,942.50 per sq ft. The extra two feet of width over the 20×8 is what lets the plan seat on both long walls, staging five workstations with a working aisle between them. The wall schedule is the same six windows and one door. It is the default for a client-facing sales office where visitors are received.",
+        "applications": [
+          "200 sq ft at ₹1,942.50 per sq ft, the base rate with no band adjustment applied",
+          "Five workstations, 2 on Wall A and 3 on Wall B, seating on both long walls",
+          "Wall A runs W1, D1, W2; Wall B carries W3 and W4; one window on each end",
+          "Shallow centred-ridge two-way roof with the ridge along the 20 ft length",
+          "Eucalyptus Grey-Green exterior against an Almond Beige interior",
+          "Two feet wider than the 20×8 for the same opening count, which is what buys the second desk run"
+        ],
+        "image": {
+          "src": "/images/products/executive-portable-office/ga/20x10-ga-board.webp",
+          "alt": "Approved GA plan of the 20x10 ft executive portable office: six windows, one door, five workstations on both long walls",
+          "provenance": "drawing",
+          "width": 1800,
+          "height": 1012,
+          "fit": "contain"
+        }
+      },
+      {
+        "sizeSlug": "20x12",
+        "h3": "20×12 ft Executive Portable Office: 240 sq ft Review Room",
+        "paragraph": "Same 20 ft length and the same six windows and one door as the 20×10, with the width taken out to 12 ft. The extra two feet are not spent on desks: the count stays at five, and the whole gain goes into a widened aisle between the two desk runs. Specify it when people stand and talk in the middle of the room rather than only sit at the edges, which is what a project review looks like. At 240 sq ft it is the widest span published here.",
+        "applications": [
+          "240 sq ft at ₹1,864.80 per sq ft, in the 201–300 sq ft band at −4%",
+          "Five workstations, the same count as the 20×10; the extra width becomes a widened aisle",
+          "Twelve feet is the widest internal span published in this range",
+          "Wall schedule identical to the 20×10: W1, D1, W2 on Wall A, W3 and W4 on Wall B, one window each end",
+          "Centred-ridge two-way roof carried across the wider 12 ft span",
+          "Mineral Bronze exterior against a Dove Light Grey interior"
+        ],
+        "image": {
+          "src": "/images/products/executive-portable-office/ga/20x12-ga-board.webp",
+          "alt": "Approved GA plan of the 20x12 ft executive portable office: five workstations either side of a widened central aisle",
+          "provenance": "drawing",
+          "width": 1800,
+          "height": 1012,
+          "fit": "contain"
+        }
+      },
+      {
+        "sizeSlug": "30x10",
+        "h3": "30×10 ft Executive Portable Office: 300 sq ft Two-Door Plan",
+        "paragraph": "The first size with two external doors and the first with a solid centre bay on both long walls. Two entries at opposite ends of Wall A mean a visitor and the working team need not share a door, which is the practical difference between this and a longer 20 ft cabin. The eight-workstation layout is separately approved and fixed at three on Wall A and five on Wall B. Eight windows light the plan, and each solid bay gives blank wall for a board or a screen.",
+        "applications": [
+          "300 sq ft at ₹1,864.80 per sq ft, in the 201–300 sq ft band at −4%",
+          "Two external doors, D1 and D2, at opposite ends of Wall A",
+          "Eight workstations, user-approved and fixed at 3 on Wall A and 5 on Wall B",
+          "A solid centre bay on both long walls, with no opening, for a board or a display",
+          "Eight windows: W1 and W2 on Wall A, W3 to W6 on Wall B, W7 and W8 on the ends",
+          "Burnt Terracotta exterior against a Porcelain White interior"
+        ],
+        "image": {
+          "src": "/images/products/executive-portable-office/ga/30x10-ga-board.webp",
+          "alt": "Approved GA plan of the 30x10 ft executive portable office: two doors, eight windows, solid centre bays, eight workstations",
+          "provenance": "drawing",
+          "width": 1800,
+          "height": 1012,
+          "fit": "contain"
+        }
+      },
+      {
+        "sizeSlug": "40x10",
+        "h3": "40×10 ft Executive Portable Office: 400 sq ft Manager Room",
+        "paragraph": "The largest published size and the only one that arrives with an internal partition already drawn. A 10 × 10 ft manager room takes one end, closed by a full-height partition with a single internal door and no window through it, lit by three external windows of its own. The remaining 300 sq ft stages twelve workstations, five on Wall A and seven on Wall B, with two external doors and a solid centre bay on each long wall. Specify it when a private room and an open bay must arrive as one unit.",
+        "applications": [
+          "400 sq ft at ₹1,845.38 per sq ft, the lowest rate in the range, in the 301–400 band at −5%",
+          "A 10 × 10 ft manager room with one internal door, P1, and no window in the partition",
+          "Three manager-room windows, MW1 on Wall A, MW2 on Wall B and MW3 on the end wall",
+          "Twelve workstations in the open bay, 5 on Wall A and 7 on Wall B",
+          "Two external doors and a solid centre bay on each long wall",
+          "Pearl Off-White exterior against a Light Greige interior"
+        ],
+        "image": {
+          "src": "/images/products/executive-portable-office/ga/40x10-ga-board.webp",
+          "alt": "Approved GA plan of the 40x10 ft executive portable office: 10 x 10 ft manager room with internal door P1 and twelve workstations",
+          "provenance": "drawing",
+          "width": 1800,
+          "height": 1012,
+          "fit": "contain"
+        }
+      }
+    ]
+  },
+  "labelActiveThumbnailAlt": true,
+  "optimizeLocalGalleryImages": false
+}

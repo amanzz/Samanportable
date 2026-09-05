@@ -165,8 +165,10 @@ function assertProtectedSourcesUnchanged() {
 
 async function main() {
   const architecture = JSON.parse(fs.readFileSync(path.join(root, 'src/data/seo/commercialArchitecture.json'), 'utf8'));
-  if (architecture.approvedProductionPaths.length !== 61 || architecture.plannedReleasePaths.length !== 43) {
-    fail(`architecture is ${architecture.approvedProductionPaths.length}/${architecture.plannedReleasePaths.length}, expected 61/43`);
+  // PO-04 (5 Sep 2026): /product/portable-office/executive-portable-office ships, so it
+  // moves from the planned-release backlog into the approved production list. 61/43 -> 62/42.
+  if (architecture.approvedProductionPaths.length !== 62 || architecture.plannedReleasePaths.length !== 42) {
+    fail(`architecture is ${architecture.approvedProductionPaths.length}/${architecture.plannedReleasePaths.length}, expected 62/42`);
   }
   assertProtectedSourcesUnchanged();
 
@@ -279,7 +281,7 @@ async function main() {
     ssrJsonLdParseErrors: 0,
     duplicateProductEntities: 0,
     duplicateBreadcrumbEntities: 0,
-    architecture: { approved: 61, planned: 43 },
+    architecture: { approved: 62, planned: 42 },
   }, null, 2));
 }
 

@@ -1,0 +1,1258 @@
+{
+  "page_id": "PO-04",
+  "route": "/product/portable-office/executive-portable-office",
+  "package": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2",
+  "package_note": "v2 is produced by ticket PO-04 Codex Asset Fix v1 and corrected by ROUND 2. v1 is audit-only and must not be read from. If v2 does not exist, or if the round-2 acceptance items are not present, STOP and report; do not fall back to v1.",
+  "round2_gate": [
+    "02-square-product-images holds exactly 36 files, six per size, all named <nn>-executive-office-<size>-<view>.png.",
+    "No file named 01-executive-portable-office-<size>-exterior.png survives anywhere in the package.",
+    "03-long-description-images holds exactly 6 files, all named <nn>-executive-office-<size>-wide-overview.png.",
+    "07-web-variants holds exactly 50 WebP files: 36 gallery, 6 ga, 6 wide, 2 diagrams.",
+    "Every path in asset_map.gallery[].prebuilt_webp, .ga_boards[].prebuilt_webp, .media_band[].prebuilt_webp and .spec_diagrams[].prebuilt_webp resolves to an existing file.",
+    "If any line above is false, STOP and report. Do not rename, re-encode or substitute to make it true."
+  ],
+  "webp_policy": "Codex has already produced compliant WebP derivatives at the measured settings, verified in the 80-120 KB band. COPY the prebuilt_webp file to the output path. Do NOT re-encode from the PNG master: a second lossy pass costs quality for nothing. Re-encode from source ONLY if a prebuilt_webp file is missing, and say so in the PR. Assert every copied file is 80-120 KB and matches the declared pixel dimensions.",
+  "rules": {
+    "every_browser_image": "webp",
+    "size_band_kb": [
+      80,
+      120
+    ],
+    "gallery": "1:1 at 1254 px starting q86",
+    "ga_boards": "1800 px starting q88, downscale proportionally only, dimension text verified legible by opening the output",
+    "wide_and_diagrams": "16:9 at 1600 px starting q90",
+    "crop": "Crop nothing. Adjust quality first, then width, and re-measure.",
+    "source_png": "Source PNGs are never copied into public/.",
+    "loading": "The six images of the selected size eager; fetchpriority=high on slide 1 only; the other thirty lazy; explicit width and height on every img; a link rel=preload for slide 1 of the default size carrying the same imagesrcset; GA boards lazy.",
+    "measurement": "Produce a table of file, width, height, KB for every output and include it in the PR."
+  },
+  "gallery_running_order": "SAMAN ruling 5 Sep 2026: this product ships three exteriors then three interiors, slides 01-06 in file order. This is a sanctioned deviation from the four-exteriors-then-two-interiors running order and must not be 'corrected'.",
+  "default_size": "20x10",
+  "gallery": [
+    {
+      "size": "10x10",
+      "slide": 1,
+      "kind": "exterior",
+      "source": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\02-square-product-images\\size-10x10\\01-executive-office-10x10-front-exterior.png",
+      "prebuilt_webp": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\07-web-variants\\gallery\\size-10x10\\01-executive-office-10x10-front-exterior.webp",
+      "source_px": [
+        1254,
+        1254
+      ],
+      "output": "public/images/products/executive-portable-office/gallery/10x10/executive-portable-office-10x10-front-door-wall-a.webp",
+      "url": "/images/products/executive-portable-office/gallery/10x10/executive-portable-office-10x10-front-door-wall-a.webp",
+      "format": "webp",
+      "width": 1254,
+      "height": 1254,
+      "quality_start": 86,
+      "target_kb": [
+        80,
+        120
+      ],
+      "crop": false,
+      "loading": "lazy",
+      "fetchpriority": null,
+      "alt_source": "copy.alt_text.gallery['executive-portable-office-10x10-front-door-wall-a.webp']"
+    },
+    {
+      "size": "10x10",
+      "slide": 2,
+      "kind": "exterior",
+      "source": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\02-square-product-images\\size-10x10\\02-executive-office-10x10-rear-exterior.png",
+      "prebuilt_webp": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\07-web-variants\\gallery\\size-10x10\\02-executive-office-10x10-rear-exterior.webp",
+      "source_px": [
+        1254,
+        1254
+      ],
+      "output": "public/images/products/executive-portable-office/gallery/10x10/executive-portable-office-10x10-rear-wall-b-window.webp",
+      "url": "/images/products/executive-portable-office/gallery/10x10/executive-portable-office-10x10-rear-wall-b-window.webp",
+      "format": "webp",
+      "width": 1254,
+      "height": 1254,
+      "quality_start": 86,
+      "target_kb": [
+        80,
+        120
+      ],
+      "crop": false,
+      "loading": "lazy",
+      "fetchpriority": null,
+      "alt_source": "copy.alt_text.gallery['executive-portable-office-10x10-rear-wall-b-window.webp']"
+    },
+    {
+      "size": "10x10",
+      "slide": 3,
+      "kind": "exterior",
+      "source": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\02-square-product-images\\size-10x10\\03-executive-office-10x10-end-exterior.png",
+      "prebuilt_webp": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\07-web-variants\\gallery\\size-10x10\\03-executive-office-10x10-end-exterior.webp",
+      "source_px": [
+        1254,
+        1254
+      ],
+      "output": "public/images/products/executive-portable-office/gallery/10x10/executive-portable-office-10x10-gable-end-window.webp",
+      "url": "/images/products/executive-portable-office/gallery/10x10/executive-portable-office-10x10-gable-end-window.webp",
+      "format": "webp",
+      "width": 1254,
+      "height": 1254,
+      "quality_start": 86,
+      "target_kb": [
+        80,
+        120
+      ],
+      "crop": false,
+      "loading": "lazy",
+      "fetchpriority": null,
+      "alt_source": "copy.alt_text.gallery['executive-portable-office-10x10-gable-end-window.webp']"
+    },
+    {
+      "size": "10x10",
+      "slide": 4,
+      "kind": "interior",
+      "source": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\02-square-product-images\\size-10x10\\04-executive-office-10x10-interior-view.png",
+      "prebuilt_webp": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\07-web-variants\\gallery\\size-10x10\\04-executive-office-10x10-interior-view.webp",
+      "source_px": [
+        1254,
+        1254
+      ],
+      "output": "public/images/products/executive-portable-office/gallery/10x10/executive-portable-office-10x10-interior-four-desks.webp",
+      "url": "/images/products/executive-portable-office/gallery/10x10/executive-portable-office-10x10-interior-four-desks.webp",
+      "format": "webp",
+      "width": 1254,
+      "height": 1254,
+      "quality_start": 86,
+      "target_kb": [
+        80,
+        120
+      ],
+      "crop": false,
+      "loading": "lazy",
+      "fetchpriority": null,
+      "alt_source": "copy.alt_text.gallery['executive-portable-office-10x10-interior-four-desks.webp']"
+    },
+    {
+      "size": "10x10",
+      "slide": 5,
+      "kind": "interior",
+      "source": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\02-square-product-images\\size-10x10\\05-executive-office-10x10-reverse-interior.png",
+      "prebuilt_webp": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\07-web-variants\\gallery\\size-10x10\\05-executive-office-10x10-reverse-interior.webp",
+      "source_px": [
+        1254,
+        1254
+      ],
+      "output": "public/images/products/executive-portable-office/gallery/10x10/executive-portable-office-10x10-interior-reverse.webp",
+      "url": "/images/products/executive-portable-office/gallery/10x10/executive-portable-office-10x10-interior-reverse.webp",
+      "format": "webp",
+      "width": 1254,
+      "height": 1254,
+      "quality_start": 86,
+      "target_kb": [
+        80,
+        120
+      ],
+      "crop": false,
+      "loading": "lazy",
+      "fetchpriority": null,
+      "alt_source": "copy.alt_text.gallery['executive-portable-office-10x10-interior-reverse.webp']"
+    },
+    {
+      "size": "10x10",
+      "slide": 6,
+      "kind": "interior",
+      "source": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\02-square-product-images\\size-10x10\\06-executive-office-10x10-workspace-interior.png",
+      "prebuilt_webp": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\07-web-variants\\gallery\\size-10x10\\06-executive-office-10x10-workspace-interior.webp",
+      "source_px": [
+        1254,
+        1254
+      ],
+      "output": "public/images/products/executive-portable-office/gallery/10x10/executive-portable-office-10x10-interior-workstation.webp",
+      "url": "/images/products/executive-portable-office/gallery/10x10/executive-portable-office-10x10-interior-workstation.webp",
+      "format": "webp",
+      "width": 1254,
+      "height": 1254,
+      "quality_start": 86,
+      "target_kb": [
+        80,
+        120
+      ],
+      "crop": false,
+      "loading": "lazy",
+      "fetchpriority": null,
+      "alt_source": "copy.alt_text.gallery['executive-portable-office-10x10-interior-workstation.webp']"
+    },
+    {
+      "size": "20x8",
+      "slide": 1,
+      "kind": "exterior",
+      "source": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\02-square-product-images\\size-20x8\\01-executive-office-20x8-front-exterior.png",
+      "prebuilt_webp": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\07-web-variants\\gallery\\size-20x8\\01-executive-office-20x8-front-exterior.webp",
+      "source_px": [
+        1254,
+        1254
+      ],
+      "output": "public/images/products/executive-portable-office/gallery/20x8/executive-portable-office-20x8-front-window-door-window.webp",
+      "url": "/images/products/executive-portable-office/gallery/20x8/executive-portable-office-20x8-front-window-door-window.webp",
+      "format": "webp",
+      "width": 1254,
+      "height": 1254,
+      "quality_start": 86,
+      "target_kb": [
+        80,
+        120
+      ],
+      "crop": false,
+      "loading": "lazy",
+      "fetchpriority": null,
+      "alt_source": "copy.alt_text.gallery['executive-portable-office-20x8-front-window-door-window.webp']"
+    },
+    {
+      "size": "20x8",
+      "slide": 2,
+      "kind": "exterior",
+      "source": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\02-square-product-images\\size-20x8\\02-executive-office-20x8-rear-exterior.png",
+      "prebuilt_webp": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\07-web-variants\\gallery\\size-20x8\\02-executive-office-20x8-rear-exterior.webp",
+      "source_px": [
+        1254,
+        1254
+      ],
+      "output": "public/images/products/executive-portable-office/gallery/20x8/executive-portable-office-20x8-rear-two-windows.webp",
+      "url": "/images/products/executive-portable-office/gallery/20x8/executive-portable-office-20x8-rear-two-windows.webp",
+      "format": "webp",
+      "width": 1254,
+      "height": 1254,
+      "quality_start": 86,
+      "target_kb": [
+        80,
+        120
+      ],
+      "crop": false,
+      "loading": "lazy",
+      "fetchpriority": null,
+      "alt_source": "copy.alt_text.gallery['executive-portable-office-20x8-rear-two-windows.webp']"
+    },
+    {
+      "size": "20x8",
+      "slide": 3,
+      "kind": "exterior",
+      "source": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\02-square-product-images\\size-20x8\\03-executive-office-20x8-end-exterior.png",
+      "prebuilt_webp": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\07-web-variants\\gallery\\size-20x8\\03-executive-office-20x8-end-exterior.webp",
+      "source_px": [
+        1254,
+        1254
+      ],
+      "output": "public/images/products/executive-portable-office/gallery/20x8/executive-portable-office-20x8-end-one-way-roof.webp",
+      "url": "/images/products/executive-portable-office/gallery/20x8/executive-portable-office-20x8-end-one-way-roof.webp",
+      "format": "webp",
+      "width": 1254,
+      "height": 1254,
+      "quality_start": 86,
+      "target_kb": [
+        80,
+        120
+      ],
+      "crop": false,
+      "loading": "lazy",
+      "fetchpriority": null,
+      "alt_source": "copy.alt_text.gallery['executive-portable-office-20x8-end-one-way-roof.webp']"
+    },
+    {
+      "size": "20x8",
+      "slide": 4,
+      "kind": "interior",
+      "source": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\02-square-product-images\\size-20x8\\04-executive-office-20x8-interior-view.png",
+      "prebuilt_webp": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\07-web-variants\\gallery\\size-20x8\\04-executive-office-20x8-interior-view.webp",
+      "source_px": [
+        1254,
+        1254
+      ],
+      "output": "public/images/products/executive-portable-office/gallery/20x8/executive-portable-office-20x8-interior-three-desks.webp",
+      "url": "/images/products/executive-portable-office/gallery/20x8/executive-portable-office-20x8-interior-three-desks.webp",
+      "format": "webp",
+      "width": 1254,
+      "height": 1254,
+      "quality_start": 86,
+      "target_kb": [
+        80,
+        120
+      ],
+      "crop": false,
+      "loading": "lazy",
+      "fetchpriority": null,
+      "alt_source": "copy.alt_text.gallery['executive-portable-office-20x8-interior-three-desks.webp']"
+    },
+    {
+      "size": "20x8",
+      "slide": 5,
+      "kind": "interior",
+      "source": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\02-square-product-images\\size-20x8\\05-executive-office-20x8-reverse-interior.png",
+      "prebuilt_webp": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\07-web-variants\\gallery\\size-20x8\\05-executive-office-20x8-reverse-interior.webp",
+      "source_px": [
+        1254,
+        1254
+      ],
+      "output": "public/images/products/executive-portable-office/gallery/20x8/executive-portable-office-20x8-interior-reverse.webp",
+      "url": "/images/products/executive-portable-office/gallery/20x8/executive-portable-office-20x8-interior-reverse.webp",
+      "format": "webp",
+      "width": 1254,
+      "height": 1254,
+      "quality_start": 86,
+      "target_kb": [
+        80,
+        120
+      ],
+      "crop": false,
+      "loading": "lazy",
+      "fetchpriority": null,
+      "alt_source": "copy.alt_text.gallery['executive-portable-office-20x8-interior-reverse.webp']"
+    },
+    {
+      "size": "20x8",
+      "slide": 6,
+      "kind": "interior",
+      "source": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\02-square-product-images\\size-20x8\\06-executive-office-20x8-workspace-interior.png",
+      "prebuilt_webp": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\07-web-variants\\gallery\\size-20x8\\06-executive-office-20x8-workspace-interior.webp",
+      "source_px": [
+        1254,
+        1254
+      ],
+      "output": "public/images/products/executive-portable-office/gallery/20x8/executive-portable-office-20x8-interior-workstation.webp",
+      "url": "/images/products/executive-portable-office/gallery/20x8/executive-portable-office-20x8-interior-workstation.webp",
+      "format": "webp",
+      "width": 1254,
+      "height": 1254,
+      "quality_start": 86,
+      "target_kb": [
+        80,
+        120
+      ],
+      "crop": false,
+      "loading": "lazy",
+      "fetchpriority": null,
+      "alt_source": "copy.alt_text.gallery['executive-portable-office-20x8-interior-workstation.webp']"
+    },
+    {
+      "size": "20x10",
+      "slide": 1,
+      "kind": "exterior",
+      "source": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\02-square-product-images\\size-20x10\\01-executive-office-20x10-front-exterior.png",
+      "prebuilt_webp": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\07-web-variants\\gallery\\size-20x10\\01-executive-office-20x10-front-exterior.webp",
+      "source_px": [
+        1254,
+        1254
+      ],
+      "output": "public/images/products/executive-portable-office/gallery/20x10/executive-portable-office-20x10-front-centred-door.webp",
+      "url": "/images/products/executive-portable-office/gallery/20x10/executive-portable-office-20x10-front-centred-door.webp",
+      "format": "webp",
+      "width": 1254,
+      "height": 1254,
+      "quality_start": 86,
+      "target_kb": [
+        80,
+        120
+      ],
+      "crop": false,
+      "loading": "eager",
+      "fetchpriority": "high",
+      "alt_source": "copy.alt_text.gallery['executive-portable-office-20x10-front-centred-door.webp']"
+    },
+    {
+      "size": "20x10",
+      "slide": 2,
+      "kind": "exterior",
+      "source": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\02-square-product-images\\size-20x10\\02-executive-office-20x10-rear-exterior.png",
+      "prebuilt_webp": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\07-web-variants\\gallery\\size-20x10\\02-executive-office-20x10-rear-exterior.webp",
+      "source_px": [
+        1254,
+        1254
+      ],
+      "output": "public/images/products/executive-portable-office/gallery/20x10/executive-portable-office-20x10-rear-wall-b-windows.webp",
+      "url": "/images/products/executive-portable-office/gallery/20x10/executive-portable-office-20x10-rear-wall-b-windows.webp",
+      "format": "webp",
+      "width": 1254,
+      "height": 1254,
+      "quality_start": 86,
+      "target_kb": [
+        80,
+        120
+      ],
+      "crop": false,
+      "loading": "eager",
+      "fetchpriority": null,
+      "alt_source": "copy.alt_text.gallery['executive-portable-office-20x10-rear-wall-b-windows.webp']"
+    },
+    {
+      "size": "20x10",
+      "slide": 3,
+      "kind": "exterior",
+      "source": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\02-square-product-images\\size-20x10\\03-executive-office-20x10-end-exterior.png",
+      "prebuilt_webp": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\07-web-variants\\gallery\\size-20x10\\03-executive-office-20x10-end-exterior.webp",
+      "source_px": [
+        1254,
+        1254
+      ],
+      "output": "public/images/products/executive-portable-office/gallery/20x10/executive-portable-office-20x10-gable-end-window.webp",
+      "url": "/images/products/executive-portable-office/gallery/20x10/executive-portable-office-20x10-gable-end-window.webp",
+      "format": "webp",
+      "width": 1254,
+      "height": 1254,
+      "quality_start": 86,
+      "target_kb": [
+        80,
+        120
+      ],
+      "crop": false,
+      "loading": "eager",
+      "fetchpriority": null,
+      "alt_source": "copy.alt_text.gallery['executive-portable-office-20x10-gable-end-window.webp']"
+    },
+    {
+      "size": "20x10",
+      "slide": 4,
+      "kind": "interior",
+      "source": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\02-square-product-images\\size-20x10\\04-executive-office-20x10-interior-view.png",
+      "prebuilt_webp": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\07-web-variants\\gallery\\size-20x10\\04-executive-office-20x10-interior-view.webp",
+      "source_px": [
+        1254,
+        1254
+      ],
+      "output": "public/images/products/executive-portable-office/gallery/20x10/executive-portable-office-20x10-interior-five-desks.webp",
+      "url": "/images/products/executive-portable-office/gallery/20x10/executive-portable-office-20x10-interior-five-desks.webp",
+      "format": "webp",
+      "width": 1254,
+      "height": 1254,
+      "quality_start": 86,
+      "target_kb": [
+        80,
+        120
+      ],
+      "crop": false,
+      "loading": "eager",
+      "fetchpriority": null,
+      "alt_source": "copy.alt_text.gallery['executive-portable-office-20x10-interior-five-desks.webp']"
+    },
+    {
+      "size": "20x10",
+      "slide": 5,
+      "kind": "interior",
+      "source": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\02-square-product-images\\size-20x10\\05-executive-office-20x10-reverse-interior.png",
+      "prebuilt_webp": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\07-web-variants\\gallery\\size-20x10\\05-executive-office-20x10-reverse-interior.webp",
+      "source_px": [
+        1254,
+        1254
+      ],
+      "output": "public/images/products/executive-portable-office/gallery/20x10/executive-portable-office-20x10-interior-reverse.webp",
+      "url": "/images/products/executive-portable-office/gallery/20x10/executive-portable-office-20x10-interior-reverse.webp",
+      "format": "webp",
+      "width": 1254,
+      "height": 1254,
+      "quality_start": 86,
+      "target_kb": [
+        80,
+        120
+      ],
+      "crop": false,
+      "loading": "eager",
+      "fetchpriority": null,
+      "alt_source": "copy.alt_text.gallery['executive-portable-office-20x10-interior-reverse.webp']"
+    },
+    {
+      "size": "20x10",
+      "slide": 6,
+      "kind": "interior",
+      "source": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\02-square-product-images\\size-20x10\\06-executive-office-20x10-workspace-interior.png",
+      "prebuilt_webp": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\07-web-variants\\gallery\\size-20x10\\06-executive-office-20x10-workspace-interior.webp",
+      "source_px": [
+        1254,
+        1254
+      ],
+      "output": "public/images/products/executive-portable-office/gallery/20x10/executive-portable-office-20x10-interior-workstation.webp",
+      "url": "/images/products/executive-portable-office/gallery/20x10/executive-portable-office-20x10-interior-workstation.webp",
+      "format": "webp",
+      "width": 1254,
+      "height": 1254,
+      "quality_start": 86,
+      "target_kb": [
+        80,
+        120
+      ],
+      "crop": false,
+      "loading": "eager",
+      "fetchpriority": null,
+      "alt_source": "copy.alt_text.gallery['executive-portable-office-20x10-interior-workstation.webp']"
+    },
+    {
+      "size": "20x12",
+      "slide": 1,
+      "kind": "exterior",
+      "source": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\02-square-product-images\\size-20x12\\01-executive-office-20x12-front-exterior.png",
+      "prebuilt_webp": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\07-web-variants\\gallery\\size-20x12\\01-executive-office-20x12-front-exterior.webp",
+      "source_px": [
+        1254,
+        1254
+      ],
+      "output": "public/images/products/executive-portable-office/gallery/20x12/executive-portable-office-20x12-front-centred-door.webp",
+      "url": "/images/products/executive-portable-office/gallery/20x12/executive-portable-office-20x12-front-centred-door.webp",
+      "format": "webp",
+      "width": 1254,
+      "height": 1254,
+      "quality_start": 86,
+      "target_kb": [
+        80,
+        120
+      ],
+      "crop": false,
+      "loading": "lazy",
+      "fetchpriority": null,
+      "alt_source": "copy.alt_text.gallery['executive-portable-office-20x12-front-centred-door.webp']"
+    },
+    {
+      "size": "20x12",
+      "slide": 2,
+      "kind": "exterior",
+      "source": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\02-square-product-images\\size-20x12\\02-executive-office-20x12-rear-exterior.png",
+      "prebuilt_webp": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\07-web-variants\\gallery\\size-20x12\\02-executive-office-20x12-rear-exterior.webp",
+      "source_px": [
+        1254,
+        1254
+      ],
+      "output": "public/images/products/executive-portable-office/gallery/20x12/executive-portable-office-20x12-rear-wall-b-windows.webp",
+      "url": "/images/products/executive-portable-office/gallery/20x12/executive-portable-office-20x12-rear-wall-b-windows.webp",
+      "format": "webp",
+      "width": 1254,
+      "height": 1254,
+      "quality_start": 86,
+      "target_kb": [
+        80,
+        120
+      ],
+      "crop": false,
+      "loading": "lazy",
+      "fetchpriority": null,
+      "alt_source": "copy.alt_text.gallery['executive-portable-office-20x12-rear-wall-b-windows.webp']"
+    },
+    {
+      "size": "20x12",
+      "slide": 3,
+      "kind": "exterior",
+      "source": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\02-square-product-images\\size-20x12\\03-executive-office-20x12-end-exterior.png",
+      "prebuilt_webp": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\07-web-variants\\gallery\\size-20x12\\03-executive-office-20x12-end-exterior.webp",
+      "source_px": [
+        1254,
+        1254
+      ],
+      "output": "public/images/products/executive-portable-office/gallery/20x12/executive-portable-office-20x12-gable-end-window.webp",
+      "url": "/images/products/executive-portable-office/gallery/20x12/executive-portable-office-20x12-gable-end-window.webp",
+      "format": "webp",
+      "width": 1254,
+      "height": 1254,
+      "quality_start": 86,
+      "target_kb": [
+        80,
+        120
+      ],
+      "crop": false,
+      "loading": "lazy",
+      "fetchpriority": null,
+      "alt_source": "copy.alt_text.gallery['executive-portable-office-20x12-gable-end-window.webp']"
+    },
+    {
+      "size": "20x12",
+      "slide": 4,
+      "kind": "interior",
+      "source": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\02-square-product-images\\size-20x12\\04-executive-office-20x12-interior-view.png",
+      "prebuilt_webp": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\07-web-variants\\gallery\\size-20x12\\04-executive-office-20x12-interior-view.webp",
+      "source_px": [
+        1254,
+        1254
+      ],
+      "output": "public/images/products/executive-portable-office/gallery/20x12/executive-portable-office-20x12-interior-widened-aisle.webp",
+      "url": "/images/products/executive-portable-office/gallery/20x12/executive-portable-office-20x12-interior-widened-aisle.webp",
+      "format": "webp",
+      "width": 1254,
+      "height": 1254,
+      "quality_start": 86,
+      "target_kb": [
+        80,
+        120
+      ],
+      "crop": false,
+      "loading": "lazy",
+      "fetchpriority": null,
+      "alt_source": "copy.alt_text.gallery['executive-portable-office-20x12-interior-widened-aisle.webp']"
+    },
+    {
+      "size": "20x12",
+      "slide": 5,
+      "kind": "interior",
+      "source": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\02-square-product-images\\size-20x12\\05-executive-office-20x12-reverse-interior.png",
+      "prebuilt_webp": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\07-web-variants\\gallery\\size-20x12\\05-executive-office-20x12-reverse-interior.webp",
+      "source_px": [
+        1254,
+        1254
+      ],
+      "output": "public/images/products/executive-portable-office/gallery/20x12/executive-portable-office-20x12-interior-reverse.webp",
+      "url": "/images/products/executive-portable-office/gallery/20x12/executive-portable-office-20x12-interior-reverse.webp",
+      "format": "webp",
+      "width": 1254,
+      "height": 1254,
+      "quality_start": 86,
+      "target_kb": [
+        80,
+        120
+      ],
+      "crop": false,
+      "loading": "lazy",
+      "fetchpriority": null,
+      "alt_source": "copy.alt_text.gallery['executive-portable-office-20x12-interior-reverse.webp']"
+    },
+    {
+      "size": "20x12",
+      "slide": 6,
+      "kind": "interior",
+      "source": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\02-square-product-images\\size-20x12\\06-executive-office-20x12-workspace-interior.png",
+      "prebuilt_webp": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\07-web-variants\\gallery\\size-20x12\\06-executive-office-20x12-workspace-interior.webp",
+      "source_px": [
+        1254,
+        1254
+      ],
+      "output": "public/images/products/executive-portable-office/gallery/20x12/executive-portable-office-20x12-interior-workstation.webp",
+      "url": "/images/products/executive-portable-office/gallery/20x12/executive-portable-office-20x12-interior-workstation.webp",
+      "format": "webp",
+      "width": 1254,
+      "height": 1254,
+      "quality_start": 86,
+      "target_kb": [
+        80,
+        120
+      ],
+      "crop": false,
+      "loading": "lazy",
+      "fetchpriority": null,
+      "alt_source": "copy.alt_text.gallery['executive-portable-office-20x12-interior-workstation.webp']"
+    },
+    {
+      "size": "30x10",
+      "slide": 1,
+      "kind": "exterior",
+      "source": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\02-square-product-images\\size-30x10\\01-executive-office-30x10-front-exterior.png",
+      "prebuilt_webp": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\07-web-variants\\gallery\\size-30x10\\01-executive-office-30x10-front-exterior.webp",
+      "source_px": [
+        1254,
+        1254
+      ],
+      "output": "public/images/products/executive-portable-office/gallery/30x10/executive-portable-office-30x10-front-two-doors-solid-bay.webp",
+      "url": "/images/products/executive-portable-office/gallery/30x10/executive-portable-office-30x10-front-two-doors-solid-bay.webp",
+      "format": "webp",
+      "width": 1254,
+      "height": 1254,
+      "quality_start": 86,
+      "target_kb": [
+        80,
+        120
+      ],
+      "crop": false,
+      "loading": "lazy",
+      "fetchpriority": null,
+      "alt_source": "copy.alt_text.gallery['executive-portable-office-30x10-front-two-doors-solid-bay.webp']"
+    },
+    {
+      "size": "30x10",
+      "slide": 2,
+      "kind": "exterior",
+      "source": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\02-square-product-images\\size-30x10\\02-executive-office-30x10-rear-exterior.png",
+      "prebuilt_webp": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\07-web-variants\\gallery\\size-30x10\\02-executive-office-30x10-rear-exterior.webp",
+      "source_px": [
+        1254,
+        1254
+      ],
+      "output": "public/images/products/executive-portable-office/gallery/30x10/executive-portable-office-30x10-rear-four-windows.webp",
+      "url": "/images/products/executive-portable-office/gallery/30x10/executive-portable-office-30x10-rear-four-windows.webp",
+      "format": "webp",
+      "width": 1254,
+      "height": 1254,
+      "quality_start": 86,
+      "target_kb": [
+        80,
+        120
+      ],
+      "crop": false,
+      "loading": "lazy",
+      "fetchpriority": null,
+      "alt_source": "copy.alt_text.gallery['executive-portable-office-30x10-rear-four-windows.webp']"
+    },
+    {
+      "size": "30x10",
+      "slide": 3,
+      "kind": "exterior",
+      "source": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\02-square-product-images\\size-30x10\\03-executive-office-30x10-end-exterior.png",
+      "prebuilt_webp": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\07-web-variants\\gallery\\size-30x10\\03-executive-office-30x10-end-exterior.webp",
+      "source_px": [
+        1254,
+        1254
+      ],
+      "output": "public/images/products/executive-portable-office/gallery/30x10/executive-portable-office-30x10-gable-end-window.webp",
+      "url": "/images/products/executive-portable-office/gallery/30x10/executive-portable-office-30x10-gable-end-window.webp",
+      "format": "webp",
+      "width": 1254,
+      "height": 1254,
+      "quality_start": 86,
+      "target_kb": [
+        80,
+        120
+      ],
+      "crop": false,
+      "loading": "lazy",
+      "fetchpriority": null,
+      "alt_source": "copy.alt_text.gallery['executive-portable-office-30x10-gable-end-window.webp']"
+    },
+    {
+      "size": "30x10",
+      "slide": 4,
+      "kind": "interior",
+      "source": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\02-square-product-images\\size-30x10\\04-executive-office-30x10-interior-view.png",
+      "prebuilt_webp": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\07-web-variants\\gallery\\size-30x10\\04-executive-office-30x10-interior-view.webp",
+      "source_px": [
+        1254,
+        1254
+      ],
+      "output": "public/images/products/executive-portable-office/gallery/30x10/executive-portable-office-30x10-interior-eight-desks.webp",
+      "url": "/images/products/executive-portable-office/gallery/30x10/executive-portable-office-30x10-interior-eight-desks.webp",
+      "format": "webp",
+      "width": 1254,
+      "height": 1254,
+      "quality_start": 86,
+      "target_kb": [
+        80,
+        120
+      ],
+      "crop": false,
+      "loading": "lazy",
+      "fetchpriority": null,
+      "alt_source": "copy.alt_text.gallery['executive-portable-office-30x10-interior-eight-desks.webp']"
+    },
+    {
+      "size": "30x10",
+      "slide": 5,
+      "kind": "interior",
+      "source": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\02-square-product-images\\size-30x10\\05-executive-office-30x10-reverse-interior.png",
+      "prebuilt_webp": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\07-web-variants\\gallery\\size-30x10\\05-executive-office-30x10-reverse-interior.webp",
+      "source_px": [
+        1254,
+        1254
+      ],
+      "output": "public/images/products/executive-portable-office/gallery/30x10/executive-portable-office-30x10-interior-reverse.webp",
+      "url": "/images/products/executive-portable-office/gallery/30x10/executive-portable-office-30x10-interior-reverse.webp",
+      "format": "webp",
+      "width": 1254,
+      "height": 1254,
+      "quality_start": 86,
+      "target_kb": [
+        80,
+        120
+      ],
+      "crop": false,
+      "loading": "lazy",
+      "fetchpriority": null,
+      "alt_source": "copy.alt_text.gallery['executive-portable-office-30x10-interior-reverse.webp']"
+    },
+    {
+      "size": "30x10",
+      "slide": 6,
+      "kind": "interior",
+      "source": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\02-square-product-images\\size-30x10\\06-executive-office-30x10-workspace-interior.png",
+      "prebuilt_webp": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\07-web-variants\\gallery\\size-30x10\\06-executive-office-30x10-workspace-interior.webp",
+      "source_px": [
+        1254,
+        1254
+      ],
+      "output": "public/images/products/executive-portable-office/gallery/30x10/executive-portable-office-30x10-interior-workstation.webp",
+      "url": "/images/products/executive-portable-office/gallery/30x10/executive-portable-office-30x10-interior-workstation.webp",
+      "format": "webp",
+      "width": 1254,
+      "height": 1254,
+      "quality_start": 86,
+      "target_kb": [
+        80,
+        120
+      ],
+      "crop": false,
+      "loading": "lazy",
+      "fetchpriority": null,
+      "alt_source": "copy.alt_text.gallery['executive-portable-office-30x10-interior-workstation.webp']"
+    },
+    {
+      "size": "40x10",
+      "slide": 1,
+      "kind": "exterior",
+      "source": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\02-square-product-images\\size-40x10\\01-executive-office-40x10-front-exterior.png",
+      "prebuilt_webp": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\07-web-variants\\gallery\\size-40x10\\01-executive-office-40x10-front-exterior.webp",
+      "source_px": [
+        1254,
+        1254
+      ],
+      "output": "public/images/products/executive-portable-office/gallery/40x10/executive-portable-office-40x10-front-two-doors-manager-window.webp",
+      "url": "/images/products/executive-portable-office/gallery/40x10/executive-portable-office-40x10-front-two-doors-manager-window.webp",
+      "format": "webp",
+      "width": 1254,
+      "height": 1254,
+      "quality_start": 86,
+      "target_kb": [
+        80,
+        120
+      ],
+      "crop": false,
+      "loading": "lazy",
+      "fetchpriority": null,
+      "alt_source": "copy.alt_text.gallery['executive-portable-office-40x10-front-two-doors-manager-window.webp']"
+    },
+    {
+      "size": "40x10",
+      "slide": 2,
+      "kind": "exterior",
+      "source": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\02-square-product-images\\size-40x10\\02-executive-office-40x10-rear-exterior.png",
+      "prebuilt_webp": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\07-web-variants\\gallery\\size-40x10\\02-executive-office-40x10-rear-exterior.webp",
+      "source_px": [
+        1254,
+        1254
+      ],
+      "output": "public/images/products/executive-portable-office/gallery/40x10/executive-portable-office-40x10-rear-four-windows.webp",
+      "url": "/images/products/executive-portable-office/gallery/40x10/executive-portable-office-40x10-rear-four-windows.webp",
+      "format": "webp",
+      "width": 1254,
+      "height": 1254,
+      "quality_start": 86,
+      "target_kb": [
+        80,
+        120
+      ],
+      "crop": false,
+      "loading": "lazy",
+      "fetchpriority": null,
+      "alt_source": "copy.alt_text.gallery['executive-portable-office-40x10-rear-four-windows.webp']"
+    },
+    {
+      "size": "40x10",
+      "slide": 3,
+      "kind": "exterior",
+      "source": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\02-square-product-images\\size-40x10\\03-executive-office-40x10-end-exterior.png",
+      "prebuilt_webp": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\07-web-variants\\gallery\\size-40x10\\03-executive-office-40x10-end-exterior.webp",
+      "source_px": [
+        1254,
+        1254
+      ],
+      "output": "public/images/products/executive-portable-office/gallery/40x10/executive-portable-office-40x10-gable-end-window.webp",
+      "url": "/images/products/executive-portable-office/gallery/40x10/executive-portable-office-40x10-gable-end-window.webp",
+      "format": "webp",
+      "width": 1254,
+      "height": 1254,
+      "quality_start": 86,
+      "target_kb": [
+        80,
+        120
+      ],
+      "crop": false,
+      "loading": "lazy",
+      "fetchpriority": null,
+      "alt_source": "copy.alt_text.gallery['executive-portable-office-40x10-gable-end-window.webp']"
+    },
+    {
+      "size": "40x10",
+      "slide": 4,
+      "kind": "interior",
+      "source": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\02-square-product-images\\size-40x10\\04-executive-office-40x10-interior-view.png",
+      "prebuilt_webp": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\07-web-variants\\gallery\\size-40x10\\04-executive-office-40x10-interior-view.webp",
+      "source_px": [
+        1254,
+        1254
+      ],
+      "output": "public/images/products/executive-portable-office/gallery/40x10/executive-portable-office-40x10-interior-twelve-desks.webp",
+      "url": "/images/products/executive-portable-office/gallery/40x10/executive-portable-office-40x10-interior-twelve-desks.webp",
+      "format": "webp",
+      "width": 1254,
+      "height": 1254,
+      "quality_start": 86,
+      "target_kb": [
+        80,
+        120
+      ],
+      "crop": false,
+      "loading": "lazy",
+      "fetchpriority": null,
+      "alt_source": "copy.alt_text.gallery['executive-portable-office-40x10-interior-twelve-desks.webp']"
+    },
+    {
+      "size": "40x10",
+      "slide": 5,
+      "kind": "interior",
+      "source": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\02-square-product-images\\size-40x10\\05-executive-office-40x10-reverse-interior.png",
+      "prebuilt_webp": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\07-web-variants\\gallery\\size-40x10\\05-executive-office-40x10-reverse-interior.webp",
+      "source_px": [
+        1254,
+        1254
+      ],
+      "output": "public/images/products/executive-portable-office/gallery/40x10/executive-portable-office-40x10-interior-open-bay.webp",
+      "url": "/images/products/executive-portable-office/gallery/40x10/executive-portable-office-40x10-interior-open-bay.webp",
+      "format": "webp",
+      "width": 1254,
+      "height": 1254,
+      "quality_start": 86,
+      "target_kb": [
+        80,
+        120
+      ],
+      "crop": false,
+      "loading": "lazy",
+      "fetchpriority": null,
+      "alt_source": "copy.alt_text.gallery['executive-portable-office-40x10-interior-open-bay.webp']"
+    },
+    {
+      "size": "40x10",
+      "slide": 6,
+      "kind": "interior",
+      "source": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\02-square-product-images\\size-40x10\\06-executive-office-40x10-manager-interior.png",
+      "prebuilt_webp": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\07-web-variants\\gallery\\size-40x10\\06-executive-office-40x10-manager-interior.webp",
+      "source_px": [
+        1254,
+        1254
+      ],
+      "output": "public/images/products/executive-portable-office/gallery/40x10/executive-portable-office-40x10-manager-room-partition-door.webp",
+      "url": "/images/products/executive-portable-office/gallery/40x10/executive-portable-office-40x10-manager-room-partition-door.webp",
+      "format": "webp",
+      "width": 1254,
+      "height": 1254,
+      "quality_start": 86,
+      "target_kb": [
+        80,
+        120
+      ],
+      "crop": false,
+      "loading": "lazy",
+      "fetchpriority": null,
+      "alt_source": "copy.alt_text.gallery['executive-portable-office-40x10-manager-room-partition-door.webp']"
+    }
+  ],
+  "ga_boards": [
+    {
+      "size": "10x10",
+      "source": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\01-ga-boards\\size-10x10\\01-executive-office-10x10-ga-board.png",
+      "prebuilt_webp": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\07-web-variants\\ga\\size-10x10\\10x10-ga-board.webp",
+      "source_px": [
+        3840,
+        2160
+      ],
+      "output": "public/images/products/executive-portable-office/ga/10x10-ga-board.webp",
+      "url": "/images/products/executive-portable-office/ga/10x10-ga-board.webp",
+      "format": "webp",
+      "width": 1800,
+      "quality_start": 88,
+      "target_kb": [
+        80,
+        120
+      ],
+      "crop": false,
+      "loading": "lazy",
+      "alt_source": "copy.alt_text.ga_boards['10x10-ga-board.webp']"
+    },
+    {
+      "size": "20x8",
+      "source": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\01-ga-boards\\size-20x8\\01-executive-office-20x8-ga-board.png",
+      "prebuilt_webp": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\07-web-variants\\ga\\size-20x8\\20x8-ga-board.webp",
+      "source_px": [
+        3840,
+        2160
+      ],
+      "output": "public/images/products/executive-portable-office/ga/20x8-ga-board.webp",
+      "url": "/images/products/executive-portable-office/ga/20x8-ga-board.webp",
+      "format": "webp",
+      "width": 1800,
+      "quality_start": 88,
+      "target_kb": [
+        80,
+        120
+      ],
+      "crop": false,
+      "loading": "lazy",
+      "alt_source": "copy.alt_text.ga_boards['20x8-ga-board.webp']"
+    },
+    {
+      "size": "20x10",
+      "source": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\01-ga-boards\\size-20x10\\01-executive-office-20x10-ga-board.png",
+      "prebuilt_webp": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\07-web-variants\\ga\\size-20x10\\20x10-ga-board.webp",
+      "source_px": [
+        3840,
+        2160
+      ],
+      "output": "public/images/products/executive-portable-office/ga/20x10-ga-board.webp",
+      "url": "/images/products/executive-portable-office/ga/20x10-ga-board.webp",
+      "format": "webp",
+      "width": 1800,
+      "quality_start": 88,
+      "target_kb": [
+        80,
+        120
+      ],
+      "crop": false,
+      "loading": "lazy",
+      "alt_source": "copy.alt_text.ga_boards['20x10-ga-board.webp']"
+    },
+    {
+      "size": "20x12",
+      "source": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\01-ga-boards\\size-20x12\\01-executive-office-20x12-ga-board.png",
+      "prebuilt_webp": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\07-web-variants\\ga\\size-20x12\\20x12-ga-board.webp",
+      "source_px": [
+        3840,
+        2160
+      ],
+      "output": "public/images/products/executive-portable-office/ga/20x12-ga-board.webp",
+      "url": "/images/products/executive-portable-office/ga/20x12-ga-board.webp",
+      "format": "webp",
+      "width": 1800,
+      "quality_start": 88,
+      "target_kb": [
+        80,
+        120
+      ],
+      "crop": false,
+      "loading": "lazy",
+      "alt_source": "copy.alt_text.ga_boards['20x12-ga-board.webp']"
+    },
+    {
+      "size": "30x10",
+      "source": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\01-ga-boards\\size-30x10\\01-executive-office-30x10-ga-board.png",
+      "prebuilt_webp": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\07-web-variants\\ga\\size-30x10\\30x10-ga-board.webp",
+      "source_px": [
+        3840,
+        2160
+      ],
+      "output": "public/images/products/executive-portable-office/ga/30x10-ga-board.webp",
+      "url": "/images/products/executive-portable-office/ga/30x10-ga-board.webp",
+      "format": "webp",
+      "width": 1800,
+      "quality_start": 88,
+      "target_kb": [
+        80,
+        120
+      ],
+      "crop": false,
+      "loading": "lazy",
+      "alt_source": "copy.alt_text.ga_boards['30x10-ga-board.webp']"
+    },
+    {
+      "size": "40x10",
+      "source": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\01-ga-boards\\size-40x10\\01-executive-office-40x10-ga-board.png",
+      "prebuilt_webp": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\07-web-variants\\ga\\size-40x10\\40x10-ga-board.webp",
+      "source_px": [
+        3840,
+        2160
+      ],
+      "output": "public/images/products/executive-portable-office/ga/40x10-ga-board.webp",
+      "url": "/images/products/executive-portable-office/ga/40x10-ga-board.webp",
+      "format": "webp",
+      "width": 1800,
+      "quality_start": 88,
+      "target_kb": [
+        80,
+        120
+      ],
+      "crop": false,
+      "loading": "lazy",
+      "alt_source": "copy.alt_text.ga_boards['40x10-ga-board.webp']"
+    }
+  ],
+  "section2_card": {
+    "source": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\01-ga-boards\\size-40x10\\01-executive-office-40x10-ga-board.png",
+    "source_px": [
+      3840,
+      2160
+    ],
+    "output": "public/images/products/executive-portable-office/section2/executive-portable-office-40x10-manager-room-ga.webp",
+    "url": "/images/products/executive-portable-office/section2/executive-portable-office-40x10-manager-room-ga.webp",
+    "format": "webp",
+    "width": 1600,
+    "quality_start": 90,
+    "target_kb": [
+      80,
+      120
+    ],
+    "crop": false,
+    "note": "Native 16:9 GA board. Never cropped. Sits on the LEFT of the split card.",
+    "alt_source": "copy.alt_text.section2_card"
+  },
+  "media_band": [
+    {
+      "size": "10x10",
+      "source": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\03-long-description-images\\01-executive-office-10x10-wide-overview.png",
+      "prebuilt_webp": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\07-web-variants\\wide\\01-executive-office-10x10-wide-overview.webp",
+      "source_px": [
+        1672,
+        941
+      ],
+      "output": "public/images/products/executive-portable-office/wide/executive-portable-office-10x10-overview.webp",
+      "url": "/images/products/executive-portable-office/wide/executive-portable-office-10x10-overview.webp",
+      "format": "webp",
+      "width": 1600,
+      "quality_start": 90,
+      "target_kb": [
+        80,
+        120
+      ],
+      "crop": false,
+      "loading": "lazy",
+      "alt_source": "copy.alt_text.wide['executive-portable-office-10x10-overview.webp']"
+    },
+    {
+      "size": "20x8",
+      "source": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\03-long-description-images\\02-executive-office-20x8-wide-overview.png",
+      "prebuilt_webp": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\07-web-variants\\wide\\02-executive-office-20x8-wide-overview.webp",
+      "source_px": [
+        1672,
+        941
+      ],
+      "output": "public/images/products/executive-portable-office/wide/executive-portable-office-20x8-overview.webp",
+      "url": "/images/products/executive-portable-office/wide/executive-portable-office-20x8-overview.webp",
+      "format": "webp",
+      "width": 1600,
+      "quality_start": 90,
+      "target_kb": [
+        80,
+        120
+      ],
+      "crop": false,
+      "loading": "lazy",
+      "alt_source": "copy.alt_text.wide['executive-portable-office-20x8-overview.webp']"
+    },
+    {
+      "size": "20x10",
+      "source": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\03-long-description-images\\03-executive-office-20x10-wide-overview.png",
+      "prebuilt_webp": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\07-web-variants\\wide\\03-executive-office-20x10-wide-overview.webp",
+      "source_px": [
+        1672,
+        941
+      ],
+      "output": "public/images/products/executive-portable-office/wide/executive-portable-office-20x10-overview.webp",
+      "url": "/images/products/executive-portable-office/wide/executive-portable-office-20x10-overview.webp",
+      "format": "webp",
+      "width": 1600,
+      "quality_start": 90,
+      "target_kb": [
+        80,
+        120
+      ],
+      "crop": false,
+      "loading": "lazy",
+      "alt_source": "copy.alt_text.wide['executive-portable-office-20x10-overview.webp']"
+    },
+    {
+      "size": "20x12",
+      "source": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\03-long-description-images\\04-executive-office-20x12-wide-overview.png",
+      "prebuilt_webp": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\07-web-variants\\wide\\04-executive-office-20x12-wide-overview.webp",
+      "source_px": [
+        1672,
+        941
+      ],
+      "output": "public/images/products/executive-portable-office/wide/executive-portable-office-20x12-overview.webp",
+      "url": "/images/products/executive-portable-office/wide/executive-portable-office-20x12-overview.webp",
+      "format": "webp",
+      "width": 1600,
+      "quality_start": 90,
+      "target_kb": [
+        80,
+        120
+      ],
+      "crop": false,
+      "loading": "lazy",
+      "alt_source": "copy.alt_text.wide['executive-portable-office-20x12-overview.webp']"
+    },
+    {
+      "size": "30x10",
+      "source": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\03-long-description-images\\05-executive-office-30x10-wide-overview.png",
+      "prebuilt_webp": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\07-web-variants\\wide\\05-executive-office-30x10-wide-overview.webp",
+      "source_px": [
+        1672,
+        941
+      ],
+      "output": "public/images/products/executive-portable-office/wide/executive-portable-office-30x10-overview.webp",
+      "url": "/images/products/executive-portable-office/wide/executive-portable-office-30x10-overview.webp",
+      "format": "webp",
+      "width": 1600,
+      "quality_start": 90,
+      "target_kb": [
+        80,
+        120
+      ],
+      "crop": false,
+      "loading": "lazy",
+      "alt_source": "copy.alt_text.wide['executive-portable-office-30x10-overview.webp']"
+    },
+    {
+      "size": "40x10",
+      "source": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\03-long-description-images\\06-executive-office-40x10-wide-overview.png",
+      "prebuilt_webp": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\07-web-variants\\wide\\06-executive-office-40x10-wide-overview.webp",
+      "source_px": [
+        1672,
+        941
+      ],
+      "output": "public/images/products/executive-portable-office/wide/executive-portable-office-40x10-overview.webp",
+      "url": "/images/products/executive-portable-office/wide/executive-portable-office-40x10-overview.webp",
+      "format": "webp",
+      "width": 1600,
+      "quality_start": 90,
+      "target_kb": [
+        80,
+        120
+      ],
+      "crop": false,
+      "loading": "lazy",
+      "alt_source": "copy.alt_text.wide['executive-portable-office-40x10-overview.webp']"
+    }
+  ],
+  "spec_diagrams": [
+    {
+      "slot": "spec_diagram_01",
+      "source": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\04-technical-diagrams\\01-executive-office-frame-joint-diagram.png",
+      "prebuilt_webp": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\07-web-variants\\diagrams\\01-executive-office-frame-joint-diagram.webp",
+      "source_px": [
+        1920,
+        1080
+      ],
+      "output": "public/images/products/executive-portable-office/diagrams/01-executive-office-frame-joint-diagram.webp",
+      "url": "/images/products/executive-portable-office/diagrams/01-executive-office-frame-joint-diagram.webp",
+      "format": "webp",
+      "width": 1600,
+      "quality_start": 90,
+      "target_kb": [
+        80,
+        120
+      ],
+      "crop": false,
+      "loading": "lazy",
+      "alt_source": "copy.alt_text.diagrams['01-executive-office-frame-joint-diagram.webp']"
+    },
+    {
+      "slot": "spec_diagram_02",
+      "source": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\04-technical-diagrams\\02-executive-office-services-installation-diagram.png",
+      "prebuilt_webp": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\07-web-variants\\diagrams\\02-executive-office-services-installation-diagram.webp",
+      "source_px": [
+        1920,
+        1080
+      ],
+      "output": "public/images/products/executive-portable-office/diagrams/02-executive-office-services-installation-diagram.webp",
+      "url": "/images/products/executive-portable-office/diagrams/02-executive-office-services-installation-diagram.webp",
+      "format": "webp",
+      "width": 1600,
+      "quality_start": 90,
+      "target_kb": [
+        80,
+        120
+      ],
+      "crop": false,
+      "loading": "lazy",
+      "alt_source": "copy.alt_text.diagrams['02-executive-office-services-installation-diagram.webp']"
+    }
+  ],
+  "spec_pdf": {
+    "source": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\executive-portable-office\\approved-website-assets-v2\\05-technical-pdf\\saman-executive-portable-office-technical-specification-and-prices-v1.pdf",
+    "output": "public/images/products/executive-portable-office/saman-executive-portable-office-technical-specification-and-prices.pdf",
+    "url": "/images/products/executive-portable-office/saman-executive-portable-office-technical-specification-and-prices.pdf",
+    "link_text": "Download technical specification (PDF)"
+  }
+}

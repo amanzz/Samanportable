@@ -1,0 +1,27 @@
+PO-04 Gate 6 - Lighthouse mobile
+==============================================================================
+
+Lighthouse 12.8.2, preset=perf, form factor mobile, headless Chrome.
+
+  A  PO-04 preview  : http://127.0.0.1:3211/product/portable-office/executive-portable-office
+  B  design lock ref: https://www.samanportable.com/product/porta-cabins
+
+Not a like-for-like comparison: A is a local production server on this machine,
+B is the live site behind a CDN. The row that matters is CLS, which is layout and
+therefore comparable; the timing rows mostly measure the two hosts.
+
+METRIC                                    PO-04   PORTA-CABINS
+performance score                            55             56
+first-contentful-paint                    3.4 s          4.3 s
+largest-contentful-paint                  3.8 s          6.5 s
+total-blocking-time                    1,390 ms         390 ms
+cumulative-layout-shift                   0.015              0
+speed-index                               3.9 s          5.0 s
+interactive                              19.0 s         12.2 s
+
+Byte weight
+total-byte-weight                Total size was 2,263 KiB Total size was 1,985 KiB
+dom-size                         3,877 elements 1,752 elements
+
+Full reports: gate6-lighthouse-mobile-po04.report.html / .json
+              gate6-lighthouse-mobile-portacabins-reference.report.html / .json

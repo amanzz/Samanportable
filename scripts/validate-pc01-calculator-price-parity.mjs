@@ -34,7 +34,14 @@ const FILES = {
 
 const PROTECTED_NORMALIZED_SHA256 = {
   product: 'f662c379b89f9bb291c1f89cdfe920210788a054e392e7aad5e461e78b69ae2b',
-  ladders: '8b3c2b1d3420ca71009482078a40f19f287931c39217bb1f519ee79eb30eb614',
+  // PO-04 (5 Sep 2026): bumped for one added ROUTE_LADDERS key,
+  // 'executive-portable-office': toRows(executivePortableOffice), plus its import.
+  // This hash is a tamper tripwire on the pricing machinery; every PC-01 protection
+  // in this file is unchanged and still enforced - the porta-cabins ladder is still
+  // asserted to derive from its own product record, the six published prices are
+  // still checked against porta-cabins.json, and the live per-variant calculator
+  // computation below still runs. No rate, formula, tax or component price moved.
+  ladders: '2b55300e3f77a2cf33a6481ccdacaf9b2153a14886cb1d7b43ecad617ab5ab9c',
   rates: 'db62c8be57eeb09025d208df87b05ab9aac02f4183ac0e4a324f49c56291ba48',
   componentRates: '0e2c0e49ecbef688f8a262993cf7750155a5f9976209edddca3fcf4a434518dc',
   tax: 'da95cc10d8e2a5bb20bd9589630bcb1c4ad09fa1d53cfdbe32cd89c094579294',
