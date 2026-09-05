@@ -176,7 +176,32 @@ export default function RightToExist({
     </div>
   );
 
+  // PO-05 - block 7. Renders ONLY for an entry that supplies `mediaBand`; every other
+  // product yields null here and the fragment below emits the identical <section>.
+  const mediaBand = entry.mediaBand?.length ? (
+    <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      {entry.mediaBand.map((frame) => (
+        <figure
+          key={frame.src}
+          className="m-0 overflow-hidden rounded-xl border border-emerald-200 bg-white shadow-sm"
+        >
+          <Image
+            src={frame.src}
+            unoptimized={shouldBypassOptimizer(frame.src)}
+            alt={frame.alt}
+            width={frame.width}
+            height={frame.height}
+            loading="lazy"
+            sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
+            className="h-auto w-full"
+          />
+        </figure>
+      ))}
+    </div>
+  ) : null;
+
   return (
+    <>
     <section
       className="rounded-xl border border-emerald-200 bg-white p-5 shadow-sm sm:p-6"
       aria-labelledby={headingId}
@@ -207,5 +232,7 @@ export default function RightToExist({
         </>
       )}
     </section>
+    {mediaBand}
+    </>
   );
 }

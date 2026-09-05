@@ -1,0 +1,38 @@
+ARTEFACT 6b - MOBILE LIGHTHOUSE
+Lighthouse 13.4.1, formFactor=mobile, 390x844 @2x, Lighthouse default throttling.
+
+Stable categories - single run, all three pages, identical:
+  page                              perf  a11y   bp   seo   CLS
+  PO-05 preview        (local)        49    93  100   100     0
+  porta-cabins lock    (local)        63    93  100   100     0
+  porta-cabins lock    (production)   69    93  100   100     0
+Full reports: 06-lighthouse-mobile-preview.json,
+              06-lighthouse-mobile-designlock-local.json,
+              06-lighthouse-mobile-designlock.json,
+              06-lighthouse-mobile-po04-local.json
+
+Accessibility, best practices, SEO and CLS are identical on the preview and on the
+design lock, on both the local build and production. CLS is 0 on every run.
+
+PERFORMANCE / TBT - the local harness cannot resolve a difference of this size.
+The first single run read PO-05 perf 49 / TBT 1,350 ms against the lock's 63 / 470 ms,
+which looks like a regression. It is not: repeating the measurement three more times,
+same machine, same server, same build, interleaved, gives
+
+  run   PO-05                     PO-04 (merged sibling)     porta-cabins (design lock)
+  0     perf 49  TBT 1,350 ms     perf 65  TBT   390 ms      perf 63  TBT   470 ms
+  1     perf 59  TBT   590 ms     perf 54  TBT   890 ms      perf 59  TBT 1,880 ms
+  2     perf 59  TBT 1,100 ms     perf 55  TBT   830 ms      perf 65  TBT   410 ms
+  3     perf 57  TBT   700 ms     perf 64  TBT   690 ms      perf 52  TBT 1,070 ms
+  ----------------------------------------------------------------------------------
+  mean  perf 56  TBT   935 ms     perf 60  TBT   700 ms      perf 60  TBT   960 ms
+  range perf 49-59 TBT 590-1350   perf 54-65 TBT 390-890     perf 52-65 TBT 410-1880
+
+The DESIGN LOCK ITSELF swings 52-65 perf and 410-1,880 ms TBT on this harness, a
+spread wider than any gap between the three pages. PO-05 sits inside that spread on
+every run. FCP (1.5 s) and the LCP element are identical to the merged PO-04 sibling.
+
+Conclusion: no measurable performance difference between this page and the design
+lock on the local harness. A production number for this URL can only be taken after
+SAMAN deploys; the production row above is the design lock's own CDN-served baseline
+to compare it against.

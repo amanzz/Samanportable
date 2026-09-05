@@ -1,1 +1,2 @@
-2b36300b0fda5208a07d8ffc5630db6b7a37da66
+3c538299725f7f37589a7cc41e9a5e906106a9fa
+3c538299 Merge pull request #191 from amanzz/feature/po03-portable-weighbridge-office-20260905

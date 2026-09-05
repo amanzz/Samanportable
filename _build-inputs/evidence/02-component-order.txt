@@ -1,0 +1,19 @@
+ARTEFACT 2 - COMPONENT-ORDER ASSERTION (the eleven canonical blocks)
+preview: http://localhost:3105/product/portable-office/portable-mobile-laboratory
+
+#    block                                              offset
+1    three-column hero                                     341
+2    contact / location bar                              39492
+3    size selector tabs (usePremiumSizeTabs)             43731
+4    price display for the selected size                 44583
+5    H2 Explore the Range panel                          50829
+6    Section 2 RightToExist + split card                 57551
+7    media / finished-work band                          60607
+8    Section 3 SizeApplicationsExplorer                  63353
+9    Section 4 calculator                               101880
+10   You may also like                                  317407
+11   Section 5 Product Details tab strip                323032
+
+RESULT: PASS - all eleven blocks present, in the canonical order.
+
+Description tab image count (must be 0): 0

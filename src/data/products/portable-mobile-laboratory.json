@@ -1,0 +1,858 @@
+{
+  "productSlug": "portable-mobile-laboratory",
+  "productName": "Portable Mobile Laboratory",
+  "variantAxis": "size",
+  "defaultVariant": "20x10",
+  "hsn": "9406",
+  "gstPercent": 18,
+  "emitAggregateOffer": true,
+  "variants": [
+    {
+      "sizeSlug": "10x10",
+      "label": "10×10 ft",
+      "dims": "10×10×8.5 ft",
+      "areaSqft": 100,
+      "priceExGst": 230000,
+      "priceInclGst": 271400,
+      "featureCells": [
+        {
+          "label": "Size",
+          "value": "10×10×8.5 ft · 100 sq ft"
+        },
+        {
+          "label": "Roof",
+          "value": "Two-way, centred ridge"
+        },
+        {
+          "label": "Openings",
+          "value": "1 door · 3 windows"
+        },
+        {
+          "label": "Benching",
+          "value": "1 bench run · 1 sink · 2 upper modules"
+        },
+        {
+          "label": "Cleaning aisle",
+          "value": "≈ 7.34 ft clear"
+        },
+        {
+          "label": "Material",
+          "value": "MS frame · corrugated MS shell"
+        },
+        {
+          "label": "Delivery",
+          "value": "7–21 Working Days"
+        },
+        {
+          "label": "Coverage",
+          "value": "Bangalore · Delhi NCR"
+        },
+        {
+          "label": "Brand",
+          "value": "SAMAN Portable"
+        }
+      ],
+      "images": [
+        {
+          "src": "/images/products/portable-mobile-laboratory/10x10/portable-mobile-laboratory-10x10-front-door-wall.webp",
+          "alt": "SAMAN 10x10 ft portable mobile laboratory in deep bottle green: single door on the long wall, one centred window on the end wall, four top-corner lifting eyes",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-mobile-laboratory/10x10/portable-mobile-laboratory-10x10-interior-from-door.webp",
+          "alt": "Inside the 10x10 ft portable mobile laboratory from the door: single bench run with overhead storage, coved vinyl floor and porcelain white washable liner",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-mobile-laboratory/10x10/portable-mobile-laboratory-10x10-interior-bench-run.webp",
+          "alt": "Bench run in the 10x10 ft portable mobile laboratory: non-absorbent worktop, two upper storage modules and a balance and microscope staged for scale",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-mobile-laboratory/10x10/portable-mobile-laboratory-10x10-sink-service-interface.webp",
+          "alt": "Sink and service interface at 7 to 8.5 ft on the 10x10 ft portable mobile laboratory bench, with the coved junction between worktop and washable wall liner",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "20x8",
+      "label": "20×8 ft",
+      "dims": "20×8×8.5 ft",
+      "areaSqft": 160,
+      "priceExGst": 352000,
+      "priceInclGst": 415360,
+      "featureCells": [
+        {
+          "label": "Size",
+          "value": "20×8×8.5 ft · 160 sq ft"
+        },
+        {
+          "label": "Roof",
+          "value": "One-way across the 8 ft width"
+        },
+        {
+          "label": "Openings",
+          "value": "1 door · 6 windows"
+        },
+        {
+          "label": "Benching",
+          "value": "1 bench run · 1 sink · 3 upper modules"
+        },
+        {
+          "label": "Cleaning aisle",
+          "value": "≈ 5.34 ft clear"
+        },
+        {
+          "label": "Material",
+          "value": "MS frame · corrugated MS shell"
+        },
+        {
+          "label": "Delivery",
+          "value": "7–21 Working Days"
+        },
+        {
+          "label": "Coverage",
+          "value": "Bangalore · Delhi NCR"
+        },
+        {
+          "label": "Brand",
+          "value": "SAMAN Portable"
+        }
+      ],
+      "images": [
+        {
+          "src": "/images/products/portable-mobile-laboratory/20x8/portable-mobile-laboratory-20x8-front-window-door-window.webp",
+          "alt": "SAMAN 20x8 ft portable mobile laboratory in muted teal: window, door and window along Wall A and the one-way roof falling across the 8 ft width",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-mobile-laboratory/20x8/portable-mobile-laboratory-20x8-wall-a-elevation.webp",
+          "alt": "Wall A elevation of the 20x8 ft portable mobile laboratory showing the scheduled window at 1.5 to 5.5 ft, the door at 8.5 to 11.5 ft and the window at 14.5 to 18.5 ft",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-mobile-laboratory/20x8/portable-mobile-laboratory-20x8-rear-two-windows.webp",
+          "alt": "Rear of the 20x8 ft portable mobile laboratory: two windows on Wall B, one centred window on the end wall and no external door on either end",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-mobile-laboratory/20x8/portable-mobile-laboratory-20x8-interior-from-door.webp",
+          "alt": "Inside the 20x8 ft portable mobile laboratory from the door: one continuous 18.5 ft bench along Wall B, warm ivory liner and coved vinyl floor",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-mobile-laboratory/20x8/portable-mobile-laboratory-20x8-interior-linear-bench.webp",
+          "alt": "Linear workflow in the 20x8 ft portable mobile laboratory: samples move along the single bench from the door end towards the sink at the far end",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-mobile-laboratory/20x8/portable-mobile-laboratory-20x8-sink-service-interface.webp",
+          "alt": "Sink and service interface at 16.75 to 18.25 ft on the 20x8 ft portable mobile laboratory bench, with three upper storage modules above",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "20x10",
+      "label": "20×10 ft",
+      "dims": "20×10×8.5 ft",
+      "areaSqft": 200,
+      "priceExGst": 400000,
+      "priceInclGst": 472000,
+      "featureCells": [
+        {
+          "label": "Size",
+          "value": "20×10×8.5 ft · 200 sq ft"
+        },
+        {
+          "label": "Roof",
+          "value": "Two-way, centred ridge"
+        },
+        {
+          "label": "Openings",
+          "value": "1 door · 6 windows"
+        },
+        {
+          "label": "Benching",
+          "value": "3 bench runs · 1 sink · 4 upper modules"
+        },
+        {
+          "label": "Cleaning aisle",
+          "value": "≈ 5.34 ft clear"
+        },
+        {
+          "label": "Material",
+          "value": "MS frame · corrugated MS shell"
+        },
+        {
+          "label": "Delivery",
+          "value": "7–21 Working Days"
+        },
+        {
+          "label": "Coverage",
+          "value": "Bangalore · Delhi NCR"
+        },
+        {
+          "label": "Brand",
+          "value": "SAMAN Portable"
+        }
+      ],
+      "images": [
+        {
+          "src": "/images/products/portable-mobile-laboratory/20x10/portable-mobile-laboratory-20x10-front-window-door-window.webp",
+          "alt": "SAMAN 20x10 ft portable mobile laboratory in pearl off-white: window, door and window on Wall A and the shallow two-way roof ridge",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-mobile-laboratory/20x10/portable-mobile-laboratory-20x10-wall-a-elevation.webp",
+          "alt": "Wall A elevation of the 20x10 ft portable mobile laboratory with the scheduled window, door and window positions and the centred ridge above",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-mobile-laboratory/20x10/portable-mobile-laboratory-20x10-rear-two-windows.webp",
+          "alt": "Rear of the 20x10 ft portable mobile laboratory: two windows on Wall B and one centred window on the furniture-free end wall",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-mobile-laboratory/20x10/portable-mobile-laboratory-20x10-interior-from-door.webp",
+          "alt": "Inside the 20x10 ft portable mobile laboratory from the door: benches on both long walls, graphite grey cabinets and a 5.34 ft clear cleaning aisle between them",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-mobile-laboratory/20x10/portable-mobile-laboratory-20x10-interior-dual-bench.webp",
+          "alt": "Dual bench arrangement in the 20x10 ft portable mobile laboratory: sample intake and equipment allowance benches on Wall A, continuous workbench on Wall B",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-mobile-laboratory/20x10/portable-mobile-laboratory-20x10-sink-service-interface.webp",
+          "alt": "Sink and service interface at 16.75 to 18.25 ft on the 20x10 ft portable mobile laboratory workbench, mist blue-grey liner behind",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "20x12",
+      "label": "20×12 ft",
+      "dims": "20×12×8.5 ft",
+      "areaSqft": 240,
+      "priceExGst": 460800,
+      "priceInclGst": 543744,
+      "featureCells": [
+        {
+          "label": "Size",
+          "value": "20×12×8.5 ft · 240 sq ft"
+        },
+        {
+          "label": "Roof",
+          "value": "Two-way, centred ridge"
+        },
+        {
+          "label": "Openings",
+          "value": "1 door · 6 windows"
+        },
+        {
+          "label": "Benching",
+          "value": "3 bench runs · 1 sink · 4 upper modules"
+        },
+        {
+          "label": "Cleaning aisle",
+          "value": "≈ 7.34 ft clear"
+        },
+        {
+          "label": "Material",
+          "value": "MS frame · corrugated MS shell"
+        },
+        {
+          "label": "Delivery",
+          "value": "7–21 Working Days"
+        },
+        {
+          "label": "Coverage",
+          "value": "Bangalore · Delhi NCR"
+        },
+        {
+          "label": "Brand",
+          "value": "SAMAN Portable"
+        }
+      ],
+      "images": [
+        {
+          "src": "/images/products/portable-mobile-laboratory/20x12/portable-mobile-laboratory-20x12-front-window-door-window.webp",
+          "alt": "SAMAN 20x12 ft portable mobile laboratory in deep oxford blue: window, door and window on Wall A, two-way roof and four top-corner lifting eyes",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-mobile-laboratory/20x12/portable-mobile-laboratory-20x12-wall-a-elevation.webp",
+          "alt": "Wall A elevation of the 20x12 ft portable mobile laboratory showing the same opening schedule as the 20x10 on a 12 ft wide body",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-mobile-laboratory/20x12/portable-mobile-laboratory-20x12-rear-two-windows.webp",
+          "alt": "Rear of the 20x12 ft portable mobile laboratory: two windows on Wall B and one centred window on the end wall, with the marginal ridge visible",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-mobile-laboratory/20x12/portable-mobile-laboratory-20x12-interior-from-door.webp",
+          "alt": "Inside the 20x12 ft portable mobile laboratory from the door: three bench runs, porcelain sage liner and the 7.34 ft clear cleaning aisle",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-mobile-laboratory/20x12/portable-mobile-laboratory-20x12-interior-wide-aisle.webp",
+          "alt": "Wide-aisle arrangement in the 20x12 ft portable mobile laboratory: benches on both long walls and no island, keeping the floor junctions clear",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-mobile-laboratory/20x12/portable-mobile-laboratory-20x12-sink-service-interface.webp",
+          "alt": "Sink and service interface at 16.75 to 18.25 ft on the 20x12 ft portable mobile laboratory workbench, oxford blue cabinets below",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "30x10",
+      "label": "30×10 ft",
+      "dims": "30×10×8.5 ft",
+      "areaSqft": 300,
+      "priceExGst": 576000,
+      "priceInclGst": 679680,
+      "featureCells": [
+        {
+          "label": "Size",
+          "value": "30×10×8.5 ft · 300 sq ft"
+        },
+        {
+          "label": "Roof",
+          "value": "Two-way, centred ridge"
+        },
+        {
+          "label": "Openings",
+          "value": "2 doors · 8 windows"
+        },
+        {
+          "label": "Benching",
+          "value": "2 bench runs · 1 sink · 4 upper modules"
+        },
+        {
+          "label": "Cleaning aisle",
+          "value": "≈ 5.34 ft clear"
+        },
+        {
+          "label": "Material",
+          "value": "MS frame · corrugated MS shell"
+        },
+        {
+          "label": "Delivery",
+          "value": "7–21 Working Days"
+        },
+        {
+          "label": "Coverage",
+          "value": "Bangalore · Delhi NCR"
+        },
+        {
+          "label": "Brand",
+          "value": "SAMAN Portable"
+        }
+      ],
+      "images": [
+        {
+          "src": "/images/products/portable-mobile-laboratory/30x10/portable-mobile-laboratory-30x10-front-two-doors.webp",
+          "alt": "SAMAN 30x10 ft portable mobile laboratory in burgundy wine: two external doors on Wall A with two windows between them",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-mobile-laboratory/30x10/portable-mobile-laboratory-30x10-wall-a-elevation.webp",
+          "alt": "Wall A elevation of the 30x10 ft portable mobile laboratory: door at 1.5 to 4.5 ft, windows at 8 to 12 and 18 to 22 ft, second door at 25.5 to 28.5 ft",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-mobile-laboratory/30x10/portable-mobile-laboratory-30x10-rear-four-windows.webp",
+          "alt": "Rear of the 30x10 ft portable mobile laboratory: four scheduled windows along Wall B and one centred window on the end wall",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-mobile-laboratory/30x10/portable-mobile-laboratory-30x10-interior-from-door.webp",
+          "alt": "Inside the 30x10 ft portable mobile laboratory from the first door: 28.5 ft continuous workbench on Wall B and champagne linen washable liner",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-mobile-laboratory/30x10/portable-mobile-laboratory-30x10-interior-sample-flow.webp",
+          "alt": "Sample flow in the 30x10 ft portable mobile laboratory: short intake bench on Wall A between the two doors, long workbench opposite",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-mobile-laboratory/30x10/portable-mobile-laboratory-30x10-sink-service-interface.webp",
+          "alt": "Sink and service interface at 25.5 to 27 ft on the 30x10 ft portable mobile laboratory workbench, near the second external door",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "40x10",
+      "label": "40×10 ft",
+      "dims": "40×10×8.5 ft",
+      "areaSqft": 400,
+      "priceExGst": 760000,
+      "priceInclGst": 896800,
+      "featureCells": [
+        {
+          "label": "Size",
+          "value": "40×10×8.5 ft · 400 sq ft"
+        },
+        {
+          "label": "Roof",
+          "value": "Two-way, centred ridge"
+        },
+        {
+          "label": "Openings",
+          "value": "2 doors · 9 windows"
+        },
+        {
+          "label": "Benching",
+          "value": "2 bench runs · 1 sink · 5 upper modules"
+        },
+        {
+          "label": "Cleaning aisle",
+          "value": "≈ 5.34 ft clear"
+        },
+        {
+          "label": "Material",
+          "value": "MS frame · corrugated MS shell"
+        },
+        {
+          "label": "Delivery",
+          "value": "7–21 Working Days"
+        },
+        {
+          "label": "Coverage",
+          "value": "Bangalore · Delhi NCR"
+        },
+        {
+          "label": "Brand",
+          "value": "SAMAN Portable"
+        }
+      ],
+      "images": [
+        {
+          "src": "/images/products/portable-mobile-laboratory/40x10/portable-mobile-laboratory-40x10-front-two-doors.webp",
+          "alt": "SAMAN 40x10 ft portable mobile laboratory in slate blue-grey: two external doors on Wall A with three windows between them along the 40 ft length",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-mobile-laboratory/40x10/portable-mobile-laboratory-40x10-wall-a-elevation.webp",
+          "alt": "Wall A elevation of the 40x10 ft portable mobile laboratory: door, three scheduled windows and a second door, with the marginal two-way ridge above",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-mobile-laboratory/40x10/portable-mobile-laboratory-40x10-rear-four-windows.webp",
+          "alt": "Rear of the 40x10 ft portable mobile laboratory: four scheduled windows on Wall B and one centred window on the furniture-free end wall",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-mobile-laboratory/40x10/portable-mobile-laboratory-40x10-interior-from-door.webp",
+          "alt": "Inside the 40x10 ft portable mobile laboratory from the door: both long walls benched almost end to end under continuous linear lighting",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-mobile-laboratory/40x10/portable-mobile-laboratory-40x10-interior-capacity-bench.webp",
+          "alt": "Capacity bench layout in the 40x10 ft portable mobile laboratory: 29 ft intake and equipment bench on Wall A, 38.5 ft workbench on Wall B",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-mobile-laboratory/40x10/portable-mobile-laboratory-40x10-sink-service-interface.webp",
+          "alt": "Sink and service interface at 34 to 35.5 ft on the 40x10 ft portable mobile laboratory workbench, pearl grey liner behind",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    }
+  ],
+  "specPdfHref": "/downloads/portable-mobile-laboratory-technical-specification-and-price.pdf",
+  "schemaIncludeVariantOffers": true,
+  "suppressLegacySku": true,
+  "suppressReviewClaims": true,
+  "suppressLegacyFaqSchema": true,
+  "suppressSchemaAvailability": true,
+  "trustStripText": "GST registered",
+  "categoryLabel": "Portable Office",
+  "categoryHref": "/product/portable-office",
+  "specPdfButtonLabel": "Download technical specification (PDF)",
+  "schemaBrandName": "SAMAN Portable",
+  "h1": "Portable Mobile Laboratory: Six Sizes, 100 to 400 sq ft",
+  "seoTitle": "Portable Mobile Laboratory Cabin: 6 Sizes, Prices │ SAMAN",
+  "metaDescription": "Lab-ready portable laboratory cabin in six sizes, 100 to 400 sq ft, ex-GST prices published, coved vinyl floor, washable liner and a scheduled bench and sink.",
+  "canonical": "https://www.samanportable.com/product/portable-office/portable-mobile-laboratory",
+  "opener": "A portable mobile laboratory is a factory-built steel room finished as a laboratory before it leaves the works, not an office cabin with a table in it. This page carries SAMAN's six approved sizes, 100 to 400 sq ft, every one 8.5 ft high on 100 mm walls, with a coved vinyl floor, a washable wall liner and a fixed bench and sink schedule taken from its approved GA drawing. Each size publishes its clear cleaning aisle, so you know before you order whether a trolley and a technician pass each other. Prices are ex-GST for the lab-ready enclosure and its scheduled fixed provisions. Instruments, fume hoods, gases, RO or DI water, validation and accreditation are excluded. Built in Bengaluru and Greater Noida.",
+  "ymalTiles": [
+    {
+      "title": "Portable Office",
+      "href": "/product/portable-office",
+      "category": "Portable Office",
+      "blurb": "Explore Portable Office",
+      "imageSrc": "/images/products/portable-office/20x10/portable-office-20x10-front-angle.webp",
+      "imageAlt": "Portable Office 20 x 10 ft exterior render"
+    },
+    {
+      "title": "Readymade Office Cabin",
+      "href": "/product/portable-office/readymade-office-cabin",
+      "category": "Portable Office",
+      "blurb": "Explore Readymade Office Cabin",
+      "imageSrc": "/images/products/readymade-office-cabin/20x10/readymade-office-cabin-20x10-front.webp",
+      "imageAlt": "Readymade Office Cabin 20 x 10 ft exterior render"
+    },
+    {
+      "title": "Prefabricated Office Cabins",
+      "href": "/product/portable-office/prefabricated-office-cabins",
+      "category": "Portable Office",
+      "blurb": "Explore Prefabricated Office Cabins",
+      "imageSrc": "/images/products/prefabricated-office-cabins/20x10/prefabricated-office-cabin-20x10-front-angle.webp",
+      "imageAlt": "Prefabricated Office Cabins 20 x 10 ft exterior render"
+    },
+    {
+      "title": "Small Office Cabin",
+      "href": "/product/portable-office/small-office-cabin",
+      "category": "Portable Office",
+      "blurb": "Explore Small Office Cabin",
+      "imageSrc": "/images/products/small-office-cabin/10x10/small-office-cabin-10x10-front-angle.webp",
+      "imageAlt": "Small Office Cabin 10 x 10 ft exterior render"
+    },
+    {
+      "title": "Portable Weighbridge Office",
+      "href": "/product/portable-office/portable-weighbridge-office",
+      "category": "Portable Office",
+      "blurb": "Explore Portable Weighbridge Office",
+      "imageSrc": "/images/products/portable-weighbridge-office/20x10/portable-weighbridge-office-20x10-yard-exterior-wall-a-entry.webp",
+      "imageAlt": "Portable Weighbridge Office 20 x 10 ft exterior render"
+    },
+    {
+      "title": "Executive Portable Office",
+      "href": "/product/portable-office/executive-portable-office",
+      "category": "Portable Office",
+      "blurb": "Explore Executive Portable Office",
+      "imageSrc": "/images/products/executive-portable-office/gallery/20x10/executive-portable-office-20x10-front-centred-door.webp",
+      "imageAlt": "Executive Portable Office 20 x 10 ft exterior render"
+    }
+  ],
+  "relatedTiles": [
+    {
+      "title": "Portable Office",
+      "href": "/product/portable-office",
+      "category": "Portable Office",
+      "blurb": "Explore Portable Office",
+      "imageSrc": "/images/products/portable-office/20x10/portable-office-20x10-front-angle.webp",
+      "imageAlt": "Portable Office 20 x 10 ft exterior render"
+    },
+    {
+      "title": "Readymade Office Cabin",
+      "href": "/product/portable-office/readymade-office-cabin",
+      "category": "Portable Office",
+      "blurb": "Explore Readymade Office Cabin",
+      "imageSrc": "/images/products/readymade-office-cabin/20x10/readymade-office-cabin-20x10-front.webp",
+      "imageAlt": "Readymade Office Cabin 20 x 10 ft exterior render"
+    },
+    {
+      "title": "Prefabricated Office Cabins",
+      "href": "/product/portable-office/prefabricated-office-cabins",
+      "category": "Portable Office",
+      "blurb": "Explore Prefabricated Office Cabins",
+      "imageSrc": "/images/products/prefabricated-office-cabins/20x10/prefabricated-office-cabin-20x10-front-angle.webp",
+      "imageAlt": "Prefabricated Office Cabins 20 x 10 ft exterior render"
+    },
+    {
+      "title": "Small Office Cabin",
+      "href": "/product/portable-office/small-office-cabin",
+      "category": "Portable Office",
+      "blurb": "Explore Small Office Cabin",
+      "imageSrc": "/images/products/small-office-cabin/10x10/small-office-cabin-10x10-front-angle.webp",
+      "imageAlt": "Small Office Cabin 10 x 10 ft exterior render"
+    },
+    {
+      "title": "Portable Weighbridge Office",
+      "href": "/product/portable-office/portable-weighbridge-office",
+      "category": "Portable Office",
+      "blurb": "Explore Portable Weighbridge Office",
+      "imageSrc": "/images/products/portable-weighbridge-office/20x10/portable-weighbridge-office-20x10-yard-exterior-wall-a-entry.webp",
+      "imageAlt": "Portable Weighbridge Office 20 x 10 ft exterior render"
+    },
+    {
+      "title": "Executive Portable Office",
+      "href": "/product/portable-office/executive-portable-office",
+      "category": "Portable Office",
+      "blurb": "Explore Executive Portable Office",
+      "imageSrc": "/images/products/executive-portable-office/gallery/20x10/executive-portable-office-20x10-front-centred-door.webp",
+      "imageAlt": "Executive Portable Office 20 x 10 ft exterior render"
+    }
+  ],
+  "faqSchema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a mobile laboratory?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A laboratory that can be relocated rather than built in place. In India the phrase usually means a lab built into a vehicle. SAMAN's is the other kind: a factory-finished steel room that is delivered, lifted onto supports and used where it stands."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a mobile testing laboratory?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A relocatable room set up to run tests next to the process that produces the samples, instead of sending samples away. SAMAN supplies the lab-ready enclosure, benching and sink interface; the test instruments and any accreditation are separate."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a portable lab?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "On this page it is a steel room finished to laboratory standard before dispatch: coved vinyl floor, washable liner, scheduled bench runs, one sink interface and one sealed utility sleeve, in six sizes from 100 to 400 sq ft."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the three types of laboratories?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "There is no single official list. In Indian site and factory practice the three that come up are materials and quality-control labs, research labs and clinical or diagnostic labs. The enclosure on this page suits the first, and is used for sample handling and routine testing."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does a portable mobile laboratory cost in India?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "From ₹2,30,000 ex-GST for the 10×10 ft, 100 sq ft unit, up to ₹7,60,000 ex-GST for the 40×10 ft, 400 sq ft unit. Prices are for the lab-ready enclosure and its scheduled fixed provisions, not for instruments."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the sink connected, and is water included?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "One sink or service interface is provided per size at the coordinate shown on the GA board. Site water supply, drainage and the connection work are coordinated separately and are not in the page price. RO and DI water plant is excluded."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can a fume hood be fitted?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not within this price. Fume hoods, gases, process exhaust, RO or DI water, validation, accreditation and waste treatment are all excluded unless separately quoted. Tell us the containment requirement first and the enclosure is quoted around it."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is the laboratory lifted and placed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "By four compact top-corner lifting eyes, as one rigid box, onto prepared supports. Lifting connections and capacity for the order are governed by project engineering and the approved shop drawings, not by this page."
+        }
+      }
+    ]
+  },
+  "descriptionHtml": "<section><h2>Portable mobile laboratory, or a laboratory on wheels? Read this first</h2><p>Search for a mobile laboratory in India and most of what comes back is a vehicle. A lab built into a truck body, a diagnostic unit on a motorbike, a science van that visits schools. Those are real products and they solve a real problem, which is testing that has to move from place to place during the working week. This page is about the other thing that shares the name.</p><p>A SAMAN portable mobile laboratory is a factory-built steel room. It is finished as a laboratory in the works, loaded onto a trailer, lifted off by its four top-corner eyes and set down on prepared supports. It is portable in the sense that it can be moved when the project moves, or relocated between plants, not in the sense that it drives to a sampling point and comes back. If your testing has to happen at a different address every day, a vehicle is the right answer and nothing here will help you.</p><p>If instead your testing happens in one place for months or years, and that place has no building fit to hold it, a placed laboratory is usually the cheaper and more workable answer. It gives you a full 8.5 ft standing height, benching along the walls at working depth, mains power through a proper distribution board, and a floor and wall finish designed to be washed. A vehicle body gives you none of those at the same cost.</p><p>The word cabin also appears on other parts of this site and it is worth separating them now. A container office is built from or like an ISO shipping container and belongs on the <a href=\"/product/container-offices\">Container Offices</a> pages. An office cabin is a dry office interior with desks, and belongs on the Portable Office pages. The laboratory sits apart from both, because the thing that defines it is not its shape but its finish: the room is built to be cleaned.</p></section><section><h2>Who orders a portable mobile laboratory, and where it stands</h2><p>The enquiries that end in an order share one shape. There is a process running at a fixed location, that process produces samples, and the samples currently travel somewhere else to be tested. Every hour of that travel is an hour the plant runs on an assumption. The buyer wants the test next to the process.</p><p>In practice that means a quality control room at a ready-mix or aggregate plant, taking cube and slump samples off the batching line. A soil and material testing room on a road or rail package, where the laboratory follows the works. A sample receiving and screening point at a food or agricultural processing unit. A works laboratory at a chemical or pharmaceutical site where an existing building has no spare room that can be brought to a cleanable standard. A metering and calibration room beside a utility installation.</p><p>The people using it are a lab technician, a sample handler, a quality engineer and, periodically, a maintenance engineer who needs to reach the services without dismantling the benching. The unit is normally placed in a testing compound or beside a sample receiving point, on a levelled base, with a wash-down approach and a utility trench or route already agreed. Where it stands is a decision that has to be made before the drawing is frozen, because the sealed service sleeve is cut on one wall at one coordinate, and that coordinate has to face the services.</p></section><section><h2>What lab-ready means on this page, and what it does not</h2><p>Lab-ready here means the enclosure and the fixed provisions scheduled on the approved GA drawing, and nothing beyond them. That is a deliberately narrow definition and it is the honest one, because the difference between a quoted laboratory enclosure and a working accredited laboratory can be several times the price of the room.</p><p>What the price on this page covers is the steel shell in one of the six approved sizes at 8.5 ft nominal height on 100 mm walls; the coved vinyl floor finish, which turns the floor-to-wall junction into a radius rather than a corner; the washable wall liner with cleanable junctions; the non-absorbent bench substrate; the fixed bench runs, the single sink or service interface and the upper storage modules exactly as the GA schedules them in feet; the door and window schedule with end walls kept furniture-free; the standard electrical package with distribution board, RCCB and MCB protection, earthing and circuit segregation; one sealed utility sleeve; and four compact top-corner lifting eyes.</p><p>What it does not cover, and what is quoted separately or excluded outright:</p><ul><li>Instruments and loose equipment of every kind. The balances, microscopes and analysers in the photographs are customer-supplied and are shown to give the benching scale.</li><li>Fume hoods and any process exhaust system. The drawing holds a cowl position; the cowl, duct, fan and any containment are not supplied.</li><li>Laboratory gases, gas lines, cylinders and manifolds.</li><li>RO or DI water plant, storage and distribution.</li><li>Waste and effluent treatment of any kind. The sink is a water and waste interface, not a treatment system.</li><li>Validation, qualification and accreditation of the laboratory or of any test carried out in it.</li><li>Site water supply, site drainage, the incoming electrical supply and the licensed connection work.</li><li>Delivery, unloading, placement and site supports, which are covered by the Shipping tab and the quotation.</li><li>Fitted air conditioning. The electrical package carries provision where the drawing calls for it; the unit itself is quoted separately.</li></ul><p>If a requirement is not in the first list and not in the second, it has not been priced and it should be raised before the drawing is frozen rather than after. Final structural member adequacy, lifting connections and capacity, wind and seismic actions, equipment loads, the final electrical load schedule, derating and voltage drop all remain project engineering, controlled by the signed quotation and the approved fabrication drawings.</p></section><section><h2>Choosing between 100, 160, 200, 240, 300 and 400 sq ft</h2><p>Floor area is the wrong first question. The right one is how many bench runs the work needs, and whether the room has to hold more than one person moving at the same time. The six sizes answer those two questions in a particular order, and the table below is the short version of the GA boards in the section above.</p><table><thead><tr><th>Size</th><th>Area</th><th>Bench runs</th><th>Sink</th><th>Cleaning aisle</th><th>Ex-GST price</th></tr></thead><tbody><tr><td>10×10×8.5 ft</td><td>100 sq ft</td><td>1</td><td>1</td><td>≈ 7.34 ft</td><td>₹2,30,000</td></tr><tr><td>20×8×8.5 ft</td><td>160 sq ft</td><td>1</td><td>1</td><td>≈ 5.34 ft</td><td>₹3,52,000</td></tr><tr><td>20×10×8.5 ft</td><td>200 sq ft</td><td>3</td><td>1</td><td>≈ 5.34 ft</td><td>₹4,00,000</td></tr><tr><td>20×12×8.5 ft</td><td>240 sq ft</td><td>3</td><td>1</td><td>≈ 7.34 ft</td><td>₹4,60,800</td></tr><tr><td>30×10×8.5 ft</td><td>300 sq ft</td><td>2</td><td>1</td><td>≈ 5.34 ft</td><td>₹5,76,000</td></tr><tr><td>40×10×8.5 ft</td><td>400 sq ft</td><td>2</td><td>1</td><td>≈ 5.34 ft</td><td>₹7,60,000</td></tr></tbody></table><p>Read it this way. One person, routine screening, samples arriving in batches: the 10×10 does the job and gives the widest aisle on the page while doing it. One person but a longer sequence of operations, on ground that is a strip rather than a square: the 20×8, where the single 18.5 ft bench becomes a production line from door to sink. Two people, or one person with a dirty and a clean side to keep apart: the 20×10, which is the first size to give you three separate bench runs. The same work with a trolley in the room: the 20×12, identical to the 20×10 in every respect except that the aisle is two feet wider.</p><p>Above that the decision changes again. The 30×10 gives two external doors, which is what lets a sample entrance and a working entrance be separated by procedure. The 40×10 benches both long walls almost end to end, 67.5 ft of bench in one room, and is the largest size published from the price rule.</p></section><section><h2>Why the cleaning aisle decides the width</h2><p>Every GA board on this page prints one figure that a floor-area comparison will never show you: the clear cleaning aisle. It is the width of floor left between the bench faces once the benching is in, and it is the number that governs how the room actually works.</p><p>At 5.34 ft, which is what the 10 ft widths give once both long walls are benched, one person works comfortably and a second person passes behind them. A trolley passes, but the person at the bench steps in. At 7.34 ft, which the 10×10 gives with one bench and the 20×12 gives with three, a trolley and a working technician coexist without either stopping. Neither figure is generous by fixed-laboratory standards, and both are stated so that nobody discovers the difference after delivery.</p><p>This is also why none of the six sizes carries an internal partition, and why the 20×12 has no island bench even though it is wide enough to hold one. A partition in a 10 or 12 ft width produces a corner that cannot be reached properly with a mop, and an island produces four more of them. The coved floor junction exists to remove exactly those corners. Adding a partition back in would undo the reason the room costs what it costs.</p><p>The end walls follow the same logic. Each carries one centred 4 by 3 ft window and no external door, and each is kept furniture-free. That is not a saving; it is what keeps two of the four wall-floor junctions completely clear for cleaning and inspection.</p></section><section><h2>How the price is built, and what is quoted separately</h2><p>The price on this page is built from one editable rate and one published area rule, not from a quotation for each size. The base rate is ₹2,000 per square foot at 200 square feet, which is why the 20×10 is the reference size. Smaller units carry a band uplift because the fixed content of a laboratory does not shrink with the floor: a 100 sq ft room still needs a sink, a distribution board, a sealed sleeve and a coved floor. Larger units carry a band reduction.</p><p>The bands applied on this page are +15 per cent between 100 and 149 sq ft, +10 per cent between 150 and 199, no adjustment at 200, minus 4 per cent between 201 and 300, and minus 5 per cent between 301 and 400. That is how ₹2,000 becomes ₹2,300 per sq ft at the 10×10 and ₹1,900 per sq ft at the 40×10. The full ladder runs from 40 sq ft up to 900 sq ft; above 900 sq ft there is no rule price and the enquiry is quoted manually.</p><p>Every figure on this page is ex-GST for the lab-ready enclosure, with the 18 per cent GST-inclusive figure shown alongside so that nobody has to compute it. What the figure does not include is the exclusion list above. If you are comparing this page against another supplier's number, compare the exclusion lists first, because a laboratory quotation that does not mention fume hoods, gases, RO water, validation or accreditation has almost certainly left them out too, without saying so.</p><p>If the requirement is an office rather than a laboratory, the same platform is priced differently and more cheaply on the <a href=\"/product/portable-office/readymade-office-cabin\">Readymade Office Cabin</a> and <a href=\"/product/portable-office/prefabricated-office-cabins\">Prefabricated Office Cabins</a> pages. Ordering a laboratory finish for a room that will hold desks is money spent on a floor junction nobody will ever wash.</p></section><section><h2>Water, drainage, power and the one sealed sleeve</h2><p>Services are the part of a portable laboratory that goes wrong most often, and the discipline on this page is deliberately strict. One sink or service interface is shown per size, at a coordinate printed on the GA board. That interface is the point at which the unit meets site water and site drainage. The site side of it, the supply, the run, the fall and the disposal, is coordinated separately and is not in the price.</p><p>Penetrations through the envelope are controlled the same way. One sealed utility sleeve is provided, and its position is frozen on the drawing before fabrication. Nothing is field-cut. If a future exhaust or an additional utility route is likely, it has to be declared and frozen at the same time, because a hole cut later through a coved and lined enclosure is a hole cut through the reason the enclosure exists. The drawing holds a cowl position as a placeholder; the exhaust itself is excluded until it is quoted.</p><p>Electrically, the unit is wired in concealed copper with a distribution board, isolation, RCCB and MCB protection, earthing and circuit segregation as scheduled. Typical starting conductors are 1.5 sq mm for lighting, 2.5 sq mm for sockets and 4 sq mm for higher-load points. Those are starting points, not the design: the final load schedule, protection, derating and voltage drop follow the approved electrical drawing, and the connection to the incoming supply is licensed work carried out on site.</p><p>Before dispatch the unit is checked for dimensions, welds, coating, drainage, weather seals, opening operation and electrical continuity. Pressure and leak, polarity, continuity, insulation, earthing and RCCB trip checks on the completed installation are project-specific and belong to the site works.</p></section><section><h2>When a portable mobile laboratory is the wrong choice</h2><p>It is the wrong choice when the testing has to travel. A room that is lifted by crane onto supports is not a substitute for a vehicle, and treating it as one produces a unit that gets moved twice, damaged once and then abandoned in a corner of the yard.</p><p>It is the wrong choice when the room is really an office with a bench in it. If the daily work is paperwork, approvals, drawings and meetings, with occasional sample handling, an office cabin costs less and suits better. The Readymade Office Cabin page carries that specification.</p><p>It is the wrong choice when the process needs containment. If the work requires a fume hood, a biosafety cabinet, a gas manifold or a controlled-atmosphere enclosure, the room on this page is the shell those things would sit inside, and every one of them is excluded here. Bring the containment specification first and the enclosure will be quoted around it, rather than the other way round.</p><p>And it is the wrong choice when the requirement includes a toilet inside the same unit. A wet zone needs its own waste connection and a different lining, and putting one inside a laboratory shell compromises both. Where a toilet has to be part of the same order, the <a href=\"/product/porta-cabins/porta-cabin-with-toilet\">Porta Cabin with Toilet</a> is the product for it, standing alongside the laboratory rather than inside it.</p></section><section><h2>Frequently asked questions</h2><h3>What is a mobile laboratory?</h3><p>A laboratory that can be relocated rather than built in place. In India the phrase usually means a lab built into a vehicle. SAMAN's is the other kind: a factory-finished steel room that is delivered, lifted onto supports and used where it stands.</p><h3>What is a mobile testing laboratory?</h3><p>A relocatable room set up to run tests next to the process that produces the samples, instead of sending samples away. SAMAN supplies the lab-ready enclosure, benching and sink interface; the test instruments and any accreditation are separate.</p><h3>What is a portable lab?</h3><p>On this page it is a steel room finished to laboratory standard before dispatch: coved vinyl floor, washable liner, scheduled bench runs, one sink interface and one sealed utility sleeve, in six sizes from 100 to 400 sq ft.</p><h3>What are the three types of laboratories?</h3><p>There is no single official list. In Indian site and factory practice the three that come up are materials and quality-control labs, research labs and clinical or diagnostic labs. The enclosure on this page suits the first, and is used for sample handling and routine testing.</p><h3>How much does a portable mobile laboratory cost in India?</h3><p>From ₹2,30,000 ex-GST for the 10×10 ft, 100 sq ft unit, up to ₹7,60,000 ex-GST for the 40×10 ft, 400 sq ft unit. Prices are for the lab-ready enclosure and its scheduled fixed provisions, not for instruments.</p><h3>Is the sink connected, and is water included?</h3><p>One sink or service interface is provided per size at the coordinate shown on the GA board. Site water supply, drainage and the connection work are coordinated separately and are not in the page price. RO and DI water plant is excluded.</p><h3>Can a fume hood be fitted?</h3><p>Not within this price. Fume hoods, gases, process exhaust, RO or DI water, validation, accreditation and waste treatment are all excluded unless separately quoted. Tell us the containment requirement first and the enclosure is quoted around it.</p><h3>How is the laboratory lifted and placed?</h3><p>By four compact top-corner lifting eyes, as one rigid box, onto prepared supports. Lifting connections and capacity for the order are governed by project engineering and the approved shop drawings, not by this page.</p></section>",
+  "applicationsContent": {
+    "h2": "Compare the six laboratory sizes, 100 to 400 sq ft",
+    "intro": "Six approved sizes, one lab-ready finish, one price rule. Each size shows its GA board, its bench and sink schedule and its cleaning aisle.",
+    "panels": [
+      {
+        "sizeSlug": "10x10",
+        "h3": "10×10 ft Portable Mobile Laboratory: 100 sq ft Single Bench",
+        "paragraph": "The smallest approved size and the only one with a single bench run, which is what buys it the widest floor on this page: 7.34 ft of clear aisle, more than the 20 ft sizes and more than the 40 ft one. The 8 ft bench carries the sample intake point and the sink together, so one technician receives, tests, washes and logs without crossing the room or setting anything down twice. Buy it as a screening point beside a plant, a store or a weighbridge, where throughput is one person.",
+        "applications": [
+          "10×10×8.5 ft, 100 sq ft, ₹2,30,000 ex-GST (₹2,71,400 incl. 18% GST)",
+          "Clear cleaning aisle ≈ 7.34 ft, the widest on this page",
+          "1 fixed bench run, 1 sink or service interface, 2 upper storage modules",
+          "1 door on Wall A at 3.5–6.5 ft; 1 window on Wall B; 1 centred window on each end wall",
+          "Two-way roof, centred ridge 5–6 in above each long-wall eave",
+          "Highest rate on the page at ₹2,300/sq ft, because 100 sq ft carries the +15% area band"
+        ],
+        "image": {
+          "src": "/images/products/portable-mobile-laboratory/ga/portable-mobile-laboratory-10x10-ga-board.webp",
+          "alt": "GA specification board for the 10x10x8.5 ft portable mobile laboratory: plan and four elevations, one door on Wall A, one window on Wall B, one centred window per end wall, single bench run with sink, clear cleaning aisle 7.34 ft",
+          "provenance": "drawing",
+          "width": 1800,
+          "height": 1012,
+          "fit": "contain"
+        }
+      },
+      {
+        "sizeSlug": "20x8",
+        "h3": "20×8 ft Portable Mobile Laboratory: 160 sq ft Linear Bench",
+        "paragraph": "Twenty feet of length on an eight foot width, for ground that has a boundary strip rather than a plot. One continuous 18.5 ft bench runs the whole of Wall B with the sink at the far end, so samples enter at the door and move along one line to the wash point. It is the only size here with the one-way roof, a single plane falling across the 8 ft width, and the only one where the width rules out a second bench. Six windows keep a narrow room from reading as a corridor.",
+        "applications": [
+          "20×8×8.5 ft, 160 sq ft, ₹3,52,000 ex-GST (₹4,15,360 incl. 18% GST)",
+          "Clear cleaning aisle ≈ 5.34 ft against a single 18.5 ft bench",
+          "1 fixed bench run, 1 sink at 16.75–18.25 ft, 3 upper storage modules",
+          "Wall A: window 1.5-5.5 ft, door 8.5-11.5 ft, window 14.5-18.5 ft; Wall B: two windows; one per end",
+          "One-way roof, 5–6 in total fall across the 8 ft width, the only size on this page with it",
+          "Fits where a 10 ft wide unit will not pass the gate or will not sit on the strip"
+        ],
+        "image": {
+          "src": "/images/products/portable-mobile-laboratory/ga/portable-mobile-laboratory-20x8-ga-board.webp",
+          "alt": "GA specification board for the 20x8x8.5 ft portable mobile laboratory: window-door-window on Wall A, two windows on Wall B, one continuous 18.5 ft bench with the sink at 16.75 to 18.25 ft, one-way roof",
+          "provenance": "drawing",
+          "width": 1800,
+          "height": 1012,
+          "fit": "contain"
+        }
+      },
+      {
+        "sizeSlug": "20x10",
+        "h3": "20×10 ft Portable Mobile Laboratory: 200 sq ft, Three Benches",
+        "paragraph": "This is the reference size for the price rule: ₹2,000 per sq ft at 200 sq ft is the base from which every other size on this page is adjusted. It is also the first size that splits the work. Wall A carries a 7 ft sample intake bench and a separate 7 ft equipment allowance bench with the door between them; Wall B carries a continuous 18.5 ft workbench with the sink at its far end. Samples land on one side, work happens on the other.",
+        "applications": [
+          "20×10×8.5 ft, 200 sq ft, ₹4,00,000 ex-GST (₹4,72,000 incl. 18% GST)",
+          "Base rate size: ₹2,000/sq ft, no area-band adjustment",
+          "3 fixed bench runs, 1 sink at 16.75–18.25 ft, 4 upper storage modules",
+          "7 ft sample intake bench and 7 ft equipment allowance bench, separated by the door on Wall A",
+          "Clear cleaning aisle ≈ 5.34 ft between the Wall A and Wall B bench faces",
+          "Two-way roof, centred ridge along the 20 ft length"
+        ],
+        "image": {
+          "src": "/images/products/portable-mobile-laboratory/ga/portable-mobile-laboratory-20x10-ga-board.webp",
+          "alt": "GA specification board for the 20x10x8.5 ft portable mobile laboratory: three fixed bench runs, sample intake and equipment allowance benches on Wall A, 18.5 ft workbench on Wall B, clear cleaning aisle 5.34 ft",
+          "provenance": "drawing",
+          "width": 1800,
+          "height": 1012,
+          "fit": "contain"
+        }
+      },
+      {
+        "sizeSlug": "20x12",
+        "h3": "20×12 ft Portable Mobile Laboratory: 240 sq ft, Wide Aisle",
+        "paragraph": "The 20×12 is the 20×10 with two more feet across the width, and those two feet go entirely into the aisle. Same three bench runs, same single sink, same six windows, same door position, but the clear cleaning aisle grows from 5.34 ft to 7.34 ft. That is the difference between a technician stepping aside for a trolley and stopping work for it. There is no island bench; the extra width is deliberately left as floor.",
+        "applications": [
+          "20×12×8.5 ft, 240 sq ft, ₹4,60,800 ex-GST (₹5,43,744 incl. 18% GST)",
+          "Clear cleaning aisle ≈ 7.34 ft, two feet wider than the 20×10 on the same bench layout",
+          "3 fixed bench runs, 1 sink at 16.75–18.25 ft, 4 upper storage modules, no island",
+          "Same opening schedule as the 20×10: window, door, window on Wall A; two windows on Wall B",
+          "Rate drops to ₹1,920/sq ft, the 201–300 sq ft band, shared with the 30×10",
+          "Two-way roof with a 5-6 in centred ridge, four top-corner lifting eyes, single-lift placement"
+        ],
+        "image": {
+          "src": "/images/products/portable-mobile-laboratory/ga/portable-mobile-laboratory-20x12-ga-board.webp",
+          "alt": "GA specification board for the 20x12x8.5 ft portable mobile laboratory: the 20x10 bench and opening schedule on a 12 ft width, no island bench, clear cleaning aisle 7.34 ft",
+          "provenance": "drawing",
+          "width": 1800,
+          "height": 1012,
+          "fit": "contain"
+        }
+      },
+      {
+        "sizeSlug": "30x10",
+        "h3": "30×10 ft Portable Mobile Laboratory: 300 sq ft, Two Doors",
+        "paragraph": "Three hundred square feet is where the room stops having one way in. Wall A carries two external doors, one near each end, with two windows between them, so a dirty entrance and a clean entrance can be separated by procedure rather than by a partition. Wall B carries a continuous 28.5 ft workbench with the sink near the far door, and Wall A a short 4.5 ft sample intake bench between the doors. Eight windows in all.",
+        "applications": [
+          "30×10×8.5 ft, 300 sq ft, ₹5,76,000 ex-GST (₹6,79,680 incl. 18% GST)",
+          "2 external doors on Wall A, at 1.5–4.5 ft and 25.5–28.5 ft",
+          "2 fixed bench runs: 4.5 ft sample intake on Wall A, 28.5 ft continuous workbench on Wall B",
+          "1 sink at 25.5–27 ft, 4 upper storage modules, 8 windows",
+          "Clear cleaning aisle ≈ 5.34 ft along the full 30 ft length",
+          "Same ₹1,920/sq ft band rate as the 20×12 on 60 sq ft more floor"
+        ],
+        "image": {
+          "src": "/images/products/portable-mobile-laboratory/ga/portable-mobile-laboratory-30x10-ga-board.webp",
+          "alt": "GA specification board for the 30x10x8.5 ft portable mobile laboratory: two external doors on Wall A, eight windows, 4.5 ft intake bench and 28.5 ft workbench, sink at 25.5 to 27 ft",
+          "provenance": "drawing",
+          "width": 1800,
+          "height": 1012,
+          "fit": "contain"
+        }
+      },
+      {
+        "sizeSlug": "40x10",
+        "h3": "40×10 ft Portable Mobile Laboratory: 400 sq ft, Largest Size",
+        "paragraph": "The largest size SAMAN publishes here, and the only one where both long walls are benched almost end to end: a 29 ft sample intake and equipment allowance bench on Wall A and a 38.5 ft continuous workbench on Wall B, with the sink at the far end of the workbench. Two external doors and nine windows. At 400 sq ft it carries the lowest rate on the page. Above 900 sq ft nothing is priced from the rule at all.",
+        "applications": [
+          "40×10×8.5 ft, 400 sq ft, ₹7,60,000 ex-GST (₹8,96,800 incl. 18% GST)",
+          "Lowest rate on the page: ₹1,900/sq ft, the 301–400 sq ft band",
+          "2 fixed bench runs totalling 67.5 ft of bench, 1 sink at 34–35.5 ft, 5 upper storage modules",
+          "2 external doors on Wall A; 9 windows in all, 4 of them on Wall B",
+          "Clear cleaning aisle ≈ 5.34 ft between two fully benched long walls",
+          "Largest published size; above 900 sq ft is a manual quotation, not a rule price"
+        ],
+        "image": {
+          "src": "/images/products/portable-mobile-laboratory/ga/portable-mobile-laboratory-40x10-ga-board.webp",
+          "alt": "GA specification board for the 40x10x8.5 ft portable mobile laboratory: two external doors, nine windows, 29 ft and 38.5 ft bench runs, sink at 34 to 35.5 ft, clear cleaning aisle 5.34 ft",
+          "provenance": "drawing",
+          "width": 1800,
+          "height": 1012,
+          "fit": "contain"
+        }
+      }
+    ]
+  },
+  "labelActiveThumbnailAlt": true,
+  "optimizeLocalGalleryImages": false
+}

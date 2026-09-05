@@ -1,0 +1,60 @@
+{
+  "id": 2026090505,
+  "name": "Portable Mobile Laboratory",
+  "slug": "portable-mobile-laboratory",
+  "permalink": "https://www.samanportable.com/product/portable-office/portable-mobile-laboratory",
+  "date_created": "2026-09-05T00:00:00",
+  "date_modified": "2026-09-05T00:00:00",
+  "type": "simple",
+  "status": "publish",
+  "featured": false,
+  "catalog_visibility": "visible",
+  "description": "",
+  "short_description": "",
+  "sku": "",
+  "price": "",
+  "regular_price": "",
+  "sale_price": "",
+  "on_sale": false,
+  "purchasable": false,
+  "virtual": false,
+  "downloadable": false,
+  "downloads": [],
+  "manage_stock": false,
+  "stock_quantity": null,
+  "stock_status": "instock",
+  "backorders": "no",
+  "reviews_allowed": true,
+  "average_rating": "0.00",
+  "rating_count": 0,
+  "categories": [
+    {
+      "id": 230,
+      "name": "Portable Office",
+      "slug": "portable-office"
+    }
+  ],
+  "brands": [
+    {
+      "id": 3870,
+      "name": "Saman Portable",
+      "slug": "saman-portable"
+    }
+  ],
+  "tags": [],
+  "images": [],
+  "attributes": [],
+  "dimensions": {
+    "length": "",
+    "width": "",
+    "height": ""
+  },
+  "weight": "",
+  "meta_data": [],
+  "_rank_math_head": {
+    "success": true,
+    "head": "<title>Portable Mobile Laboratory Cabin: 6 Sizes, Prices │ SAMAN</title>\n<meta name=\"description\" content=\"Lab-ready portable laboratory cabin in six sizes, 100 to 400 sq ft, ex-GST prices published, coved vinyl floor, washable liner and a scheduled bench and sink.\"/>\n<meta name=\"robots\" content=\"index, follow\"/>\n<link rel=\"canonical\" href=\"https://www.samanportable.com/product/portable-office/portable-mobile-laboratory\" />"
+  },
+  "category": "Portable Office",
+  "category_slug": "portable-office"
+}

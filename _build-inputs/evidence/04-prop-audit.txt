@@ -1,0 +1,38 @@
+ARTEFACT 4 - PROP AUDIT: PortaCabinVariantHero
+preview route   : src/pages/product/[category]/[slug].tsx  (slug=portable-mobile-laboratory)
+design-lock route: src/pages/product/[category]/index.tsx  (category=porta-cabins)
+
+prop                               this page                                    design lock                      classification
+data                               this page's product record                   porta-cabins product record      content (variant/size rows, prices, copy, images)
+productTitle                       Portable Mobile Laboratory                   Porta Cabin                      content (copy string)
+averageRating                      product.average_rating                       product.average_rating           identical expression
+ratingCount                        product.rating_count                         product.rating_count             identical expression
+railItems                          page-owned relatedTiles                      cluster rail                     content (internal-link destinations)
+currentHref                        /product/portable-office/portable-mobile-lab /product/porta-cabins            content (this route's own href)
+showSectionDividers                true                                         true                             IDENTICAL
+usePremiumSizeTabs                 true                                         true                             IDENTICAL
+explorerPanelHeadingAsH2           false                                        false (not passed -> default)    IDENTICAL
+compactMobileDividers              false                                        false (not passed -> default)    IDENTICAL
+sizeEyebrowText                    Choose your size - six approved laboratory s undefined -> shared default      content (copy string)
+emitSizeAnchors                    false                                        variantData?.emitSizeAnchors     IDENTICAL (both falsy)
+explorerHidePanelImages            false                                        false (not passed -> default)    IDENTICAL
+deferNonLcpImagesUntilHeroPaint    false                                        false (not passed -> default)    IDENTICAL
+renderOnlyActiveExplorerPanel      false                                        false (not passed -> default)    IDENTICAL
+syncVariantSelection               false                                        false (not passed -> default)    IDENTICAL
+eagerActiveGalleryImages           false                                        false (not passed -> default)    IDENTICAL
+renderInactiveGalleryImages        false                                        false (not passed -> default)    IDENTICAL
+explorerSingleColumnApplications   false                                        false (not passed -> default)    IDENTICAL
+
+Behaviour props that differ (must be zero): 0
+Every remaining difference is one of the four permitted content kinds:
+  copy strings; images and alt text; variant/size rows and prices; internal-link
+  destinations and anchors.
+
+Shared components below the hero take no per-page behaviour prop from this route:
+  RightToExist        - resolved by productSlug from rightToExistEntries.tsx
+  PortaCabinsYouMayAlsoLike - items + subline only (both content)
+  ProductTabs         - specificationsHtml / shippingHtml / reviewsEmptyStateText
+                        (content); shippingHtml is buildShippingHtml() with NO
+                        options, i.e. the same call the design lock makes.
+
+RESULT: PASS
