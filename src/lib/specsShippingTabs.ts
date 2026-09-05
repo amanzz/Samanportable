@@ -32,6 +32,8 @@ import prefabricatedOfficeCabinsCopy from '../../content/po-02/PO-02-prefabricat
 import prefabricatedOfficeCabinsAssets from '../../content/po-02/PO-02-prefabricated-office-cabins-asset-map-v1.json';
 import executivePortableOfficeCopy from '../../content/po-04/PO-04-executive-portable-office-copy-v1.json';
 import executivePortableOfficeAssets from '../../content/po-04/PO-04-executive-portable-office-asset-map-v1.json';
+import portableWeighbridgeOfficeCopy from '../../content/po-03/PO-03-portable-weighbridge-office-copy-v1.json';
+import portableWeighbridgeOfficeAssets from '../../content/po-03/PO-03-portable-weighbridge-office-asset-map-v3.json';
 
 // SOC-01 — the two approved coordination diagrams and the v3 technical PDF, at the
 // exact dimensions of the shipped WebP derivatives (never cropped, never upscaled).
@@ -1222,6 +1224,83 @@ function buildExecutivePortableOfficeSpecificationsHtml(): string {
   return `<div class="not-prose">${narrative}${cards}${diagrams}${pdf}</div>`;
 }
 
+// PO-03 (5 Sep 2026) - Portable Weighbridge Office. Asset map v3 declares the two
+// technical diagrams as an ARRAY (PO-02's v1 used numbered keys), and the copy pack's
+// spec groups use `headers`, not `header`. Both diagrams keep their dark ENGINEERING
+// BOUNDARY footer: it is the disclaimer and is never cropped.
+const PO03_IMG_ROOT = `/${portableWeighbridgeOfficeAssets.output_root.replace('public/', '')}`;
+const PO03_SPEC_DIAGRAMS = [
+  {
+    src: `${PO03_IMG_ROOT}/${portableWeighbridgeOfficeAssets.spec_diagrams[0].out}`,
+    alt: portableWeighbridgeOfficeCopy.alt_text.spec_diagram_1,
+    width: 1600,
+    height: 900,
+  },
+  {
+    src: `${PO03_IMG_ROOT}/${portableWeighbridgeOfficeAssets.spec_diagrams[1].out}`,
+    alt: portableWeighbridgeOfficeCopy.alt_text.spec_diagram_2,
+    width: 1600,
+    height: 900,
+  },
+] as const;
+const PO03_SPEC_PDF = {
+  href: `/${portableWeighbridgeOfficeAssets.spec_pdf.out}`,
+  label: portableWeighbridgeOfficeAssets.spec_pdf.link_label,
+} as const;
+
+// Groups A-E render as the same premium grouped-table cards the porta-cabins Specs tab
+// uses. Every string comes from the signed copy pack; nothing is retyped. Each group's
+// note renders under its own table, then the two diagrams, then the PDF link.
+function buildPortableWeighbridgeOfficeSpecificationsHtml(): string {
+  const spec = portableWeighbridgeOfficeCopy.specifications_tab;
+
+  const narrative = spec.narrative
+    .map((p) => `<p class="mb-5 text-sm leading-relaxed text-slate-600">${esc(p)}</p>`)
+    .join('');
+
+  const cards = spec.groups.map((group) => {
+    const head = group.headers.map((h) => `<th>${esc(h)}</th>`).join('');
+    const body = group.rows
+      .map((row) => (
+        `<tr>` +
+          row.map((cell, i) => (
+            i === 0
+              ? `<td class="${TD} font-semibold text-slate-700">${esc(cell)}</td>`
+              : `<td class="${TD}">${escBold(cell)}</td>`
+          )).join('') +
+        `</tr>`
+      ))
+      .join('');
+    const note = group.note
+      ? `<p class="px-4 pb-4 pt-3 m-0 text-xs leading-relaxed text-slate-500">${esc(group.note)}</p>`
+      : '';
+    return (
+      `<section class="mb-4 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">` +
+        `<h4 class="m-0 bg-slate-50 px-4 py-3 text-base font-bold text-emerald-900">${esc(group.title)}</h4>` +
+        `<div class="saman-table-wrap"><table class="saman-table"><thead><tr>${head}</tr></thead>` +
+        `<tbody>${body}</tbody></table></div>` +
+        note +
+      `</section>`
+    );
+  }).join('');
+
+  const diagrams = PO03_SPEC_DIAGRAMS
+    .map((d) => (
+      `<figure class="mt-4 m-0 rounded-xl border border-slate-200 bg-white p-5 shadow-sm">` +
+        `<img src="${esc(d.src)}" alt="${esc(d.alt)}" width="${d.width}" height="${d.height}" ` +
+        `loading="lazy" class="w-full h-auto rounded-lg" />` +
+      `</figure>`
+    ))
+    .join('');
+
+  const pdf =
+    `<p class="mt-5 text-sm"><a href="${esc(PO03_SPEC_PDF.href)}" ` +
+    `class="font-semibold text-emerald-800 underline underline-offset-2">` +
+    `${esc(PO03_SPEC_PDF.label)}</a></p>`;
+
+  return `<div class="not-prose">${narrative}${cards}${diagrams}${pdf}</div>`;
+}
+
 /** Both tab bodies for a page slug, or null when the slug is not in scope. */
 export function getProductTabsHtml(
   pageSlug: string | undefined | null
@@ -1387,6 +1466,16 @@ export function getProductTabsHtml(
   if (pageSlug === 'prefabricated-office-cabins') {
     return {
       specificationsHtml: buildPrefabricatedOfficeCabinsSpecificationsHtml(),
+      shippingHtml: buildShippingHtml(),
+    };
+  }
+  // PO-03 - same contract as PO-02: the Shipping tab is the shared freight component
+  // called with no options, so both trailer ladders, both zone city tables, the two
+  // free-delivery lines, the ODC note and the tentative-price disclaimer are
+  // byte-identical to the design lock.
+  if (pageSlug === 'portable-weighbridge-office') {
+    return {
+      specificationsHtml: buildPortableWeighbridgeOfficeSpecificationsHtml(),
       shippingHtml: buildShippingHtml(),
     };
   }

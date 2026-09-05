@@ -841,6 +841,16 @@ export function PortaCabinVariantHero({
   };
   const activeVariantImages = imagesForVariant(heroActive);
   const heroImages = activeVariantImages.length > 0 ? activeVariantImages : null;
+  // PO-03 (5 Sep 2026) — true ONLY for a page that ships no gallery image at all and
+  // has opted in. The T24.1 hero (see the file header) makes the GALLERY COLUMN's
+  // natural height drive the desktop row, with the rail and buy box as full-height
+  // T28 shells that scroll internally. With no image that premise is void: the row
+  // collapses to the zone-CTA height (~164px) and both side columns become tiny
+  // internal scrollers, hiding the size chips, the price and all but one rail tile.
+  // So the same opt-in that drops the empty frame also drops the equal-bottom-edge
+  // shells, letting the three columns take their natural heights. Absent on every
+  // other product, so the T28 treatment there is byte-identical.
+  const noGalleryLayout = Boolean(data.suppressEmptyGalleryFrame) && !heroImages && !(showVideo && video);
   const hiddenCompletenessImages = (() => {
     if (data.productSlug === 'flat-pack-container-office') {
       const activeSources = new Set(activeVariantImages.map((image) => image.src));
@@ -980,8 +990,16 @@ export function PortaCabinVariantHero({
   /* ------------------------------------------------------------------ */
 
   const galleryColumn = (
-    <Card className="p-2 shadow-lg border-0 bg-white/80 backdrop-blur-sm lg:h-full lg:flex lg:flex-col">
-      <div className="space-y-2 lg:flex lg:flex-1 lg:flex-col">
+    <Card className={cn('p-2 shadow-lg border-0 bg-white/80 backdrop-blur-sm', !noGalleryLayout && 'lg:h-full lg:flex lg:flex-col')}>
+      <div className={cn('space-y-2', !noGalleryLayout && 'lg:flex lg:flex-1 lg:flex-col')}>
+        {/* PO-03 (5 Sep 2026) — `suppressEmptyGalleryFrame` is opt-in and absent on
+            every other product, so this guard is always true for them and the frame
+            renders byte-identically. It is set only by a page that ships no gallery
+            images at all: painting an empty slate-gradient 1:1 box for a slot that
+            will never hold an image reads as broken rather than absent, and SAMAN's
+            no-photographs ruling requires the empty slot to render NOTHING. The zone
+            contact cards below stay, so hero column 2 is still a populated column. */}
+        {(!data.suppressEmptyGalleryFrame || heroImages || (showVideo && video)) && (
         <div className="aspect-square bg-gradient-to-br from-slate-100 to-slate-200 rounded-xl overflow-hidden relative">
           {showVideo && video ? (
             // Injected ONLY after the thumb click. autoplay=1 because the click
@@ -1031,6 +1049,7 @@ export function PortaCabinVariantHero({
             />
           ) : null}
         </div>
+        )}
 
         {/* The track sizes to its CONTENTS — never a reserved slot.
             E4 item 1: C-08 was pinned to 6 columns while its gallery is 5 (row six
@@ -1125,8 +1144,8 @@ export function PortaCabinVariantHero({
         {/* Zone contact cards directly under the thumbnails — the desktop
             conversion path (Call / Send Enquiry). lg:flex-1 stretches them to
             absorb remaining column height (T28.4 equal-bottom-edge rule). */}
-        <div className="pt-1 md:pt-2 lg:flex lg:flex-1 lg:flex-col lg:gap-2">
-          <ProductZoneCtas variant="strip" className="w-full" stretch />
+        <div className={cn('pt-1 md:pt-2', !noGalleryLayout && 'lg:flex lg:flex-1 lg:flex-col lg:gap-2')}>
+          <ProductZoneCtas variant="strip" className="w-full" stretch={!noGalleryLayout} />
           {isC08Product && specPdfHref && (
           <a
             href={specPdfHref}
@@ -1477,12 +1496,12 @@ export function PortaCabinVariantHero({
 
         {/* Buy box — the ONLY H1 on the page. Internally-scrolling T28 shell on
             desktop; normal flow on mobile. */}
-        <div className="pc-buybox lg:relative lg:min-h-0">
-          <div ref={buyBoxScrollRef} className="t28-rail-scroll lg:absolute lg:inset-0 lg:overflow-y-auto lg:overscroll-contain">{buyBoxColumn('h1')}</div>
+        <div className={cn('pc-buybox', !noGalleryLayout && 'lg:relative lg:min-h-0')}>
+          <div ref={buyBoxScrollRef} className={cn('t28-rail-scroll', !noGalleryLayout && 'lg:absolute lg:inset-0 lg:overflow-y-auto lg:overscroll-contain')}>{buyBoxColumn('h1')}</div>
         </div>
 
-        <aside className="pc-rail lg:relative lg:min-h-0">
-          <div className="t28-rail-scroll lg:absolute lg:inset-0 lg:overflow-y-auto lg:overscroll-contain">
+        <aside className={cn('pc-rail', !noGalleryLayout && 'lg:relative lg:min-h-0')}>
+          <div className={cn('t28-rail-scroll', !noGalleryLayout && 'lg:absolute lg:inset-0 lg:overflow-y-auto lg:overscroll-contain')}>
             <RelatedProductRail
               items={railItems}
               currentHref={currentHref}

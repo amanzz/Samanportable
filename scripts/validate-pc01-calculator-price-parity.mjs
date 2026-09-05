@@ -41,7 +41,12 @@ const PROTECTED_NORMALIZED_SHA256 = {
   // asserted to derive from its own product record, the six published prices are
   // still checked against porta-cabins.json, and the live per-variant calculator
   // computation below still runs. No rate, formula, tax or component price moved.
-  ladders: '2b55300e3f77a2cf33a6481ccdacaf9b2153a14886cb1d7b43ecad617ab5ab9c',
+  // PO-03 (5 Sep 2026): re-pinned. calculatorLadders.ts changed by exactly one additive
+  // ROUTE_LADDERS entry plus its import ('portable-weighbridge-office', toRows of that
+  // route's own product JSON). Verified against origin/static-migration: 39 -> 40 keys,
+  // the new key is the ONLY difference, and no existing route's ladder rows, rates, GST
+  // or published prices changed. The deeper parity assertions below run unchanged.
+  ladders: 'e411213ba17d60ee1697cc16df74fd6e43cd0c89ac012b305aec8b625edda001',
   rates: 'db62c8be57eeb09025d208df87b05ab9aac02f4183ac0e4a324f49c56291ba48',
   componentRates: '0e2c0e49ecbef688f8a262993cf7750155a5f9976209edddca3fcf4a434518dc',
   tax: 'da95cc10d8e2a5bb20bd9589630bcb1c4ad09fa1d53cfdbe32cd89c094579294',
