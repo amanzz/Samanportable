@@ -1,0 +1,69 @@
+PO-04 Step 0 - shared components the design-lock routes import, in source order
+==============================================================================
+
+The design lock is https://www.samanportable.com/product/porta-cabins, which is the
+CATEGORY HUB route src/pages/product/[category]/index.tsx. PO-04 is a PRODUCT page,
+src/pages/product/[category]/[slug].tsx. Both compose the same production components
+and both opt into the same design system; the hub does it through four `category ===`
+gates, the product route through the CLUSTER_DESIGN_SLUGS set. No new route file is
+authored for this page: /product/portable-office/executive-portable-office resolves
+through the existing dynamic product route.
+
+------------------------------------------------------------------------------
+CATEGORY HUB (the design-lock reference)
+src/pages/product/[category]/index.tsx
+------------------------------------------------------------------------------
+  1  ../../../components/Layout                     Layout
+  2  ../../../components/UnifiedSEO                 { UnifiedSEO }
+  3  ../../../components/ui/button                  { Button }
+  4  ../../../components/ui/badge                   { Badge }
+  5  ../../../components/ui/card                    { Card }
+  6  ../../../components/MobileBottomNav            MobileBottomNav
+  7  ../../../components/ds/Breadcrumb              { Breadcrumb }
+  8  ../../../components/ProductStructuredData      ProductStructuredData
+  9  ../../../components/product/RelatedProductRail RelatedProductRail
+ 10  ../../../components/product/ProductZoneCtas    ProductZoneCtas
+ 11  ../../../components/product/ProductSummaryLayout ProductSummaryLayout
+ 12  ../../../components/product-sandwich/SandwichInfoBox SandwichInfoBox
+ 13  ../../../components/product-variant-hero/PortaCabinVariantHero { PortaCabinVariantHero }
+ 14  ../../../components/product-variant-hero/types type
+ 15  ../../../components/product-variant-hero/PortaCabinsYouMayAlsoLike PortaCabinsYouMayAlsoLike
+ 16  ../../../components/DeferredCabinCalculator    DeferredCabinCalculator
+     (16 component imports)
+
+------------------------------------------------------------------------------
+PRODUCT ROUTE (the route PO-04 renders through)
+src/pages/product/[category]/[slug].tsx
+------------------------------------------------------------------------------
+  1  ../../../components/Layout                     Layout
+  2  ../../../components/UnifiedSEO                 { UnifiedSEO }
+  3  ../../../components/ui/button                  { Button }
+  4  ../../../components/ui/badge                   { Badge }
+  5  ../../../components/ui/card                    { Card }
+  6  ../../../components/MobileBottomNav            MobileBottomNav
+  7  ../../../components/ds/Breadcrumb              { Breadcrumb }
+  8  ../../../components/ProductStructuredData      ProductStructuredData
+  9  ../../../components/ManufacturerTrustStrip     ManufacturerTrustStrip
+ 10  ../../../components/product/RelatedProductRail RelatedProductRail
+ 11  ../../../components/product/ProductZoneCtas    ProductZoneCtas
+ 12  ../../../components/product/ProductSummaryLayout ProductSummaryLayout
+ 13  ../../../components/product-variant-hero/PortaCabinsYouMayAlsoLike PortaCabinsYouMayAlsoLike
+ 14  ../../../components/product-variant-hero/PortaCabinVariantHero { PortaCabinVariantHero }
+ 15  ../../../components/product-variant-hero/types type
+     (15 component imports)
+
+------------------------------------------------------------------------------
+RENDERED BLOCK ORDER (both routes, from PortaCabinVariantHero)
+------------------------------------------------------------------------------
+  1  PortaCabinVariantHero            block 1  three-column hero (gallery / buy box / rail)
+  2    ProductZoneCtas                block 2  contact and location bar
+  3    size chips (usePremiumSizeTabs)block 3  size selector tabs
+  4    buy box price                  block 4  price for the selected size
+  5    RelatedProductRail             block 5  Explore the Range
+  6    hr.pc-divider1                 divider 1
+  7    RightToExist                   block 6  Section 2 + .saman-s2-split card
+  8    hr.pc-divider2                 block 7  (no page-scoped media band on this design)
+  9    SizeApplicationsExplorer       block 8  Section 3
+ 10  renderCabinCalculatorSSR         block 9  Section 4 calculator
+ 11  PortaCabinsYouMayAlsoLike        block 10 You may also like
+ 12  ProductTabs                      block 11 Section 5 Product Details, four tabs

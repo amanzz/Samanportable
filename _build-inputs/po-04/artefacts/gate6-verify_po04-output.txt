@@ -1,0 +1,493 @@
+=== 1. Identity ===
+PASS exactly one H1  | ['Executive Portable Office: Six Sizes with a Manager Room']
+PASS H1 text matches copy.meta.h1  | ['Executive Portable Office: Six Sizes with a Manager Room']
+PASS H1 length 50-60  | 56
+PASS title matches copy.meta.title  | ['Executive Portable Office: Manager Room, 6 Sizes | SAMAN']
+PASS title length 55-60  | 56
+PASS meta description matches copy  | ['Executive portable office in six sizes from 10×10 to 40×10 ft, ex-GST prices published. The 40×10 carries a partitioned 10×10 ft manager room. Built by SAMAN.
+PASS meta description length 150-160  | 158
+PASS canonical is self-referencing  | ['https://www.samanportable.com/product/portable-office/executive-portable-office']
+
+=== 2. Eleven-block order ===
+PASS blocks render in the locked order  | [('Choose your size: six approv', 1237), ('Explore the Range', 2474), ('Which Executive Portable Off', 3162), ('The 40×10 is the only size t', 4164), ('Compare 
+
+=== 3. Sizes, prices, feature cells ===
+PASS 10x10 ex-GST price present  | ₹2,23,388
+PASS 10x10 incl-GST price present  | ₹2,63,598
+PASS 10x10 feature cell  | 10×10×8.5 ft · 100 sq ft
+PASS 10x10 feature cell  | Centred-ridge two-way
+PASS 10x10 feature cell  | 1 door · 3 windows
+PASS 10x10 feature cell  | 4 staged
+PASS 10x10 feature cell  | Single-room front office
+PASS 20x8 ex-GST price present  | ₹3,41,880
+PASS 20x8 incl-GST price present  | ₹4,03,418
+PASS 20x8 feature cell  | 20×8×8.5 ft · 160 sq ft
+PASS 20x8 feature cell  | One-way slope across 8 ft
+PASS 20x8 feature cell  | 1 door · 6 windows
+PASS 20x8 feature cell  | 3 staged
+PASS 20x8 feature cell  | Narrow-plot frontage
+PASS 20x10 ex-GST price present  | ₹3,88,500
+PASS 20x10 incl-GST price present  | ₹4,58,430
+PASS 20x10 feature cell  | 20×10×8.5 ft · 200 sq ft
+PASS 20x10 feature cell  | Centred-ridge two-way
+PASS 20x10 feature cell  | 1 door · 6 windows
+PASS 20x10 feature cell  | 5 staged
+PASS 20x10 feature cell  | Client-facing sales office
+PASS 20x12 ex-GST price present  | ₹4,47,552
+PASS 20x12 incl-GST price present  | ₹5,28,111
+PASS 20x12 feature cell  | 20×12×8.5 ft · 240 sq ft
+PASS 20x12 feature cell  | Centred-ridge two-way
+PASS 20x12 feature cell  | 1 door · 6 windows
+PASS 20x12 feature cell  | 5 staged
+PASS 20x12 feature cell  | Meeting-led review room
+PASS 30x10 ex-GST price present  | ₹5,59,440
+PASS 30x10 incl-GST price present  | ₹6,60,139
+PASS 30x10 feature cell  | 30×10×8.5 ft · 300 sq ft
+PASS 30x10 feature cell  | Centred-ridge two-way
+PASS 30x10 feature cell  | 2 doors · 8 windows
+PASS 30x10 feature cell  | 8 staged
+PASS 30x10 feature cell  | Two-entry department office
+PASS 40x10 ex-GST price present  | ₹7,38,152
+PASS 40x10 incl-GST price present  | ₹8,71,019
+PASS 40x10 feature cell  | 40×10×8.5 ft · 400 sq ft
+PASS 40x10 feature cell  | Centred-ridge two-way
+PASS 40x10 feature cell  | 2 doors · 9 windows
+PASS 40x10 feature cell  | 12 + manager room
+PASS 40x10 feature cell  | Partitioned executive suite
+PASS from price present
+PASS hero short description present
+PASS fixed cell Material  | MS frame · corrugated MS shell
+PASS fixed cell Delivery  | 7–21 Working Days
+PASS fixed cell Coverage  | Bangalore · Delhi NCR
+PASS fixed cell Brand  | SAMAN Portable
+
+=== 4. Section 2 and Section 3 ===
+PASS section2 h2  | Which Executive Portable Office Suits a Client-Fac
+PASS section2 paragraph1  | Choose from this page when the cabin will be seen 
+PASS section2 paragraph2  | The decision here is which of the six approved foo
+PASS section2 cta  | Send your frontage dimensions for a fixed quote
+PASS section2 card h3  | The 40×10 is the only size that arrives partitione
+PASS section2 card paragraph1  | A 10 × 10 ft manager room sits at one end behind a
+PASS section2 card paragraph2  | The remaining 300 sq ft stages twelve workstations
+PASS section2 card cta  | Compare the six sizes
+PASS section2 contextual link anchor present
+PASS section3 h2
+PASS section3 intro
+PASS section3 10x10 H3  | 10×10 ft Executive Portable Office: 100 sq ft Front Room
+PASS section3 10x10 paragraph  | The only square plan in the range and the smallest
+PASS section3 10x10 bullet count 5-6  | 6
+PASS section3 10x10 bullet  | 100 sq ft at ₹2,233.88 per sq ft, the highest rate
+PASS section3 10x10 bullet  | Wall A carries the door alone, D1, and no window, 
+PASS section3 10x10 bullet  | Three windows, one each on Wall B, End C and End D
+PASS section3 10x10 bullet  | Four workstations staged 2 on Wall B, 1 on End C, 
+PASS section3 10x10 bullet  | Graphite Charcoal exterior against a Champagne Lin
+PASS section3 10x10 bullet  | Shallow centred-ridge two-way roof, ridge running 
+PASS section3 20x8 H3  | 20×8 ft Executive Portable Office: 160 sq ft Narrow Plot
+PASS section3 20x8 paragraph  | The narrow-frontage option, and the only size here
+PASS section3 20x8 bullet count 5-6  | 6
+PASS section3 20x8 bullet  | 160 sq ft at ₹2,136.75 per sq ft, in the 150–199 s
+PASS section3 20x8 bullet  | The only size with a one-way slope, falling across
+PASS section3 20x8 bullet  | Wall A runs W1, D1, W2, so the door is centred bet
+PASS section3 20x8 bullet  | Three workstations, all on Wall B, leaving Wall A 
+PASS section3 20x8 bullet  | Six windows on 160 sq ft, the highest glazing dens
+PASS section3 20x8 bullet  | Sandstone Beige exterior against a Pearl Grey inte
+PASS section3 20x10 H3  | 20×10 ft Executive Portable Office: 200 sq ft Sales Office
+PASS section3 20x10 paragraph  | The reference size for the range: 200 sq ft is whe
+PASS section3 20x10 bullet count 5-6  | 6
+PASS section3 20x10 bullet  | 200 sq ft at ₹1,942.50 per sq ft, the base rate wi
+PASS section3 20x10 bullet  | Five workstations, 2 on Wall A and 3 on Wall B, se
+PASS section3 20x10 bullet  | Wall A runs W1, D1, W2; Wall B carries W3 and W4; 
+PASS section3 20x10 bullet  | Shallow centred-ridge two-way roof with the ridge 
+PASS section3 20x10 bullet  | Eucalyptus Grey-Green exterior against an Almond B
+PASS section3 20x10 bullet  | Two feet wider than the 20×8 for the same opening 
+PASS section3 20x12 H3  | 20×12 ft Executive Portable Office: 240 sq ft Review Room
+PASS section3 20x12 paragraph  | Same 20 ft length and the same six windows and one
+PASS section3 20x12 bullet count 5-6  | 6
+PASS section3 20x12 bullet  | 240 sq ft at ₹1,864.80 per sq ft, in the 201–300 s
+PASS section3 20x12 bullet  | Five workstations, the same count as the 20×10; th
+PASS section3 20x12 bullet  | Twelve feet is the widest internal span published 
+PASS section3 20x12 bullet  | Wall schedule identical to the 20×10: W1, D1, W2 o
+PASS section3 20x12 bullet  | Centred-ridge two-way roof carried across the wide
+PASS section3 20x12 bullet  | Mineral Bronze exterior against a Dove Light Grey 
+PASS section3 30x10 H3  | 30×10 ft Executive Portable Office: 300 sq ft Two-Door Plan
+PASS section3 30x10 paragraph  | The first size with two external doors and the fir
+PASS section3 30x10 bullet count 5-6  | 6
+PASS section3 30x10 bullet  | 300 sq ft at ₹1,864.80 per sq ft, in the 201–300 s
+PASS section3 30x10 bullet  | Two external doors, D1 and D2, at opposite ends of
+PASS section3 30x10 bullet  | Eight workstations, user-approved and fixed at 3 o
+PASS section3 30x10 bullet  | A solid centre bay on both long walls, with no ope
+PASS section3 30x10 bullet  | Eight windows: W1 and W2 on Wall A, W3 to W6 on Wa
+PASS section3 30x10 bullet  | Burnt Terracotta exterior against a Porcelain Whit
+PASS section3 40x10 H3  | 40×10 ft Executive Portable Office: 400 sq ft Manager Room
+PASS section3 40x10 paragraph  | The largest published size and the only one that a
+PASS section3 40x10 bullet count 5-6  | 6
+PASS section3 40x10 bullet  | 400 sq ft at ₹1,845.38 per sq ft, the lowest rate 
+PASS section3 40x10 bullet  | A 10 × 10 ft manager room with one internal door, 
+PASS section3 40x10 bullet  | Three manager-room windows, MW1 on Wall A, MW2 on 
+PASS section3 40x10 bullet  | Twelve workstations in the open bay, 5 on Wall A a
+PASS section3 40x10 bullet  | Two external doors and a solid centre bay on each 
+PASS section3 40x10 bullet  | Pearl Off-White exterior against a Light Greige in
+
+=== 5. Product Details, all four tabs ===
+PASS tab panel present in fetched HTML: Description
+PASS tab panel present in fetched HTML: Specifications
+PASS tab panel present in fetched HTML: Shipping
+PASS tab panel present in fetched HTML: Reviews
+PASS no Info tab label
+PASS description H2 present: Executive office cabin or portable off
+PASS description H2 length 40-60  | 53
+PASS description paragraph present  | Two very different things share the word cabin, 
+PASS description paragraph present  | An executive portable office is a building. It i
+PASS description paragraph present  | This page is about the second thing, in the vers
+PASS description H2 present: What the premium specification actuall
+PASS description H2 length 40-60  | 48
+PASS description paragraph present  | Every SAMAN cabin family is built on the same ap
+PASS description paragraph present  | What changes is everything that is visible and e
+PASS description paragraph present  | The plan is the other half of it. On a site offi
+PASS description paragraph present  | Conduit is run concealed rather than surface-cli
+PASS description H2 present: How many people each of the six footpr
+PASS description H2 length 40-60  | 48
+PASS description paragraph present  | Workstation counts on this page are not estimate
+PASS description table cell  | 10 × 10 ft
+PASS description table cell  | 100 sq ft
+PASS description table cell  | 4
+PASS description table cell  | 1 door, 3 windows
+PASS description table cell  | Gate-side front office, single-manager c
+PASS description table cell  | 20 × 8 ft
+PASS description table cell  | 160 sq ft
+PASS description table cell  | 3
+PASS description table cell  | 1 door, 6 windows
+PASS description table cell  | Narrow plot, cabin tight to a boundary
+PASS description table cell  | 20 × 10 ft
+PASS description table cell  | 200 sq ft
+PASS description table cell  | 5
+PASS description table cell  | 1 door, 6 windows
+PASS description table cell  | Client-facing sales office
+PASS description table cell  | 20 × 12 ft
+PASS description table cell  | 240 sq ft
+PASS description table cell  | 5
+PASS description table cell  | 1 door, 6 windows
+PASS description table cell  | Meeting and project review room
+PASS description table cell  | 30 × 10 ft
+PASS description table cell  | 300 sq ft
+PASS description table cell  | 8
+PASS description table cell  | 2 doors, 8 windows
+PASS description table cell  | Two-entry department office
+PASS description table cell  | 40 × 10 ft
+PASS description table cell  | 400 sq ft
+PASS description table cell  | 12 plus manager room
+PASS description table cell  | 2 doors, 9 windows
+PASS description table cell  | Partitioned executive suite
+PASS description paragraph present  | Two things in that table are worth reading twice
+PASS description H2 present: The 40 × 10 manager room and what a pa
+PASS description H2 length 40-60  | 50
+PASS description paragraph present  | Only the 40 × 10 arrives with an internal room a
+PASS description paragraph present  | Beyond the partition, the remaining 300 sq ft is
+PASS description paragraph present  | The alternative, if a private room matters more 
+PASS description H2 present: How the price is calculated and what i
+PASS description H2 length 40-60  | 48
+PASS description paragraph present  | Every price on this page comes out of one rule r
+PASS description paragraph present  | The bands run 40 to 59 sq ft at plus forty-four 
+PASS description paragraph present  | Every figure shown is ex-GST, with the GST-inclu
+PASS description paragraph present  | It does not cover loose furniture. Desks, chairs
+PASS description H2 present: Where an executive portable office ear
+PASS description H2 length 40-60  | 50
+PASS description paragraph present  | The honest test is whether anyone who is not an 
+PASS description paragraph present  | The four settings this product is specified for 
+PASS description paragraph present  | At a head-office frontage the constraint is usua
+PASS description paragraph present  | Each size is issued in its own approved colourwa
+PASS description H2 present: What to confirm before the drawing is 
+PASS description H2 length 40-60  | 44
+PASS description paragraph present  | A portable office is fabricated complete before 
+PASS description bullet present  | Which of the six footprints, confirmed against t
+PASS description bullet present  | Which wall faces the approach, because the door 
+PASS description bullet present  | Whether a second external door is required, whic
+PASS description bullet present  | Whether the manager room is required, which mean
+PASS description bullet present  | The workstation count you actually need against 
+PASS description bullet present  | Access for the trailer and for the crane or hydr
+PASS description bullet present  | The ground the unit will stand on, which must be
+PASS description bullet present  | Which items you are buying elsewhere, since furn
+PASS description paragraph present  | One point on scope that is worth stating plainly
+PASS description H2 present: Executive Portable Office: your questi
+PASS description H2 length 40-60  | 50
+PASS faq visible: What is an executive portable office?
+PASS faq answer 100-300 chars  | 202
+PASS faq visible: How much does an executive portable of
+PASS faq answer 100-300 chars  | 183
+PASS faq visible: Which size seats the most people?
+PASS faq answer 100-300 chars  | 191
+PASS faq visible: Does any size come with a separate man
+PASS faq answer 100-300 chars  | 179
+PASS faq visible: What is included in the price and what
+PASS faq answer 100-300 chars  | 227
+PASS faq visible: Can the door and window positions be c
+PASS faq answer 100-300 chars  | 207
+PASS faq visible: How is this different from a container
+PASS faq answer 100-300 chars  | 181
+PASS faq visible: What are portable offices also called?
+PASS faq answer 100-300 chars  | 205
+PASS description tab exactly one bullet block  | 1
+PASS description tab zero or one table  | 1
+PASS description tab 2000-3000 words  | 2439
+PASS 6-8 FAQs  | 8
+PASS spec narrative paragraph  | The specification below decides three things, in
+PASS spec narrative paragraph  | Read Group C before Group A. The opening schedul
+PASS spec narrative paragraph  | Group E is the scope boundary and it is the grou
+PASS spec narrative 2 or 3 paragraphs  | 3
+PASS five spec groups A-E  | ['Group A: Approved sizes and prices', 'Group B: Executive Portable Office build', 'Group C: Opening schedule and staged layout, by size', 'Group D: Platform-co
+PASS spec group title: Group A: Approved sizes and prices
+PASS spec row: SZ-01  | ['SZ-01', '10×10×8.5 ft']
+PASS spec row: SZ-02  | ['SZ-02', '20×8×8.5 ft']
+PASS spec row: SZ-03  | ['SZ-03', '20×10×8.5 ft']
+PASS spec row: SZ-04  | ['SZ-04', '20×12×8.5 ft']
+PASS spec row: SZ-05  | ['SZ-05', '30×10×8.5 ft']
+PASS spec row: SZ-06  | ['SZ-06', '40×10×8.5 ft']
+PASS spec group note: Group A: Approved si  | Base rate ₹1,942.50 per sq ft at 200 sq ft. Band
+PASS spec group title: Group B: Executive Portable Office
+PASS spec row: Roof family, 8 ft width  | ['Roof family, 8 ft width', 'One-way slope falling across the 8 ft width']
+PASS spec row: Roof family, 10 and 12 ft widt  | ['Roof family, 10 and 12 ft widths', 'Shallow centred-ridge two-way roof, one continuous r
+PASS spec row: Nominal height  | ['Nominal height', '8.5 ft across all six sizes']
+PASS spec row: Shell family  | ['Shell family', 'Non-container premium MS cabin with a corrugated MS external skin']
+PASS spec row: Presentation face  | ['Presentation face', '10 × 10: Wall A carries the door alone with no glazing. 30 × 10 and
+PASS spec row: Internal partition  | ['Internal partition', '40 × 10 only: a 10 × 10 ft manager room behind a full-height parti
+PASS spec row: Colourway  | ['Colourway', 'One approved exterior and interior pairing per size, listed in Group C']
+PASS spec row: Lifting and handling  | ['Lifting and handling', 'Designed lifting hooks and lugs, sealing and pre-dispatch inspec
+PASS spec group note: Group B: Executive P  | Roof geometry, drainage slope, joint seal and ov
+PASS spec group title: Group C: Opening schedule and stag
+PASS spec row: 10×10×8.5 ft  | ['10×10×8.5 ft', 'D1']
+PASS spec row: 20×8×8.5 ft  | ['20×8×8.5 ft', 'W1, D1, W2']
+PASS spec row: 20×10×8.5 ft  | ['20×10×8.5 ft', 'W1, D1, W2']
+PASS spec row: 20×12×8.5 ft  | ['20×12×8.5 ft', 'W1, D1, W2']
+PASS spec row: 30×10×8.5 ft  | ['30×10×8.5 ft', 'D1, W1, solid bay, W2, D2']
+PASS spec row: 40×10×8.5 ft  | ['40×10×8.5 ft', 'MW1, D1, W1, solid bay, W2, D2']
+PASS spec group note: Group C: Opening sch  | D is a door, W a window, MW a manager-room windo
+PASS spec group title: Group D: Platform-common material 
+PASS spec row: Primary base frame  | ['Primary base frame', 'Welded MS C-channel chassis']
+PASS spec row: Upper, wall and roof frame  | ['Upper, wall and roof frame', 'MS SHS and angle framing with reinforced openings']
+PASS spec row: External walls  | ['External walls', 'Corrugated MS sheet, Tata or Jindal or approved equivalent']
+PASS spec row: Roof  | ['Roof', 'Sloped corrugated MS sheet with sealed laps, flashings and drainage']
+PASS spec row: Internal wall and ceiling  | ['Internal wall and ceiling', 'Prelaminated MDF with aluminium joint sections']
+PASS spec row: Floor system  | ['Floor system', 'Cement-fibre board with a resilient finish']
+PASS spec row: Thermal insulation  | ['Thermal insulation', 'Glass wool, or a documented Heatlon wall option']
+PASS spec row: Main door  | ['Main door', 'Outward-opening MS-framed door assembly']
+PASS spec row: Windows  | ['Windows', 'Two-track aluminium sliding unit with glazing']
+PASS spec row: Electrical  | ['Electrical', 'Concealed copper wiring with DB, MCB, RCCB and earthing']
+PASS spec row: Corrosion protection  | ['Corrosion protection', 'Prepared MS with red-oxide primer and compatible enamel']
+PASS spec group note: Group D: Platform-co  | This key is common to the SAMAN Porta Cabin, Por
+PASS spec group title: Group E: Scope boundary
+PASS spec row: Commercial scope  | ['Commercial scope', 'Premium shell and fixed finishes only. Loose desks, chairs, curtains
+PASS spec row: Engineering scope  | ['Engineering scope', 'Architectural layout and visual geometry only. Signed engineering c
+PASS spec row: Layout authority  | ['Layout authority', "The staged workstation layout and the opening schedule for the size 
+PASS spec row: Site works  | ['Site works', "Ground preparation, levelling, foundations and any plinth are outside this
+PASS spec row: Placement  | ['Placement', 'The crane or hydra at the delivery end and the access required for it are o
+PASS spec row: Freight  | ['Freight', 'Calculated separately by distance and trailer size, and set out in full on th
+PASS spec row: Not published  | ['Not published', 'No warranty period, lead time, load capacity, structural adequacy, cert
+PASS spec group note: Group E: Scope bound  | A product fact not shown in Groups A to E is not
+PASS reviews empty state
+PASS no review or rating markup
+
+=== 6. Shipping tab is the shared freight component ===
+PASS free-delivery line, Bangalore city
+PASS free-delivery NCR city: Ghaziabad
+PASS free-delivery NCR city: Gurugram
+PASS free-delivery NCR city: Faridabad
+PASS free-delivery NCR city: Noida
+PASS free-delivery NCR city: Greater Noida
+PASS freight distance bands present (>= 18 values)  | ['000', '100', '1000', '145', '150', '165', '200', '215', '230', '250', '255', '285']
+PASS ODC note present
+PASS no shippingDetails schema
+
+=== 7. Forbidden strings, characters and unsourced claims ===
+PASS forbidden absent: 'coming soon'  | coming soon
+PASS forbidden absent: 'Coming soon'  | Coming soon
+PASS forbidden absent: 'available on request'  | available on request
+PASS forbidden absent: 'Available on request'  | Available on request
+PASS forbidden absent: 'contact us for details'  | contact us for details
+PASS forbidden absent: 'Contact us for details'  | Contact us for details
+PASS forbidden absent: 'placeholder'  | placeholder
+PASS forbidden absent: 'TBD'  | TBD
+PASS forbidden absent: 'year warranty'  | year warranty
+PASS forbidden absent: 'years warranty'  | years warranty
+PASS forbidden absent: 'warranty period of'  | warranty period of
+PASS forbidden absent: 'under warranty'  | under warranty
+PASS forbidden absent: 'guaranteed'  | guaranteed
+PASS forbidden absent: 'ISO certified'  | ISO certified
+FAIL forbidden absent: 'ISO 9001'  | ISO 9001
+PASS forbidden absent: 'certified to'  | certified to
+PASS forbidden absent: 'installation included'  | installation included
+PASS forbidden absent: 'free installation'  | free installation
+PASS forbidden absent: 'installation within'  | installation within
+PASS forbidden absent: 'lifetime'  | lifetime
+PASS forbidden absent: 'maintenance free'  | maintenance free
+PASS forbidden absent: 'spare parts available'  | spare parts available
+PASS forbidden absent: 'we respond within'  | we respond within
+PASS forbidden absent: 'quote within'  | quote within
+PASS forbidden absent: 'support hours'  | support hours
+PASS forbidden absent: 'load capacity of'  | load capacity of
+PASS forbidden absent: 'safe working load'  | safe working load
+PASS forbidden absent: 'rated at'  | rated at
+PASS no U+2014 em dash in body
+PASS regex clean: \b\d+\s*-\s*\d+\s*(working\s+)?days?  | ['Working ', 'working ']
+PASS regex clean: \b\d+\s*(year|yr)s?\s+warranty\b  | []
+PASS day-range appears only as the template delivery line  | 3
+
+=== 8. Links ===
+PASS internal link present /product/portable-office
+PASS internal link present /product/portable-office/readymade-office-cabin
+PASS internal link present /product/container-offices
+PASS never-link absent /product/portable-office/modern-office-cabin
+FAIL never-link absent /portable-office-cabins-in-west-delhi
+FAIL never-link absent /product/porta-cabins
+PASS internal /product link returns 200: /product/container-cafe  | 200
+PASS internal /product link returns 200: /product/container-houses  | 200
+PASS internal /product link returns 200: /product/container-houses/luxury-container-houses  | 200
+PASS internal /product link returns 200: /product/container-houses/prefab-container-homes  | 200
+PASS internal /product link returns 200: /product/container-offices  | 200
+PASS internal /product link returns 200: /product/industrial-sheds  | 200
+PASS internal /product link returns 200: /product/labor-colony  | 200
+PASS internal /product link returns 200: /product/porta-cabins  | 200
+PASS internal /product link returns 200: /product/portable-office  | 200
+PASS internal /product link returns 200: /product/portable-office/portable-office-container  | 200
+PASS internal /product link returns 200: /product/portable-office/prefabricated-office-cabins  | 200
+PASS internal /product link returns 200: /product/portable-office/readymade-office-cabin  | 200
+PASS internal /product link returns 200: /product/portable-office/small-office-cabin  | 200
+PASS internal /product link returns 200: /product/portable-toilet  | 200
+PASS internal /product link returns 200: /product/pre-engineered-buildings  | 200
+PASS internal /product link returns 200: /product/prefab-buildings  | 200
+PASS internal /product link returns 200: /product/prefabricated-houses  | 200
+PASS internal /product link returns 200: /product/puf-panel  | 200
+PASS internal /product link returns 200: /product/roofing-sheet  | 200
+PASS internal /product link returns 200: /product/security-cabins  | 200
+PASS explore range excludes the current page
+
+=== 9. Images ===
+PASS no empty alt  | 25 alts
+PASS no duplicate alt  | []
+PASS explicit width and height on every img  | 25
+PASS no source PNG served from the page image path  | []
+PASS 36 gallery slots mapped  | 36
+PASS gallery order is 3 exteriors then 3 interiors per size
+PASS webp exists and is 80-120 KB: executive-portable-office-10x10-front-door-wall-a.webp  | 119 KB
+PASS webp exists and is 80-120 KB: executive-portable-office-10x10-rear-wall-b-window.webp  | 118 KB
+PASS webp exists and is 80-120 KB: executive-portable-office-10x10-gable-end-window.webp  | 115 KB
+PASS webp exists and is 80-120 KB: executive-portable-office-10x10-interior-four-desks.webp  | 107 KB
+PASS webp exists and is 80-120 KB: executive-portable-office-10x10-interior-reverse.webp  | 118 KB
+PASS webp exists and is 80-120 KB: executive-portable-office-10x10-interior-workstation.webp  | 118 KB
+PASS webp exists and is 80-120 KB: executive-portable-office-20x8-front-window-door-window.webp  | 118 KB
+PASS webp exists and is 80-120 KB: executive-portable-office-20x8-rear-two-windows.webp  | 117 KB
+PASS webp exists and is 80-120 KB: executive-portable-office-20x8-end-one-way-roof.webp  | 110 KB
+PASS webp exists and is 80-120 KB: executive-portable-office-20x8-interior-three-desks.webp  | 107 KB
+PASS webp exists and is 80-120 KB: executive-portable-office-20x8-interior-reverse.webp  | 116 KB
+PASS webp exists and is 80-120 KB: executive-portable-office-20x8-interior-workstation.webp  | 105 KB
+PASS webp exists and is 80-120 KB: executive-portable-office-20x10-front-centred-door.webp  | 116 KB
+PASS webp exists and is 80-120 KB: executive-portable-office-20x10-rear-wall-b-windows.webp  | 119 KB
+PASS webp exists and is 80-120 KB: executive-portable-office-20x10-gable-end-window.webp  | 119 KB
+PASS webp exists and is 80-120 KB: executive-portable-office-20x10-interior-five-desks.webp  | 106 KB
+PASS webp exists and is 80-120 KB: executive-portable-office-20x10-interior-reverse.webp  | 107 KB
+PASS webp exists and is 80-120 KB: executive-portable-office-20x10-interior-workstation.webp  | 107 KB
+PASS webp exists and is 80-120 KB: executive-portable-office-20x12-front-centred-door.webp  | 119 KB
+PASS webp exists and is 80-120 KB: executive-portable-office-20x12-rear-wall-b-windows.webp  | 117 KB
+PASS webp exists and is 80-120 KB: executive-portable-office-20x12-gable-end-window.webp  | 115 KB
+PASS webp exists and is 80-120 KB: executive-portable-office-20x12-interior-widened-aisle.webp  | 112 KB
+PASS webp exists and is 80-120 KB: executive-portable-office-20x12-interior-reverse.webp  | 112 KB
+PASS webp exists and is 80-120 KB: executive-portable-office-20x12-interior-workstation.webp  | 114 KB
+PASS webp exists and is 80-120 KB: executive-portable-office-30x10-front-two-doors-solid-bay.webp  | 119 KB
+PASS webp exists and is 80-120 KB: executive-portable-office-30x10-rear-four-windows.webp  | 115 KB
+PASS webp exists and is 80-120 KB: executive-portable-office-30x10-gable-end-window.webp  | 119 KB
+PASS webp exists and is 80-120 KB: executive-portable-office-30x10-interior-eight-desks.webp  | 106 KB
+PASS webp exists and is 80-120 KB: executive-portable-office-30x10-interior-reverse.webp  | 109 KB
+PASS webp exists and is 80-120 KB: executive-portable-office-30x10-interior-workstation.webp  | 109 KB
+PASS webp exists and is 80-120 KB: executive-portable-office-40x10-front-two-doors-manager-window.webp  | 117 KB
+PASS webp exists and is 80-120 KB: executive-portable-office-40x10-rear-four-windows.webp  | 118 KB
+PASS webp exists and is 80-120 KB: executive-portable-office-40x10-gable-end-window.webp  | 112 KB
+PASS webp exists and is 80-120 KB: executive-portable-office-40x10-interior-twelve-desks.webp  | 119 KB
+PASS webp exists and is 80-120 KB: executive-portable-office-40x10-interior-open-bay.webp  | 115 KB
+PASS webp exists and is 80-120 KB: executive-portable-office-40x10-manager-room-partition-door.webp  | 119 KB
+PASS webp exists and is 80-120 KB: 10x10-ga-board.webp  | 87 KB
+PASS webp exists and is 80-120 KB: 20x8-ga-board.webp  | 90 KB
+PASS webp exists and is 80-120 KB: 20x10-ga-board.webp  | 90 KB
+PASS webp exists and is 80-120 KB: 20x12-ga-board.webp  | 91 KB
+PASS webp exists and is 80-120 KB: 30x10-ga-board.webp  | 90 KB
+PASS webp exists and is 80-120 KB: 40x10-ga-board.webp  | 92 KB
+PASS webp exists and is 80-120 KB: executive-portable-office-10x10-overview.webp  | 119 KB
+PASS webp exists and is 80-120 KB: executive-portable-office-20x8-overview.webp  | 119 KB
+PASS webp exists and is 80-120 KB: executive-portable-office-20x10-overview.webp  | 119 KB
+PASS webp exists and is 80-120 KB: executive-portable-office-20x12-overview.webp  | 112 KB
+PASS webp exists and is 80-120 KB: executive-portable-office-30x10-overview.webp  | 118 KB
+PASS webp exists and is 80-120 KB: executive-portable-office-40x10-overview.webp  | 119 KB
+PASS webp exists and is 80-120 KB: 01-executive-office-frame-joint-diagram.webp  | 88 KB
+PASS webp exists and is 80-120 KB: 02-executive-office-services-installation-diagram.webp  | 92 KB
+PASS webp exists and is 80-120 KB: executive-portable-office-40x10-manager-room-ga.webp  | 119 KB
+PASS GA 10x10 is uncropped 16:9 at 1800 px  | (1800, 1012)
+PASS GA 20x8 is uncropped 16:9 at 1800 px  | (1800, 1012)
+PASS GA 20x10 is uncropped 16:9 at 1800 px  | (1800, 1012)
+PASS GA 20x12 is uncropped 16:9 at 1800 px  | (1800, 1012)
+PASS GA 30x10 is uncropped 16:9 at 1800 px  | (1800, 1012)
+PASS GA 40x10 is uncropped 16:9 at 1800 px  | (1800, 1012)
+PASS gallery executive-portable-office-10x10-front-door-wall-a.webp is 1254x1254 uncropped  | (1254, 1254)
+PASS gallery executive-portable-office-10x10-rear-wall-b-window.webp is 1254x1254 uncropped  | (1254, 1254)
+PASS gallery executive-portable-office-10x10-gable-end-window.webp is 1254x1254 uncropped  | (1254, 1254)
+PASS gallery executive-portable-office-10x10-interior-four-desks.webp is 1254x1254 uncropped  | (1254, 1254)
+PASS gallery executive-portable-office-10x10-interior-reverse.webp is 1254x1254 uncropped  | (1254, 1254)
+PASS gallery executive-portable-office-10x10-interior-workstation.webp is 1254x1254 uncropped  | (1254, 1254)
+PASS gallery executive-portable-office-20x8-front-window-door-window.webp is 1254x1254 uncropped  | (1254, 1254)
+PASS gallery executive-portable-office-20x8-rear-two-windows.webp is 1254x1254 uncropped  | (1254, 1254)
+PASS gallery executive-portable-office-20x8-end-one-way-roof.webp is 1254x1254 uncropped  | (1254, 1254)
+PASS gallery executive-portable-office-20x8-interior-three-desks.webp is 1254x1254 uncropped  | (1254, 1254)
+PASS gallery executive-portable-office-20x8-interior-reverse.webp is 1254x1254 uncropped  | (1254, 1254)
+PASS gallery executive-portable-office-20x8-interior-workstation.webp is 1254x1254 uncropped  | (1254, 1254)
+PASS gallery executive-portable-office-20x10-front-centred-door.webp is 1254x1254 uncropped  | (1254, 1254)
+PASS gallery executive-portable-office-20x10-rear-wall-b-windows.webp is 1254x1254 uncropped  | (1254, 1254)
+PASS gallery executive-portable-office-20x10-gable-end-window.webp is 1254x1254 uncropped  | (1254, 1254)
+PASS gallery executive-portable-office-20x10-interior-five-desks.webp is 1254x1254 uncropped  | (1254, 1254)
+PASS gallery executive-portable-office-20x10-interior-reverse.webp is 1254x1254 uncropped  | (1254, 1254)
+PASS gallery executive-portable-office-20x10-interior-workstation.webp is 1254x1254 uncropped  | (1254, 1254)
+PASS gallery executive-portable-office-20x12-front-centred-door.webp is 1254x1254 uncropped  | (1254, 1254)
+PASS gallery executive-portable-office-20x12-rear-wall-b-windows.webp is 1254x1254 uncropped  | (1254, 1254)
+PASS gallery executive-portable-office-20x12-gable-end-window.webp is 1254x1254 uncropped  | (1254, 1254)
+PASS gallery executive-portable-office-20x12-interior-widened-aisle.webp is 1254x1254 uncropped  | (1254, 1254)
+PASS gallery executive-portable-office-20x12-interior-reverse.webp is 1254x1254 uncropped  | (1254, 1254)
+PASS gallery executive-portable-office-20x12-interior-workstation.webp is 1254x1254 uncropped  | (1254, 1254)
+PASS gallery executive-portable-office-30x10-front-two-doors-solid-bay.webp is 1254x1254 uncropped  | (1254, 1254)
+PASS gallery executive-portable-office-30x10-rear-four-windows.webp is 1254x1254 uncropped  | (1254, 1254)
+PASS gallery executive-portable-office-30x10-gable-end-window.webp is 1254x1254 uncropped  | (1254, 1254)
+PASS gallery executive-portable-office-30x10-interior-eight-desks.webp is 1254x1254 uncropped  | (1254, 1254)
+PASS gallery executive-portable-office-30x10-interior-reverse.webp is 1254x1254 uncropped  | (1254, 1254)
+PASS gallery executive-portable-office-30x10-interior-workstation.webp is 1254x1254 uncropped  | (1254, 1254)
+PASS gallery executive-portable-office-40x10-front-two-doors-manager-window.webp is 1254x1254 uncropped  | (1254, 1254)
+PASS gallery executive-portable-office-40x10-rear-four-windows.webp is 1254x1254 uncropped  | (1254, 1254)
+PASS gallery executive-portable-office-40x10-gable-end-window.webp is 1254x1254 uncropped  | (1254, 1254)
+PASS gallery executive-portable-office-40x10-interior-twelve-desks.webp is 1254x1254 uncropped  | (1254, 1254)
+PASS gallery executive-portable-office-40x10-interior-open-bay.webp is 1254x1254 uncropped  | (1254, 1254)
+PASS gallery executive-portable-office-40x10-manager-room-partition-door.webp is 1254x1254 uncropped  | (1254, 1254)
+
+=== 10. Structured data ===
+PASS schema ItemPage present  | ['ItemPage', 'Product', 'Brand', 'AggregateOffer', 'Offer', 'PriceSpecification', 'Offer', 'PriceSpecification', 'Offer', 'PriceSpecification', 'Offer', 'PriceS
+PASS schema Product present  | ['ItemPage', 'Product', 'Brand', 'AggregateOffer', 'Offer', 'PriceSpecification', 'Offer', 'PriceSpecification', 'Offer', 'PriceSpecification', 'Offer', 'PriceS
+PASS schema BreadcrumbList present  | ['ItemPage', 'Product', 'Brand', 'AggregateOffer', 'Offer', 'PriceSpecification', 'Offer', 'PriceSpecification', 'Offer', 'PriceSpecification', 'Offer', 'PriceS
+PASS schema FAQPage present  | ['ItemPage', 'Product', 'Brand', 'AggregateOffer', 'Offer', 'PriceSpecification', 'Offer', 'PriceSpecification', 'Offer', 'PriceSpecification', 'Offer', 'PriceS
+PASS AggregateOffer present
+PASS offer low matches  | 223388
+PASS offer high matches  | 738152
+PASS currency INR
+PASS no Review or AggregateRating in schema
+PASS FAQ schema byte-identical: What is an executive portable of  | What is an executive portable office?
+PASS FAQ schema byte-identical: How much does an executive porta  | How much does an executive portable offi
+PASS FAQ schema byte-identical: Which size seats the most people  | Which size seats the most people?
+PASS FAQ schema byte-identical: Does any size come with a separa  | Does any size come with a separate manag
+PASS FAQ schema byte-identical: What is included in the price an  | What is included in the price and what i
+PASS FAQ schema byte-identical: Can the door and window position  | Can the door and window positions be cha
+PASS FAQ schema byte-identical: How is this different from a con  | How is this different from a container o
+PASS FAQ schema byte-identical: What are portable offices also c  | What are portable offices also called?
+
+=== 11. Empty-slot rule ===
+PASS no fallback text: 'coming soon'
+PASS no fallback text: 'available on request'
+PASS no fallback text: 'contact us for details'
+PASS no fallback text: 'placeholder'
+PASS no fallback text: 'TBD'
+PASS no fallback text: 'N/A'
+PASS no fallback text: '--'
+PASS no empty heading
+
+RESULT: FAIL (3 checks)

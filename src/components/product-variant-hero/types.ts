@@ -237,6 +237,13 @@ export interface VariantProductData {
       Default remains new, matching the legacy product schema. */
   schemaItemCondition?: 'new' | 'refurbished' | 'used';
   /** Opt-in removal of product AggregateRating for pages whose ticket forbids it. */
+  /** PO-04 (5 Sep 2026) - ship EVERY size's approved buy-box facts in SSR, not only
+      the selected size's, in a hidden completeness block. The buy box itself is
+      unchanged: it still renders one size at a time, exactly as the porta-cabins
+      reference does. bess-container has had this since CO-03 through a hardcoded
+      slug test; this makes it a per-product opt-in like every other override here.
+      Absent/false everywhere else, so no other page's markup changes. */
+  emitVariantFactCompleteness?: boolean;
   suppressAggregateRatingSchema?: boolean;
   /** Suppress all legacy visible/schema review claims when provenance is not established. */
   suppressReviewClaims?: boolean;

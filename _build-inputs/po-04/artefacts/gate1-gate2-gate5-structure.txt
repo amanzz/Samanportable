@@ -1,0 +1,65 @@
+=== GATE 1: structural diff against the design-lock reference ===
+reference: https://www.samanportable.com/product/porta-cabins
+page     : http://127.0.0.1:3211/product/portable-office/executive-portable-office
+
+BLOCK                                          PO-04        PORTA-CABINS DELTA
+1  three-column hero                           present      present      same
+1a   gallery column                            present      present      same
+1b   buy box (sole H1)                         present      present      same
+2  contact / location bar                      present      present      same
+3  size selector tabs (usePremiumSizeTabs)     present      present      same
+4  price display for the selected size         present      present      same
+5  Explore the Range panel                     present      present      same
+5a   divider 1                                 present      present      same
+6  Section 2 RightToExist                      present      present      same
+6a   split card                                present      present      same
+6b   split card media (left)                   present      present      same
+6c   divider 2                                 present      present      same
+8  Section 3 SizeApplicationsExplorer          present      present      same
+9  Section 4 calculator                        present      present      same
+10 You may also like                           present      present      same
+11 Section 5 Product Details tabs              present      present      same
+
+PASS component tree identical to the reference, zero structural delta  | []
+PASS 7  media band: reference renders no page-scoped band between S2 and S3  | checked on the reference
+
+=== GATE 2: eleven blocks in rendered order ===
+    PO-04       REF  BLOCK
+    34120     33919  1  three-column hero
+    39251     38609  2  contact / location bar
+    43484     42843  3  size selector tabs (usePremiumSizeTabs)
+    44405     43736  4  price for the selected size
+    50137     49137  5  Explore the Range
+    55000     58406  5a   divider 1
+    55067     58473  6  Section 2 RightToExist
+    57240     59787  6b   split card, media on the LEFT
+    58422     60793  7  media band - none on this design; divider 2 stands here
+    59060     61423  8  Section 3 SizeApplicationsExplorer
+    97749     93434  9  Section 4 calculator
+   313151     94844  10 You may also like
+   318036    102978  11 Section 5 Product Details
+PASS all thirteen markers present on PO-04  | [34120, 39251, 43484, 44405, 50137, 55000, 55067, 57240, 58422, 59060, 97749, 313151, 318036]
+PASS all thirteen markers present on the reference  | [33919, 38609, 42843, 43736, 49137, 58406, 58473, 59787, 60793, 61423, 93434, 94844, 102978]
+PASS PO-04 block sequence is identical to the design-lock reference  | po04=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] ref=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+PASS Section 3 follows Section 2, calculator follows Section 3, YMAL follows the calculator, Product Details is last  | [55067, 57240, 58422, 59060, 97749, 313151, 318036]
+
+=== GATE 5: DOM checks ===
+PASS exactly one H1  | 1
+PASS no empty heading  | []
+PASS every img has an alt attribute  | 25 alts / 25 imgs
+PASS no empty alt  | []
+PASS no duplicate alt  | []
+PASS explicit width and height on every img  | 25 imgs
+PASS no U+2014 em dash in body
+PASS tab panel present in fetched HTML: Description
+PASS tab panel present in fetched HTML: Specifications
+PASS tab panel present in fetched HTML: Shipping
+PASS tab panel present in fetched HTML: Reviews
+PASS no Info tab
+PASS zero hits: 'coming soon'
+PASS zero hits: 'available on request'
+PASS zero hits: 'contact us for details'
+PASS zero hits: 'placeholder'
+PASS zero hits: 'TBD'
+
+RESULT: PASS

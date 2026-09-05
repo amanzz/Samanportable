@@ -1,0 +1,49 @@
+{
+  "id": 9052026004,
+  "name": "Executive Portable Office",
+  "slug": "executive-portable-office",
+  "permalink": "https://www.samanportable.com/product/portable-office/executive-portable-office/",
+  "date_created": "2026-09-05T00:00:00",
+  "date_created_gmt": "2026-09-04T18:30:00",
+  "date_modified": "2026-09-05T00:00:00",
+  "date_modified_gmt": "2026-09-04T18:30:00",
+  "type": "simple",
+  "status": "publish",
+  "featured": false,
+  "catalog_visibility": "visible",
+  "description": "",
+  "short_description": "",
+  "sku": "",
+  "price": "",
+  "regular_price": "",
+  "sale_price": "",
+  "on_sale": false,
+  "purchasable": false,
+  "stock_status": "instock",
+  "stock_quantity": null,
+  "weight": "",
+  "dimensions": {
+    "length": "",
+    "width": "",
+    "height": ""
+  },
+  "images": [],
+  "categories": [
+    {
+      "id": 230,
+      "name": "Portable Office",
+      "slug": "portable-office"
+    }
+  ],
+  "brands": [
+    {
+      "id": 3870,
+      "name": "Saman Portable",
+      "slug": "saman-portable"
+    }
+  ],
+  "attributes": [],
+  "reviews_allowed": true,
+  "average_rating": "0.00",
+  "rating_count": 0
+}

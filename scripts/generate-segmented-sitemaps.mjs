@@ -115,7 +115,11 @@ const unfilteredSegments = { products, locations, projects, editorial };
 // Temporary containment removes every gated path that is still present in the
 // canonical input. Three gated draft/legacy paths were already absent, leaving
 // 94 product candidates before redirect-source exclusion.
-const expectedSegments = { products: 94, locations: 196, projects: 1, editorial: 65 };
+// PO-04 (5 Sep 2026): products 94 -> 95, +1 for
+// /product/portable-office/executive-portable-office, which this release publishes
+// and adds to sitemapCanonicalPaths.json in the same commit (the PC-07 incident
+// noted below is why the guard moves with the canonical-paths entry, not after it).
+const expectedSegments = { products: 95, locations: 196, projects: 1, editorial: 65 };
 
 const redirectEntries = await nextConfig.redirects();
 const redirectMatchers = redirectEntries
@@ -184,8 +188,9 @@ for (const [name, expected] of Object.entries(expectedSegments)) {
 // 406 = 436 minus the 30 local paths removed by the Phase 2 cleanup (11 redirected,
 // 19 noindex). See the expectedSegments note above for the segment breakdown.
 // 410 = 406 plus the four porta-cabin pages this commit adds to the sitemap.
-if (all.length !== 356) {
-  throw new Error(`Page sitemap total changed from 356 to ${all.length}`);
+// 357 = 356 plus /product/portable-office/executive-portable-office (PO-04).
+if (all.length !== 357) {
+  throw new Error(`Page sitemap total changed from 357 to ${all.length}`);
 }
 
 const pageMap = new Map();

@@ -1,0 +1,57 @@
+=== GATE 4: prop audit ===
+page    : src/data/products/executive-portable-office.json
+sibling : src/data/products/prefabricated-office-cabins.json  (PO-02, same design lock)
+
+PRODUCT-JSON FIELD                 PRESENT        CLASSIFICATION
+applicationsContent                both           copy
+canonical                          both           internal links
+coverageLabel                      sibling only   copy
+deliveryLabel                      sibling only   copy
+descriptionHtml                    both           copy
+emitVariantFactCompleteness        PO-04 only     variant data
+faqSchema                          both           copy
+h1                                 both           copy
+hideTrustRow                       PO-04 only     copy
+materialLabel                      sibling only   copy
+metaDescription                    both           copy
+opener                             both           copy
+priceCaption                       sibling only   copy
+productName                        both           copy
+productSlug                        both           variant data
+relatedTiles                       both           internal links
+seoTitle                           both           copy
+specPdfHref                        both           images/alt
+suppressAggregateRatingSchema      sibling only   variant data
+trustStripText                     sibling only   copy
+variants                           both           variant data
+ymalTiles                          both           internal links
+
+19 fields identical to the approved sibling, 22 differing.
+identical: categoryHref, categoryLabel, defaultVariant, emitAggregateOffer, emitSizeAnchors, gstPercent, hideHeroProofRow, hsn, labelActiveThumbnailAlt, optimizeLocalGalleryImages, schemaBrandName, schemaImageMode, schemaIncludeVariantOffers, specPdfButtonLabel, suppressLegacyFaqSchema, suppressLegacySku, suppressReviewClaims, suppressSchemaAvailability, variantAxis
+
+PASS every differing product-JSON field is one of the four permitted kinds  | []
+
+=== props passed to shared components at the route ===
+PROP                                   SOURCE                             PO-04    SIBLING  CLASSIFICATION
+showSectionDividers                    CLUSTER_DESIGN_SLUGS.has(slug)     True     True     design lock, identical to sibling
+usePremiumSizeTabs                     CLUSTER_DESIGN_SLUGS.has(slug)     True     True     design lock, identical to sibling
+explorerPanelHeadingAsH2               CLUSTER_DESIGN_SLUGS.has(slug)     True     True     design lock, identical to sibling
+sizeEyebrowText                        pack hero.size_selector_label      True     True     copy
+fullMobileLabels                       per-slug literal                   True     True     identical to sibling
+reviewsEmptyStateText                  pack reviews_tab.empty_state       True     True     copy
+reviews / averageRating / ratingCount  suppressed                         True     True     identical to sibling
+railItems                              variantData.relatedTiles           True     False    internal links
+subline (YMAL)                         pack ymal.intro                    True     True     copy
+
+PASS all three design-lock props are on for this route
+PASS design-lock props resolve identically to the approved sibling
+PASS Explore the Range rail is page-owned (never-list cannot enter through a category query)  | relatedTiles branch
+
+=== shared-component surface ===
+PASS no page-specific literal for this slug in the shared hero  | the one opt-in this page uses is the data flag emitVariantFactCompleteness
+PASS emitVariantFactCompleteness is declared optional
+PASS emitVariantFactCompleteness is read as a bare truthiness test, so absent = off  | no default value is supplied anywhere
+PASS exactly one product opts in  | ['src/data/products\\executive-portable-office.json']
+PASS bess-container's existing completeness behaviour is untouched
+
+RESULT: PASS

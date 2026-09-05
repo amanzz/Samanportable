@@ -878,11 +878,27 @@ export function PortaCabinVariantHero({
       return true;
     });
   })();
+  // PO-04 (5 Sep 2026) - the hardcoded bess-container test keeps its exact
+  // behaviour, byte-for-byte. `emitVariantFactCompleteness` is the additive opt-in
+  // for any other page whose ticket requires every size's facts crawlable, and it
+  // carries only the facts NOT already in the markup: the cells the selected size
+  // already renders are subtracted, exactly as hiddenCompletenessImages subtracts
+  // the images already rendered. Without that, a fact shared by all six sizes (the
+  // fixed Material / Delivery / Coverage / Brand cells) would be repeated six times.
   const hiddenFeatureCompletenessText = data.productSlug === 'bess-container'
     ? data.variants
         .flatMap((variant) => variant.featureCells?.flatMap((cell) => [cell.label, cell.value]) || [])
         .filter(Boolean)
         .join(' ')
+    : data.emitVariantFactCompleteness
+    ? (() => {
+        const alreadyShown = new Set(
+          (heroActive.featureCells || []).flatMap((cell) => [cell.label, cell.value])
+        );
+        return Array.from(new Set(
+          data.variants.flatMap((variant) => variant.featureCells?.flatMap((cell) => [cell.label, cell.value]) || [])
+        )).filter((fact) => Boolean(fact) && !alreadyShown.has(fact)).join(' ');
+      })()
     : '';
   // Columns in the thumbnail strip: the product's LARGEST thumb count across all
   // its sizes, plus the video facade thumb when the product has one. Taking the
@@ -1538,7 +1554,12 @@ export function PortaCabinVariantHero({
         </div>
         )}
 
-        {hiddenCompletenessImages.length > 0 && (
+        {/* PO-04 (5 Sep 2026) - the fact text is emitted on its own too. It used to
+            ride on the image list, so a page that opts into completeness text but has
+            no unrendered images (this route) emitted nothing. bess-container has both
+            non-empty and is unchanged; every other page has both empty and is
+            unchanged. */}
+        {(hiddenCompletenessImages.length > 0 || hiddenFeatureCompletenessText) && (
           <div className="hidden" aria-hidden="true" data-co03-image-completeness="true">
             {hiddenFeatureCompletenessText && <span>{hiddenFeatureCompletenessText}</span>}
             {hiddenCompletenessImages.map((image) => (

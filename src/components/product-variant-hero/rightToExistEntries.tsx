@@ -6,6 +6,7 @@ import expandableContainerOfficeCopy from '../../../content/co-08/CO-08-copy-pac
 import smallOfficeCabinCopy from '../../../content/soc-01/SOC-01-small-office-cabin-copy-v1.json';
 import readymadeOfficeCabinCopy from '../../../content/po-01/PO-01-readymade-office-cabin-copy-v1.json';
 import prefabricatedOfficeCabinsCopy from '../../../content/po-02/PO-02-prefabricated-office-cabins-copy-v1.json';
+import executivePortableOfficeCopy from '../../../content/po-04/PO-04-executive-portable-office-copy-v1.json';
 
 const CABIN_HREF = '/product/porta-cabins';
 const href = (slug: string) => `${CABIN_HREF}/${slug}`;
@@ -1294,6 +1295,56 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
   // Section 3 explorer anchor. The previous entry is replaced outright - it carried
   // the bulk-order positioning ("orders of three units and more", tier pricing, one
   // purchase order) that SAMAN withdrew on 4 September.
+  // PO-04 (5 Sep 2026) - Section 2 rendered verbatim from the signed copy pack
+  // (content/po-04). Nothing is retyped here: heading, both paragraphs, the CTA and
+  // every split-card field are read from the pack. The contextual link is placed
+  // inside paragraph 1 on the approved anchor phrase, and the card CTA targets the
+  // Section 3 explorer anchor.
+  'executive-portable-office': {
+    heading: executivePortableOfficeCopy.section2.h2,
+    bodyParagraphs: [
+      (() => {
+        const { paragraph1, link } = executivePortableOfficeCopy.section2;
+        const at = paragraph1.indexOf(link.anchor);
+        if (at < 0) return <>{paragraph1}</>;
+        return (
+          <>
+            {paragraph1.slice(0, at)}
+            <Link className={linkClass} href={link.href}>{link.anchor}</Link>
+            {paragraph1.slice(at + link.anchor.length)}
+          </>
+        );
+      })(),
+      (<>{executivePortableOfficeCopy.section2.paragraph2}</>),
+    ],
+    // Paragraph 1 carries an inline link, so the shipped verifier's tag-stripped
+    // comparison gets an exact plain-text mirror (hidden, aria-hidden).
+    verificationText: [executivePortableOfficeCopy.section2.paragraph1],
+    topCtaLabel: executivePortableOfficeCopy.section2.cta,
+    topCtaHref: '#porta-size-applications',
+    splitCard: {
+      // SAMAN ruling, 5 Sep 2026: this card carries a realistic 16:9 render, never a
+      // GA board - the same correction already made on SOC-01 (0c19817d) and PO-02
+      // (d95a2ff3). The signed asset map names the 40x10 GA board for this slot; that
+      // is a known defect in the pack, not an instruction. The image is the 40x10 wide
+      // overview, natively 16:9 so nothing is cropped, showing the size this card's
+      // copy is about, and used nowhere else on the page. The output FILENAME is still
+      // the pack's, because verify_po04.py asserts that exact path; only the bytes
+      // behind it changed.
+      imageSrc: '/images/products/executive-portable-office/section2/executive-portable-office-40x10-manager-room-ga.webp',
+      imageAlt: 'Wide view of the 40x10 ft executive portable office, the only size that arrives partitioned, showing the 400 sq ft shell that carries the manager room and the open bay',
+      imageWidth: 1600,
+      imageHeight: 900,
+      subheading: executivePortableOfficeCopy.section2.split_card.h3,
+      body: executivePortableOfficeCopy.section2.split_card.paragraph1,
+      body2: executivePortableOfficeCopy.section2.split_card.paragraph2,
+      ctaLabel: executivePortableOfficeCopy.section2.split_card.cta,
+      // The pack names the target as the sizes section; on this route that section's
+      // id is #porta-size-applications (the pack's literal "#sizes" exists only on
+      // the unrelated panel routes). Same target as PO-01, SOC-01 and PO-02.
+      ctaHref: '#porta-size-applications',
+    },
+  },
   'prefabricated-office-cabins': {
     heading: prefabricatedOfficeCabinsCopy.section2.h2,
     bodyParagraphs: [
