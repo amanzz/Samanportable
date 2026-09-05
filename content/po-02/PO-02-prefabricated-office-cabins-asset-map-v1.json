@@ -1,0 +1,279 @@
+{
+ "page": "prefabricated-office-cabins",
+ "page_id": "PO-02",
+ "package_root": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\prefabricated-office-cabins\\approved-website-assets-v1",
+ "output_root": "public/images/products/prefabricated-office-cabins",
+ "rules": {
+  "never_ship_source_png": true,
+  "webp_size_band_kb": [
+   80,
+   120
+  ],
+  "gallery": {
+   "width_px": 1254,
+   "quality_start": 86,
+   "ratio": "1:1",
+   "crop": "none"
+  },
+  "ga_board": {
+   "width_px": 1800,
+   "quality_start": 88,
+   "ratio": "16:9",
+   "crop": "NEVER - downscale proportionally only; dimension text must stay legible"
+  },
+  "section2_card": {
+   "width_px": 1600,
+   "quality_start": 90,
+   "ratio": "16:9",
+   "crop": "none (source GA board is native 16:9)"
+  },
+  "spec_diagram": {
+   "width_px": 1600,
+   "quality_start": 90,
+   "crop": "none"
+  },
+  "loading": "the six images of the default size 20x10 eager with fetchpriority=high on slide 1 only; the other thirty lazy; explicit width and height on every img; preload link for slide 1 of 20x10 carrying the same imagesrcset; GA boards lazy",
+  "measure_every_output": "report width, height, KB for every file; anything outside 80-120 KB is re-encoded (adjust quality, then width) and re-measured"
+ },
+ "keep_as_is": {
+  "note": "None. The live page carries five gallery slides per size, which SOC-01's 4 Sep ruling records as a defect on this page. All six sizes are rebuilt from the approved v1 package at six slides each."
+ },
+ "gallery_new": {
+  "10x10": {
+   "running_order_note": "Package supplies three exteriors and three interiors per size, not the four-plus-two of the design lock; assets are applied as supplied (PO-01 precedent, 4 Sep 2026). Order: entrance wall, end wall (roof form), opposite long wall, then the three interiors.",
+   "slides": [
+    {
+     "src": "02-square-product-images/size-10x10/02-prefabricated-office-10x10-door-exterior.png",
+     "out": "10x10/prefabricated-office-cabins-10x10-wall-a-door-only.webp"
+    },
+    {
+     "src": "02-square-product-images/size-10x10/04-prefabricated-office-10x10-end-exterior.png",
+     "out": "10x10/prefabricated-office-cabins-10x10-end-wall-centred-window-ridge.webp"
+    },
+    {
+     "src": "02-square-product-images/size-10x10/03-prefabricated-office-10x10-rear-exterior.png",
+     "out": "10x10/prefabricated-office-cabins-10x10-wall-b-single-window.webp"
+    },
+    {
+     "src": "02-square-product-images/size-10x10/05-prefabricated-office-10x10-workstation-interior.png",
+     "out": "10x10/prefabricated-office-cabins-10x10-four-desks.webp"
+    },
+    {
+     "src": "02-square-product-images/size-10x10/06-prefabricated-office-10x10-entry-interior.png",
+     "out": "10x10/prefabricated-office-cabins-10x10-entrance-wall-from-inside.webp"
+    },
+    {
+     "src": "02-square-product-images/size-10x10/07-prefabricated-office-10x10-corner-interior.png",
+     "out": "10x10/prefabricated-office-cabins-10x10-corner-view.webp"
+    }
+   ]
+  },
+  "20x8": {
+   "running_order_note": "Package supplies three exteriors and three interiors per size, not the four-plus-two of the design lock; assets are applied as supplied (PO-01 precedent, 4 Sep 2026). Order: entrance wall, end wall (roof form), opposite long wall, then the three interiors.",
+   "slides": [
+    {
+     "src": "02-square-product-images/size-20x8/02-prefabricated-office-20x8-door-exterior.png",
+     "out": "20x8/prefabricated-office-cabins-20x8-wall-a-window-door-window.webp"
+    },
+    {
+     "src": "02-square-product-images/size-20x8/04-prefabricated-office-20x8-end-exterior.png",
+     "out": "20x8/prefabricated-office-cabins-20x8-end-wall-one-way-roof.webp"
+    },
+    {
+     "src": "02-square-product-images/size-20x8/03-prefabricated-office-20x8-rear-exterior.png",
+     "out": "20x8/prefabricated-office-cabins-20x8-wall-b-two-windows.webp"
+    },
+    {
+     "src": "02-square-product-images/size-20x8/05-prefabricated-office-20x8-team-interior.png",
+     "out": "20x8/prefabricated-office-cabins-20x8-three-desks-open-plan.webp"
+    },
+    {
+     "src": "02-square-product-images/size-20x8/06-prefabricated-office-20x8-entry-interior.png",
+     "out": "20x8/prefabricated-office-cabins-20x8-entrance-wall-from-inside.webp"
+    },
+    {
+     "src": "02-square-product-images/size-20x8/07-prefabricated-office-20x8-reverse-interior.png",
+     "out": "20x8/prefabricated-office-cabins-20x8-reverse-view.webp"
+    }
+   ]
+  },
+  "20x10": {
+   "running_order_note": "Package supplies three exteriors and three interiors per size, not the four-plus-two of the design lock; assets are applied as supplied (PO-01 precedent, 4 Sep 2026). Order: entrance wall, end wall (roof form), opposite long wall, then the three interiors.",
+   "slides": [
+    {
+     "src": "02-square-product-images/size-20x10/02-prefabricated-office-20x10-door-exterior.png",
+     "out": "20x10/prefabricated-office-cabins-20x10-wall-a-window-door-window.webp"
+    },
+    {
+     "src": "02-square-product-images/size-20x10/04-prefabricated-office-20x10-end-exterior.png",
+     "out": "20x10/prefabricated-office-cabins-20x10-end-wall-centred-ridge.webp"
+    },
+    {
+     "src": "02-square-product-images/size-20x10/03-prefabricated-office-20x10-rear-exterior.png",
+     "out": "20x10/prefabricated-office-cabins-20x10-wall-b-two-windows.webp"
+    },
+    {
+     "src": "02-square-product-images/size-20x10/05-prefabricated-office-20x10-team-interior.png",
+     "out": "20x10/prefabricated-office-cabins-20x10-five-desk-team-zone-partition.webp"
+    },
+    {
+     "src": "02-square-product-images/size-20x10/06-prefabricated-office-20x10-manager-interior.png",
+     "out": "20x10/prefabricated-office-cabins-20x10-manager-room.webp"
+    },
+    {
+     "src": "02-square-product-images/size-20x10/07-prefabricated-office-20x10-reverse-interior.png",
+     "out": "20x10/prefabricated-office-cabins-20x10-team-zone-towards-end-c.webp"
+    }
+   ]
+  },
+  "20x12": {
+   "running_order_note": "Package supplies three exteriors and three interiors per size, not the four-plus-two of the design lock; assets are applied as supplied (PO-01 precedent, 4 Sep 2026). Order: entrance wall, end wall (roof form), opposite long wall, then the three interiors.",
+   "slides": [
+    {
+     "src": "02-square-product-images/size-20x12/02-prefabricated-office-20x12-door-exterior.png",
+     "out": "20x12/prefabricated-office-cabins-20x12-wall-a-window-door-window.webp"
+    },
+    {
+     "src": "02-square-product-images/size-20x12/04-prefabricated-office-20x12-end-exterior.png",
+     "out": "20x12/prefabricated-office-cabins-20x12-end-wall-twelve-foot-width.webp"
+    },
+    {
+     "src": "02-square-product-images/size-20x12/03-prefabricated-office-20x12-rear-exterior.png",
+     "out": "20x12/prefabricated-office-cabins-20x12-wall-b-two-windows.webp"
+    },
+    {
+     "src": "02-square-product-images/size-20x12/05-prefabricated-office-20x12-team-interior.png",
+     "out": "20x12/prefabricated-office-cabins-20x12-five-desk-team-zone-partition.webp"
+    },
+    {
+     "src": "02-square-product-images/size-20x12/06-prefabricated-office-20x12-manager-interior.png",
+     "out": "20x12/prefabricated-office-cabins-20x12-manager-room.webp"
+    },
+    {
+     "src": "02-square-product-images/size-20x12/07-prefabricated-office-20x12-reverse-interior.png",
+     "out": "20x12/prefabricated-office-cabins-20x12-team-zone-towards-end-c.webp"
+    }
+   ]
+  },
+  "30x10": {
+   "running_order_note": "Package supplies three exteriors and three interiors per size, not the four-plus-two of the design lock; assets are applied as supplied (PO-01 precedent, 4 Sep 2026). Order: entrance wall, end wall (roof form), opposite long wall, then the three interiors.",
+   "slides": [
+    {
+     "src": "02-square-product-images/size-30x10/02-prefabricated-office-30x10-door-exterior.png",
+     "out": "30x10/prefabricated-office-cabins-30x10-wall-a-two-doors-two-windows.webp"
+    },
+    {
+     "src": "02-square-product-images/size-30x10/04-prefabricated-office-30x10-end-exterior.png",
+     "out": "30x10/prefabricated-office-cabins-30x10-end-wall-centred-ridge.webp"
+    },
+    {
+     "src": "02-square-product-images/size-30x10/03-prefabricated-office-30x10-rear-exterior.png",
+     "out": "30x10/prefabricated-office-cabins-30x10-wall-b-four-windows.webp"
+    },
+    {
+     "src": "02-square-product-images/size-30x10/05-prefabricated-office-30x10-team-interior.png",
+     "out": "30x10/prefabricated-office-cabins-30x10-open-plan-desk-runs.webp"
+    },
+    {
+     "src": "02-square-product-images/size-30x10/06-prefabricated-office-30x10-endd-interior.png",
+     "out": "30x10/prefabricated-office-cabins-30x10-towards-end-d.webp"
+    },
+    {
+     "src": "02-square-product-images/size-30x10/07-prefabricated-office-30x10-endc-interior.png",
+     "out": "30x10/prefabricated-office-cabins-30x10-towards-end-c.webp"
+    }
+   ]
+  },
+  "40x10": {
+   "running_order_note": "Package supplies three exteriors and three interiors per size, not the four-plus-two of the design lock; assets are applied as supplied (PO-01 precedent, 4 Sep 2026). Order: entrance wall, end wall (roof form), opposite long wall, then the three interiors.",
+   "slides": [
+    {
+     "src": "02-square-product-images/size-40x10/02-prefabricated-office-40x10-door-exterior.png",
+     "out": "40x10/prefabricated-office-cabins-40x10-wall-a-two-doors-four-windows.webp"
+    },
+    {
+     "src": "02-square-product-images/size-40x10/04-prefabricated-office-40x10-end-exterior.png",
+     "out": "40x10/prefabricated-office-cabins-40x10-end-wall-centred-ridge.webp"
+    },
+    {
+     "src": "02-square-product-images/size-40x10/03-prefabricated-office-40x10-rear-exterior.png",
+     "out": "40x10/prefabricated-office-cabins-40x10-wall-b-four-windows.webp"
+    },
+    {
+     "src": "02-square-product-images/size-40x10/05-prefabricated-office-40x10-common-interior.png",
+     "out": "40x10/prefabricated-office-cabins-40x10-eight-desk-common-office.webp"
+    },
+    {
+     "src": "02-square-product-images/size-40x10/06-prefabricated-office-40x10-manager-m1.png",
+     "out": "40x10/prefabricated-office-cabins-40x10-manager-room-m1.webp"
+    },
+    {
+     "src": "02-square-product-images/size-40x10/07-prefabricated-office-40x10-manager-m2.png",
+     "out": "40x10/prefabricated-office-cabins-40x10-manager-room-m2.webp"
+    }
+   ]
+  }
+ },
+ "ga_boards": {
+  "files": {
+   "10x10": {
+    "src": "01-ga-boards/size-10x10/01-prefabricated-office-10x10-ga-board.png",
+    "out": "ga/prefabricated-office-cabins-10x10-ga-board.webp"
+   },
+   "20x8": {
+    "src": "01-ga-boards/size-20x8/01-prefabricated-office-20x8-ga-board.png",
+    "out": "ga/prefabricated-office-cabins-20x8-ga-board.webp"
+   },
+   "20x10": {
+    "src": "01-ga-boards/size-20x10/01-prefabricated-office-20x10-ga-board.png",
+    "out": "ga/prefabricated-office-cabins-20x10-ga-board.webp"
+   },
+   "20x12": {
+    "src": "01-ga-boards/size-20x12/01-prefabricated-office-20x12-ga-board.png",
+    "out": "ga/prefabricated-office-cabins-20x12-ga-board.webp"
+   },
+   "30x10": {
+    "src": "01-ga-boards/size-30x10/01-prefabricated-office-30x10-ga-board.png",
+    "out": "ga/prefabricated-office-cabins-30x10-ga-board.webp"
+   },
+   "40x10": {
+    "src": "01-ga-boards/size-40x10/01-prefabricated-office-40x10-ga-board.png",
+    "out": "ga/prefabricated-office-cabins-40x10-ga-board.webp"
+   }
+  },
+  "source_note": "use the full-size 3840x2160 ...-ga-board.png only; never the 960x540 ...-ga-preview.png",
+  "alt_text_source": "copy JSON -> alt_text.ga_boards"
+ },
+ "section2_card": {
+  "src": "01-ga-boards/size-20x10/01-prefabricated-office-20x10-ga-board.png",
+  "out": "section2/prefabricated-office-cabins-20x10-ga-board-card.webp",
+  "alt_text_source": "copy JSON -> alt_text.section2_card",
+  "note": "native 16:9 3840x2160 GA board; downscale only, never crop"
+ },
+ "spec_diagrams": {
+  "1": {
+   "src": "04-technical-diagrams/09-prefabricated-office-frame-sheet-joint.png",
+   "out": "specs/prefabricated-office-cabins-frame-sheet-joint-diagram.webp"
+  },
+  "2": {
+   "src": "04-technical-diagrams/10-prefabricated-office-window-electrical-fan.png",
+   "out": "specs/prefabricated-office-cabins-window-electrical-fan-diagram.webp"
+  }
+ },
+ "spec_pdf": {
+  "src": "05-technical-pdf/saman-prefabricated-office-cabins-technical-specification-and-ga-v1.pdf",
+  "out": "public/downloads/prefabricated-office-cabins-technical-specification.pdf",
+  "link_label": "Download technical specification (PDF)",
+  "note": "the live page already links /specs/prefabricated-office-cabins-technical-specification.pdf; keep that public path if it is what the repo serves, and replace the file with this v1 12-page PDF"
+ },
+ "not_used": [
+  "03-long-description-images/* (six 1920x1080 images; standing ruling is no images in the Description tab, carried from PO-01 and SOC-01)",
+  "01-ga-boards/*-ga-preview.png (960x540 previews)",
+  "05-contact-sheets/* (QA artefacts)",
+  "06-prompts-and-qa/* (QA artefacts)",
+  "_archive-prefabricated-office-cabins/*",
+  "_ga-for-approval-v1/*",
+  "_build-resources/*",
+  "size-*/ folders at the page root (pre-approval working sets)"
+ ]
+}

@@ -1,0 +1,35 @@
+
+==============================================================================
+GATE 5 - DOM checks on the preview HTML
+==============================================================================
+PASS exactly one H1  | 1
+PASS no empty heading  | []
+PASS every img carries an alt  | 21/21
+PASS no empty alt  | 0
+PASS no duplicate alt  | []
+PASS explicit width and height on every img  | 21
+PASS no U+2014 em dash in body text
+PASS tab panel present in fetched HTML: Description
+PASS tab panel present in fetched HTML: Specifications
+PASS tab panel present in fetched HTML: Shipping
+PASS tab panel present in fetched HTML: Reviews
+PASS no Info tab
+PASS zero hits for 'coming soon'  | []
+PASS zero hits for 'available on request'  | []
+PASS zero hits for 'contact us for details'  | []
+PASS zero hits for 'placeholder'  | []
+PASS zero hits for 'TBD'  | []
+
+==============================================================================
+Design-lock reference: /product/porta-cabins block order
+==============================================================================
+      2287  Explore the Range
+      8670  calculator
+      9043  You may also like
+      9850  Product Details
+      9926  Description tab
+      9943  Specifications tab
+      8236  Shipping tab
+      9978  Reviews tab
+
+RESULT: PASS

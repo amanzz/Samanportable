@@ -1,0 +1,78 @@
+====================================================================================================
+GATE 4 - PROP AUDIT
+====================================================================================================
+
+PART 1 - route-level props in src/pages/product/[category]/[slug].tsx
+----------------------------------------------------------------------------------------------------
+Every line in the route that names this slug, with the prop it feeds.
+
+  L69    import prefabricatedOfficeCabinsCopy from '../../../../content/po-02/PO-02-prefabricated-office-cabins-copy-v1.json';
+  L201   'prefabricated-office-cabins',
+  L1249  : slug === 'prefabricated-office-cabins'
+  L1628  {slug === 'prefabricated-office-cabins' && variantData?.ymalTiles?.length && (
+  L1648  reviews={slug === 'accommodation-container' || slug === 'container-marketing-office' || slug === CO06_SLUG || slug === CO07_SLUG || slug === CO08_SLUG
+  L1649  averageRating={slug === 'accommodation-container' || slug === 'container-marketing-office' || slug === CO06_SLUG || slug === CO07_SLUG || slug === CO0
+  L1650  ratingCount={slug === 'accommodation-container' || slug === 'container-marketing-office' || slug === CO06_SLUG || slug === CO07_SLUG || slug === CO08_
+  L1653  fullMobileLabels={slug === 'containerized-data-center' || slug === 'small-office-cabin' || slug === 'readymade-office-cabin' || slug === 'prefabricate
+  L1654  reviewsEmptyStateText={slug === 'small-office-cabin' ? smallOfficeCabinCopy.reviews_tab.empty_state : slug === 'readymade-office-cabin' ? readymadeOff
+
+  Each is one of:
+    CLUSTER_DESIGN_SLUGS membership -> the existing premium opt-ins
+      (usePremiumSizeTabs / showSectionDividers / explorerPanelHeadingAsH2),
+      byte-for-byte the same treatment every sibling product page takes.
+    size_selector_label / reviewsEmptyStateText / YMAL subline -> kind A, copy
+      strings read from the signed pack.
+    reviews / averageRating / ratingCount -> the same review suppression the
+      approved siblings already take (no Review or AggregateRating markup).
+    fullMobileLabels -> the same opt-in small-office-cabin and
+      readymade-office-cabin already pass.
+
+PART 2 - variantData (src/data/products/*.json) vs the approved sibling
+----------------------------------------------------------------------------------------------------
+  fields present on both: 39   identical: 21   differing: 18
+
+  field                            kind   note
+  ------------------------------------------------------------------------------------------------
+  applicationsContent              A      object, this page's own content
+  canonical                        D      76 -> 81 chars
+  categoryLabel                    A      'Portable Office' -> 'Portable Office Cabin'
+  coverageLabel                    A      'Bangalore city, Delhi NCR' -> 'Bangalore · Delhi NCR'
+  deliveryLabel                    A      '7 to 21 working days' -> '7–21 Working Days'
+  descriptionHtml                  A      14757 -> 14879 chars
+  faqSchema                        A      object, this page's own content
+  h1                               A      53 -> 58 chars
+  materialLabel                    A      'MS structural frame, insulated office build' -> 'MS frame · bolted MS panel she
+  metaDescription                  A      152 -> 150 chars
+  opener                           A      716 -> 749 chars
+  productName                      A      'Readymade Office Cabin' -> 'Prefabricated Office Cabins'
+  productSlug                      A      'readymade-office-cabin' -> 'prefabricated-office-cabins'
+  relatedTiles                     D      list 3 -> 3 entries
+  seoTitle                         A      56 -> 59 chars
+  specPdfHref                      B      108 -> 62 chars
+  variants                         C      list 6 -> 6 entries
+  ymalTiles                        D      list 3 -> 3 entries
+  categoryHref                     D      IDENTICAL to the sibling
+  defaultVariant                   C      IDENTICAL to the sibling
+  emitAggregateOffer               C      IDENTICAL to the sibling
+  emitSizeAnchors                  flag   IDENTICAL to the sibling
+  gstPercent                       C      IDENTICAL to the sibling
+  hideHeroProofRow                 flag   IDENTICAL to the sibling
+  hsn                              C      IDENTICAL to the sibling
+  labelActiveThumbnailAlt          flag   IDENTICAL to the sibling
+  optimizeLocalGalleryImages       flag   IDENTICAL to the sibling
+  priceCaption                     A      IDENTICAL to the sibling
+  schemaBrandName                  A      IDENTICAL to the sibling
+  schemaImageMode                  B      IDENTICAL to the sibling
+  schemaIncludeVariantOffers       C      IDENTICAL to the sibling
+  specPdfButtonLabel               A      IDENTICAL to the sibling
+  suppressAggregateRatingSchema    flag   IDENTICAL to the sibling
+  suppressLegacyFaqSchema          flag   IDENTICAL to the sibling
+  suppressLegacySku                flag   IDENTICAL to the sibling
+  suppressReviewClaims             flag   IDENTICAL to the sibling
+  suppressSchemaAvailability       flag   IDENTICAL to the sibling
+  trustStripText                   A      IDENTICAL to the sibling
+  variantAxis                      C      IDENTICAL to the sibling
+
+  UNCLASSIFIED differences (would be a design-lock breach): none
+
+RESULT: PASS - every difference is one of the four permitted content kinds
