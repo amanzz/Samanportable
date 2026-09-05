@@ -1317,10 +1317,19 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
     topCtaLabel: prefabricatedOfficeCabinsCopy.section2.cta,
     topCtaHref: '#porta-size-applications',
     splitCard: {
-      // The pack's Section 2 card image: the native 16:9 GA board of the default
-      // 20x10 size, shipped at 1600 px wide and never cropped.
-      imageSrc: '/images/products/prefabricated-office-cabins/section2/prefabricated-office-cabins-20x10-ga-board-card.webp',
-      imageAlt: prefabricatedOfficeCabinsCopy.alt_text.section2_card,
+      // SAMAN instruction, 5 Sep 2026 (same correction as SOC-01 commit 0c19817d):
+      // this is a marketing slot, so it carries a realistic exterior render, not a
+      // technical drawing. Source is the approved package's native 1920x1080
+      // 03-long-description-images/08-...-10x10-compact-exterior.png, downscaled
+      // proportionally to 1600x900 - already 16:9, so nothing is cropped. It appears
+      // nowhere else on the page (the long-description set is otherwise unused under
+      // the no-images-in-Description ruling). The 20x10 GA board still renders in
+      // Section 3, where a drawing belongs.
+      imageSrc: '/images/products/prefabricated-office-cabins/section2/prefabricated-office-cabins-section2-card.webp',
+      // The pack's alt_text.section2_card describes the GA board and no longer applies
+      // to this image, so this is written to the pack's own alt style and states only
+      // what the render actually shows.
+      imageAlt: 'Slate navy 10×10 ft prefabricated office cabin standing alone in a factory yard, its bolted wall panels meeting in vertical seams, top-corner interface plates and a steel skid base',
       imageWidth: 1600,
       imageHeight: 900,
       subheading: prefabricatedOfficeCabinsCopy.section2.split_card.h3,

@@ -1,57 +1,65 @@
-PO-02 image measurement table - every WebP a browser fetches
+PO-02 image measurement table - the 45 WebP outputs this build ships
 Band: 80-120 KB. Crop: none anywhere. No source PNG is copied into public/.
-Sizes re-measured from the files on disk after encoding.
+Measured from the files on disk. Legacy files left in place for sibling routes are
+not this build's outputs and are excluded.
 
-kind           output file                                                                WxH            q      KB
---------------------------------------------------------------------------------------------------------------------
-ga_board       ga/prefabricated-office-cabins-10x10-ga-board.webp                         1800x1012     95    98.6
-ga_board       ga/prefabricated-office-cabins-20x10-ga-board.webp                         1800x1012     93   102.2
-ga_board       ga/prefabricated-office-cabins-20x12-ga-board.webp                         1800x1012     92    98.0
-ga_board       ga/prefabricated-office-cabins-20x8-ga-board.webp                          1800x1012     95    98.5
-ga_board       ga/prefabricated-office-cabins-30x10-ga-board.webp                         1800x1012     93   103.2
-ga_board       ga/prefabricated-office-cabins-40x10-ga-board.webp                         1800x1012     91    99.8
-gallery        10x10/prefabricated-office-cabins-10x10-corner-view.webp                   1254x1254     77   100.2
-gallery        10x10/prefabricated-office-cabins-10x10-end-wall-centred-window-ridge.webp 1254x1254     92    93.8
-gallery        10x10/prefabricated-office-cabins-10x10-entrance-wall-from-inside.webp     1254x1254     82   102.1
-gallery        10x10/prefabricated-office-cabins-10x10-four-desks.webp                    1254x1254     79   100.0
-gallery        10x10/prefabricated-office-cabins-10x10-wall-a-door-only.webp              1254x1254     94   102.1
-gallery        10x10/prefabricated-office-cabins-10x10-wall-b-single-window.webp          1254x1254     92    92.3
-gallery        20x10/prefabricated-office-cabins-20x10-end-wall-centred-ridge.webp        1254x1254     91   103.5
-gallery        20x10/prefabricated-office-cabins-20x10-five-desk-team-zone-partition.webp 1254x1254     77    98.7
-gallery        20x10/prefabricated-office-cabins-20x10-manager-room.webp                  1254x1254     83   101.3
-gallery        20x10/prefabricated-office-cabins-20x10-team-zone-towards-end-c.webp       1254x1254     77    99.6
-gallery        20x10/prefabricated-office-cabins-20x10-wall-a-window-door-window.webp     1254x1254     90    97.6
-gallery        20x10/prefabricated-office-cabins-20x10-wall-b-two-windows.webp            1254x1254     92    99.7
-gallery        20x12/prefabricated-office-cabins-20x12-end-wall-twelve-foot-width.webp    1254x1254     90    97.6
-gallery        20x12/prefabricated-office-cabins-20x12-five-desk-team-zone-partition.webp 1254x1254     82   101.0
-gallery        20x12/prefabricated-office-cabins-20x12-manager-room.webp                  1254x1254     83    98.0
-gallery        20x12/prefabricated-office-cabins-20x12-team-zone-towards-end-c.webp       1254x1254     80    98.1
-gallery        20x12/prefabricated-office-cabins-20x12-wall-a-window-door-window.webp     1254x1254     89    98.6
-gallery        20x12/prefabricated-office-cabins-20x12-wall-b-two-windows.webp            1254x1254     87    99.2
-gallery        20x8/prefabricated-office-cabins-20x8-end-wall-one-way-roof.webp           1254x1254     78    97.4
-gallery        20x8/prefabricated-office-cabins-20x8-entrance-wall-from-inside.webp       1254x1254     87    99.4
-gallery        20x8/prefabricated-office-cabins-20x8-reverse-view.webp                    1254x1254     83   100.4
-gallery        20x8/prefabricated-office-cabins-20x8-three-desks-open-plan.webp           1254x1254     84    99.8
-gallery        20x8/prefabricated-office-cabins-20x8-wall-a-window-door-window.webp       1254x1254     61   100.0
-gallery        20x8/prefabricated-office-cabins-20x8-wall-b-two-windows.webp              1254x1254     72    99.2
-gallery        30x10/prefabricated-office-cabins-30x10-end-wall-centred-ridge.webp        1254x1254     88   103.4
-gallery        30x10/prefabricated-office-cabins-30x10-open-plan-desk-runs.webp           1254x1254     67    99.8
-gallery        30x10/prefabricated-office-cabins-30x10-towards-end-c.webp                 1254x1254     63    99.9
-gallery        30x10/prefabricated-office-cabins-30x10-towards-end-d.webp                 1254x1254     75    98.1
-gallery        30x10/prefabricated-office-cabins-30x10-wall-a-two-doors-two-windows.webp  1254x1254     80    97.7
-gallery        30x10/prefabricated-office-cabins-30x10-wall-b-four-windows.webp           1254x1254     76    99.6
-gallery        40x10/prefabricated-office-cabins-40x10-eight-desk-common-office.webp      1254x1254     78   100.6
-gallery        40x10/prefabricated-office-cabins-40x10-end-wall-centred-ridge.webp        1254x1254     89   101.9
-gallery        40x10/prefabricated-office-cabins-40x10-manager-room-m1.webp               1254x1254     87   101.3
-gallery        40x10/prefabricated-office-cabins-40x10-manager-room-m2.webp               1254x1254     88   104.2
-gallery        40x10/prefabricated-office-cabins-40x10-wall-a-two-doors-four-windows.webp 1254x1254     86    97.1
-gallery        40x10/prefabricated-office-cabins-40x10-wall-b-four-windows.webp           1254x1254     88   102.7
-section2_card  section2/prefabricated-office-cabins-20x10-ga-board-card.webp              1600x900      96   102.9
-spec_diagram   specs/prefabricated-office-cabins-frame-sheet-joint-diagram.webp           1600x900      92    98.1
-spec_diagram   specs/prefabricated-office-cabins-window-electrical-fan-diagram.webp       1600x900      91   101.2
---------------------------------------------------------------------------------------------------------------------
+kind           output file                                                              WxH                KB
+----------------------------------------------------------------------------------------------------------------
+ga_board       ga/prefabricated-office-cabins-10x10-ga-board.webp                       1800x1012        98.6
+ga_board       ga/prefabricated-office-cabins-20x10-ga-board.webp                       1800x1012       102.2
+ga_board       ga/prefabricated-office-cabins-20x12-ga-board.webp                       1800x1012        98.0
+ga_board       ga/prefabricated-office-cabins-20x8-ga-board.webp                        1800x1012        98.5
+ga_board       ga/prefabricated-office-cabins-30x10-ga-board.webp                       1800x1012       103.2
+ga_board       ga/prefabricated-office-cabins-40x10-ga-board.webp                       1800x1012        99.8
+gallery        10x10/prefabricated-office-cabins-10x10-corner-view.webp                 1254x1254       100.2
+gallery        10x10/prefabricated-office-cabins-10x10-end-wall-centred-window-ridge.webp 1254x1254        93.8
+gallery        10x10/prefabricated-office-cabins-10x10-entrance-wall-from-inside.webp   1254x1254       102.1
+gallery        10x10/prefabricated-office-cabins-10x10-four-desks.webp                  1254x1254       100.0
+gallery        10x10/prefabricated-office-cabins-10x10-wall-a-door-only.webp            1254x1254       102.1
+gallery        10x10/prefabricated-office-cabins-10x10-wall-b-single-window.webp        1254x1254        92.3
+gallery        20x10/prefabricated-office-cabins-20x10-end-wall-centred-ridge.webp      1254x1254       103.5
+gallery        20x10/prefabricated-office-cabins-20x10-five-desk-team-zone-partition.webp 1254x1254        98.7
+gallery        20x10/prefabricated-office-cabins-20x10-manager-room.webp                1254x1254       101.3
+gallery        20x10/prefabricated-office-cabins-20x10-team-zone-towards-end-c.webp     1254x1254        99.6
+gallery        20x10/prefabricated-office-cabins-20x10-wall-a-window-door-window.webp   1254x1254        97.6
+gallery        20x10/prefabricated-office-cabins-20x10-wall-b-two-windows.webp          1254x1254        99.7
+gallery        20x12/prefabricated-office-cabins-20x12-end-wall-twelve-foot-width.webp  1254x1254        97.6
+gallery        20x12/prefabricated-office-cabins-20x12-five-desk-team-zone-partition.webp 1254x1254       101.0
+gallery        20x12/prefabricated-office-cabins-20x12-manager-room.webp                1254x1254        98.0
+gallery        20x12/prefabricated-office-cabins-20x12-team-zone-towards-end-c.webp     1254x1254        98.1
+gallery        20x12/prefabricated-office-cabins-20x12-wall-a-window-door-window.webp   1254x1254        98.6
+gallery        20x12/prefabricated-office-cabins-20x12-wall-b-two-windows.webp          1254x1254        99.2
+gallery        20x8/prefabricated-office-cabins-20x8-end-wall-one-way-roof.webp         1254x1254        97.4
+gallery        20x8/prefabricated-office-cabins-20x8-entrance-wall-from-inside.webp     1254x1254        99.4
+gallery        20x8/prefabricated-office-cabins-20x8-reverse-view.webp                  1254x1254       100.4
+gallery        20x8/prefabricated-office-cabins-20x8-three-desks-open-plan.webp         1254x1254        99.8
+gallery        20x8/prefabricated-office-cabins-20x8-wall-a-window-door-window.webp     1254x1254       100.0
+gallery        20x8/prefabricated-office-cabins-20x8-wall-b-two-windows.webp            1254x1254        99.2
+gallery        30x10/prefabricated-office-cabins-30x10-end-wall-centred-ridge.webp      1254x1254       103.4
+gallery        30x10/prefabricated-office-cabins-30x10-open-plan-desk-runs.webp         1254x1254        99.8
+gallery        30x10/prefabricated-office-cabins-30x10-towards-end-c.webp               1254x1254        99.9
+gallery        30x10/prefabricated-office-cabins-30x10-towards-end-d.webp               1254x1254        98.1
+gallery        30x10/prefabricated-office-cabins-30x10-wall-a-two-doors-two-windows.webp 1254x1254        97.7
+gallery        30x10/prefabricated-office-cabins-30x10-wall-b-four-windows.webp         1254x1254        99.6
+gallery        40x10/prefabricated-office-cabins-40x10-eight-desk-common-office.webp    1254x1254       100.6
+gallery        40x10/prefabricated-office-cabins-40x10-end-wall-centred-ridge.webp      1254x1254       101.9
+gallery        40x10/prefabricated-office-cabins-40x10-manager-room-m1.webp             1254x1254       101.3
+gallery        40x10/prefabricated-office-cabins-40x10-manager-room-m2.webp             1254x1254       104.2
+gallery        40x10/prefabricated-office-cabins-40x10-wall-a-two-doors-four-windows.webp 1254x1254        97.1
+gallery        40x10/prefabricated-office-cabins-40x10-wall-b-four-windows.webp         1254x1254       102.7
+section2_card  section2/prefabricated-office-cabins-section2-card.webp                  1600x900         94.8
+spec_diagram   specs/prefabricated-office-cabins-frame-sheet-joint-diagram.webp         1600x900         98.1
+spec_diagram   specs/prefabricated-office-cabins-window-electrical-fan-diagram.webp     1600x900        101.2
+----------------------------------------------------------------------------------------------------------------
 45 outputs   min 92.3 KB   max 104.2 KB   total 4.38 MB
+outside the 80-120 KB band: none
 
-Source dimensions: gallery 1254x1254 native (no resample), GA boards and the
-Section 2 card 3840x2160 downscaled proportionally, diagrams 1920x1080 downscaled.
-Nothing was upscaled and nothing was cropped.
+Source dimensions and how each was derived:
+  gallery        1254x1254 native 1:1 renders, shipped at native size, no resample
+  GA boards      3840x2160 native 16:9, downscaled proportionally to 1800x1012
+  Section 2 card 1920x1080 native 16:9 photographic render, downscaled to 1600x900
+  spec diagrams  1920x1080, downscaled to 1600x900
+
+Nothing was upscaled and nothing was cropped. The Section 2 card is a realistic
+exterior render, not a GA board (SAMAN instruction, 5 Sep 2026); its source is
+already 16:9, so it needed no crop.

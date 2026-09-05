@@ -171,6 +171,51 @@ change affecting every page under `/product/portable-office`, and belongs in its
 
 ---
 
+## 7. The asset map points the Section 2 card at a GA board — overridden on instruction
+
+**SAMAN instruction, 5 September 2026:** the Section 2 split card must show a realistic 16:9
+render, not a drawing. This is the **second** time the correction has been needed — SOC-01
+took it as commit `0c19817d`, "realistic exterior render in the Section 2 card".
+
+The signed asset map asks for the drawing:
+
+```json
+"section2_card": {
+  "src": "01-ga-boards/size-20x10/01-prefabricated-office-20x10-ga-board.png",
+  "note": "native 16:9 3840x2160 GA board; downscale only, never crop"
+}
+```
+
+It is 16:9 and approved, so it passes every automated gate — which is exactly why an agent
+building strictly to the pack ships it. It still reads as a spec sheet in a marketing slot.
+
+**What is built now:**
+
+| | |
+|---|---|
+| source | `03-long-description-images/08-prefabricated-office-10x10-compact-exterior.png` |
+| native size | **1920×1080 — already 16:9**, so downscaled to 1600×900 with **no crop at all** |
+| output | `section2/prefabricated-office-cabins-section2-card.webp`, 94.8 KB |
+| uniqueness | the long-description set is otherwise unused on this page, so it appears nowhere else |
+| alt | written to the pack's style, describing only what the render shows — the pack's `alt_text.section2_card` describes the GA board and no longer applies |
+
+The orphaned `...-20x10-ga-board-card.webp` is deleted. The 20×10 GA board itself is
+untouched and still renders in Section 3, where a drawing belongs.
+
+**One trade-off worth your eye:** the card copy names the **20×10**, but every 20×10 render in
+the package is 1:1 and all six are already used in the gallery, so no unused 16:9 image of that
+size exists. The 10×10 compact exterior was chosen because it shows precisely what the card
+talks about — the vertical bolted-panel seams, the top-corner interface plates and the steel
+skid — and because a single standalone module is a literal reading of the card's headline,
+"One module today, a multi-bay office next year". The only other native-16:9 exterior is the
+20×12 shallow-roof end elevation. Swapping to it is a one-line change in
+`rightToExistEntries.tsx` (`imageSrc` plus the alt) if you prefer it.
+
+The signed pack is **not** edited for this: `content/po-02/*` stays byte-identical to the
+source and its `sha256_of_copy` still verifies.
+
+---
+
 ## Also noted, no ruling needed
 
 - **The retired `saman-prefab-office` page is still linked from the `prefabricated-houses`
