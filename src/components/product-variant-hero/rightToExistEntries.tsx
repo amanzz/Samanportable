@@ -297,6 +297,36 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
         </>
       ),
     ],
+    // CC-01 design parity (05 Sep 2026) — the hub shared the outer Section 2
+    // section with the porta-cabins reference but rendered no `.saman-s2-split`
+    // card, so the section stopped at a bare paragraph while every sibling hub
+    // carries the image-left / copy-right split. Same component, same classes,
+    // same field shape as the reference above; the heading and the neutral
+    // paragraph are unchanged. The image is CC-01's own approved 20x8 render and
+    // reuses that variant's shipped alt string verbatim. Card copy is the
+    // approved corrective wording: it routes configuration to the quotation and
+    // asserts no capacity, fabrication origin, warranty, delivery time,
+    // certification or equipment inclusion.
+    splitCard: {
+      // CC-01 final visual (05 Sep 2026) — dedicated 16:9 derivative for this slot only.
+      // The shipped square gallery/explorer image is 1254x1254, so it drove the media column
+      // to 525px at 1440 against the reference's 295px. This is a crop-only derivative of the
+      // owner-approved PNG master (05-OWNER-APPROVED/...-front-left-hero.png, sha256
+      // e22715ec...), box (3,323,1251,1025) at 1:1 with no resampling, encoded by the same
+      // rule as scripts/cc01-optimize-20x8-images.py (Pillow WEBP, method=6, highest quality
+      // <= 195,000 bytes -> q95, 169,040 bytes, SSIM 0.9930 vs the master crop). Background
+      // only was removed: roof, skid, hatch, door and both outer edges stay complete. The
+      // square original is untouched and still serves the gallery and explorer. Alt text is
+      // the same approved string, verbatim.
+      imageSrc: '/images/products/container-cafe/section2/container-cafe-section2-20x8-front-left.webp',
+      imageAlt: 'SAMAN container cafe 20x8x8.5 ft, 160 sq ft, front left three-quarter exterior view',
+      imageWidth: 1248,
+      imageHeight: 702,
+      subheading: 'Published range, project-specific configuration',
+      body: 'Use the published size and price options to shortlist the unit. Confirm kitchen equipment, service openings, utilities, delivery access and final layout through the itemised quotation.',
+      ctaLabel: 'Request an itemised quotation',
+      ctaHref: '/contact',
+    },
   },
   // C-05 subpages — section 2 of their 08 Aug drafts of record, verbatim. The two
   // anchors in each comparison line are exactly the section 6 link plan: one

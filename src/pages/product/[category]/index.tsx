@@ -768,9 +768,15 @@ const ProductDetails = ({
                   // CO-00 (21 Aug 2026) — container-offices was missed at build time
                   // and shipped with the plain grid selector instead of the reference's
                   // premium chip selector, a visible design-lock deviation. Added here.
-                  showSectionDividers={category === 'porta-cabins' || category === 'labor-colony' || category === 'container-offices' || category === 'portable-office'}
+                  // CC-01 design parity (05 Sep 2026) — MT-8: `container-cafe` was
+                  // left out of this list when CC-01 shipped, so the hub still renders
+                  // the plain grid/button selector and no section dividers while every
+                  // other cluster hub carries the porta-cabins treatment. Added to the
+                  // existing narrowly scoped gate; no duplicated CSS and no cafe-specific
+                  // selector, so every other category stays byte-identical.
+                  showSectionDividers={category === 'porta-cabins' || category === 'labor-colony' || category === 'container-offices' || category === 'portable-office' || category === 'container-cafe'}
                   // R3 (14 Aug 2026) — same hub-only scoping as the dividers.
-                  usePremiumSizeTabs={category === 'porta-cabins' || category === 'labor-colony' || category === 'container-offices' || category === 'portable-office'}
+                  usePremiumSizeTabs={category === 'porta-cabins' || category === 'labor-colony' || category === 'container-offices' || category === 'portable-office' || category === 'container-cafe'}
                   // LC-00 R1 (16 Aug 2026) — the premium branch shows sizeEyebrowText
                   // (falling back to the porta-cabins hub's own em-dash sentence when
                   // absent), not the plain branch's hardcoded "Choose size". R1 asks
@@ -780,7 +786,12 @@ const ProductDetails = ({
                   // applies to container-offices: the em-dash fallback would violate
                   // the no-em-dash rule, so the existing plain label is reused rather
                   // than inventing new eyebrow copy.
-                  sizeEyebrowText={category === 'labor-colony' || category === 'container-offices' || category === 'portable-office' ? 'Choose size' : undefined}
+                  // CC-01 design parity (05 Sep 2026) — same reasoning as
+                  // container-offices: this is a STYLING correction, so the eyebrow keeps
+                  // the exact wording CC-01 already ships. Inheriting the premium branch's
+                  // porta-cabins fallback sentence would both change approved copy and
+                  // introduce an em dash.
+                  sizeEyebrowText={category === 'labor-colony' || category === 'container-offices' || category === 'portable-office' || category === 'container-cafe' ? 'Choose size' : undefined}
                   // CO-00 (19 Aug 2026) — data-driven, same forwarding pattern as
                   // suppressLegacyFaqSchema above. Absent/false on every other
                   // product's variantData → no id emitted, byte-identical elsewhere.
@@ -1068,7 +1079,7 @@ const ProductDetails = ({
                   production entry band, which is the calculator's entry point.
                   Hub page only. LC-00 R2 (16 Aug 2026) — labor-colony opts into the
                   identical treatment, so all four dividers match porta-cabins. */}
-              {(category === 'porta-cabins' || category === 'labor-colony' || category === 'portable-office') && (deferredCalculator || legacyEmbeddedCalculatorMapping) && (
+              {(category === 'porta-cabins' || category === 'labor-colony' || category === 'portable-office' || category === 'container-cafe') && (deferredCalculator || legacyEmbeddedCalculatorMapping) && (
                 <hr className="saman-section-divider" aria-hidden="true" />
               )}
 
@@ -1122,7 +1133,7 @@ const ProductDetails = ({
                   grid of its own (out of scope for this revision), so this divider
                   sits directly between the calculator and the tabs instead; still
                   the same top-level section boundary the prop is meant to mark. */}
-              {(category === 'porta-cabins' || category === 'labor-colony' || category === 'portable-office') && (
+              {(category === 'porta-cabins' || category === 'labor-colony' || category === 'portable-office' || category === 'container-cafe') && (
                 <hr className="saman-section-divider" aria-hidden="true" />
               )}
 
