@@ -34,5 +34,12 @@ Shared components below the hero take no per-page behaviour prop from this route
   ProductTabs         - specificationsHtml / shippingHtml / reviewsEmptyStateText
                         (content); shippingHtml is buildShippingHtml() with NO
                         options, i.e. the same call the design lock makes.
+  ProductTabs.fullMobileLabels - PO-05-R2 change 3 (6 Sep 2026): this route no
+                        longer opts in, so the prop defaults to false and the tab
+                        strip renders the shared component's own responsive label
+                        pair (Description/Info, Specifications/Specs, Shipping/Ship),
+                        byte-identical to the design lock. The opt-in clause was
+                        removed from the slug allowlist in [slug].tsx, which is now
+                        byte-identical to origin/static-migration on that line.
 
 RESULT: PASS

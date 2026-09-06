@@ -114,7 +114,7 @@ BLOCKS = [
     (4,  "price display for the selected size", re.escape("+ GST")),
     (5,  "H2 Explore the Range panel",        r'>Explore the Range<'),
     (6,  "Section 2 RightToExist + split card", re.escape(COPY["section2"]["h2"])),
-    (7,  "Section 2 media pairing (split card)", r'portable-mobile-laboratory-20x10-ga-board-card\.webp'),
+    (7,  "Section 2 media pairing (split card)", r'portable-mobile-laboratory-20x10-bench-and-sink\.webp'),
     (8,  "Section 3 SizeApplicationsExplorer", re.escape(COPY["section3"]["h2"])),
     (9,  "Section 4 calculator",              r'PRICE IT YOURSELF'),
     (10, "You may also like",                 r'>You may also like<'),
@@ -210,6 +210,13 @@ out += ["",
         "  ProductTabs         - specificationsHtml / shippingHtml / reviewsEmptyStateText",
         "                        (content); shippingHtml is buildShippingHtml() with NO",
         "                        options, i.e. the same call the design lock makes.",
+        "  ProductTabs.fullMobileLabels - PO-05-R2 change 3 (6 Sep 2026): this route no",
+        "                        longer opts in, so the prop defaults to false and the tab",
+        "                        strip renders the shared component's own responsive label",
+        "                        pair (Description/Info, Specifications/Specs, Shipping/Ship),",
+        "                        byte-identical to the design lock. The opt-in clause was",
+        "                        removed from the slug allowlist in [slug].tsx, which is now",
+        "                        byte-identical to origin/static-migration on that line.",
         "",
         "RESULT: " + ("PASS" if not behaviour else "FAIL")]
 if behaviour:
@@ -245,7 +252,18 @@ check("explicit width and height on every img",
 check("no U+2014 in body text", "—" not in text)
 for tab in ["Description", "Specifications", "Shipping", "Reviews"]:
     check("tab panel present in the fetched HTML: " + tab, tab in text)
-check("no 'Info' tab label", not re.search(r">\s*Info\s*<", b))
+# PO-05-R2 change 3 (6 Sep 2026): each tab carries TWO spans, the wide-screen label
+# and the small-screen label, and they must differ. "DescriptionDescription" is the
+# defect; "DescriptionInfo" is the design lock. The earlier "no Info tab label" check
+# encoded the misreading of "there is no fifth tab called Info" and is dropped.
+for wide, small in [("Description", "Info"), ("Specifications", "Specs"),
+                    ("Shipping", "Ship")]:
+    check(f"tab renders the responsive label pair {wide}/{small}",
+          re.search(r">\s*%s\s*<[^>]*>\s*%s\s*<" % (wide, small), b) is not None
+          or (wide + small) in re.sub(r"<[^>]+>", "", b),
+          wide + small)
+    check(f"tab does not duplicate the long label ({wide}{wide})",
+          (wide + wide) not in re.sub(r"<[^>]+>", "", b))
 # Normalise "-", en dash and " to " BETWEEN DIGITS before grepping, per the gate.
 norm = re.sub(r"(\d)\s*(?:-|–|to)\s*(\d)", r"\1-\2", text)
 for pat in ["coming soon", "available on request", "contact us for details", "placeholder", "TBD"]:

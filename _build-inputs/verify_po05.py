@@ -133,8 +133,29 @@ for slug, gal in amap.get("gallery_new", {}).items():
 for slug, f in amap.get("ga_boards", {}).get("files", {}).items():
     p = os.path.join(public_dir, amap["output_root"].replace("public/", ""), f["out"])
     ok = os.path.exists(p); kb = os.path.getsize(p) // 1024 if ok else -1
-    check(f"GA webp {slug} exists and 80-120 KB", ok and 80 <= kb <= 120, kb)
+    check(f"GA webp {slug} exists and 80-120 KB (Specifications tab)", ok and 80 <= kb <= 120, kb)
+# Section 3 left column: a PHOTOGRAPH, not the GA board (SAMAN ruling 6 Sep 2026)
+for slug, f in amap.get("section3_images", {}).get("files", {}).items():
+    p = os.path.join(public_dir, amap["output_root"].replace("public/", ""), f["out"])
+    ok = os.path.exists(p); kb = os.path.getsize(p) // 1024 if ok else -1
+    check(f"Section 3 photo {slug} exists and 80-120 KB", ok and 80 <= kb <= 120, kb)
+    check(f"Section 3 photo {slug} referenced on the page", os.path.basename(f["out"]) in doc)
     if ok:
+        try:
+            from PIL import Image
+            w, h = Image.open(p).size
+            check(f"Section 3 photo {slug} is 16:9", abs(w / h - 16 / 9) < 0.02, (w, h))
+        except Exception as e:
+            check(f"Section 3 photo {slug} ratio check", False, e)
+_s3 = text.find(copy["section3"]["h2"])
+_ga_in_s3 = [os.path.basename(f["out"]) for f in amap.get("ga_boards", {}).get("files", {}).values()
+             if 0 <= doc.find(os.path.basename(f["out"])) and _s3 >= 0
+             and doc.find(os.path.basename(f["out"])) > doc.find(copy["section3"]["h2"])
+             and doc.find(os.path.basename(f["out"])) < doc.find(copy["specifications_tab"]["narrative"][0])]
+check("no GA board renders in Section 3", not _ga_in_s3, _ga_in_s3)
+for slug, f in amap.get("ga_boards", {}).get("files", {}).items():
+    p = os.path.join(public_dir, amap["output_root"].replace("public/", ""), f["out"])
+    if os.path.exists(p):
         try:
             from PIL import Image
             w, h = Image.open(p).size
@@ -165,6 +186,8 @@ _descimgs = [it for sec in copy["description_tab"]["sections"] for it in sec["it
 check("copy pack carries six Description-tab images", len(_descimgs) == 6, len(_descimgs))
 check("Section 2 carries exactly one image (the split card)",
       doc.count(os.path.basename(amap["section2_card"]["out"])) >= 1)
+check("Section 2 card is a photograph, not a GA board",
+      "ga-board" not in os.path.basename(amap["section2_card"]["out"]))
 for slug, f in amap.get("spec_diagrams", {}).items():
     p = os.path.join(public_dir, amap["output_root"].replace("public/", ""), f["out"])
     ok = os.path.exists(p); kb = os.path.getsize(p) // 1024 if ok else -1

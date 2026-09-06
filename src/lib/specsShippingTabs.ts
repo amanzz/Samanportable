@@ -1324,6 +1324,22 @@ const PO05_SPEC_DIAGRAMS = [
     height: 900,
   },
 ] as const;
+/** PO-05-R2 (SAMAN ruling, 6 Sep 2026) - Section 3's left column now carries a
+    photograph of the unit, so the six approved GA specification boards render HERE,
+    below the group tables and above the two coordination diagrams. Order comes from
+    the copy pack's `ga_board_slots`; the boards are never cropped (native 16:9,
+    downscaled to 1800 px only) and every one is lazy. */
+const PO05_GA_BOARDS = portableMobileLaboratoryCopy.specifications_tab.ga_board_slots.map(
+  (slot) => {
+    const size = slot.replace(/^ga_/, '') as keyof typeof portableMobileLaboratoryAssets.ga_boards.files;
+    return {
+      src: `${PO05_IMG_ROOT}/${portableMobileLaboratoryAssets.ga_boards.files[size].out}`,
+      alt: (portableMobileLaboratoryCopy.alt_text.ga_boards as Record<string, string>)[size],
+      width: 1800,
+      height: 1012,
+    };
+  }
+);
 const PO05_SPEC_PDF = {
   href: `/${portableMobileLaboratoryAssets.spec_pdf.out.replace('public/', '')}`,
   label: portableMobileLaboratoryAssets.spec_pdf.link_label,
@@ -1362,6 +1378,18 @@ function buildPortableMobileLaboratorySpecificationsHtml(): string {
     );
   }).join('');
 
+  // The six approved GA boards sit between the tables and the coordination diagrams.
+  // `specifications_tab.ga_board_note` is a build instruction, not buyer-facing copy
+  // (narrative paragraph 3 already announces the boards), so it is not rendered.
+  const gaBoards = PO05_GA_BOARDS
+    .map((b) => (
+      `<figure class="mt-4 m-0 rounded-xl border border-slate-200 bg-white p-5 shadow-sm">` +
+        `<img src="${esc(b.src)}" alt="${esc(b.alt)}" width="${b.width}" height="${b.height}" ` +
+        `loading="lazy" class="w-full h-auto rounded-lg" />` +
+      `</figure>`
+    ))
+    .join('');
+
   const diagrams = PO05_SPEC_DIAGRAMS
     .map((d) => (
       `<figure class="mt-4 m-0 rounded-xl border border-slate-200 bg-white p-5 shadow-sm">` +
@@ -1376,7 +1404,7 @@ function buildPortableMobileLaboratorySpecificationsHtml(): string {
     `class="font-semibold text-emerald-800 underline underline-offset-2">` +
     `${esc(PO05_SPEC_PDF.label)}</a></p>`;
 
-  return `<div class="not-prose">${narrative}${cards}${diagrams}${pdf}</div>`;
+  return `<div class="not-prose">${narrative}${cards}${gaBoards}${diagrams}${pdf}</div>`;
 }
 
 /** Both tab bodies for a page slug, or null when the slug is not in scope. */

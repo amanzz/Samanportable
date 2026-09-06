@@ -43,19 +43,26 @@ for v in COPY["hero"]["variants"]:
     })
 
 # ------------------------------------------------------- Section 3 explorer panels
-gaAlt = COPY["alt_text"]["ga_boards"]
+# PO-05-R2 change 1 (SAMAN ruling, 6 Sep 2026): the left column shows a PHOTOGRAPH of
+# the unit, not the 2D GA drawing. The six approved GA boards move to the Specifications
+# tab (wired in src/lib/specsShippingTabs.ts). The panel box is the shared
+# aspect-[4/3] object-cover box, exactly as the design lock renders it, so no `fit`
+# override is passed here - that override exists only for dimensioned drawings.
+s3Alt = COPY["alt_text"]["section3_images"]
 panels = [{
     "sizeSlug": s["slug"],
     "h3": s["h3"],
     "paragraph": s["paragraph"],
     "applications": s["bullets"],
     "image": {
-        "src": IMG + "/" + AMAP["ga_boards"]["files"][s["slug"]]["out"],
-        "alt": gaAlt[s["slug"]],
-        "provenance": "drawing",
-        "width": 1800, "height": 1012,
-        # A dimensioned GA board is never cropped: contain inside the panel 4:3 box.
-        "fit": "contain",
+        "src": IMG + "/" + AMAP["section3_images"]["files"][s["slug"]]["out"],
+        "alt": s3Alt[AMAP["section3_images"]["files"][s["slug"]]["out"]],
+        # Same provenance as the gallery slides: these are the approved renders.
+        "provenance": "render",
+        # Native 1:1, exactly as the design lock feeds this aspect-[4/3] object-cover
+        # box. A pre-cropped 16:9 file would be cropped a second time by the box and
+        # would clip both ends of the unit (SAMAN ruling, 6 Sep 2026).
+        "width": 1254, "height": 1254,
     },
 } for s in COPY["section3"]["sizes"]]
 

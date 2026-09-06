@@ -28,7 +28,7 @@ BAND_LO_KB, BAND_HI_KB = AMAP["rules"]["webp_size_band_kb"]
 OUT_ROOT = os.path.join(ROOT, AMAP["output_root"].replace("/", os.sep))
 
 
-def encode(src_rel, out_rel, width, q_start, slot):
+def encode(src_rel, out_rel, width, q_start, slot, crop_169=False):
     src = os.path.join(PKG, src_rel.replace("/", os.sep))
     if not os.path.exists(src):
         raise SystemExit("MISSING SOURCE: " + src)
@@ -37,6 +37,16 @@ def encode(src_rel, out_rel, width, q_start, slot):
     im = Image.open(src)
     if im.mode in ("RGBA", "LA", "P"):
         im = im.convert("RGB")
+    if crop_169:
+        # PO-05-R2 change 1/2: the gallery masters are 1:1 and the Section 3 and
+        # Section 2 slots are 16:9. Take a CENTRED 16:9 crop - full width, equal
+        # trim top and bottom. This is the sanctioned case in the standing rule
+        # ("crop only to reach the slot's ratio, never to reduce file size").
+        cw, ch = im.size
+        nh = int(round(cw * 9 / 16))
+        if nh < ch:
+            top = (ch - nh) // 2
+            im = im.crop((0, top, cw, top + nh))
     sw, sh = im.size
 
     def render(w, q):
@@ -105,9 +115,24 @@ def main():
     for size, f in AMAP["ga_boards"]["files"].items():
         rows.append(encode(f["src"], f["out"], rules["ga_board"]["width_px"],
                            rules["ga_board"]["quality_start"], "ga/" + size))
+    # PO-05-R2 change 1 (SAMAN ruling 6 Sep 2026): Section 3's left column shows a
+    # PHOTOGRAPH of the unit, not the 2D GA drawing. The GA boards move to the
+    # Specifications tab and are still never cropped.
+    # SAMAN ruling 6 Sep 2026 (PO-05-R2, second pass): ship the master at its native
+    # 1:1, NOT a 16:9 crop. The shared explorer panel is a fixed aspect-[4/3]
+    # object-cover box, so a 16:9 file is cropped a second time by 12.5% per side and
+    # both ends of the unit are clipped. The design lock feeds this same box a 1:1
+    # file (porta-cabin-ga-plan-20x10.webp, 1254x1254), where object-cover trims only
+    # sky and foreground. Matching the lock is what keeps the whole unit in frame.
+    for size, f in AMAP["section3_images"]["files"].items():
+        rows.append(encode(f["src"], f["out"], rules["gallery"]["width_px"],
+                           rules["gallery"]["quality_start"], "section3/" + size))
+    # PO-05-R2 change 2: the split card is a photograph too, matching the lock's own
+    # card, centre-cropped from the 1:1 interior master to the slot's native 16:9.
     c = AMAP["section2_card"]
     rows.append(encode(c["src"], c["out"], rules["section2_card"]["width_px"],
-                       rules["section2_card"]["quality_start"], "section2"))
+                       rules["section2_card"]["quality_start"], "section2",
+                       crop_169=True))
     # The six 16:9 frames live INSIDE the Description tab, at the anchors the copy pack
     # encodes - the same way the porta-cabins design lock publishes its own six. There
     # is no image band between Section 2 and Section 3 (PO-05-R1, 6 Sep 2026).

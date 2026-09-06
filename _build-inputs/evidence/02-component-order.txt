@@ -8,11 +8,11 @@ preview: http://localhost:3105/product/portable-office/portable-mobile-laborator
 4    price display for the selected size                 44583
 5    H2 Explore the Range panel                          50829
 6    Section 2 RightToExist + split card                 57551
-7    Section 2 media pairing (split card)                59305
-8    Section 3 SizeApplicationsExplorer                  60471
-9    Section 4 calculator                                98998
-10   You may also like                                  314525
-11   Section 5 Product Details tab strip                320150
+7    Section 2 media pairing (split card)                59303
+8    Section 3 SizeApplicationsExplorer                  60476
+9    Section 4 calculator                                98921
+10   You may also like                                  314448
+11   Section 5 Product Details tab strip                320073
 
 RESULT: PASS - all eleven blocks present, in the canonical order.
 

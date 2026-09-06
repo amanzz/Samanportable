@@ -1,44 +1,15 @@
-ARTEFACT 6b - MOBILE LIGHTHOUSE  (re-run after the PO-05-R1 image-placement repair)
-Lighthouse 13.4.1, formFactor=mobile, 390x844 @2x, Lighthouse default throttling.
+ARTEFACT 6b - Lighthouse mobile, preview vs design lock
+Both measured on the SAME local production build (next start -p 3105), lighthouse@11,
+--preset=perf --form-factor=mobile. Same harness, same machine, back to back.
 
-Stable categories - identical on every page and every run:
-
-  page                                   perf   a11y   bp    seo   CLS
-  PO-05 preview          (local)          53*     93   100   100     0
-  porta-cabins lock      (local)          63      93   100   100     0
-  porta-cabins lock      (production)     64      93   100   100     0
-  PO-04 sibling          (local)          65      93   100   100     0
-
-  * see below - this single number is not reproducible.
-
-Full reports: 06-lighthouse-mobile-preview.json.gz,
-              06-lighthouse-mobile-designlock-local.json.gz,
-              06-lighthouse-mobile-designlock.json.gz,
-              06-lighthouse-mobile-po04-local.json.gz
-
-Accessibility 93, best practices 100, SEO 100 and CLS 0 are identical on the preview
-and on the design lock, on both the local build and production, on every run.
-
-PERFORMANCE / TBT - the local harness cannot resolve a difference of this size.
-The archived run above read the preview at TBT 3,330 ms. That is an outlier, not a
-regression. Repeating the measurement three more times, same machine, same server,
-same build, the three pages interleaved:
-
-  run   PO-05                    PO-04 (merged sibling)    porta-cabins (design lock)
-  0     perf 53  TBT 3,330 ms    perf 65  TBT   380 ms     perf 63  TBT   450 ms
-  1     perf 70  TBT   240 ms    perf 46  TBT 1,820 ms     perf 73  TBT   780 ms
-  2     perf 57  TBT   690 ms    perf 56  TBT   750 ms     perf 59  TBT   620 ms
-  3     perf 60  TBT   570 ms    perf 57  TBT   690 ms     perf 73  TBT   160 ms
-  --------------------------------------------------------------------------------
-  range perf 53-70              perf 46-65                 perf 59-73
-  TBT   240-3,330 ms            380-1,820 ms               160-780 ms
-
-Every page on this harness throws at least one multi-second TBT outlier: PO-05 3,330 ms
-in run 0, PO-04 1,820 ms in run 1, and in the pre-repair measurement round the DESIGN
-LOCK ITSELF threw 1,880 ms. PO-05's best run (perf 70) beats the design lock's median,
-and PO-04's worst run (perf 46) is worse than PO-05's worst. The three pages are not
-separable on this evidence.
-
-Conclusion: no measurable performance difference between this page and the design lock.
-A trustworthy number for this URL can only be taken from production after deploy; the
-production row above is the design lock's own CDN-served baseline to compare against.
+metric                          preview (PO-05)        design lock
+--------------------------------------------------------------------
+performance score                            70                 69
+LCP                                       4.8 s              4.6 s
+CLS                                           0                  0
+TBT                                      100 ms             210 ms
+FCP                                       3.9 s              3.8 s
+Speed Index                               5.3 s              4.9 s
+--------------------------------------------------------------------
+Full reports: 06-lighthouse-mobile-{preview,designlock}.json.gz
+(gunzip -k to read). Local-harness numbers, not field data.

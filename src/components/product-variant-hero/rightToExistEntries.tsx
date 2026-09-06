@@ -1506,17 +1506,17 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
     topCtaLabel: portableMobileLaboratoryCopy.section2.cta,
     topCtaHref: '#porta-size-applications',
     splitCard: {
-      // SAMAN's PO-05 asset map names the 20x10 GA board for this slot explicitly and
-      // the pack's card copy describes that board ("The 20x10 GA board shows the
-      // arrangement every size follows"), so the board IS the subject of the card here.
-      // It is encoded separately at 1600x900 and is never cropped.
+      // PO-05-R2 (SAMAN ruling, 6 Sep 2026): the card is a PHOTOGRAPH, matching the
+      // design lock's own card, which ships a native 16:9 photograph in this slot with
+      // no aspect box and no object-cover. The GA board it previously carried moved to
+      // the Specifications tab. Encoded from the 20x10 workbench interior master with a
+      // centred 16:9 crop - the sanctioned crop-to-slot-ratio case.
       imageSrc: `/${PO05_ASSETS.output_root.replace('public/', '')}/${PO05_ASSETS.section2_card.out}`,
-      // alt_text.section2_card is written for THIS slot and differs from
-      // alt_text.ga_boards['20x10'], so the same board rendering again in Section 3
-      // does not give the page a duplicate alt.
+      // alt_text.section2_card is written for THIS slot and describes the interior,
+      // so it stays distinct from every gallery, Section 3 and GA-board alt.
       imageAlt: portableMobileLaboratoryCopy.alt_text.section2_card,
-      imageWidth: 1600,
-      imageHeight: 900,
+      imageWidth: 1254,
+      imageHeight: 705,
       subheading: portableMobileLaboratoryCopy.section2.split_card.h3,
       body: portableMobileLaboratoryCopy.section2.split_card.paragraph1,
       body2: portableMobileLaboratoryCopy.section2.split_card.paragraph2,

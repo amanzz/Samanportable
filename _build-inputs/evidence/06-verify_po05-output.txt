@@ -3,7 +3,7 @@ PASS H1 text  | ['Portable Mobile Laboratory: Six Sizes, 100 to 400 sq ft']
 PASS title text  | ['Portable Mobile Laboratory Cabin: 6 Sizes, Prices │ SAMAN']
 PASS meta description  | ['Lab-ready portable laboratory cabin in six sizes, 100 to 400 sq ft, ex-GST prices published, coved vinyl floor, washable liner and a scheduled bench and sink.']
 PASS canonical self  | ['https://www.samanportable.com/product/portable-office/portable-mobile-laboratory']
-PASS block order hero > explore > section2 > card > section3 > calculator > YMAL > product details  | [('Choose your size - six approved laboratory sizes', 1238), ('Explore the Range', 2595), ('Portable Mobile Laboratory: A Cleanable Room, Not an Office Cabin', 3339), ('One sink, one sealed sleeve, and a cleaning aisle you can measure', 4312), ('Compare the six laboratory sizes, 100 to 400 sq ft', 4811), ('PRICE IT YOURSELF', 11169), ('You may also like', 29367), ('Product Details', 29865)]
+PASS block order hero > explore > section2 > card > section3 > calculator > YMAL > product details  | [('Choose your size - six approved laboratory sizes', 1238), ('Explore the Range', 2595), ('Portable Mobile Laboratory: A Cleanable Room, Not an Office Cabin', 3339), ('One sink, one sealed sleeve, and a cleaning aisle you can measure', 4312), ('Compare the six laboratory sizes, 100 to 400 sq ft', 4817), ('PRICE IT YOURSELF', 11171), ('You may also like', 29369), ('Product Details', 29867)]
 PASS size 10x10 ex-GST price present  | ₹2,30,000
 PASS size 10x10 incl-GST price present  | ₹2,71,400
 PASS size 20x8 ex-GST price present  | ₹3,52,000
@@ -129,7 +129,7 @@ PASS faq visible: Can a fume hood be fitted?
 PASS faq visible: How is the laboratory lifted and placed?
 PASS spec narrative  | These specifications describe the lab-ready enclos
 PASS spec narrative  | Final member sizes, connections, lifting details a
-PASS spec narrative  | Two coordination diagrams follow the tables. The f
+PASS spec narrative  | Below the tables sit the six approved GA specifica
 PASS spec row: SZ-01  | ['SZ-01', '10×10×8.5']
 PASS spec row: SZ-02  | ['SZ-02', '20×8×8.5']
 PASS spec row: SZ-03  | ['SZ-03', '20×10×8.5']
@@ -198,7 +198,7 @@ PASS forbidden absent: 'lab on wheels'
 PASS forbidden absent: 'mobile laboratory van'
 PASS forbidden absent: '—'
 PASS no U+2014 in copy
-PASS no 'Info' tab label
+FAIL no 'Info' tab label
 PASS link present /product/portable-office
 PASS link present /product/container-offices
 PASS link present /product/portable-office/readymade-office-cabin
@@ -229,10 +229,10 @@ PASS internal link 200: /product/prefabricated-houses  | 200
 PASS internal link 200: /product/puf-panel  | 200
 PASS internal link 200: /product/roofing-sheet  | 200
 PASS internal link 200: /product/security-cabins  | 200
-PASS no empty alt  | 33
+PASS no empty alt  | 39
 PASS no duplicate alt
 PASS no source PNG served
-PASS explicit width/height on every img  | 33
+PASS explicit width/height on every img  | 39
 PASS webp 10x10/portable-mobile-laboratory-10x10-front-door-wall.webp exists and 80-120 KB  | 117
 PASS webp 10x10/portable-mobile-laboratory-10x10-interior-from-door.webp exists and 80-120 KB  | 117
 PASS webp 10x10/portable-mobile-laboratory-10x10-interior-bench-run.webp exists and 80-120 KB  | 119
@@ -267,17 +267,36 @@ PASS webp 40x10/portable-mobile-laboratory-40x10-rear-four-windows.webp exists a
 PASS webp 40x10/portable-mobile-laboratory-40x10-interior-from-door.webp exists and 80-120 KB  | 84
 PASS webp 40x10/portable-mobile-laboratory-40x10-interior-capacity-bench.webp exists and 80-120 KB  | 83
 PASS webp 40x10/portable-mobile-laboratory-40x10-sink-service-interface.webp exists and 80-120 KB  | 86
-PASS GA webp 10x10 exists and 80-120 KB  | 82
+PASS GA webp 10x10 exists and 80-120 KB (Specifications tab)  | 82
+PASS GA webp 20x8 exists and 80-120 KB (Specifications tab)  | 88
+PASS GA webp 20x10 exists and 80-120 KB (Specifications tab)  | 86
+PASS GA webp 20x12 exists and 80-120 KB (Specifications tab)  | 90
+PASS GA webp 30x10 exists and 80-120 KB (Specifications tab)  | 87
+PASS GA webp 40x10 exists and 80-120 KB (Specifications tab)  | 89
+PASS Section 3 photo 10x10 exists and 80-120 KB  | 117
+PASS Section 3 photo 10x10 referenced on the page
+FAIL Section 3 photo 10x10 is 16:9  | (1254, 1254)
+PASS Section 3 photo 20x8 exists and 80-120 KB  | 119
+PASS Section 3 photo 20x8 referenced on the page
+FAIL Section 3 photo 20x8 is 16:9  | (1254, 1254)
+PASS Section 3 photo 20x10 exists and 80-120 KB  | 113
+PASS Section 3 photo 20x10 referenced on the page
+FAIL Section 3 photo 20x10 is 16:9  | (1254, 1254)
+PASS Section 3 photo 20x12 exists and 80-120 KB  | 117
+PASS Section 3 photo 20x12 referenced on the page
+FAIL Section 3 photo 20x12 is 16:9  | (1254, 1254)
+PASS Section 3 photo 30x10 exists and 80-120 KB  | 116
+PASS Section 3 photo 30x10 referenced on the page
+FAIL Section 3 photo 30x10 is 16:9  | (1254, 1254)
+PASS Section 3 photo 40x10 exists and 80-120 KB  | 120
+PASS Section 3 photo 40x10 referenced on the page
+FAIL Section 3 photo 40x10 is 16:9  | (1254, 1254)
+PASS no GA board renders in Section 3
 PASS GA 10x10 ratio 16:9 (never cropped)  | (1800, 1012)
-PASS GA webp 20x8 exists and 80-120 KB  | 88
 PASS GA 20x8 ratio 16:9 (never cropped)  | (1800, 1012)
-PASS GA webp 20x10 exists and 80-120 KB  | 86
 PASS GA 20x10 ratio 16:9 (never cropped)  | (1800, 1012)
-PASS GA webp 20x12 exists and 80-120 KB  | 90
 PASS GA 20x12 ratio 16:9 (never cropped)  | (1800, 1012)
-PASS GA webp 30x10 exists and 80-120 KB  | 87
 PASS GA 30x10 ratio 16:9 (never cropped)  | (1800, 1012)
-PASS GA webp 40x10 exists and 80-120 KB  | 89
 PASS GA 40x10 ratio 16:9 (never cropped)  | (1800, 1012)
 PASS description webp description_01 exists and 80-120 KB  | 120
 PASS description image description_01 referenced on the page  | portable-mobile-laboratory-description-01-20x10-dual-bench-room.webp
@@ -294,9 +313,10 @@ PASS description image description_06 referenced on the page  | portable-mobile-
 PASS no image band between Section 2 and Section 3
 PASS copy pack carries six Description-tab images  | 6
 PASS Section 2 carries exactly one image (the split card)
+PASS Section 2 card is a photograph, not a GA board
 PASS spec diagram 1 exists and 80-120 KB  | 80
 PASS spec diagram 2 exists and 80-120 KB  | 87
-PASS section 2 card webp exists and 80-120 KB  | 80
+PASS section 2 card webp exists and 80-120 KB  | 99
 PASS held-out source not published: 02-mobile-laboratory-10x10-rear-angle  | 02-mobile-laboratory-10x10-rear-angle
 PASS held-out source not published: 03-mobile-laboratory-10x10-side-elevation  | 03-mobile-laboratory-10x10-side-elevation
 PASS 10x10 gallery ships four slides (SAMAN ruling, deliberate)  | {'10x10': 4, '20x8': 6, '20x10': 6, '20x12': 6, '30x10': 6, '40x10': 6}
@@ -331,4 +351,4 @@ PASS faq schema matches visible: Is the sink connected, and is
 PASS faq schema matches visible: Can a fume hood be fitted?
 PASS faq schema matches visible: How is the laboratory lifted a
 
-RESULT: PASS
+RESULT: FAIL (7 checks)
