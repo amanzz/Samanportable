@@ -28,7 +28,7 @@
    "ratio": "16:9",
    "crop": "none (source is native 16:9)"
   },
-  "media_band": {
+  "description_image": {
    "width_px": 1600,
    "quality_start": 90,
    "ratio": "16:9",
@@ -39,7 +39,7 @@
    "quality_start": 90,
    "crop": "none"
   },
-  "loading": "the six (four for 10x10) images of the selected size eager with fetchpriority=high on slide 1 only; every other size lazy; explicit width and height on every img; preload link for slide 1 of the default size (20x10) carrying the same imagesrcset; GA boards, media band and diagrams lazy",
+  "loading": "the six (four for 10x10) images of the selected size eager with fetchpriority=high on slide 1 only; every other size lazy; explicit width and height on every img; preload link for slide 1 of the default size (20x10) carrying the same imagesrcset; GA boards, description-tab images and diagrams lazy",
   "measure_every_output": "report width, height and KB for every file; anything outside 80-120 KB is re-encoded (quality first, then width) and re-measured"
  },
  "keep_as_is": {
@@ -252,35 +252,53 @@
   "out": "section2/portable-mobile-laboratory-20x10-ga-board-card.webp",
   "alt_text_source": "copy JSON -> alt_text.section2_card"
  },
- "media_band": {
-  "slot": "Block 7, six 16:9 frames in size order",
+ "description_images": {
+  "slot": "Inside the Description tab prose, at the anchors given per image. This is how the porta-cabins design lock publishes its six description frames. There is NO image band between Section 2 and Section 3.",
   "files": {
-   "10x10": {
-    "src": "_long-description/_master/01-mobile-laboratory-10x10-compact-workflow.png",
-    "out": "media/portable-mobile-laboratory-10x10-compact-workflow.webp"
-   },
-   "20x8": {
-    "src": "_long-description/_master/02-mobile-laboratory-20x8-linear-workflow.png",
-    "out": "media/portable-mobile-laboratory-20x8-linear-workflow.webp"
-   },
-   "20x10": {
+   "description_01": {
     "src": "_long-description/_master/03-mobile-laboratory-20x10-dual-workflow.png",
-    "out": "media/portable-mobile-laboratory-20x10-dual-bench-workflow.webp"
+    "out": "description/portable-mobile-laboratory-description-01-20x10-dual-bench-room.webp",
+    "size": "20x10",
+    "after_h2": "Portable mobile laboratory, or a laboratory on wheels? Read this first",
+    "after": 2
    },
-   "20x12": {
-    "src": "_long-description/_master/04-mobile-laboratory-20x12-wide-workflow.png",
-    "out": "media/portable-mobile-laboratory-20x12-wide-aisle-workflow.webp"
-   },
-   "30x10": {
+   "description_02": {
     "src": "_long-description/_master/05-mobile-laboratory-30x10-sample-workflow.png",
-    "out": "media/portable-mobile-laboratory-30x10-sample-flow-workflow.webp"
+    "out": "description/portable-mobile-laboratory-description-02-30x10-sample-flow.webp",
+    "size": "30x10",
+    "after_h2": "Who orders a portable mobile laboratory, and where it stands",
+    "after": 1
    },
-   "40x10": {
+   "description_03": {
+    "src": "_long-description/_master/02-mobile-laboratory-20x8-linear-workflow.png",
+    "out": "description/portable-mobile-laboratory-description-03-20x8-linear-finish.webp",
+    "size": "20x8",
+    "after_h2": "What lab-ready means on this page, and what it does not",
+    "after": 2
+   },
+   "description_04": {
+    "src": "_long-description/_master/01-mobile-laboratory-10x10-compact-workflow.png",
+    "out": "description/portable-mobile-laboratory-description-04-10x10-compact-workflow.webp",
+    "size": "10x10",
+    "after_h2": "Choosing between 100, 160, 200, 240, 300 and 400 sq ft",
+    "after": "table"
+   },
+   "description_05": {
+    "src": "_long-description/_master/04-mobile-laboratory-20x12-wide-workflow.png",
+    "out": "description/portable-mobile-laboratory-description-05-20x12-wide-aisle.webp",
+    "size": "20x12",
+    "after_h2": "Why the cleaning aisle decides the width",
+    "after": 1
+   },
+   "description_06": {
     "src": "_long-description/_master/06-mobile-laboratory-40x10-capacity-workflow.png",
-    "out": "media/portable-mobile-laboratory-40x10-capacity-workflow.webp"
+    "out": "description/portable-mobile-laboratory-description-06-40x10-services-run.webp",
+    "size": "40x10",
+    "after_h2": "Water, drainage, power and the one sealed sleeve",
+    "after": 1
    }
   },
-  "alt_text_source": "copy JSON -> alt_text.media_band"
+  "alt_text_source": "copy JSON -> alt_text.description_images"
  },
  "spec_diagrams": {
   "1": {

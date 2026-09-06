@@ -108,9 +108,12 @@ def main():
     c = AMAP["section2_card"]
     rows.append(encode(c["src"], c["out"], rules["section2_card"]["width_px"],
                        rules["section2_card"]["quality_start"], "section2"))
-    for size, f in AMAP["media_band"]["files"].items():
-        rows.append(encode(f["src"], f["out"], rules["media_band"]["width_px"],
-                           rules["media_band"]["quality_start"], "media/" + size))
+    # The six 16:9 frames live INSIDE the Description tab, at the anchors the copy pack
+    # encodes - the same way the porta-cabins design lock publishes its own six. There
+    # is no image band between Section 2 and Section 3 (PO-05-R1, 6 Sep 2026).
+    for slot, f in AMAP["description_images"]["files"].items():
+        rows.append(encode(f["src"], f["out"], rules["description_image"]["width_px"],
+                           rules["description_image"]["quality_start"], "description/" + f["size"]))
     for k, f in AMAP["spec_diagrams"].items():
         rows.append(encode(f["src"], f["out"], rules["spec_diagram"]["width_px"],
                            rules["spec_diagram"]["quality_start"], "diagram/" + k))

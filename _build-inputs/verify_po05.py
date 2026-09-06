@@ -82,6 +82,8 @@ for sec in copy["description_tab"]["sections"]:
             check("description paragraph", it["text"] in text, it["text"][:50])
         elif it["type"] == "faq":
             check("faq visible: " + it["q"][:40], it["q"] in text and it["a"] in text)
+        elif it["type"] == "image":
+            check("description image alt present: " + it["out"][:44], it["alt"] in doc, it["alt"][:50])
 for p in copy["specifications_tab"]["narrative"]:
     check("spec narrative", p in text, p[:50])
 for g in copy["specifications_tab"]["groups"]:
@@ -145,11 +147,24 @@ for slug, files in amap.get("keep_as_is", {}).items():
         check(f"retained live image referenced: {f}", f in doc)
 
 
-# 8b media band (block 7)
-for slug, f in amap.get("media_band", {}).get("files", {}).items():
+# 8b description-tab images (inside tab 1, as the design lock does it)
+for slug, f in amap.get("description_images", {}).get("files", {}).items():
     p = os.path.join(public_dir, amap["output_root"].replace("public/", ""), f["out"])
     ok = os.path.exists(p); kb = os.path.getsize(p) // 1024 if ok else -1
-    check(f"media-band webp {slug} exists and 80-120 KB", ok and 80 <= kb <= 120, kb)
+    check(f"description webp {slug} exists and 80-120 KB", ok and 80 <= kb <= 120, kb)
+    check(f"description image {slug} referenced on the page", os.path.basename(f["out"]) in doc,
+          os.path.basename(f["out"]))
+# the six must render INSIDE the Description tab panel, not between Section 2 and Section 3
+_s2 = text.find(copy["section2"]["split_card"]["h3"])
+_s3 = text.find(copy["section3"]["h2"])
+_band = [n for n in [os.path.basename(f["out"]) for f in amap.get("description_images", {}).get("files", {}).values()]
+         if 0 <= doc.find(n) and _s2 >= 0 and _s3 > _s2 and
+            _s2 < len(re.sub("<[^>]+>", " ", doc[:doc.find(n)])) < _s3]
+check("no image band between Section 2 and Section 3", not _band, _band)
+_descimgs = [it for sec in copy["description_tab"]["sections"] for it in sec["items"] if it["type"] == "image"]
+check("copy pack carries six Description-tab images", len(_descimgs) == 6, len(_descimgs))
+check("Section 2 carries exactly one image (the split card)",
+      doc.count(os.path.basename(amap["section2_card"]["out"])) >= 1)
 for slug, f in amap.get("spec_diagrams", {}).items():
     p = os.path.join(public_dir, amap["output_root"].replace("public/", ""), f["out"])
     ok = os.path.exists(p); kb = os.path.getsize(p) // 1024 if ok else -1

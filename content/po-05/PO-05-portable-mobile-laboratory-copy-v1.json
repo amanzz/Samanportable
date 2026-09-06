@@ -172,35 +172,6 @@
    "cta_target": "#sizes"
   }
  },
- "media_band": {
-  "note": "Block 7, six 16:9 workflow frames in size order",
-  "slides": [
-   {
-    "size": "10x10",
-    "out": "portable-mobile-laboratory-10x10-compact-workflow.webp"
-   },
-   {
-    "size": "20x8",
-    "out": "portable-mobile-laboratory-20x8-linear-workflow.webp"
-   },
-   {
-    "size": "20x10",
-    "out": "portable-mobile-laboratory-20x10-dual-bench-workflow.webp"
-   },
-   {
-    "size": "20x12",
-    "out": "portable-mobile-laboratory-20x12-wide-aisle-workflow.webp"
-   },
-   {
-    "size": "30x10",
-    "out": "portable-mobile-laboratory-30x10-sample-flow-workflow.webp"
-   },
-   {
-    "size": "40x10",
-    "out": "portable-mobile-laboratory-40x10-capacity-workflow.webp"
-   }
-  ]
- },
  "section3": {
   "h2": "Compare the six laboratory sizes, 100 to 400 sq ft",
   "intro": "Six approved sizes, one lab-ready finish, one price rule. Each size shows its GA board, its bench and sink schedule and its cleaning aisle.",
@@ -298,6 +269,7 @@
  },
  "description_tab": {
   "intro": "Detailed information about Portable Mobile Laboratory",
+  "image_rule": "Six images sit inside this tab, exactly as the porta-cabins design lock does it: interleaved in the prose, never two adjacent, none before the first H2 and none in the FAQ section. There is no image band between Section 2 and Section 3.",
   "sections": [
    {
     "h2": "Portable mobile laboratory, or a laboratory on wheels? Read this first",
@@ -309,6 +281,12 @@
      {
       "type": "p",
       "text": "A SAMAN portable mobile laboratory is a factory-built steel room. It is finished as a laboratory in the works, loaded onto a trailer, lifted off by its four top-corner eyes and set down on prepared supports. It is portable in the sense that it can be moved when the project moves, or relocated between plants, not in the sense that it drives to a sampling point and comes back. If your testing has to happen at a different address every day, a vehicle is the right answer and nothing here will help you."
+     },
+     {
+      "type": "image",
+      "slot": "description_01",
+      "out": "portable-mobile-laboratory-description-01-20x10-dual-bench-room.webp",
+      "alt": "Inside a 20x10 ft portable mobile laboratory: benches on both long walls, a continuous workbench and a clear cleaning aisle, showing that this is a placed room and not a vehicle"
      },
      {
       "type": "p",
@@ -326,6 +304,12 @@
      {
       "type": "p",
       "text": "The enquiries that end in an order share one shape. There is a process running at a fixed location, that process produces samples, and the samples currently travel somewhere else to be tested. Every hour of that travel is an hour the plant runs on an assumption. The buyer wants the test next to the process."
+     },
+     {
+      "type": "image",
+      "slot": "description_02",
+      "out": "portable-mobile-laboratory-description-02-30x10-sample-flow.webp",
+      "alt": "Sample flow in a 30x10 ft portable mobile laboratory: a short intake bench on Wall A between the two external doors and a 28.5 ft workbench opposite"
      },
      {
       "type": "p",
@@ -347,6 +331,12 @@
      {
       "type": "p",
       "text": "What the price on this page covers is the steel shell in one of the six approved sizes at 8.5 ft nominal height on 100 mm walls; the coved vinyl floor finish, which turns the floor-to-wall junction into a radius rather than a corner; the washable wall liner with cleanable junctions; the non-absorbent bench substrate; the fixed bench runs, the single sink or service interface and the upper storage modules exactly as the GA schedules them in feet; the door and window schedule with end walls kept furniture-free; the standard electrical package with distribution board, RCCB and MCB protection, earthing and circuit segregation; one sealed utility sleeve; and four compact top-corner lifting eyes."
+     },
+     {
+      "type": "image",
+      "slot": "description_03",
+      "out": "portable-mobile-laboratory-description-03-20x8-linear-finish.webp",
+      "alt": "Linear workflow in a 20x8 ft portable mobile laboratory: one continuous 18.5 ft bench running from the door end to the sink, with coved vinyl floor and washable liner"
      },
      {
       "type": "p",
@@ -441,6 +431,12 @@
       ]
      },
      {
+      "type": "image",
+      "slot": "description_04",
+      "out": "portable-mobile-laboratory-description-04-10x10-compact-workflow.webp",
+      "alt": "Compact workflow in a 10x10 ft portable mobile laboratory: a single bench run with the sample intake point and sink together on 100 sq ft"
+     },
+     {
       "type": "p",
       "text": "Read it this way. One person, routine screening, samples arriving in batches: the 10×10 does the job and gives the widest aisle on the page while doing it. One person but a longer sequence of operations, on ground that is a strip rather than a square: the 20×8, where the single 18.5 ft bench becomes a production line from door to sink. Two people, or one person with a dirty and a clean side to keep apart: the 20×10, which is the first size to give you three separate bench runs. The same work with a trolley in the room: the 20×12, identical to the 20×10 in every respect except that the aisle is two feet wider."
      },
@@ -456,6 +452,12 @@
      {
       "type": "p",
       "text": "Every GA board on this page prints one figure that a floor-area comparison will never show you: the clear cleaning aisle. It is the width of floor left between the bench faces once the benching is in, and it is the number that governs how the room actually works."
+     },
+     {
+      "type": "image",
+      "slot": "description_05",
+      "out": "portable-mobile-laboratory-description-05-20x12-wide-aisle.webp",
+      "alt": "Wide aisle in a 20x12 ft portable mobile laboratory: the same three bench runs as the 20x10 with 7.34 ft of clear floor between the bench faces and no island"
      },
      {
       "type": "p",
@@ -498,6 +500,12 @@
      {
       "type": "p",
       "text": "Services are the part of a portable laboratory that goes wrong most often, and the discipline on this page is deliberately strict. One sink or service interface is shown per size, at a coordinate printed on the GA board. That interface is the point at which the unit meets site water and site drainage. The site side of it, the supply, the run, the fall and the disposal, is coordinated separately and is not in the price."
+     },
+     {
+      "type": "image",
+      "slot": "description_06",
+      "out": "portable-mobile-laboratory-description-06-40x10-services-run.webp",
+      "alt": "Capacity layout in a 40x10 ft portable mobile laboratory: both long walls benched almost end to end, with the sink and service interface at the far end of the workbench"
      },
      {
       "type": "p",
@@ -1070,13 +1078,13 @@
    "40x10": "GA specification board for the 40x10x8.5 ft portable mobile laboratory: two external doors, nine windows, 29 ft and 38.5 ft bench runs, sink at 34 to 35.5 ft, clear cleaning aisle 5.34 ft"
   },
   "section2_card": "GA specification board of the 20x10x8.5 ft portable mobile laboratory, the reference size on this page: plan, four elevations, three fixed bench runs, one sink and the clear cleaning aisle dimension",
-  "media_band": {
-   "portable-mobile-laboratory-10x10-compact-workflow.webp": "Compact workflow in the 10x10 ft portable mobile laboratory: one bench run, sink and upper storage on a 100 sq ft floor",
-   "portable-mobile-laboratory-20x8-linear-workflow.webp": "Linear workflow in the 20x8 ft portable mobile laboratory: a single 18.5 ft bench running from the door end to the sink",
-   "portable-mobile-laboratory-20x10-dual-bench-workflow.webp": "Dual bench workflow in the 20x10 ft portable mobile laboratory: intake and equipment benches facing a continuous workbench",
-   "portable-mobile-laboratory-20x12-wide-aisle-workflow.webp": "Wide aisle workflow in the 20x12 ft portable mobile laboratory: the same three benches as the 20x10 with a 7.34 ft clear aisle",
-   "portable-mobile-laboratory-30x10-sample-flow-workflow.webp": "Sample flow in the 30x10 ft portable mobile laboratory: two external doors separating the sample entrance from the working entrance",
-   "portable-mobile-laboratory-40x10-capacity-workflow.webp": "Capacity workflow in the 40x10 ft portable mobile laboratory: 67.5 ft of bench across two long walls on a 400 sq ft floor"
+  "description_images": {
+   "portable-mobile-laboratory-description-01-20x10-dual-bench-room.webp": "Inside a 20x10 ft portable mobile laboratory: benches on both long walls, a continuous workbench and a clear cleaning aisle, showing that this is a placed room and not a vehicle",
+   "portable-mobile-laboratory-description-02-30x10-sample-flow.webp": "Sample flow in a 30x10 ft portable mobile laboratory: a short intake bench on Wall A between the two external doors and a 28.5 ft workbench opposite",
+   "portable-mobile-laboratory-description-03-20x8-linear-finish.webp": "Linear workflow in a 20x8 ft portable mobile laboratory: one continuous 18.5 ft bench running from the door end to the sink, with coved vinyl floor and washable liner",
+   "portable-mobile-laboratory-description-04-10x10-compact-workflow.webp": "Compact workflow in a 10x10 ft portable mobile laboratory: a single bench run with the sample intake point and sink together on 100 sq ft",
+   "portable-mobile-laboratory-description-05-20x12-wide-aisle.webp": "Wide aisle in a 20x12 ft portable mobile laboratory: the same three bench runs as the 20x10 with 7.34 ft of clear floor between the bench faces and no island",
+   "portable-mobile-laboratory-description-06-40x10-services-run.webp": "Capacity layout in a 40x10 ft portable mobile laboratory: both long walls benched almost end to end, with the sink and service interface at the far end of the workbench"
   },
   "spec_diagram_1": "Frame and envelope workflow diagram for the portable mobile laboratory: prepare and align the frame and freeze the GA and service register, tack and weld, then install the washable liner, cleanable junctions and coved vinyl floor",
   "spec_diagram_2": "Openings and service coordination diagram for the portable mobile laboratory: sealing each opening on the GA coordinates, protected electrical distribution with RCCB and MCB, and the single sink and utility interface"
@@ -1110,5 +1118,5 @@
  "old_page_strings_absent": [
   "(new page; no legacy strings)"
  ],
- "sha256_of_copy": "d7b7716e0614f8c607a83d4fb766946ddcb2dd88c5e4ae2942e6a0ad8bcf61dd"
+ "sha256_of_copy": "f401ddad92a0c3a5373c8662bf87c9da0b8a3bd56b7d64353f0e26ebb13f3e05"
 }

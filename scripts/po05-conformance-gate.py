@@ -114,7 +114,7 @@ BLOCKS = [
     (4,  "price display for the selected size", re.escape("+ GST")),
     (5,  "H2 Explore the Range panel",        r'>Explore the Range<'),
     (6,  "Section 2 RightToExist + split card", re.escape(COPY["section2"]["h2"])),
-    (7,  "media / finished-work band",        r'portable-mobile-laboratory-10x10-compact-workflow\.webp'),
+    (7,  "Section 2 media pairing (split card)", r'portable-mobile-laboratory-20x10-ga-board-card\.webp'),
     (8,  "Section 3 SizeApplicationsExplorer", re.escape(COPY["section3"]["h2"])),
     (9,  "Section 4 calculator",              r'PRICE IT YOURSELF'),
     (10, "You may also like",                 r'>You may also like<'),
@@ -134,14 +134,35 @@ for n, label, pat in BLOCKS:
 ok = not missing and [p for _, p in pos] == sorted(p for _, p in pos)
 out += ["", "RESULT: " + ("PASS - all eleven blocks present, in the canonical order."
                           if ok else "FAIL - " + (", ".join(missing) or "out of order"))]
-# The Description tab must carry no image of any kind.
+# PO-05-R1: the six 16:9 frames render INSIDE the Description tab, exactly as the
+# design lock publishes its own six, and NONE renders between Section 2 and Section 3.
 tabs_start = body(prev).find(">Product Details<")
 desc = body(prev)[tabs_start:]
 desc_panel = re.search(r'(?s)Product Overview.*?(?=Technical Specifications)', desc)
 imgs_in_desc = re.findall(r"<img[^>]+>", desc_panel.group(0)) if desc_panel else []
-out += ["", "Description tab image count (must be 0): %d" % len(imgs_in_desc)]
-if imgs_in_desc:
-    failures.append("Description tab carries an image")
+AMAP = json.load(open(os.path.join(ROOT, "content", "po-05",
+    "PO-05-portable-mobile-laboratory-asset-map-v1.json"), encoding="utf-8"))
+desc_files = [os.path.basename(f["out"]) for f in AMAP["description_images"]["files"].values()]
+in_panel = [n for n in desc_files if desc_panel and n in desc_panel.group(0)]
+# window between the Section 2 split-card H3 and the Section 3 H2
+s2 = body(prev).find(COPY["section2"]["split_card"]["h3"])
+s3 = body(prev).find(COPY["section3"]["h2"])
+between = [n for n in desc_files if s2 >= 0 < s3 and s2 < body(prev).find(n) < s3]
+lock_between = len(re.findall(r"<img[^>]+>", body(lock)[
+    body(lock).find("Standard build here"):body(lock).find("Explore every Porta Cabin size")]))
+out += ["",
+        "Description tab image count (must be 6): %d" % len(imgs_in_desc),
+        "  of which are the six pack frames: %d  %s" % (len(in_panel), sorted(in_panel)),
+        "Description frames rendering between Section 2 and Section 3 (must be 0): %d %s"
+        % (len(between), between),
+        "Images between the Section 2 card H3 and the Section 3 H2:",
+        "  preview     %d   (the split card is ABOVE that H3, so 0 is correct)"
+        % len(re.findall(r"<img[^>]+>", body(prev)[s2:s3])),
+        "  design lock %d" % lock_between]
+if len(imgs_in_desc) != 6 or len(in_panel) != 6:
+    failures.append("Description tab must carry the six pack frames")
+if between:
+    failures.append("image band between Section 2 and Section 3")
 if not ok:
     failures.append("canonical block order")
 emit("02-component-order.txt", out)

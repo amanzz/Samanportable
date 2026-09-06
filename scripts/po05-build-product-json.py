@@ -96,6 +96,15 @@ for sec in COPY["description_tab"]["sections"]:
             head = "".join("<th>" + E(h) + "</th>" for h in it["header"])
             rows = "".join("<tr>" + "".join("<td>" + E(c) + "</td>" for c in r) + "</tr>" for r in it["rows"])
             body.append("<table><thead><tr>" + head + "</tr></thead><tbody>" + rows + "</tbody></table>")
+        elif it["type"] == "image":
+            # The porta-cabins design lock publishes its six Description-tab frames as
+            # bare inline <img src width height loading alt> inside descriptionHtml -
+            # no figure wrapper, no class, no injection layer. Same markup, same
+            # attribute order here, at the position the copy pack encodes.
+            f = AMAP["description_images"]["files"][it["slot"]]
+            body.append(
+                '<img src="' + IMG + "/" + f["out"] + '" width="1600" height="900" '
+                'loading="lazy" alt="' + html.escape(it["alt"], quote=True) + '">')
         elif it["type"] == "faq":
             body.append("<h3>" + E(it["q"]) + "</h3><p>" + E(it["a"]) + "</p>")
         else:
@@ -229,6 +238,19 @@ for never in COPY["links"]["never"]:
 for q in COPY["faq_schema"]:
     assert E(q["q"]) in description_html and E(q["a"]) in description_html, q["q"]
 assert "—" not in blob, "U+2014 in rendered copy"
+# PO-05-R1: the six frames render INSIDE the Description tab, never between Section 2
+# and Section 3, never before the first H2, and never adjacent to another image.
+_imgs = [it for sec in COPY["description_tab"]["sections"] for it in sec["items"] if it["type"] == "image"]
+assert len(_imgs) == 6, "expected six Description-tab images, got %d" % len(_imgs)
+assert description_html.count("<img ") == 6, description_html.count("<img ")
+assert description_html.index("<h2>") < description_html.index("<img "), "image before the first H2"
+assert "><img " not in description_html.replace("</p><img ", "").replace("</table><img ", ""),     "an image does not follow a paragraph or a table"
+assert "<img ><img " not in description_html and "><img /><img" not in description_html
+for sec in COPY["description_tab"]["sections"]:
+    kinds = [i["type"] for i in sec["items"]]
+    assert kinds.count("image") <= 1, sec["h2"]
+    if "faq" in kinds:
+        assert "image" not in kinds, "image inside the FAQ block"
 alts = [i["alt"] for v in variants for i in v["images"]] + [p["image"]["alt"] for p in panels]
 assert len(alts) == len(set(alts)), "duplicate alt"
 

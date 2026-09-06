@@ -19,9 +19,11 @@ Approved asset package: `D:\Project-shekhar\all-product-images\Hub (Portable Off
 
 `https://www.samanportable.com/product/porta-cabins` is the design. It is already built and correct. You do not author layout. You import the production components the porta-cabins route uses and pass this page's content. Only four things may differ between the porta-cabins page and this page: copy strings, images and alt text, variant/size data rows and prices, and internal-link destinations and anchors. Anything else that differs means the build is wrong.
 
-Canonical block order, eleven blocks: 1 three-column hero, 2 contact/location bar, 3 size selector tabs (`usePremiumSizeTabs`), 4 price display for the selected size, 5 H2 `Explore the Range` panel, 6 Section 2 `RightToExist` with its split card, 7 media/finished-work band, 8 Section 3 `SizeApplicationsExplorer`, 9 Section 4 calculator, 10 `You may also like`, 11 Section 5 `Product Details` four-tab strip (Description/Info, Specifications/Specs, Shipping/Ship, Reviews - there is no Info tab, do not add one).
+Canonical block order, eleven blocks: 1 three-column hero, 2 contact/location bar, 3 size selector tabs (`usePremiumSizeTabs`), 4 price display for the selected size, 5 H2 `Explore the Range` panel, 6 Section 2 `RightToExist` with its split card, 7 the Section 2 media pairing (no separate media-band component exists), 8 Section 3 `SizeApplicationsExplorer`, 9 Section 4 calculator, 10 `You may also like`, 11 Section 5 `Product Details` four-tab strip (Description/Info, Specifications/Specs, Shipping/Ship, Reviews - there is no Info tab, do not add one).
 
 Design tokens `#1a3c2e`, `#2d7a3f`, `#f0f7f2`; never restyle. The only sanctioned change to a shared component is an opt-in prop defaulting to false; prefer existing props first (`showSectionDividers`, `usePremiumSizeTabs`, `explorerPanelHeadingAsH2`, `paragraph2`, `bodyParagraphs`, `copyInPanel`, `FEATURE_CELLS`). An empty slot renders nothing, never fallback text. No 1:1 image anywhere except the hero gallery.
+
+**If this prompt asks for something the repo does not have, the prompt is wrong, not the repo. Stop and report the conflict rather than inventing a component or a prop to satisfy it.**
 
 ## Three SAMAN rulings that are already made. Apply them; do not re-raise them.
 
@@ -48,8 +50,8 @@ Derived, not hand-authored: hub first, then the cluster siblings in `copy.explor
 ### Step 3 - Section 2 (block 6)
 H2, two paragraphs, the contextual link placed inside paragraph 1 on the phrase given in `copy.section2.link.anchor`, CTA. Split card directly below: 16:9 image LEFT from `asset_map.section2_card` (the 20x10 GA board, native 16:9, never cropped), H3 plus two paragraphs plus CTA on the right from `copy.section2.split_card`. Card CTA scrolls to the Section 3 anchor.
 
-### Step 4 - Media band (block 7)
-Six 16:9 workflow frames in size order from `asset_map.media_band`, alt from `copy.alt_text.media_band`. Lazy.
+### Step 4 - No band here
+Nothing renders between the Section 2 split card and Section 3. The design lock has exactly one image between its Section 2 H2 and its Section 3 H2, the split card. The six 16:9 workflow frames belong inside the Description tab; see Step 8. Do not create a media-band component and do not add a prop to make one.
 
 ### Step 5 - Section 3 (block 8)
 H2 and intro from `copy.section3`. Six size sections in the given order, each: GA board WebP on the LEFT (per `asset_map.ga_boards`, lazy, alt from `copy.alt_text.ga_boards`), H3 plus one paragraph plus bullets on the RIGHT from `copy.section3.sizes[]`. Bullets ship as hashed fields `SECTION3_<size>_BULLETS`. Never point at a `-preview.png` file, never at the `.svg`, and never crop a GA board.
@@ -61,7 +63,7 @@ Untouched. The one action: add the `ROUTE_LADDERS` entry in `calculatorLadders.t
 Cluster-scoped set for the Portable Office cluster only, intro from `copy.ymal.intro`, render only 200s. Add a cluster-scoped constant and pass it in; do not edit the shared YMAL constants.
 
 ### Step 8 - Product Details (block 11)
-- **Description tab:** render `copy.description_tab.sections` in order: H2, then items in order (`p` paragraph, `bullet` items as one list, `table` as one table, `faq` as question plus answer). There is exactly one bullet list and exactly one table in this tab. **No images of any kind in this tab.** Internal links: wrap the anchors in `copy.links.internal` with their hrefs, once each, where the phrase occurs.
+- **Description tab:** render `copy.description_tab.sections` in order: H2, then items in order (`p` paragraph, `bullet` items as one list, `table` as one table, `faq` as question plus answer). There is exactly one bullet list and exactly one table in this tab. **Six images render inside this tab**, exactly as the porta-cabins Description tab does it: render each `description_tab.sections[].items` entry of `"type": "image"` at its position in the item list, with the `alt` given, lazy, using the existing mechanism (`infoImageLayout` or whatever the lock's Description tab already uses). No new component, no new prop. Sources and output paths are in `asset_map.description_images`. Internal links: wrap the anchors in `copy.links.internal` with their hrefs, once each, where the phrase occurs.
 - **Specifications tab:** three narrative paragraphs from `copy.specifications_tab.narrative`, then Groups A to E as grouped tables with the exact headers and rows (same grouped-table design as the porta-cabins Specs tab), each group's note under its table. Then the two diagrams from `asset_map.spec_diagrams` with alts from `copy.alt_text`. Then the PDF link.
 - **Shipping tab:** the same shared freight component the live porta-cabins page renders (both trailer tables, eighteen bands each, both zone city tables, the two free-delivery lines, ODC note, tentative-price disclaimer). A generic "Shipping & Delivery" panel with no figures is a regression. No `shippingDetails` schema.
 - **Reviews tab:** same tab and form; empty state text from `copy.reviews_tab.empty_state`; no Review or AggregateRating markup.
@@ -70,9 +72,9 @@ Cluster-scoped set for the Portable Office cluster only, intro from `copy.ymal.i
 ### Step 9 - Images
 Follow `asset_map.rules` exactly. Every image a browser fetches is WebP and lands between 80 and 120 KB.
 - **Re-encode from the PNG masters in `<size>/_master/`, not from the supplied full-size WebP files** - those run 88 to 236 KB and most are outside the band.
-- Gallery 1:1 at 1254 px starting q86; GA boards at 1800 px starting q88 (downscale proportionally only; open each output and confirm the dimension text is still legible); Section 2 card at 1600 px q90; media band at 1600 px q90; diagrams at 1600 px q90. Crop nothing; adjust quality first, then width, and re-measure.
+- Gallery 1:1 at 1254 px starting q86; GA boards at 1800 px starting q88 (downscale proportionally only; open each output and confirm the dimension text is still legible); Section 2 card at 1600 px q90; Description-tab images at 1600 px q90; diagrams at 1600 px q90. Crop nothing; adjust quality first, then width, and re-measure.
 - Source PNGs are never copied into `public/`.
-- Loading: the images of the selected size eager with `fetchpriority="high"` on slide 1 only; every other size lazy; explicit `width` and `height` on every `<img>`; a `<link rel="preload">` for slide 1 of the default size (20x10) carrying the same `imagesrcset`; GA boards, media band and diagrams lazy.
+- Loading: the images of the selected size eager with `fetchpriority="high"` on slide 1 only; every other size lazy; explicit `width` and `height` on every `<img>`; a `<link rel="preload">` for slide 1 of the default size (20x10) carrying the same `imagesrcset`; GA boards, Description-tab images and diagrams lazy.
 - Produce a measurement table (file, width, height, KB) for every output and include it in the PR.
 
 ### Step 10 - Redirects

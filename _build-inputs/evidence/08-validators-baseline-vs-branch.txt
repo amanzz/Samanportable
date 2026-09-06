@@ -59,3 +59,22 @@ Passes, including the postbuild sitemap generator with its moved guards
 additive and scoped to this page: sitemap-products.xml +1 url, +0 removed;
 sitemap-images-products.xml +63 lines, +0 removed. Every other sitemap file is
 byte-identical once line endings are normalised.
+
+
+--- RE-RUN AFTER THE PO-05-R1 IMAGE-PLACEMENT REPAIR (6 Sep 2026)
+`npx tsc --noEmit` clean. `validate:commercial-architecture` PASS,
+`validate:pc01-calculator-price-parity` PASS. `calculatorLadders.ts` is UNCHANGED by the
+repair (`git diff HEAD` empty), so the re-pinned hash still holds and no further re-pin
+is needed. The repair touches only: the copy pack and asset map (re-issued by SAMAN), the
+two generator scripts, the product JSON's `descriptionHtml`, the six image outputs
+(media/ -> description/), and the reversion of the invented prop. It moves no count, no
+price and no release fixture, so the baseline comparison above stands unchanged.
+
+--- REVERSION OF THE INVENTED `mediaBand` PROP (PO-05-R1 item 1)
+  src/components/product-variant-hero/RightToExist.tsx
+      `git diff origin/static-migration` -> EMPTY. Byte-identical to origin.
+  src/components/product-variant-hero/rightToExistEntries.tsx
+      the `RightToExistEntry` interface diffed against origin/static-migration -> IDENTICAL.
+      Whole-file diff vs origin: 57 insertions, 0 deletions - the PO-05 Section 2 entry
+      and its two pack imports, nothing else.
+  `grep -rn "mediaBand|MEDIA_BAND|media_band" src/` -> no matches.

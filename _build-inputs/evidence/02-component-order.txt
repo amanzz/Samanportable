@@ -8,12 +8,17 @@ preview: http://localhost:3105/product/portable-office/portable-mobile-laborator
 4    price display for the selected size                 44583
 5    H2 Explore the Range panel                          50829
 6    Section 2 RightToExist + split card                 57551
-7    media / finished-work band                          60607
-8    Section 3 SizeApplicationsExplorer                  63353
-9    Section 4 calculator                               101880
-10   You may also like                                  317407
-11   Section 5 Product Details tab strip                323032
+7    Section 2 media pairing (split card)                59305
+8    Section 3 SizeApplicationsExplorer                  60471
+9    Section 4 calculator                                98998
+10   You may also like                                  314525
+11   Section 5 Product Details tab strip                320150
 
 RESULT: PASS - all eleven blocks present, in the canonical order.
 
-Description tab image count (must be 0): 0
+Description tab image count (must be 6): 6
+  of which are the six pack frames: 6  ['portable-mobile-laboratory-description-01-20x10-dual-bench-room.webp', 'portable-mobile-laboratory-description-02-30x10-sample-flow.webp', 'portable-mobile-laboratory-description-03-20x8-linear-finish.webp', 'portable-mobile-laboratory-description-04-10x10-compact-workflow.webp', 'portable-mobile-laboratory-description-05-20x12-wide-aisle.webp', 'portable-mobile-laboratory-description-06-40x10-services-run.webp']
+Description frames rendering between Section 2 and Section 3 (must be 0): 0 []
+Images between the Section 2 card H3 and the Section 3 H2:
+  preview     0   (the split card is ABOVE that H3, so 0 is correct)
+  design lock 0

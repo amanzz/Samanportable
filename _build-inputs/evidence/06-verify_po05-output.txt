@@ -77,23 +77,28 @@ PASS tab panel present: Reviews
 PASS description H2: Portable mobile laboratory, or a laborat
 PASS description paragraph  | Search for a mobile laboratory in India and most o
 PASS description paragraph  | A SAMAN portable mobile laboratory is a factory-bu
+PASS description image alt present: portable-mobile-laboratory-description-01-20  | Inside a 20x10 ft portable mobile laboratory: benc
 PASS description paragraph  | If instead your testing happens in one place for m
 PASS description paragraph  | The word cabin also appears on other parts of this
 PASS description H2: Who orders a portable mobile laboratory,
 PASS description paragraph  | The enquiries that end in an order share one shape
+PASS description image alt present: portable-mobile-laboratory-description-02-30  | Sample flow in a 30x10 ft portable mobile laborato
 PASS description paragraph  | In practice that means a quality control room at a
 PASS description paragraph  | The people using it are a lab technician, a sample
 PASS description H2: What lab-ready means on this page, and w
 PASS description paragraph  | Lab-ready here means the enclosure and the fixed p
 PASS description paragraph  | What the price on this page covers is the steel sh
+PASS description image alt present: portable-mobile-laboratory-description-03-20  | Linear workflow in a 20x8 ft portable mobile labor
 PASS description paragraph  | What it does not cover, and what is quoted separat
 PASS description paragraph  | If a requirement is not in the first list and not 
 PASS description H2: Choosing between 100, 160, 200, 240, 300
 PASS description paragraph  | Floor area is the wrong first question. The right 
+PASS description image alt present: portable-mobile-laboratory-description-04-10  | Compact workflow in a 10x10 ft portable mobile lab
 PASS description paragraph  | Read it this way. One person, routine screening, s
 PASS description paragraph  | Above that the decision changes again. The 30×10 g
 PASS description H2: Why the cleaning aisle decides the width
 PASS description paragraph  | Every GA board on this page prints one figure that
+PASS description image alt present: portable-mobile-laboratory-description-05-20  | Wide aisle in a 20x12 ft portable mobile laborator
 PASS description paragraph  | At 5.34 ft, which is what the 10 ft widths give on
 PASS description paragraph  | This is also why none of the six sizes carries an 
 PASS description paragraph  | The end walls follow the same logic. Each carries 
@@ -104,6 +109,7 @@ PASS description paragraph  | Every figure on this page is ex-GST for the lab-re
 PASS description paragraph  | If the requirement is an office rather than a labo
 PASS description H2: Water, drainage, power and the one seale
 PASS description paragraph  | Services are the part of a portable laboratory tha
+PASS description image alt present: portable-mobile-laboratory-description-06-40  | Capacity layout in a 40x10 ft portable mobile labo
 PASS description paragraph  | Penetrations through the envelope are controlled t
 PASS description paragraph  | Electrically, the unit is wired in concealed coppe
 PASS description paragraph  | Before dispatch the unit is checked for dimensions
@@ -273,12 +279,21 @@ PASS GA webp 30x10 exists and 80-120 KB  | 87
 PASS GA 30x10 ratio 16:9 (never cropped)  | (1800, 1012)
 PASS GA webp 40x10 exists and 80-120 KB  | 89
 PASS GA 40x10 ratio 16:9 (never cropped)  | (1800, 1012)
-PASS media-band webp 10x10 exists and 80-120 KB  | 114
-PASS media-band webp 20x8 exists and 80-120 KB  | 88
-PASS media-band webp 20x10 exists and 80-120 KB  | 120
-PASS media-band webp 20x12 exists and 80-120 KB  | 119
-PASS media-band webp 30x10 exists and 80-120 KB  | 91
-PASS media-band webp 40x10 exists and 80-120 KB  | 109
+PASS description webp description_01 exists and 80-120 KB  | 120
+PASS description image description_01 referenced on the page  | portable-mobile-laboratory-description-01-20x10-dual-bench-room.webp
+PASS description webp description_02 exists and 80-120 KB  | 91
+PASS description image description_02 referenced on the page  | portable-mobile-laboratory-description-02-30x10-sample-flow.webp
+PASS description webp description_03 exists and 80-120 KB  | 88
+PASS description image description_03 referenced on the page  | portable-mobile-laboratory-description-03-20x8-linear-finish.webp
+PASS description webp description_04 exists and 80-120 KB  | 114
+PASS description image description_04 referenced on the page  | portable-mobile-laboratory-description-04-10x10-compact-workflow.webp
+PASS description webp description_05 exists and 80-120 KB  | 119
+PASS description image description_05 referenced on the page  | portable-mobile-laboratory-description-05-20x12-wide-aisle.webp
+PASS description webp description_06 exists and 80-120 KB  | 109
+PASS description image description_06 referenced on the page  | portable-mobile-laboratory-description-06-40x10-services-run.webp
+PASS no image band between Section 2 and Section 3
+PASS copy pack carries six Description-tab images  | 6
+PASS Section 2 carries exactly one image (the split card)
 PASS spec diagram 1 exists and 80-120 KB  | 80
 PASS spec diagram 2 exists and 80-120 KB  | 87
 PASS section 2 card webp exists and 80-120 KB  | 80

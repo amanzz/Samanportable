@@ -847,42 +847,8 @@
   ]
  },
  {
-  "slot": "media/10x10",
-  "file": "/images/products/portable-mobile-laboratory/media/portable-mobile-laboratory-10x10-compact-workflow.webp",
-  "source": "_long-description/_master/01-mobile-laboratory-10x10-compact-workflow.png",
-  "width": 1600,
-  "height": 900,
-  "quality": 90,
-  "bytes": 117696,
-  "kb": 114,
-  "attempts": [
-   [
-    1600,
-    90,
-    114
-   ]
-  ]
- },
- {
-  "slot": "media/20x8",
-  "file": "/images/products/portable-mobile-laboratory/media/portable-mobile-laboratory-20x8-linear-workflow.webp",
-  "source": "_long-description/_master/02-mobile-laboratory-20x8-linear-workflow.png",
-  "width": 1600,
-  "height": 900,
-  "quality": 90,
-  "bytes": 90618,
-  "kb": 88,
-  "attempts": [
-   [
-    1600,
-    90,
-    88
-   ]
-  ]
- },
- {
-  "slot": "media/20x10",
-  "file": "/images/products/portable-mobile-laboratory/media/portable-mobile-laboratory-20x10-dual-bench-workflow.webp",
+  "slot": "description/20x10",
+  "file": "/images/products/portable-mobile-laboratory/description/portable-mobile-laboratory-description-01-20x10-dual-bench-room.webp",
   "source": "_long-description/_master/03-mobile-laboratory-20x10-dual-workflow.png",
   "width": 1600,
   "height": 900,
@@ -903,8 +869,59 @@
   ]
  },
  {
-  "slot": "media/20x12",
-  "file": "/images/products/portable-mobile-laboratory/media/portable-mobile-laboratory-20x12-wide-aisle-workflow.webp",
+  "slot": "description/30x10",
+  "file": "/images/products/portable-mobile-laboratory/description/portable-mobile-laboratory-description-02-30x10-sample-flow.webp",
+  "source": "_long-description/_master/05-mobile-laboratory-30x10-sample-workflow.png",
+  "width": 1600,
+  "height": 900,
+  "quality": 90,
+  "bytes": 93902,
+  "kb": 91,
+  "attempts": [
+   [
+    1600,
+    90,
+    91
+   ]
+  ]
+ },
+ {
+  "slot": "description/20x8",
+  "file": "/images/products/portable-mobile-laboratory/description/portable-mobile-laboratory-description-03-20x8-linear-finish.webp",
+  "source": "_long-description/_master/02-mobile-laboratory-20x8-linear-workflow.png",
+  "width": 1600,
+  "height": 900,
+  "quality": 90,
+  "bytes": 90618,
+  "kb": 88,
+  "attempts": [
+   [
+    1600,
+    90,
+    88
+   ]
+  ]
+ },
+ {
+  "slot": "description/10x10",
+  "file": "/images/products/portable-mobile-laboratory/description/portable-mobile-laboratory-description-04-10x10-compact-workflow.webp",
+  "source": "_long-description/_master/01-mobile-laboratory-10x10-compact-workflow.png",
+  "width": 1600,
+  "height": 900,
+  "quality": 90,
+  "bytes": 117696,
+  "kb": 114,
+  "attempts": [
+   [
+    1600,
+    90,
+    114
+   ]
+  ]
+ },
+ {
+  "slot": "description/20x12",
+  "file": "/images/products/portable-mobile-laboratory/description/portable-mobile-laboratory-description-05-20x12-wide-aisle.webp",
   "source": "_long-description/_master/04-mobile-laboratory-20x12-wide-workflow.png",
   "width": 1600,
   "height": 900,
@@ -925,25 +942,8 @@
   ]
  },
  {
-  "slot": "media/30x10",
-  "file": "/images/products/portable-mobile-laboratory/media/portable-mobile-laboratory-30x10-sample-flow-workflow.webp",
-  "source": "_long-description/_master/05-mobile-laboratory-30x10-sample-workflow.png",
-  "width": 1600,
-  "height": 900,
-  "quality": 90,
-  "bytes": 93902,
-  "kb": 91,
-  "attempts": [
-   [
-    1600,
-    90,
-    91
-   ]
-  ]
- },
- {
-  "slot": "media/40x10",
-  "file": "/images/products/portable-mobile-laboratory/media/portable-mobile-laboratory-40x10-capacity-workflow.webp",
+  "slot": "description/40x10",
+  "file": "/images/products/portable-mobile-laboratory/description/portable-mobile-laboratory-description-06-40x10-services-run.webp",
   "source": "_long-description/_master/06-mobile-laboratory-40x10-capacity-workflow.png",
   "width": 1600,
   "height": 900,

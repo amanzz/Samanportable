@@ -25,22 +25,11 @@ const containerCafeHref = (slug: string) => `${CONTAINER_CAFE_HREF}/${slug}`;
 const bodyClass = 'text-sm leading-relaxed text-slate-700';
 const linkClass = 'font-semibold text-[var(--ds-color-leaf)] underline underline-offset-2';
 
-// PO-05 - the media band (block 7). Six 16:9 workflow frames in SIZE ORDER, read from
-// the signed asset map, with alt keyed by the OUTPUT FILE NAME in the copy pack. The
-// copy pack's media_band.slides fixes the order; the asset map fixes the file names.
+// PO-05 - the Section 2 split card is the ONLY image between the Section 2 H2 and the
+// Section 3 H2, exactly as the porta-cabins design lock renders it. The six 16:9
+// workflow frames belong inside the Description tab and are emitted into
+// descriptionHtml, which is how the lock publishes its own six.
 const PO05_ASSETS = portableMobileLaboratoryAssets;
-const PO05_IMG_ROOT = `/${PO05_ASSETS.output_root.replace('public/', '')}`;
-const PO05_MEDIA_BAND = portableMobileLaboratoryCopy.media_band.slides.map((slide) => {
-  const file = PO05_ASSETS.media_band.files[slide.size as keyof typeof PO05_ASSETS.media_band.files];
-  return {
-    src: `${PO05_IMG_ROOT}/${file.out}`,
-    alt: portableMobileLaboratoryCopy.alt_text.media_band[
-      slide.out as keyof typeof portableMobileLaboratoryCopy.alt_text.media_band
-    ],
-    width: 1600,
-    height: 900,
-  };
-});
 
 export interface RightToExistEntry {
   heading: string;
@@ -68,19 +57,6 @@ export interface RightToExistEntry {
       was supplied. It renders as a link, never as a third paragraph. */
   ctaLabel?: string;
   ctaHref?: string;
-  /** PO-05 (5 Sep 2026) — OPT-IN, absent on every other entry, so every other page's
-      Section 2 markup is byte-identical to before.
-
-      The PO-05 canonical block order puts a six-frame 16:9 media band between the
-      Section 2 split card and the Section 3 explorer. The porta-cabins design lock
-      already publishes exactly this content — six 16:9 finished-work frames, one per
-      size — but injects them into the Description panel via infoImageLayout, and the
-      PO-05 ticket forbids any image in that tab. Rather than author a new layout or a
-      new component, this is the sanctioned opt-in prop: absent -> `null` -> nothing
-      renders, so the shared component's output for every other product is unchanged.
-      Styling reuses the Section 2 card's own border, radius and shadow tokens; no new
-      design token is introduced. */
-  mediaBand?: Array<{ src: string; alt: string; width: number; height: number }>;
   /** R15 (v1.4, 14 Aug 2026) — optional image-left / content-right split card
       rendered below the lead paragraphs. Present only on the porta-cabins hub;
       every other entry renders byte-identically to before. */
@@ -1549,11 +1525,6 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
       // #porta-size-applications. Same target as PO-01 through PO-04 and SOC-01.
       ctaHref: '#porta-size-applications',
     },
-    // Block 7 of the PO-05 canonical order: the six 16:9 workflow frames, in size
-    // order, from asset_map.media_band with alt from copy.alt_text.media_band. See
-    // the `mediaBand` doc comment on RightToExistEntry for why this is an opt-in
-    // field rather than a new component.
-    mediaBand: PO05_MEDIA_BAND,
   },
   'portable-office-container': {
     heading: 'Why choose the Portable Office Container',

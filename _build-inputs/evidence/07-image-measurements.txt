@@ -1,4 +1,6 @@
 PO-05 IMAGE MEASUREMENT TABLE - every published output
+(re-issued after the PO-05-R1 repair: the six 16:9 frames moved from media/ to
+ description/ and were re-encoded to the lock filename convention.)
 
 Band 80-120 KB, WebP, re-encoded from the PNG masters. Nothing cropped; only
 proportional downscale. Quality was adjusted first, then width, then re-measured -
@@ -46,12 +48,12 @@ every output reached the band at its DECLARED width, so no width fallback was us
 39   ga/portable-mobile-laboratory-30x10-ga-board.webp          ga/30x10                   1800   1012  88     87
 40   ga/portable-mobile-laboratory-40x10-ga-board.webp          ga/40x10                   1800   1012  88     89
 41   section2/portable-mobile-laboratory-20x10-ga-board-card.webp section2                   1600    900  91     80
-42   media/portable-mobile-laboratory-10x10-compact-workflow.webp media/10x10                1600    900  90    114
-43   media/portable-mobile-laboratory-20x8-linear-workflow.webp media/20x8                 1600    900  90     88
-44   media/portable-mobile-laboratory-20x10-dual-bench-workflow.webp media/20x10                1600    900  88    120
-45   media/portable-mobile-laboratory-20x12-wide-aisle-workflow.webp media/20x12                1600    900  88    119
-46   media/portable-mobile-laboratory-30x10-sample-flow-workflow.webp media/30x10                1600    900  90     91
-47   media/portable-mobile-laboratory-40x10-capacity-workflow.webp media/40x10                1600    900  90    109
+42   description/portable-mobile-laboratory-description-01-20x10-dual-bench-room.webp description/20x10          1600    900  88    120
+43   description/portable-mobile-laboratory-description-02-30x10-sample-flow.webp description/30x10          1600    900  90     91
+44   description/portable-mobile-laboratory-description-03-20x8-linear-finish.webp description/20x8           1600    900  90     88
+45   description/portable-mobile-laboratory-description-04-10x10-compact-workflow.webp description/10x10          1600    900  90    114
+46   description/portable-mobile-laboratory-description-05-20x12-wide-aisle.webp description/20x12          1600    900  88    119
+47   description/portable-mobile-laboratory-description-06-40x10-services-run.webp description/40x10          1600    900  90    109
 48   specs/portable-mobile-laboratory-frame-envelope-diagram.webp diagram/1                  1600    900  91     80
 49   specs/portable-mobile-laboratory-openings-services-diagram.webp diagram/2                  1600    900  90     87
 
@@ -61,4 +63,14 @@ Held out under SAMAN ruling 2 (NOT published, deliberately):
   10x10/02-mobile-laboratory-10x10-rear-angle
   10x10/03-mobile-laboratory-10x10-side-elevation
 so the 10x10 gallery ships FOUR slides and every other size ships six: 4 + 5x6 = 34
-gallery slides, + 6 GA boards + 1 Section 2 card + 6 media band + 2 diagrams = 49.
+gallery slides, + 6 GA boards + 1 Section 2 card + 6 Description-tab frames
++ 2 spec diagrams = 49.
+
+Placement of the six Description-tab frames (PO-05-R1), all lazy:
+  01 20x10  after paragraph 2 of "Portable mobile laboratory, or a laboratory on wheels?"
+  02 30x10  after paragraph 1 of "Who orders a portable mobile laboratory..."
+  03 20x8   after paragraph 2 of "What lab-ready means on this page..."
+  04 10x10  directly under the table in "Choosing between 100, 160, 200, 240, 300 and 400 sq ft"
+  05 20x12  after paragraph 1 of "Why the cleaning aisle decides the width"
+  06 40x10  after paragraph 1 of "Water, drainage, power and the one sealed sleeve"
+Two sections deliberately carry none. No image renders between Section 2 and Section 3.
