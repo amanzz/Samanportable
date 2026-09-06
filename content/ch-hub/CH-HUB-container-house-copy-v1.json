@@ -165,7 +165,8 @@
     "You approve that board before fabrication starts. The factory then works to the same opening ledger the drawing shows, so what is delivered matches what was agreed rather than what was convenient on the shop floor."
    ],
    "cta": "See the drawing for your size",
-   "image_slot": "section2_card_16x9"
+   "image_slot": "section2_card_exterior_16x9",
+   "image_note": "Realistic wide exterior for the selected size. SAMAN ruling 6 Sep 2026: the 2D general arrangement board is not used here. The GA board remains in Section 3 and in the Specifications tab."
   }
  },
  "section3": {
@@ -281,7 +282,13 @@
       "A container house is a steel-framed dwelling with a flat ISO container roof form, container corner posts and eight ISO corner castings, built complete in a works and delivered to site as a finished unit. Walls, roof and floor are each a 3 inch build-up, which is why the internal clear dimensions run 6 inches under the external ones on both plan dimensions, and why an 8 ft 6 in external height leaves an 8 ft 0 in ceiling inside.",
       "It is not a shipping container that has been cut open. We fabricate the body, so the opening positions are set on a drawing rather than dictated by where the corrugation happens to allow a cut. That is also why the 10 ft and 12 ft wide sizes exist at all, because no freight container is 10 or 12 feet wide. It is not a caravan or a portable cabin either; the distinction that matters commercially is that this is residential accommodation with a bathroom, a kitchen and a bedroom, whereas a [porta cabin](/product/porta-cabins) is a workspace.",
       "And it is not certified freight equipment. The corner castings and posts are there so the unit can be craned and moved on a trailer. We do not claim CSC certification, stacking capacity or lifting ratings from appearance; where a project needs those, they come from project engineering, not from the fact that the building looks like a container."
-     ]
+     ],
+     "image": {
+      "slot": "description_image_1",
+      "file": "d1-container-house-40x8-front-left-exterior-wide.webp",
+      "alt": "40 x 8 ft container house, front left exterior showing the entrance wall, the end wall window and the ISO corner castings",
+      "aspect": "16:9"
+     }
     },
     {
      "h2": "How the six container house sizes actually differ",
@@ -290,7 +297,13 @@
       "Length decides the room count. Every 20 ft size is a one-bedroom plan: an open living and kitchen area, a bathroom, and a bedroom at the far end. Every 40 ft size adds a middle: a separate dining area, a proper kitchen run, and a service block containing the W.C., shower and utility as three separate compartments rather than one bathroom. The 40 x 10 inserts a study, and the 40 x 12 is the only size with two bedrooms.",
       "Width decides how the rooms feel rather than how many there are. At 7 ft 6 in internal you have a single-aspect plan where furniture lines one wall. At 9 ft 6 in a double bed sits across the width with walking room past it, and the kitchen can carry a breakfast counter. At 11 ft 6 in the extra width becomes circulation, so living and dining sit side by side, and the bathroom splits into a separate W.C. and shower.",
       "There is one rule worth knowing before you compare quotes elsewhere: overall length sets the external door count. A 20 ft unit has one external door. A 40 ft unit has two, because a 40 ft plan with a single door makes the occupants walk the full length of the house to reach the service end. If a 40 ft quote shows one door, ask why."
-     ]
+     ],
+     "image": {
+      "slot": "description_image_2",
+      "file": "d2-container-house-40x12-long-side-exterior-wide.webp",
+      "alt": "40 x 12 ft container house seen along its full length, showing the window run on the rear long wall",
+      "aspect": "16:9"
+     }
     },
     {
      "h2": "Reading the general arrangement drawing before you buy",
@@ -304,7 +317,7 @@
      "h2": "What decides the price of a container house",
      "paragraphs": [
       "Three things move the number: carpet area, the number of wet compartments, and the finish level. Area is the obvious one and it is close to linear across the range. Wet compartments are the expensive part per square foot. A size that splits the W.C. from the shower carries two sets of waterproofing, two drainage runs and two doors instead of one, which is why the 20 x 12 costs more per square foot than the 20 x 10 despite the same length.",
-      "Finish level is where quotes diverge most and where comparison gets hard. Two suppliers quoting \"a 20 ft container house\" can be describing very different buildings depending on flooring, joinery, sanitary ware and whether the kitchen is a bare counter or a fitted run. When you compare, compare the schedule, not the headline.",
+      "Finish level is where quotes diverge most and where comparison gets hard, and a [higher finish specification](/product/container-houses/luxury-container-houses) is priced separately from the base build. Two suppliers quoting \"a 20 ft container house\" can be describing very different buildings depending on flooring, joinery, sanitary ware and whether the kitchen is a bare counter or a fitted run. When you compare, compare the schedule, not the headline.",
       "Four things are outside any container house price and should be checked separately on every quote you receive: transport to your site, the plinth or foundation the unit sits on, the connection of water, drainage and power at your boundary, and any statutory approval your local authority requires. None of these is unusual and none of them is included in a factory rate."
      ]
     },
@@ -327,9 +340,15 @@
       "The enquiries divide into four groups, and knowing which one you are in usually settles the size question faster than comparing specifications does.",
       "The largest group is families adding a second dwelling on land they already own. A grown child needs their own space, a parent needs a ground-floor room, or a house on a generous plot has room at the back that nothing is using. These buyers almost always land on a 20 ft size, because the plot has a boundary and a 40 ft body will not turn into it. The question they wrestle with is width, not length, and the honest answer is that 10 ft is the point where a bedroom stops feeling like a cabin.",
       "The second group is farm and estate owners. Here the driver is distance from a supplier. Building conventionally two hours from the nearest hardware market means every forgotten item costs a day, so a unit that arrives finished is worth more than the same money spent on site. These buyers take the 40 ft sizes more often, because the land is not the constraint and the building often has to house a family rather than one caretaker.",
-      "The third group is resorts, homestays and farm-stay operators, who behave differently from everyone else because they buy in multiples. What they want is not the best single unit but the most repeatable one, so they pick a size and order it four or six times over. The 40 x 12 two-bedroom and the 20 x 10 one-bedroom are the two that get repeated most.",
-      "The fourth group is industrial and institutional buyers who need staff or supervisor accommodation on a site that will not exist in five years. For them the movability is the whole point. The building is an asset that leaves with the project rather than a cost written off against it, which is the argument that most often decides the purchase."
-     ]
+      "The third group is resorts, homestays and farm-stay operators, who behave differently from everyone else because they buy in multiples. What they want is not the best single unit but the most repeatable one, which is exactly what our [repeatable factory modules](/product/container-houses/prefab-container-homes) are built for, so they pick a size and order it four or six times over. The 40 x 12 two-bedroom and the 20 x 10 one-bedroom are the two that get repeated most.",
+      "The fourth group is industrial and institutional buyers who need staff or supervisor accommodation on a site that will not exist in five years. For them the movability is the whole point, and a [relocatable container build](/product/container-houses/shipping-container-homes) is the version to ask for. The building is an asset that leaves with the project rather than a cost written off against it, which is the argument that most often decides the purchase."
+     ],
+     "image": {
+      "slot": "description_image_3",
+      "file": "d3-container-house-20x12-front-left-exterior-wide.webp",
+      "alt": "20 x 12 ft container house on a landscaped plot, front left exterior with the entrance door and living window",
+      "aspect": "16:9"
+     }
     },
     {
      "h2": "Where container houses are built and delivered from",
@@ -372,7 +391,8 @@
      "question": "Do you build a 3 BHK container house?",
      "answer": "Not in this range. The largest plan here is the 40 x 12 two-bedroom. A three-bedroom requirement is usually met by combining units or by a [prefabricated house](/product/prefabricated-houses)."
     }
-   ]
+   ],
+   "image_rule": "Three 16:9 images, one after each named section, by SAMAN ruling 6 Sep 2026 which supersedes the design lock default of no images in this tab."
   },
   "specifications": {
    "label": "Specifications",
@@ -603,7 +623,7 @@
    "label": "Shipping",
    "component": "shared_freight",
    "authored": false,
-   "note": "Render exactly as the porta-cabins page renders it, including the two free-delivery lines. No schema. Nothing authored here."
+   "note": "Render exactly as the porta-cabins page renders it. The shared component emits one free-delivery line. No schema. Nothing authored here."
   },
   "reviews": {
    "label": "Reviews",
@@ -640,5 +660,45 @@
   },
   "faq_source": "tabs.description.faqs, byte-identical",
   "nothing_else": true
+ },
+ "internal_links": {
+  "body": [
+   {
+    "anchor": "prefabricated houses",
+    "href": "/product/prefabricated-houses",
+    "where": "Section 2"
+   },
+   {
+    "anchor": "porta cabin",
+    "href": "/product/porta-cabins",
+    "where": "Description, what it is not"
+   },
+   {
+    "anchor": "prefabricated house",
+    "href": "/product/prefabricated-houses",
+    "where": "Description, 3 BHK FAQ"
+   },
+   {
+    "anchor": "repeatable factory modules",
+    "href": "/product/container-houses/prefab-container-homes",
+    "where": "Description, who is buying"
+   },
+   {
+    "anchor": "relocatable container build",
+    "href": "/product/container-houses/shipping-container-homes",
+    "where": "Description, who is buying"
+   },
+   {
+    "anchor": "higher finish specification",
+    "href": "/product/container-houses/luxury-container-houses",
+    "where": "Description, what decides the price"
+   }
+  ],
+  "ymal": [
+   "/product/container-houses/prefab-container-homes",
+   "/product/container-houses/shipping-container-homes",
+   "/product/container-houses/luxury-container-houses"
+  ],
+  "rule": "No internal link uses 'container house' as its anchor - that term belongs to this page. Every destination is a live 200. No link to a retired URL and none to a local page."
  }
 }

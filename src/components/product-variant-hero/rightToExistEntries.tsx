@@ -30,8 +30,10 @@ const CONTAINER_CAFE_HREF = '/product/container-cafe';
 const containerCafeHref = (slug: string) => `${CONTAINER_CAFE_HREF}/${slug}`;
 
 // CH-HUB — the Section 2 split-card image is the default size's own approved 16:9
-// board (asset map slot `section2_card_16x9`), served from this repo's product image
-// convention. Filename and alt come from the asset map; neither is retyped here.
+// REALISTIC WIDE EXTERIOR (asset map slot `section2_card_exterior_16x9`), served from
+// this repo's product image convention. SAMAN ruling 6 Sep 2026 retired the GA board
+// from this slot; the board is now a Specifications-tab diagram only. Filename and alt
+// come from the asset map; neither is retyped here.
 const containerHouseSection2Card = (() => {
   const slot = containerHouseAssets.sizes['20x10'].section2_card_16x9;
   const file = slot.file.split(/[\\/]/).pop() as string;

@@ -1,5 +1,5 @@
 CH-HUB Template Conformance Gate - artefact 2 of 6
-PROP AUDIT - every design-lock gate and data opt-in this route now sets
+PROP AUDIT - every design-lock gate and data opt-in this route sets
 Generated 6 Sep 2026. Baseline 24edd07038d864117d2c4e389f67b87013efd1b8.
 
 ROUTE GATES  src/pages/product/[category]/index.tsx
@@ -23,18 +23,41 @@ suppressLegacyFaqSchema                True
 suppressLegacyDescription              True
 hasProductVideo                        False
 
-SHARED-COMPONENT CHANGES (opt-in, default false, absent elsewhere)
---------------------------------------------------------------
-featureCellsWithoutLabels  types.ts + PortaCabinVariantHero.tsx
-   the pack supplies five unlabelled cells per size; the label row is
-   dropped rather than 30 labels invented. Default false.
-getProductTabsHtml         specsShippingTabs.ts
-   one branch guarded by pageSlug === 'container-houses', placed before
-   the C08 branch so the five C08 subpages are untouched.
-
 EXPLORER PANELS: 6
 VARIANTS       : 20x8, 20x10, 20x12, 40x8, 40x10, 40x12
 YMAL TILES     :
     /product/container-houses/prefab-container-homes
     /product/container-houses/shipping-container-homes
     /product/container-houses/luxury-container-houses
+
+SHARED-COMPONENT CHANGES (opt-in, default false, absent everywhere else)
+----------------------------------------------------------------------
+featureCellsWithoutLabels   types.ts + PortaCabinVariantHero.tsx
+   The pack supplies five self-describing cells per size and no labels, so the
+   label row is dropped rather than 30 labels invented. Default false.
+getProductTabsHtml branch   specsShippingTabs.ts
+   One branch guarded by pageSlug === 'container-houses', placed before the C08
+   branch, so this hub renders the shared freight tab and the five C08 subpages
+   keep theirs unchanged.
+
+ROUTE-FILE OPT-INS THAT DIVERGE FROM THE LOCK, DELIBERATELY
+-----------------------------------------------------------
+syncVariantSelection   SAMAN ruling 6 Sep 2026. The Section 2 card CTA is an
+   in-page anchor to the Section 3 explorer synced to the selected size, so the
+   hero size chips move the explorer with them. Already used by
+   container-office-cabin on the subpage route.
+fullMobileLabels       The pack approves exactly four tab labels (Description,
+   Specifications, Shipping, Reviews). The component's default mobile aliases
+   (Info / Specs / Ship) are abbreviations the pack does not carry, so this route
+   renders the approved labels at every width. Six product pages already set it.
+
+DESCRIPTION-TAB IMAGES (SAMAN ruling 6 Sep 2026)
+------------------------------------------------
+Three 16:9 images render inside the Description tab, each immediately after its
+named H2, superseding the lock's no-images-in-Description default:
+   description_image_1  after "What a container house is, and what it is not"
+   description_image_2  after "How the six container house sizes actually differ"
+   description_image_3  after "Who is actually buying a container house in India"
+Slot, file and alt are read from the pack. The 16:9 GA boards are retired from
+Section 2 and now render only in the Specifications tab, per the asset map's own
+note on specifications_ga_16x9. Section 2 carries the realistic wide exterior.

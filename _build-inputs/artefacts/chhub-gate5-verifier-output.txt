@@ -2,53 +2,29 @@ CH-HUB Template Conformance Gate - artefact 5 of 6
 VERIFIER OUTPUT
 
 Command:  python verify_ch_hub.py http://localhost:3000/product/container-houses
-Verifier: verify_ch_hub.py  sha256 6d4c3fe9ad96328d38335d2a7079f83a480128994199cf4b4cb6325cfde5848e
-Copy:     CH-HUB-container-house-copy-v1.json  sha256 642ec884c489c0bf7ad36277dfcdcffeff4bc7bcad031c009a78b47058c6ac52
-Assets:   CH-HUB-container-house-asset-map-v1.json  sha256 7a438c291eefbfd82bee6874fd64d1271d961bb12c3348a0dd2f72c7ce7ee180
-Build:    BUILD_ID PJG_zKsjIxAIB7MIOCZLr, npm run build exit 0
+Verifier: verify_ch_hub.py                        sha256 0308a6e00fbce8d3e95fc0fcc67413481619885ea5760db8f15202fc9c975e4c
+Copy:     CH-HUB-container-house-copy-v1.json      sha256 496db5c3a230e4c7c940c21f12cb4aa25b898bdc64ca12d45d668eaf334ecb5a
+Assets:   CH-HUB-container-house-asset-map-v1.json sha256 87014e8af5aeb963f69227c006108b7456f5cbf4051235693a664d8b2b434cc7
+Build:    BUILD_ID 9XjiONh5L-el81YS-qZ5I, npm run build exit 0, tsc --noEmit clean
 
 ----- output -----
   NOTE: shared credentials strip did not show '7 to 21 working days' - confirm the strip rendered.
   NOTE: shared credentials strip did not show '500+ completed projects' - confirm the strip rendered.
-240 checks run, 1 failed
-  FAIL: shipping-free-delivery-lines :: 1
-RESULT: FAIL
-
------ analysis of the single FAIL -----
-shipping-free-delivery-lines :: measured 1, the check wants >= 2.
-
-Evidence, all three steps:
-
-1. The shared freight component emits exactly ONE free-delivery line.
-   src/lib/specsShippingTabs.ts:401  const FREE_DELIVERY =
-     'Free delivery: within Bangalore city (South zone) - Delhi NCR: Ghaziabad,
-      Gurugram, Faridabad, Noida and Greater Noida (North zone).'
-   This route renders buildShippingHtml() with no options, which is exactly what
-   the porta-cabins design lock renders. That line is present on this page.
-
-2. The design lock's SECOND occurrence is not in the Shipping tab. It is
-   porta-cabins' own Description-tab copy:
-     src/data/products/porta-cabins.json -> descriptionHtml
-     "...Crane hire, unloading, installation, ODC movement and difficult-site access
-      are not covered by free delivery and are quoted separately."
-   porta-cabins.json has no shippingHtml key; that sentence is page-owned prose.
-
-3. The CH-HUB copy pack supplies no equivalent sentence. tabs.shipping is
-   {component: shared_freight, authored: false}, so this page authors nothing here.
-
-Conclusion: the gate counts a page-authored Description sentence that this page's
-approved pack does not contain. Satisfying it would require writing customer-facing
-copy, which build prompt v2 s1/s2 and CLAUDE.md forbid; the alternative would be
-editing the verifier, which s9 forbids. Reported, not worked around.
-
-Note: the pack's own tabs.shipping.note says "including the two free-delivery lines".
-The shared component has one. That wording is the input to correct, not the page.
+243 checks run, 0 failed
+RESULT: PASS
 
 ----- the two advisory NOTEs -----
 Both are the verifier's own advisory prints, not failures. '7 to 21 working days'
 and '500+ completed projects' are shared-credential strings this page does not
-author; the buy-box trust strip on this route renders
-'GST registered - ISO 9001:2015 certified manufacturer - 10 years structural,
-1 year finishing extendable to 2, per the signed quotation - Pan-India delivery'.
-The certification credential is present; lead time and project count are not part
+author. The buy-box trust strip on this route renders:
+  GST registered - ISO 9001:2015 certified manufacturer - 10 years structural,
+  1 year finishing extendable to 2, per the signed quotation - Pan-India delivery
+The certification credential is present. Lead time and project count are not part
 of that strip on any route in this cluster.
+
+----- free-delivery, resolved -----
+The earlier shipping-free-delivery FAIL was an input error, confirmed by SAMAN on
+6 Sep 2026: the shared freight component emits ONE free-delivery line, and the
+lock's second occurrence is porta-cabins' own Description prose. The verifier now
+expects >= 1 and the pack note is corrected. This page renders buildShippingHtml()
+with no options, exactly as the lock does. No page change was needed.

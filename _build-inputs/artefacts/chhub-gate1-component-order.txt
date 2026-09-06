@@ -1,7 +1,7 @@
 CH-HUB Template Conformance Gate - artefact 1 of 6
 COMPONENT ORDER, candidate vs the porta-cabins design lock
 Generated 6 Sep 2026. Baseline 24edd07038d864117d2c4e389f67b87013efd1b8.
-Candidate  http://localhost:3000/product/container-houses
+Candidate  http://localhost:3000/product/container-houses  BUILD_ID 9XjiONh5L-el81YS-qZ5I
 Lock       https://www.samanportable.com/product/porta-cabins
 
 RESULT: block order is IDENTICAL
@@ -32,8 +32,8 @@ saman-size-chips               idx 57833    x1            idx 57657    x1
 pc-divider1                    idx 48600    x2            idx 48607    x2           
 pc-divider2                    idx 48660    x2            idx 48667    x2           
 saman-s2-split                 idx 67921    x8            idx 74573    x7           
-porta-size-applications        idx 69052    x2            idx 75700    x1           
-saman-size-tabs                idx 71140    x1            idx 76237    x1           
+porta-size-applications        idx 69020    x2            idx 75700    x1           
+saman-size-tabs                idx 71108    x1            idx 76237    x1           
 saman-section-divider          idx 66039    x4            idx 73232    x4           
-You may also like              idx 113362   x2            idx 109720   x12          
-Product Details                idx 106103   x3            idx 102466   x3           
+You may also like              idx 113330   x2            idx 109720   x12          
+Product Details                idx 106071   x3            idx 102466   x3           

@@ -10,7 +10,8 @@
    "The 16:9 slot is the size's own GA board placed on its board background. It is not a crop.",
    "An empty slot renders nothing. Never fallback text.",
    "No 1:1 image appears before the calculator.",
-   "Gallery WebP carry a 5,759-byte C2PA Content Credentials chunk. It is retained deliberately: these are AI-generated renders and the provenance signal must survive. Never strip it to save weight."
+   "Gallery WebP carry a 5,759-byte C2PA Content Credentials chunk. It is retained deliberately: these are AI-generated renders and the provenance signal must survive. Never strip it to save weight.",
+   "16:9 slots are realistic renders derived from the reserve set (R1/R2/R3 sources), never from a delivered gallery square and never from a GA board. Band 80-180 KB at 1600x900."
   ],
   "hold": "Images 001-030 (the three 20 ft render sets) show a 40 ft body. Drawings follow true 20 ft per SAMAN 6 Sep 2026. These galleries ship as-is and are replaced when the renders are regenerated.",
   "kb_note": "Advisory only. Recorded before the C2PA chunk was written, so each value under-reads by about 5.6 KB. The verifier measures the file on disk and ignores these. Band is 80-130 KB."
@@ -110,14 +111,17 @@
     "alt": "General arrangement drawing of the 20 x 8 ft container house, dimensioned floor plan and four wall elevations"
    },
    "section2_card_16x9": {
-    "slot": "section2_card_16x9",
-    "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/02 Long Description Images\\07-container-house-20x8-general-arrangement-board.webp",
-    "public_path": "/images/container-house/long-description/07-container-house-20x8-general-arrangement-board.webp",
+    "slot": "section2_card_exterior_16x9",
+    "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/02 Long Description Images/07-container-house-20x8-exterior-wide.webp",
     "aspect": "16:9",
     "width": 1600,
+    "height": 900,
     "format": "webp",
-    "q": 90,
-    "alt": "General arrangement board for the 20 x 8 ft container house on the SAMAN board background"
+    "q": 82,
+    "kb": 152.8,
+    "source_render": "003_container-houses_20x8_E03_long-side-elevation.png",
+    "alt": "20 x 8 ft container house, wide exterior along the entrance long wall",
+    "note": "Realistic render. SAMAN ruling 6 Sep 2026: no 2D drawing in Section 2. Derived from the reserve render, not from a delivered gallery square."
    },
    "isometric": {
     "slot": "specifications_diagram_iso",
@@ -133,6 +137,15 @@
     "exterior_hex": "#E5E3DC",
     "interior": "Light Greige",
     "interior_hex": "#DAD2C7"
+   },
+   "specifications_ga_16x9": {
+    "slot": "specifications_diagram_ga_16x9",
+    "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/02 Long Description Images/07-container-house-20x8-general-arrangement-board.webp",
+    "aspect": "16:9",
+    "width": 1600,
+    "format": "webp",
+    "alt": "General arrangement board for the 20 x 8 x 8.5 ft container house",
+    "note": "Superseded in Section 2. Retained for the Specifications tab only."
    }
   },
   "20x10": {
@@ -229,14 +242,17 @@
     "alt": "General arrangement drawing of the 20 x 10 ft container house, dimensioned floor plan and four wall elevations"
    },
    "section2_card_16x9": {
-    "slot": "section2_card_16x9",
-    "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/02 Long Description Images\\07-container-house-20x10-general-arrangement-board.webp",
-    "public_path": "/images/container-house/long-description/07-container-house-20x10-general-arrangement-board.webp",
+    "slot": "section2_card_exterior_16x9",
+    "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/02 Long Description Images/07-container-house-20x10-exterior-wide.webp",
     "aspect": "16:9",
     "width": 1600,
+    "height": 900,
     "format": "webp",
-    "q": 90,
-    "alt": "General arrangement board for the 20 x 10 ft container house on the SAMAN board background"
+    "q": 82,
+    "kb": 153.0,
+    "source_render": "013_container-houses_20x10_E03_long-side-elevation.png",
+    "alt": "20 x 10 ft container house, wide exterior along the entrance long wall",
+    "note": "Realistic render. SAMAN ruling 6 Sep 2026: no 2D drawing in Section 2. Derived from the reserve render, not from a delivered gallery square."
    },
    "isometric": {
     "slot": "specifications_diagram_iso",
@@ -252,6 +268,15 @@
     "exterior_hex": "#A38C70",
     "interior": "Porcelain White",
     "interior_hex": "#EEECE5"
+   },
+   "specifications_ga_16x9": {
+    "slot": "specifications_diagram_ga_16x9",
+    "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/02 Long Description Images/07-container-house-20x10-general-arrangement-board.webp",
+    "aspect": "16:9",
+    "width": 1600,
+    "format": "webp",
+    "alt": "General arrangement board for the 20 x 10 x 8.5 ft container house",
+    "note": "Superseded in Section 2. Retained for the Specifications tab only."
    }
   },
   "20x12": {
@@ -348,14 +373,17 @@
     "alt": "General arrangement drawing of the 20 x 12 ft container house, dimensioned floor plan and four wall elevations"
    },
    "section2_card_16x9": {
-    "slot": "section2_card_16x9",
-    "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/02 Long Description Images\\07-container-house-20x12-general-arrangement-board.webp",
-    "public_path": "/images/container-house/long-description/07-container-house-20x12-general-arrangement-board.webp",
+    "slot": "section2_card_exterior_16x9",
+    "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/02 Long Description Images/07-container-house-20x12-exterior-wide.webp",
     "aspect": "16:9",
     "width": 1600,
+    "height": 900,
     "format": "webp",
-    "q": 90,
-    "alt": "General arrangement board for the 20 x 12 ft container house on the SAMAN board background"
+    "q": 82,
+    "kb": 154.9,
+    "source_render": "023_container-houses_20x12_E03_long-side-elevation.png",
+    "alt": "20 x 12 ft container house, wide exterior along the entrance long wall",
+    "note": "Realistic render. SAMAN ruling 6 Sep 2026: no 2D drawing in Section 2. Derived from the reserve render, not from a delivered gallery square."
    },
    "isometric": {
     "slot": "specifications_diagram_iso",
@@ -371,6 +399,15 @@
     "exterior_hex": "#304C3E",
     "interior": "Champagne Linen",
     "interior_hex": "#E7DDCD"
+   },
+   "specifications_ga_16x9": {
+    "slot": "specifications_diagram_ga_16x9",
+    "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/02 Long Description Images/07-container-house-20x12-general-arrangement-board.webp",
+    "aspect": "16:9",
+    "width": 1600,
+    "format": "webp",
+    "alt": "General arrangement board for the 20 x 12 x 8.5 ft container house",
+    "note": "Superseded in Section 2. Retained for the Specifications tab only."
    }
   },
   "40x8": {
@@ -467,14 +504,17 @@
     "alt": "General arrangement drawing of the 40 x 8 ft container house, dimensioned floor plan and four wall elevations"
    },
    "section2_card_16x9": {
-    "slot": "section2_card_16x9",
-    "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/02 Long Description Images\\07-container-house-40x8-general-arrangement-board.webp",
-    "public_path": "/images/container-house/long-description/07-container-house-40x8-general-arrangement-board.webp",
+    "slot": "section2_card_exterior_16x9",
+    "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/02 Long Description Images/07-container-house-40x8-exterior-wide.webp",
     "aspect": "16:9",
     "width": 1600,
+    "height": 900,
     "format": "webp",
-    "q": 90,
-    "alt": "General arrangement board for the 40 x 8 ft container house on the SAMAN board background"
+    "q": 70,
+    "kb": 172.2,
+    "source_render": "033_container-houses_40x8_E03_long-side-elevation.png",
+    "alt": "40 x 8 ft container house, wide exterior along the entrance long wall",
+    "note": "Realistic render. SAMAN ruling 6 Sep 2026: no 2D drawing in Section 2. Derived from the reserve render, not from a delivered gallery square."
    },
    "isometric": {
     "slot": "specifications_diagram_iso",
@@ -490,6 +530,15 @@
     "exterior_hex": "#526675",
     "interior": "Pale Sand",
     "interior_hex": "#E5D6BF"
+   },
+   "specifications_ga_16x9": {
+    "slot": "specifications_diagram_ga_16x9",
+    "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/02 Long Description Images/07-container-house-40x8-general-arrangement-board.webp",
+    "aspect": "16:9",
+    "width": 1600,
+    "format": "webp",
+    "alt": "General arrangement board for the 40 x 8 x 8.5 ft container house",
+    "note": "Superseded in Section 2. Retained for the Specifications tab only."
    }
   },
   "40x10": {
@@ -586,14 +635,17 @@
     "alt": "General arrangement drawing of the 40 x 10 ft container house, dimensioned floor plan and four wall elevations"
    },
    "section2_card_16x9": {
-    "slot": "section2_card_16x9",
-    "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/02 Long Description Images\\07-container-house-40x10-general-arrangement-board.webp",
-    "public_path": "/images/container-house/long-description/07-container-house-40x10-general-arrangement-board.webp",
+    "slot": "section2_card_exterior_16x9",
+    "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/02 Long Description Images/07-container-house-40x10-exterior-wide.webp",
     "aspect": "16:9",
     "width": 1600,
+    "height": 900,
     "format": "webp",
-    "q": 90,
-    "alt": "General arrangement board for the 40 x 10 ft container house on the SAMAN board background"
+    "q": 74,
+    "kb": 161.8,
+    "source_render": "043_container-houses_40x10_E03_long-side-elevation.png",
+    "alt": "40 x 10 ft container house, wide exterior along the entrance long wall",
+    "note": "Realistic render. SAMAN ruling 6 Sep 2026: no 2D drawing in Section 2. Derived from the reserve render, not from a delivered gallery square."
    },
    "isometric": {
     "slot": "specifications_diagram_iso",
@@ -609,6 +661,15 @@
     "exterior_hex": "#877968",
     "interior": "Dove Light Grey",
     "interior_hex": "#D7D8D5"
+   },
+   "specifications_ga_16x9": {
+    "slot": "specifications_diagram_ga_16x9",
+    "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/02 Long Description Images/07-container-house-40x10-general-arrangement-board.webp",
+    "aspect": "16:9",
+    "width": 1600,
+    "format": "webp",
+    "alt": "General arrangement board for the 40 x 10 x 8.5 ft container house",
+    "note": "Superseded in Section 2. Retained for the Specifications tab only."
    }
   },
   "40x12": {
@@ -705,14 +766,17 @@
     "alt": "General arrangement drawing of the 40 x 12 ft container house, dimensioned floor plan and four wall elevations"
    },
    "section2_card_16x9": {
-    "slot": "section2_card_16x9",
-    "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/02 Long Description Images\\07-container-house-40x12-general-arrangement-board.webp",
-    "public_path": "/images/container-house/long-description/07-container-house-40x12-general-arrangement-board.webp",
+    "slot": "section2_card_exterior_16x9",
+    "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/02 Long Description Images/07-container-house-40x12-exterior-wide.webp",
     "aspect": "16:9",
     "width": 1600,
+    "height": 900,
     "format": "webp",
-    "q": 90,
-    "alt": "General arrangement board for the 40 x 12 ft container house on the SAMAN board background"
+    "q": 78,
+    "kb": 165.9,
+    "source_render": "053_container-houses_40x12_E03_long-side-elevation.png",
+    "alt": "40 x 12 ft container house, wide exterior along the entrance long wall",
+    "note": "Realistic render. SAMAN ruling 6 Sep 2026: no 2D drawing in Section 2. Derived from the reserve render, not from a delivered gallery square."
    },
    "isometric": {
     "slot": "specifications_diagram_iso",
@@ -728,6 +792,15 @@
     "exterior_hex": "#995E4C",
     "interior": "Soft Clay Greige",
     "interior_hex": "#D9C7BB"
+   },
+   "specifications_ga_16x9": {
+    "slot": "specifications_diagram_ga_16x9",
+    "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/02 Long Description Images/07-container-house-40x12-general-arrangement-board.webp",
+    "aspect": "16:9",
+    "width": 1600,
+    "format": "webp",
+    "alt": "General arrangement board for the 40 x 12 x 8.5 ft container house",
+    "note": "Superseded in Section 2. Retained for the Specifications tab only."
    }
   }
  },
@@ -750,5 +823,46 @@
    "R3 end-wall-exterior",
    "R4 bathroom-interior"
   ]
- }
+ },
+ "description_images": [
+  {
+   "slot": "description_image_1",
+   "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/02 Long Description Images/d1-container-house-40x8-front-left-exterior-wide.webp",
+   "aspect": "16:9",
+   "width": 1600,
+   "height": 900,
+   "format": "webp",
+   "q": 78,
+   "kb": 178.8,
+   "after_h2": "What a container house is, and what it is not",
+   "alt": "40 x 8 ft container house, front left exterior showing the entrance wall, the end wall window and the ISO corner castings",
+   "source_render": "032_container-houses_40x8_E02_front-left-angle.png"
+  },
+  {
+   "slot": "description_image_2",
+   "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/02 Long Description Images/d2-container-house-40x12-long-side-exterior-wide.webp",
+   "aspect": "16:9",
+   "width": 1600,
+   "height": 900,
+   "format": "webp",
+   "q": 78,
+   "kb": 165.9,
+   "after_h2": "How the six container house sizes actually differ",
+   "alt": "40 x 12 ft container house seen along its full length, showing the window run on the rear long wall",
+   "source_render": "053_container-houses_40x12_E03_long-side-elevation.png"
+  },
+  {
+   "slot": "description_image_3",
+   "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/02 Long Description Images/d3-container-house-20x12-front-left-exterior-wide.webp",
+   "aspect": "16:9",
+   "width": 1600,
+   "height": 900,
+   "format": "webp",
+   "q": 82,
+   "kb": 167.9,
+   "after_h2": "Who is actually buying a container house in India",
+   "alt": "20 x 12 ft container house on a landscaped plot, front left exterior with the entrance door and living window",
+   "source_render": "022_container-houses_20x12_E02_front-left-angle.png"
+  }
+ ]
 }
