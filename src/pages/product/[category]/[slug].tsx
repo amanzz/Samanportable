@@ -949,6 +949,14 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
     });
   }, [relatedProducts]);
 
+  // PO-CLUSTER-03 (6 Sep 2026) - the nine Portable Office subpages each rendered
+  // "You may also like" from their OWN hand-authored ymalTiles, so each grid froze at
+  // its page's build date: 3 cards on readymade, 4 on conference, 6 on the laboratory,
+  // while the design lock (/product/porta-cabins/*) shows the full cluster. PO-CLUSTER-02
+  // already fixed the Explore the Range rail this way; this applies the SAME derived list
+  // to the YMAL grid. Each page keeps its own approved subline copy - only the tiles move.
+  const portableOfficeYmalItems = isPortableOfficeRailSlug(slug) ? portableOfficeSubpageRail(slug) : [];
+
   const relatedRailItems = useMemo<RelatedRailItem[]>(() => {
     const currentSlug = transformedProduct?.slug || slug;
     // PO-CLUSTER-02 (6 Sep 2026) - Explore the Range was stale on every Portable
@@ -1685,9 +1693,9 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   excluded, never_list excluded, and only destinations returning 200
                   today. The shared YMAL constants are untouched. The subline is the
                   pack's approved intro, which this branch previously suppressed. */}
-              {slug === 'readymade-office-cabin' && variantData?.ymalTiles?.length && (
+              {slug === 'readymade-office-cabin' && portableOfficeYmalItems.length > 0 && (
                 <PortaCabinsYouMayAlsoLike
-                  items={variantData.ymalTiles}
+                  items={portableOfficeYmalItems}
                   subline={readymadeOfficeCabinCopy.ymal.intro}
                 />
               )}
@@ -1695,9 +1703,9 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   tiles are built in the product data file from the pack's approved
                   order, self excluded, never_list excluded, and only destinations
                   returning 200 today. The shared YMAL constants are untouched. */}
-              {slug === 'small-office-cabin' && variantData?.ymalTiles?.length && (
+              {slug === 'small-office-cabin' && portableOfficeYmalItems.length > 0 && (
                 <PortaCabinsYouMayAlsoLike
-                  items={variantData.ymalTiles}
+                  items={portableOfficeYmalItems}
                   subline={smallOfficeCabinCopy.ymal.intro}
                 />
               )}
@@ -1705,17 +1713,17 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   tiles are built in the product data file from the pack's approved
                   order, self excluded, never_list excluded, and only destinations
                   returning 200 today. The shared YMAL constants are untouched. */}
-              {slug === 'prefabricated-office-cabins' && variantData?.ymalTiles?.length && (
+              {slug === 'prefabricated-office-cabins' && portableOfficeYmalItems.length > 0 && (
                 <PortaCabinsYouMayAlsoLike
-                  items={variantData.ymalTiles}
+                  items={portableOfficeYmalItems}
                   subline={prefabricatedOfficeCabinsCopy.ymal.intro}
                 />
               )}
               {/* PO-03 - cluster-scoped YMAL for Portable Office, same contract as PO-02.
                   The shared YMAL constants are untouched. */}
-              {slug === 'portable-weighbridge-office' && variantData?.ymalTiles?.length && (
+              {slug === 'portable-weighbridge-office' && portableOfficeYmalItems.length > 0 && (
                 <PortaCabinsYouMayAlsoLike
-                  items={variantData.ymalTiles}
+                  items={portableOfficeYmalItems}
                   subline={portableWeighbridgeOfficeCopy.ymal.intro}
                 />
               )}
@@ -1724,9 +1732,9 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   own product data file from the pack's approved order, self excluded,
                   never_list excluded, and only destinations returning 200 at build
                   time. The shared YMAL constants are untouched. */}
-              {slug === 'construction-site-cabin' && variantData?.ymalTiles?.length && (
+              {slug === 'construction-site-cabin' && portableOfficeYmalItems.length > 0 && (
                 <PortaCabinsYouMayAlsoLike
-                  items={variantData.ymalTiles}
+                  items={portableOfficeYmalItems}
                   subline={constructionSiteCabinCopy.ymal.intro}
                 />
               )}
@@ -1739,15 +1747,15 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
               {/* PO-05 - cluster-scoped YMAL for Portable Office, same contract as PO-03.
                   Tiles come from this page's own product data, self and never_list
                   excluded, only destinations returning 200 at build time. */}
-              {slug === 'portable-mobile-laboratory' && variantData?.ymalTiles?.length && (
+              {slug === 'portable-mobile-laboratory' && portableOfficeYmalItems.length > 0 && (
                 <PortaCabinsYouMayAlsoLike
-                  items={variantData.ymalTiles}
+                  items={portableOfficeYmalItems}
                   subline={portableMobileLaboratoryCopy.ymal.intro}
                 />
               )}
-              {slug === 'portable-control-room' && variantData?.ymalTiles?.length && (
+              {slug === 'portable-control-room' && portableOfficeYmalItems.length > 0 && (
                 <PortaCabinsYouMayAlsoLike
-                  items={variantData.ymalTiles}
+                  items={portableOfficeYmalItems}
                   subline={portableControlRoomCopy.ymal.intro}
                 />
               )}
@@ -1755,9 +1763,9 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   tiles are built in the product data file from the pack's approved
                   order, self excluded, never_list excluded, and only destinations
                   returning 200 today. The shared YMAL constants are untouched. */}
-              {slug === 'executive-portable-office' && variantData?.ymalTiles?.length && (
+              {slug === 'executive-portable-office' && portableOfficeYmalItems.length > 0 && (
                 <PortaCabinsYouMayAlsoLike
-                  items={variantData.ymalTiles}
+                  items={portableOfficeYmalItems}
                   subline={executivePortableOfficeCopy.ymal.intro}
                 />
               )}
@@ -1766,9 +1774,9 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   explore_range.order, this page excluded, never_list excluded, and
                   only destinations returning 200 today. The shared YMAL constants
                   are untouched. */}
-              {slug === 'portable-conference-cabin' && variantData?.ymalTiles?.length && (
+              {slug === 'portable-conference-cabin' && portableOfficeYmalItems.length > 0 && (
                 <PortaCabinsYouMayAlsoLike
-                  items={variantData.ymalTiles}
+                  items={portableOfficeYmalItems}
                   subline={portableConferenceCabinCopy.ymal.intro}
                 />
               )}

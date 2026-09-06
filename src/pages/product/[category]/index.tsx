@@ -1116,8 +1116,13 @@ const ProductDetails = ({
               {category === 'porta-cabins' && (
                 <PortaCabinsYouMayAlsoLike items={PORTA_CABIN_HUB_RAIL} />
               )}
-              {category === 'portable-office' && variantData?.ymalTiles?.length && (
-                <PortaCabinsYouMayAlsoLike items={variantData.ymalTiles} subline={null} />
+              {/* PO-CLUSTER-03 (6 Sep 2026) - the hub's "You may also like" grid read the
+                  hub product JSON's hand-authored ymalTiles, which froze at three cards and
+                  never learned about the six siblings published since. It now reuses the same
+                  derived cluster list the hero rail above already uses, exactly as the
+                  porta-cabins hub reuses PORTA_CABIN_HUB_RAIL on the line above. */}
+              {category === 'portable-office' && portableOfficeHubRail().length > 0 && (
+                <PortaCabinsYouMayAlsoLike items={portableOfficeHubRail()} subline={null} />
               )}
               {/* CC-01 (05 Sep 2026) — MT-32 on the container cafe hub, Pattern B: the
                   five approved children only, each card reusing that child's own shipped
