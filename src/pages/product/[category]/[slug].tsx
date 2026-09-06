@@ -20,6 +20,10 @@ import { categoryHref } from '../../../lib/categoryHubMap';
 import Link from 'next/link';
 import { cn, formatPriceWithCurrency, parseShortDescriptionTableSSR, extractButtonsFromShortDescription } from '../../../lib/utils';
 import { getSeoAnchorText, getHubUrl } from '../../../lib/seoAnchorMap';
+import {
+  isContainerHouseRailSlug,
+  containerHouseSubpageRail,
+} from '../../../lib/containerHouseClusterRail';
 import { Breadcrumb } from '../../../components/ds/Breadcrumb';
 import { getProductBreadcrumb, crumbsToDsItems, crumbsToJsonLd } from '../../../lib/breadcrumbs';
 import { getProductTabsHtml } from '../../../lib/specsShippingTabs';
@@ -979,11 +983,22 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
     if (isPortableOfficeRailSlug(currentSlug)) {
       return portableOfficeSubpageRail(currentSlug);
     }
-    // CH-PFB-04 (6 Sep 2026) - Explore the Range for this route is the three approved
-    // container-house destinations in the signed pack (hub, shipping, luxury), all
-    // returning 200. The unbuilt flat-pack / expandable / tiny / farmhouse routes are
-    // deliberately absent. Same JSON-driven branch the three slugs beside it use.
-    if ((currentSlug === 'bess-container' || currentSlug === CO07_SLUG || currentSlug === CO06_SLUG || currentSlug === 'prefab-container-homes') && variantData?.relatedTiles?.length) {
+    // CH-CLUSTER-01 T3 (6 Sep 2026) - the Container Houses cluster resolves Explore the
+    // Range from the approved register at build time, not from a per-page JSON array.
+    // containerHouseClusterRail.ts renders the hub card first, then every live sibling in
+    // canonical order, self excluded, and never pads a slot.
+    //
+    // This supersedes CH-PFB-04's JSON branch for prefab-container-homes (merged as
+    // PR #200 while this branch was open). For that slug the derived list is byte-identical
+    // to the relatedTiles array CH-PFB-04 shipped - same three destinations, same hub-first
+    // order - so nothing it published moves. What changes is that flat-pack, expandable,
+    // tiny and farmhouse appear on publication without editing four product JSONs, which is
+    // the frozen-panel defect T3 exists to remove. `prefab-container-homes` is therefore
+    // dropped from the JSON-driven condition below rather than left to shadow this branch.
+    if (isContainerHouseRailSlug(currentSlug)) {
+      return containerHouseSubpageRail(currentSlug);
+    }
+    if ((currentSlug === 'bess-container' || currentSlug === CO07_SLUG || currentSlug === CO06_SLUG) && variantData?.relatedTiles?.length) {
       return variantData.relatedTiles;
     }
     if (isC16PanelSlug(currentSlug)) {

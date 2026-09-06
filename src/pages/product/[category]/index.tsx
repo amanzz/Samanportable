@@ -19,6 +19,7 @@ import type { WooCommerceProduct, RankMathSEOData, ProductReview } from '../../.
 import Link from 'next/link';
 import { cn, formatPriceWithCurrency, parseShortDescriptionTableSSR, extractButtonsFromShortDescription } from '../../../lib/utils';
 import { getSeoAnchorText, getHubUrl } from '../../../lib/seoAnchorMap';
+import { containerHouseHubRail } from '../../../lib/containerHouseClusterRail';
 import { Breadcrumb } from '../../../components/ds/Breadcrumb';
 import { getProductBreadcrumb, crumbsToDsItems, crumbsToJsonLd } from '../../../lib/breadcrumbs';
 import { getProductTabsHtml } from '../../../lib/specsShippingTabs';
@@ -655,6 +656,15 @@ const ProductDetails = ({
     // subpages use, minus the hub's own card.
     if (category === 'portable-office') {
       return portableOfficeHubRail();
+    }
+    // CH-CLUSTER-01 T3 (6 Sep 2026) - the Container Houses hub fell through to the
+    // WooCommerce related-products list below. That list was correct when measured on
+    // production on 6 Sep 2026, but it is not derived from the approved register, so a
+    // sibling published later would not appear. It now resolves the same derived
+    // cluster list the subpages use, minus the hub's own card. Same shape as the
+    // portable-office branch directly above. No tile moves and none is added today.
+    if (category === 'container-houses') {
+      return containerHouseHubRail();
     }
     // LC-07 fix v3 (17 Aug 2026) - SAMAN ruling: the Explore the Range panel
     // shows the current page's own cluster and nothing else. Same derived

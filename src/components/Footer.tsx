@@ -29,7 +29,10 @@ const MONEY_STRIP_LINKS = [
   { label: "Container House in Tamil Nadu", href: "/container-house-price-in-tamil-nadu" },
   { label: "Luxury Container Houses", href: "/product/container-houses/luxury-container-houses" },
   { label: "Industrial Sheds in Bangalore", href: "/industrial-sheds-in-bangalore" },
-  { label: "PEB Construction India", href: "/product/peb-constructions" },
+  // SAMAN-105 Section A (4 Sep 2026): the PEB Construction entry is deleted, not
+  // re-pointed. /product/peb-constructions 301s into /product/pre-engineered-buildings,
+  // the entry directly below, so a re-point would duplicate the destination in the
+  // same strip. Same treatment the Phase 1 "Portable Cabin" entry got below.
   { label: "Pre-Engineered Buildings", href: "/product/pre-engineered-buildings" },
   { label: "Industrial Sheds Range", href: "/product/industrial-sheds" },
   { label: "Prefab Houses in Bangalore", href: "/prefabricated-houses-in-bangalore" },
@@ -37,8 +40,8 @@ const MONEY_STRIP_LINKS = [
   { label: "Top Quality Prefab Cabins Delhi", href: "/top-quality-prefab-cabins-delhi" },
   { label: "Best Portable Cabins in India", href: "/best-portable-cabins-in-india" },
   { label: "Portable Toilets in Bangalore", href: "/portable-toilets-in-bangalore" },
-  { label: "Portable Toilet Cabin", href: "/product/portable-toilet/portable-toilet-cabin" },
-  { label: "Prefabricated Security Cabin", href: "/product/security-cabins/prefabricated-security-cabin" },
+  { label: "Portable Toilet Cabin", href: "/product/portable-toilet" },
+  { label: "Prefabricated Security Cabin", href: "/product/security-cabins" },
   { label: "Readymade Security Cabin", href: "/product/security-cabins/readymade-security-cabin" },
   { label: "Container Offices in HSR Layout", href: "/product/container-offices" },
   { label: "Portable Cabins in Marathahalli", href: "/porta-cabins-in-marathahalli" },
@@ -50,11 +53,12 @@ const MONEY_STRIP_LINKS = [
 const HOMEPAGE_POPULAR_RESOURCE_LINKS = [
   { label: "Prefab Container Homes", href: "/product/container-houses/prefab-container-homes" },
   { label: "Luxury Container Houses", href: "/product/container-houses/luxury-container-houses" },
-  { label: "PEB Construction", href: "/product/peb-constructions" },
+  // SAMAN-105 Section A (4 Sep 2026): PEB Construction deleted, not re-pointed - it
+  // 301s into the entry directly below. See the money-strip note above.
   { label: "Pre-Engineered Buildings", href: "/product/pre-engineered-buildings" },
   { label: "Industrial Sheds", href: "/product/industrial-sheds" },
-  { label: "MS Steel Portable Toilet Cabin", href: "/product/portable-toilet/portable-toilet-cabin" },
-  { label: "Prefabricated Security Cabin", href: "/product/security-cabins/prefabricated-security-cabin" },
+  { label: "MS Steel Portable Toilet Cabin", href: "/product/portable-toilet" },
+  { label: "Prefabricated Security Cabin", href: "/product/security-cabins" },
   { label: "Readymade Security Cabin", href: "/product/security-cabins/readymade-security-cabin" },
 ];
 
@@ -71,7 +75,8 @@ const PRODUCT_CATEGORIES = [
   { label: "Security Cabin", href: "/product/security-cabins" },
   { label: "Portable Toilet", href: "/product/portable-toilet" },
   { label: "Industrial Shed", href: "/product/industrial-sheds" },
-  { label: "PEB Construction", href: "/product/peb-constructions" },
+  // SAMAN-105 Section A (4 Sep 2026): PEB Construction deleted, not re-pointed - it
+  // 301s into the entry directly below. Same fix as the Header mega-menu.
   { label: "Pre-Engineered Building", href: "/product/pre-engineered-buildings" },
   { label: "Prefab Building", href: "/product/prefab-buildings" },
   { label: "Prefabricated House", href: "/product/prefabricated-houses" },

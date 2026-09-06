@@ -124,12 +124,12 @@ const RETIRED_INTERNAL_LINKS = new Map<string, string>([
   ['/product/container-offices/prefabricated-container-office', '/product/container-offices/container-office-cabin'],
   ['/product/container-offices/construction-site-office', '/product/container-offices/site-office-container'],
   ['/product/container-offices/container-site-office', '/product/container-offices/site-office-container'],
-  ['/container-offices-for-sale-in-jayanagar', '/product-category/container-offices'],
-  ['/container-offices-for-sale-in-hoskote', '/product-category/container-offices'],
-  ['/container-offices-for-sale-in-hosur', '/product-category/container-offices'],
-  ['/container-offices-for-sale-in-jp-nagar', '/product-category/container-offices'],
-  ['/container-offices-for-sale-in-bommasandra', '/product-category/container-offices'],
-  ['/container-offices-for-sale-in-vijayanagar', '/product-category/container-offices'],
+  ['/container-offices-for-sale-in-jayanagar', '/product/container-offices'],
+  ['/container-offices-for-sale-in-hoskote', '/product/container-offices'],
+  ['/container-offices-for-sale-in-hosur', '/product/container-offices'],
+  ['/container-offices-for-sale-in-jp-nagar', '/product/container-offices'],
+  ['/container-offices-for-sale-in-bommasandra', '/product/container-offices'],
+  ['/container-offices-for-sale-in-vijayanagar', '/product/container-offices'],
   ['/20ft-container-office', '/product/container-offices/shipping-container-office'],
   ['/10-foot-shipping-container-office-perfect-fit-for-small-spaces', '/product/container-offices/shipping-container-office'],
   ['/12ft-office-container-smart-choice-for-growing-startups', '/product/container-offices'],
@@ -141,7 +141,7 @@ const RETIRED_INTERNAL_LINKS = new Map<string, string>([
   ['/product/container-houses/storage-container-house', '/product/container-houses/shipping-container-homes'],
   ['/product/container-houses/tiny-container-homes', '/product/container-houses/shipping-container-homes'],
   ['/product/container-houses/shipping-container-tiny-house', '/product/container-houses/shipping-container-homes'],
-  ['/product/container-houses/inexpensive-container-homes', '/product/container-houses/affordable-container-homes'],
+  ['/product/container-houses/inexpensive-container-homes', '/product/container-houses'],
   ['/product/container-houses/modern-container-home', '/product/container-houses'],
   ['/product/container-houses/prefabricated-container-home', '/product/container-houses'],
   ['/container-houses-cost-guide-2024', '/product/container-houses'],
@@ -149,6 +149,93 @@ const RETIRED_INTERNAL_LINKS = new Map<string, string>([
   ['/shipping-container-home', '/product/container-houses/shipping-container-homes'],
   ['/used-container-price', '/ship-container-price-in-india'],
   ['/used-shipping-container-price-in-india', '/ship-container-price-in-india'],
+  // SAMAN-105 product URL consolidation (SAMAN ruling, 4 Sep 2026) - Sections A+B.
+  // Every retired product URL rewritten to its approved owner at the static-content
+  // boundary, so no exported body, schema payload or card href can ship a link into a
+  // 301. Destinations are the ticket's, except saman-prefab-office, which keeps the
+  // later PO-02 destination recorded in next.config.js. Six existing rows above were
+  // re-pointed in place at the same time: their old destinations
+  // (/product-category/container-offices, affordable-container-homes) are themselves
+  // Section A sources now, which would have made those rewrites two-hop chains.
+  ['/product/container-offices/container-portable-office', '/product/container-offices'],  // SAMAN-105
+  ['/product-category/container-cafe', '/product/container-cafe'],  // SAMAN-105
+  ['/product-category/container-houses', '/product/container-houses'],  // SAMAN-105
+  ['/product-category/container-offices', '/product/container-offices'],  // SAMAN-105
+  ['/product-category/industrial-sheds', '/product/industrial-sheds'],  // SAMAN-105
+  ['/product-category/peb-constructions', '/product/pre-engineered-buildings'],  // SAMAN-105
+  ['/product-category/portable-toilet', '/product/portable-toilet'],  // SAMAN-105
+  ['/product-category/pre-engineered-buildings', '/product/pre-engineered-buildings'],  // SAMAN-105
+  ['/product-category/prefab-buildings', '/product/prefab-buildings'],  // SAMAN-105
+  ['/product-category/prefabricated-houses', '/product/prefabricated-houses'],  // SAMAN-105
+  ['/product-category/security-cabins', '/product/security-cabins'],  // SAMAN-105
+  ['/product-category/wall-sheets', '/product/roofing-sheet'],  // SAMAN-105
+  ['/product/container-houses/affordable-container-homes', '/product/container-houses'],  // SAMAN-105
+  ['/product/container-houses/prefabricated-container-house', '/product/container-houses/prefab-container-homes'],  // SAMAN-105
+  ['/product/industrial-sheds/garden-sheds', '/product/industrial-sheds'],  // SAMAN-105
+  ['/product/industrial-sheds/portable-sheds', '/product/industrial-sheds'],  // SAMAN-105
+  ['/product/industrial-sheds/prefab-steel-house', '/product/prefabricated-houses'],  // SAMAN-105
+  ['/product/industrial-sheds/prefabricated-industrial-shed', '/product/industrial-sheds'],  // SAMAN-105
+  ['/product/industrial-sheds/steel-sheds', '/product/industrial-sheds'],  // SAMAN-105
+  ['/product/industrial-sheds/storage-sheds', '/product/industrial-sheds/prefabricated-warehouses'],  // SAMAN-105
+  ['/product/peb-constructions', '/product/pre-engineered-buildings'],  // SAMAN-105
+  ['/product/peb-constructions/construction-prefabricated-buildings', '/product/pre-engineered-buildings'],  // SAMAN-105
+  ['/product/peb-constructions/engineered-buildings', '/product/pre-engineered-buildings'],  // SAMAN-105
+  ['/product/peb-constructions/engineered-steel-structures', '/product/pre-engineered-buildings'],  // SAMAN-105
+  ['/product/peb-constructions/peb-building-manufacturers', '/product/pre-engineered-buildings'],  // SAMAN-105
+  ['/product/peb-constructions/peb-steel-structure', '/product/pre-engineered-buildings'],  // SAMAN-105
+  ['/product/peb-constructions/pre-engineered-building-suppliers', '/product/pre-engineered-buildings'],  // SAMAN-105
+  ['/product/peb-constructions/pre-engineered-structures', '/product/pre-engineered-buildings'],  // SAMAN-105
+  ['/product/peb-constructions/pre-engineering-structures', '/product/pre-engineered-buildings'],  // SAMAN-105
+  ['/product/peb-constructions/prefab-building-construction', '/product/pre-engineered-buildings'],  // SAMAN-105
+  ['/product/peb-constructions/prefab-modular-construction', '/product/pre-engineered-buildings'],  // SAMAN-105
+  ['/product/peb-constructions/prefabricated-construction', '/product/pre-engineered-buildings'],  // SAMAN-105
+  ['/product/portable-office/modern-office-cabin', '/product/portable-office/small-office-cabin'],  // SAMAN-105
+  ['/product/portable-office/portable-office-container', '/product/container-offices'],  // SAMAN-105
+  ['/product/portable-toilet/mobile-toilet', '/product/portable-toilet'],  // SAMAN-105
+  ['/product/portable-toilet/mobile-toilet-cabin', '/product/portable-toilet'],  // SAMAN-105
+  ['/product/portable-toilet/movable-toilet-cabin', '/product/portable-toilet'],  // SAMAN-105
+  ['/product/portable-toilet/portable-toilet-cabin', '/product/portable-toilet'],  // SAMAN-105
+  ['/product/portable-toilet/prefabricated-toilet', '/product/portable-toilet'],  // SAMAN-105
+  ['/product/portable-toilet/readymade-toilet-cabin', '/product/portable-toilet'],  // SAMAN-105
+  ['/product/pre-engineered-buildings/engineered-metal-buildings', '/product/pre-engineered-buildings'],  // SAMAN-105
+  ['/product/pre-engineered-buildings/engineered-steel-buildings', '/product/pre-engineered-buildings'],  // SAMAN-105
+  ['/product/pre-engineered-buildings/pre-engineered-building-manufacturers', '/product/pre-engineered-buildings'],  // SAMAN-105
+  ['/product/pre-engineered-buildings/pre-engineered-building-structures', '/product/pre-engineered-buildings'],  // SAMAN-105
+  ['/product/pre-engineered-buildings/pre-engineered-metal-building-manufacturers', '/product/pre-engineered-buildings'],  // SAMAN-105
+  ['/product/pre-engineered-buildings/pre-engineered-steel-building-manufacturers', '/product/pre-engineered-buildings'],  // SAMAN-105
+  ['/product/pre-engineered-buildings/prefab-building-manufacturers', '/product/prefab-buildings'],  // SAMAN-105
+  ['/product/prefab-buildings/buy-container-buildings', '/product/container-offices'],  // SAMAN-105
+  ['/product/prefab-buildings/buy-prefabricated-buildings', '/product/prefab-buildings'],  // SAMAN-105
+  ['/product/prefab-buildings/modular-office-buildings', '/product/prefab-buildings'],  // SAMAN-105
+  ['/product/prefab-buildings/prefab-commercial-buildings', '/product/prefab-buildings'],  // SAMAN-105
+  ['/product/prefab-buildings/prefab-industrial-buildings', '/product/industrial-sheds'],  // SAMAN-105
+  ['/product/prefab-buildings/prefab-manufacturing-buildings', '/product/industrial-sheds'],  // SAMAN-105
+  ['/product/prefab-buildings/prefab-office-buildings', '/product/prefab-buildings'],  // SAMAN-105
+  ['/product/prefab-buildings/prefabricated-steel-buildings', '/product/pre-engineered-buildings'],  // SAMAN-105
+  ['/product/prefab-buildings/steel-prefab-buildings', '/product/pre-engineered-buildings'],  // SAMAN-105
+  ['/product/prefabricated-houses/bunkhouse-cabin', '/product/prefabricated-houses/prefabricated-bunkhouse'],  // SAMAN-105
+  ['/product/prefabricated-houses/prefab-site-office', '/product/portable-office'],  // SAMAN-105
+  ['/product/prefabricated-houses/saman-prefab-office', '/product/portable-office/prefabricated-office-cabins'],  // SAMAN-105
+  ['/product/security-cabins/portable-security-cabin', '/product/security-cabins'],  // SAMAN-105
+  ['/product/security-cabins/prefabricated-security-cabin', '/product/security-cabins'],  // SAMAN-105
+  ['/product/security-cabins/security-guard-cabin', '/product/security-cabins'],  // SAMAN-105
+  ['/product-category/porta-cabins', '/product/porta-cabins'],  // SAMAN-105
+  ['/product-category/portable-cabin', '/product/porta-cabins'],  // SAMAN-105
+  ['/product-category/portable-office', '/product/portable-office'],  // SAMAN-105
+  ['/product/container-offices/cargo-container-office', '/product/container-offices/shipping-container-office'],  // SAMAN-105
+  ['/product/container-offices/modular-container-office', '/product/container-offices'],  // SAMAN-105
+  ['/product/container-offices/storage-container-office', '/product/container-offices/shipping-container-office'],  // SAMAN-105
+  ['/product/porta-cabins/buy-porta-cabins', '/product/porta-cabins'],  // SAMAN-105
+  ['/product/porta-cabins/porta-cabin-office', '/product/porta-cabins'],  // SAMAN-105
+  ['/product/porta-cabins/porta-cabins', '/product/porta-cabins'],  // SAMAN-105
+  ['/product/porta-cabins/prefabricated-porta-cabin', '/product/porta-cabins'],  // SAMAN-105
+  ['/product/porta-cabins/small-portacabin', '/product/porta-cabins'],  // SAMAN-105
+  ['/product/porta-cabins/toilet-porta-cabins', '/product/porta-cabins/porta-cabin-with-toilet'],  // SAMAN-105
+  ['/product/portable-cabin/container-portable-cabin', '/product/porta-cabins'],  // SAMAN-105
+  ['/product/portable-cabin/portable-shop-cabin', '/product/porta-cabins/porta-cabin-shop'],  // SAMAN-105
+  ['/product/portable-cabin/prefabricated-portable-cabin', '/product/porta-cabins'],  // SAMAN-105
+  ['/product/portable-office/ms-portable-office-cabin', '/product/porta-cabins/ms-porta-cabin'],  // SAMAN-105
+  ['/product/portable-office/portable-office', '/product/portable-office'],  // SAMAN-105
 ]);
 
 const PC01_HUB_PATH = '/product/porta-cabins';
