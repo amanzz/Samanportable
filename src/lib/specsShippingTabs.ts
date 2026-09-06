@@ -34,6 +34,8 @@ import executivePortableOfficeCopy from '../../content/po-04/PO-04-executive-por
 import executivePortableOfficeAssets from '../../content/po-04/PO-04-executive-portable-office-asset-map-v1.json';
 import portableWeighbridgeOfficeCopy from '../../content/po-03/PO-03-portable-weighbridge-office-copy-v1.json';
 import portableWeighbridgeOfficeAssets from '../../content/po-03/PO-03-portable-weighbridge-office-asset-map-v3.json';
+import constructionSiteCabinCopy from '../../content/po-06/PO-06-construction-site-cabin-copy-v1.json';
+import constructionSiteCabinAssets from '../../content/po-06/PO-06-construction-site-cabin-asset-map-v1.json';
 
 // SOC-01 — the two approved coordination diagrams and the v3 technical PDF, at the
 // exact dimensions of the shipped WebP derivatives (never cropped, never upscaled).
@@ -1301,6 +1303,79 @@ function buildPortableWeighbridgeOfficeSpecificationsHtml(): string {
   return `<div class="not-prose">${narrative}${cards}${diagrams}${pdf}</div>`;
 }
 
+// PO-06 (6 Sep 2026) - Portable Construction Site Cabin. The asset map declares the two
+// technical diagrams under the numbered keys "01" and "02", the copy pack's spec groups
+// use `headers` (plural, as PO-03's does), and the PDF label lives in the COPY pack's
+// specifications_tab.pdf_link rather than on the asset map. Groups A-E render as the
+// same premium grouped-table cards the porta-cabins Specs tab uses; every string comes
+// from the signed pack and nothing is retyped. Each group's note renders under its own
+// table, then the two diagrams, then the PDF link.
+const PO06_IMG_ROOT = `/${constructionSiteCabinAssets.output_root.replace('public/', '')}`;
+const PO06_SPEC_DIAGRAMS = (['01', '02'] as const).map((k) => ({
+  src: `${PO06_IMG_ROOT}/${constructionSiteCabinAssets.spec_diagrams[k].out}`,
+  // Ruling 5 - alt text comes only from copy.alt_text, keyed by the output path. The
+  // package CSV repeats one alt per size and would fail the duplicate-alt DOM check.
+  alt: (constructionSiteCabinCopy.alt_text.spec_diagrams as Record<string, string>)[
+    constructionSiteCabinAssets.spec_diagrams[k].out
+  ],
+  width: 1600,
+  height: 900,
+}));
+const PO06_SPEC_PDF = {
+  href: `/${constructionSiteCabinAssets.spec_pdf.out.replace('public/', '')}`,
+  label: constructionSiteCabinCopy.specifications_tab.pdf_link.label,
+} as const;
+
+function buildConstructionSiteCabinSpecificationsHtml(): string {
+  const spec = constructionSiteCabinCopy.specifications_tab;
+
+  const narrative = spec.narrative
+    .map((p) => `<p class="mb-5 text-sm leading-relaxed text-slate-600">${esc(p)}</p>`)
+    .join('');
+
+  const cards = spec.groups.map((group) => {
+    const head = group.headers.map((h) => `<th>${esc(h)}</th>`).join('');
+    const body = group.rows
+      .map((row) => (
+        `<tr>` +
+          row.map((cell, i) => (
+            i === 0
+              ? `<td class="${TD} font-semibold text-slate-700">${esc(cell)}</td>`
+              : `<td class="${TD}">${escBold(cell)}</td>`
+          )).join('') +
+        `</tr>`
+      ))
+      .join('');
+    const note = group.note
+      ? `<p class="px-4 pb-4 pt-3 m-0 text-xs leading-relaxed text-slate-500">${esc(group.note)}</p>`
+      : '';
+    return (
+      `<section class="mb-4 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">` +
+        `<h4 class="m-0 bg-slate-50 px-4 py-3 text-base font-bold text-emerald-900">${esc(group.title)}</h4>` +
+        `<div class="saman-table-wrap"><table class="saman-table"><thead><tr>${head}</tr></thead>` +
+        `<tbody>${body}</tbody></table></div>` +
+        note +
+      `</section>`
+    );
+  }).join('');
+
+  const diagrams = PO06_SPEC_DIAGRAMS
+    .map((d) => (
+      `<figure class="mt-4 m-0 rounded-xl border border-slate-200 bg-white p-5 shadow-sm">` +
+        `<img src="${esc(d.src)}" alt="${esc(d.alt)}" width="${d.width}" height="${d.height}" ` +
+        `loading="lazy" class="w-full h-auto rounded-lg" />` +
+      `</figure>`
+    ))
+    .join('');
+
+  const pdf =
+    `<p class="mt-5 text-sm"><a href="${esc(PO06_SPEC_PDF.href)}" ` +
+    `class="font-semibold text-emerald-800 underline underline-offset-2">` +
+    `${esc(PO06_SPEC_PDF.label)}</a></p>`;
+
+  return `<div class="not-prose">${narrative}${cards}${diagrams}${pdf}</div>`;
+}
+
 /** Both tab bodies for a page slug, or null when the slug is not in scope. */
 export function getProductTabsHtml(
   pageSlug: string | undefined | null
@@ -1476,6 +1551,17 @@ export function getProductTabsHtml(
   if (pageSlug === 'portable-weighbridge-office') {
     return {
       specificationsHtml: buildPortableWeighbridgeOfficeSpecificationsHtml(),
+      shippingHtml: buildShippingHtml(),
+    };
+  }
+  // PO-06 - same contract: the Shipping tab is the shared freight component called with
+  // no options, so both trailer ladders (eighteen distance bands each, 100 to 1,000 km),
+  // both zone city tables, the two free-delivery lines, the ODC note and the
+  // tentative-price disclaimer are byte-identical to the design lock. There is no
+  // shippingHtml key on this route's product JSON, which is what would override it.
+  if (pageSlug === 'construction-site-cabin') {
+    return {
+      specificationsHtml: buildConstructionSiteCabinSpecificationsHtml(),
       shippingHtml: buildShippingHtml(),
     };
   }

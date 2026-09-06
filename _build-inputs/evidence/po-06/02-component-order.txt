@@ -1,0 +1,28 @@
+ARTEFACT 2 - COMPONENT-ORDER ASSERTION (the eleven canonical blocks)
+preview: http://127.0.0.1:4106/product/portable-office/construction-site-cabin
+
+#    block                                                offset
+1    three-column hero                                       341
+2    contact / location bar                                39170
+3    size selector tabs (usePremiumSizeTabs)               43403
+4    price display for the selected size                   44352
+5    H2 Explore the Range panel                            50786
+6    Section 2 RightToExist                                57519
+7    Section 2 media pairing (the split card)              59193
+8    Section 3 SizeApplicationsExplorer                    60298
+9    Section 4 calculator                                  98290
+10   You may also like                                    313826
+11   Section 5 Product Details tab strip                  319447
+
+RESULT: PASS - all eleven blocks present, in the canonical order.
+
+Ruling 3 - the Description tab carries FIVE images (the 20x10 site exterior
+moved to the Section 2 card), and there is no media band between Section 2
+and Section 3:
+  description frames found inside the Description panel (must be 5): 5  ['construction-site-cabin-10x10-on-site-exterior.webp', 'construction-site-cabin-20x12-interior-wide-aisle.webp', 'construction-site-cabin-20x8-interior-desk-run.webp', 'construction-site-cabin-30x10-interior-eight-desks.webp', 'construction-site-cabin-40x10-manager-room.webp']
+  description frames rendering between Section 2 and Section 3 (must be 0): 0 []
+  ANY <img> between the split-card H3 and the Section 3 H2 (must be 0): 0
+  the split card itself sits ABOVE that H3, which is why 0 is correct here.
+
+Section 3 size headings render as H3 (6 expected), never H2:
+  as H3: 6   as H2: 0

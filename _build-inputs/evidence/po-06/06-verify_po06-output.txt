@@ -1,0 +1,460 @@
+== 1. Identity ==
+PASS exactly one H1  | ['Portable Construction Site Cabin: Six Site-Duty Sizes']
+PASS H1 text matches pack  | ['Portable Construction Site Cabin: Six Site-Duty Sizes']
+PASS H1 length 50-60  | 53
+PASS title matches pack  | ['Site Office Cabin for Construction Sites, 6 Sizes | SAMAN']
+PASS title length 55-60
+PASS meta description matches pack  | ['Site office cabin for construction sites in six sizes, 100 to 400 sq ft, from Rs 1,66,750 ex-GST. Grilled windows, marked lifting lugs, GA drawing per size.']
+PASS meta description length 150-160  | 156
+PASS canonical is self-referencing  | ['https://www.samanportable.com/product/portable-office/construction-site-cabin']
+== 2. Block order (eleven blocks) ==
+PASS blocks render in canonical order  | [('Explore the Range', 2831), ('Why a construction site needs a site-duty cabin, not a spare office', 3586), ('The 20 × 10 ft is the reference site office', 4573), ('The six approv
+== 3. Sizes, prices and the price basis ==
+PASS 10x10 ex-GST price on page  | ₹1,66,750
+PASS 10x10 incl-GST price on page  | ₹1,96,765
+PASS 20x8 ex-GST price on page  | ₹2,55,200
+PASS 20x8 incl-GST price on page  | ₹3,01,136
+PASS 20x10 ex-GST price on page  | ₹2,90,000
+PASS 20x10 incl-GST price on page  | ₹3,42,200
+PASS 20x12 ex-GST price on page  | ₹3,34,080
+PASS 20x12 incl-GST price on page  | ₹3,94,214
+PASS 30x10 ex-GST price on page  | ₹4,17,600
+PASS 30x10 incl-GST price on page  | ₹4,92,768
+PASS 40x10 ex-GST price on page  | ₹5,51,000
+PASS 40x10 incl-GST price on page  | ₹6,50,180
+PASS from-price is the 10x10 ex-GST figure  | ₹1,66,750
+PASS withdrawn Rs 1,350-basis price absent: 1,55,250
+FAIL withdrawn Rs 1,350-basis price absent: 2,37,600
+PASS withdrawn Rs 1,350-basis price absent: 2,70,000
+PASS withdrawn Rs 1,350-basis price absent: 3,11,040
+PASS withdrawn Rs 1,350-basis price absent: 3,88,800
+PASS withdrawn Rs 1,350-basis price absent: 5,13,000
+PASS six variants in the pack
+== 4. Hero, Section 2, Section 3 copy ==
+PASS hero short description present
+PASS hero short description 700-800 chars  | 762
+PASS section2 H2 present
+PASS section2 H2 55-70 chars  | 67
+PASS section2 paragraph 1 present
+PASS section2 paragraph 2 present
+PASS section2 paragraphs 800-900 chars combined  | 883
+PASS split card H3 present
+PASS split card H3 35-65 chars  | 43
+PASS split card p1 present
+PASS split card p1 150-220 chars  | 185
+PASS split card p2 present
+PASS split card p2 150-220 chars  | 184
+PASS section3 H2 present
+PASS section3 H2 50-60 chars  | 51
+PASS section3 intro 100-140 chars  | 104
+PASS section3 10x10 heading renders as H3  | 10 × 10 ft Site Cabin: 100 sq ft Engineer's Gate Room
+PASS section3 10x10 H3 50-62 chars  | 53
+PASS section3 10x10 paragraph present
+PASS section3 10x10 paragraph 400-500 chars  | 495
+PASS section3 10x10 has 5-6 bullets  | 6
+PASS section3 10x10 bullet present  | 100 sq ft, 10 × 10 × 8.5 ft, centred-ridge two-w
+PASS section3 10x10 bullet present  | One 3 ft outward-opening door, centred on the fr
+PASS section3 10x10 bullet present  | Three 4 ft sliding windows, one each on the rear
+PASS section3 10x10 bullet present  | 4 staged desks: 2 on the rear wall, 1 on each si
+PASS section3 10x10 bullet present  | Deep Oxford Blue shell with a Warm Ivory interio
+PASS section3 10x10 bullet present  | Rs 1,66,750 ex-GST, Rs 1,96,765 with 18 per cent
+PASS section3 20x8 heading renders as H3  | 20 × 8 ft Site Cabin: 160 sq ft Narrow-Access Office
+PASS section3 20x8 H3 50-62 chars  | 52
+PASS section3 20x8 paragraph present
+PASS section3 20x8 paragraph 400-500 chars  | 465
+PASS section3 20x8 has 5-6 bullets  | 6
+PASS section3 20x8 bullet present  | 160 sq ft, 20 × 8 × 8.5 ft, one-way sloping roof
+PASS section3 20x8 bullet present  | Only size in the range without a centred ridge
+PASS section3 20x8 bullet present  | Six 4 ft windows: two front, two rear, one on ea
+PASS section3 20x8 bullet present  | 3 staged desks in a single run on the rear wall
+PASS section3 20x8 bullet present  | Graphite Charcoal shell with a Champagne Cream i
+PASS section3 20x8 bullet present  | Rs 2,55,200 ex-GST, Rs 3,01,136 with 18 per cent
+PASS section3 20x10 heading renders as H3  | 20 × 10 ft Site Cabin: 200 sq ft Five-Desk Site Office
+PASS section3 20x10 H3 50-62 chars  | 54
+PASS section3 20x10 paragraph present
+PASS section3 20x10 paragraph 400-500 chars  | 459
+PASS section3 20x10 has 5-6 bullets  | 6
+PASS section3 20x10 bullet present  | 200 sq ft, 20 × 10 × 8.5 ft, centred-ridge two-w
+PASS section3 20x10 bullet present  | Reference size: Rs 1,450 per sq ft with no band 
+PASS section3 20x10 bullet present  | One 3 ft door centred on the 20 ft front wall, b
+PASS section3 20x10 bullet present  | 5 staged desks: 2 on the front wall, 3 on the re
+PASS section3 20x10 bullet present  | Deep Bottle Green shell with a Light Greige inte
+PASS section3 20x10 bullet present  | Rs 2,90,000 ex-GST, Rs 3,42,200 with 18 per cent
+PASS section3 20x12 heading renders as H3  | 20 × 12 ft Site Cabin: 240 sq ft Drawing-Table Room
+PASS section3 20x12 H3 50-62 chars  | 51
+PASS section3 20x12 paragraph present
+PASS section3 20x12 paragraph 400-500 chars  | 455
+PASS section3 20x12 has 5-6 bullets  | 6
+PASS section3 20x12 bullet present  | 240 sq ft, 20 × 12 × 8.5 ft, centred-ridge two-w
+PASS section3 20x12 bullet present  | Widest 20 ft plan; two extra feet of aisle over 
+PASS section3 20x12 bullet present  | 4 ft window centred on each 12 ft end wall
+PASS section3 20x12 bullet present  | 5 staged desks in the same two-run layout as the
+PASS section3 20x12 bullet present  | Burgundy Wine shell with a Porcelain Sage interi
+PASS section3 20x12 bullet present  | Rs 3,34,080 ex-GST, Rs 3,94,214 with 18 per cent
+PASS section3 30x10 heading renders as H3  | 30 × 10 ft Site Cabin: 300 sq ft Two-Door Site Office
+PASS section3 30x10 H3 50-62 chars  | 53
+PASS section3 30x10 paragraph present
+PASS section3 30x10 paragraph 400-500 chars  | 471
+PASS section3 30x10 has 5-6 bullets  | 6
+PASS section3 30x10 bullet present  | 300 sq ft, 30 × 10 × 8.5 ft, centred-ridge two-w
+PASS section3 30x10 bullet present  | Two 3 ft external doors, near each end of the 30
+PASS section3 30x10 bullet present  | Eight 4 ft windows: two front, four rear, one on
+PASS section3 30x10 bullet present  | 8 staged desks: 3 on the front wall, 5 on the re
+PASS section3 30x10 bullet present  | Slate Blue-Grey shell with a Pale Sand interior 
+PASS section3 30x10 bullet present  | Rs 4,17,600 ex-GST, Rs 4,92,768 with 18 per cent
+PASS section3 40x10 heading renders as H3  | 40 × 10 ft Site Cabin: 400 sq ft Manager and Team Plan
+PASS section3 40x10 H3 50-62 chars  | 54
+PASS section3 40x10 paragraph present
+PASS section3 40x10 paragraph 400-500 chars  | 481
+PASS section3 40x10 has 5-6 bullets  | 6
+PASS section3 40x10 bullet present  | 400 sq ft, 40 × 10 × 8.5 ft, centred-ridge two-w
+PASS section3 40x10 bullet present  | Only size delivered with a partition already bui
+PASS section3 40x10 bullet present  | 10 × 10 ft manager room with one window and a 3 
+PASS section3 40x10 bullet present  | 12 staged desks in the common office: 5 front, 7
+PASS section3 40x10 bullet present  | Two 3 ft external doors on the 40 ft front wall;
+PASS section3 40x10 bullet present  | Rs 5,51,000 ex-GST, Rs 6,50,180 with 18 per cent
+== 5. Product Details, four tabs ==
+PASS tab label present: Description
+PASS tab label present: Info
+PASS tab label present: Specifications
+PASS tab label present: Specs
+PASS tab label present: Shipping
+PASS tab label present: Ship
+PASS tab label present: Reviews
+PASS no DescriptionDescription (small-screen label wrongly set)
+PASS description H2 present: Site office cabin or site office container
+PASS description H2 40-60 chars: Site office cabin or site office container  | 54
+PASS description paragraph present  | Two different products answer the phrase site of
+PASS description paragraph present  | The difference matters on a construction site mo
+PASS description paragraph present  | If the container form is what you actually want,
+PASS description image in the tab: description/construction-site-cabin-10x10-on-site-exterior.webp  | description/construction-site-cabin-10x10-on-site-exterior.webp
+PASS description H2 present: Who works in a site cabin, and where it ac
+PASS description H2 40-60 chars: Who works in a site cabin, and where it ac  | 55
+PASS description paragraph present  | The people this cabin is specified for are the o
+PASS description paragraph present  | Where it stands is just as particular. A site ca
+PASS description paragraph present  | Because the unit moves, everything about it is s
+PASS description H2 present: What site duty changes about the shell and
+PASS description H2 40-60 chars: What site duty changes about the shell and  | 55
+PASS description paragraph present  | The shell is the same welded steel platform SAMA
+PASS description paragraph present  | What site duty changes is where things sit and h
+PASS description paragraph present  | Electrical work is concealed copper wiring on ty
+PASS description image in the tab: description/construction-site-cabin-20x8-interior-desk-run.webp  | description/construction-site-cabin-20x8-interior-desk-run.webp
+PASS description H2 present: Choosing between 100, 160, 200, 240, 300 a
+PASS description H2 40-60 chars: Choosing between 100, 160, 200, 240, 300 a  | 54
+PASS description paragraph present  | Size on a construction site is decided by two nu
+PASS description table row: 10 × 10 × 8.5 ft  | ['10 × 10 × 8.5 ft', '100 sq ft']
+PASS description table row: 20 × 8 × 8.5 ft  | ['20 × 8 × 8.5 ft', '160 sq ft']
+PASS description table row: 20 × 10 × 8.5 ft  | ['20 × 10 × 8.5 ft', '200 sq ft']
+PASS description table row: 20 × 12 × 8.5 ft  | ['20 × 12 × 8.5 ft', '240 sq ft']
+PASS description table row: 30 × 10 × 8.5 ft  | ['30 × 10 × 8.5 ft', '300 sq ft']
+PASS description table row: 40 × 10 × 8.5 ft  | ['40 × 10 × 8.5 ft', '400 sq ft']
+PASS description paragraph present  | Read the table by the desk column first. The 20 
+PASS description paragraph present  | The step from 20 × 10 ft to 20 × 12 ft buys no e
+PASS description image in the tab: description/construction-site-cabin-20x12-interior-wide-aisle.webp  | description/construction-site-cabin-20x12-interior-wide-aisle.webp
+PASS description paragraph present  | Below 100 sq ft this page stops. A gate room, a 
+PASS description H2 present: The two-door 30 × 10 and the partitioned 4
+PASS description H2 40-60 chars: The two-door 30 × 10 and the partitioned 4  | 53
+PASS description paragraph present  | The two largest sizes are the only ones that cha
+PASS description paragraph present  | On the 30 × 10 ft, eight desks are staged three 
+PASS description image in the tab: description/construction-site-cabin-30x10-interior-eight-desks.webp  | description/construction-site-cabin-30x10-interior-eight-desks.webp
+PASS description paragraph present  | The 40 × 10 ft is the only size in the range del
+PASS description paragraph present  | That partition is worth ordering rather than add
+PASS description image in the tab: description/construction-site-cabin-40x10-manager-room.webp  | description/construction-site-cabin-40x10-manager-room.webp
+PASS description H2 present: What the published price covers and what i
+PASS description H2 40-60 chars: What the published price covers and what i  | 56
+PASS description paragraph present  | Every price on this page is the finished cabin s
+PASS description paragraph present  | What is not in it is everything that is site-spe
+PASS description bullet present  | Furniture, including the desks the layout is sta
+PASS description bullet present  | Air conditioning units; the page price includes 
+PASS description bullet present  | Telecom, data cabling and any networking equipme
+PASS description bullet present  | Generators, incoming supply, and connection to t
+PASS description bullet present  | Foundation, plinth, levelling and rough-ground p
+PASS description bullet present  | Access stairs, landings and handrails
+PASS description bullet present  | Water, drainage and any sanitary fit-out
+PASS description paragraph present  | Freight is published separately by trailer size 
+PASS description paragraph present  | Two things commonly bought alongside a site cabi
+PASS description H2 present: Common questions about construction site o
+PASS description H2 40-60 chars: Common questions about construction site o  | 54
+PASS faq visible: What size site office cabin do I need on
+PASS faq answer 100-300 chars  | 202
+PASS faq visible: Is a portable site cabin a temporary str
+PASS faq answer 100-300 chars  | 184
+PASS faq visible: Are the prices on this page inclusive of
+PASS faq answer 100-300 chars  | 135
+PASS faq visible: Does the price include delivery to the s
+PASS faq answer 100-300 chars  | 155
+PASS faq visible: Can the door and window positions be cha
+PASS faq answer 100-300 chars  | 193
+PASS faq visible: Why do the windows have grills on the ou
+PASS faq answer 100-300 chars  | 170
+PASS faq visible: Is air conditioning included in the cabi
+PASS faq answer 100-300 chars  | 149
+PASS faq visible: How is the cabin lifted and placed on si
+PASS faq answer 100-300 chars  | 180
+PASS description tab has exactly one bullet block  | 1
+PASS description tab has at most one table  | 1
+PASS description tab carries five images  | 5
+PASS FAQ count 6-8  | 8
+PASS spec narrative paragraph present  | Three things on this page decide which size a si
+PASS spec narrative paragraph present  | Everything in Group D is common to the SAMAN cab
+PASS spec narrative paragraph present  | Prices in Group A are the finished shell ex-GST 
+PASS spec narrative is 2 or 3 paragraphs
+PASS spec group heading: Group A. Approved sizes and published pr
+PASS spec row: 10 × 10 × 8.5 ft  | ['10 × 10 × 8.5 ft', '100 sq ft']
+PASS spec row: 20 × 8 × 8.5 ft  | ['20 × 8 × 8.5 ft', '160 sq ft']
+PASS spec row: 20 × 10 × 8.5 ft  | ['20 × 10 × 8.5 ft', '200 sq ft']
+PASS spec row: 20 × 12 × 8.5 ft  | ['20 × 12 × 8.5 ft', '240 sq ft']
+PASS spec row: 30 × 10 × 8.5 ft  | ['30 × 10 × 8.5 ft', '300 sq ft']
+PASS spec row: 40 × 10 × 8.5 ft  | ['40 × 10 × 8.5 ft', '400 sq ft']
+PASS spec group heading: Group B. Site-duty build
+PASS spec row: Roof family, 20 × 8 ft  | ['Roof family, 20 × 8 ft', 'One-way sloping corrugated MS roof']
+PASS spec row: Roof family, all other sizes  | ['Roof family, all other sizes', 'Centred-ridge two-way sloping corrugated MS roof']
+PASS spec row: Nominal height  | ['Nominal height', '8.5 ft']
+PASS spec row: Wall thickness  | ['Wall thickness', '100 mm']
+PASS spec row: Window protection  | ['Window protection', 'Fixed external grill on every window']
+PASS spec row: Door threshold  | ['Door threshold', 'Raised clear of the mud line, outward-opening leaf']
+PASS spec row: Lifting provision  | ['Lifting provision', 'Designed lifting lugs, positions marked on the shell']
+PASS spec row: Bearing  | ['Bearing', 'Level compacted bearing or temporary plinth']
+PASS spec row: Exterior colour  | ['Exterior colour', 'One approved colour per size']
+PASS spec row: Interior lining colour  | ['Interior lining colour', 'One approved colour per size']
+PASS spec group heading: Group C. Wall-opening schedule and stage
+PASS spec row: 10 × 10 × 8.5 ft  | ['10 × 10 × 8.5 ft', 'Wall A (front, 10 ft)']
+PASS spec row: 10 × 10 × 8.5 ft  | ['10 × 10 × 8.5 ft', 'Wall B (rear, 10 ft)']
+PASS spec row: 10 × 10 × 8.5 ft  | ['10 × 10 × 8.5 ft', 'Wall C (left, 10 ft)']
+PASS spec row: 10 × 10 × 8.5 ft  | ['10 × 10 × 8.5 ft', 'Wall D (right, 10 ft)']
+PASS spec row: 20 × 8 × 8.5 ft  | ['20 × 8 × 8.5 ft', 'Wall A (front, 20 ft)']
+PASS spec row: 20 × 8 × 8.5 ft  | ['20 × 8 × 8.5 ft', 'Wall B (rear, 20 ft)']
+PASS spec row: 20 × 8 × 8.5 ft  | ['20 × 8 × 8.5 ft', 'Walls C and D (8 ft ends)']
+PASS spec row: 20 × 10 × 8.5 ft  | ['20 × 10 × 8.5 ft', 'Wall A (front, 20 ft)']
+PASS spec row: 20 × 10 × 8.5 ft  | ['20 × 10 × 8.5 ft', 'Wall B (rear, 20 ft)']
+PASS spec row: 20 × 10 × 8.5 ft  | ['20 × 10 × 8.5 ft', 'Walls C and D (10 ft ends)']
+PASS spec row: 20 × 12 × 8.5 ft  | ['20 × 12 × 8.5 ft', 'Wall A (front, 20 ft)']
+PASS spec row: 20 × 12 × 8.5 ft  | ['20 × 12 × 8.5 ft', 'Wall B (rear, 20 ft)']
+PASS spec row: 20 × 12 × 8.5 ft  | ['20 × 12 × 8.5 ft', 'Walls C and D (12 ft ends)']
+PASS spec row: 30 × 10 × 8.5 ft  | ['30 × 10 × 8.5 ft', 'Wall A (front, 30 ft)']
+PASS spec row: 30 × 10 × 8.5 ft  | ['30 × 10 × 8.5 ft', 'Wall B (rear, 30 ft)']
+PASS spec row: 30 × 10 × 8.5 ft  | ['30 × 10 × 8.5 ft', 'Walls C and D (10 ft ends)']
+PASS spec row: 40 × 10 × 8.5 ft  | ['40 × 10 × 8.5 ft', 'Wall A (front, 40 ft)']
+PASS spec row: 40 × 10 × 8.5 ft  | ['40 × 10 × 8.5 ft', 'Wall B (rear, 40 ft)']
+PASS spec row: 40 × 10 × 8.5 ft  | ['40 × 10 × 8.5 ft', 'Wall C (manager end, 10 ft)']
+PASS spec row: 40 × 10 × 8.5 ft  | ['40 × 10 × 8.5 ft', 'Wall D (common office end, 10 ft)']
+PASS spec row: 40 × 10 × 8.5 ft  | ['40 × 10 × 8.5 ft', 'Partition, 10 ft from End C']
+PASS spec group heading: Group D. Platform-common material key
+PASS spec row: Primary base frame  | ['Primary base frame', 'Welded MS C-channel chassis']
+PASS spec row: Upper, wall and roof frame  | ['Upper, wall and roof frame', 'MS SHS / angle framing with reinforced openings']
+PASS spec row: External walls  | ['External walls', 'Corrugated MS sheet, Tata / Jindal or approved equivalent']
+PASS spec row: Roof  | ['Roof', 'Sloped corrugated MS sheet with sealed laps, flashings and drainage']
+PASS spec row: Internal wall and ceiling  | ['Internal wall and ceiling', 'Prelaminated MDF with aluminium joint sections']
+PASS spec row: Floor system  | ['Floor system', 'Cement-fibre board plus resilient finish']
+PASS spec row: Thermal insulation  | ['Thermal insulation', 'Glass wool, or the documented Heatlon wall option']
+PASS spec row: Main door  | ['Main door', 'Outward-opening MS-framed door assembly']
+PASS spec row: Windows  | ['Windows', 'Two-track aluminium sliding unit with glazing']
+PASS spec row: Electrical  | ['Electrical', 'Concealed copper wiring with DB, MCB, RCCB and earthing']
+PASS spec row: Corrosion protection  | ['Corrosion protection', 'Prepared MS with red-oxide primer and compatible enamel']
+PASS spec row: Handling and QA  | ['Handling and QA', 'Designed lifting hooks and lugs, sealing and pre-dispatch inspection']
+PASS spec group heading: Group E. Scope boundary
+PASS spec row: Cabin shell, framing, envelope  | ['Cabin shell, framing, envelope, roof, insulation, lining and floor', 'Included']
+PASS spec row: Scheduled doors and windows wi  | ['Scheduled doors and windows with grills', 'Included']
+PASS spec row: Internal electrical installati  | ['Internal electrical installation, DB with MCB/RCCB and earthing', 'Included']
+PASS spec row: Air-conditioning point and cir  | ['Air-conditioning point and circuit', 'Included']
+PASS spec row: Paint system and lifting provi  | ['Paint system and lifting provision', 'Included']
+PASS spec row: Furniture, including the desks  | ['Furniture, including the desks the layout stages', 'Quoted separately']
+PASS spec row: Air-conditioning units, teleco  | ['Air-conditioning units, telecom, data cabling and networking', 'Quoted separately']
+PASS spec row: Generator, incoming supply and  | ['Generator, incoming supply and connection to site distribution', 'Quoted separately']
+PASS spec row: Foundation, plinth, levelling   | ['Foundation, plinth, levelling and rough-ground packing', 'Site scope']
+PASS spec row: Access stairs, landings and ha  | ['Access stairs, landings and handrails', 'Quoted separately']
+PASS spec row: Water, drainage and sanitary f  | ['Water, drainage and sanitary fit-out', 'Quoted separately']
+PASS spec row: Freight and crane at the recei  | ['Freight and crane at the receiving end', 'Freight published on the shipping tab; crane by site']
+PASS reviews empty state
+PASS no rating schema on an unreviewed page
+== 6. Shipping tab is the shared freight component ==
+PASS free delivery, Bangalore city
+PASS free delivery NCR city: Ghaziabad
+PASS free delivery NCR city: Gurugram
+PASS free delivery NCR city: Faridabad
+PASS free delivery NCR city: Noida
+PASS free delivery NCR city: Greater Noida
+PASS freight distance bands present
+PASS ODC note present
+== 7. Forbidden strings and characters ==
+PASS absent: 'coming soon'
+PASS absent: 'available on request'
+PASS absent: 'contact us for details'
+PASS absent: 'placeholder'
+PASS absent: 'TBD'
+FAIL absent: '7-21 working days'
+PASS absent: 'site office container conversion'
+PASS unsourced promise absent: 'coming soon'
+PASS unsourced promise absent: 'available on request'
+PASS unsourced promise absent: 'contact us for details'
+PASS unsourced promise absent: 'placeholder'
+PASS unsourced promise absent: 'TBD'
+FAIL unsourced promise absent: 'working days'
+PASS unsourced promise absent: 'warranty period'
+PASS unsourced promise absent: 'lead time'
+PASS unsourced promise absent: 'years warranty'
+PASS no U+2014 em dash in the page body
+PASS no empty heading  | 71
+== 8. Internal links ==
+PASS internal link present: /product/portable-office
+PASS internal link present: /product/container-offices/shipping-container-office
+PASS internal link present: /product/portable-office/small-office-cabin
+PASS internal link present: /product/labor-colony
+PASS internal link present: /product/portable-toilet
+PASS never-list URL absent: /product/portable-office/modern-office-cabin
+PASS never-list URL absent: /product/portable-office/portable-office-container
+PASS internal link returns 200: /product/container-cafe  | 200
+PASS internal link returns 200: /product/container-houses  | 200
+PASS internal link returns 200: /product/container-houses/luxury-container-houses  | 200
+PASS internal link returns 200: /product/container-houses/prefab-container-homes  | 200
+PASS internal link returns 200: /product/container-offices  | 200
+PASS internal link returns 200: /product/container-offices/shipping-container-office  | 200
+PASS internal link returns 200: /product/industrial-sheds  | 200
+PASS internal link returns 200: /product/labor-colony  | 200
+PASS internal link returns 200: /product/porta-cabins  | 200
+PASS internal link returns 200: /product/portable-office  | 200
+PASS internal link returns 200: /product/portable-office/executive-portable-office  | 200
+PASS internal link returns 200: /product/portable-office/portable-weighbridge-office  | 200
+PASS internal link returns 200: /product/portable-office/prefabricated-office-cabins  | 200
+PASS internal link returns 200: /product/portable-office/readymade-office-cabin  | 200
+PASS internal link returns 200: /product/portable-office/small-office-cabin  | 200
+PASS internal link returns 200: /product/portable-toilet  | 200
+PASS internal link returns 200: /product/pre-engineered-buildings  | 200
+PASS internal link returns 200: /product/prefab-buildings  | 200
+PASS internal link returns 200: /product/prefabricated-houses  | 200
+PASS internal link returns 200: /product/puf-panel  | 200
+PASS internal link returns 200: /product/roofing-sheet  | 200
+PASS internal link returns 200: /product/security-cabins  | 200
+== 9. Images ==
+PASS every img has a non-empty alt  | 32/32
+PASS no duplicate alt  | []
+PASS explicit width and height on every img  | 32
+PASS no source PNG served from the product image folder
+PASS gallery 10x10 has six slides  | 6
+PASS gallery exists and is 80-120 KB: 10x10/construction-site-cabin-10x10-front-exterior.webp  | 118
+PASS gallery ratio 1:1: 10x10/construction-site-cabin-10x10-front-exterior.webp  | (1254, 1254)
+PASS gallery exists and is 80-120 KB: 10x10/construction-site-cabin-10x10-rear-exterior.webp  | 120
+PASS gallery ratio 1:1: 10x10/construction-site-cabin-10x10-rear-exterior.webp  | (1254, 1254)
+PASS gallery exists and is 80-120 KB: 10x10/construction-site-cabin-10x10-side-exterior.webp  | 120
+PASS gallery ratio 1:1: 10x10/construction-site-cabin-10x10-side-exterior.webp  | (1254, 1254)
+PASS gallery exists and is 80-120 KB: 10x10/construction-site-cabin-10x10-entry-interior.webp  | 116
+PASS gallery ratio 1:1: 10x10/construction-site-cabin-10x10-entry-interior.webp  | (1254, 1254)
+PASS gallery exists and is 80-120 KB: 10x10/construction-site-cabin-10x10-corner-interior.webp  | 119
+PASS gallery ratio 1:1: 10x10/construction-site-cabin-10x10-corner-interior.webp  | (1254, 1254)
+PASS gallery exists and is 80-120 KB: 10x10/construction-site-cabin-10x10-reverse-interior.webp  | 115
+PASS gallery ratio 1:1: 10x10/construction-site-cabin-10x10-reverse-interior.webp  | (1254, 1254)
+PASS gallery 20x8 has six slides  | 6
+PASS gallery exists and is 80-120 KB: 20x8/construction-site-cabin-20x8-front-exterior.webp  | 119
+PASS gallery ratio 1:1: 20x8/construction-site-cabin-20x8-front-exterior.webp  | (1254, 1254)
+PASS gallery exists and is 80-120 KB: 20x8/construction-site-cabin-20x8-rear-exterior.webp  | 120
+PASS gallery ratio 1:1: 20x8/construction-site-cabin-20x8-rear-exterior.webp  | (1254, 1254)
+PASS gallery exists and is 80-120 KB: 20x8/construction-site-cabin-20x8-side-exterior.webp  | 119
+PASS gallery ratio 1:1: 20x8/construction-site-cabin-20x8-side-exterior.webp  | (1254, 1254)
+PASS gallery exists and is 80-120 KB: 20x8/construction-site-cabin-20x8-entry-interior.webp  | 114
+PASS gallery ratio 1:1: 20x8/construction-site-cabin-20x8-entry-interior.webp  | (1254, 1254)
+PASS gallery exists and is 80-120 KB: 20x8/construction-site-cabin-20x8-corner-interior.webp  | 106
+PASS gallery ratio 1:1: 20x8/construction-site-cabin-20x8-corner-interior.webp  | (1254, 1254)
+PASS gallery exists and is 80-120 KB: 20x8/construction-site-cabin-20x8-reverse-interior.webp  | 118
+PASS gallery ratio 1:1: 20x8/construction-site-cabin-20x8-reverse-interior.webp  | (1254, 1254)
+PASS gallery 20x10 has six slides  | 6
+PASS gallery exists and is 80-120 KB: 20x10/construction-site-cabin-20x10-front-exterior.webp  | 119
+PASS gallery ratio 1:1: 20x10/construction-site-cabin-20x10-front-exterior.webp  | (1254, 1254)
+PASS gallery exists and is 80-120 KB: 20x10/construction-site-cabin-20x10-rear-exterior.webp  | 120
+PASS gallery ratio 1:1: 20x10/construction-site-cabin-20x10-rear-exterior.webp  | (1254, 1254)
+PASS gallery exists and is 80-120 KB: 20x10/construction-site-cabin-20x10-side-exterior.webp  | 120
+PASS gallery ratio 1:1: 20x10/construction-site-cabin-20x10-side-exterior.webp  | (1254, 1254)
+PASS gallery exists and is 80-120 KB: 20x10/construction-site-cabin-20x10-entry-interior.webp  | 119
+PASS gallery ratio 1:1: 20x10/construction-site-cabin-20x10-entry-interior.webp  | (1254, 1254)
+PASS gallery exists and is 80-120 KB: 20x10/construction-site-cabin-20x10-corner-interior.webp  | 119
+PASS gallery ratio 1:1: 20x10/construction-site-cabin-20x10-corner-interior.webp  | (1254, 1254)
+PASS gallery exists and is 80-120 KB: 20x10/construction-site-cabin-20x10-reverse-interior.webp  | 114
+PASS gallery ratio 1:1: 20x10/construction-site-cabin-20x10-reverse-interior.webp  | (1254, 1254)
+PASS gallery 20x12 has six slides  | 6
+PASS gallery exists and is 80-120 KB: 20x12/construction-site-cabin-20x12-front-exterior.webp  | 119
+PASS gallery ratio 1:1: 20x12/construction-site-cabin-20x12-front-exterior.webp  | (1254, 1254)
+PASS gallery exists and is 80-120 KB: 20x12/construction-site-cabin-20x12-rear-exterior.webp  | 120
+PASS gallery ratio 1:1: 20x12/construction-site-cabin-20x12-rear-exterior.webp  | (1254, 1254)
+PASS gallery exists and is 80-120 KB: 20x12/construction-site-cabin-20x12-side-exterior.webp  | 120
+PASS gallery ratio 1:1: 20x12/construction-site-cabin-20x12-side-exterior.webp  | (1254, 1254)
+PASS gallery exists and is 80-120 KB: 20x12/construction-site-cabin-20x12-entry-interior.webp  | 120
+PASS gallery ratio 1:1: 20x12/construction-site-cabin-20x12-entry-interior.webp  | (1254, 1254)
+PASS gallery exists and is 80-120 KB: 20x12/construction-site-cabin-20x12-corner-interior.webp  | 117
+PASS gallery ratio 1:1: 20x12/construction-site-cabin-20x12-corner-interior.webp  | (1254, 1254)
+PASS gallery exists and is 80-120 KB: 20x12/construction-site-cabin-20x12-reverse-interior.webp  | 120
+PASS gallery ratio 1:1: 20x12/construction-site-cabin-20x12-reverse-interior.webp  | (1254, 1254)
+PASS gallery 30x10 has six slides  | 6
+PASS gallery exists and is 80-120 KB: 30x10/construction-site-cabin-30x10-front-exterior.webp  | 120
+PASS gallery ratio 1:1: 30x10/construction-site-cabin-30x10-front-exterior.webp  | (1254, 1254)
+PASS gallery exists and is 80-120 KB: 30x10/construction-site-cabin-30x10-rear-exterior.webp  | 120
+PASS gallery ratio 1:1: 30x10/construction-site-cabin-30x10-rear-exterior.webp  | (1254, 1254)
+PASS gallery exists and is 80-120 KB: 30x10/construction-site-cabin-30x10-side-exterior.webp  | 118
+PASS gallery ratio 1:1: 30x10/construction-site-cabin-30x10-side-exterior.webp  | (1254, 1254)
+PASS gallery exists and is 80-120 KB: 30x10/construction-site-cabin-30x10-entry-interior.webp  | 117
+PASS gallery ratio 1:1: 30x10/construction-site-cabin-30x10-entry-interior.webp  | (1254, 1254)
+PASS gallery exists and is 80-120 KB: 30x10/construction-site-cabin-30x10-corner-interior.webp  | 117
+PASS gallery ratio 1:1: 30x10/construction-site-cabin-30x10-corner-interior.webp  | (1254, 1254)
+PASS gallery exists and is 80-120 KB: 30x10/construction-site-cabin-30x10-reverse-interior.webp  | 116
+PASS gallery ratio 1:1: 30x10/construction-site-cabin-30x10-reverse-interior.webp  | (1254, 1254)
+PASS gallery 40x10 has six slides  | 6
+PASS gallery exists and is 80-120 KB: 40x10/construction-site-cabin-40x10-front-exterior.webp  | 118
+PASS gallery ratio 1:1: 40x10/construction-site-cabin-40x10-front-exterior.webp  | (1254, 1254)
+PASS gallery exists and is 80-120 KB: 40x10/construction-site-cabin-40x10-rear-exterior.webp  | 119
+PASS gallery ratio 1:1: 40x10/construction-site-cabin-40x10-rear-exterior.webp  | (1254, 1254)
+PASS gallery exists and is 80-120 KB: 40x10/construction-site-cabin-40x10-side-exterior.webp  | 120
+PASS gallery ratio 1:1: 40x10/construction-site-cabin-40x10-side-exterior.webp  | (1254, 1254)
+PASS gallery exists and is 80-120 KB: 40x10/construction-site-cabin-40x10-entry-interior.webp  | 120
+PASS gallery ratio 1:1: 40x10/construction-site-cabin-40x10-entry-interior.webp  | (1254, 1254)
+PASS gallery exists and is 80-120 KB: 40x10/construction-site-cabin-40x10-corner-interior.webp  | 107
+PASS gallery ratio 1:1: 40x10/construction-site-cabin-40x10-corner-interior.webp  | (1254, 1254)
+PASS gallery exists and is 80-120 KB: 40x10/construction-site-cabin-40x10-reverse-interior.webp  | 115
+PASS gallery ratio 1:1: 40x10/construction-site-cabin-40x10-reverse-interior.webp  | (1254, 1254)
+PASS GA board exists and is 80-120 KB: ga/construction-site-cabin-10x10-ga-board.webp  | 86
+PASS GA board ratio 16:9: ga/construction-site-cabin-10x10-ga-board.webp  | (1800, 1012)
+PASS GA board exists and is 80-120 KB: ga/construction-site-cabin-20x8-ga-board.webp  | 87
+PASS GA board ratio 16:9: ga/construction-site-cabin-20x8-ga-board.webp  | (1800, 1012)
+PASS GA board exists and is 80-120 KB: ga/construction-site-cabin-20x10-ga-board.webp  | 90
+PASS GA board ratio 16:9: ga/construction-site-cabin-20x10-ga-board.webp  | (1800, 1012)
+PASS GA board exists and is 80-120 KB: ga/construction-site-cabin-20x12-ga-board.webp  | 91
+PASS GA board ratio 16:9: ga/construction-site-cabin-20x12-ga-board.webp  | (1800, 1012)
+PASS GA board exists and is 80-120 KB: ga/construction-site-cabin-30x10-ga-board.webp  | 96
+PASS GA board ratio 16:9: ga/construction-site-cabin-30x10-ga-board.webp  | (1800, 1012)
+PASS GA board exists and is 80-120 KB: ga/construction-site-cabin-40x10-ga-board.webp  | 101
+PASS GA board ratio 16:9: ga/construction-site-cabin-40x10-ga-board.webp  | (1800, 1012)
+PASS section 2 card exists and is 80-120 KB: section2/construction-site-cabin-20x10-site-exterior-card.webp  | 120
+PASS section 2 card ratio 16:9: section2/construction-site-cabin-20x10-site-exterior-card.webp  | (1600, 900)
+PASS description image exists and is 80-120 KB: description/construction-site-cabin-10x10-on-site-exterior.webp  | 119
+PASS description image ratio 16:9: description/construction-site-cabin-10x10-on-site-exterior.webp  | (1600, 900)
+PASS description image exists and is 80-120 KB: description/construction-site-cabin-20x8-interior-desk-run.webp  | 96
+PASS description image ratio 16:9: description/construction-site-cabin-20x8-interior-desk-run.webp  | (1600, 900)
+PASS description image exists and is 80-120 KB: description/construction-site-cabin-20x12-interior-wide-aisle.webp  | 120
+PASS description image ratio 16:9: description/construction-site-cabin-20x12-interior-wide-aisle.webp  | (1600, 900)
+PASS description image exists and is 80-120 KB: description/construction-site-cabin-30x10-interior-eight-desks.webp  | 120
+PASS description image ratio 16:9: description/construction-site-cabin-30x10-interior-eight-desks.webp  | (1600, 900)
+PASS description image exists and is 80-120 KB: description/construction-site-cabin-40x10-manager-room.webp  | 92
+PASS description image ratio 16:9: description/construction-site-cabin-40x10-manager-room.webp  | (1600, 900)
+PASS spec diagram exists and is 80-120 KB: diagrams/construction-site-cabin-frame-joint-diagram.webp  | 80
+PASS spec diagram ratio 16:9: diagrams/construction-site-cabin-frame-joint-diagram.webp  | (1600, 900)
+PASS spec diagram exists and is 80-120 KB: diagrams/construction-site-cabin-window-electrical-diagram.webp  | 81
+PASS spec diagram ratio 16:9: diagrams/construction-site-cabin-window-electrical-diagram.webp  | (1600, 900)
+PASS section 2 card is a photograph, not a GA board
+PASS description images 05 and 06 come from the repaired 16:9 masters
+PASS no pillared original referenced
+== 10. Structured data ==
+PASS schema ItemPage present  | ['ItemPage', 'Product', 'Brand', 'AggregateOffer', 'Offer', 'PriceSpecification', 'Offer', 'PriceSpecification', 'Offer', 'PriceSpecification', 'Offer', 'PriceSpecification', 'Offe
+PASS schema Product present  | ['ItemPage', 'Product', 'Brand', 'AggregateOffer', 'Offer', 'PriceSpecification', 'Offer', 'PriceSpecification', 'Offer', 'PriceSpecification', 'Offer', 'PriceSpecification', 'Offe
+PASS schema BreadcrumbList present  | ['ItemPage', 'Product', 'Brand', 'AggregateOffer', 'Offer', 'PriceSpecification', 'Offer', 'PriceSpecification', 'Offer', 'PriceSpecification', 'Offer', 'PriceSpecification', 'Offe
+PASS schema FAQPage present  | ['ItemPage', 'Product', 'Brand', 'AggregateOffer', 'Offer', 'PriceSpecification', 'Offer', 'PriceSpecification', 'Offer', 'PriceSpecification', 'Offer', 'PriceSpecification', 'Offe
+PASS AggregateOffer in INR
+PASS AggregateOffer low price is the 10x10 ex-GST figure
+PASS AggregateOffer high price is the 40x10 ex-GST figure
+PASS no shippingDetails in schema
+PASS FAQ schema byte-identical: What size site office cabin do I n  | What size site office cabin do I n
+PASS FAQ schema byte-identical: Is a portable site cabin a tempora  | Is a portable site cabin a tempora
+PASS FAQ schema byte-identical: Are the prices on this page inclus  | Are the prices on this page inclus
+PASS FAQ schema byte-identical: Does the price include delivery to  | Does the price include delivery to
+PASS FAQ schema byte-identical: Can the door and window positions   | Can the door and window positions 
+PASS FAQ schema byte-identical: Why do the windows have grills on   | Why do the windows have grills on 
+PASS FAQ schema byte-identical: Is air conditioning included in th  | Is air conditioning included in th
+PASS FAQ schema byte-identical: How is the cabin lifted and placed  | How is the cabin lifted and placed
+
+RESULT: FAIL (3 checks)
