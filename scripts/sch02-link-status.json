@@ -1,0 +1,39 @@
+{
+  "_note": "Status each approved Container Houses destination answered at build time. Redirects are NOT followed: a 301 is not a 200.",
+  "base": "https://www.samanportable.com",
+  "probed": "2026-09-06T21:18:54",
+  "results": {
+    "/product/container-houses": {
+      "status": 200,
+      "location": null
+    },
+    "/product/container-houses/container-farmhouse": {
+      "status": 404,
+      "location": null
+    },
+    "/product/container-houses/expandable-container-house": {
+      "status": 404,
+      "location": null
+    },
+    "/product/container-houses/flat-pack-container-homes": {
+      "status": 404,
+      "location": null
+    },
+    "/product/container-houses/luxury-container-houses": {
+      "status": 200,
+      "location": null
+    },
+    "/product/container-houses/prefab-container-homes": {
+      "status": 200,
+      "location": null
+    },
+    "/product/container-houses/shipping-container-homes": {
+      "status": 200,
+      "location": null
+    },
+    "/product/container-houses/tiny-container-homes": {
+      "status": 301,
+      "location": "https://www.samanportable.com/product/container-houses/shipping-container-homes"
+    }
+  }
+}

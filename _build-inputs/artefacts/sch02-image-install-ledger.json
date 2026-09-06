@@ -1,0 +1,933 @@
+[
+ {
+  "slot": "gallery.20x8.01",
+  "dest": "/images/products/shipping-container-homes/20x8/shipping-container-home-20x8-8-5-01-front-right-hero.webp",
+  "package_bytes": 128320,
+  "shipped_bytes": 122552,
+  "map_declared_bytes": 122552,
+  "matches_map": true,
+  "dropped_chunks": [
+   [
+    "C2PA",
+    5759
+   ]
+  ],
+  "px": "1254x1254",
+  "declared_px": "1254x1254",
+  "px_ok": true,
+  "in_band": true,
+  "alt": "SAMAN 20 x 8 x 8.5 ft shipping container home, exterior three-quarter with the entrance door visible"
+ },
+ {
+  "slot": "gallery.20x8.02",
+  "dest": "/images/products/shipping-container-homes/20x8/shipping-container-home-20x8-8-5-02-front-left-angle.webp",
+  "package_bytes": 127084,
+  "shipped_bytes": 121316,
+  "map_declared_bytes": 121316,
+  "matches_map": true,
+  "dropped_chunks": [
+   [
+    "C2PA",
+    5759
+   ]
+  ],
+  "px": "1254x1254",
+  "declared_px": "1254x1254",
+  "px_ok": true,
+  "in_band": true,
+  "alt": "SAMAN 20 x 8 x 8.5 ft shipping container home, second exterior angle"
+ },
+ {
+  "slot": "gallery.20x8.03",
+  "dest": "/images/products/shipping-container-homes/20x8/shipping-container-home-20x8-8-5-03-long-side-elevation.webp",
+  "package_bytes": 128192,
+  "shipped_bytes": 122424,
+  "map_declared_bytes": 122424,
+  "matches_map": true,
+  "dropped_chunks": [
+   [
+    "C2PA",
+    5759
+   ]
+  ],
+  "px": "1254x1254",
+  "declared_px": "1254x1254",
+  "px_ok": true,
+  "in_band": true,
+  "alt": "SAMAN 20 x 8 x 8.5 ft shipping container home, long side elevation"
+ },
+ {
+  "slot": "gallery.20x8.04",
+  "dest": "/images/products/shipping-container-homes/20x8/shipping-container-home-20x8-8-5-04-elevated-three-quarter.webp",
+  "package_bytes": 128054,
+  "shipped_bytes": 122286,
+  "map_declared_bytes": 122286,
+  "matches_map": true,
+  "dropped_chunks": [
+   [
+    "C2PA",
+    5759
+   ]
+  ],
+  "px": "1254x1254",
+  "declared_px": "1254x1254",
+  "px_ok": true,
+  "in_band": true,
+  "alt": "SAMAN 20 x 8 x 8.5 ft shipping container home, elevated three-quarter, site context"
+ },
+ {
+  "slot": "gallery.20x8.05",
+  "dest": "/images/products/shipping-container-homes/20x8/shipping-container-home-20x8-8-5-05-interior-entry-living-hall.webp",
+  "package_bytes": 126002,
+  "shipped_bytes": 120234,
+  "map_declared_bytes": 120234,
+  "matches_map": true,
+  "dropped_chunks": [
+   [
+    "C2PA",
+    5759
+   ]
+  ],
+  "px": "1254x1254",
+  "declared_px": "1254x1254",
+  "px_ok": true,
+  "in_band": true,
+  "alt": "SAMAN 20 x 8 x 8.5 ft shipping container home, interior, entry and living hall"
+ },
+ {
+  "slot": "gallery.20x8.06",
+  "dest": "/images/products/shipping-container-homes/20x8/shipping-container-home-20x8-8-5-06-interior-kitchen-dining.webp",
+  "package_bytes": 125414,
+  "shipped_bytes": 119646,
+  "map_declared_bytes": 119646,
+  "matches_map": true,
+  "dropped_chunks": [
+   [
+    "C2PA",
+    5759
+   ]
+  ],
+  "px": "1254x1254",
+  "declared_px": "1254x1254",
+  "px_ok": true,
+  "in_band": true,
+  "alt": "SAMAN 20 x 8 x 8.5 ft shipping container home, interior, kitchen and dining"
+ },
+ {
+  "slot": "gallery.20x10.01",
+  "dest": "/images/products/shipping-container-homes/20x10/shipping-container-home-20x10-8-5-01-front-right-hero.webp",
+  "package_bytes": 128070,
+  "shipped_bytes": 122302,
+  "map_declared_bytes": 122302,
+  "matches_map": true,
+  "dropped_chunks": [
+   [
+    "C2PA",
+    5759
+   ]
+  ],
+  "px": "1103x1103",
+  "declared_px": "1103x1103",
+  "px_ok": true,
+  "in_band": true,
+  "alt": "SAMAN 20 x 10 x 8.5 ft shipping container home, exterior three-quarter with the entrance door visible"
+ },
+ {
+  "slot": "gallery.20x10.02",
+  "dest": "/images/products/shipping-container-homes/20x10/shipping-container-home-20x10-8-5-02-front-left-angle.webp",
+  "package_bytes": 128390,
+  "shipped_bytes": 122622,
+  "map_declared_bytes": 122622,
+  "matches_map": true,
+  "dropped_chunks": [
+   [
+    "C2PA",
+    5759
+   ]
+  ],
+  "px": "1254x1254",
+  "declared_px": "1254x1254",
+  "px_ok": true,
+  "in_band": true,
+  "alt": "SAMAN 20 x 10 x 8.5 ft shipping container home, second exterior angle"
+ },
+ {
+  "slot": "gallery.20x10.03",
+  "dest": "/images/products/shipping-container-homes/20x10/shipping-container-home-20x10-8-5-03-long-side-elevation.webp",
+  "package_bytes": 128062,
+  "shipped_bytes": 122294,
+  "map_declared_bytes": 122294,
+  "matches_map": true,
+  "dropped_chunks": [
+   [
+    "C2PA",
+    5759
+   ]
+  ],
+  "px": "1254x1254",
+  "declared_px": "1254x1254",
+  "px_ok": true,
+  "in_band": true,
+  "alt": "SAMAN 20 x 10 x 8.5 ft shipping container home, long side elevation"
+ },
+ {
+  "slot": "gallery.20x10.04",
+  "dest": "/images/products/shipping-container-homes/20x10/shipping-container-home-20x10-8-5-04-elevated-three-quarter.webp",
+  "package_bytes": 128622,
+  "shipped_bytes": 122854,
+  "map_declared_bytes": 122854,
+  "matches_map": true,
+  "dropped_chunks": [
+   [
+    "C2PA",
+    5759
+   ]
+  ],
+  "px": "1254x1254",
+  "declared_px": "1254x1254",
+  "px_ok": true,
+  "in_band": true,
+  "alt": "SAMAN 20 x 10 x 8.5 ft shipping container home, elevated three-quarter, site context"
+ },
+ {
+  "slot": "gallery.20x10.05",
+  "dest": "/images/products/shipping-container-homes/20x10/shipping-container-home-20x10-8-5-05-interior-entry-living-hall.webp",
+  "package_bytes": 128026,
+  "shipped_bytes": 122258,
+  "map_declared_bytes": 122258,
+  "matches_map": true,
+  "dropped_chunks": [
+   [
+    "C2PA",
+    5759
+   ]
+  ],
+  "px": "1254x1254",
+  "declared_px": "1254x1254",
+  "px_ok": true,
+  "in_band": true,
+  "alt": "SAMAN 20 x 10 x 8.5 ft shipping container home, interior, entry and living hall"
+ },
+ {
+  "slot": "gallery.20x10.06",
+  "dest": "/images/products/shipping-container-homes/20x10/shipping-container-home-20x10-8-5-06-interior-kitchen-dining.webp",
+  "package_bytes": 127728,
+  "shipped_bytes": 121960,
+  "map_declared_bytes": 121960,
+  "matches_map": true,
+  "dropped_chunks": [
+   [
+    "C2PA",
+    5759
+   ]
+  ],
+  "px": "1254x1254",
+  "declared_px": "1254x1254",
+  "px_ok": true,
+  "in_band": true,
+  "alt": "SAMAN 20 x 10 x 8.5 ft shipping container home, interior, kitchen and dining"
+ },
+ {
+  "slot": "gallery.20x12.01",
+  "dest": "/images/products/shipping-container-homes/20x12/shipping-container-home-20x12-8-5-01-front-right-hero.webp",
+  "package_bytes": 127408,
+  "shipped_bytes": 121640,
+  "map_declared_bytes": 121640,
+  "matches_map": true,
+  "dropped_chunks": [
+   [
+    "C2PA",
+    5759
+   ]
+  ],
+  "px": "1254x1254",
+  "declared_px": "1254x1254",
+  "px_ok": true,
+  "in_band": true,
+  "alt": "SAMAN 20 x 12 x 8.5 ft shipping container home, exterior three-quarter with the entrance door visible"
+ },
+ {
+  "slot": "gallery.20x12.02",
+  "dest": "/images/products/shipping-container-homes/20x12/shipping-container-home-20x12-8-5-02-front-left-angle.webp",
+  "package_bytes": 128488,
+  "shipped_bytes": 122720,
+  "map_declared_bytes": 122720,
+  "matches_map": true,
+  "dropped_chunks": [
+   [
+    "C2PA",
+    5759
+   ]
+  ],
+  "px": "1254x1254",
+  "declared_px": "1254x1254",
+  "px_ok": true,
+  "in_band": true,
+  "alt": "SAMAN 20 x 12 x 8.5 ft shipping container home, second exterior angle"
+ },
+ {
+  "slot": "gallery.20x12.03",
+  "dest": "/images/products/shipping-container-homes/20x12/shipping-container-home-20x12-8-5-03-long-side-elevation.webp",
+  "package_bytes": 126476,
+  "shipped_bytes": 120708,
+  "map_declared_bytes": 120708,
+  "matches_map": true,
+  "dropped_chunks": [
+   [
+    "C2PA",
+    5759
+   ]
+  ],
+  "px": "1254x1254",
+  "declared_px": "1254x1254",
+  "px_ok": true,
+  "in_band": true,
+  "alt": "SAMAN 20 x 12 x 8.5 ft shipping container home, long side elevation"
+ },
+ {
+  "slot": "gallery.20x12.04",
+  "dest": "/images/products/shipping-container-homes/20x12/shipping-container-home-20x12-8-5-04-elevated-three-quarter.webp",
+  "package_bytes": 128000,
+  "shipped_bytes": 122232,
+  "map_declared_bytes": 122232,
+  "matches_map": true,
+  "dropped_chunks": [
+   [
+    "C2PA",
+    5759
+   ]
+  ],
+  "px": "1254x1254",
+  "declared_px": "1254x1254",
+  "px_ok": true,
+  "in_band": true,
+  "alt": "SAMAN 20 x 12 x 8.5 ft shipping container home, elevated three-quarter, site context"
+ },
+ {
+  "slot": "gallery.20x12.05",
+  "dest": "/images/products/shipping-container-homes/20x12/shipping-container-home-20x12-8-5-05-interior-entry-living-hall.webp",
+  "package_bytes": 126478,
+  "shipped_bytes": 120710,
+  "map_declared_bytes": 120710,
+  "matches_map": true,
+  "dropped_chunks": [
+   [
+    "C2PA",
+    5759
+   ]
+  ],
+  "px": "1254x1254",
+  "declared_px": "1254x1254",
+  "px_ok": true,
+  "in_band": true,
+  "alt": "SAMAN 20 x 12 x 8.5 ft shipping container home, interior, entry and living hall"
+ },
+ {
+  "slot": "gallery.20x12.06",
+  "dest": "/images/products/shipping-container-homes/20x12/shipping-container-home-20x12-8-5-06-interior-kitchen-dining.webp",
+  "package_bytes": 125360,
+  "shipped_bytes": 119592,
+  "map_declared_bytes": 119592,
+  "matches_map": true,
+  "dropped_chunks": [
+   [
+    "C2PA",
+    5759
+   ]
+  ],
+  "px": "1254x1254",
+  "declared_px": "1254x1254",
+  "px_ok": true,
+  "in_band": true,
+  "alt": "SAMAN 20 x 12 x 8.5 ft shipping container home, interior, kitchen and dining"
+ },
+ {
+  "slot": "gallery.40x8.01",
+  "dest": "/images/products/shipping-container-homes/40x8/shipping-container-home-40x8-8-5-01-front-right-hero.webp",
+  "package_bytes": 127794,
+  "shipped_bytes": 122026,
+  "map_declared_bytes": 122026,
+  "matches_map": true,
+  "dropped_chunks": [
+   [
+    "C2PA",
+    5759
+   ]
+  ],
+  "px": "1103x1103",
+  "declared_px": "1103x1103",
+  "px_ok": true,
+  "in_band": true,
+  "alt": "SAMAN 40 x 8 x 8.5 ft shipping container home, exterior three-quarter with the entrance door visible"
+ },
+ {
+  "slot": "gallery.40x8.02",
+  "dest": "/images/products/shipping-container-homes/40x8/shipping-container-home-40x8-8-5-02-front-left-angle.webp",
+  "package_bytes": 127612,
+  "shipped_bytes": 121844,
+  "map_declared_bytes": 121844,
+  "matches_map": true,
+  "dropped_chunks": [
+   [
+    "C2PA",
+    5759
+   ]
+  ],
+  "px": "1254x1254",
+  "declared_px": "1254x1254",
+  "px_ok": true,
+  "in_band": true,
+  "alt": "SAMAN 40 x 8 x 8.5 ft shipping container home, second exterior angle"
+ },
+ {
+  "slot": "gallery.40x8.03",
+  "dest": "/images/products/shipping-container-homes/40x8/shipping-container-home-40x8-8-5-03-long-side-elevation.webp",
+  "package_bytes": 128520,
+  "shipped_bytes": 122752,
+  "map_declared_bytes": 122752,
+  "matches_map": true,
+  "dropped_chunks": [
+   [
+    "C2PA",
+    5759
+   ]
+  ],
+  "px": "1103x1103",
+  "declared_px": "1103x1103",
+  "px_ok": true,
+  "in_band": true,
+  "alt": "SAMAN 40 x 8 x 8.5 ft shipping container home, long side elevation"
+ },
+ {
+  "slot": "gallery.40x8.04",
+  "dest": "/images/products/shipping-container-homes/40x8/shipping-container-home-40x8-8-5-04-elevated-three-quarter.webp",
+  "package_bytes": 128358,
+  "shipped_bytes": 122590,
+  "map_declared_bytes": 122590,
+  "matches_map": true,
+  "dropped_chunks": [
+   [
+    "C2PA",
+    5759
+   ]
+  ],
+  "px": "1103x1103",
+  "declared_px": "1103x1103",
+  "px_ok": true,
+  "in_band": true,
+  "alt": "SAMAN 40 x 8 x 8.5 ft shipping container home, elevated three-quarter, site context"
+ },
+ {
+  "slot": "gallery.40x8.05",
+  "dest": "/images/products/shipping-container-homes/40x8/shipping-container-home-40x8-8-5-05-interior-entry-living-hall.webp",
+  "package_bytes": 123204,
+  "shipped_bytes": 117436,
+  "map_declared_bytes": 117436,
+  "matches_map": true,
+  "dropped_chunks": [
+   [
+    "C2PA",
+    5759
+   ]
+  ],
+  "px": "1254x1254",
+  "declared_px": "1254x1254",
+  "px_ok": true,
+  "in_band": true,
+  "alt": "SAMAN 40 x 8 x 8.5 ft shipping container home, interior, entry and living hall"
+ },
+ {
+  "slot": "gallery.40x8.06",
+  "dest": "/images/products/shipping-container-homes/40x8/shipping-container-home-40x8-8-5-06-interior-kitchen-dining.webp",
+  "package_bytes": 126458,
+  "shipped_bytes": 120690,
+  "map_declared_bytes": 120690,
+  "matches_map": true,
+  "dropped_chunks": [
+   [
+    "C2PA",
+    5759
+   ]
+  ],
+  "px": "1254x1254",
+  "declared_px": "1254x1254",
+  "px_ok": true,
+  "in_band": true,
+  "alt": "SAMAN 40 x 8 x 8.5 ft shipping container home, interior, kitchen and dining"
+ },
+ {
+  "slot": "gallery.40x10.01",
+  "dest": "/images/products/shipping-container-homes/40x10/shipping-container-home-40x10-8-5-01-front-right-hero.webp",
+  "package_bytes": 128000,
+  "shipped_bytes": 122232,
+  "map_declared_bytes": 122232,
+  "matches_map": true,
+  "dropped_chunks": [
+   [
+    "C2PA",
+    5759
+   ]
+  ],
+  "px": "1103x1103",
+  "declared_px": "1103x1103",
+  "px_ok": true,
+  "in_band": true,
+  "alt": "SAMAN 40 x 10 x 8.5 ft shipping container home, exterior three-quarter with the entrance door visible"
+ },
+ {
+  "slot": "gallery.40x10.02",
+  "dest": "/images/products/shipping-container-homes/40x10/shipping-container-home-40x10-8-5-02-front-left-angle.webp",
+  "package_bytes": 128514,
+  "shipped_bytes": 122746,
+  "map_declared_bytes": 122746,
+  "matches_map": true,
+  "dropped_chunks": [
+   [
+    "C2PA",
+    5759
+   ]
+  ],
+  "px": "1103x1103",
+  "declared_px": "1103x1103",
+  "px_ok": true,
+  "in_band": true,
+  "alt": "SAMAN 40 x 10 x 8.5 ft shipping container home, second exterior angle"
+ },
+ {
+  "slot": "gallery.40x10.03",
+  "dest": "/images/products/shipping-container-homes/40x10/shipping-container-home-40x10-8-5-03-long-side-elevation.webp",
+  "package_bytes": 128032,
+  "shipped_bytes": 122264,
+  "map_declared_bytes": 122264,
+  "matches_map": true,
+  "dropped_chunks": [
+   [
+    "C2PA",
+    5759
+   ]
+  ],
+  "px": "1254x1254",
+  "declared_px": "1254x1254",
+  "px_ok": true,
+  "in_band": true,
+  "alt": "SAMAN 40 x 10 x 8.5 ft shipping container home, long side elevation"
+ },
+ {
+  "slot": "gallery.40x10.04",
+  "dest": "/images/products/shipping-container-homes/40x10/shipping-container-home-40x10-8-5-04-elevated-three-quarter.webp",
+  "package_bytes": 128498,
+  "shipped_bytes": 122730,
+  "map_declared_bytes": 122730,
+  "matches_map": true,
+  "dropped_chunks": [
+   [
+    "C2PA",
+    5759
+   ]
+  ],
+  "px": "971x971",
+  "declared_px": "971x971",
+  "px_ok": true,
+  "in_band": true,
+  "alt": "SAMAN 40 x 10 x 8.5 ft shipping container home, elevated three-quarter, site context"
+ },
+ {
+  "slot": "gallery.40x10.05",
+  "dest": "/images/products/shipping-container-homes/40x10/shipping-container-home-40x10-8-5-05-interior-entry-living-hall.webp",
+  "package_bytes": 123944,
+  "shipped_bytes": 118176,
+  "map_declared_bytes": 118176,
+  "matches_map": true,
+  "dropped_chunks": [
+   [
+    "C2PA",
+    5759
+   ]
+  ],
+  "px": "1254x1254",
+  "declared_px": "1254x1254",
+  "px_ok": true,
+  "in_band": true,
+  "alt": "SAMAN 40 x 10 x 8.5 ft shipping container home, interior, entry and living hall"
+ },
+ {
+  "slot": "gallery.40x10.06",
+  "dest": "/images/products/shipping-container-homes/40x10/shipping-container-home-40x10-8-5-06-interior-kitchen-dining.webp",
+  "package_bytes": 123104,
+  "shipped_bytes": 117336,
+  "map_declared_bytes": 117336,
+  "matches_map": true,
+  "dropped_chunks": [
+   [
+    "C2PA",
+    5759
+   ]
+  ],
+  "px": "1254x1254",
+  "declared_px": "1254x1254",
+  "px_ok": true,
+  "in_band": true,
+  "alt": "SAMAN 40 x 10 x 8.5 ft shipping container home, interior, kitchen and dining"
+ },
+ {
+  "slot": "gallery.40x12.01",
+  "dest": "/images/products/shipping-container-homes/40x12/shipping-container-home-40x12-8-5-01-front-right-hero.webp",
+  "package_bytes": 128554,
+  "shipped_bytes": 122786,
+  "map_declared_bytes": 122786,
+  "matches_map": true,
+  "dropped_chunks": [
+   [
+    "C2PA",
+    5759
+   ]
+  ],
+  "px": "1254x1254",
+  "declared_px": "1254x1254",
+  "px_ok": true,
+  "in_band": true,
+  "alt": "SAMAN 40 x 12 x 8.5 ft shipping container home, exterior three-quarter with the entrance door visible"
+ },
+ {
+  "slot": "gallery.40x12.02",
+  "dest": "/images/products/shipping-container-homes/40x12/shipping-container-home-40x12-8-5-02-front-left-angle.webp",
+  "package_bytes": 127360,
+  "shipped_bytes": 121592,
+  "map_declared_bytes": 121592,
+  "matches_map": true,
+  "dropped_chunks": [
+   [
+    "C2PA",
+    5759
+   ]
+  ],
+  "px": "1254x1254",
+  "declared_px": "1254x1254",
+  "px_ok": true,
+  "in_band": true,
+  "alt": "SAMAN 40 x 12 x 8.5 ft shipping container home, second exterior angle"
+ },
+ {
+  "slot": "gallery.40x12.03",
+  "dest": "/images/products/shipping-container-homes/40x12/shipping-container-home-40x12-8-5-03-long-side-elevation.webp",
+  "package_bytes": 128632,
+  "shipped_bytes": 122864,
+  "map_declared_bytes": 122864,
+  "matches_map": true,
+  "dropped_chunks": [
+   [
+    "C2PA",
+    5759
+   ]
+  ],
+  "px": "1254x1254",
+  "declared_px": "1254x1254",
+  "px_ok": true,
+  "in_band": true,
+  "alt": "SAMAN 40 x 12 x 8.5 ft shipping container home, long side elevation"
+ },
+ {
+  "slot": "gallery.40x12.04",
+  "dest": "/images/products/shipping-container-homes/40x12/shipping-container-home-40x12-8-5-04-elevated-three-quarter.webp",
+  "package_bytes": 128646,
+  "shipped_bytes": 122878,
+  "map_declared_bytes": 122878,
+  "matches_map": true,
+  "dropped_chunks": [
+   [
+    "C2PA",
+    5759
+   ]
+  ],
+  "px": "1103x1103",
+  "declared_px": "1103x1103",
+  "px_ok": true,
+  "in_band": true,
+  "alt": "SAMAN 40 x 12 x 8.5 ft shipping container home, elevated three-quarter, site context"
+ },
+ {
+  "slot": "gallery.40x12.05",
+  "dest": "/images/products/shipping-container-homes/40x12/shipping-container-home-40x12-8-5-05-interior-entry-living-hall.webp",
+  "package_bytes": 124574,
+  "shipped_bytes": 118806,
+  "map_declared_bytes": 118806,
+  "matches_map": true,
+  "dropped_chunks": [
+   [
+    "C2PA",
+    5759
+   ]
+  ],
+  "px": "1254x1254",
+  "declared_px": "1254x1254",
+  "px_ok": true,
+  "in_band": true,
+  "alt": "SAMAN 40 x 12 x 8.5 ft shipping container home, interior, entry and living hall"
+ },
+ {
+  "slot": "gallery.40x12.06",
+  "dest": "/images/products/shipping-container-homes/40x12/shipping-container-home-40x12-8-5-06-interior-kitchen-dining.webp",
+  "package_bytes": 127162,
+  "shipped_bytes": 121394,
+  "map_declared_bytes": 121394,
+  "matches_map": true,
+  "dropped_chunks": [
+   [
+    "C2PA",
+    5759
+   ]
+  ],
+  "px": "1254x1254",
+  "declared_px": "1254x1254",
+  "px_ok": true,
+  "in_band": true,
+  "alt": "SAMAN 40 x 12 x 8.5 ft shipping container home, interior, kitchen and dining"
+ },
+ {
+  "slot": "section3.20x8.plan",
+  "dest": "/images/products/shipping-container-homes/size-section/shipping-container-home-20x8-8-5-3d-cutaway-general-view-v1.webp",
+  "package_bytes": 126544,
+  "shipped_bytes": 120776,
+  "map_declared_bytes": 120776,
+  "matches_map": true,
+  "dropped_chunks": [
+   [
+    "C2PA",
+    5759
+   ]
+  ],
+  "px": "1920x1440",
+  "declared_px": "1920x1440",
+  "px_ok": true,
+  "in_band": true,
+  "alt": "3D cutaway general view of the SAMAN 20 x 8 x 8.5 ft shipping container home showing room layout, areas and the opening schedule"
+ },
+ {
+  "slot": "section3.20x10.plan",
+  "dest": "/images/products/shipping-container-homes/size-section/shipping-container-home-20x10-8-5-3d-cutaway-general-view-v1.webp",
+  "package_bytes": 127880,
+  "shipped_bytes": 122112,
+  "map_declared_bytes": 122112,
+  "matches_map": true,
+  "dropped_chunks": [
+   [
+    "C2PA",
+    5759
+   ]
+  ],
+  "px": "1920x1440",
+  "declared_px": "1920x1440",
+  "px_ok": true,
+  "in_band": true,
+  "alt": "3D cutaway general view of the SAMAN 20 x 10 x 8.5 ft shipping container home showing room layout, areas and the opening schedule"
+ },
+ {
+  "slot": "section3.20x12.plan",
+  "dest": "/images/products/shipping-container-homes/size-section/shipping-container-home-20x12-8-5-3d-cutaway-general-view-v1.webp",
+  "package_bytes": 127102,
+  "shipped_bytes": 121334,
+  "map_declared_bytes": 121334,
+  "matches_map": true,
+  "dropped_chunks": [
+   [
+    "C2PA",
+    5759
+   ]
+  ],
+  "px": "1920x1440",
+  "declared_px": "1920x1440",
+  "px_ok": true,
+  "in_band": true,
+  "alt": "3D cutaway general view of the SAMAN 20 x 12 x 8.5 ft shipping container home showing room layout, areas and the opening schedule"
+ },
+ {
+  "slot": "section3.40x8.plan",
+  "dest": "/images/products/shipping-container-homes/size-section/shipping-container-home-40x8-8-5-3d-cutaway-general-view-v1.webp",
+  "package_bytes": 128192,
+  "shipped_bytes": 122424,
+  "map_declared_bytes": 122424,
+  "matches_map": true,
+  "dropped_chunks": [
+   [
+    "C2PA",
+    5759
+   ]
+  ],
+  "px": "1920x1440",
+  "declared_px": "1920x1440",
+  "px_ok": true,
+  "in_band": true,
+  "alt": "3D cutaway general view of the SAMAN 40 x 8 x 8.5 ft shipping container home showing room layout, areas and the opening schedule"
+ },
+ {
+  "slot": "section3.40x10.plan",
+  "dest": "/images/products/shipping-container-homes/size-section/shipping-container-home-40x10-8-5-3d-cutaway-general-view-v1.webp",
+  "package_bytes": 125494,
+  "shipped_bytes": 119726,
+  "map_declared_bytes": 119726,
+  "matches_map": true,
+  "dropped_chunks": [
+   [
+    "C2PA",
+    5759
+   ]
+  ],
+  "px": "1920x1440",
+  "declared_px": "1920x1440",
+  "px_ok": true,
+  "in_band": true,
+  "alt": "3D cutaway general view of the SAMAN 40 x 10 x 8.5 ft shipping container home showing room layout, areas and the opening schedule"
+ },
+ {
+  "slot": "section3.40x12.plan",
+  "dest": "/images/products/shipping-container-homes/size-section/shipping-container-home-40x12-8-5-3d-cutaway-general-view-v1.webp",
+  "package_bytes": 126968,
+  "shipped_bytes": 121200,
+  "map_declared_bytes": 121200,
+  "matches_map": true,
+  "dropped_chunks": [
+   [
+    "C2PA",
+    5759
+   ]
+  ],
+  "px": "1920x1440",
+  "declared_px": "1920x1440",
+  "px_ok": true,
+  "in_band": true,
+  "alt": "3D cutaway general view of the SAMAN 40 x 12 x 8.5 ft shipping container home showing room layout, areas and the opening schedule"
+ },
+ {
+  "slot": "section2.card",
+  "dest": "/images/products/shipping-container-homes/section2/shipping-container-home-joined-modules-hero-16x9.webp",
+  "package_bytes": 128106,
+  "shipped_bytes": 122338,
+  "map_declared_bytes": 122338,
+  "matches_map": true,
+  "dropped_chunks": [
+   [
+    "C2PA",
+    5759
+   ]
+  ],
+  "px": "1920x1080",
+  "declared_px": "1920x1080",
+  "px_ok": true,
+  "in_band": true,
+  "alt": "SAMAN shipping container home built from two joined 40 ft cargo shells, navy corrugated exterior with full-height glazing"
+ },
+ {
+  "slot": "description.20x8",
+  "dest": "/images/products/shipping-container-homes/description/shipping-container-home-20x8-8-5-end-view-16x9.webp",
+  "package_bytes": 125096,
+  "shipped_bytes": 119328,
+  "map_declared_bytes": 119328,
+  "matches_map": true,
+  "dropped_chunks": [
+   [
+    "C2PA",
+    5759
+   ]
+  ],
+  "px": "1920x1080",
+  "declared_px": "1920x1080",
+  "px_ok": true,
+  "in_band": true,
+  "alt": "End view of the SAMAN 20 x 8 x 8.5 ft shipping container home showing the centred end-wall window and retained corner castings"
+ },
+ {
+  "slot": "description.20x10",
+  "dest": "/images/products/shipping-container-homes/description/shipping-container-home-20x10-8-5-end-view-16x9.webp",
+  "package_bytes": 128268,
+  "shipped_bytes": 122500,
+  "map_declared_bytes": 122500,
+  "matches_map": true,
+  "dropped_chunks": [
+   [
+    "C2PA",
+    5759
+   ]
+  ],
+  "px": "1920x1080",
+  "declared_px": "1920x1080",
+  "px_ok": true,
+  "in_band": true,
+  "alt": "End view of the SAMAN 20 x 10 x 8.5 ft shipping container home showing the centred end-wall window and retained corner castings"
+ },
+ {
+  "slot": "description.20x12",
+  "dest": "/images/products/shipping-container-homes/description/shipping-container-home-20x12-8-5-end-view-16x9.webp",
+  "package_bytes": 125360,
+  "shipped_bytes": 119592,
+  "map_declared_bytes": 119592,
+  "matches_map": true,
+  "dropped_chunks": [
+   [
+    "C2PA",
+    5759
+   ]
+  ],
+  "px": "1920x1080",
+  "declared_px": "1920x1080",
+  "px_ok": true,
+  "in_band": true,
+  "alt": "End view of the SAMAN 20 x 12 x 8.5 ft shipping container home showing the centred end-wall window and retained corner castings"
+ },
+ {
+  "slot": "description.40x8",
+  "dest": "/images/products/shipping-container-homes/description/shipping-container-home-40x8-8-5-end-view-16x9.webp",
+  "package_bytes": 124574,
+  "shipped_bytes": 118806,
+  "map_declared_bytes": 118806,
+  "matches_map": true,
+  "dropped_chunks": [
+   [
+    "C2PA",
+    5759
+   ]
+  ],
+  "px": "1920x1080",
+  "declared_px": "1920x1080",
+  "px_ok": true,
+  "in_band": true,
+  "alt": "End view of the SAMAN 40 x 8 x 8.5 ft shipping container home showing the centred end-wall window and retained corner castings"
+ },
+ {
+  "slot": "description.40x10",
+  "dest": "/images/products/shipping-container-homes/description/shipping-container-home-40x10-8-5-end-view-16x9.webp",
+  "package_bytes": 127118,
+  "shipped_bytes": 121350,
+  "map_declared_bytes": 121350,
+  "matches_map": true,
+  "dropped_chunks": [
+   [
+    "C2PA",
+    5759
+   ]
+  ],
+  "px": "1920x1080",
+  "declared_px": "1920x1080",
+  "px_ok": true,
+  "in_band": true,
+  "alt": "End view of the SAMAN 40 x 10 x 8.5 ft shipping container home showing the centred end-wall window and retained corner castings"
+ },
+ {
+  "slot": "description.40x12",
+  "dest": "/images/products/shipping-container-homes/description/shipping-container-home-40x12-8-5-end-view-16x9.webp",
+  "package_bytes": 127264,
+  "shipped_bytes": 121496,
+  "map_declared_bytes": 121496,
+  "matches_map": true,
+  "dropped_chunks": [
+   [
+    "C2PA",
+    5759
+   ]
+  ],
+  "px": "1920x1080",
+  "declared_px": "1920x1080",
+  "px_ok": true,
+  "in_band": true,
+  "alt": "End view of the SAMAN 40 x 12 x 8.5 ft shipping container home showing the centred end-wall window and retained corner castings"
+ }
+]

@@ -1,0 +1,55 @@
+SCH-02 artefact 5 - DOM checks
+URL: http://127.0.0.1:3260/product/container-houses/shipping-container-homes
+
+exactly one H1                       : True (1)
+  H1 text                            : 'Shipping Container Homes Built From Real Cargo Shells'
+  H1 == pack h1                      : True
+no empty headings                    : True (73 headings)
+images                               : 31
+no empty alt                         : True
+no duplicate alt                     : True
+every img has width and height       : True
+no PNG shipped to the browser        : True
+zero U+2014 in body copy             : True
+tab label present: Description        : True
+tab label present: Info               : True
+tab label present: Specifications     : True
+tab label present: Specs              : True
+tab label present: Shipping           : True
+tab label present: Ship               : True
+tab label present: Reviews            : True
+Reviews empty state                  : True
+shared Shipping component: free delivery: True
+shared Shipping component: 1,000 km   : True
+
+marketing placeholders (must be zero):
+  available on request       0
+  coming soon                0
+  contact us for details     0
+  TBD                        0
+  placeholder                0
+  Lorem                      0
+
+every copy-pack string renders (entities unescaped):
+  strings checked                    : 123
+  not found                          : 0 
+
+meta title == pack (unescaped)       : True
+meta description == pack (unescaped) : True
+self-referencing canonical           : True
+
+structured data types (incl. nested) : ['AggregateOffer', 'Answer', 'Brand', 'BreadcrumbList', 'FAQPage', 'ItemPage', 'ListItem', 'PriceSpecification', 'Product', 'Question']
+  ItemPage             present        : True
+  Product              present        : True
+  AggregateOffer       present        : True
+  BreadcrumbList       present        : True
+  FAQPage              present        : True
+  Review               absent         : True
+  AggregateRating      absent         : True
+  FAQ byte-identical to tab          : True
+
+cluster links emitted by THIS PAGE (nav chrome and the shared calculator excluded):
+  /product/container-houses                                  approved
+  /product/container-houses/luxury-container-houses          approved
+  /product/container-houses/prefab-container-homes           approved
+Section 2 link to prefab-container-homes : True

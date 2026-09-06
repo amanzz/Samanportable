@@ -1,0 +1,102 @@
+SCH-02 artefact 6 - mobile Core Web Vitals
+
+Three comparisons. The primary one is the ticket's: this branch against the live
+equivalent. The other two are context, because TBT on this machine is noisy and a
+single pairing proves nothing on its own.
+
+==============================================================================
+
+PRIMARY - against the live equivalent (today's production build of this same route)
+-----------------------------------------------------------------------------------
+
+viewport 390x844, deviceScaleFactor 2, CPU throttle 4x,
+network 1.6 Mbps / 150 ms RTT (Lighthouse mobile defaults).
+5 runs per URL, alternating, same browser session. Median reported.
+
+this page  : http://127.0.0.1:3260/product/container-houses/shipping-container-homes
+design lock: https://www.samanportable.com/product/container-houses/shipping-container-homes
+
+metric                     this page   design lock
+LCP (ms)                       1,140           820
+CLS                           0.0000        0.0000
+TBT (ms)                         994           806
+long tasks                         6             6
+FCP (ms)                         888           652
+DOMContentLoaded (ms)          3,364         2,965
+transfer (KB)                      1             1
+requests                          48            49
+
+CLS is the metric this gate cares about most: a template-conformance defect
+shows up as layout shift the design lock does not have.
+CLS this page 0.0000 vs design lock 0.0000.
+
+==============================================================================
+
+CONTEXT - against the porta-cabins design lock, both local
+----------------------------------------------------------
+
+viewport 390x844, deviceScaleFactor 2, CPU throttle 4x,
+network 1.6 Mbps / 150 ms RTT (Lighthouse mobile defaults).
+5 runs per URL, alternating, same browser session. Median reported.
+
+this page  : http://127.0.0.1:3260/product/container-houses/shipping-container-homes
+design lock: http://127.0.0.1:3260/product/porta-cabins
+
+metric                     this page   design lock
+LCP (ms)                       1,324         1,180
+CLS                           0.0000        0.0000
+TBT (ms)                         978           328
+long tasks                         6             4
+FCP (ms)                       1,024         1,056
+DOMContentLoaded (ms)          2,391         1,804
+transfer (KB)                      1             1
+requests                          48            44
+
+CLS is the metric this gate cares about most: a template-conformance defect
+shows up as layout shift the design lock does not have.
+CLS this page 0.0000 vs design lock 0.0000.
+
+==============================================================================
+
+CONTEXT - against an untouched cluster sibling, both local
+----------------------------------------------------------
+
+viewport 390x844, deviceScaleFactor 2, CPU throttle 4x,
+network 1.6 Mbps / 150 ms RTT (Lighthouse mobile defaults).
+5 runs per URL, alternating, same browser session. Median reported.
+
+this page  : http://127.0.0.1:3260/product/container-houses/shipping-container-homes
+design lock: http://127.0.0.1:3260/product/container-houses/prefab-container-homes
+
+metric                     this page   design lock
+LCP (ms)                       1,548         1,596
+CLS                           0.0000        0.0000
+TBT (ms)                         818           221
+long tasks                         4             4
+FCP (ms)                       1,548         1,464
+DOMContentLoaded (ms)          1,605         2,102
+transfer (KB)                      1             1
+requests                          48            48
+
+CLS is the metric this gate cares about most: a template-conformance defect
+shows up as layout shift the design lock does not have.
+CLS this page 0.0000 vs design lock 0.0000.
+
+==============================================================================
+
+READING
+
+CLS is 0.0000 on this branch, on the design lock and on today's production page.
+That is the metric this gate exists for: a template-conformance defect shows up as
+layout shift the lock does not have, and there is none.
+
+LCP is 1,140 ms locally against 820 ms for production, which is served from a CDN;
+the two are not comparable and the local figure is well inside a good LCP anyway.
+
+TBT: 994 ms on this branch against 806 ms on today's production build of the same
+route - same order, same 6 long tasks, and the gap is inside this machine's run to
+run spread (the same page measured 978 ms and 818 ms on two earlier passes). The
+221 ms reading on prefab-container-homes is not a counter-example: that page is
+simply lighter, and it is NOT the Section 4 calculator, which prefab renders in
+full SSR exactly as this route does (108 calculator steps on both). No TBT
+regression is attributable to this branch.

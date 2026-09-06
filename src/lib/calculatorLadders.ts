@@ -53,6 +53,7 @@ import multiStoryContainerOffice from '@/data/products/multi-story-container-off
 import expandableContainerOffice from '@/data/products/expandable-container-office.json';
 import bessContainerJson from '@/data/products/bess-container.json';
 import shippingContainerOfficeJson from '@/data/products/shipping-container-office.json';
+import shippingContainerHomes from '@/data/products/shipping-container-homes.json';
 import siteOfficeContainer from '@/data/products/site-office-container.json';
 import containerizedDataCenter from '@/data/products/containerized-data-center.json';
 // C-05 container cafe cluster, added in CALC-L4 (09 Aug 2026). Each of the six
@@ -145,7 +146,10 @@ const CONTAINER_HOUSE_PRICES: Record<string, readonly number[]> = {
   // base rate Rs 1,625 adjusted by area band, ex-GST. Replaces the Rs 1,475 base the
   // route published before. This route's own ladder only; no sibling key is touched.
   'prefab-container-homes': [286000, 325000, 374400, 494000, 617500, 733200],
-  'shipping-container-homes': [364320, 414000, 476880, 622720, 778400, 913920],
+  // SCH-02 (6 Sep 2026) - the 'shipping-container-homes' row stood here and is
+  // removed. Its six figures appear in no approved source; that route now reads its
+  // own product JSON via toRows below, so this table would have been a second,
+  // unsourced copy of a ladder nothing calls. The four remaining keys are untouched.
   'affordable-container-homes': [252960, 287600, 331200, 432320, 540400, 634560],
   'luxury-container-houses': [380160, 432000, 497760, 649600, 812000, 953760],
 };
@@ -290,7 +294,11 @@ export const ROUTE_LADDERS: Readonly<Record<string, LadderRow[]>> = {
   'modular-container-cafe': toRows(modularContainerCafe),
   'container-houses': containerHouseLadder('container-houses'),
   'prefab-container-homes': containerHouseLadder('prefab-container-homes'),
-  'shipping-container-homes': containerHouseLadder('shipping-container-homes'),
+  // SCH-02 (6 Sep 2026) - correction 1. This entry read a hardcoded ladder
+  // [364320..913920] that appears in no approved source; it now reads this
+  // route's own product JSON via toRows, so the calculator cannot drift from the
+  // buy box. No rate, formula, tax, component price, label or styling changes.
+  'shipping-container-homes': toRows(shippingContainerHomes),
   'affordable-container-homes': containerHouseLadder('affordable-container-homes'),
   'luxury-container-houses': containerHouseLadder('luxury-container-houses'),
   // CH-FPK-06 (7 Sep 2026) - new route, additive key. Its size ladder is

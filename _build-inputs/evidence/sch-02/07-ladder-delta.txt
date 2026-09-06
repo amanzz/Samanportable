@@ -1,0 +1,35 @@
+SCH-02 - ROUTE_LADDERS delta, pristine HEAD vs this branch
+
+baseline worktree : C:/Users/Saman Pos/Desktop/SAMAN-SESSION-RECOVERY-2026-08-28/worktrees/sch02-baseline-ea5ff6f9
+branch worktree   : C:/Users/Saman Pos/Desktop/SAMAN-SESSION-RECOVERY-2026-08-28/worktrees/sch02-shipping-container-homes-20260906
+
+keys at baseline  : 49
+keys on branch    : 49
+keys added        : none
+keys removed      : none
+key ORDER identical: true
+
+routes whose ladder rows CHANGED: shipping-container-homes
+
+--- shipping-container-homes ---
+  baseline:
+    20x8       160 sq.ft  ex-GST 364320
+    20x10      200 sq.ft  ex-GST 414000
+    20x12      240 sq.ft  ex-GST 476880
+    40x8       320 sq.ft  ex-GST 622720
+    40x10      400 sq.ft  ex-GST 778400
+    40x12      480 sq.ft  ex-GST 913920
+  branch:
+    20x8       160 sq.ft  ex-GST 281600
+    20x10      200 sq.ft  ex-GST 320000
+    20x12      240 sq.ft  ex-GST 368640
+    40x8       320 sq.ft  ex-GST 486400
+    40x10      400 sq.ft  ex-GST 608000
+    40x12      480 sq.ft  ex-GST 721920
+
+routes byte-identical: 48 of 49
+
+CONCLUSION
+Exactly one route's ladder moved, and it is the route this build ticket corrects.
+No key was added or removed, key order is unchanged, and every other route
+resolves to byte-identical rows. Re-pinning the tripwire hash is therefore safe.

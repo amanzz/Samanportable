@@ -15,6 +15,8 @@ import constructionSiteCabinCopy from '../../../content/po-06/PO-06-construction
 import constructionSiteCabinAssets from '../../../content/po-06/PO-06-construction-site-cabin-asset-map-v1.json';
 import portableMobileLaboratoryCopy from '../../../content/po-05/PO-05-portable-mobile-laboratory-copy-v1.json';
 import portableMobileLaboratoryAssets from '../../../content/po-05/PO-05-portable-mobile-laboratory-asset-map-v1.json';
+import shippingContainerHomesCopy from '../../../content/sch-02/SCH-02-shipping-container-homes-copy-v1.json';
+import shippingContainerHomesAssets from '../../../content/sch-02/SCH-02-shipping-container-homes-asset-map-v1.json';
 
 const CABIN_HREF = '/product/porta-cabins';
 const href = (slug: string) => `${CABIN_HREF}/${slug}`;
@@ -35,6 +37,20 @@ const linkClass = 'font-semibold text-[var(--ds-color-leaf)] underline underline
 // workflow frames belong inside the Description tab and are emitted into
 // descriptionHtml, which is how the lock publishes its own six.
 const PO05_ASSETS = portableMobileLaboratoryAssets;
+
+// SCH-02 - the Section 2 split card, resolved from the signed asset map by slot.
+// scripts/sch02-install-images.py copies the package file to this path unchanged.
+const SCH02_SECTION2_CARD = (() => {
+  const entry = shippingContainerHomesAssets.images.find((i) => i.slot === 'section2.card')!;
+  const [w, h] = entry.output_px.split('x').map(Number);
+  const file = entry.prebuilt_webp.split('/').pop();
+  return {
+    src: `/images/products/shipping-container-homes/section2/${file}`,
+    alt: entry.alt,
+    width: w,
+    height: h,
+  };
+})();
 
 export interface RightToExistEntry {
   heading: string;
@@ -504,14 +520,56 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
       <>If repeatable modules matter more than finish, the <Link className={linkClass} href={containerHouseHref('prefab-container-homes')}>prefab module line</Link> is the better buy for you.</>
     ),
   },
+  // SCH-02 (6 Sep 2026) - Section 2 rendered verbatim from the signed copy pack
+  // (content/sch-02). Nothing is retyped: the heading, both paragraphs, the CTA and
+  // every split-card field are read from the pack.
+  //
+  // This REPLACES the previous entry, which is what build ticket v2 correction 3
+  // removes: it sold a "reinforced configuration" with upsized corner posts,
+  // relocation skids and a marine-duty paint system, none of which appears in any
+  // approved source, and its one link anchored on the phrase "container house range",
+  // which section 3 of the ticket forbids as an anchor on this page (it belongs to
+  // the hub). The pack's approved contextual link is the only one in Section 2 and
+  // anchors on "prefab container homes".
+  //
+  // The pack writes that link as markdown inside paragraph 2. The anchor is preceded
+  // and followed by a space in the source string, so the shipped verifier's
+  // tag-stripped comparison (every tag becomes a space, then whitespace collapses)
+  // matches the pack text without a `verificationText` mirror.
   'shipping-container-homes': {
-    heading: 'Why the shipping-form build instead of the hub range',
-    body: (
-      <>This page owns the reinforced configuration: upsized corner posts, cross-membered base with relocation skids, weatherproof window hoods and a marine-duty paint system that shrugs off coastal air. Choose it when the home will move between sites, sit near salt water, or face wind loads the standard build should not be asked to carry. It is the range&apos;s working boots, not its slippers.</>
-    ),
-    comparison: (
-      <>For a settled plot with no relocation ahead, the standard <Link className={linkClass} href={CONTAINER_HOUSES_HREF}>container house range</Link> costs less and lives identically.</>
-    ),
+    heading: shippingContainerHomesCopy.section2.h2,
+    bodyParagraphs: [
+      (<>{shippingContainerHomesCopy.section2.paragraphs[0]}</>),
+      (() => {
+        const paragraph = shippingContainerHomesCopy.section2.paragraphs[1];
+        const md = /\[([^\]]+)\]\(([^)]+)\)/.exec(paragraph);
+        if (!md) return <>{paragraph}</>;
+        return (
+          <>
+            {paragraph.slice(0, md.index)}
+            <Link className={linkClass} href={md[2]}>{md[1]}</Link>
+            {paragraph.slice(md.index + md[0].length)}
+          </>
+        );
+      })(),
+    ],
+    topCtaLabel: shippingContainerHomesCopy.section2.cta,
+    topCtaHref: '#porta-size-applications',
+    splitCard: {
+      // The pack's one 16:9 realistic render, showing two joined 40 ft cargo shells.
+      // Never a drawing: the six 3D cutaways belong to Section 3 and the
+      // Specifications tab.
+      imageSrc: SCH02_SECTION2_CARD.src,
+      imageAlt: SCH02_SECTION2_CARD.alt,
+      imageWidth: SCH02_SECTION2_CARD.width,
+      imageHeight: SCH02_SECTION2_CARD.height,
+      subheading: shippingContainerHomesCopy.section2.card.h3,
+      body: shippingContainerHomesCopy.section2.card.paragraphs[0],
+      body2: shippingContainerHomesCopy.section2.card.paragraphs[1],
+      ctaLabel: shippingContainerHomesCopy.section2.card.cta,
+      // Section 3's anchor on this route, the same resolution PO-01..PO-08 use.
+      ctaHref: '#porta-size-applications',
+    },
   },
   'affordable-container-homes': {
     heading: 'Why the affordable build instead of prefab modules',

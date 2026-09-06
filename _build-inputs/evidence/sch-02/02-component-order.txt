@@ -1,0 +1,26 @@
+SCH-02 artefact 2 - component order, this page against the design lock
+preview    : http://127.0.0.1:3260/product/container-houses/shipping-container-homes
+design lock: http://127.0.0.1:3260/product/porta-cabins
+
+block                               this page  design lock
+1  three-column hero                    46212        44077
+2  contact / location bar               55405        52935
+3  size selector tabs                   60066        57597
+4  price display                        60976         7604
+5  H2 Explore the Range                 65850        63945
+6  Section 2 RightToExist               69227        73379
+7  media / finished-work band          absent       absent
+8  Section 3 explorer                   71999        75687
+9  Section 4 calculator                112167       106963
+10 You may also like                   328766       109642
+11 Section 5 Product Details           422883       177831
+
+blocks present on this page   : 10/11
+blocks present on design lock : 10/11
+SAME set of blocks as the lock: True
+this page in document order   : True
+
+Block 7, the media / finished-work band, renders on NEITHER document. The
+content map records it as a shared component with no page-specific asset;
+the design lock emits none, so emitting none here is conformance, not a gap.
+Blocks absent from both are therefore not counted as failures.

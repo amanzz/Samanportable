@@ -1,0 +1,10 @@
+asserts run: 412   failures: 8
+  FAIL: meta title mismatch
+  FAIL: copy strings not found in rendered HTML: ['A SAMAN shipping container home is a residential conversion of a genui', "One 20 ft donor box, no joining, no site connection steel. Inside 19'-", 'One external door on Wall A at 6\'-6" to 9\'-6", measured from End C, pl', 'Six windows at 4\'-0" x 3\'-0" with a 3\'-6" sill, two of them on the end', 'Bathroom sits on the rear wall so the 1\'-6" x 1\'-0" extract louvre dis', 'Two feet of extra width changes the plan more than the number suggests']
+  FAIL: forbidden string on page: 48 business hours
+  FAIL: structured data missing: Product
+  FAIL: structured data missing: BreadcrumbList
+  FAIL: link to retired/non-approved URL: affordable-container-homes
+  FAIL: forbidden anchor text (owned by hub or prefab-container-homes): 'container house'
+  FAIL: forbidden anchor text (owned by hub or prefab-container-homes): 'container house'
+RESULT: FAIL

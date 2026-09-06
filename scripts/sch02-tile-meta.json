@@ -1,0 +1,29 @@
+{
+  "_source": "each destination's own src/data/products/<slug>.json: productName as the tile title, first approved gallery image as the tile image",
+  "tiles": {
+    "/product/container-houses": {
+      "title": "Container Houses",
+      "href": "/product/container-houses",
+      "category": "Container Houses",
+      "blurb": "Explore Container Houses",
+      "imageSrc": "/images/products/container-houses/20x8/container-houses-20x8-front-right-hero.webp",
+      "imageAlt": "Front-right hero view of a 20x8 ft container house, white steel cladding, on a paved court in a hillside garden"
+    },
+    "/product/container-houses/luxury-container-houses": {
+      "title": "Luxury Container Houses",
+      "href": "/product/container-houses/luxury-container-houses",
+      "category": "Container Houses",
+      "blurb": "Explore Luxury Container Houses",
+      "imageSrc": "/images/products/luxury-container-houses/20x8/luxury-container-houses-20x8-front-right-hero.webp",
+      "imageAlt": "Front-right hero view of a 20x8 ft luxury container house, white cladding with a dark plinth, on red laterite ground among coastal palms"
+    },
+    "/product/container-houses/prefab-container-homes": {
+      "title": "Prefab Container Homes",
+      "href": "/product/container-houses/prefab-container-homes",
+      "category": "Container Houses",
+      "blurb": "Explore Prefab Container Homes",
+      "imageSrc": "/images/products/prefab-container-homes/20x8/prefab-container-homes-20x8-front-right-hero.webp",
+      "imageAlt": "Front-right hero view of a 20x8 ft prefab container home, pale silver-grey cladding, on a clipped formal lawn with a paved grid court"
+    }
+  }
+}

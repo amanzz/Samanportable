@@ -87,7 +87,26 @@ const PROTECTED_NORMALIZED_SHA256 = {
   // was removed, and every pre-existing key is unchanged and still in the same
   // order - so no existing route's ladder rows, rates, GST or published prices
   // moved. The deeper PC-01 parity assertions below run unchanged.
-  ladders: '2cf375eb08dd1bd76869e32e3c30131a1833cb1dcf385e76246bf12cce1f86cf',
+  // SCH-02 (6 Sep 2026): re-pinned. calculatorLadders.ts changed by exactly three
+  // lines' worth of edit, all for ONE route: the 'shipping-container-homes' import,
+  // its ROUTE_LADDERS entry switching from containerHouseLadder(...) to
+  // toRows(shippingContainerHomes), and the removal of its unsourced
+  // CONTAINER_HOUSE_PRICES row (build ticket v2 correction 1: the published
+  // Rs 3,64,320-9,13,920 ladder appears in no approved source). Proved with
+  // scripts/sch02-ladder-delta.cjs, which resolves ROUTE_LADDERS in a pristine
+  // worktree at the base commit and in this one: 49 -> 49 keys, no key added or
+  // removed, key ORDER unchanged, and 48 of 49 routes resolve to byte-identical
+  // rows. The single moved route is the one this ticket corrects. Evidence in
+  // _build-inputs/evidence/sch-02/07-ladder-delta.txt. Every substantive PC-01
+  // assertion below still runs unchanged.
+  // SCH-02 + CH-PFB-04 land in the same file. The two edits are disjoint - one
+  // rebuilds CONTAINER_HOUSE_PRICES['prefab-container-homes'], the other removes
+  // CONTAINER_HOUSE_PRICES['shipping-container-homes'] and points that route's
+  // ROUTE_LADDERS entry at its own product JSON - so this pin covers both.
+  // SCH-02 (7 Sep 2026, after rebase): CH-FPK-06, CH-PFB-04 and SCH-02 all land in
+  // this file. The three edits are disjoint single-route changes, so this one pin
+  // covers all of them; scripts/sch02-ladder-delta.cjs re-proves the SCH-02 half.
+  ladders: '9f86ccb737174507a0bbe4181048d7b9e75b3d80e78012b971601fa8dde31d0c',
   rates: 'db62c8be57eeb09025d208df87b05ab9aac02f4183ac0e4a324f49c56291ba48',
   componentRates: '0e2c0e49ecbef688f8a262993cf7750155a5f9976209edddca3fcf4a434518dc',
   tax: 'da95cc10d8e2a5bb20bd9589630bcb1c4ad09fa1d53cfdbe32cd89c094579294',
