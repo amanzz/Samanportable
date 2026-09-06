@@ -1,0 +1,60 @@
+{
+ "id": 2026090607,
+ "name": "Portable Control Room",
+ "slug": "portable-control-room",
+ "permalink": "https://www.samanportable.com/product/portable-office/portable-control-room",
+ "date_created": "2026-09-06T00:00:00",
+ "date_modified": "2026-09-06T00:00:00",
+ "type": "simple",
+ "status": "publish",
+ "featured": false,
+ "catalog_visibility": "visible",
+ "description": "",
+ "short_description": "",
+ "sku": "",
+ "price": "",
+ "regular_price": "",
+ "sale_price": "",
+ "on_sale": false,
+ "purchasable": false,
+ "virtual": false,
+ "downloadable": false,
+ "downloads": [],
+ "manage_stock": false,
+ "stock_quantity": null,
+ "stock_status": "instock",
+ "backorders": "no",
+ "reviews_allowed": true,
+ "average_rating": "0.00",
+ "rating_count": 0,
+ "categories": [
+  {
+   "id": 230,
+   "name": "Portable Office",
+   "slug": "portable-office"
+  }
+ ],
+ "brands": [
+  {
+   "id": 3870,
+   "name": "Saman Portable",
+   "slug": "saman-portable"
+  }
+ ],
+ "tags": [],
+ "images": [],
+ "attributes": [],
+ "dimensions": {
+  "length": "",
+  "width": "",
+  "height": ""
+ },
+ "weight": "",
+ "meta_data": [],
+ "_rank_math_head": {
+  "success": true,
+  "head": "<title>Portable Control Room Cabin: Six Sizes and Prices | SAMAN</title>\n<meta name=\"description\" content=\"Factory-built portable control room cabins in six sizes, 100 to 400 sq ft, 2 to 8 operator positions, with published ex-GST prices and approved GA plans.\"/>\n<meta name=\"robots\" content=\"index, follow\"/>\n<link rel=\"canonical\" href=\"https://www.samanportable.com/product/portable-office/portable-control-room\" />"
+ },
+ "category": "Portable Office",
+ "category_slug": "portable-office"
+}

@@ -126,11 +126,13 @@ const unfilteredSegments = { products, locations, projects, editorial };
 // published in this commit and added to sitemapCanonicalPaths.json in the same commit
 // (Ruling 6). Both this guard and the total below move with it - see the PC-07 / PR #132
 // incident note below, which is why the guard moves WITH the canonical-paths entry.
-// PO-05 (6 Sep 2026): products 97 -> 98 for /product/portable-office/portable-mobile-laboratory,
-// published in this commit and added to sitemapCanonicalPaths.json in the same commit (Ruling 6).
-// PO-06 landed on static-migration while this branch was open, so this guard carries both
-// pages: 96 -> 97 was PO-06's move and 97 -> 98 is this one.
-const expectedSegments = { products: 98, locations: 196, projects: 1, editorial: 65 };
+// PO-07 (6 Sep 2026): products 97 -> 98 for /product/portable-office/portable-control-room,
+// published in this commit and added to sitemapCanonicalPaths.json in the same commit
+// (Ruling 6). Both this guard and the total below move with it.
+// PO-05 (6 Sep 2026): products 98 -> 99 for /product/portable-office/portable-mobile-laboratory.
+// PO-06 and PO-07 both landed on static-migration while this branch was open, so this
+// guard carries all three: 96 -> 97 was PO-06, 97 -> 98 was PO-07, 98 -> 99 is this one.
+const expectedSegments = { products: 99, locations: 196, projects: 1, editorial: 65 };
 
 const redirectEntries = await nextConfig.redirects();
 const redirectMatchers = redirectEntries
@@ -202,9 +204,10 @@ for (const [name, expected] of Object.entries(expectedSegments)) {
 // 357 = 356 plus /product/portable-office/executive-portable-office (PO-04).
 // 358 = 357 plus /product/portable-office/portable-weighbridge-office (PO-03).
 // 359 = 358 plus /product/portable-office/construction-site-cabin (PO-06).
-// 360 = 359 plus /product/portable-office/portable-mobile-laboratory (PO-05).
-if (all.length !== 360) {
-  throw new Error(`Page sitemap total changed from 360 to ${all.length}`);
+// 360 = 359 plus /product/portable-office/portable-control-room (PO-07).
+// 361 = 360 plus /product/portable-office/portable-mobile-laboratory (PO-05).
+if (all.length !== 361) {
+  throw new Error(`Page sitemap total changed from 361 to ${all.length}`);
 }
 
 const pageMap = new Map();

@@ -1,0 +1,20 @@
+PO-07 Portable Control Room - Step 0 baseline
+branch:   feature/po07-portable-control-room-20260906
+cut from: origin/static-migration
+HEAD:     3c538299725f7f37589a7cc41e9a5e906106a9fa
+3c538299725f7f37589a7cc41e9a5e906106a9fa 2026-09-05 23:22:51 +0530 Merge pull request #191 from amanzz/feature/po03-portable-weighbridge-office-20260905
+
+Design lock is /product/porta-cabins. That URL is the CATEGORY HUB route
+([category]/index.tsx); this page is a PRODUCT route ([category]/[slug].tsx).
+Both are captured. asset_map.keep_as_is is empty by design - the URL 404s today.
+
+Cloned baselines:
+  src/pages/product/[category]/[slug].tsx                    -> src_pages_product__category__slug.tsx (1879 lines)
+  src/pages/product/[category]/index.tsx                     -> src_pages_product__category_index.tsx (1329 lines)
+  src/data/products/porta-cabins.json                        -> src_data_products_porta-cabins.json (433 lines)
+  src/data/products/portable-weighbridge-office.json         -> src_data_products_portable-weighbridge-office.json (850 lines)
+  src/lib/calculatorLadders.ts                               -> src_lib_calculatorLadders.ts (308 lines)
+  src/lib/specsShippingTabs.ts                               -> src_lib_specsShippingTabs.ts (1488 lines)
+  src/components/product-variant-hero/rightToExistEntries.tsx -> src_components_product-variant-hero_rightToExistEntries.tsx (1604 lines)
+  src/data/seo/commercialArchitecture.json                   -> src_data_seo_commercialArchitecture.json (113 lines)
+  src/lib/sitemapCanonicalPaths.json                         -> src_lib_sitemapCanonicalPaths.json (419 lines)

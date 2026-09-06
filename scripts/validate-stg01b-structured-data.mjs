@@ -171,8 +171,10 @@ async function main() {
   // path without moving this pin), so this also repairs that pre-existing drift.
   // PO-05 (6 Sep 2026): 65/39, PO-06 having merged to static-migration while this
   // branch was open - this release publishes the 65th approved path on top of it.
-  if (architecture.approvedProductionPaths.length !== 65 || architecture.plannedReleasePaths.length !== 39) {
-    fail(`architecture is ${architecture.approvedProductionPaths.length}/${architecture.plannedReleasePaths.length}, expected 65/39`);
+  // PO-05 (6 Sep 2026): 66/38 - PO-07 made the identical 64/40 -> 65/39 edit this branch
+  // had already made, so it auto-merged silently; both pages shipping moves it once more.
+  if (architecture.approvedProductionPaths.length !== 66 || architecture.plannedReleasePaths.length !== 38) {
+    fail(`architecture is ${architecture.approvedProductionPaths.length}/${architecture.plannedReleasePaths.length}, expected 66/38`);
   }
   assertProtectedSourcesUnchanged();
 

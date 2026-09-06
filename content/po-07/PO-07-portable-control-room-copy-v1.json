@@ -1,0 +1,943 @@
+{
+ "page_id": "PO-07",
+ "meta": {
+  "title": "Portable Control Room Cabin: Six Sizes and Prices | SAMAN",
+  "h1": "Portable Control Room Cabin for Plant and Substation Sites",
+  "description": "Factory-built portable control room cabins in six sizes, 100 to 400 sq ft, 2 to 8 operator positions, with published ex-GST prices and approved GA plans.",
+  "canonical": "https://www.samanportable.com/product/portable-office/portable-control-room",
+  "breadcrumb": [
+   "Home",
+   "Products",
+   "Portable Office",
+   "Portable Control Room"
+  ]
+ },
+ "hero": {
+  "size_selector_label": "Choose your size - six approved control room options",
+  "default_size": "10x10",
+  "from_price_ex_gst": 201250,
+  "short_description": "A portable control room is a factory-built steel cabin that puts operators and their screens beside the plant they watch, without waiting for a civil control building. SAMAN builds it in six approved sizes from 10×10 ft to 40×10 ft, carrying 2, 3, 4, 4, 6 and 8 operator positions on one or two console islands. What separates it from a site office is the schedule behind the shell: an approved opening ledger for every wall, a door count that rises to two at 30 and 40 ft so an operator is never trapped behind a console run, and a long wall kept clear for the display or mimic zone. Published prices cover the cabin enclosure. Panels, UPS, batteries, cables, HVAC equipment and certification sit outside that price and are quoted against your drawing.",
+  "fixed_cells": {},
+  "variants": [
+   {
+    "slug": "10x10",
+    "label": "10×10 ft",
+    "size_label": "10×10×8.5 ft",
+    "area_sqft": 100,
+    "price_ex_gst": 201250,
+    "price_incl_gst": 237475,
+    "rate_per_sqft": 2012.5,
+    "ga_option": "PCR-10X10-02OP-V1",
+    "feature_cells": {
+     "Size": "10×10×8.5 ft · 100 sq ft",
+     "Operators": "2 positions · 1 console island",
+     "Openings": "1 door · 3 windows",
+     "Roof": "Two-way centred ridge",
+     "Rate": "₹2,012.50/sq ft ex-GST"
+    },
+    "presentation_colour": "Deep Oxford Blue (EX-01)",
+    "gallery": [
+     "10x10/portable-control-room-10x10-door-wall-exterior.webp",
+     "10x10/portable-control-room-10x10-rear-window-wall.webp",
+     "10x10/portable-control-room-10x10-aerial-roof-and-openings.webp",
+     "10x10/portable-control-room-10x10-operator-room-interior.webp",
+     "10x10/portable-control-room-10x10-console-island-detail.webp",
+     "10x10/portable-control-room-10x10-interior-opening-schedule.webp"
+    ]
+   },
+   {
+    "slug": "20x8",
+    "label": "20×8 ft",
+    "size_label": "20×8×8.5 ft",
+    "area_sqft": 160,
+    "price_ex_gst": 308000,
+    "price_incl_gst": 363440,
+    "rate_per_sqft": 1925.0,
+    "ga_option": "PCR-20X08-03OP-V1",
+    "feature_cells": {
+     "Size": "20×8×8.5 ft · 160 sq ft",
+     "Operators": "3 positions · 1 console island",
+     "Openings": "1 door · 6 windows",
+     "Roof": "One-way fall across width",
+     "Rate": "₹1,925.00/sq ft ex-GST"
+    },
+    "presentation_colour": "Graphite Charcoal (EX-02)",
+    "gallery": [
+     "20x8/portable-control-room-20x8-door-wall-exterior.webp",
+     "20x8/portable-control-room-20x8-rear-window-wall.webp",
+     "20x8/portable-control-room-20x8-aerial-roof-and-openings.webp",
+     "20x8/portable-control-room-20x8-operator-room-interior.webp",
+     "20x8/portable-control-room-20x8-console-island-detail.webp",
+     "20x8/portable-control-room-20x8-interior-opening-schedule.webp"
+    ]
+   },
+   {
+    "slug": "20x10",
+    "label": "20×10 ft",
+    "size_label": "20×10×8.5 ft",
+    "area_sqft": 200,
+    "price_ex_gst": 350000,
+    "price_incl_gst": 413000,
+    "rate_per_sqft": 1750.0,
+    "ga_option": "PCR-20X10-04OP-V1",
+    "feature_cells": {
+     "Size": "20×10×8.5 ft · 200 sq ft",
+     "Operators": "4 positions · 1 console island",
+     "Openings": "1 door · 6 windows",
+     "Roof": "Two-way centred ridge",
+     "Rate": "₹1,750.00/sq ft ex-GST"
+    },
+    "presentation_colour": "Deep Bottle Green (EX-05)",
+    "gallery": [
+     "20x10/portable-control-room-20x10-door-wall-exterior.webp",
+     "20x10/portable-control-room-20x10-rear-window-wall.webp",
+     "20x10/portable-control-room-20x10-aerial-roof-and-openings.webp",
+     "20x10/portable-control-room-20x10-operator-room-interior.webp",
+     "20x10/portable-control-room-20x10-console-island-detail.webp",
+     "20x10/portable-control-room-20x10-interior-opening-schedule.webp"
+    ]
+   },
+   {
+    "slug": "20x12",
+    "label": "20×12 ft",
+    "size_label": "20×12×8.5 ft",
+    "area_sqft": 240,
+    "price_ex_gst": 403200,
+    "price_incl_gst": 475776,
+    "rate_per_sqft": 1680.0,
+    "ga_option": "PCR-20X12-04OP-V1",
+    "feature_cells": {
+     "Size": "20×12×8.5 ft · 240 sq ft",
+     "Operators": "4 positions · 1 console island",
+     "Openings": "1 door · 6 windows",
+     "Roof": "Two-way centred ridge",
+     "Rate": "₹1,680.00/sq ft ex-GST"
+    },
+    "presentation_colour": "Burgundy Wine (EX-06)",
+    "gallery": [
+     "20x12/portable-control-room-20x12-door-wall-exterior.webp",
+     "20x12/portable-control-room-20x12-rear-window-wall.webp",
+     "20x12/portable-control-room-20x12-aerial-roof-and-openings.webp",
+     "20x12/portable-control-room-20x12-operator-room-interior.webp",
+     "20x12/portable-control-room-20x12-console-island-detail.webp",
+     "20x12/portable-control-room-20x12-interior-opening-schedule.webp"
+    ]
+   },
+   {
+    "slug": "30x10",
+    "label": "30×10 ft",
+    "size_label": "30×10×8.5 ft",
+    "area_sqft": 300,
+    "price_ex_gst": 504000,
+    "price_incl_gst": 594720,
+    "rate_per_sqft": 1680.0,
+    "ga_option": "PCR-30X10-06OP-V1",
+    "feature_cells": {
+     "Size": "30×10×8.5 ft · 300 sq ft",
+     "Operators": "6 positions · 2 console islands",
+     "Openings": "2 doors · 8 windows",
+     "Roof": "Two-way centred ridge",
+     "Rate": "₹1,680.00/sq ft ex-GST"
+    },
+    "presentation_colour": "Sandstone Beige (EX-08)",
+    "gallery": [
+     "30x10/portable-control-room-30x10-door-wall-exterior.webp",
+     "30x10/portable-control-room-30x10-rear-window-wall.webp",
+     "30x10/portable-control-room-30x10-aerial-roof-and-openings.webp",
+     "30x10/portable-control-room-30x10-operator-room-interior.webp",
+     "30x10/portable-control-room-30x10-console-island-detail.webp",
+     "30x10/portable-control-room-30x10-interior-opening-schedule.webp"
+    ]
+   },
+   {
+    "slug": "40x10",
+    "label": "40×10 ft",
+    "size_label": "40×10×8.5 ft",
+    "area_sqft": 400,
+    "price_ex_gst": 665000,
+    "price_incl_gst": 784700,
+    "rate_per_sqft": 1662.5,
+    "ga_option": "PCR-40X10-08OP-V1",
+    "feature_cells": {
+     "Size": "40×10×8.5 ft · 400 sq ft",
+     "Operators": "8 positions · 2 console islands",
+     "Openings": "2 doors · 9 windows",
+     "Roof": "Two-way centred ridge",
+     "Rate": "₹1,662.50/sq ft ex-GST"
+    },
+    "presentation_colour": "Muted Teal (EX-12)",
+    "gallery": [
+     "40x10/portable-control-room-40x10-door-wall-exterior.webp",
+     "40x10/portable-control-room-40x10-rear-window-wall.webp",
+     "40x10/portable-control-room-40x10-aerial-roof-and-openings.webp",
+     "40x10/portable-control-room-40x10-operator-room-interior.webp",
+     "40x10/portable-control-room-40x10-console-island-detail.webp",
+     "40x10/portable-control-room-40x10-interior-opening-schedule.webp"
+    ]
+   }
+  ]
+ },
+ "explore_range": {
+  "order": [
+   "/product/portable-office",
+   "/product/portable-office/readymade-office-cabin",
+   "/product/portable-office/prefabricated-office-cabins",
+   "/product/portable-office/small-office-cabin",
+   "/product/portable-office/portable-weighbridge-office",
+   "/product/portable-office/executive-portable-office",
+   "/product/portable-office/portable-mobile-laboratory",
+   "/product/portable-office/construction-site-cabin",
+   "/product/portable-office/portable-conference-cabin"
+  ],
+  "render_only_200": true,
+  "never_list": [
+   "/product/portable-office/modern-office-cabin",
+   "/product/portable-office/portable-office-container"
+  ]
+ },
+ "section2": {
+  "h2": "Control Room or Site Office? Read the Schedule, Not the Shell",
+  "paragraph1": "A site office and a control room look identical from the road, and they are not bought for the same reason. A site office is bought for desks. A control room is bought for what the desks are wired to, so the shell has to be settled before the panels arrive: where cable enters, where the earth bar sits, how much heat the room carries, and how an operator leaves without walking the length of a console run. That is why this page publishes an opening ledger, an operator count and a console-island count for every size, not a bare floor area.",
+  "paragraph2": "If the requirement is desks, storage and a meeting corner, the portable office cabin range is the right starting point and is priced differently. If it is operators watching equipment, stay here, fix the size against the operator count below, and send your panel schedule so openings and cable entries are frozen on the drawing before fabrication starts.",
+  "paragraph2_html": "If the requirement is desks, storage and a meeting corner, the <a href=\"/product/portable-office\">portable office cabin</a> range is the right starting point and is priced differently. If it is operators watching equipment, stay here, fix the size against the operator count below, and send your panel schedule so openings and cable entries are frozen on the drawing before fabrication starts.",
+  "link": {
+   "anchor": "portable office cabin",
+   "href": "/product/portable-office",
+   "in": "paragraph2"
+  },
+  "cta": "Request the control room drawing set",
+  "cta_target": "/contact",
+  "split_card": {
+   "image_slot": "section2_card",
+   "h3": "The 20×10 ft build, exterior and operator room",
+   "paragraph1": "The image beside this text is SAMAN's approved visualisation of the 20×10 ft control room: the Wall A opening order of window, door, window outside, and the four-position console island inside. Both come from one GA.",
+   "paragraph2": "Read it as a working drawing. The console, chairs, cupboards and the display or mimic zone are shown to make the layout legible; they are presentation items and stay outside the published cabin price unless quoted.",
+   "cta": "See the approved GA plan for each size",
+   "cta_target": "#size-applications",
+   "ruling": "SAMAN 6 Sep 2026: this slot uses a real 16:9 product image, not a GA board."
+  }
+ },
+ "section3": {
+  "h2": "Every portable control room size and where it fits",
+  "intro": "Six approved sizes, one specification. Compare operator positions, opening schedule and published ex-GST price before you fix the footprint.",
+  "sizes": [
+   {
+    "slug": "10x10",
+    "h3": "10×10 ft Control Room: 100 sq ft Two-Operator Outstation",
+    "paragraph": "The smallest approved control room puts 100 sq ft on a square plan at 8.5 ft height for ₹2,01,250 ex-GST. Its ₹2,012.50 per sq ft rate is the highest in the ladder because a full chassis, one door, three windows and the electrical package all sit inside the smallest shell. The approved layout carries one console island with two operator positions and a single cupboard. Wall A holds the door alone, so Wall B stays solid behind the operators for a display or mimic zone.",
+    "bullets": [
+     "Two operator positions on one console island",
+     "One door on Wall A; windows on Wall B, End C and End D only",
+     "Single storage cupboard; Wall B kept clear for the display or mimic zone",
+     "Two-way roof with a 5-6 in centred ridge, so rain falls across the 10 ft width",
+     "Square 10 ft plan turns into plot corners a 20 ft body cannot reach"
+    ],
+    "ga_board_slot": "ga_10x10"
+   },
+   {
+    "slug": "20x8",
+    "h3": "20×8 ft Control Room: 160 sq ft Narrow Three-Desk Room",
+    "paragraph": "At 20×8 ft you get 160 sq ft for ₹3,08,000 ex-GST at ₹1,925 per sq ft. The 8 ft width is the reason to choose it: it follows a compound wall, a cable trench edge or a switchgear approach margin where a 10 ft body will not sit. It is also the only size in the ladder with a one-way roof, falling 5-6 inches across the width instead of from a centred ridge, so you can throw all run-off to one side of a tight gap. Three operator positions sit on one console island with two cupboards.",
+    "bullets": [
+     "Three operator positions on one console island",
+     "One-way roof fall of 5-6 in across the 8 ft width; no ridge",
+     "Wall A opening order W1, D1, W2; Wall B carries W3 and W4",
+     "160 sq ft at ₹1,925 per sq ft ex-GST",
+     "8 ft body suits trench edges and restricted switchgear approaches",
+     "Two storage cupboards in the solid Wall A bays"
+    ],
+    "ga_board_slot": "ga_20x8"
+   },
+   {
+    "slug": "20x10",
+    "h3": "20×10 ft Control Room: SAMAN's 200 sq ft Four-Desk Reference",
+    "paragraph": "The 20×10 ft room is the costing anchor for this product. It gives 200 sq ft at ₹3,50,000 ex-GST, and its ₹1,750 per sq ft rate is the base every other size is derived from, up for the smaller two and down for the larger two. The approved layout is one 9 x 2.3 ft console island with four operator positions facing Wall B, two cupboards in the solid Wall A bays, and no partition. Compare vendor quotations at this size first, because the published rate is set here.",
+    "bullets": [
+     "Four operator positions on one 9 x 2.3 ft console island",
+     "Base rate size: ₹1,750 per sq ft ex-GST, 200 sq ft, ₹3,50,000 ex-GST",
+     "Wall A opening order W1, D1, W2; Wall B carries W3 and W4",
+     "Central Wall B bay reserved for the display or mimic zone",
+     "Two-way roof with a 5-6 in centred ridge running the full 20 ft length",
+     "No partition in the approved plan; any partition follows your approved drawing"
+    ],
+    "ga_board_slot": "ga_20x10"
+   },
+   {
+    "slug": "20x12",
+    "h3": "20×12 ft Control Room: 240 sq ft Wide-Aisle Operator Room",
+    "paragraph": "Adding two feet of width takes the room to 240 sq ft for ₹4,03,200 ex-GST at a reduced ₹1,680 per sq ft. The operator count does not change from the 20×10: it stays at four positions on one console island. What changes is the clear aisle behind the chairs, which is what a maintenance crew needs when it has to reach the back of a panel line while the room is manned. Check the approach road before ordering, because a 12 ft body can attract over-dimension transport conditions.",
+    "bullets": [
+     "Four operator positions, same as 20×10, with a wider clear aisle behind the chairs",
+     "240 sq ft at ₹1,680 per sq ft ex-GST, ₹4,03,200 ex-GST",
+     "Same opening ledger as 20×10: W1, D1, W2 on Wall A; W3 and W4 on Wall B",
+     "Two-way roof with a 5-6 in centred ridge along the 20 ft length",
+     "12 ft width may fall under over-dimension transport rules; confirm site approach"
+    ],
+    "ga_board_slot": "ga_20x12"
+   },
+   {
+    "slug": "30x10",
+    "h3": "30×10 ft Control Room: 300 sq ft Six-Desk Two-Console Room",
+    "paragraph": "At 30×10 ft the room changes shape rather than just growing. It carries 300 sq ft for ₹5,04,000 ex-GST at ₹1,680 per sq ft, and the approved plan splits the operators across two console islands with six positions and three cupboards. It is also the first size with two doors on Wall A, one near each end, so no operator is more than half a room from an exit while a console run blocks the middle. Wall B carries four windows, which is what keeps a 30 ft room from reading as a tunnel.",
+    "bullets": [
+     "Six operator positions across two console islands",
+     "Two doors on Wall A: opening order D1, W1, W2, D2",
+     "Four windows on Wall B plus one centred window in each end wall",
+     "300 sq ft at ₹1,680 per sq ft ex-GST, ₹5,04,000 ex-GST",
+     "Three storage cupboards in the approved plan",
+     "Ships on a 40 ft open trailer, not a 20 ft trailer"
+    ],
+    "ga_board_slot": "ga_30x10"
+   },
+   {
+    "slug": "40x10",
+    "h3": "40×10 ft Control Room: 400 sq ft Eight-Desk Shift Room",
+    "paragraph": "The largest approved size gives 400 sq ft for ₹6,65,000 ex-GST at ₹1,662.50 per sq ft, the lowest rate in the ladder. Eight operator positions sit across two console islands with four cupboards, which is a full shift plus a shift handover rather than a single watch. Wall A runs W1, D1, W2, W3, D2, so both doors land between console runs. This is the size to plan when the room has to hold a whole plant's monitoring in one factory-finished module instead of two.",
+    "bullets": [
+     "Eight operator positions across two console islands",
+     "Two doors on Wall A: opening order W1, D1, W2, W3, D2",
+     "Four windows on Wall B plus one centred window in each end wall",
+     "400 sq ft at ₹1,662.50 per sq ft ex-GST, ₹6,65,000 ex-GST",
+     "Four storage cupboards in the approved plan",
+     "Ships on a 40 ft open trailer; confirm the lift and placement before dispatch"
+    ],
+    "ga_board_slot": "ga_40x10"
+   }
+  ]
+ },
+ "ymal": {
+  "intro": "Three more cabins in the portable office range, built on the same platform.",
+  "cluster": "portable-office",
+  "render_only_200": true
+ },
+ "description_tab": {
+  "intro": "Detailed information about the SAMAN Portable Control Room",
+  "sections": [
+   {
+    "h2": "What a portable control room actually is",
+    "items": [
+     {
+      "type": "p",
+      "text": "In Indian search results the phrase control room usually means a police or civic emergency helpline. This page is about the other meaning: a manufactured product. A portable control room is a steel cabin built in a factory, finished, then trailered to site and set down, so that operators and their screens sit within sight of the equipment they are watching. Nothing about it is temporary in the sense of flimsy. It is temporary in the sense that it can be lifted off the plinth and moved when the work moves."
+     },
+     {
+      "type": "p",
+      "text": "The buyer is rarely the person who will sit in it. In most enquiries that reach SAMAN, the specifier is an electrical or project engineer who already knows the panel schedule and is trying to find a room to put in front of it, before the civil control building exists or instead of building one at all. That is why this page leads with an opening ledger and an operator count rather than with photographs. Those are the two numbers that decide whether the room works."
+     },
+     {
+      "type": "p",
+      "text": "SAMAN manufactures this cabin at Bengaluru for the South zone and at Greater Noida for the North zone, on the same steel platform used for the rest of the portable cabin family. What is specific to the control room is not the frame or the sheet: it is the approved layout, the door count, the wall kept clear for a display or mimic zone, and the fact that the cabin is priced as an enclosure with the control equipment explicitly outside the price."
+     }
+    ]
+   },
+   {
+    "h2": "How many operators fit in each approved size",
+    "items": [
+     {
+      "type": "p",
+      "text": "The six approved sizes carry 2, 3, 4, 4, 6 and 8 operator positions. That ladder is not a simple function of floor area, and the jump from 20×10 to 20×12 shows why: both carry four operator positions on a single console island. The extra two feet of width buys clear aisle behind the chairs, not another seat. If you need a fifth operator you go to 30×10 and pick up a second console island, three cupboards and a second door, not to 20×12."
+     },
+     {
+      "type": "p",
+      "text": "The two larger sizes change the room rather than stretching it. At 30×10 and 40×10 the approved plan puts operators across two console islands, and Wall A carries two doors instead of one. A console run across the middle of a 30 or 40 foot room would otherwise leave an operator at the far end walking the full length of the room to reach the only exit. Two doors, one near each end, is the layout decision that follows from the console decision."
+     },
+     {
+      "type": "p",
+      "text": "Occupancy figures on this page are approved operator positions from the general arrangement drawing, not a maximum permitted occupancy. Fire, egress and occupancy compliance for your site is governed by the project engineering approved for your order."
+     },
+     {
+      "type": "image",
+      "slot": "description_01",
+      "out": "description/portable-control-room-description-01-30x10-six-operator-room.webp",
+      "alt": "30 by 10 ft portable control room exterior and six-position two-console operator room"
+     }
+    ]
+   },
+   {
+    "h2": "What is inside the price, and what is not",
+    "items": [
+     {
+      "type": "p",
+      "text": "Every price on this page is for the cabin enclosure and its scheduled interfaces. That means the chassis, walls, roof, floor, insulation, interior lining, the doors and windows in the approved opening ledger, the lighting and small-power electrical package, and the lifting arrangement. It is a complete room, delivered finished."
+     },
+     {
+      "type": "p",
+      "text": "It does not include the equipment that makes it a control room in the operational sense. MCC, PCC, PLC and SCADA panels, UPS, batteries, bus duct, field and control cabling, HVAC equipment, fire suppression and any certification are excluded unless separately quoted. The consoles, chairs, cupboards and the display or mimic wall shown in the images are presentation items on the same basis."
+     },
+     {
+      "type": "p",
+      "text": "This is stated plainly because control room enquiries are where under-quoting does the most damage. A quotation that folds an unspecified allowance for panels or air conditioning into a per square foot rate cannot be compared with one that does not. Ask every vendor to show the enclosure price and the equipment scope on separate lines, as they are here."
+     },
+     {
+      "type": "image",
+      "slot": "description_02",
+      "out": "description/portable-control-room-description-02-10x10-two-operator-room.webp",
+      "alt": "10 by 10 ft portable control room exterior and two-position operator room interior"
+     }
+    ]
+   },
+   {
+    "h2": "Cable entry, earthing and the raised-floor option",
+    "items": [
+     {
+      "type": "p",
+      "text": "A control room is entered by cables as much as by people, and the cabin has to be told where. The workbook for this product records a gland plate position, an earthing stud strip, a battery plinth reserve, a trench cover datum and a raised-floor option as controlled items, which means they are decided on the drawing before fabrication rather than cut on site afterwards."
+     },
+     {
+      "type": "p",
+      "text": "Practically, that means SAMAN needs three things from you at enquiry stage: the direction cable arrives from, whether it arrives from a trench below or a tray above, and the earthing arrangement the panels will be bonded to. Get those three onto the drawing and the openings, the floor build-up and the plinth reserve resolve themselves. Leave them out and the cabin arrives correct but wrong."
+     },
+     {
+      "type": "p",
+      "text": "Cutting a gland plate into a finished floor on a live site is possible and it is never as good as having it in the drawing. The same is true of the raised-floor option. It is a build decision, not a retrofit."
+     }
+    ]
+   },
+   {
+    "h2": "Heat load: why a control room is not an office",
+    "items": [
+     {
+      "type": "p",
+      "text": "The single largest technical difference between this cabin and a site office of the same size is heat. An office of 200 square feet carries four people and a few laptops. A control room of 200 square feet carries four people, their screens, and whatever panel and UPS load sits in or beside the room. The envelope is the same; the load is not."
+     },
+     {
+      "type": "p",
+      "text": "SAMAN's workbook treats the heat-load worksheet as a controlled item for this product for that reason. The published cabin specification includes 50 mm glass wool in the roof at a nominal 42 kg per cubic metre and 25 mm glass wool or 12 mm Heatlon in the walls, with natural cross ventilation and an AC provision point. It does not include air conditioning equipment, and it does not include a cooling calculation for your equipment."
+     },
+     {
+      "type": "p",
+      "text": "That calculation is yours or your consultant's, and it belongs in the enquiry. Send the connected load that will sit inside the room and the ambient design temperature for the site, and the AC provision, ventilation path and any insulation upgrade can be settled against a number instead of a guess."
+     },
+     {
+      "type": "image",
+      "slot": "description_03",
+      "out": "description/portable-control-room-description-03-20x8-narrow-operator-room.webp",
+      "alt": "20 by 8 ft portable control room exterior and three-position narrow operator room"
+     }
+    ]
+   },
+   {
+    "h2": "Reading the opening ledger before you order",
+    "items": [
+     {
+      "type": "p",
+      "text": "Every size on this page publishes a full opening ledger, wall by wall. It reads, for example, Wall A: W1, D1, W2; Wall B: W3, W4; End C: W5 centred; End D: W6 centred. Wall A is the external door wall. Wall B is the opposite long wall. End C and End D are the short end walls. The ledger is the same information the fabricator works to, published rather than kept internal."
+     },
+     {
+      "type": "p",
+      "text": "Three rules hold across every approved size, and they are worth checking against any competing drawing. Each end wall carries exactly one centred window and no external door, so the ends stay available for a panel line or a mimic wall. The lifting arrangement is exactly four compact one-hole eye plates, one at each real top wall corner, never on the ridge. And the roof rise or fall is 5 to 6 inches only, so drainage works without the cabin reading as a shed."
+     },
+     {
+      "type": "p",
+      "text": "If your site needs an opening the ledger does not have, that is a drawing change and it is quotable. What it is not is a site alteration. Cutting an unscheduled opening into a finished cabin compromises the frame and the weather seal at the same time."
+     }
+    ]
+   },
+   {
+    "h2": "Portable control room price in India: the published ladder",
+    "items": [
+     {
+      "type": "p",
+      "text": "The published ex-GST ladder runs from ₹2,01,250 for the 10×10 ft room to ₹6,65,000 for the 40×10 ft room. The per square foot rate falls as the room grows, from ₹2,012.50 at 100 square feet to ₹1,662.50 at 400 square feet, because a chassis, a door set and an electrical package cost broadly the same whatever length they are wrapped around. The 20×10 ft size at ₹1,750 per square foot is the base rate; every other size in the ladder is derived from it by a published band adjustment."
+     },
+     {
+      "type": "p",
+      "text": "Prices are shown ex-GST with the 18 per cent inclusive figure alongside, under HSN 9406 for prefabricated buildings. Freight is separate and follows the trailer ladder in the Shipping tab: cabins up to 20 feet travel on a 20 foot open trailer, the 30 and 40 foot rooms on a 40 foot trailer. Delivery is free within Bangalore city and across Ghaziabad, Gurugram, Faridabad, Noida and Greater Noida."
+     },
+     {
+      "type": "image",
+      "slot": "description_04",
+      "out": "description/portable-control-room-description-04-20x12-wide-aisle-room.webp",
+      "alt": "20 by 12 ft portable control room exterior and wide-aisle four-position operator room"
+     },
+     {
+      "type": "p",
+      "text": "What the ladder deliberately does not do is quote a range. A published number that a buyer can put beside a competitor's number is more useful than a band, and it is the only way to make the excluded scope visible."
+     }
+    ]
+   },
+   {
+    "h2": "Delivery, lifting and placement on a live site",
+    "items": [
+     {
+      "type": "p",
+      "text": "The cabin arrives as one factory-finished module on an open trailer and is craned or manually placed onto the prepared base. Standard lead time is 7 to 21 working days from confirmed order plus transit. The four corner eye plates are the designed lifting points and the only approved ones; slinging from the ridge or from the frame is outside the lifting arrangement."
+     },
+     {
+      "type": "p",
+      "text": "Placement inside an operating substation yard or a process plant is usually the harder half of the job, not the transport. Crane standing position, boom radius over live equipment, permit windows and the shutdown that may be needed to lift across an energised bay are site matters, and they are settled with your quotation rather than assumed. Share the access route, the gate width and the intended position early."
+     },
+     {
+      "type": "p",
+      "text": "The 12 ft wide 20×12 room and the 40 ft long room are the two to check the approach road for first. Over-dimension transport conditions vary by state and are confirmed at booking."
+     },
+     {
+      "type": "image",
+      "slot": "description_05",
+      "out": "description/portable-control-room-description-05-40x10-eight-operator-room.webp",
+      "alt": "40 by 10 ft portable control room exterior and eight-position two-console operator room"
+     }
+    ]
+   },
+   {
+    "h2": "How to compare portable control room quotations",
+    "items": [
+     {
+      "type": "p",
+      "text": "Control room quotations are hard to compare because vendors draw the boundary in different places. Five checks separate them quickly:"
+     },
+     {
+      "type": "ul",
+      "items": [
+       "Ask for the enclosure price and the panel, UPS, cable and HVAC scope on separate lines",
+       "Ask which size the per square foot rate is set on, and how the other sizes are derived",
+       "Ask for the opening ledger wall by wall, not a floor area and a photograph",
+       "Ask where the lifting points are, and refuse ridge lifting or ISO corner castings on a steel cabin",
+       "Ask whether the heat-load and earthing arrangement are on the drawing or left to site"
+      ]
+     }
+    ]
+   },
+   {
+    "h2": "Why specifiers pick SAMAN for the control room cabin",
+    "items": [
+     {
+      "type": "p",
+      "text": "SAMAN has manufactured prefabricated and portable structures since 2017 from two plants, Bengaluru for the South zone and Greater Noida for the North zone, and supplies pan-India business buyers. The control room is built on the same approved steel platform as the rest of the cabin family, which is why the frame, sheet and insulation specification in the Specifications tab is shared and published rather than described in adjectives."
+     },
+     {
+      "type": "p",
+      "text": "What is specific to this page is the approved general arrangement set: six drawings, an opening ledger for every wall, an operator and console count for every size, and a scope boundary written the same way in the workbook, on the drawing and on this page. Send the panel schedule, the cable entry direction and the connected load with your enquiry and you will get a quotation against a drawing rather than against a description."
+     }
+    ]
+   }
+  ]
+ },
+ "faq_schema": [
+  {
+   "q": "What is a portable control room?",
+   "a": "A factory-built steel cabin that houses operators and their screens beside the plant they monitor. It is delivered finished on a trailer and set down on a prepared base, instead of being built in civil work."
+  },
+  {
+   "q": "How many operators does each size hold?",
+   "a": "The six approved sizes carry 2, 3, 4, 4, 6 and 8 operator positions. The 30×10 and 40×10 rooms split them across two console islands; the four smaller sizes use one."
+  },
+  {
+   "q": "Are SCADA, PLC or UPS panels included in the price?",
+   "a": "No. Published prices cover the cabin enclosure and its scheduled interfaces. MCC, PCC, PLC and SCADA panels, UPS, batteries, cables, HVAC equipment and certification are quoted separately."
+  },
+  {
+   "q": "Does it come with air conditioning?",
+   "a": "An AC provision point is included, the equipment is not. Send the connected load inside the room and the site ambient design temperature so the provision and ventilation can be sized against a number."
+  },
+  {
+   "q": "What does a portable control room cost in India?",
+   "a": "The published ex-GST ladder runs from ₹2,01,250 for 100 sq ft to ₹6,65,000 for 400 sq ft. The 20×10 ft room at ₹1,750 per sq ft is the base rate the other sizes derive from."
+  },
+  {
+   "q": "Can it be placed inside a substation yard?",
+   "a": "Yes, and the lift is the part to plan. Crane position, boom radius over live equipment and any shutdown needed to lift across an energised bay are confirmed with your quotation, not assumed."
+  },
+  {
+   "q": "How is cable brought into the cabin?",
+   "a": "Through a gland plate fixed on the approved drawing, with an earthing stud strip, battery plinth reserve and trench cover datum decided at the same time. Send the cable entry direction with your enquiry."
+  },
+  {
+   "q": "How long does delivery take?",
+   "a": "Standard delivery is 7 to 21 working days from confirmed order, plus transit. Freight follows the open trailer ladder in the Shipping tab and is free within Bangalore city and Delhi NCR."
+  }
+ ],
+ "specifications_tab": {
+  "narrative": [
+   "Read this tab as the thing being bought, line by line. Two of the five groups below are specific to the portable control room: Group B is the build the control room GA controls, and Group C is the opening and layout schedule that changes with the size you pick. Group D is the SAMAN platform material key shared across the cabin families, published so you can see which lines are product decisions and which are standards. Group E is the scope boundary.",
+   "The lines that decide a control room are not the ones that decide an office. Frame section and sheet thickness are common to the platform; the door count, the end wall rule, the roof family per width and the reserved display wall are not, and they are what a panel line and an operating crew actually collide with. Compare quotations on Group B and Group C first, then on price.",
+   "Two diagrams below the tables show where the control room specification is made or lost: the first fixes roof orientation and drainage per cabin width, the second fixes the long-wall opening order and the four-corner lifting rule. Final openings, colours, service loads and fit-out follow the drawing and quotation approved for your order."
+  ],
+  "groups": [
+   {
+    "title": "Group A - Approved sizes and prices (portable control room workbook v1)",
+    "header": [
+     "Code",
+     "Size (ft)",
+     "Area (sq ft)",
+     "Operator positions",
+     "Rate ₹/sq ft",
+     "Price ex-GST",
+     "Price incl. 18% GST"
+    ],
+    "rows": [
+     [
+      "SZ-01",
+      "10×10×8.5",
+      "100",
+      "2",
+      "2,012.50",
+      "₹2,01,250",
+      "₹2,37,475"
+     ],
+     [
+      "SZ-02",
+      "20×8×8.5",
+      "160",
+      "3",
+      "1,925.00",
+      "₹3,08,000",
+      "₹3,63,440"
+     ],
+     [
+      "SZ-03",
+      "20×10×8.5",
+      "200",
+      "4",
+      "1,750.00",
+      "₹3,50,000",
+      "₹4,13,000"
+     ],
+     [
+      "SZ-04",
+      "20×12×8.5",
+      "240",
+      "4",
+      "1,680.00",
+      "₹4,03,200",
+      "₹4,75,776"
+     ],
+     [
+      "SZ-05",
+      "30×10×8.5",
+      "300",
+      "6",
+      "1,680.00",
+      "₹5,04,000",
+      "₹5,94,720"
+     ],
+     [
+      "SZ-06",
+      "40×10×8.5",
+      "400",
+      "8",
+      "1,662.50",
+      "₹6,65,000",
+      "₹7,84,700"
+     ]
+    ],
+    "note": "Price rule: base rate ₹1,750/sq ft at 200 sq ft; published band adjustment 100-149 +15%, 150-199 +10%, 200 base, 201-300 -4%, 301-400 -5%, 401-500 -6%. GST 18%, HSN 9406. Cabin enclosure only."
+   },
+   {
+    "title": "Group B - Control room build controlled by the approved GA",
+    "header": [
+     "Item",
+     "Approved detail"
+    ],
+    "rows": [
+     [
+      "Roof family, 8 ft width",
+      "One-way fall across the width; total high-to-low fall 5-6 in; no ridge"
+     ],
+     [
+      "Roof family, 10 and 12 ft widths",
+      "Two-way roof with a centred ridge running the full cabin length; 5-6 in ridge-to-eave rise"
+     ],
+     [
+      "Roof rise limit",
+      "5-6 in only; pronounced gable, hip, third plane, shortened ridge and lengthwise fall are all rejected at QA"
+     ],
+     [
+      "Lifting arrangement",
+      "Exactly four compact one-hole eye plates, one at each real top wall corner; no ridge hook and no ISO corner casting"
+     ],
+     [
+      "End wall rule",
+      "Every 8, 10 and 12 ft end wall carries exactly one centred window, no external door and no end-wall furniture"
+     ],
+     [
+      "External door",
+      "3 x 7 ft outward-opening door on Wall A, leaf in matching wall corrugation and colour (20×10 approved GA)"
+     ],
+     [
+      "Windows",
+      "4 x 3 ft, sill 3 ft 6 in, head 6 ft 6 in (20×10 approved GA)"
+     ],
+     [
+      "Wall build-up",
+      "100 mm walls, 8 ft 6 in nominal external height on every approved size"
+     ],
+     [
+      "Base",
+      "Matte-black skid base, continuous, with no false vents or cut-outs (20×10 approved GA)"
+     ],
+     [
+      "Display or mimic zone",
+      "Central solid bay on Wall B reserved on every approved GA; presentation context only, excluded from the cabin price"
+     ]
+    ],
+    "note": "Unique to this page. These rows are what a panel line and an operating crew collide with; compare quotations here first."
+   },
+   {
+    "title": "Group C - Opening schedule and approved layout by size",
+    "header": [
+     "Size (ft)",
+     "Opening ledger",
+     "Operators / consoles / cupboards",
+     "Roof",
+     "GA option"
+    ],
+    "rows": [
+     [
+      "10×10×8.5",
+      "Wall A: D1 | Wall B: W1 | End C: W2 centred | End D: W3 centred",
+      "2 / 1 / 1",
+      "Two-way: centred full-length ridge; 5-6 in ridge-to-eave rise",
+      "PCR-10X10-02OP-V1"
+     ],
+     [
+      "20×8×8.5",
+      "Wall A: W1 - D1 - W2 | Wall B: W3 - W4 | End C: W5 centred | End D: W6 centred",
+      "3 / 1 / 2",
+      "One-way across width; total high-to-low fall 5-6 in",
+      "PCR-20X08-03OP-V1"
+     ],
+     [
+      "20×10×8.5",
+      "Wall A: W1 - D1 - W2 | Wall B: W3 - W4 | End C: W5 centred | End D: W6 centred",
+      "4 / 1 / 2",
+      "Two-way: centred full-length ridge; 5-6 in ridge-to-eave rise",
+      "PCR-20X10-04OP-V1"
+     ],
+     [
+      "20×12×8.5",
+      "Wall A: W1 - D1 - W2 | Wall B: W3 - W4 | End C: W5 centred | End D: W6 centred",
+      "4 / 1 / 2",
+      "Two-way: centred full-length ridge; 5-6 in ridge-to-eave rise",
+      "PCR-20X12-04OP-V1"
+     ],
+     [
+      "30×10×8.5",
+      "Wall A: D1 - W1 - W2 - D2 | Wall B: W3 - W4 - W5 - W6 | End C: W7 centred | End D: W8 centred",
+      "6 / 2 / 3",
+      "Two-way: centred full-length ridge; 5-6 in ridge-to-eave rise",
+      "PCR-30X10-06OP-V1"
+     ],
+     [
+      "40×10×8.5",
+      "Wall A: W1 - D1 - W2 - W3 - D2 | Wall B: W4 - W5 - W6 - W7 | End C: W8 centred | End D: W9 centred",
+      "8 / 2 / 4",
+      "Two-way: centred full-length ridge; 5-6 in ridge-to-eave rise",
+      "PCR-40X10-08OP-V1"
+     ]
+    ],
+    "note": "Wall A is the external door wall; Wall B the opposite long wall; End C and End D the short end walls. Unique to this page."
+   },
+   {
+    "title": "Group D - SAMAN platform common material key",
+    "header": [
+     "Component / system",
+     "Approved standard"
+    ],
+    "rows": [
+     [
+      "Primary base frame",
+      "Welded MS C-channel chassis, 100x50x3 mm"
+     ],
+     [
+      "Upper, wall and roof frame",
+      "Top 50x50x1.6 mm; roof 50x50x1.2 mm with listed secondary members; posts 50x50x2 mm or approved 60x60 angle"
+     ],
+     [
+      "External walls",
+      "Corrugated MS sheet, 1.2 mm, Tata/Jindal or approved equivalent"
+     ],
+     [
+      "Roof sheet",
+      "Sloped corrugated MS sheet, 1.4 mm, with sealed laps, flashings and drainage"
+     ],
+     [
+      "Internal wall and ceiling",
+      "8 mm prelaminated MDF with aluminium joint sections"
+     ],
+     [
+      "Floor system",
+      "18 mm Bison/cement-fibre board plus 1.3 mm vinyl finish"
+     ],
+     [
+      "Thermal insulation",
+      "Roof 50 mm glass wool at nominal 42 kg/m3; wall 25 mm glass wool or 12 mm Heatlon"
+     ],
+     [
+      "Electrical",
+      "Concealed copper wiring, typical 1.5 / 2.5 / 4 sq.mm circuits, with DB, MCB/RCCB and earthing"
+     ],
+     [
+      "Corrosion protection",
+      "Prepared MS with one red-oxide primer coat and two compatible enamel coats"
+     ],
+     [
+      "Handling and QA",
+      "Designed lifting hooks or lugs, sealing, and pre-dispatch inspection of dimensions, welds, sheets, coating, drainage, seals, openings and electrical continuity"
+     ]
+    ],
+    "note": "Shared across the SAMAN cabin families. Published so buyers can see which lines are product decisions and which are platform standards. Excluded from the page uniqueness measurement."
+   },
+   {
+    "title": "Group E - Scope boundary",
+    "header": [
+     "Boundary",
+     "Detail"
+    ],
+    "rows": [
+     [
+      "Included",
+      "Cabin enclosure and its scheduled interfaces: chassis, envelope, roof, floor, insulation, interior lining, the doors and windows in the approved opening ledger, lighting and small-power electrical package, and the lifting arrangement"
+     ],
+     [
+      "Excluded unless quoted",
+      "MCC, PCC, PLC and SCADA panels, UPS, batteries, bus duct, field and control cabling, HVAC equipment, fire suppression and certification"
+     ],
+     [
+      "Presentation items",
+      "Operator consoles, chairs, storage cupboards and the display or mimic system shown in the images are illustrative and excluded from the published cabin price"
+     ],
+     [
+      "Engineering boundary",
+      "Final panel loading, cable entries, heat rejection, fire and egress, foundations, services, fabrication and structural adequacy are governed by the project engineering approved for your order and the signed quotation"
+     ],
+     [
+      "Warranty",
+      "Period and exclusions are confirmed only in the final quotation; relocation damage is excluded"
+     ]
+    ],
+    "note": "Unique to this page. The enclosure-versus-equipment boundary is the single most important line in a control room quotation."
+   }
+  ],
+  "diagram_slots": [
+   "spec_diagram_1",
+   "spec_diagram_2"
+  ],
+  "ga_boards_note": "Section 3 renders the six approved GA boards, one per size, exactly as the live porta-cabins lock renders its GA plan in that slot. The Specifications tab carries the two technical diagrams only.",
+  "diagram_captions": [
+   "Detail 01 - Approved roof orientation and drainage. Buyer-facing diagram; the approved shop drawing and qualified welding procedures govern fabrication.",
+   "Detail 02 - GA opening order and four-corner lifting control. Buyer-facing diagram; the approved GA governs the final opening schedule."
+  ],
+  "pdf_slot": "spec_pdf",
+  "pdf_label": "Download the portable control room technical specification (PDF)",
+  "pdf_href": "/specs/saman-portable-control-room-technical-specification.pdf"
+ },
+ "shipping_tab": {
+  "component": "shared freight component as rendered on /product/porta-cabins",
+  "free_delivery_lines_required": true,
+  "schema_shippingDetails": false
+ },
+ "reviews_tab": {
+  "empty_state": "No verified reviews yet.",
+  "schema": false
+ },
+ "links": {
+  "internal": [
+   {
+    "href": "/product/portable-office",
+    "anchors": [
+     "portable office cabin"
+    ]
+   }
+  ],
+  "never": [
+   "/product/portable-office/modern-office-cabin",
+   "/product/portable-office/portable-office-container"
+  ]
+ },
+ "schema": {
+  "types": [
+   "ItemPage",
+   "Product",
+   "AggregateOffer",
+   "BreadcrumbList",
+   "FAQPage"
+  ],
+  "offer_low": 201250,
+  "offer_high": 665000,
+  "currency": "INR",
+  "price_basis": "ex-GST",
+  "no_review_schema": true
+ },
+ "alt_text": {
+  "gallery_new": {
+   "portable-control-room-10x10-door-wall-exterior.webp": "10×10 ft SAMAN portable control room exterior, Wall A door wall in Deep Oxford Blue with the approved opening order",
+   "portable-control-room-10x10-rear-window-wall.webp": "10×10 ft SAMAN portable control room rear elevation, Wall B window wall with no external door",
+   "portable-control-room-10x10-aerial-roof-and-openings.webp": "10×10 ft SAMAN portable control room aerial view showing the two-way centred ridge and four corner lifting eye plates",
+   "portable-control-room-10x10-operator-room-interior.webp": "10×10 ft SAMAN portable control room operator room with 2 operator positions on 1 console island",
+   "portable-control-room-10x10-console-island-detail.webp": "10×10 ft SAMAN portable control room console island detail, Champagne Cream interior finish",
+   "portable-control-room-10x10-interior-opening-schedule.webp": "10×10 ft SAMAN portable control room interior showing the approved window and door positions and 1 storage cupboards",
+   "portable-control-room-20x8-door-wall-exterior.webp": "20×8 ft SAMAN portable control room exterior, Wall A door wall in Graphite Charcoal with the approved opening order",
+   "portable-control-room-20x8-rear-window-wall.webp": "20×8 ft SAMAN portable control room rear elevation, Wall B window wall with no external door",
+   "portable-control-room-20x8-aerial-roof-and-openings.webp": "20×8 ft SAMAN portable control room aerial view showing the one-way fall across width and four corner lifting eye plates",
+   "portable-control-room-20x8-operator-room-interior.webp": "20×8 ft SAMAN portable control room operator room with 3 operator positions on 1 console island",
+   "portable-control-room-20x8-console-island-detail.webp": "20×8 ft SAMAN portable control room console island detail, Porcelain Sage interior finish",
+   "portable-control-room-20x8-interior-opening-schedule.webp": "20×8 ft SAMAN portable control room interior showing the approved window and door positions and 2 storage cupboards",
+   "portable-control-room-20x10-door-wall-exterior.webp": "20×10 ft SAMAN portable control room exterior, Wall A door wall in Deep Bottle Green with the approved opening order",
+   "portable-control-room-20x10-rear-window-wall.webp": "20×10 ft SAMAN portable control room rear elevation, Wall B window wall with no external door",
+   "portable-control-room-20x10-aerial-roof-and-openings.webp": "20×10 ft SAMAN portable control room aerial view showing the two-way centred ridge and four corner lifting eye plates",
+   "portable-control-room-20x10-operator-room-interior.webp": "20×10 ft SAMAN portable control room operator room with 4 operator positions on 1 console island",
+   "portable-control-room-20x10-console-island-detail.webp": "20×10 ft SAMAN portable control room console island detail, Mist Blue-Grey interior finish",
+   "portable-control-room-20x10-interior-opening-schedule.webp": "20×10 ft SAMAN portable control room interior showing the approved window and door positions and 2 storage cupboards",
+   "portable-control-room-20x12-door-wall-exterior.webp": "20×12 ft SAMAN portable control room exterior, Wall A door wall in Burgundy Wine with the approved opening order",
+   "portable-control-room-20x12-rear-window-wall.webp": "20×12 ft SAMAN portable control room rear elevation, Wall B window wall with no external door",
+   "portable-control-room-20x12-aerial-roof-and-openings.webp": "20×12 ft SAMAN portable control room aerial view showing the two-way centred ridge and four corner lifting eye plates",
+   "portable-control-room-20x12-operator-room-interior.webp": "20×12 ft SAMAN portable control room operator room with 4 operator positions on 1 console island",
+   "portable-control-room-20x12-console-island-detail.webp": "20×12 ft SAMAN portable control room console island detail, Porcelain White interior finish",
+   "portable-control-room-20x12-interior-opening-schedule.webp": "20×12 ft SAMAN portable control room interior showing the approved window and door positions and 2 storage cupboards",
+   "portable-control-room-30x10-door-wall-exterior.webp": "30×10 ft SAMAN portable control room exterior, Wall A door wall in Sandstone Beige with the approved opening order",
+   "portable-control-room-30x10-rear-window-wall.webp": "30×10 ft SAMAN portable control room rear elevation, Wall B window wall with no external door",
+   "portable-control-room-30x10-aerial-roof-and-openings.webp": "30×10 ft SAMAN portable control room aerial view showing the two-way centred ridge and four corner lifting eye plates",
+   "portable-control-room-30x10-operator-room-interior.webp": "30×10 ft SAMAN portable control room operator room with 6 operator positions on 2 console islands",
+   "portable-control-room-30x10-console-island-detail.webp": "30×10 ft SAMAN portable control room console island detail, Dove Light Grey interior finish",
+   "portable-control-room-30x10-interior-opening-schedule.webp": "30×10 ft SAMAN portable control room interior showing the approved window and door positions and 3 storage cupboards",
+   "portable-control-room-40x10-door-wall-exterior.webp": "40×10 ft SAMAN portable control room exterior, Wall A door wall in Muted Teal with the approved opening order",
+   "portable-control-room-40x10-rear-window-wall.webp": "40×10 ft SAMAN portable control room rear elevation, Wall B window wall with no external door",
+   "portable-control-room-40x10-aerial-roof-and-openings.webp": "40×10 ft SAMAN portable control room aerial view showing the two-way centred ridge and four corner lifting eye plates",
+   "portable-control-room-40x10-operator-room-interior.webp": "40×10 ft SAMAN portable control room operator room with 8 operator positions on 2 console islands",
+   "portable-control-room-40x10-console-island-detail.webp": "40×10 ft SAMAN portable control room console island detail, Soft Clay Greige interior finish",
+   "portable-control-room-40x10-interior-opening-schedule.webp": "40×10 ft SAMAN portable control room interior showing the approved window and door positions and 4 storage cupboards"
+  },
+  "ga_boards": {
+   "10x10": "Approved GA drawing for the 10×10×8.5 ft SAMAN portable control room: Wall A: D1; Wall B: W1; End C: W2 centred; End D: W3 centred; 2 operator positions; two-way: centred full-length ridge; 5-6 in ridge-to-eave rise",
+   "20x8": "Approved GA drawing for the 20×8×8.5 ft SAMAN portable control room: Wall A: W1 - D1 - W2; Wall B: W3 - W4; End C: W5 centred; End D: W6 centred; 3 operator positions; one-way across width; total high-to-low fall 5-6 in",
+   "20x10": "Approved GA drawing for the 20×10×8.5 ft SAMAN portable control room: Wall A: W1 - D1 - W2; Wall B: W3 - W4; End C: W5 centred; End D: W6 centred; 4 operator positions; two-way: centred full-length ridge; 5-6 in ridge-to-eave rise",
+   "20x12": "Approved GA drawing for the 20×12×8.5 ft SAMAN portable control room: Wall A: W1 - D1 - W2; Wall B: W3 - W4; End C: W5 centred; End D: W6 centred; 4 operator positions; two-way: centred full-length ridge; 5-6 in ridge-to-eave rise",
+   "30x10": "Approved GA drawing for the 30×10×8.5 ft SAMAN portable control room: Wall A: D1 - W1 - W2 - D2; Wall B: W3 - W4 - W5 - W6; End C: W7 centred; End D: W8 centred; 6 operator positions; two-way: centred full-length ridge; 5-6 in ridge-to-eave rise",
+   "40x10": "Approved GA drawing for the 40×10×8.5 ft SAMAN portable control room: Wall A: W1 - D1 - W2 - W3 - D2; Wall B: W4 - W5 - W6 - W7; End C: W8 centred; End D: W9 centred; 8 operator positions; two-way: centred full-length ridge; 5-6 in ridge-to-eave rise"
+  },
+  "section2_card": "20×10 ft SAMAN portable control room: Wall A window, door, window exterior and the four-position operator room inside",
+  "description_images": {
+   "description_01": "30 by 10 ft portable control room exterior and six-position two-console operator room",
+   "description_02": "10 by 10 ft portable control room exterior and two-position operator room interior",
+   "description_03": "20 by 8 ft portable control room exterior and three-position narrow operator room",
+   "description_04": "20 by 12 ft portable control room exterior and wide-aisle four-position operator room",
+   "description_05": "40 by 10 ft portable control room exterior and eight-position two-console operator room"
+  },
+  "spec_diagram_1": "Approved roof orientation diagram: one-way fall for 8 ft width, two-way centred ridge for 10 and 12 ft widths",
+  "spec_diagram_2": "Long-wall opening order for 20, 30 and 40 ft control rooms with four-corner lifting eye plate rule"
+ },
+ "forbidden_strings": [
+  "coming soon",
+  "available on request",
+  "contact us for details",
+  "Lorem",
+  "TBD",
+  "placeholder",
+  "—",
+  "office cabin range",
+  "IP rating",
+  "fire rated",
+  "ISO container",
+  "guaranteed",
+  "warranty of"
+ ],
+ "old_page_strings_absent": [],
+ "cluster_terms_not_to_target": [
+  "office cabin",
+  "office cabins",
+  "small office cabin",
+  "portable office cabin"
+ ],
+ "sha256_of_copy": "3c1cc92aa6a4acc0814827cbceb937ac9cea555abbbf8f19ceb9e0f75d277b25"
+}

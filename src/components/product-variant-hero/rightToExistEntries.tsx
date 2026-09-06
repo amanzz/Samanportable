@@ -7,6 +7,7 @@ import smallOfficeCabinCopy from '../../../content/soc-01/SOC-01-small-office-ca
 import readymadeOfficeCabinCopy from '../../../content/po-01/PO-01-readymade-office-cabin-copy-v1.json';
 import prefabricatedOfficeCabinsCopy from '../../../content/po-02/PO-02-prefabricated-office-cabins-copy-v1.json';
 import portableWeighbridgeOfficeCopy from '../../../content/po-03/PO-03-portable-weighbridge-office-copy-v1.json';
+import portableControlRoomCopy from '../../../content/po-07/PO-07-portable-control-room-copy-v1.json';
 import executivePortableOfficeCopy from '../../../content/po-04/PO-04-executive-portable-office-copy-v1.json';
 import constructionSiteCabinCopy from '../../../content/po-06/PO-06-construction-site-cabin-copy-v1.json';
 import constructionSiteCabinAssets from '../../../content/po-06/PO-06-construction-site-cabin-asset-map-v1.json';
@@ -1529,6 +1530,52 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
       ctaLabel: portableWeighbridgeOfficeCopy.section2.split_card.cta,
       // The pack's cta_target is "section3"; on this route that section's id is
       // #porta-size-applications. Same target as PO-01, PO-02 and SOC-01.
+      ctaHref: '#porta-size-applications',
+    },
+  },
+  // PO-07 (6 Sep 2026) - Section 2 rendered verbatim from the signed copy pack
+  // (content/po-07). Nothing is retyped here: heading, both paragraphs, the CTA and
+  // every split-card field are read from the pack. The approved contextual link sits
+  // in paragraph 2 (the pack's section2.link.in says "paragraph2"), exactly as PO-03,
+  // and it is the ONLY occurrence of that anchor on the page - the Description tab
+  // deliberately adds no second link to the same destination, because the shipped
+  // verifier requires href="/product/portable-office">portable office cabin< exactly once.
+  'portable-control-room': {
+    heading: portableControlRoomCopy.section2.h2,
+    bodyParagraphs: [
+      (<>{portableControlRoomCopy.section2.paragraph1}</>),
+      (() => {
+        const { paragraph2, link } = portableControlRoomCopy.section2;
+        const at = paragraph2.indexOf(link.anchor);
+        if (at < 0) return <>{paragraph2}</>;
+        return (
+          <>
+            {paragraph2.slice(0, at)}
+            <Link className={linkClass} href={link.href}>{link.anchor}</Link>
+            {paragraph2.slice(at + link.anchor.length)}
+          </>
+        );
+      })(),
+    ],
+    topCtaLabel: portableControlRoomCopy.section2.cta,
+    // The pack's section2.cta_target is /contact on this page (PO-03's pointed at
+    // Section 3). Internal-link destinations are one of the four permitted diffs.
+    topCtaHref: portableControlRoomCopy.section2.cta_target,
+    splitCard: {
+      // SAMAN ruling, 6 Sep 2026: this slot carries a REAL 16:9 product image, never a
+      // GA board. asset_map.section2_card already points at the 1920x1080 photographic
+      // master (03-long-description-images/03-...-20x10-overview.png), downscaled to
+      // 1600x900 with no crop, so no correction to the pack was needed on this page.
+      imageSrc: '/images/products/portable-control-room/section2/portable-control-room-20x10-exterior-and-operator-room.webp',
+      imageAlt: portableControlRoomCopy.alt_text.section2_card,
+      imageWidth: 1600,
+      imageHeight: 900,
+      subheading: portableControlRoomCopy.section2.split_card.h3,
+      body: portableControlRoomCopy.section2.split_card.paragraph1,
+      body2: portableControlRoomCopy.section2.split_card.paragraph2,
+      ctaLabel: portableControlRoomCopy.section2.split_card.cta,
+      // The pack's cta_target is "#size-applications"; on this route that section's
+      // DOM id is #porta-size-applications. Same target as PO-01 to PO-04 and SOC-01.
       ctaHref: '#porta-size-applications',
     },
   },

@@ -1,0 +1,329 @@
+{
+ "page": "portable-control-room",
+ "page_id": "PO-07",
+ "package_root": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\portable-control-room\\approved-website-assets-v1",
+ "output_root": "public/images/products/portable-control-room",
+ "package_version_note": "README-CURRENT-STATUS.md in 06-prompts-and-qa declares v1 COMPLETE and USER-APPROVED-GA. v1 is the only package; it is current.",
+ "rules": {
+  "never_ship_source_png": true,
+  "webp_size_band_kb": [
+   80,
+   120
+  ],
+  "gallery": {
+   "width_px": 1254,
+   "quality_start": 86,
+   "ratio": "1:1",
+   "crop": "none"
+  },
+  "ga_board": {
+   "width_px": 1800,
+   "quality_start": 88,
+   "ratio": "16:9",
+   "crop": "NEVER - downscale proportionally only; dimension text must stay legible"
+  },
+  "section2_card": {
+   "width_px": 1600,
+   "quality_start": 90,
+   "ratio": "16:9",
+   "crop": "none (source is native 1920x1080)"
+  },
+  "description_image": {
+   "width_px": 1600,
+   "quality_start": 90,
+   "ratio": "16:9",
+   "crop": "none (source is native 1920x1080)"
+  },
+  "spec_diagram": {
+   "width_px": 1600,
+   "quality_start": 90,
+   "crop": "none"
+  },
+  "loading": "the six slides of the selected size eager, fetchpriority=high on slide 1 only; other sizes lazy; explicit width and height on every image; preload link for slide 1 of the default size (10x10) with the same srcset; GA boards, section 2 card, description images and spec diagrams lazy",
+  "measure_every_output": "report width, height and KB for every file; anything outside 80-120 KB is re-encoded (drop quality first, then width) and re-measured"
+ },
+ "keep_as_is": {
+  "note": "The URL is a 404 as at 4 Sep 2026. There is nothing live to retain."
+ },
+ "gallery_new": {
+  "10x10": {
+   "running_order_note": "folder order 01-06 retained: exterior, rear, aerial, interior, console, openings",
+   "slides": [
+    {
+     "src": "02-square-product-images/size-10x10/01-portable-control-room-10x10-exterior.png",
+     "out": "10x10/portable-control-room-10x10-door-wall-exterior.webp"
+    },
+    {
+     "src": "02-square-product-images/size-10x10/02-portable-control-room-10x10-rear.png",
+     "out": "10x10/portable-control-room-10x10-rear-window-wall.webp"
+    },
+    {
+     "src": "02-square-product-images/size-10x10/03-portable-control-room-10x10-aerial.png",
+     "out": "10x10/portable-control-room-10x10-aerial-roof-and-openings.webp"
+    },
+    {
+     "src": "02-square-product-images/size-10x10/04-portable-control-room-10x10-interior.png",
+     "out": "10x10/portable-control-room-10x10-operator-room-interior.webp"
+    },
+    {
+     "src": "02-square-product-images/size-10x10/05-portable-control-room-10x10-console.png",
+     "out": "10x10/portable-control-room-10x10-console-island-detail.webp"
+    },
+    {
+     "src": "02-square-product-images/size-10x10/06-portable-control-room-10x10-openings.png",
+     "out": "10x10/portable-control-room-10x10-interior-opening-schedule.webp"
+    }
+   ]
+  },
+  "20x8": {
+   "running_order_note": "folder order 01-06 retained: exterior, rear, aerial, interior, console, openings",
+   "slides": [
+    {
+     "src": "02-square-product-images/size-20x8/01-portable-control-room-20x8-exterior.png",
+     "out": "20x8/portable-control-room-20x8-door-wall-exterior.webp"
+    },
+    {
+     "src": "02-square-product-images/size-20x8/02-portable-control-room-20x8-rear.png",
+     "out": "20x8/portable-control-room-20x8-rear-window-wall.webp"
+    },
+    {
+     "src": "02-square-product-images/size-20x8/03-portable-control-room-20x8-aerial.png",
+     "out": "20x8/portable-control-room-20x8-aerial-roof-and-openings.webp"
+    },
+    {
+     "src": "02-square-product-images/size-20x8/04-portable-control-room-20x8-interior.png",
+     "out": "20x8/portable-control-room-20x8-operator-room-interior.webp"
+    },
+    {
+     "src": "02-square-product-images/size-20x8/05-portable-control-room-20x8-console.png",
+     "out": "20x8/portable-control-room-20x8-console-island-detail.webp"
+    },
+    {
+     "src": "02-square-product-images/size-20x8/06-portable-control-room-20x8-openings.png",
+     "out": "20x8/portable-control-room-20x8-interior-opening-schedule.webp"
+    }
+   ]
+  },
+  "20x10": {
+   "running_order_note": "folder order 01-06 retained: exterior, rear, aerial, interior, console, openings",
+   "slides": [
+    {
+     "src": "02-square-product-images/size-20x10/01-portable-control-room-20x10-exterior.png",
+     "out": "20x10/portable-control-room-20x10-door-wall-exterior.webp"
+    },
+    {
+     "src": "02-square-product-images/size-20x10/02-portable-control-room-20x10-rear.png",
+     "out": "20x10/portable-control-room-20x10-rear-window-wall.webp"
+    },
+    {
+     "src": "02-square-product-images/size-20x10/03-portable-control-room-20x10-aerial.png",
+     "out": "20x10/portable-control-room-20x10-aerial-roof-and-openings.webp"
+    },
+    {
+     "src": "02-square-product-images/size-20x10/04-portable-control-room-20x10-interior.png",
+     "out": "20x10/portable-control-room-20x10-operator-room-interior.webp"
+    },
+    {
+     "src": "02-square-product-images/size-20x10/05-portable-control-room-20x10-console.png",
+     "out": "20x10/portable-control-room-20x10-console-island-detail.webp"
+    },
+    {
+     "src": "02-square-product-images/size-20x10/06-portable-control-room-20x10-openings.png",
+     "out": "20x10/portable-control-room-20x10-interior-opening-schedule.webp"
+    }
+   ]
+  },
+  "20x12": {
+   "running_order_note": "folder order 01-06 retained: exterior, rear, aerial, interior, console, openings",
+   "slides": [
+    {
+     "src": "02-square-product-images/size-20x12/01-portable-control-room-20x12-exterior.png",
+     "out": "20x12/portable-control-room-20x12-door-wall-exterior.webp"
+    },
+    {
+     "src": "02-square-product-images/size-20x12/02-portable-control-room-20x12-rear.png",
+     "out": "20x12/portable-control-room-20x12-rear-window-wall.webp"
+    },
+    {
+     "src": "02-square-product-images/size-20x12/03-portable-control-room-20x12-aerial.png",
+     "out": "20x12/portable-control-room-20x12-aerial-roof-and-openings.webp"
+    },
+    {
+     "src": "02-square-product-images/size-20x12/04-portable-control-room-20x12-interior.png",
+     "out": "20x12/portable-control-room-20x12-operator-room-interior.webp"
+    },
+    {
+     "src": "02-square-product-images/size-20x12/05-portable-control-room-20x12-console.png",
+     "out": "20x12/portable-control-room-20x12-console-island-detail.webp"
+    },
+    {
+     "src": "02-square-product-images/size-20x12/06-portable-control-room-20x12-openings.png",
+     "out": "20x12/portable-control-room-20x12-interior-opening-schedule.webp"
+    }
+   ]
+  },
+  "30x10": {
+   "running_order_note": "folder order 01-06 retained: exterior, rear, aerial, interior, console, openings",
+   "slides": [
+    {
+     "src": "02-square-product-images/size-30x10/01-portable-control-room-30x10-exterior.png",
+     "out": "30x10/portable-control-room-30x10-door-wall-exterior.webp"
+    },
+    {
+     "src": "02-square-product-images/size-30x10/02-portable-control-room-30x10-rear.png",
+     "out": "30x10/portable-control-room-30x10-rear-window-wall.webp"
+    },
+    {
+     "src": "02-square-product-images/size-30x10/03-portable-control-room-30x10-aerial.png",
+     "out": "30x10/portable-control-room-30x10-aerial-roof-and-openings.webp"
+    },
+    {
+     "src": "02-square-product-images/size-30x10/04-portable-control-room-30x10-interior.png",
+     "out": "30x10/portable-control-room-30x10-operator-room-interior.webp"
+    },
+    {
+     "src": "02-square-product-images/size-30x10/05-portable-control-room-30x10-console.png",
+     "out": "30x10/portable-control-room-30x10-console-island-detail.webp"
+    },
+    {
+     "src": "02-square-product-images/size-30x10/06-portable-control-room-30x10-openings.png",
+     "out": "30x10/portable-control-room-30x10-interior-opening-schedule.webp"
+    }
+   ]
+  },
+  "40x10": {
+   "running_order_note": "folder order 01-06 retained: exterior, rear, aerial, interior, console, openings",
+   "slides": [
+    {
+     "src": "02-square-product-images/size-40x10/01-portable-control-room-40x10-exterior.png",
+     "out": "40x10/portable-control-room-40x10-door-wall-exterior.webp"
+    },
+    {
+     "src": "02-square-product-images/size-40x10/02-portable-control-room-40x10-rear.png",
+     "out": "40x10/portable-control-room-40x10-rear-window-wall.webp"
+    },
+    {
+     "src": "02-square-product-images/size-40x10/03-portable-control-room-40x10-aerial.png",
+     "out": "40x10/portable-control-room-40x10-aerial-roof-and-openings.webp"
+    },
+    {
+     "src": "02-square-product-images/size-40x10/04-portable-control-room-40x10-interior.png",
+     "out": "40x10/portable-control-room-40x10-operator-room-interior.webp"
+    },
+    {
+     "src": "02-square-product-images/size-40x10/05-portable-control-room-40x10-console.png",
+     "out": "40x10/portable-control-room-40x10-console-island-detail.webp"
+    },
+    {
+     "src": "02-square-product-images/size-40x10/06-portable-control-room-40x10-openings.png",
+     "out": "40x10/portable-control-room-40x10-interior-opening-schedule.webp"
+    }
+   ]
+  }
+ },
+ "ga_boards": {
+  "slot": "Section 3 left column, one per size, lazy",
+  "source_note": "use the full-size 3840x2160 file named ...-ga.png only; never the 960x540 ...-preview.png and never the .svg",
+  "files": {
+   "10x10": {
+    "src": "01-ga-boards/01-portable-control-room-10x10-ga.png",
+    "out": "ga/portable-control-room-10x10-ga-board.webp"
+   },
+   "20x8": {
+    "src": "01-ga-boards/02-portable-control-room-20x8-ga.png",
+    "out": "ga/portable-control-room-20x8-ga-board.webp"
+   },
+   "20x10": {
+    "src": "01-ga-boards/03-portable-control-room-20x10-ga.png",
+    "out": "ga/portable-control-room-20x10-ga-board.webp"
+   },
+   "20x12": {
+    "src": "01-ga-boards/04-portable-control-room-20x12-ga.png",
+    "out": "ga/portable-control-room-20x12-ga-board.webp"
+   },
+   "30x10": {
+    "src": "01-ga-boards/05-portable-control-room-30x10-ga.png",
+    "out": "ga/portable-control-room-30x10-ga-board.webp"
+   },
+   "40x10": {
+    "src": "01-ga-boards/06-portable-control-room-40x10-ga.png",
+    "out": "ga/portable-control-room-40x10-ga-board.webp"
+   }
+  },
+  "alt_text_source": "copy JSON -> alt_text.ga_boards"
+ },
+ "section2_card": {
+  "src": "03-long-description-images/03-portable-control-room-20x10-overview.png",
+  "out": "section2/portable-control-room-20x10-exterior-and-operator-room.webp",
+  "alt_text_source": "copy JSON -> alt_text.section2_card",
+  "ruling": "SAMAN 6 Sep 2026: section 2 uses a real 16:9 product image, not a GA board."
+ },
+ "description_images": {
+  "description_01": {
+   "src": "03-long-description-images/05-portable-control-room-30x10-overview.png",
+   "out": "description/portable-control-room-description-01-30x10-six-operator-room.webp",
+   "size": "30x10",
+   "after_h2": "How many operators fit in each approved size",
+   "after": "paragraph 3",
+   "alt_text_source": "copy JSON -> alt_text.description_images.description_01"
+  },
+  "description_02": {
+   "src": "03-long-description-images/01-portable-control-room-10x10-overview.png",
+   "out": "description/portable-control-room-description-02-10x10-two-operator-room.webp",
+   "size": "10x10",
+   "after_h2": "What is inside the price, and what is not",
+   "after": "paragraph 3",
+   "alt_text_source": "copy JSON -> alt_text.description_images.description_02"
+  },
+  "description_03": {
+   "src": "03-long-description-images/02-portable-control-room-20x8-overview.png",
+   "out": "description/portable-control-room-description-03-20x8-narrow-operator-room.webp",
+   "size": "20x8",
+   "after_h2": "Heat load: why a control room is not an office",
+   "after": "paragraph 3",
+   "alt_text_source": "copy JSON -> alt_text.description_images.description_03"
+  },
+  "description_04": {
+   "src": "03-long-description-images/04-portable-control-room-20x12-overview.png",
+   "out": "description/portable-control-room-description-04-20x12-wide-aisle-room.webp",
+   "size": "20x12",
+   "after_h2": "Portable control room price in India: the published ladder",
+   "after": "paragraph 2",
+   "alt_text_source": "copy JSON -> alt_text.description_images.description_04"
+  },
+  "description_05": {
+   "src": "03-long-description-images/06-portable-control-room-40x10-overview.png",
+   "out": "description/portable-control-room-description-05-40x10-eight-operator-room.webp",
+   "size": "40x10",
+   "after_h2": "Delivery, lifting and placement on a live site",
+   "after": "paragraph 3",
+   "alt_text_source": "copy JSON -> alt_text.description_images.description_05"
+  }
+ },
+ "description_images_note": "The live lock carries six images in its Description tab. This page carries five, one per size, because the sixth 16:9 master (20x10) is used by the Section 2 split card under SAMAN's 6 Sep ruling that section 2 must not use a GA board. A seventh 16:9 master would close the gap; generating one is SAMAN's call.",
+ "spec_diagrams": {
+  "spec_diagram_1": {
+   "src": "04-technical-diagrams/01-portable-control-room-roof-diagram.png",
+   "out": "specs/portable-control-room-roof-orientation-diagram.webp"
+  },
+  "spec_diagram_2": {
+   "src": "04-technical-diagrams/02-portable-control-room-opening-diagram.png",
+   "out": "specs/portable-control-room-opening-and-lifting-diagram.webp"
+  }
+ },
+ "spec_pdf": {
+  "src": "05-technical-pdf/portable-control-room-technical-specification-and-price-v1.pdf",
+  "out": "public/downloads/saman-portable-control-room-technical-specification.pdf",
+  "link_label": "Download the portable control room technical specification (PDF)",
+  "note": "source PDF is 42.6 MB. Re-save or linearise below 10 MB before shipping and report the final size. Do not re-author the content."
+ },
+ "not_used": [
+  "00-pilots/* (duplicates of the two 20x10 slides already in 02-square-product-images)",
+  "01-ga-boards/*-preview.png (960x540 previews)",
+  "01-ga-boards/*.svg",
+  "01-ga-boards/portable-control-room-six-approved-ga-contact-sheet.png (QA artefact)",
+  "03-long-description-images/01-...-10x10-overview.png and 04-...-20x12-overview.png (not placed on this page)",
+  "06-prompts-and-qa/* (manifests, QA reports, contact sheets, pdf-render/*)",
+  "ga-approval-candidates-v1/* (superseded by approved-website-assets-v1)"
+ ]
+}

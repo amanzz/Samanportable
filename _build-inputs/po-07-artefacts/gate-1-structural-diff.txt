@@ -1,0 +1,60 @@
+==============================================================================
+GATE 1 - STRUCTURAL DIFF
+==============================================================================
+PO-07 spine elements: 108 | PO-03 sibling product page: 101 | porta-cabins hub: 82
+
+------------------------------------------------------------------------------
+PO-07 preview vs PO-03 sibling: 19 differing spine entries
+------------------------------------------------------------------------------
+  @@ -17,8 +17,8 @@
+   h2:<CONTENT>
+  -h2:<CONTENT>
+  -h2:<CONTENT>
+  -h2:<CONTENT>
+  -h2:<CONTENT>
+  -h2:<CONTENT>
+  -h2:<CONTENT>
+  +h3:<CONTENT>
+  +h3:<CONTENT>
+  +h3:<CONTENT>
+  +h3:<CONTENT>
+  +h3:<CONTENT>
+  +h3:<CONTENT>
+   h2:<CONTENT>
+  @@ -56,6 +56,13 @@
+   h2:<CONTENT>
+  +hook.optimized-content-img
+  +h2:<CONTENT>
+  +hook.optimized-content-img
+   h2:<CONTENT>
+   h2:<CONTENT>
+  +hook.optimized-content-img
+   h2:<CONTENT>
+   h2:<CONTENT>
+  +hook.optimized-content-img
+  +h2:<CONTENT>
+  +hook.optimized-content-img
+   h2:<CONTENT>
+
+Spine element counts (PO-03 sibling -> PO-07):
+   h1:<CONTENT>                         1 ->   1
+   h2:<CONTENT>                        37 ->  33   <-- DIFFERS
+   h3:<CONTENT>                        26 ->  32   <-- DIFFERS
+   h4:<CONTENT>                         9 ->   9
+   hook.optimized-content-img           2 ->   7   <-- DIFFERS
+   hook.pc-buybox                       1 ->   1
+   hook.pc-rail                         1 ->   1
+   hook.saman-table                    10 ->  10
+   hook.t28-rail-scroll                 2 ->   2
+   id#product-reviews-tabs              1 ->   1
+   section#cabin-calculator             1 ->   1
+   section#calculator-step-1            1 ->   1
+   section#calculator-step-2            1 ->   1
+   section#calculator-step-3            1 ->   1
+   section#calculator-step-4            1 ->   1
+   section#calculator-step-5            1 ->   1
+   section#calculator-step-6            1 ->   1
+   section#calculator-step-7            1 ->   1
+   section#calculator-step-8            1 ->   1
+   section#calculator-step-9            1 ->   1
+   section#porta-size-applications      1 ->   1

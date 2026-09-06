@@ -164,7 +164,10 @@ async function main() {
   // each published a path without moving it, so this line also repairs that drift.
   // PO-05 (6 Sep 2026): 65/39. PO-06 merged to static-migration while this branch was
   // open, so this release publishes the 65th approved path on top of PO-06's 64th.
-  if (approved.size !== 65 || planned.size !== 39) fail(`architecture counts are ${approved.size}/65 approved and ${planned.size}/39 planned`);
+  // PO-05 (6 Sep 2026): 66/38. PO-07 made the identical 64/40 -> 65/39 edit this branch
+  // had already made, so git auto-merged it silently; with BOTH pages shipping the true
+  // count is one higher again.
+  if (approved.size !== 66 || planned.size !== 38) fail(`architecture counts are ${approved.size}/66 approved and ${planned.size}/38 planned`);
   if (!approved.has(EXPANDABLE_OFFICE) || planned.has(EXPANDABLE_OFFICE)) fail('Expandable Container Office release classification is wrong');
   if (!planned.has(ACCOMMODATION) || approved.has(ACCOMMODATION)) fail('Accommodation Container release classification is wrong');
   if (!planned.has(EXPANDABLE_HOUSE) || approved.has(EXPANDABLE_HOUSE)) fail('Expandable Container House release classification is wrong');
