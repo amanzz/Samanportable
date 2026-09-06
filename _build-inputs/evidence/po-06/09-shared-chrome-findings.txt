@@ -1,6 +1,6 @@
 ARTEFACT 9 - THE THREE verify_po06.py CHECKS THAT NO PAGE-LEVEL CHANGE CAN SATISFY
 
-verify_po06.py: 442 checks PASS, 3 FAIL, RESULT: FAIL (3 checks).
+verify_po06.py: 445 checks PASS, 3 FAIL (448 total), RESULT: FAIL (3 checks).
 
 All three hits are in SHARED COMPONENTS that the build prompt explicitly forbids this
 ticket from editing, and each is reproducible on pages SAMAN has already approved -

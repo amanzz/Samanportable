@@ -28,7 +28,7 @@ integration. Nothing here is deployed.
 | 3 | `03-preview-desktop-1440.jpg`, `03-preview-mobile-390.jpg`, `03-designlock-desktop-1440.jpg`, `03-designlock-mobile-390.jpg` | Full-page screenshots, preview and live design lock, desktop 1440 and mobile 390. |
 | 4 | `04-prop-audit.txt` | Every prop passed to every shared component, side by side with the design lock. Zero behaviour-prop differences. |
 | 5 | `05-dom-checks.txt` | DOM checks on the fetched preview HTML, each forbidden-string check measured against the live design lock's own count. |
-| 6 | `06-verify_po06-output.txt` | Full `verify_po06.py` output: 442 PASS, 3 FAIL. |
+| 6 | `06-verify_po06-output.txt` | Full `verify_po06.py` output: 445 PASS, 3 FAIL. |
 | 6 | `06-lighthouse-mobile-preview.json`, `06-lighthouse-mobile-designlock.json`, `06-lighthouse-mobile-summary.txt` | Lighthouse mobile, both pages. |
 | 7 | `07-image-measurements.txt` | File, width, height and KB for all 50 published images, plus the fidelity spot-check. |
 | 8 | `08-validators-baseline-vs-branch.txt` | Every repo validator at the pristine baseline and on this branch, side by side. |
@@ -38,6 +38,6 @@ integration. Nothing here is deployed.
 
 ## Result in one line
 
-`verify_po06.py`: **442 checks pass, 3 fail** — and all three are strings published by
+`verify_po06.py`: **445 checks pass, 3 fail** — and all three are strings published by
 shared components this ticket is forbidden to edit, two of which the porta-cabins design
 lock itself renders. See artefact 9. Everything the page itself owns passes.
