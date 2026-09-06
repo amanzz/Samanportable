@@ -1,0 +1,974 @@
+{
+ "page_id": "CH-PFB-04",
+ "slug": "prefab-container-homes",
+ "canonical": "https://www.samanportable.com/product/container-houses/prefab-container-homes",
+ "version": "v1",
+ "date": "2026-09-06",
+ "meta": {
+  "title": "Prefab Container Homes | 6 Sizes & Prices | SAMAN Portable",
+  "description": "Prefab container homes in six module sizes, 160 to 480 sq.ft, from Rs 2,86,000 ex-GST. Built to a repeating BOM for single homes and multi-unit colonies.",
+  "h1": "Prefab Container Homes: Six Repeatable Module Sizes",
+  "robots": "index,follow",
+  "canonical_self": true
+ },
+ "hero": {
+  "short_description": "A prefab container home is a factory-built residential module produced to a repeating bill of materials, so the twentieth unit leaves the line the same as the first. The buyers on this page are families building one home and estate owners, developers and site managers ordering five to twenty units as a single colony. What separates this page from the rest of the container house range is repeatability: a controlled floor cassette, a fixed panel batch, a standard wet pod, and an end wall kept blank so modules couple. Six sizes run from 20 x 8 ft at 160 sq.ft to 40 x 12 ft at 480 sq.ft, priced from Rs 2,86,000 ex-GST against a 200 sq.ft base rate of Rs 1,625 per sq.ft. Every size is 8 ft 6 in external and 8 ft internal, with 50 mm class insulated panels.",
+  "feature_cells": {
+   "20x8": [
+    {
+     "label": "Built-up area",
+     "value": "160 sq.ft"
+    },
+    {
+     "label": "Internal clear",
+     "value": "19 ft 6 in x 7 ft 6 in"
+    },
+    {
+     "label": "Planning template",
+     "value": "1 BHK"
+    },
+    {
+     "label": "Openings",
+     "value": "3 + 2 windows, 1 entry door"
+    },
+    {
+     "label": "From",
+     "value": "Rs 2,86,000 ex-GST"
+    }
+   ],
+   "20x10": [
+    {
+     "label": "Built-up area",
+     "value": "200 sq.ft"
+    },
+    {
+     "label": "Internal clear",
+     "value": "19 ft 6 in x 9 ft 6 in"
+    },
+    {
+     "label": "Planning template",
+     "value": "1 BHK"
+    },
+    {
+     "label": "Openings",
+     "value": "3 + 2 windows, 1 entry door"
+    },
+    {
+     "label": "From",
+     "value": "Rs 3,25,000 ex-GST"
+    }
+   ],
+   "20x12": [
+    {
+     "label": "Built-up area",
+     "value": "240 sq.ft"
+    },
+    {
+     "label": "Internal clear",
+     "value": "19 ft 6 in x 11 ft 6 in"
+    },
+    {
+     "label": "Planning template",
+     "value": "1 BHK"
+    },
+    {
+     "label": "Openings",
+     "value": "4 + 2 windows, 1 entry door"
+    },
+    {
+     "label": "From",
+     "value": "Rs 3,74,400 ex-GST"
+    }
+   ],
+   "40x8": [
+    {
+     "label": "Built-up area",
+     "value": "320 sq.ft"
+    },
+    {
+     "label": "Internal clear",
+     "value": "39 ft 6 in x 7 ft 6 in"
+    },
+    {
+     "label": "Planning template",
+     "value": "Compact 2 BHK"
+    },
+    {
+     "label": "Openings",
+     "value": "5 + 4 windows, 1 entry door"
+    },
+    {
+     "label": "From",
+     "value": "Rs 4,94,000 ex-GST"
+    }
+   ],
+   "40x10": [
+    {
+     "label": "Built-up area",
+     "value": "400 sq.ft"
+    },
+    {
+     "label": "Internal clear",
+     "value": "39 ft 6 in x 9 ft 6 in"
+    },
+    {
+     "label": "Planning template",
+     "value": "Compact 2 BHK"
+    },
+    {
+     "label": "Openings",
+     "value": "5 + 4 windows, 1 entry door"
+    },
+    {
+     "label": "From",
+     "value": "Rs 6,17,500 ex-GST"
+    }
+   ],
+   "40x12": [
+    {
+     "label": "Built-up area",
+     "value": "480 sq.ft"
+    },
+    {
+     "label": "Internal clear",
+     "value": "39 ft 6 in x 11 ft 6 in"
+    },
+    {
+     "label": "Planning template",
+     "value": "Compact 2 BHK"
+    },
+    {
+     "label": "Openings",
+     "value": "6 + 4 windows, 1 entry door"
+    },
+    {
+     "label": "From",
+     "value": "Rs 7,33,200 ex-GST"
+    }
+   ]
+  },
+  "explore_the_range": [
+   {
+    "label": "Container house range",
+    "href": "/product/container-houses"
+   },
+   {
+    "label": "Shipping container homes",
+    "href": "/product/container-houses/shipping-container-homes"
+   },
+   {
+    "label": "Luxury container houses",
+    "href": "/product/container-houses/luxury-container-houses"
+   }
+  ]
+ },
+ "size_tabs": [
+  {
+   "key": "20x8",
+   "label": "20 x 8 ft",
+   "area_sqft": 160,
+   "external": "20 ft x 8 ft x 8.5 ft",
+   "internal_clear": "19.5 ft x 7.5 ft x 8 ft",
+   "rate_per_sqft": 1787.5,
+   "price_ex_gst": 286000,
+   "price_incl_gst": 337480
+  },
+  {
+   "key": "20x10",
+   "label": "20 x 10 ft",
+   "area_sqft": 200,
+   "external": "20 ft x 10 ft x 8.5 ft",
+   "internal_clear": "19.5 ft x 9.5 ft x 8 ft",
+   "rate_per_sqft": 1625.0,
+   "price_ex_gst": 325000,
+   "price_incl_gst": 383500
+  },
+  {
+   "key": "20x12",
+   "label": "20 x 12 ft",
+   "area_sqft": 240,
+   "external": "20 ft x 12 ft x 8.5 ft",
+   "internal_clear": "19.5 ft x 11.5 ft x 8 ft",
+   "rate_per_sqft": 1560.0,
+   "price_ex_gst": 374400,
+   "price_incl_gst": 441792
+  },
+  {
+   "key": "40x8",
+   "label": "40 x 8 ft",
+   "area_sqft": 320,
+   "external": "40 ft x 8 ft x 8.5 ft",
+   "internal_clear": "39.5 ft x 7.5 ft x 8 ft",
+   "rate_per_sqft": 1543.75,
+   "price_ex_gst": 494000,
+   "price_incl_gst": 582920
+  },
+  {
+   "key": "40x10",
+   "label": "40 x 10 ft",
+   "area_sqft": 400,
+   "external": "40 ft x 10 ft x 8.5 ft",
+   "internal_clear": "39.5 ft x 9.5 ft x 8 ft",
+   "rate_per_sqft": 1543.75,
+   "price_ex_gst": 617500,
+   "price_incl_gst": 728650
+  },
+  {
+   "key": "40x12",
+   "label": "40 x 12 ft",
+   "area_sqft": 480,
+   "external": "40 ft x 12 ft x 8.5 ft",
+   "internal_clear": "39.5 ft x 11.5 ft x 8 ft",
+   "rate_per_sqft": 1527.5,
+   "price_ex_gst": 733200,
+   "price_incl_gst": 865176
+  }
+ ],
+ "price_display": {
+  "basis": "ex-GST, ex-works, against approved drawings",
+  "gst_rate": 0.18,
+  "from_ex_gst": 286000,
+  "to_ex_gst": 733200
+ },
+ "section2": {
+  "h2": "Why a prefab module, and not just another container house",
+  "p1": "Most container house buying decisions start with size and bedroom count, and that decision belongs on the <a href=\"/product/container-houses\">container house range page</a>. This page exists for the decision that comes after it: whether the unit you order has to be repeatable. A one-off container house can be drawn, cut and finished around whatever the site allows. A prefab module cannot, because the second, fifth and twentieth unit have to match it.",
+  "p2": "That constraint is what SAMAN fixes here. The floor cassette is built on a production jig, the wall panels come from one approved batch, the wet pod is a standard assembly with labelled hot, cold, waste and vent stubs, and end wall D is kept blank so two modules can be bolted and sealed together. Deviations are recorded by unit number instead of quietly altering the standard, which is why a replacement panel three years later still fits.",
+  "cta": {
+   "label": "Ask for a colony quotation",
+   "href": "/contact"
+  },
+  "split_card": {
+   "h3": "What repeatability actually buys you",
+   "p1": "On a single home, repeatability shows up as predictability: the quotation, the drawing and the unit that arrives agree, because none of them was improvised on site.",
+   "p2": "On a colony it shows up as money and time. One prototype is approved, then every later unit is built from the same BOM and pack list, and the utility stubs land in the same place on each one.",
+   "cta": {
+    "label": "See the six module drawings",
+    "href": "#sizes"
+   },
+   "image_slot": "section2.split.image_16x9"
+  }
+ },
+ "section3": {
+  "h2": "Six prefab module sizes, drawn to the same standard",
+  "intro": "Each size below has its own 3D general arrangement drawing, with dimensions, the opening schedule and the coupling interface on one sheet.",
+  "sizes": [
+   {
+    "key": "20x8",
+    "h3": "20 x 8 ft prefab module: the 160 sq.ft colony unit",
+    "paragraph": "The 160 sq.ft module is the smallest unit SAMAN still calls a home rather than a cabin, and the one that repeats most often. Internal clear is 19 ft 6 in by 7 ft 6 in under an 8 ft ceiling, planned as a single 1 BHK run: living at the entry, a kitchen and dining band, a bedroom, and the wet pod on the corridor wall. End wall D stays blank so the unit couples. At 8 ft wide it moves on a standard trailer profile, which is why staff housing and site colonies order it in tens.",
+    "bullets": [
+     "160 sq.ft built-up, 19 ft 6 in x 7 ft 6 in internal clear, 8 ft ceiling",
+     "Rs 2,86,000 ex-GST, Rs 3,37,480 including 18 per cent GST",
+     "Rs 1,787.50 per sq.ft, the 200 sq.ft base plus the 10 per cent band premium",
+     "3 windows and the entry door on wall A, 2 windows on wall B",
+     "Three units coupled give a 60 ft run at 480 sq.ft on one utility corridor",
+     "Narrowest of the six, so the least restricted road move"
+    ],
+    "image_slot": "section3.20x8.ga"
+   },
+   {
+    "key": "20x10",
+    "h3": "20 x 10 ft prefab module: the standard 1 BHK layout",
+    "paragraph": "At 200 sq.ft this is the reference size for the whole family: the Rs 1,625 per sq.ft base rate is set here and every other size is that rate adjusted by area band. Two feet of extra width over the 20 x 8 change the plan rather than the length, so living takes a seating layout instead of a corridor and the kitchen gets a working counter run. Internal clear is 19 ft 6 in by 9 ft 6 in. It is the size most single-home buyers settle on.",
+    "bullets": [
+     "200 sq.ft built-up, 19 ft 6 in x 9 ft 6 in internal clear, 8 ft ceiling",
+     "Rs 3,25,000 ex-GST, Rs 3,83,500 including 18 per cent GST",
+     "Rs 1,625 per sq.ft, the unadjusted 200 sq.ft planning base for the family",
+     "3 windows and the entry door on wall A, 2 windows on wall B",
+     "Living zone takes seating rather than circulation at this width",
+     "The size the price ladder is calibrated from, so quotations reconcile fastest"
+    ],
+    "image_slot": "section3.20x10.ga"
+   },
+   {
+    "key": "20x12",
+    "h3": "20 x 12 ft prefab module: width for the family plan",
+    "paragraph": "The 240 sq.ft module crosses into the first reduction band, so the rate drops to Rs 1,560 per sq.ft while the footprint stays short. Internal clear is 19 ft 6 in by 11 ft 6 in, and the extra width is spent on living and dining rather than the bedroom, which is why a fourth window is added to wall A. Where the plot depth is narrow it is the largest module that still parks inside a 20 ft bay, and in a colony it is the unit used where a family takes one module instead of two coupled ones.",
+    "bullets": [
+     "240 sq.ft built-up, 19 ft 6 in x 11 ft 6 in internal clear, 8 ft ceiling",
+     "Rs 3,74,400 ex-GST, Rs 4,41,792 including 18 per cent GST",
+     "Rs 1,560 per sq.ft, the 201 to 300 sq.ft band at 4 per cent below base",
+     "4 windows and the entry door on wall A, 2 windows on wall B",
+     "Widest 20 ft module, so a family plan fits without coupling",
+     "Over-width road move, so transport is quoted per project"
+    ],
+    "image_slot": "section3.20x12.ga"
+   },
+   {
+    "key": "40x8",
+    "h3": "40 x 8 ft prefab module: the 320 sq.ft linear unit",
+    "paragraph": "Doubling the length rather than the width gives 320 sq.ft in one narrow body and moves the plan to the compact 2 BHK template: living at the entry, kitchen and dining, first bedroom, wet pod, second bedroom at the far end. Internal clear is 39 ft 6 in by 7 ft 6 in and the rate falls to Rs 1,543.75 per sq.ft in the 301 to 400 band. Width is unchanged from the 20 x 8, so it moves on the same trailer profile, which makes it the cheapest route to two bedrooms in the prefab family.",
+    "bullets": [
+     "320 sq.ft built-up, 39 ft 6 in x 7 ft 6 in internal clear, 8 ft ceiling",
+     "Rs 4,94,000 ex-GST, Rs 5,82,920 including 18 per cent GST",
+     "Rs 1,543.75 per sq.ft, the 301 to 400 sq.ft band at 5 per cent below base",
+     "5 windows and the entry door on wall A, 4 windows on wall B",
+     "Compact 2 BHK template in one body, no coupling required",
+     "Same 8 ft width as the 20 x 8, so the same road profile"
+    ],
+    "image_slot": "section3.40x8.ga"
+   },
+   {
+    "key": "40x10",
+    "h3": "40 x 10 ft prefab module: the 400 sq.ft family standard",
+    "paragraph": "At 400 sq.ft this is the size most family buyers choose when the plot allows a 40 ft body, and the one SAMAN repeats most often in resort and estate work. Internal clear is 39 ft 6 in by 9 ft 6 in, and the extra two feet over the 40 x 8 turn circulation into usable room depth in both bedrooms. The rate stays in the 301 to 400 band at Rs 1,543.75 per sq.ft, so the price rises with area rather than rate.",
+    "bullets": [
+     "400 sq.ft built-up, 39 ft 6 in x 9 ft 6 in internal clear, 8 ft ceiling",
+     "Rs 6,17,500 ex-GST, Rs 7,28,650 including 18 per cent GST",
+     "Rs 1,543.75 per sq.ft, the same band rate as the 40 x 8",
+     "5 windows and the entry door on wall A, 4 windows on wall B",
+     "Room depth rather than corridor width in both bedrooms",
+     "Price step over the 40 x 8 is area only, the rate is unchanged"
+    ],
+    "image_slot": "section3.40x10.ga"
+   },
+   {
+    "key": "40x12",
+    "h3": "40 x 12 ft prefab module: the flagship 480 sq.ft unit",
+    "paragraph": "The largest module in the family at 480 sq.ft, and the only one in the 401 to 500 band, so the rate falls again to Rs 1,527.50 per sq.ft. Internal clear is 39 ft 6 in by 11 ft 6 in. The compact 2 BHK template gets a separated dining zone here rather than a shared kitchen and dining band, and a sixth window is added to wall A. Beyond this size SAMAN does not extend the module; the next step is coupling two units through end wall D, which is what the colony drawings on each size sheet show.",
+    "bullets": [
+     "480 sq.ft built-up, 39 ft 6 in x 11 ft 6 in internal clear, 8 ft ceiling",
+     "Rs 7,33,200 ex-GST, Rs 8,65,176 including 18 per cent GST",
+     "Rs 1,527.50 per sq.ft, the 401 to 500 sq.ft band at 6 per cent below base",
+     "6 windows and the entry door on wall A, 4 windows on wall B",
+     "Dining separates from the kitchen band at this width",
+     "Largest single module; above 480 sq.ft the answer is coupling, not a longer body"
+    ],
+    "image_slot": "section3.40x12.ga"
+   }
+  ]
+ },
+ "you_may_also_like": {
+  "intro": "Other decisions inside the container house range",
+  "items": [
+   {
+    "label": "Container house range",
+    "href": "/product/container-houses"
+   },
+   {
+    "label": "Shipping container homes",
+    "href": "/product/container-houses/shipping-container-homes"
+   },
+   {
+    "label": "Luxury container houses",
+    "href": "/product/container-houses/luxury-container-houses"
+   }
+  ]
+ },
+ "tabs": {
+  "description": {
+   "sections": [
+    {
+     "h2": "Is a prefab container home the same as a container house?",
+     "paragraphs": [
+      "The two words do different work. A container house is the product category: a steel-framed, panel-clad dwelling built on a container-derived chassis, in whatever size and layout a site needs. Prefab describes how it is made. A prefab container home is one that has been standardised for repeat production, which means the drawing, the bill of materials, the panel batch and the pack list are fixed before the first unit is cut, and stay fixed for every unit after it.",
+      "That distinction matters because it changes what you are buying. If you want one house and you want it shaped around your plot, your view and your budget, you are shopping the container house range, and the size and bedroom decision is the one to make first. If you want five, ten or twenty dwellings that behave identically, or one house whose spare parts will still be available in three years, you are shopping this page. The two overlap in materials and finish; they diverge completely in how much of the build is decided in advance.",
+      "Buyers searching for prefab homes, prefabricated houses or modular housing in India usually land somewhere between the two, and the honest answer is that SAMAN builds both. What follows is written for the prefab decision specifically: what is standardised, what is still yours to choose, and what it costs at each of the six sizes."
+     ]
+    },
+    {
+     "h2": "What SAMAN fixes in the factory, and why it matters",
+     "paragraphs": [
+      "Five things are fixed in the factory, and they are the reason the units match. The floor cassette is built on a production jig rather than measured on the shop floor, so every module in a batch is dimensionally interchangeable. The wall panels are cut from one approved batch, so colour, metal thickness, core and joint profile do not drift between unit three and unit fourteen. The roof cassette is trial-fitted in the factory before dispatch, so the site sequence is known rather than discovered. The wet pod is a standard assembly, tested before it leaves, with hot, cold, waste and vent stubs landing in the same position on every unit. And end wall D is kept clear of glazing, so any two modules can be coupled through it.",
+      "What that buys on site is a different kind of work. Panels arrive cut, labelled and sequenced against an erection drawing and a pack list. The joints are dry: bolted plates at the corner posts, a closure profile and flashing at the seam, and sealant used to weather a properly supported lap rather than to make up for one. There is no wet trade waiting on another wet trade, which is why a colony run compresses so much faster than a conventional build.",
+      "It also changes what happens when something goes wrong. Because the standard is written down, a deviation gets recorded against a unit number instead of absorbed silently. If unit nine needed a heavier floor for a particular load, that is on the schedule, and unit ten is still the standard. Three years later, a replacement wall panel or floor sheet is ordered against the same batch reference and still fits the opening.",
+      "None of this is a claim about performance. Thermal, fire and acoustic behaviour depend on the exact panel supplied and the evidence that came with it, not on the words PUF or mineral wool. SAMAN states the panel that was supplied and the report that supports it; where there is no report, there is no rating."
+     ]
+    },
+    {
+     "h2": "How the six sizes behave when you repeat them",
+     "paragraphs": [
+      "The six sizes are not six products. They are one module drawn at six footprints, which is why they share an 8 ft 6 in external height, an 8 ft internal ceiling, a 3 in wall, roof and floor build-up, a 4 ft by 3 ft window module and a 3 ft by 7 ft entry door. What changes between them is area, the planning template and the opening count.",
+      "The three 20 ft sizes carry a 1 BHK template: living at the entry, a kitchen and dining band, one bedroom, and the wet pod on the corridor wall. Width is what separates them. At 8 ft the living zone is circulation with furniture in it; at 10 ft it takes a seating layout; at 12 ft dining separates from living and a fourth window is added. The three 40 ft sizes carry the compact 2 BHK template, with the second bedroom at the far end and the wet pod between the two. Again width decides quality rather than count: 8 ft gives two bedrooms in a corridor plan, 10 ft gives both of them usable depth, 12 ft separates the dining zone.",
+      "When they are repeated, width also decides the site plan. Modules couple end to end through wall D, so three 20 ft units make a 60 ft run and three 40 ft units make a 120 ft run, each on a single external utility corridor. A colony of mixed sizes still works because the corridor position and the stub layout are constant; what varies is how many bays each unit occupies. That is the practical reason SAMAN keeps the wet core on one wall across all six sizes rather than optimising each plan separately.",
+      "Road movement is the other constraint that scales. The 8 ft wide modules move on a standard trailer profile. The 10 ft and 12 ft modules are over-width, so transport, escorts and route survey are quoted per project rather than assumed. On a twenty-unit order that difference is often larger than the difference in unit price, and it is worth settling before the size is frozen."
+     ]
+    },
+    {
+     "h2": "Costing a colony against costing one house",
+     "paragraphs": [
+      "A single house and a colony are priced from the same rate card but they are not the same commercial exercise. SAMAN's rate is set at the 200 sq.ft reference: Rs 1,625 per sq.ft. Below 200 sq.ft the rate goes up, because the fixed content of a module does not shrink with area. Above 200 sq.ft it comes down band by band, to a floor at 900 sq.ft beyond which a project quotation replaces the ladder.",
+      "The table below is the ladder as it applies to the six prefab sizes, and it is the same arithmetic the price shown on this page uses.",
+      "@TABLE",
+      "On a colony, three things move that the table does not show. The first is the prototype: bulk production only starts after one sample unit is approved and the site connection coordinates are frozen, and that approval cycle is real time on the programme. The second is aggregation: electrical and water loads for the whole run are worked out at site level, not by multiplying one unit, and the result can require infrastructure that no individual unit price includes. The third is sequencing: units delivered in batches against an erection programme cost less to install than the same units delivered at once and stored.",
+      "The honest way to read the ladder, then, is as the module price. It tells you what a unit costs ex-works against approved drawings. Everything that makes a group of units into a colony sits outside it and is quoted against the site."
+     ]
+    },
+    {
+     "h2": "What the price covers and what stays outside it",
+     "paragraphs": [
+      "What the module price covers is the repeatable factory-built residential module: the structural base and frame, the 50 mm class insulated panel envelope, the roof cassette, the standard interior finish, the internal partitions and ceiling, electrical wiring to the approved layout, and the compact wet-service provision. What it does not cover is everything that depends on your site, and that list is worth reading before you compare quotations.",
+      "@BULLETS",
+      "Two of those deserve a note. Interior fit-out beyond the standard finish is quoted separately rather than bundled, because a premium kitchen or sanitary schedule on a twenty-unit order is a different negotiation from the same upgrade on one house. And transport and installation are excluded from the ladder rather than estimated into it, because the difference between an 8 ft wide module on a standard trailer and a 12 ft module needing an over-width move is too large to average."
+     ]
+    },
+    {
+     "h2": "Getting a site ready before the modules arrive",
+     "paragraphs": [
+      "Modules arrive finished, which means the site has to be finished first. The base has to be level, squared and able to take the module's support points where the general arrangement drawing shows them, not wherever the crane happens to reach. Bearing, anchor positions, corrosion access and the full load path are on the signed GA and the structural drawings; a nominal channel section quoted on a web page is not a substitute for a foundation design or a site wind review.",
+      "Access matters as much as the base. A 40 ft module needs a turning radius and a hardstanding for the vehicle and the lifting equipment, and it needs them in the same week the module is on the road. On colony work the erection sequence usually dictates the access route rather than the other way round, which is why the pack list and the erection drawing are issued together.",
+      "Services are the third item. External networks, tanks, pumps, sewage treatment and final testing sit outside the module scope, and the module simply presents labelled stubs at the utility corridor. Getting those networks to the corridor line before the modules land is what separates a two-day installation from a two-week one. SAMAN publishes a 7 to 21 working day lead time on the module itself; the site programme is yours."
+     ]
+    },
+    {
+     "h2": "Warranty, service life and what falls outside cover",
+     "paragraphs": [
+      "SAMAN gives a 10-year structural warranty on the steel structure of its container homes, and a 1-year finishing warranty extendable to 2 years on the finish package. The exact period, start date, remedy, service access and relocation conditions are the ones written into the signed quotation and the handover documents; the figures here describe the standard offer, not a substitute for those documents.",
+      "What falls outside cover is consistent across the range and worth stating plainly: unapproved alterations, poor or settling foundations, water entering the building at the site interface, utility faults, corrosive exposure the module was not specified for, missed seal and coating maintenance, misuse, and damage caused by relocating a module. Relocation in particular is a common misunderstanding on prefab work. A module is designed to be transported once to its site and installed; repeated relocation is a different specification and a different conversation.",
+      "Service life follows maintenance more than it follows the specification. The items that decide it are the coating system at cut edges and penetrations, the sealant and closure profiles at panel joints and module seams, and the roof drainage. All three are accessible by design on a SAMAN module, which is deliberate: a joint you cannot inspect is a joint you cannot maintain."
+     ]
+    },
+    {
+     "h2": "Where prefab sits against the rest of the range",
+     "paragraphs": [
+      "Inside the container house range, each page answers a different question, and it is worth knowing which one you are actually asking. The range page answers how big and how many bedrooms. This page answers whether the unit needs to repeat. Shipping container homes answer what happens when the build has to be relocatable or coastal, and the specification changes to reinforced corner posts, a heavier shell and coastal sealing. Luxury container houses answer finish level at the same footprint.",
+      "Three more decisions sit outside this page. If the constraint is transport rather than production, flat-pack construction ships the module as panels and assembles it at site. If the constraint is footprint after placement, an expandable unit opens out once it is landed. And if the requirement is workforce accommodation at scale rather than housing, that is a labour colony brief, with different densities, sanitation ratios and compliance obligations, and it belongs on its own page.",
+      "SAMAN manufactures in its own works at Greater Noida in the north zone and Bengaluru in the south, and is an ISO 9001:2015 certified manufacturer with more than 500 completed projects delivered. Delivery is pan-India, free inside Bengaluru city and across Delhi NCR. If your requirement is a single home, the fastest route is to pick a size above and ask for the drawing. If it is a colony, send the unit count and the site, and the quotation will come back with the module price and the site scope separated, which is the only way the two numbers can be checked."
+     ]
+    }
+   ],
+   "table": {
+    "caption": "Area band, adjusted rate and module price across the six prefab sizes",
+    "head": [
+     "Size",
+     "Built-up area",
+     "Area band",
+     "Rate per sq.ft",
+     "Module price ex-GST",
+     "Including 18% GST"
+    ],
+    "rows": [
+     [
+      "20 x 8 ft",
+      "160 sq.ft",
+      "150-199, 10% above base",
+      "Rs 1,787.50",
+      "Rs 2,86,000",
+      "Rs 3,37,480"
+     ],
+     [
+      "20 x 10 ft",
+      "200 sq.ft",
+      "Exactly 200, base rate",
+      "Rs 1,625.00",
+      "Rs 3,25,000",
+      "Rs 3,83,500"
+     ],
+     [
+      "20 x 12 ft",
+      "240 sq.ft",
+      "201-300, 4% below base",
+      "Rs 1,560.00",
+      "Rs 3,74,400",
+      "Rs 4,41,792"
+     ],
+     [
+      "40 x 8 ft",
+      "320 sq.ft",
+      "301-400, 5% below base",
+      "Rs 1,543.75",
+      "Rs 4,94,000",
+      "Rs 5,82,920"
+     ],
+     [
+      "40 x 10 ft",
+      "400 sq.ft",
+      "301-400, 5% below base",
+      "Rs 1,543.75",
+      "Rs 6,17,500",
+      "Rs 7,28,650"
+     ],
+     [
+      "40 x 12 ft",
+      "480 sq.ft",
+      "401-500, 6% below base",
+      "Rs 1,527.50",
+      "Rs 7,33,200",
+      "Rs 8,65,176"
+     ]
+    ]
+   },
+   "bullets": [
+    "Foundations, plinths, levelling and any site civil work",
+    "Transport, unloading, craneage and installation beyond the agreed scope",
+    "Colony infrastructure: roads, drainage, external water, sewage treatment and site power",
+    "Utility connections from the corridor stubs to the site network, and final testing",
+    "Furniture, appliances, air conditioning equipment and loose fittings",
+    "Premium finish, kitchen and sanitary upgrades above the standard schedule",
+    "Statutory approvals, permissions and project-specific engineering or testing"
+   ],
+   "faqs": [
+    {
+     "q": "What is the difference between a prefab container home and a container house?",
+     "a": "A container house is the product; prefab describes how it is made. A prefab container home is standardised for repeat production, so the drawing, bill of materials, panel batch and pack list are fixed before the first unit is cut."
+    },
+    {
+     "q": "What does a prefab container home cost in India?",
+     "a": "SAMAN's six prefab module sizes run from Rs 2,86,000 ex-GST at 160 sq.ft to Rs 7,33,200 ex-GST at 480 sq.ft, against a 200 sq.ft base rate of Rs 1,625 per sq.ft adjusted by area band. Add 18 per cent GST."
+    },
+    {
+     "q": "How many prefab modules can be joined together?",
+     "a": "Modules couple end to end through end wall D, which is kept clear of glazing for that purpose. Three 20 ft units make a 60 ft run and three 40 ft units a 120 ft run, each served by one external utility corridor."
+    },
+    {
+     "q": "How long does a prefab container home take to build?",
+     "a": "SAMAN publishes a 7 to 21 working day lead time on the module itself. On colony orders, bulk production starts only after one prototype unit is approved and the site connection coordinates are frozen."
+    },
+    {
+     "q": "Is transport and installation included in the price?",
+     "a": "No. The price shown is the module price ex-works against approved drawings. Transport, unloading, craneage, installation beyond the agreed scope, foundations and site utilities are quoted separately against the site."
+    },
+    {
+     "q": "What warranty comes with a prefab container home?",
+     "a": "A 10-year structural warranty on the steel structure and a 1-year finishing warranty extendable to 2 years. The period, remedy and exclusions written into the signed quotation and handover documents govern."
+    },
+    {
+     "q": "Can a prefab container home be moved after installation?",
+     "a": "It is designed to be transported once to its site and installed. Repeated relocation is a different specification, and damage caused by relocating a module falls outside the standard warranty."
+    }
+   ]
+  },
+  "specifications": {
+   "narrative": [
+    "The specification below separates what is fixed across every SAMAN cabin platform from what is specific to a prefab container home. Seventeen of the thirty technical lines are product-specific and thirteen are platform common, which is the honest picture: the steel platform is shared, the repeatability is not.",
+    "Read Group B and Group C first, because they are where the buying decision sits. Group B is the batch-produced floor cassette, roof cassette and connection frame that make units interchangeable. Group C is the opening and layout schedule, including the blank end wall that lets modules couple. Group D is the platform-common material key, shared with every other SAMAN cabin family, and is not a differentiator.",
+    "Nothing in these tables is a performance rating. Thermal, fire, acoustic, load and freight claims are made only against the exact product supplied and the report that accompanies it; where there is no report there is no rating, and the signed quotation and approved drawings govern."
+   ],
+   "groups": {
+    "A_sizes_and_prices": {
+     "title": "Group A - sizes, area bands and prices",
+     "head": [
+      "Size",
+      "Built-up area",
+      "Area band",
+      "Rate per sq.ft",
+      "Module price ex-GST",
+      "Including 18% GST"
+     ],
+     "rows": [
+      [
+       "20 x 8 ft",
+       "160 sq.ft",
+       "150-199, 10% above base",
+       "Rs 1,787.50",
+       "Rs 2,86,000",
+       "Rs 3,37,480"
+      ],
+      [
+       "20 x 10 ft",
+       "200 sq.ft",
+       "Exactly 200, base rate",
+       "Rs 1,625.00",
+       "Rs 3,25,000",
+       "Rs 3,83,500"
+      ],
+      [
+       "20 x 12 ft",
+       "240 sq.ft",
+       "201-300, 4% below base",
+       "Rs 1,560.00",
+       "Rs 3,74,400",
+       "Rs 4,41,792"
+      ],
+      [
+       "40 x 8 ft",
+       "320 sq.ft",
+       "301-400, 5% below base",
+       "Rs 1,543.75",
+       "Rs 4,94,000",
+       "Rs 5,82,920"
+      ],
+      [
+       "40 x 10 ft",
+       "400 sq.ft",
+       "301-400, 5% below base",
+       "Rs 1,543.75",
+       "Rs 6,17,500",
+       "Rs 7,28,650"
+      ],
+      [
+       "40 x 12 ft",
+       "480 sq.ft",
+       "401-500, 6% below base",
+       "Rs 1,527.50",
+       "Rs 7,33,200",
+       "Rs 8,65,176"
+      ]
+     ],
+     "platform_common": true
+    },
+    "B_product_build": {
+     "title": "Group B - product-specific build: cassettes, roof and connection frame",
+     "rows": [
+      {
+       "component": "Floor frame",
+       "material": "Repeatable prefab residential floor cassette",
+       "section": "Standardized 100x50x3 mm class primary and 80x40x3 mm secondary steel grid or approved production jig, with repeated local details for wet pods and partition lines.",
+       "detail": "Prefab Container Homes use controlled jigs and batch BOMs so units remain interchangeable. Colony orders record any floor-loading or layout deviation by unit number rather than silently altering the standard.",
+       "classification": "Product-Specific",
+       "platform_common": false
+      },
+      {
+       "component": "Roof stiffeners",
+       "material": "Batch-produced roof cassette and module-joint support",
+       "section": "Repeatable rafters/purlins or insulated-panel cassette with standard edge rails, joint caps and lifting bracing for complete-module or panelized delivery.",
+       "detail": "Roof module joints are dry-fitted in the factory and receive a documented site closure sequence. Batch dimensions, slope and drainage outlets are checked against the colony/site layout.",
+       "classification": "Product-Specific",
+       "platform_common": false
+      },
+      {
+       "component": "Corner posts / walls",
+       "material": "Standardized corner and inter-module connection frame",
+       "section": "Repeated corner posts and connection plates/bolts sized for the approved module, with local opening frames selected from a controlled family of details.",
+       "detail": "Prefab Container Homes separate standard connection details from project-specific large openings. Every unit and panel is labelled to the erection drawing and pack list.",
+       "classification": "Product-Specific",
+       "platform_common": false
+      }
+     ]
+    },
+    "C_openings_and_layout": {
+     "title": "Group C - opening schedule and staged layout by size",
+     "rows": [
+      {
+       "component": "Main door / service door",
+       "material": "Standardized residential door module",
+       "section": "Insulated external steel/laminated door and controlled internal door set mounted in repeatable panel frames with seals, threshold and approved hardware.",
+       "detail": "Door modules are interchangeable only within the same panel system and opening schedule. Accessibility, fire or acoustic upgrades use separate documented assemblies.",
+       "classification": "Product-Specific",
+       "platform_common": false
+      },
+      {
+       "component": "Windows / service opening",
+       "material": "Repeatable window module for factory and colony builds",
+       "section": "Powder-coated aluminium/uPVC sliding or casement windows with 4-6 mm glass, factory-cut panel frames, drainage and optional mesh.",
+       "detail": "The Prefab Container Homes window family limits sizes to preserve panel strength, weathering and spare availability. Orientation and quantities still follow each unit GA.",
+       "classification": "Product-Specific",
+       "platform_common": false
+      },
+      {
+       "component": "Layout / configuration",
+       "material": "Single-home and colony configuration control",
+       "section": "Approved GA identifies 1BHK/compact 2BHK template, module split, unit count, spacing, circulation, fire access, utility corridor and future expansion positions.",
+       "detail": "Prefab Container Homes are released by a controlled unit schedule. Bulk production begins only after prototype/sample approval and site connection coordinates are frozen.",
+       "classification": "Product-Specific",
+       "platform_common": false
+      }
+     ],
+     "by_size": [
+      {
+       "size": "20x8",
+       "wall_a": "3 windows + entry door",
+       "wall_b": "2 windows",
+       "end_c": "1 picture window",
+       "end_d": "blank, kept clear for coupling",
+       "template": "1 BHK"
+      },
+      {
+       "size": "20x10",
+       "wall_a": "3 windows + entry door",
+       "wall_b": "2 windows",
+       "end_c": "1 picture window",
+       "end_d": "blank, kept clear for coupling",
+       "template": "1 BHK"
+      },
+      {
+       "size": "20x12",
+       "wall_a": "4 windows + entry door",
+       "wall_b": "2 windows",
+       "end_c": "1 picture window",
+       "end_d": "blank, kept clear for coupling",
+       "template": "1 BHK"
+      },
+      {
+       "size": "40x8",
+       "wall_a": "5 windows + entry door",
+       "wall_b": "4 windows",
+       "end_c": "1 picture window",
+       "end_d": "blank, kept clear for coupling",
+       "template": "compact 2 BHK"
+      },
+      {
+       "size": "40x10",
+       "wall_a": "5 windows + entry door",
+       "wall_b": "4 windows",
+       "end_c": "1 picture window",
+       "end_d": "blank, kept clear for coupling",
+       "template": "compact 2 BHK"
+      },
+      {
+       "size": "40x12",
+       "wall_a": "6 windows + entry door",
+       "wall_b": "4 windows",
+       "end_c": "1 picture window",
+       "end_d": "blank, kept clear for coupling",
+       "template": "compact 2 BHK"
+      }
+     ]
+    },
+    "D_platform_common_material_key": {
+     "title": "Group D - platform-common material key",
+     "rows": [
+      {
+       "component": "Bottom frame",
+       "material": "Primary chassis / structural base",
+       "section": "Structural family and member schedule fixed by approved engineering: fabricated MS reference 150x75x5 mm channels; retained freight-container rails or proprietary flat-pack/expandable chassis where applicable.",
+       "detail": "Support points, anchor locations, allowable bearing, corrosion access and the complete load path are shown on the signed GA/BOM. A nominal section is not a universal substitute for site wind review, foundation design or mechanism-specific engineering.",
+       "classification": "Platform Common",
+       "platform_common": true
+      },
+      {
+       "component": "Bottom stiffeners",
+       "material": "Secondary base members and local reinforcement",
+       "section": "Typically 100x50x4 mm channels and 80x40x3 mm RHS/tubular members, or the approved equivalent for the selected structural family and design loads.",
+       "detail": "Spacing and local doublers respond to partitions, wet cores, concentrated furniture/equipment, transport reactions, lifting and module joints. Unrecorded cutting, corrosion loss or member substitution is not accepted.",
+       "classification": "Platform Common",
+       "platform_common": true
+      },
+      {
+       "component": "Top frame",
+       "material": "Upper perimeter ring beam / load-transfer frame",
+       "section": "Typically 80x40x3 mm MS RHS or the proprietary upper rail retained or supplied with the approved container-house system.",
+       "detail": "The ring frame ties posts, roof members and opening headers, receives transport restraint and transfers wind or joining loads. Stacking, canopies, balconies and rooftop equipment require additional engineered steel.",
+       "classification": "Platform Common",
+       "platform_common": true
+      },
+      {
+       "component": "Lifting / handling",
+       "material": "Approved lifting, transport and support provision",
+       "section": "Marked lifting points, corner fittings, lugs, pockets or temporary transport brackets designed for the completed centre of gravity and finished weight.",
+       "detail": "Lift and transport only to the approved method statement, rigging geometry and support-point drawing. Interior fit-out, wet tanks and loose items must be secured; forklift handling is permitted only where pockets and capacity are documented.",
+       "classification": "Platform Common",
+       "platform_common": true
+      },
+      {
+       "component": "Welding & fabrication",
+       "material": "Controlled welded and/or bolted fabrication",
+       "section": "IS 2062 or approved structural steel; weld sizes, bolt grade, hole tolerances and joint sequence as the fabrication drawings and material schedule.",
+       "detail": "Fabrication records cover fit-up, weld continuity, distortion, bolt tightening, sharp-edge removal, dimensions and coating restoration. Critical mechanism, stacking or module-join details require the specified inspection or engineering sign-off.",
+       "classification": "Platform Common",
+       "platform_common": true
+      },
+      {
+       "component": "Fasteners & sealing",
+       "material": "Weatherproof joints, penetrations and dissimilar-material interfaces",
+       "section": "Corrosion-compatible fasteners, EPDM washers, butyl/PU sealants, closure profiles, flashings, sleeves and isolation tapes matched to the approved envelope.",
+       "detail": "Every factory and site penetration is detailed to drain outward and remain maintainable. Sealant alone is not used to compensate for poor laps, unsupported joints or movement; site drilling must be approved, deburred, coated and resealed.",
+       "classification": "Platform Common",
+       "platform_common": true
+      },
+      {
+       "component": "Grills / mosquito mesh",
+       "material": "Opening safety, insect and security accessories",
+       "section": "Removable insect mesh, restrictors, safety guards or MS grills only where required by the room use, security brief and egress strategy.",
+       "detail": "Accessories must not obstruct emergency escape, cleaning, drainage or window operation. Grill spacing, child safety, corrosion protection and release provisions are confirmed on the opening schedule rather than assumed for every window.",
+       "classification": "Platform Common",
+       "platform_common": true
+      },
+      {
+       "component": "Electrical wiring",
+       "material": "Copper wiring, containment and service segregation",
+       "section": "Typical minimum circuit references: 1.5 sq.mm lighting, 2.5 sq.mm sockets and 4 sq.mm AC/high-load circuits; final sizing follows connected load, voltage drop and protective-device coordination.",
+       "detail": "PVC-insulated copper conductors run in approved conduit or trunking with labelled junctions and separation from data, gas, water and flexible deployment paths. Hidden joints, overloaded extension boards and unprotected metal penetrations are not permitted.",
+       "classification": "Platform Common",
+       "platform_common": true
+      },
+      {
+       "component": "Electrical protection",
+       "material": "Distribution board, protective devices, bonding and earthing",
+       "section": "Main isolator, MCB/RCBO or RCCB protection, earth and neutral bars, circuit labels and surge protection where the approved risk assessment or supply conditions require it.",
+       "detail": "Steel frame, panels and exposed conductive parts are bonded to the tested site earth. Protection, prospective fault level, wet-area circuits, generator/UPS changeover and final connection follow the approved single-line diagram and applicable Indian codes.",
+       "classification": "Platform Common",
+       "platform_common": true
+      },
+      {
+       "component": "Electrical fittings",
+       "material": "Fixed residential electrical accessories",
+       "section": "LED lighting, modular switches, 6A/16A sockets, fan/exhaust points, AC isolator/provision and dedicated appliance circuits only in the quantities shown on the approved electrical layout.",
+       "detail": "Switch and socket positions coordinate with furniture, wet zones, doors and accessible maintenance. Appliances, loose lamps, network devices, inverter/UPS, solar system and AC equipment are excluded unless specifically itemized.",
+       "classification": "Platform Common",
+       "platform_common": true
+      },
+      {
+       "component": "Painting / coating",
+       "material": "Corrosion-protection and finish-coat system",
+       "section": "Prepared carbon steel with compatible primer and finish coats, or galvanized/pre-painted steel with repaired cut edges; system upgraded for coastal, industrial or high-moisture exposure.",
+       "detail": "The approved coating schedule records preparation, product, colour, coat count or dry-film target, cure and touch-up. Drain traps, crevices and inaccessible uncoated steel are avoided so inspection and maintenance remain practical.",
+       "classification": "Platform Common",
+       "platform_common": true
+      },
+      {
+       "component": "Quality checks",
+       "material": "Factory inspection, functional testing and handover evidence",
+       "section": "Dimensional, member, weld/bolt, coating, roof-drainage, water-seal, opening, electrical, plumbing and product-specific deployment/joining checks as applicable.",
+       "detail": "The pre-dispatch dossier identifies the approved drawings, material schedule, test results, photographs, punch items, lifting data and site connection points. Performance ratings are stated only when supported by the contracted report or certificate.",
+       "classification": "Platform Common",
+       "platform_common": true
+      },
+      {
+       "component": "Warranty",
+       "material": "Commercially confirmed warranty, maintenance and exclusions",
+       "section": "Warranty period, start date, remedy, service access, relocation conditions and exclusions only as stated in the signed quotation and final handover documents.",
+       "detail": "Unapproved alterations, poor foundations, site water entry, utility faults, corrosive exposure, missed seal/coating maintenance, misuse and relocation damage remain outside warranty unless expressly covered. Statutory rights and the signed contract govern.",
+       "classification": "Platform Common",
+       "platform_common": true
+      }
+     ]
+    },
+    "E_scope_boundary": {
+     "title": "Group E - scope boundary",
+     "rows": [
+      {
+       "component": "Exterior walls",
+       "material": "Factory-cut insulated wall-panel system",
+       "section": "Nominal 50 mm PUF/EPS or approved mineral-wool sandwich panels with pre-painted faces, dry joints, base/head flashings and batch-controlled colour/finish.",
+       "detail": "Panel type, metal thickness, core and joint profile are fixed for the production batch. Substitution during colony production requires documented approval and compatible replacement stock.",
+       "classification": "Product-Specific",
+       "platform_common": false
+      },
+      {
+       "component": "Roof",
+       "material": "Prefab insulated roof-panel assembly",
+       "section": "Insulated PPGI roof panel or framed metal roof with designed fall, ridge/eave trims, joint caps, gutters and repeatable penetrations from the services schedule.",
+       "detail": "Factory trial fit confirms panel sequence and closure pieces. Site seams are accessible for torque/seal inspection and do not rely on hidden wet joints.",
+       "classification": "Product-Specific",
+       "platform_common": false
+      },
+      {
+       "component": "Interior walls",
+       "material": "Repeatable internal partition panels",
+       "section": "Pre-laminated board, gypsum or insulated light panel partitions on standardized tracks with controlled door, service and wet-wall modules.",
+       "detail": "The Prefab Container Homes room kit allows 1BHK/compact 2BHK variants without changing the primary frame. Partition IDs, service cut-outs and moisture grade are tied to the unit schedule.",
+       "classification": "Product-Specific",
+       "platform_common": false
+      },
+      {
+       "component": "Ceiling",
+       "material": "Standardized factory ceiling module",
+       "section": "Pre-laminated panel or gypsum/board ceiling on a repeated suspension/support grid with pre-coordinated lights, access panels and wet-room variant.",
+       "detail": "Ceiling parts are cut and labelled in the factory. Field cutting is limited to approved connections so colony units retain consistent finish and service access.",
+       "classification": "Product-Specific",
+       "platform_common": false
+      },
+      {
+       "component": "Floor base",
+       "material": "Factory-installed floor deck for repeat production",
+       "section": "18-19 mm cement-fibre or BWP/marine plywood sheets laid to a standard joint map, with sealed edges and wet-pod reinforcement.",
+       "detail": "Panel orientation, fastener spacing and moisture checks are recorded by batch. Replacement panels remain dimensionally compatible with the standardized floor cassette.",
+       "classification": "Product-Specific",
+       "platform_common": false
+      },
+      {
+       "component": "Floor finish",
+       "material": "Repeatable mainstream residential floor finish",
+       "section": "Commercial LVT/SPC or laminate finish with standardized skirting and thresholds; anti-skid wet-area tile/finish only in the approved bathroom module.",
+       "detail": "The Prefab Container Homes finish schedule limits choices to maintain batch quality and replacement availability. Premium options are priced as a separate controlled upgrade.",
+       "classification": "Product-Specific",
+       "platform_common": false
+      },
+      {
+       "component": "Wall insulation",
+       "material": "Continuous insulated wall-panel envelope",
+       "section": "50 mm class PUF/EPS or mineral-wool core selected for the project, with insulated joint covers and thermal-break details at repeated steel lines and openings.",
+       "detail": "Batch quality checks verify panel identification and joint closure. Thermal or fire claims refer to the exact supplied panel evidence, not a generic core name.",
+       "classification": "Product-Specific",
+       "platform_common": false
+      },
+      {
+       "component": "Roof insulation",
+       "material": "Standard roof insulation and vapour control",
+       "section": "Insulated roof panel or 75-100 mm blanket/board layer retained within the factory roof cassette, with vapour layer and condensation drainage as designed.",
+       "detail": "The Prefab Container Homes roof package is repeated across units and adjusted only for climate or fire requirements documented in the project schedule.",
+       "classification": "Product-Specific",
+       "platform_common": false
+      },
+      {
+       "component": "Decorative / external finish",
+       "material": "Colony-ready exterior colour and identity system",
+       "section": "Pre-painted panel colours, standard trims and optional numbered fascia/signage zones; limited feature cladding offered as a batch-approved option.",
+       "detail": "Colour coding, unit numbers and wayfinding are applied from the site plan. Decorative additions do not obstruct panel joints, lifting points or future unit expansion.",
+       "classification": "Product-Specific",
+       "platform_common": false
+      },
+      {
+       "component": "Ventilation / AC",
+       "material": "Standard comfort-services package for single or colony units",
+       "section": "Cross-ventilation, kitchen/bath exhaust, fan and split-AC provisions repeated from an approved room template; fresh air and common HVAC added only where scheduled.",
+       "detail": "Colony electrical and heat loads are aggregated at site level. Individual unit provisions do not include central plant, external piping or demand management unless quoted.",
+       "classification": "Product-Specific",
+       "platform_common": false
+      },
+      {
+       "component": "Plumbing / sanitary",
+       "material": "Standardized wet pod and utility manifold",
+       "section": "Factory-tested bathroom/kitchen rough-in or complete pod with labelled hot/cold, waste and vent stubs located for repeatable external utility corridors.",
+       "detail": "Prefab colony layouts benefit from common connection points, traps and service access. External networks, tanks, pumps, sewage treatment and final site testing remain separate project scope.",
+       "classification": "Product-Specific",
+       "platform_common": false
+      }
+     ],
+     "excluded": [
+      "Foundations, plinths, levelling and any site civil work",
+      "Transport, unloading, craneage and installation beyond the agreed scope",
+      "Colony infrastructure: roads, drainage, external water, sewage treatment and site power",
+      "Utility connections from the corridor stubs to the site network, and final testing",
+      "Furniture, appliances, air conditioning equipment and loose fittings",
+      "Premium finish, kitchen and sanitary upgrades above the standard schedule",
+      "Statutory approvals, permissions and project-specific engineering or testing"
+     ],
+     "area_basis": "Built-up area of the complete or joined prefab modules. Batch quantity, module split, panel system, colony utilities and site joining are project controls."
+    }
+   },
+   "diagrams": [],
+   "technical_pdf": null
+  },
+  "shipping": {
+   "component": "shared-freight-component",
+   "copy": "unchanged from the porta-cabins page, including the two free-delivery lines"
+  },
+  "reviews": {
+   "reviews": [],
+   "empty_state": "No verified reviews yet.",
+   "rating_schema": false
+  }
+ },
+ "structured_data": {
+  "types": [
+   "ItemPage",
+   "Product",
+   "BreadcrumbList",
+   "FAQPage"
+  ],
+  "product": {
+   "name": "Prefab Container Homes",
+   "brand": "SAMAN Portable",
+   "category": "Container Houses",
+   "aggregateOffer": {
+    "priceCurrency": "INR",
+    "lowPrice": 286000,
+    "highPrice": 733200,
+    "offerCount": 6,
+    "basis": "ex-GST"
+   }
+  },
+  "breadcrumb": [
+   {
+    "name": "Home",
+    "item": "/"
+   },
+   {
+    "name": "Products",
+    "item": "/product"
+   },
+   {
+    "name": "Container Houses",
+    "item": "/product/container-houses"
+   },
+   {
+    "name": "Prefab Container Homes",
+    "item": "/product/container-houses/prefab-container-homes"
+   }
+  ],
+  "faqpage": "byte-identical to tabs.description.faqs"
+ }
+}

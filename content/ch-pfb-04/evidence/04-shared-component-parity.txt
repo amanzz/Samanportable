@@ -1,0 +1,14 @@
+# Artefact 4 - shared components render byte-identically to the design lock
+
+## Shipping tab
+  preview panel bytes    : 17752
+  porta-cabins panel bytes: 17752
+  byte-identical          : True
+  free-delivery line      : preview 1, lock 1
+
+  The route returns buildShippingHtml() with no options, which is exactly what
+  the porta-cabins hub returns. Build prompt section 2 asks for 'the two
+  free-delivery lines'; the shipped shared component states both zones on ONE
+  line ('within Bangalore city (South zone) - Delhi NCR: ...'). The panel is
+  byte-identical to the lock, which is the governing requirement.
+

@@ -1,0 +1,30 @@
+# Artefact 2 - prop and data-override audit
+
+Every design-lock behaviour on this route is an existing opt-in. No shared
+component was forked and no new styling was authored.
+
+## Props passed from [slug].tsx
+  showSectionDividers        ON
+      CLUSTER_DESIGN_SLUGS.has(slug)
+  usePremiumSizeTabs         ON
+      CLUSTER_DESIGN_SLUGS.has(slug)
+  explorerPanelHeadingAsH2   OFF (scoped off for this slug)
+      CLUSTER_DESIGN_SLUGS.has(slug) && slug !== 'construction-site-cabin' && slug !== 'portable-control-room' && slug !== 'portable-mobile-laboratory' && s
+
+  prefab-container-homes added to CLUSTER_DESIGN_SLUGS: yes
+
+## Page-scoped data overrides set in the product record
+  trustStripText                 "GST registered · Pan-India delivery"
+  trustWarranty                  "10-year structural warranty and 1-year finishing warranty as standard"
+  materialLabel                  "MS frame · insulated sandwich panels"
+  priceCaption                   "ex-GST, ex-works, against approved drawings"
+  suppressReviewClaims           true
+  suppressLegacyFaqSchema        true
+  suppressLegacySku              true
+  emitVariantFactCompleteness    true
+  emitExplorerImageManifest      true
+  optimizeLocalGalleryImages     true
+  schemaIncludeVariantOffers     true
+  emitAggregateOffer             true
+
+  specPdfHref present: no   (build prompt section 8 - empty slot, no fallback link)

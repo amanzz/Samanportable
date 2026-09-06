@@ -38,6 +38,7 @@ import constructionSiteCabinCopy from '../../content/po-06/PO-06-construction-si
 import constructionSiteCabinAssets from '../../content/po-06/PO-06-construction-site-cabin-asset-map-v1.json';
 import portableConferenceCabinCopy from '../../content/po-08/PO-08-portable-conference-cabin-copy-v1.json';
 import portableConferenceCabinAssets from '../../content/po-08/PO-08-portable-conference-cabin-asset-map-v1.json';
+import prefabContainerHomesCopy from '../../content/ch-pfb-04/CH-PFB-04-prefab-container-homes-copy-v1.json';
 import portableControlRoomCopy from '../../content/po-07/PO-07-portable-control-room-copy-v1.json';
 import portableControlRoomAssets from '../../content/po-07/PO-07-portable-control-room-asset-map-v1.json';
 import portableMobileLaboratoryCopy from '../../content/po-05/PO-05-portable-mobile-laboratory-copy-v1.json';
@@ -1558,6 +1559,98 @@ function buildPortableMobileLaboratorySpecificationsHtml(): string {
   return `<div class="not-prose">${narrative}${cards}${gaBoards}${diagrams}${pdf}</div>`;
 }
 
+// CH-PFB-04 (6 Sep 2026) - Prefab Container Homes. Page-scoped builder on the same
+// grouped-table chrome every Specs tab above uses (TH/TD, specGroupCard shell), fed
+// only by this page's signed copy pack. Nothing is authored here and no sibling
+// route reads this function, so every other Specifications tab is byte-identical.
+//
+// The pack's five groups are two different shapes. Group A is a plain matrix (head +
+// row arrays). Groups B, C, D and E are 30 keyed spec rows carrying component /
+// material / section / detail / classification, and C additionally publishes a
+// per-size opening schedule while E publishes the exclusions list and the area basis.
+// Section 8 of the build prompt makes both image slots empty: no technical diagrams
+// exist for this page and no specification PDF exists, so neither a figure nor a
+// fallback link is emitted.
+function buildPrefabContainerHomesSpecificationsHtml(): string {
+  const spec = prefabContainerHomesCopy.tabs.specifications;
+
+  const narrative = spec.narrative
+    .map((p) => `<p class="mb-5 text-sm leading-relaxed text-slate-600">${esc(p)}</p>`)
+    .join('');
+
+  // One <table> block. `section` below wraps one or more of these under a single
+  // group heading, so a group whose pack entry carries a supplementary table or list
+  // never prints its title twice.
+  const table = (head: string[], rows: string[][]): string => {
+    const th = head.map((h) => `<th class="${TH}">${esc(h)}</th>`).join('');
+    const tb = rows
+      .map((row) => (
+        `<tr>` +
+          row.map((cell, i) => (
+            i === 0
+              ? `<td class="${TD} font-semibold text-slate-700">${esc(cell)}</td>`
+              : `<td class="${TD}">${escBold(cell)}</td>`
+          )).join('') +
+        `</tr>`
+      ))
+      .join('');
+    return `<div class="saman-table-wrap"><table class="saman-table"><thead><tr>${th}</tr></thead>`
+      + `<tbody>${tb}</tbody></table></div>`;
+  };
+
+  const note = (text: string): string =>
+    `<p class="px-4 pb-4 pt-3 m-0 text-xs leading-relaxed text-slate-500">${esc(text)}</p>`;
+
+  const bulletList = (items: ReadonlyArray<string>): string =>
+    `<ul class="m-0 list-disc px-8 py-4 text-sm leading-relaxed text-slate-600">`
+    + items.map((x) => `<li>${esc(x)}</li>`).join('')
+    + `</ul>`;
+
+  const section = (title: string, ...bodies: string[]): string => (
+    `<section class="mb-4 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">` +
+      `<h4 class="m-0 bg-slate-50 px-4 py-3 text-base font-bold text-emerald-900">${esc(title)}</h4>` +
+      bodies.join('') +
+    `</section>`
+  );
+
+  const SPEC_HEAD = ['Component', 'Material', 'Section', 'Detail', 'Classification'];
+  const specRows = (rows: ReadonlyArray<{
+    component: string;
+    material: string;
+    section: string;
+    detail: string;
+    classification: string;
+  }>): string[][] => rows.map((r) => [r.component, r.material, r.section, r.detail, r.classification]);
+
+  const groups = spec.groups;
+
+  const a = section(groups.A_sizes_and_prices.title,
+    table(groups.A_sizes_and_prices.head, groups.A_sizes_and_prices.rows as string[][]));
+
+  const b = section(groups.B_product_build.title,
+    table(SPEC_HEAD, specRows(groups.B_product_build.rows)));
+
+  // Group C is the spec rows PLUS the pack's per-size opening schedule, so all six
+  // sizes' openings reach the served HTML rather than only the selected variant's.
+  // Both tables sit under the group's single approved heading.
+  const c = section(groups.C_openings_and_layout.title,
+    table(SPEC_HEAD, specRows(groups.C_openings_and_layout.rows)),
+    table(['Size', 'Wall A', 'Wall B', 'End C', 'End D', 'Planning template'],
+      groups.C_openings_and_layout.by_size.map((r) => [r.size, r.wall_a, r.wall_b, r.end_c, r.end_d, r.template])));
+
+  const d = section(groups.D_platform_common_material_key.title,
+    table(SPEC_HEAD, specRows(groups.D_platform_common_material_key.rows)));
+
+  // Group E is the spec rows, then the pack's exclusions list, then the area basis.
+  const e = section(groups.E_scope_boundary.title,
+    table(SPEC_HEAD, specRows(groups.E_scope_boundary.rows)),
+    bulletList(groups.E_scope_boundary.excluded),
+    note(groups.E_scope_boundary.area_basis));
+
+  return `<div class="not-prose">${narrative}${a}${b}${c}${d}${e}</div>`;
+}
+
+
 // PO-08 (6 Sep 2026) - Portable Conference Cabin. Same grouped-table design as the
 // PO-03 Specs tab above; this copy pack's spec groups use `header` (singular), and this
 // page additionally renders the SIX approved GA boards between the group tables and the
@@ -1712,6 +1805,17 @@ export function getProductTabsHtml(
     return {
       specificationsHtml: buildC04SpecificationsHtml(pageSlug),
       shippingHtml: buildContainerOfficesShippingHtml(),
+    };
+  }
+  // CH-PFB-04 (6 Sep 2026) - this route's Specifications tab is rebuilt from its own
+  // signed pack instead of the generic 30-row C-08 table, and its Shipping tab is the
+  // shared freight component exactly as the porta-cabins design lock renders it,
+  // including the two free-delivery lines. Scoped to this one slug, so every other
+  // C-08 container-house page keeps buildC08SpecificationsHtml and its '' shipping.
+  if (pageSlug === 'prefab-container-homes') {
+    return {
+      specificationsHtml: buildPrefabContainerHomesSpecificationsHtml(),
+      shippingHtml: buildShippingHtml(),
     };
   }
   if (pageSlug && C08_DATASET.products[pageSlug]) {

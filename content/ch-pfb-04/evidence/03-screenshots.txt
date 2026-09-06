@@ -1,0 +1,34 @@
+# Artefact 3 - screenshots, preview against the porta-cabins design lock
+
+Captured with puppeteer-core against system Chrome at desktop 1440 and mobile 390.
+Structural counts are taken from the DOM, not from the stitched image, because
+CLAUDE.md records that fullPage tiling repaints sticky chrome and that lazy images
+can capture blank. Every content image was forced eager and decoded first.
+
+The four fullPage captures were measured and then dropped from the commit: at 4-9 MB
+each they are the tiled captures CLAUDE.md warns are unreliable evidence, and the DOM
+counts below are what they were taken for. The single-viewport shots kept here are
+free of that artifact.
+
+Kept:
+
+  designlock-desktop-1440-hero.png         741564 bytes
+  designlock-mobile-390-hero.png           252628 bytes
+  preview-calculator.png                   962401 bytes
+  preview-desktop-1440-hero.png            800464 bytes
+  preview-mobile-390-hero.png              297466 bytes
+  preview-s2.png                          1115715 bytes
+  preview-s3.png                          1000317 bytes
+  preview-tabs.png                         817638 bytes
+  preview-ymal.png                         470432 bytes
+
+DOM counts measured on the fullPage pass:
+
+  preview    desktop-1440  h1=1  blank images=0  horizontal overflow=0px
+  preview    mobile-390    h1=1  blank images=0  horizontal overflow=0px
+  designlock desktop-1440  h1=1  blank images=0  horizontal overflow=0px
+  designlock mobile-390    h1=1  blank images=0  horizontal overflow=0px
+
+Mobile note: this page shows ZERO horizontal overflow at 390 px. A site-wide
+mid-word clipping issue is recorded on other product pages; it does not reproduce
+here.
