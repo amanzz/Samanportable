@@ -53,7 +53,12 @@ const PROTECTED_NORMALIZED_SHA256 = {
   // forty pre-existing keys are unchanged and still in the same order - so no existing
   // route's ladder rows, rates, GST or published prices moved. The deeper parity
   // assertions below run unchanged.
-  ladders: '471af3e29c0eb498aa6d52fe3ea775b3e47bdd79098acd58e8608e9e640d8824',
+  // PO-07 (6 Sep 2026): re-pinned again on rebase onto PO-06. This branch adds exactly
+  // one further additive entry plus its import ('portable-control-room', toRows of that
+  // route's own product JSON): 41 -> 42 keys, the added key is the ONLY difference, none
+  // was removed and the forty-one pre-existing keys keep their order, so no ladder row,
+  // rate, GST or published price moved. The deeper parity assertions below run unchanged.
+  ladders: 'a34b5ba6b1b7b6251586a8af383af7ec27ffe2de0fcd09fe442f0c49edc3873e',
   rates: 'db62c8be57eeb09025d208df87b05ab9aac02f4183ac0e4a324f49c56291ba48',
   componentRates: '0e2c0e49ecbef688f8a262993cf7750155a5f9976209edddca3fcf4a434518dc',
   tax: 'da95cc10d8e2a5bb20bd9589630bcb1c4ad09fa1d53cfdbe32cd89c094579294',

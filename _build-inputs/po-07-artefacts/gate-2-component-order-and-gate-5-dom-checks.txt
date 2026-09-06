@@ -1,0 +1,45 @@
+==============================================================================
+GATE 2 - COMPONENT ORDER ASSERTION (eleven canonical blocks, rendered order)
+==============================================================================
+  1  three-column hero (H1)                  offset     1177  OK
+  2  contact / location bar                  offset     1123  OK
+  3  size selector tabs                      offset     1236  OK
+  4  price display for selected size         offset     1374  OK
+  5  H2 Explore the Range panel              offset     2481  OK
+  6  Section 2 RightToExist                  offset     2752  OK
+  7  Section 2 media pairing (split card)    offset     3749  OK
+  8  Section 3 SizeApplicationsExplorer      offset     4267  OK
+  9  Section 4 calculator                    offset    26390  OK
+  10 You may also like                       offset    28428  OK
+  11 Section 5 Product Details tabs          offset    28932  OK
+PASS all eleven blocks present
+PASS hero (blocks 1-4) precedes block 5  | (1374, 2481)
+PASS blocks 5-11 in canonical order  | [2481, 2752, 3749, 4267, 26390, 28428, 28932]
+
+==============================================================================
+GATE 5 - DOM CHECKS ON THE PREVIEW HTML
+==============================================================================
+PASS exactly one H1  | 1
+PASS no empty heading
+PASS every img has an alt attribute  | (32, 32)
+PASS no empty alt
+PASS no duplicate alt
+PASS explicit width and height on every img  | 32
+PASS no U+2014 em dash in body text
+PASS tab panel present in fetched HTML: Description
+PASS tab panel present in fetched HTML: Specifications
+PASS tab panel present in fetched HTML: Shipping
+PASS tab panel present in fetched HTML: Reviews
+PASS responsive short label present: Info  | Info
+PASS responsive short label present: Specs  | Specs
+PASS responsive short label present: Ship  | Ship
+PASS exactly one <img> between the Section 2 H2 and the Section 3 H2  | ['/images/products/portable-control-room/section2/portable-control-room-20x10-exterior-and-operator-room.webp']
+PASS that one image is the Section 2 split card  | ['/images/products/portable-control-room/section2/portable-control-room-20x10-exterior-and-operator-room.webp']
+PASS Section 2 split card is not a GA board  | ['/images/products/portable-control-room/section2/portable-control-room-20x10-exterior-and-operator-room.webp']
+PASS five description images referenced in the Description panel  | 5
+PASS no description image renders between Section 2 and Section 3
+PASS no placeholder phrases (coming soon / available on request / contact us for details / placeholder / TBD)
+PASS approved contextual link appears exactly once  | 1
+
+==============================================================================
+SUMMARY: 0 checks failed

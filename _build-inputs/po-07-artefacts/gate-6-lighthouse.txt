@@ -1,0 +1,13 @@
+GATE 6 - LIGHTHOUSE, MOBILE FORM FACTOR
+====================================================================================
+                                                    Perf  A11y    BP   SEO
+PO-07 preview (local next start, no CDN)              61    92   100   100
+LIVE LOCK /product/porta-cabins (production+CDN)      58    93   100   100
+
+                                                     FCP ms   LCP ms   TBT ms      CLS
+PO-07 preview (local next start, no CDN)               1654     4746      974    0.015
+LIVE LOCK /product/porta-cabins (production+CDN)       1961     6216      742   0.0001
+
+NOTE: the preview is served by `next start` on localhost with no CDN, no Brotli at
+the edge and no HTTP/2 image priority hints, so its performance score is not
+comparable to the production lock. Accessibility, best-practices and SEO are.

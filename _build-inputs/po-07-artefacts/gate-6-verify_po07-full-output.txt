@@ -1,0 +1,668 @@
+PASS exactly one H1  | ['Portable Control Room Cabin for Plant and Substation Sites']
+PASS H1 text matches copy  | ['Portable Control Room Cabin for Plant and Substation Sites']
+PASS title matches copy  | ['Portable Control Room Cabin: Six Sizes and Prices | SAMAN']
+PASS meta description matches copy  | ['Factory-built portable control room cabins in six sizes, 100 to 400 sq ft, 2 to 8 operator positions, with published ex-GST prices and approved GA plans.']
+PASS canonical is self-referencing  | ['https://www.samanportable.com/product/portable-office/portable-control-room']
+PASS meta title length 55-60  | 57
+PASS H1 length 50-60  | 58
+PASS meta description length 150-160  | 153
+PASS eleven-block order: hero > explore > section2 > card > section3 > YMAL > product details  | [('Choose your size - six approved control room options', 1236), ('Explore the Range', 2481), ('Control Room or Site Office? Read the Schedule, Not the Shell', 2752), ('The 20×10 f
+PASS size 10x10 ex-GST price rendered  | ₹2,01,250
+PASS size 10x10 incl-GST price rendered  | ₹2,37,475
+PASS size 10x10 tab label rendered  | 10×10 ft
+PASS size 10x10 has exactly 5 feature cells  | ['Size', 'Operators', 'Openings', 'Roof', 'Rate']
+PASS size 10x10 feature cell Size rendered  | 10×10×8.5 ft · 100 sq ft
+PASS size 10x10 feature cell Operators rendered  | 2 positions · 1 console island
+PASS size 10x10 feature cell Openings rendered  | 1 door · 3 windows
+PASS size 10x10 feature cell Roof rendered  | Two-way centred ridge
+PASS size 10x10 feature cell Rate rendered  | ₹2,012.50/sq ft ex-GST
+PASS size 20x8 ex-GST price rendered  | ₹3,08,000
+PASS size 20x8 incl-GST price rendered  | ₹3,63,440
+PASS size 20x8 tab label rendered  | 20×8 ft
+PASS size 20x8 has exactly 5 feature cells  | ['Size', 'Operators', 'Openings', 'Roof', 'Rate']
+PASS size 20x8 feature cell Size rendered  | 20×8×8.5 ft · 160 sq ft
+FAIL size 20x8 feature cell Operators rendered  | 3 positions · 1 console island
+FAIL size 20x8 feature cell Openings rendered  | 1 door · 6 windows
+FAIL size 20x8 feature cell Roof rendered  | One-way fall across width
+FAIL size 20x8 feature cell Rate rendered  | ₹1,925.00/sq ft ex-GST
+PASS size 20x10 ex-GST price rendered  | ₹3,50,000
+PASS size 20x10 incl-GST price rendered  | ₹4,13,000
+PASS size 20x10 tab label rendered  | 20×10 ft
+PASS size 20x10 has exactly 5 feature cells  | ['Size', 'Operators', 'Openings', 'Roof', 'Rate']
+PASS size 20x10 feature cell Size rendered  | 20×10×8.5 ft · 200 sq ft
+FAIL size 20x10 feature cell Operators rendered  | 4 positions · 1 console island
+FAIL size 20x10 feature cell Openings rendered  | 1 door · 6 windows
+PASS size 20x10 feature cell Roof rendered  | Two-way centred ridge
+FAIL size 20x10 feature cell Rate rendered  | ₹1,750.00/sq ft ex-GST
+PASS size 20x12 ex-GST price rendered  | ₹4,03,200
+PASS size 20x12 incl-GST price rendered  | ₹4,75,776
+PASS size 20x12 tab label rendered  | 20×12 ft
+PASS size 20x12 has exactly 5 feature cells  | ['Size', 'Operators', 'Openings', 'Roof', 'Rate']
+PASS size 20x12 feature cell Size rendered  | 20×12×8.5 ft · 240 sq ft
+FAIL size 20x12 feature cell Operators rendered  | 4 positions · 1 console island
+FAIL size 20x12 feature cell Openings rendered  | 1 door · 6 windows
+PASS size 20x12 feature cell Roof rendered  | Two-way centred ridge
+FAIL size 20x12 feature cell Rate rendered  | ₹1,680.00/sq ft ex-GST
+PASS size 30x10 ex-GST price rendered  | ₹5,04,000
+PASS size 30x10 incl-GST price rendered  | ₹5,94,720
+PASS size 30x10 tab label rendered  | 30×10 ft
+PASS size 30x10 has exactly 5 feature cells  | ['Size', 'Operators', 'Openings', 'Roof', 'Rate']
+PASS size 30x10 feature cell Size rendered  | 30×10×8.5 ft · 300 sq ft
+FAIL size 30x10 feature cell Operators rendered  | 6 positions · 2 console islands
+FAIL size 30x10 feature cell Openings rendered  | 2 doors · 8 windows
+PASS size 30x10 feature cell Roof rendered  | Two-way centred ridge
+FAIL size 30x10 feature cell Rate rendered  | ₹1,680.00/sq ft ex-GST
+PASS size 40x10 ex-GST price rendered  | ₹6,65,000
+PASS size 40x10 incl-GST price rendered  | ₹7,84,700
+PASS size 40x10 tab label rendered  | 40×10 ft
+PASS size 40x10 has exactly 5 feature cells  | ['Size', 'Operators', 'Openings', 'Roof', 'Rate']
+PASS size 40x10 feature cell Size rendered  | 40×10×8.5 ft · 400 sq ft
+FAIL size 40x10 feature cell Operators rendered  | 8 positions · 2 console islands
+FAIL size 40x10 feature cell Openings rendered  | 2 doors · 9 windows
+PASS size 40x10 feature cell Roof rendered  | Two-way centred ridge
+FAIL size 40x10 feature cell Rate rendered  | ₹1,662.50/sq ft ex-GST
+PASS from price rendered
+PASS six variants  | 6
+PASS hero short description rendered
+PASS hero short description 700-800 chars  | 753
+PASS section2 H2 rendered
+PASS section2 H2 length 55-70  | 61
+PASS section2 paragraph1 rendered
+PASS section2 paragraph2 rendered
+PASS section2 two paragraphs 800-900 chars  | 896
+PASS section2 contextual link present once  | {'anchor': 'portable office cabin', 'href': '/product/portable-office', 'in': 'paragraph2'}
+PASS section2 CTA rendered
+PASS split card H3 rendered
+PASS split card H3 length 35-65  | 46
+PASS split card paragraph1 rendered
+PASS split card paragraph1 150-220 chars  | 216
+PASS split card paragraph2 rendered
+PASS split card paragraph2 150-220 chars  | 214
+PASS split card CTA rendered
+PASS section3 H2 rendered
+PASS section3 H2 length 50-60  | 50
+PASS section3 intro rendered
+PASS section3 intro 100-140 chars  | 140
+PASS section3 10x10 H3 rendered
+PASS section3 10x10 H3 50-62 chars  | 56
+PASS section3 10x10 paragraph rendered
+PASS section3 10x10 paragraph 400-500 chars  | 472
+PASS section3 10x10 has 5-6 bullets  | 5
+PASS section3 10x10 bullet rendered  | Two operator positions on one console island
+PASS section3 10x10 bullet rendered  | One door on Wall A; windows on Wall B, End C and E
+PASS section3 10x10 bullet rendered  | Single storage cupboard; Wall B kept clear for the
+PASS section3 10x10 bullet rendered  | Two-way roof with a 5-6 in centred ridge, so rain 
+PASS section3 10x10 bullet rendered  | Square 10 ft plan turns into plot corners a 20 ft 
+PASS section3 20x8 H3 rendered
+PASS section3 20x8 H3 50-62 chars  | 54
+PASS section3 20x8 paragraph rendered
+PASS section3 20x8 paragraph 400-500 chars  | 483
+PASS section3 20x8 has 5-6 bullets  | 6
+PASS section3 20x8 bullet rendered  | Three operator positions on one console island
+PASS section3 20x8 bullet rendered  | One-way roof fall of 5-6 in across the 8 ft width;
+PASS section3 20x8 bullet rendered  | Wall A opening order W1, D1, W2; Wall B carries W3
+PASS section3 20x8 bullet rendered  | 160 sq ft at ₹1,925 per sq ft ex-GST
+PASS section3 20x8 bullet rendered  | 8 ft body suits trench edges and restricted switch
+PASS section3 20x8 bullet rendered  | Two storage cupboards in the solid Wall A bays
+PASS section3 20x10 H3 rendered
+PASS section3 20x10 H3 50-62 chars  | 60
+PASS section3 20x10 paragraph rendered
+PASS section3 20x10 paragraph 400-500 chars  | 466
+PASS section3 20x10 has 5-6 bullets  | 6
+PASS section3 20x10 bullet rendered  | Four operator positions on one 9 x 2.3 ft console 
+PASS section3 20x10 bullet rendered  | Base rate size: ₹1,750 per sq ft ex-GST, 200 sq ft
+PASS section3 20x10 bullet rendered  | Wall A opening order W1, D1, W2; Wall B carries W3
+PASS section3 20x10 bullet rendered  | Central Wall B bay reserved for the display or mim
+PASS section3 20x10 bullet rendered  | Two-way roof with a 5-6 in centred ridge running t
+PASS section3 20x10 bullet rendered  | No partition in the approved plan; any partition f
+PASS section3 20x12 H3 rendered
+PASS section3 20x12 H3 50-62 chars  | 57
+PASS section3 20x12 paragraph rendered
+PASS section3 20x12 paragraph 400-500 chars  | 478
+PASS section3 20x12 has 5-6 bullets  | 5
+PASS section3 20x12 bullet rendered  | Four operator positions, same as 20×10, with a wid
+PASS section3 20x12 bullet rendered  | 240 sq ft at ₹1,680 per sq ft ex-GST, ₹4,03,200 ex
+PASS section3 20x12 bullet rendered  | Same opening ledger as 20×10: W1, D1, W2 on Wall A
+PASS section3 20x12 bullet rendered  | Two-way roof with a 5-6 in centred ridge along the
+PASS section3 20x12 bullet rendered  | 12 ft width may fall under over-dimension transpor
+PASS section3 30x10 H3 rendered
+PASS section3 30x10 H3 50-62 chars  | 58
+PASS section3 30x10 paragraph rendered
+PASS section3 30x10 paragraph 400-500 chars  | 484
+PASS section3 30x10 has 5-6 bullets  | 6
+PASS section3 30x10 bullet rendered  | Six operator positions across two console islands
+PASS section3 30x10 bullet rendered  | Two doors on Wall A: opening order D1, W1, W2, D2
+PASS section3 30x10 bullet rendered  | Four windows on Wall B plus one centred window in 
+PASS section3 30x10 bullet rendered  | 300 sq ft at ₹1,680 per sq ft ex-GST, ₹5,04,000 ex
+PASS section3 30x10 bullet rendered  | Three storage cupboards in the approved plan
+PASS section3 30x10 bullet rendered  | Ships on a 40 ft open trailer, not a 20 ft trailer
+PASS section3 40x10 H3 rendered
+PASS section3 40x10 H3 50-62 chars  | 54
+PASS section3 40x10 paragraph rendered
+PASS section3 40x10 paragraph 400-500 chars  | 464
+PASS section3 40x10 has 5-6 bullets  | 6
+PASS section3 40x10 bullet rendered  | Eight operator positions across two console island
+PASS section3 40x10 bullet rendered  | Two doors on Wall A: opening order W1, D1, W2, W3,
+PASS section3 40x10 bullet rendered  | Four windows on Wall B plus one centred window in 
+PASS section3 40x10 bullet rendered  | 400 sq ft at ₹1,662.50 per sq ft ex-GST, ₹6,65,000
+PASS section3 40x10 bullet rendered  | Four storage cupboards in the approved plan
+PASS section3 40x10 bullet rendered  | Ships on a 40 ft open trailer; confirm the lift an
+PASS section3 renders H3 not H2 (lock heading level)
+PASS YMAL intro rendered
+PASS YMAL intro under 90 chars  | 75
+PASS never-link absent: /product/portable-office/modern-office-cabin
+PASS never-link absent: /product/portable-office/portable-office-container
+PASS never-link absent: /product/portable-office/modern-office-cabin
+PASS never-link absent: /product/portable-office/portable-office-container
+FAIL no cross-cluster tile in YMAL/Explore
+PASS description H2 rendered: What a portable control room actually is
+PASS description H2 40-60 chars: What a portable control room a  | 40
+PASS description paragraph rendered  | In Indian search results the phrase control room u
+PASS description paragraph rendered  | The buyer is rarely the person who will sit in it.
+PASS description paragraph rendered  | SAMAN manufactures this cabin at Bengaluru for the
+PASS description H2 rendered: How many operators fit in each approved 
+PASS description H2 40-60 chars: How many operators fit in each  | 44
+PASS description paragraph rendered  | The six approved sizes carry 2, 3, 4, 4, 6 and 8 o
+PASS description paragraph rendered  | The two larger sizes change the room rather than s
+PASS description paragraph rendered  | Occupancy figures on this page are approved operat
+PASS description H2 rendered: What is inside the price, and what is no
+PASS description H2 40-60 chars: What is inside the price, and   | 41
+PASS description paragraph rendered  | Every price on this page is for the cabin enclosur
+PASS description paragraph rendered  | It does not include the equipment that makes it a 
+PASS description paragraph rendered  | This is stated plainly because control room enquir
+PASS description H2 rendered: Cable entry, earthing and the raised-flo
+PASS description H2 40-60 chars: Cable entry, earthing and the   | 49
+PASS description paragraph rendered  | A control room is entered by cables as much as by 
+PASS description paragraph rendered  | Practically, that means SAMAN needs three things f
+PASS description paragraph rendered  | Cutting a gland plate into a finished floor on a l
+PASS description H2 rendered: Heat load: why a control room is not an 
+PASS description H2 40-60 chars: Heat load: why a control room   | 46
+PASS description paragraph rendered  | The single largest technical difference between th
+PASS description paragraph rendered  | SAMAN's workbook treats the heat-load worksheet as
+PASS description paragraph rendered  | That calculation is yours or your consultant's, an
+PASS description H2 rendered: Reading the opening ledger before you or
+PASS description H2 40-60 chars: Reading the opening ledger bef  | 43
+PASS description paragraph rendered  | Every size on this page publishes a full opening l
+PASS description paragraph rendered  | Three rules hold across every approved size, and t
+PASS description paragraph rendered  | If your site needs an opening the ledger does not 
+PASS description H2 rendered: Portable control room price in India: th
+PASS description H2 40-60 chars: Portable control room price in  | 58
+PASS description paragraph rendered  | The published ex-GST ladder runs from ₹2,01,250 fo
+PASS description paragraph rendered  | Prices are shown ex-GST with the 18 per cent inclu
+PASS description paragraph rendered  | What the ladder deliberately does not do is quote 
+PASS description H2 rendered: Delivery, lifting and placement on a liv
+PASS description H2 40-60 chars: Delivery, lifting and placemen  | 46
+PASS description paragraph rendered  | The cabin arrives as one factory-finished module o
+PASS description paragraph rendered  | Placement inside an operating substation yard or a
+PASS description paragraph rendered  | The 12 ft wide 20×12 room and the 40 ft long room 
+PASS description H2 rendered: How to compare portable control room quo
+PASS description H2 40-60 chars: How to compare portable contro  | 47
+PASS description paragraph rendered  | Control room quotations are hard to compare becaus
+PASS description bullet rendered  | Ask for the enclosure price and the panel, UPS, ca
+PASS description bullet rendered  | Ask which size the per square foot rate is set on,
+PASS description bullet rendered  | Ask for the opening ledger wall by wall, not a flo
+PASS description bullet rendered  | Ask where the lifting points are, and refuse ridge
+PASS description bullet rendered  | Ask whether the heat-load and earthing arrangement
+PASS description H2 rendered: Why specifiers pick SAMAN for the contro
+PASS description H2 40-60 chars: Why specifiers pick SAMAN for   | 52
+PASS description paragraph rendered  | SAMAN has manufactured prefabricated and portable 
+PASS description paragraph rendered  | What is specific to this page is the approved gene
+PASS description tab 2000-3000 visible words  | 2214
+PASS description tab has exactly one bullet block
+PASS description tab has zero or one table
+PASS description tab carries five images  | 5
+PASS no description image precedes the first H2 or follows another image
+PASS description image referenced: description/portable-control-room-description-01-30x10-six-operator-room.webp  | description/portable-control-room-description-01-30x10-six-operator-room.webp
+PASS description image alt rendered  | 30 by 10 ft portable control room exterior and six
+PASS description image referenced: description/portable-control-room-description-02-10x10-two-operator-room.webp  | description/portable-control-room-description-02-10x10-two-operator-room.webp
+PASS description image alt rendered  | 10 by 10 ft portable control room exterior and two
+PASS description image referenced: description/portable-control-room-description-03-20x8-narrow-operator-room.webp  | description/portable-control-room-description-03-20x8-narrow-operator-room.webp
+PASS description image alt rendered  | 20 by 8 ft portable control room exterior and thre
+PASS description image referenced: description/portable-control-room-description-04-20x12-wide-aisle-room.webp  | description/portable-control-room-description-04-20x12-wide-aisle-room.webp
+PASS description image alt rendered  | 20 by 12 ft portable control room exterior and wid
+PASS description image referenced: description/portable-control-room-description-05-40x10-eight-operator-room.webp  | description/portable-control-room-description-05-40x10-eight-operator-room.webp
+PASS description image alt rendered  | 40 by 10 ft portable control room exterior and eig
+PASS exactly one image between Section 2 H2 and Section 3 H2 (the split card)  | ['/images/products/portable-control-room/section2/portable-control-room-20x10-exterior-and-operator-room.webp']
+PASS no description image renders between Section 2 and Section 3
+PASS Section 2 split card is NOT a GA board (SAMAN 6 Sep ruling)  | ['/images/products/portable-control-room/section2/portable-control-room-20x10-exterior-and-operator-room.webp']
+PASS specifications narrative is 2-3 paragraphs  | 3
+PASS specifications narrative rendered  | Read this tab as the thing being bought, line by l
+PASS specifications narrative rendered  | The lines that decide a control room are not the o
+PASS specifications narrative rendered  | Two diagrams below the tables show where the contr
+PASS five specification groups A-E  | 5
+PASS spec group rendered: Group A - Approved sizes and prices
+PASS spec header cell rendered: Code
+PASS spec header cell rendered: Size (ft)
+PASS spec header cell rendered: Area (sq ft)
+PASS spec header cell rendered: Operator positions
+PASS spec header cell rendered: Rate ₹/sq ft
+PASS spec header cell rendered: Price ex-GST
+PASS spec header cell rendered: Price incl. 18% GST
+PASS spec cell rendered: SZ-01  | SZ-01
+PASS spec cell rendered: 10×10×8.5  | 10×10×8.5
+PASS spec cell rendered: 100  | 100
+PASS spec cell rendered: 2  | 2
+PASS spec cell rendered: 2,012.50  | 2,012.50
+PASS spec cell rendered: ₹2,01,250  | ₹2,01,250
+PASS spec cell rendered: ₹2,37,475  | ₹2,37,475
+PASS spec cell rendered: SZ-02  | SZ-02
+PASS spec cell rendered: 20×8×8.5  | 20×8×8.5
+PASS spec cell rendered: 160  | 160
+PASS spec cell rendered: 3  | 3
+PASS spec cell rendered: 1,925.00  | 1,925.00
+PASS spec cell rendered: ₹3,08,000  | ₹3,08,000
+PASS spec cell rendered: ₹3,63,440  | ₹3,63,440
+PASS spec cell rendered: SZ-03  | SZ-03
+PASS spec cell rendered: 20×10×8.5  | 20×10×8.5
+PASS spec cell rendered: 200  | 200
+PASS spec cell rendered: 4  | 4
+PASS spec cell rendered: 1,750.00  | 1,750.00
+PASS spec cell rendered: ₹3,50,000  | ₹3,50,000
+PASS spec cell rendered: ₹4,13,000  | ₹4,13,000
+PASS spec cell rendered: SZ-04  | SZ-04
+PASS spec cell rendered: 20×12×8.5  | 20×12×8.5
+PASS spec cell rendered: 240  | 240
+PASS spec cell rendered: 4  | 4
+PASS spec cell rendered: 1,680.00  | 1,680.00
+PASS spec cell rendered: ₹4,03,200  | ₹4,03,200
+PASS spec cell rendered: ₹4,75,776  | ₹4,75,776
+PASS spec cell rendered: SZ-05  | SZ-05
+PASS spec cell rendered: 30×10×8.5  | 30×10×8.5
+PASS spec cell rendered: 300  | 300
+PASS spec cell rendered: 6  | 6
+PASS spec cell rendered: 1,680.00  | 1,680.00
+PASS spec cell rendered: ₹5,04,000  | ₹5,04,000
+PASS spec cell rendered: ₹5,94,720  | ₹5,94,720
+PASS spec cell rendered: SZ-06  | SZ-06
+PASS spec cell rendered: 40×10×8.5  | 40×10×8.5
+PASS spec cell rendered: 400  | 400
+PASS spec cell rendered: 8  | 8
+PASS spec cell rendered: 1,662.50  | 1,662.50
+PASS spec cell rendered: ₹6,65,000  | ₹6,65,000
+PASS spec cell rendered: ₹7,84,700  | ₹7,84,700
+PASS spec group rendered: Group B - Control room build contro
+PASS spec header cell rendered: Item
+PASS spec header cell rendered: Approved detail
+PASS spec cell rendered: Roof family, 8 ft width  | Roof family, 8 ft width
+PASS spec cell rendered: One-way fall across the width; tota  | One-way fall across the width; total high-to-low fall 5-6 in
+PASS spec cell rendered: Roof family, 10 and 12 ft widths  | Roof family, 10 and 12 ft widths
+PASS spec cell rendered: Two-way roof with a centred ridge r  | Two-way roof with a centred ridge running the full cabin len
+PASS spec cell rendered: Roof rise limit  | Roof rise limit
+PASS spec cell rendered: 5-6 in only; pronounced gable, hip,  | 5-6 in only; pronounced gable, hip, third plane, shortened r
+PASS spec cell rendered: Lifting arrangement  | Lifting arrangement
+PASS spec cell rendered: Exactly four compact one-hole eye p  | Exactly four compact one-hole eye plates, one at each real t
+PASS spec cell rendered: End wall rule  | End wall rule
+PASS spec cell rendered: Every 8, 10 and 12 ft end wall carr  | Every 8, 10 and 12 ft end wall carries exactly one centred w
+PASS spec cell rendered: External door  | External door
+PASS spec cell rendered: 3 x 7 ft outward-opening door on Wa  | 3 x 7 ft outward-opening door on Wall A, leaf in matching wa
+PASS spec cell rendered: Windows  | Windows
+PASS spec cell rendered: 4 x 3 ft, sill 3 ft 6 in, head 6 ft  | 4 x 3 ft, sill 3 ft 6 in, head 6 ft 6 in (20×10 approved GA)
+PASS spec cell rendered: Wall build-up  | Wall build-up
+PASS spec cell rendered: 100 mm walls, 8 ft 6 in nominal ext  | 100 mm walls, 8 ft 6 in nominal external height on every app
+PASS spec cell rendered: Base  | Base
+PASS spec cell rendered: Matte-black skid base, continuous,   | Matte-black skid base, continuous, with no false vents or cu
+PASS spec cell rendered: Display or mimic zone  | Display or mimic zone
+PASS spec cell rendered: Central solid bay on Wall B reserve  | Central solid bay on Wall B reserved on every approved GA; p
+PASS spec group rendered: Group C - Opening schedule and appr
+PASS spec header cell rendered: Size (ft)
+PASS spec header cell rendered: Opening ledger
+PASS spec header cell rendered: Operators / consoles / cu
+PASS spec header cell rendered: Roof
+PASS spec header cell rendered: GA option
+PASS spec cell rendered: 10×10×8.5  | 10×10×8.5
+PASS spec cell rendered: Wall A: D1 | Wall B: W1 | End C: W2  | Wall A: D1 | Wall B: W1 | End C: W2 centred | End D: W3 cent
+PASS spec cell rendered: 2 / 1 / 1  | 2 / 1 / 1
+PASS spec cell rendered: Two-way: centred full-length ridge;  | Two-way: centred full-length ridge; 5-6 in ridge-to-eave ris
+PASS spec cell rendered: PCR-10X10-02OP-V1  | PCR-10X10-02OP-V1
+PASS spec cell rendered: 20×8×8.5  | 20×8×8.5
+PASS spec cell rendered: Wall A: W1 - D1 - W2 | Wall B: W3 -  | Wall A: W1 - D1 - W2 | Wall B: W3 - W4 | End C: W5 centred |
+PASS spec cell rendered: 3 / 1 / 2  | 3 / 1 / 2
+PASS spec cell rendered: One-way across width; total high-to  | One-way across width; total high-to-low fall 5-6 in
+PASS spec cell rendered: PCR-20X08-03OP-V1  | PCR-20X08-03OP-V1
+PASS spec cell rendered: 20×10×8.5  | 20×10×8.5
+PASS spec cell rendered: Wall A: W1 - D1 - W2 | Wall B: W3 -  | Wall A: W1 - D1 - W2 | Wall B: W3 - W4 | End C: W5 centred |
+PASS spec cell rendered: 4 / 1 / 2  | 4 / 1 / 2
+PASS spec cell rendered: Two-way: centred full-length ridge;  | Two-way: centred full-length ridge; 5-6 in ridge-to-eave ris
+PASS spec cell rendered: PCR-20X10-04OP-V1  | PCR-20X10-04OP-V1
+PASS spec cell rendered: 20×12×8.5  | 20×12×8.5
+PASS spec cell rendered: Wall A: W1 - D1 - W2 | Wall B: W3 -  | Wall A: W1 - D1 - W2 | Wall B: W3 - W4 | End C: W5 centred |
+PASS spec cell rendered: 4 / 1 / 2  | 4 / 1 / 2
+PASS spec cell rendered: Two-way: centred full-length ridge;  | Two-way: centred full-length ridge; 5-6 in ridge-to-eave ris
+PASS spec cell rendered: PCR-20X12-04OP-V1  | PCR-20X12-04OP-V1
+PASS spec cell rendered: 30×10×8.5  | 30×10×8.5
+PASS spec cell rendered: Wall A: D1 - W1 - W2 - D2 | Wall B:  | Wall A: D1 - W1 - W2 - D2 | Wall B: W3 - W4 - W5 - W6 | End 
+PASS spec cell rendered: 6 / 2 / 3  | 6 / 2 / 3
+PASS spec cell rendered: Two-way: centred full-length ridge;  | Two-way: centred full-length ridge; 5-6 in ridge-to-eave ris
+PASS spec cell rendered: PCR-30X10-06OP-V1  | PCR-30X10-06OP-V1
+PASS spec cell rendered: 40×10×8.5  | 40×10×8.5
+PASS spec cell rendered: Wall A: W1 - D1 - W2 - W3 - D2 | Wa  | Wall A: W1 - D1 - W2 - W3 - D2 | Wall B: W4 - W5 - W6 - W7 |
+PASS spec cell rendered: 8 / 2 / 4  | 8 / 2 / 4
+PASS spec cell rendered: Two-way: centred full-length ridge;  | Two-way: centred full-length ridge; 5-6 in ridge-to-eave ris
+PASS spec cell rendered: PCR-40X10-08OP-V1  | PCR-40X10-08OP-V1
+PASS spec group rendered: Group D - SAMAN platform common mat
+PASS spec header cell rendered: Component / system
+PASS spec header cell rendered: Approved standard
+PASS spec cell rendered: Primary base frame  | Primary base frame
+PASS spec cell rendered: Welded MS C-channel chassis, 100x50  | Welded MS C-channel chassis, 100x50x3 mm
+PASS spec cell rendered: Upper, wall and roof frame  | Upper, wall and roof frame
+PASS spec cell rendered: Top 50x50x1.6 mm; roof 50x50x1.2 mm  | Top 50x50x1.6 mm; roof 50x50x1.2 mm with listed secondary me
+PASS spec cell rendered: External walls  | External walls
+PASS spec cell rendered: Corrugated MS sheet, 1.2 mm, Tata/J  | Corrugated MS sheet, 1.2 mm, Tata/Jindal or approved equival
+PASS spec cell rendered: Roof sheet  | Roof sheet
+PASS spec cell rendered: Sloped corrugated MS sheet, 1.4 mm,  | Sloped corrugated MS sheet, 1.4 mm, with sealed laps, flashi
+PASS spec cell rendered: Internal wall and ceiling  | Internal wall and ceiling
+PASS spec cell rendered: 8 mm prelaminated MDF with aluminiu  | 8 mm prelaminated MDF with aluminium joint sections
+PASS spec cell rendered: Floor system  | Floor system
+PASS spec cell rendered: 18 mm Bison/cement-fibre board plus  | 18 mm Bison/cement-fibre board plus 1.3 mm vinyl finish
+PASS spec cell rendered: Thermal insulation  | Thermal insulation
+PASS spec cell rendered: Roof 50 mm glass wool at nominal 42  | Roof 50 mm glass wool at nominal 42 kg/m3; wall 25 mm glass 
+PASS spec cell rendered: Electrical  | Electrical
+PASS spec cell rendered: Concealed copper wiring, typical 1.  | Concealed copper wiring, typical 1.5 / 2.5 / 4 sq.mm circuit
+PASS spec cell rendered: Corrosion protection  | Corrosion protection
+PASS spec cell rendered: Prepared MS with one red-oxide prim  | Prepared MS with one red-oxide primer coat and two compatibl
+PASS spec cell rendered: Handling and QA  | Handling and QA
+PASS spec cell rendered: Designed lifting hooks or lugs, sea  | Designed lifting hooks or lugs, sealing, and pre-dispatch in
+PASS spec group rendered: Group E - Scope boundary
+PASS spec header cell rendered: Boundary
+PASS spec header cell rendered: Detail
+PASS spec cell rendered: Included  | Included
+PASS spec cell rendered: Cabin enclosure and its scheduled i  | Cabin enclosure and its scheduled interfaces: chassis, envel
+PASS spec cell rendered: Excluded unless quoted  | Excluded unless quoted
+PASS spec cell rendered: MCC, PCC, PLC and SCADA panels, UPS  | MCC, PCC, PLC and SCADA panels, UPS, batteries, bus duct, fi
+PASS spec cell rendered: Presentation items  | Presentation items
+PASS spec cell rendered: Operator consoles, chairs, storage   | Operator consoles, chairs, storage cupboards and the display
+PASS spec cell rendered: Engineering boundary  | Engineering boundary
+PASS spec cell rendered: Final panel loading, cable entries,  | Final panel loading, cable entries, heat rejection, fire and
+PASS spec cell rendered: Warranty  | Warranty
+PASS spec cell rendered: Period and exclusions are confirmed  | Period and exclusions are confirmed only in the final quotat
+PASS technical PDF link present
+PASS spec diagram referenced: specs/portable-control-room-roof-orientation-diagram.webp
+PASS spec diagram alt rendered: spec_diagram_1
+PASS spec diagram referenced: specs/portable-control-room-opening-and-lifting-diagram.webp
+PASS spec diagram alt rendered: spec_diagram_2
+PASS shipping tab line present: Free delivery
+PASS shipping tab line present: Bangalore
+PASS shipping tab line present: Ghaziabad
+PASS shipping tab line present: Gurugram
+PASS shipping tab line present: Faridabad
+PASS shipping tab line present: Noida
+PASS shipping tab line present: Greater Noida
+PASS shipping tab line present: 20 ft open trailer
+PASS shipping tab line present: 40 ft open trailer
+PASS shipping freight bands present (18 rows each table)
+PASS no shippingDetails schema
+PASS reviews empty state
+PASS no AggregateRating markup
+PASS no Review markup
+PASS every img has an alt attribute  | (32, 32)
+PASS no empty alt
+PASS no duplicate alt
+PASS explicit width and height on every img  | 32
+PASS no source PNG served from the product image root
+PASS size 10x10 ships six gallery slides  | 6
+PASS gallery 10x10/portable-control-room-10x10-door-wall-exterior.webp exists and is 80-120 KB  | 116 KB
+PASS gallery 10x10/portable-control-room-10x10-door-wall-exterior.webp ratio 1:1  | (1254, 1254)
+PASS gallery slide referenced: 10x10/portable-control-room-10x10-door-wall-exterior.webp
+PASS gallery alt present: portable-control-room-10x10-door-wall-exterior.webp
+PASS gallery 10x10/portable-control-room-10x10-rear-window-wall.webp exists and is 80-120 KB  | 116 KB
+PASS gallery 10x10/portable-control-room-10x10-rear-window-wall.webp ratio 1:1  | (1254, 1254)
+PASS gallery slide referenced: 10x10/portable-control-room-10x10-rear-window-wall.webp
+PASS gallery alt present: portable-control-room-10x10-rear-window-wall.webp
+PASS gallery 10x10/portable-control-room-10x10-aerial-roof-and-openings.webp exists and is 80-120 KB  | 119 KB
+PASS gallery 10x10/portable-control-room-10x10-aerial-roof-and-openings.webp ratio 1:1  | (1254, 1254)
+PASS gallery slide referenced: 10x10/portable-control-room-10x10-aerial-roof-and-openings.webp
+PASS gallery alt present: portable-control-room-10x10-aerial-roof-and-openings.webp
+PASS gallery 10x10/portable-control-room-10x10-operator-room-interior.webp exists and is 80-120 KB  | 116 KB
+PASS gallery 10x10/portable-control-room-10x10-operator-room-interior.webp ratio 1:1  | (1254, 1254)
+PASS gallery slide referenced: 10x10/portable-control-room-10x10-operator-room-interior.webp
+PASS gallery alt present: portable-control-room-10x10-operator-room-interior.webp
+PASS gallery 10x10/portable-control-room-10x10-console-island-detail.webp exists and is 80-120 KB  | 117 KB
+PASS gallery 10x10/portable-control-room-10x10-console-island-detail.webp ratio 1:1  | (1254, 1254)
+PASS gallery slide referenced: 10x10/portable-control-room-10x10-console-island-detail.webp
+PASS gallery alt present: portable-control-room-10x10-console-island-detail.webp
+PASS gallery 10x10/portable-control-room-10x10-interior-opening-schedule.webp exists and is 80-120 KB  | 113 KB
+PASS gallery 10x10/portable-control-room-10x10-interior-opening-schedule.webp ratio 1:1  | (1254, 1254)
+PASS gallery slide referenced: 10x10/portable-control-room-10x10-interior-opening-schedule.webp
+PASS gallery alt present: portable-control-room-10x10-interior-opening-schedule.webp
+PASS size 20x8 ships six gallery slides  | 6
+PASS gallery 20x8/portable-control-room-20x8-door-wall-exterior.webp exists and is 80-120 KB  | 118 KB
+PASS gallery 20x8/portable-control-room-20x8-door-wall-exterior.webp ratio 1:1  | (1254, 1254)
+PASS gallery slide referenced: 20x8/portable-control-room-20x8-door-wall-exterior.webp
+PASS gallery alt present: portable-control-room-20x8-door-wall-exterior.webp
+PASS gallery 20x8/portable-control-room-20x8-rear-window-wall.webp exists and is 80-120 KB  | 118 KB
+PASS gallery 20x8/portable-control-room-20x8-rear-window-wall.webp ratio 1:1  | (1254, 1254)
+PASS gallery slide referenced: 20x8/portable-control-room-20x8-rear-window-wall.webp
+PASS gallery alt present: portable-control-room-20x8-rear-window-wall.webp
+PASS gallery 20x8/portable-control-room-20x8-aerial-roof-and-openings.webp exists and is 80-120 KB  | 118 KB
+PASS gallery 20x8/portable-control-room-20x8-aerial-roof-and-openings.webp ratio 1:1  | (1254, 1254)
+PASS gallery slide referenced: 20x8/portable-control-room-20x8-aerial-roof-and-openings.webp
+PASS gallery alt present: portable-control-room-20x8-aerial-roof-and-openings.webp
+PASS gallery 20x8/portable-control-room-20x8-operator-room-interior.webp exists and is 80-120 KB  | 115 KB
+PASS gallery 20x8/portable-control-room-20x8-operator-room-interior.webp ratio 1:1  | (1254, 1254)
+PASS gallery slide referenced: 20x8/portable-control-room-20x8-operator-room-interior.webp
+PASS gallery alt present: portable-control-room-20x8-operator-room-interior.webp
+PASS gallery 20x8/portable-control-room-20x8-console-island-detail.webp exists and is 80-120 KB  | 111 KB
+PASS gallery 20x8/portable-control-room-20x8-console-island-detail.webp ratio 1:1  | (1254, 1254)
+PASS gallery slide referenced: 20x8/portable-control-room-20x8-console-island-detail.webp
+PASS gallery alt present: portable-control-room-20x8-console-island-detail.webp
+PASS gallery 20x8/portable-control-room-20x8-interior-opening-schedule.webp exists and is 80-120 KB  | 118 KB
+PASS gallery 20x8/portable-control-room-20x8-interior-opening-schedule.webp ratio 1:1  | (1254, 1254)
+PASS gallery slide referenced: 20x8/portable-control-room-20x8-interior-opening-schedule.webp
+PASS gallery alt present: portable-control-room-20x8-interior-opening-schedule.webp
+PASS size 20x10 ships six gallery slides  | 6
+PASS gallery 20x10/portable-control-room-20x10-door-wall-exterior.webp exists and is 80-120 KB  | 119 KB
+PASS gallery 20x10/portable-control-room-20x10-door-wall-exterior.webp ratio 1:1  | (1254, 1254)
+PASS gallery slide referenced: 20x10/portable-control-room-20x10-door-wall-exterior.webp
+PASS gallery alt present: portable-control-room-20x10-door-wall-exterior.webp
+PASS gallery 20x10/portable-control-room-20x10-rear-window-wall.webp exists and is 80-120 KB  | 118 KB
+PASS gallery 20x10/portable-control-room-20x10-rear-window-wall.webp ratio 1:1  | (887, 887)
+PASS gallery slide referenced: 20x10/portable-control-room-20x10-rear-window-wall.webp
+PASS gallery alt present: portable-control-room-20x10-rear-window-wall.webp
+PASS gallery 20x10/portable-control-room-20x10-aerial-roof-and-openings.webp exists and is 80-120 KB  | 119 KB
+PASS gallery 20x10/portable-control-room-20x10-aerial-roof-and-openings.webp ratio 1:1  | (1086, 1086)
+PASS gallery slide referenced: 20x10/portable-control-room-20x10-aerial-roof-and-openings.webp
+PASS gallery alt present: portable-control-room-20x10-aerial-roof-and-openings.webp
+PASS gallery 20x10/portable-control-room-20x10-operator-room-interior.webp exists and is 80-120 KB  | 117 KB
+PASS gallery 20x10/portable-control-room-20x10-operator-room-interior.webp ratio 1:1  | (1254, 1254)
+PASS gallery slide referenced: 20x10/portable-control-room-20x10-operator-room-interior.webp
+PASS gallery alt present: portable-control-room-20x10-operator-room-interior.webp
+PASS gallery 20x10/portable-control-room-20x10-console-island-detail.webp exists and is 80-120 KB  | 112 KB
+PASS gallery 20x10/portable-control-room-20x10-console-island-detail.webp ratio 1:1  | (887, 887)
+PASS gallery slide referenced: 20x10/portable-control-room-20x10-console-island-detail.webp
+PASS gallery alt present: portable-control-room-20x10-console-island-detail.webp
+PASS gallery 20x10/portable-control-room-20x10-interior-opening-schedule.webp exists and is 80-120 KB  | 119 KB
+PASS gallery 20x10/portable-control-room-20x10-interior-opening-schedule.webp ratio 1:1  | (1254, 1254)
+PASS gallery slide referenced: 20x10/portable-control-room-20x10-interior-opening-schedule.webp
+PASS gallery alt present: portable-control-room-20x10-interior-opening-schedule.webp
+PASS size 20x12 ships six gallery slides  | 6
+PASS gallery 20x12/portable-control-room-20x12-door-wall-exterior.webp exists and is 80-120 KB  | 119 KB
+PASS gallery 20x12/portable-control-room-20x12-door-wall-exterior.webp ratio 1:1  | (1254, 1254)
+PASS gallery slide referenced: 20x12/portable-control-room-20x12-door-wall-exterior.webp
+PASS gallery alt present: portable-control-room-20x12-door-wall-exterior.webp
+PASS gallery 20x12/portable-control-room-20x12-rear-window-wall.webp exists and is 80-120 KB  | 119 KB
+PASS gallery 20x12/portable-control-room-20x12-rear-window-wall.webp ratio 1:1  | (1254, 1254)
+PASS gallery slide referenced: 20x12/portable-control-room-20x12-rear-window-wall.webp
+PASS gallery alt present: portable-control-room-20x12-rear-window-wall.webp
+PASS gallery 20x12/portable-control-room-20x12-aerial-roof-and-openings.webp exists and is 80-120 KB  | 116 KB
+PASS gallery 20x12/portable-control-room-20x12-aerial-roof-and-openings.webp ratio 1:1  | (1254, 1254)
+PASS gallery slide referenced: 20x12/portable-control-room-20x12-aerial-roof-and-openings.webp
+PASS gallery alt present: portable-control-room-20x12-aerial-roof-and-openings.webp
+PASS gallery 20x12/portable-control-room-20x12-operator-room-interior.webp exists and is 80-120 KB  | 119 KB
+PASS gallery 20x12/portable-control-room-20x12-operator-room-interior.webp ratio 1:1  | (1254, 1254)
+PASS gallery slide referenced: 20x12/portable-control-room-20x12-operator-room-interior.webp
+PASS gallery alt present: portable-control-room-20x12-operator-room-interior.webp
+PASS gallery 20x12/portable-control-room-20x12-console-island-detail.webp exists and is 80-120 KB  | 118 KB
+PASS gallery 20x12/portable-control-room-20x12-console-island-detail.webp ratio 1:1  | (1254, 1254)
+PASS gallery slide referenced: 20x12/portable-control-room-20x12-console-island-detail.webp
+PASS gallery alt present: portable-control-room-20x12-console-island-detail.webp
+PASS gallery 20x12/portable-control-room-20x12-interior-opening-schedule.webp exists and is 80-120 KB  | 113 KB
+PASS gallery 20x12/portable-control-room-20x12-interior-opening-schedule.webp ratio 1:1  | (1254, 1254)
+PASS gallery slide referenced: 20x12/portable-control-room-20x12-interior-opening-schedule.webp
+PASS gallery alt present: portable-control-room-20x12-interior-opening-schedule.webp
+PASS size 30x10 ships six gallery slides  | 6
+PASS gallery 30x10/portable-control-room-30x10-door-wall-exterior.webp exists and is 80-120 KB  | 118 KB
+PASS gallery 30x10/portable-control-room-30x10-door-wall-exterior.webp ratio 1:1  | (1254, 1254)
+PASS gallery slide referenced: 30x10/portable-control-room-30x10-door-wall-exterior.webp
+PASS gallery alt present: portable-control-room-30x10-door-wall-exterior.webp
+PASS gallery 30x10/portable-control-room-30x10-rear-window-wall.webp exists and is 80-120 KB  | 114 KB
+PASS gallery 30x10/portable-control-room-30x10-rear-window-wall.webp ratio 1:1  | (887, 887)
+PASS gallery slide referenced: 30x10/portable-control-room-30x10-rear-window-wall.webp
+PASS gallery alt present: portable-control-room-30x10-rear-window-wall.webp
+PASS gallery 30x10/portable-control-room-30x10-aerial-roof-and-openings.webp exists and is 80-120 KB  | 119 KB
+PASS gallery 30x10/portable-control-room-30x10-aerial-roof-and-openings.webp ratio 1:1  | (1254, 1254)
+PASS gallery slide referenced: 30x10/portable-control-room-30x10-aerial-roof-and-openings.webp
+PASS gallery alt present: portable-control-room-30x10-aerial-roof-and-openings.webp
+PASS gallery 30x10/portable-control-room-30x10-operator-room-interior.webp exists and is 80-120 KB  | 118 KB
+PASS gallery 30x10/portable-control-room-30x10-operator-room-interior.webp ratio 1:1  | (1086, 1086)
+PASS gallery slide referenced: 30x10/portable-control-room-30x10-operator-room-interior.webp
+PASS gallery alt present: portable-control-room-30x10-operator-room-interior.webp
+PASS gallery 30x10/portable-control-room-30x10-console-island-detail.webp exists and is 80-120 KB  | 115 KB
+PASS gallery 30x10/portable-control-room-30x10-console-island-detail.webp ratio 1:1  | (1254, 1254)
+PASS gallery slide referenced: 30x10/portable-control-room-30x10-console-island-detail.webp
+PASS gallery alt present: portable-control-room-30x10-console-island-detail.webp
+PASS gallery 30x10/portable-control-room-30x10-interior-opening-schedule.webp exists and is 80-120 KB  | 115 KB
+PASS gallery 30x10/portable-control-room-30x10-interior-opening-schedule.webp ratio 1:1  | (1254, 1254)
+PASS gallery slide referenced: 30x10/portable-control-room-30x10-interior-opening-schedule.webp
+PASS gallery alt present: portable-control-room-30x10-interior-opening-schedule.webp
+PASS size 40x10 ships six gallery slides  | 6
+PASS gallery 40x10/portable-control-room-40x10-door-wall-exterior.webp exists and is 80-120 KB  | 119 KB
+PASS gallery 40x10/portable-control-room-40x10-door-wall-exterior.webp ratio 1:1  | (1254, 1254)
+PASS gallery slide referenced: 40x10/portable-control-room-40x10-door-wall-exterior.webp
+PASS gallery alt present: portable-control-room-40x10-door-wall-exterior.webp
+PASS gallery 40x10/portable-control-room-40x10-rear-window-wall.webp exists and is 80-120 KB  | 114 KB
+PASS gallery 40x10/portable-control-room-40x10-rear-window-wall.webp ratio 1:1  | (793, 793)
+PASS gallery slide referenced: 40x10/portable-control-room-40x10-rear-window-wall.webp
+PASS gallery alt present: portable-control-room-40x10-rear-window-wall.webp
+PASS gallery 40x10/portable-control-room-40x10-aerial-roof-and-openings.webp exists and is 80-120 KB  | 119 KB
+PASS gallery 40x10/portable-control-room-40x10-aerial-roof-and-openings.webp ratio 1:1  | (1254, 1254)
+PASS gallery slide referenced: 40x10/portable-control-room-40x10-aerial-roof-and-openings.webp
+PASS gallery alt present: portable-control-room-40x10-aerial-roof-and-openings.webp
+PASS gallery 40x10/portable-control-room-40x10-operator-room-interior.webp exists and is 80-120 KB  | 112 KB
+PASS gallery 40x10/portable-control-room-40x10-operator-room-interior.webp ratio 1:1  | (1254, 1254)
+PASS gallery slide referenced: 40x10/portable-control-room-40x10-operator-room-interior.webp
+PASS gallery alt present: portable-control-room-40x10-operator-room-interior.webp
+PASS gallery 40x10/portable-control-room-40x10-console-island-detail.webp exists and is 80-120 KB  | 115 KB
+PASS gallery 40x10/portable-control-room-40x10-console-island-detail.webp ratio 1:1  | (1254, 1254)
+PASS gallery slide referenced: 40x10/portable-control-room-40x10-console-island-detail.webp
+PASS gallery alt present: portable-control-room-40x10-console-island-detail.webp
+PASS gallery 40x10/portable-control-room-40x10-interior-opening-schedule.webp exists and is 80-120 KB  | 101 KB
+PASS gallery 40x10/portable-control-room-40x10-interior-opening-schedule.webp ratio 1:1  | (1254, 1254)
+PASS gallery slide referenced: 40x10/portable-control-room-40x10-interior-opening-schedule.webp
+PASS gallery alt present: portable-control-room-40x10-interior-opening-schedule.webp
+PASS GA board 10x10 exists and is 80-120 KB  | 119 KB
+PASS GA board 10x10 ratio 16:9  | (1800, 1012)
+PASS GA board referenced: 10x10
+PASS GA board alt present: 10x10
+PASS GA board source is the 3840x2160 file, not the 960x540 preview  | 01-ga-boards/01-portable-control-room-10x10-ga.png
+PASS GA board 20x8 exists and is 80-120 KB  | 118 KB
+PASS GA board 20x8 ratio 16:9  | (1800, 1012)
+PASS GA board referenced: 20x8
+PASS GA board alt present: 20x8
+PASS GA board source is the 3840x2160 file, not the 960x540 preview  | 01-ga-boards/02-portable-control-room-20x8-ga.png
+PASS GA board 20x10 exists and is 80-120 KB  | 119 KB
+PASS GA board 20x10 ratio 16:9  | (1800, 1012)
+PASS GA board referenced: 20x10
+PASS GA board alt present: 20x10
+PASS GA board source is the 3840x2160 file, not the 960x540 preview  | 01-ga-boards/03-portable-control-room-20x10-ga.png
+PASS GA board 20x12 exists and is 80-120 KB  | 119 KB
+PASS GA board 20x12 ratio 16:9  | (1800, 1012)
+PASS GA board referenced: 20x12
+PASS GA board alt present: 20x12
+PASS GA board source is the 3840x2160 file, not the 960x540 preview  | 01-ga-boards/04-portable-control-room-20x12-ga.png
+PASS GA board 30x10 exists and is 80-120 KB  | 114 KB
+PASS GA board 30x10 ratio 16:9  | (1800, 1012)
+PASS GA board referenced: 30x10
+PASS GA board alt present: 30x10
+PASS GA board source is the 3840x2160 file, not the 960x540 preview  | 01-ga-boards/05-portable-control-room-30x10-ga.png
+PASS GA board 40x10 exists and is 80-120 KB  | 116 KB
+PASS GA board 40x10 ratio 16:9  | (1800, 1012)
+PASS GA board referenced: 40x10
+PASS GA board alt present: 40x10
+PASS GA board source is the 3840x2160 file, not the 960x540 preview  | 01-ga-boards/06-portable-control-room-40x10-ga.png
+PASS section 2 card exists and is 80-120 KB  | 115 KB
+PASS section 2 card ratio 16:9  | (1600, 900)
+PASS description image description_01 exists and is 80-120 KB  | 117 KB
+PASS description image description_01 ratio 16:9  | (1600, 900)
+PASS description image description_02 exists and is 80-120 KB  | 111 KB
+PASS description image description_02 ratio 16:9  | (1600, 900)
+PASS description image description_03 exists and is 80-120 KB  | 118 KB
+PASS description image description_03 ratio 16:9  | (1600, 900)
+PASS description image description_04 exists and is 80-120 KB  | 119 KB
+PASS description image description_04 ratio 16:9  | (1600, 900)
+PASS description image description_05 exists and is 80-120 KB  | 116 KB
+PASS description image description_05 ratio 16:9  | (1600, 900)
+PASS spec diagram spec_diagram_1 exists and is 80-120 KB  | 82 KB
+PASS spec diagram spec_diagram_2 exists and is 80-120 KB  | 85 KB
+FAIL technical PDF shipped and under 10 MB  | missing
+PASS schema type present: ItemPage  | ['ItemPage', 'Product', 'Brand', 'AggregateOffer', 'Offer', 'PriceSpecification', 'Offer', 'PriceSpecification', 'Offer', 'PriceSpecification', 'Offer', 'PriceSpecification', 'Offe
+PASS schema type present: Product  | ['ItemPage', 'Product', 'Brand', 'AggregateOffer', 'Offer', 'PriceSpecification', 'Offer', 'PriceSpecification', 'Offer', 'PriceSpecification', 'Offer', 'PriceSpecification', 'Offe
+PASS schema type present: AggregateOffer  | ['ItemPage', 'Product', 'Brand', 'AggregateOffer', 'Offer', 'PriceSpecification', 'Offer', 'PriceSpecification', 'Offer', 'PriceSpecification', 'Offer', 'PriceSpecification', 'Offe
+PASS schema type present: BreadcrumbList  | ['ItemPage', 'Product', 'Brand', 'AggregateOffer', 'Offer', 'PriceSpecification', 'Offer', 'PriceSpecification', 'Offer', 'PriceSpecification', 'Offer', 'PriceSpecification', 'Offe
+PASS schema type present: FAQPage  | ['ItemPage', 'Product', 'Brand', 'AggregateOffer', 'Offer', 'PriceSpecification', 'Offer', 'PriceSpecification', 'Offer', 'PriceSpecification', 'Offer', 'PriceSpecification', 'Offe
+FAIL no schema type outside the approved list  | ['AggregateOffer', 'Answer', 'Brand', 'BreadcrumbList', 'FAQPage', 'ItemPage', 'ListItem', 'Offer', 'PriceSpecification', 'Product', 'Question']
+PASS AggregateOffer currency INR
+PASS AggregateOffer low price  | 201250
+PASS AggregateOffer high price  | 665000
+PASS FAQ count 6-8  | 8
+PASS FAQ answer 100-300 chars: What is a portable control roo  | 207
+PASS FAQ visible on page: What is a portable control roo
+PASS FAQ byte-identical in schema: What is a portable control roo
+PASS FAQ answer 100-300 chars: How many operators does each s  | 165
+PASS FAQ visible on page: How many operators does each s
+PASS FAQ byte-identical in schema: How many operators does each s
+PASS FAQ answer 100-300 chars: Are SCADA, PLC or UPS panels i  | 188
+PASS FAQ visible on page: Are SCADA, PLC or UPS panels i
+PASS FAQ byte-identical in schema: Are SCADA, PLC or UPS panels i
+PASS FAQ answer 100-300 chars: Does it come with air conditio  | 200
+PASS FAQ visible on page: Does it come with air conditio
+PASS FAQ byte-identical in schema: Does it come with air conditio
+PASS FAQ answer 100-300 chars: What does a portable control r  | 173
+PASS FAQ visible on page: What does a portable control r
+PASS FAQ byte-identical in schema: What does a portable control r
+PASS FAQ answer 100-300 chars: Can it be placed inside a subs  | 190
+PASS FAQ visible on page: Can it be placed inside a subs
+PASS FAQ byte-identical in schema: Can it be placed inside a subs
+PASS FAQ answer 100-300 chars: How is cable brought into the   | 203
+PASS FAQ visible on page: How is cable brought into the 
+PASS FAQ byte-identical in schema: How is cable brought into the 
+PASS FAQ answer 100-300 chars: How long does delivery take?  | 186
+PASS FAQ visible on page: How long does delivery take?
+PASS FAQ byte-identical in schema: How long does delivery take?
+PASS no U+2014 em dash in body text
+PASS forbidden string absent: coming soon  | coming soon
+PASS forbidden string absent: available on request  | available on request
+PASS forbidden string absent: contact us for details  | contact us for details
+PASS forbidden string absent: Lorem  | Lorem
+PASS forbidden string absent: TBD  | TBD
+PASS forbidden string absent: placeholder  | placeholder
+PASS forbidden string absent: —  | —
+FAIL forbidden string absent: office cabin range  | office cabin range
+PASS forbidden string absent: IP rating  | IP rating
+PASS forbidden string absent: fire rated  | fire rated
+PASS forbidden string absent: ISO container  | ISO container
+PASS forbidden string absent: guaranteed  | guaranteed
+PASS forbidden string absent: warranty of  | warranty of
+PASS cluster head term not in any heading: office cabin  | office cabin
+PASS cluster head term not in any heading: office cabins  | office cabins
+PASS cluster head term not in any heading: small office cabin  | small office cabin
+PASS cluster head term not in any heading: portable office cabin  | portable office cabin
+PASS size 10x10 operator count rendered
+PASS size 10x10 opening count rendered
+PASS size 10x10 GA option in specs  | PCR-10X10-02OP-V1
+FAIL size 20x8 operator count rendered
+FAIL size 20x8 opening count rendered
+PASS size 20x8 GA option in specs  | PCR-20X08-03OP-V1
+FAIL size 20x10 operator count rendered
+FAIL size 20x10 opening count rendered
+PASS size 20x10 GA option in specs  | PCR-20X10-04OP-V1
+FAIL size 20x12 operator count rendered
+FAIL size 20x12 opening count rendered
+PASS size 20x12 GA option in specs  | PCR-20X12-04OP-V1
+FAIL size 30x10 operator count rendered
+FAIL size 30x10 opening count rendered
+PASS size 30x10 GA option in specs  | PCR-30X10-06OP-V1
+FAIL size 40x10 operator count rendered
+FAIL size 40x10 opening count rendered
+PASS size 40x10 GA option in specs  | PCR-40X10-08OP-V1
+
+RESULT: FAIL (30 checks)

@@ -1,0 +1,14 @@
+STEP 8 - LOADING RULES ON THE RENDERED PAGE
+======================================================================
+preload links for this page's images: 1
+    <link rel="preload" href="/images/products/portable-control-room/10x10/portable-control-room-10x10-door-wall-exterior.webp" as="image" fetchpriority="high"/>
+
+total <img> server-rendered: 32
+  gallery (10x10 active)     n= 9  lazy= 8  eager/none= 1  fetchpriority=high on: ['portable-control-room-10x10-door-wall-exterior.webp']
+  GA boards                  n= 1  lazy= 1  eager/none= 0  fetchpriority=high on: []
+  section 2 card             n= 1  lazy= 1  eager/none= 0  fetchpriority=high on: []
+  description                n= 5  lazy= 5  eager/none= 0  fetchpriority=high on: []
+  spec diagrams              n= 2  lazy= 2  eager/none= 0  fetchpriority=high on: []
+
+other this-page images: []
+inactive-size gallery slides server-rendered: ['/20x10/']
