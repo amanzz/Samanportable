@@ -173,8 +173,9 @@ async function main() {
   // branch was open - this release publishes the 65th approved path on top of it.
   // PO-05 (6 Sep 2026): 66/38 - PO-07 made the identical 64/40 -> 65/39 edit this branch
   // had already made, so it auto-merged silently; both pages shipping moves it once more.
-  if (architecture.approvedProductionPaths.length !== 66 || architecture.plannedReleasePaths.length !== 38) {
-    fail(`architecture is ${architecture.approvedProductionPaths.length}/${architecture.plannedReleasePaths.length}, expected 66/38`);
+  // PO-08 (6 Sep 2026): 66/38 -> 67/37, this page's path moving to approved.
+  if (architecture.approvedProductionPaths.length !== 67 || architecture.plannedReleasePaths.length !== 37) {
+    fail(`architecture is ${architecture.approvedProductionPaths.length}/${architecture.plannedReleasePaths.length}, expected 67/37`);
   }
   assertProtectedSourcesUnchanged();
 
@@ -287,7 +288,7 @@ async function main() {
     ssrJsonLdParseErrors: 0,
     duplicateProductEntities: 0,
     duplicateBreadcrumbEntities: 0,
-    architecture: { approved: 64, planned: 40 },
+    architecture: { approved: 67, planned: 37 },
   }, null, 2));
 }
 

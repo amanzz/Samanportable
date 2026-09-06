@@ -1,0 +1,37 @@
+
+===== desktop 1440 =====
+document scrollWidth 1440 vs clientWidth 1440   (no horizontal overflow)
+description  n= 6  boxes: 1067x600  all painted
+section3     n= 1  boxes: 533x399  all painted
+ga           n= 6  boxes: 0x0  NOT PAINTED: 6
+    !! portable-conference-cabin-10x10-ga-board.webp loaded=false box=0x0
+    !! portable-conference-cabin-20x8-ga-board.webp loaded=false box=0x0
+    !! portable-conference-cabin-20x10-ga-board.webp loaded=false box=0x0
+    !! portable-conference-cabin-20x12-ga-board.webp loaded=false box=0x0
+    !! portable-conference-cabin-30x10-ga-board.webp loaded=false box=0x0
+    !! portable-conference-cabin-40x10-ga-board.webp loaded=false box=0x0
+specs        n= 2  boxes: 0x0  NOT PAINTED: 2
+    !! portable-conference-cabin-roof-family-diagram.webp loaded=false box=0x0
+    !! portable-conference-cabin-envelope-material-diagram.webp loaded=false box=0x0
+section2     n= 1  boxes: 525x295  all painted
+gallery      n= 7  boxes: 451x451, 65x65  all painted
+other        n=12  boxes: 88x44, 54x54, 1216x420, 110x56, 390x219, 64x32  NOT PAINTED: 1
+    !! saman-logo.svg loaded=false box=64x32
+
+===== mobile 390 =====
+document scrollWidth 390 vs clientWidth 390   (no horizontal overflow)
+description  n= 6  boxes: 326x183  all painted
+section3     n= 1  boxes: 356x267  all painted
+ga           n= 6  boxes: 0x0  NOT PAINTED: 6
+    !! portable-conference-cabin-10x10-ga-board.webp loaded=false box=0x0
+    !! portable-conference-cabin-20x8-ga-board.webp loaded=false box=0x0
+    !! portable-conference-cabin-20x10-ga-board.webp loaded=false box=0x0
+    !! portable-conference-cabin-20x12-ga-board.webp loaded=false box=0x0
+    !! portable-conference-cabin-30x10-ga-board.webp loaded=false box=0x0
+    !! portable-conference-cabin-40x10-ga-board.webp loaded=false box=0x0
+specs        n= 2  boxes: 0x0  NOT PAINTED: 2
+    !! portable-conference-cabin-roof-family-diagram.webp loaded=false box=0x0
+    !! portable-conference-cabin-envelope-material-diagram.webp loaded=false box=0x0
+section2     n= 1  boxes: 316x178  all painted
+gallery      n= 7  boxes: 342x342, 46x46  all painted
+other        n=12  boxes: 88x44, 54x54, 358x478, 86x44, 293x165, 64x32  all painted

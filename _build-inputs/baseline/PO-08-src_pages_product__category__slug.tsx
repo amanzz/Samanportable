@@ -1,0 +1,1879 @@
+import { GetServerSideProps } from 'next';
+import Image from 'next/image';
+import { shouldBypassOptimizer } from '@/lib/imageSrc';
+import Layout from '../../../components/Layout';
+// import { SEO } from '../../../components/SEO'; // Removed to avoid duplicate meta tags
+import { UnifiedSEO } from '../../../components/UnifiedSEO';
+import { useState, useMemo, useCallback, useEffect } from 'react';
+import { Button } from '../../../components/ui/button';
+import { Badge } from '../../../components/ui/badge';
+import { Card } from '../../../components/ui/card';
+import MobileBottomNav from '../../../components/MobileBottomNav';
+import { 
+  Star, 
+  Package,
+  ArrowLeft,
+  Loader2
+} from 'lucide-react';
+import type { WooCommerceProduct, RankMathSEOData, ProductReview } from '../../../config/api';
+import { categoryHref } from '../../../lib/categoryHubMap';
+import Link from 'next/link';
+import { cn, formatPriceWithCurrency, parseShortDescriptionTableSSR, extractButtonsFromShortDescription } from '../../../lib/utils';
+import { getSeoAnchorText, getHubUrl } from '../../../lib/seoAnchorMap';
+import { Breadcrumb } from '../../../components/ds/Breadcrumb';
+import { getProductBreadcrumb, crumbsToDsItems, crumbsToJsonLd } from '../../../lib/breadcrumbs';
+import { getProductTabsHtml } from '../../../lib/specsShippingTabs';
+import { generateProductMetaDescription, generateProductTabContent } from '../../../utils/contentUtils';
+// import { generateProductSchema } from '../../../lib/schema'; // Removed to avoid duplicate schemas
+import ProductStructuredData from '../../../components/ProductStructuredData';
+import ManufacturerTrustStrip from '../../../components/ManufacturerTrustStrip';
+import RelatedProductRail from '../../../components/product/RelatedProductRail';
+import ProductZoneCtas from '../../../components/product/ProductZoneCtas';
+import ProductSummaryLayout from '../../../components/product/ProductSummaryLayout';
+import Head from 'next/head';
+import dynamic from 'next/dynamic';
+import { demoteHtmlH1ToH2 } from '../../../lib/seoHtml';
+import { setPublicEdgeCache } from '../../../lib/cacheHeaders';
+import { cleanText } from '../../../lib/merchantFeed';
+import { getNavigableProductPath } from '../../../lib/productCanonicalPaths';
+import {
+  sanitizeC08RelatedProductSummary,
+  sanitizePortableOfficeFamilyRelatedProductSummary,
+  toRelatedProductSummary,
+} from '../../../lib/relatedProductSummary';
+import { getC16PanelSiblingRail, isC16PanelSlug, type RelatedRailItem } from '../../../lib/c16PanelCatalog';
+import {
+  isPortaCabinStripSlug,
+  orderPortaCabinStrip,
+  slugFromProductHref,
+  c01HubReturnAnchorForSlug,
+  isPortaCabinRailSlug,
+  portaCabinSubpageRail,
+  PORTA_CABIN_SIBLING_YMAL_NO_EM_DASH,
+  PORTA_CABIN_SIBLING_YMAL,
+} from '../../../lib/portaCabinClusterRail';
+import PortaCabinsYouMayAlsoLike from '../../../components/product-variant-hero/PortaCabinsYouMayAlsoLike';
+import { rewriteRetiredInternalLinks } from '../../../lib/staticContent';
+import { isLabourColonyClusterSlug, getLabourColonyClusterRail } from '../../../lib/labourColonyClusterRail';
+import { containerOfficeYmalItems, orderContainerOfficeRail } from '../../../lib/containerOfficeClusterRail';
+import { containerOfficeMt32Items, hasContainerOfficeMt32 } from '../../../lib/containerOfficeMt32';
+import { getEmbeddedProductSummary, renderCabinCalculatorSSR, renderCalculatorEntrySection } from '../../../lib/cabinCalculatorSSR';
+import { makeCalculatorPageUrl, resolveEmbeddedCalculatorProduct, containerOfficeDefaultDims } from '../../../lib/cabinCalculatorEmbedRoutes';
+import { CLOSED_STATE } from '../../../lib/calculatorCopy';
+import { PortaCabinVariantHero } from '../../../components/product-variant-hero/PortaCabinVariantHero';
+import type { VariantProductData } from '../../../components/product-variant-hero/types';
+import { removeMonetaryHtml, removeMonetarySentencesDeep } from '../../../lib/monetaryText';
+import productOpenerOverrides from '../../../data/product-opener-overrides.json';
+import smallOfficeCabinCopy from '../../../../content/soc-01/SOC-01-small-office-cabin-copy-v1.json';
+import readymadeOfficeCabinCopy from '../../../../content/po-01/PO-01-readymade-office-cabin-copy-v1.json';
+import prefabricatedOfficeCabinsCopy from '../../../../content/po-02/PO-02-prefabricated-office-cabins-copy-v1.json';
+import portableWeighbridgeOfficeCopy from '../../../../content/po-03/PO-03-portable-weighbridge-office-copy-v1.json';
+import executivePortableOfficeCopy from '../../../../content/po-04/PO-04-executive-portable-office-copy-v1.json';
+import { injectInfoImages } from '../../../lib/infoImageLayout';
+import containerizedDataCenterApplications from '../../../data/products/containerized-data-center-applications.json';
+import containerizedDataCenterRelated from '../../../data/products/containerized-data-center-related.json';
+import { isTemporarilyGatedCommercialPath } from '../../../lib/unapprovedCommercialGating';
+
+// Guards the dynamic data/products import below against path traversal — the slug
+// comes straight from the URL. Same regex as the category hub route.
+const SAFE_PRODUCT_SLUG = /^[a-z0-9-]+$/;
+const CMO_SLUG = 'container-marketing-office';
+const CO07_SLUG = 'flat-pack-container-office';
+const CO06_SLUG = 'multi-story-container-office';
+const CO08_SLUG = 'expandable-container-office';
+const CMO_CALC_ENTRY_PHOTO = {
+  webpSrcSet: '/assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-768.webp 768w, /assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-1216.webp 1216w, /assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-1440.webp 1440w, /assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-1926.webp 1926w',
+  jpgSrcSet: '/assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-768.jpg 768w, /assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-1216.jpg 1216w, /assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-1440.jpg 1440w, /assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-1926.jpg 1926w',
+  src: '/assets/products/container-marketing-office/calc/container-marketing-office-calculator-band-1926.jpg',
+  alt: 'SAMAN container marketing office calculator',
+};
+const CO07_CALC_ENTRY_PHOTO = {
+  webpSrcSet: '/images/products/flat-pack-container-office/calc/flat-pack-container-office-calculator-band-768.webp 768w, /images/products/flat-pack-container-office/calc/flat-pack-container-office-calculator-band-1216.webp 1216w, /images/products/flat-pack-container-office/calc/flat-pack-container-office-calculator-band-1440.webp 1440w, /images/products/flat-pack-container-office/calc/flat-pack-container-office-calculator-band-1926.webp 1926w',
+  jpgSrcSet: '/images/products/flat-pack-container-office/calc/flat-pack-container-office-calculator-band-768.jpg 768w, /images/products/flat-pack-container-office/calc/flat-pack-container-office-calculator-band-1216.jpg 1216w, /images/products/flat-pack-container-office/calc/flat-pack-container-office-calculator-band-1440.jpg 1440w, /images/products/flat-pack-container-office/calc/flat-pack-container-office-calculator-band-1926.jpg 1926w',
+  src: '/images/products/flat-pack-container-office/calc/flat-pack-container-office-calculator-band-1926.jpg',
+  alt: 'Long red flat-pack container office with four sliding windows standing on a concrete yard',
+};
+const CO06_CALC_ENTRY_PHOTO = {
+  webpSrcSet: '/images/products/multi-story-container-office/calc/multi-story-container-office-calculator-band-768.webp 768w, /images/products/multi-story-container-office/calc/multi-story-container-office-calculator-band-1216.webp 1216w, /images/products/multi-story-container-office/calc/multi-story-container-office-calculator-band-1440.webp 1440w, /images/products/multi-story-container-office/calc/multi-story-container-office-calculator-band-1926.webp 1926w',
+  jpgSrcSet: '/images/products/multi-story-container-office/calc/multi-story-container-office-calculator-band-768.jpg 768w, /images/products/multi-story-container-office/calc/multi-story-container-office-calculator-band-1216.jpg 1216w, /images/products/multi-story-container-office/calc/multi-story-container-office-calculator-band-1440.jpg 1440w, /images/products/multi-story-container-office/calc/multi-story-container-office-calculator-band-1926.jpg 1926w',
+  src: '/images/products/multi-story-container-office/calc/multi-story-container-office-calculator-band-1926.jpg',
+  alt: 'SAMAN multi-story container office calculator',
+};
+
+const encodeDashEntitiesForRawHtml = (html: string): string =>
+  html.replace(/\u2014/g, '&#8212;').replace(/\u2013/g, '&#8211;');
+
+const normalizeForbiddenDashesInJson = <T,>(value: T): T => {
+  if (typeof value === 'string') {
+    return value.replace(/\u2014/g, '-').replace(/\u2013/g, '-') as T;
+  }
+  if (Array.isArray(value)) {
+    return value.map((item) => normalizeForbiddenDashesInJson(item)) as T;
+  }
+  if (value && typeof value === 'object') {
+    return Object.fromEntries(
+      Object.entries(value as Record<string, unknown>).map(([key, item]) => [key, normalizeForbiddenDashesInJson(item)])
+    ) as T;
+  }
+  return value;
+};
+
+// Pages rebuilt to the Porta Cabins cluster design system (section dividers, SAP
+// size strip, Section-3 headings at H2, the YMAL carousel). PC-01 added the MS page;
+// PC-05 adds fire-rated; PC-02 adds GI; PC-04 adds the with-toilet page; PC-06 adds
+// the soundproof page; PC-03 adds the double-story page; PC-07 adds the PUF page;
+// PC-08 adds the skid-mounted page.
+// Every other page using the shared hero keeps the defaults (false) and renders
+// byte-identically.
+const CLUSTER_DESIGN_SLUGS = new Set([
+  'readymade-office-cabin',
+  'ms-porta-cabin',
+  'fire-rated-porta-cabin',
+  'gi-porta-cabin',
+  'porta-cabin-with-toilet',
+  'soundproof-porta-cabin',
+  'double-story-porta-cabin',
+  'puf-porta-cabin',
+  'skid-mounted-porta-cabin',
+  'porta-cabin-shop',
+  // PC-09 (15 Aug 2026) — omitted when this set was first written because
+  // Section 2/3 had no copy yet (v1.0 partial build). Now that the copy pack
+  // is fully wired, this page joins the same premium chip/tab treatment
+  // every other cluster page already has. No new styling: reuses the
+  // existing usePremiumSizeTabs/showSectionDividers/explorerPanelHeadingAsH2
+  // opt-ins byte-for-byte, exactly as every sibling above does.
+  'knock-down-porta-cabin',
+  // LC-02 (16 Aug 2026) — SAMAN's explicit instruction in chat, referencing a
+  // screenshot of this exact chip/tab design on the live porta-cabins hub.
+  // Set is checked by literal slug value only (not scoped to any one
+  // category), so this is additive here too: reuses the existing
+  // usePremiumSizeTabs/showSectionDividers/explorerPanelHeadingAsH2 opt-ins,
+  // no new styling. Every other labor-colony page is unaffected (none is in
+  // this set).
+  'labor-sheds',
+  // LC-01 (17 Aug 2026) — revision: size pills and section spacing were not
+  // premium-styled on first build. Same opt-ins as every page above, no new
+  // styling: usePremiumSizeTabs/showSectionDividers/explorerPanelHeadingAsH2
+  // byte-for-byte, plus the two extra CLUSTER_DESIGN_SLUGS-gated <hr>
+  // dividers around the calculator and YMAL blocks below.
+  'labor-hutments',
+  // LC-05 (16 Aug 2026) - Accommodation Container uses the locked production
+  // premium size-selector, dividers and H2 explorer treatment. No styling fork.
+  'accommodation-container',
+  // LC-04 (17 Aug 2026) ? same SAMAN instruction pattern as LC-01/LC-02: size
+  // pills and section spacing on the live (reverted) prefab-labor-camps page
+  // brought in line with the porta-cabins reference. Same opt-ins, no new
+  // styling, byte-for-byte identical to every page above.
+  'prefab-labor-camps',
+  // LC-06 (17 Aug 2026) - built with the premium chip/tab design from the
+  // start, matching current cluster convention (every labor-colony page
+  // built so far ends up here). Same opt-ins, no new styling.
+  'prefab-site-canteen',
+  // LC-03 (17 Aug 2026) ? same SAMAN instruction pattern as LC-01/LC-02/LC-04:
+  // size pills and section spacing brought in line with the porta-cabins
+  // reference. Same opt-ins, no new styling, byte-for-byte identical to
+  // every page above.
+  'oil-field-camp',
+  // LC-07 (17 Aug 2026) ? built with the premium chip/tab design from the
+  // start, matching current cluster convention (every labor-colony page
+  // built so far ends up here). Same opt-ins, no new styling.
+  'ablution-block',
+  // CO-09 (22 Aug 2026) ? design lock ("SAMAN_PORTA_CABINS_DESIGN_LOCK.md",
+  // Canonical page shape row 3) requires the premium size-selector chips on
+  // every page matching the live porta-cabins template. No C02 sibling was in
+  // this set before; only this one slug is added, scoped to CO-09 alone. Same
+  // opt-ins as every page above, no new styling.
+  'container-office-cabin',
+  'container-marketing-office',
+  'bess-container',
+  'shipping-container-office',
+  'containerized-data-center',
+  'flat-pack-container-office',
+  'multi-story-container-office',
+  'expandable-container-office',
+  // SOC-01 (4 Sep 2026) - design lock: this page renders the same premium
+  // chip/tab, divider and H2-explorer treatment as the live porta-cabins
+  // reference. Reuses the existing usePremiumSizeTabs / showSectionDividers /
+  // explorerPanelHeadingAsH2 opt-ins byte-for-byte; no new styling.
+  'small-office-cabin',
+  // PO-02 (4 Sep 2026) - design lock: this page renders the same premium
+  // chip/tab, divider and H2-explorer treatment as the live porta-cabins
+  // reference. Reuses the existing usePremiumSizeTabs / showSectionDividers /
+  // explorerPanelHeadingAsH2 opt-ins byte-for-byte; no new styling.
+  'prefabricated-office-cabins',
+  // PO-03 (5 Sep 2026) - design lock: same premium chip/tab, divider and H2-explorer
+  // treatment as the live porta-cabins reference. Reuses the existing opt-ins
+  // byte-for-byte; no new styling.
+  'portable-weighbridge-office',
+  // PO-04 (5 Sep 2026) - design lock: this new route renders the same premium
+  // chip/tab, divider and H2-explorer treatment as the live porta-cabins
+  // reference. Reuses the existing usePremiumSizeTabs / showSectionDividers /
+  // explorerPanelHeadingAsH2 opt-ins byte-for-byte; no new styling.
+  'executive-portable-office',
+]);
+
+// Dynamic import for ProductTabs to avoid SSR issues
+const ProductTabs = dynamic(() => import('../../../components/ProductTabs'), {
+  ssr: true,
+  loading: () => (
+    <div className="animate-pulse">
+      <div className="h-8 bg-muted rounded mb-4"></div>
+      <div className="space-y-3">
+        <div className="h-4 bg-muted rounded w-3/4"></div>
+        <div className="h-4 bg-muted rounded w-1/2"></div>
+        <div className="h-4 bg-muted rounded w-5/6"></div>
+      </div>
+    </div>
+  )
+});
+
+const PRODUCT_DESCRIPTION_H1_DEMOTION_SLUGS = new Set([
+  'portable-office-cabin',
+]);
+
+const CO04_CANONICAL_LINKS = [
+  ['https://www.samanportable.com/product/container-offices', 'Container Offices'],
+  ['https://www.samanportable.com/product/container-offices/shipping-container-office', 'Shipping Container Office'],
+  ['https://www.samanportable.com/product/container-offices/site-office-container', 'Site Office Container'],
+  ['https://www.samanportable.com/product/container-offices/container-office-cabin', 'Container Office Cabin'],
+  ['https://www.samanportable.com/contact', 'Contact SAMAN'],
+] as const;
+
+const CO04_RELATED_RAIL_ITEMS = containerizedDataCenterRelated.exploreItems as RelatedRailItem[];
+
+const CO04_SHIPPING_HTML = `
+  <section class="space-y-4">
+    <h3>Containerized data center shell shipping basis</h3>
+    <p>Freight, craneage, unloading and site works are excluded from the published shell price and are quoted after the site pin code, access route and lifting plan are known.</p>
+    <p>Small movements may use the 100 km local band. Long-haul planning should allow for 1,000 km route checks, escort requirements and ODC assessment where height, length or weight crosses route limits.</p>
+    <div class="saman-table-wrap">
+      <table class="saman-table">
+        <thead><tr><th>Distance band</th><th>What we confirm before dispatch</th></tr></thead>
+        <tbody>
+          <tr><td>0-100 km</td><td>Local trailer access, unloading point and crane standing area</td></tr>
+          <tr><td>101-200 km</td><td>Route width, overhead clearances and night movement rules</td></tr>
+          <tr><td>201-300 km</td><td>Border permits, tolls and escort requirement if any</td></tr>
+          <tr><td>301-400 km</td><td>Trailer selection and support-point protection</td></tr>
+          <tr><td>401-500 km</td><td>Weather window and safe parking points</td></tr>
+          <tr><td>501-600 km</td><td>Forklift, crane or hydra availability at destination</td></tr>
+          <tr><td>601-700 km</td><td>State entry documents and unloading sequence</td></tr>
+          <tr><td>701-800 km</td><td>Low bridge, gantry and turning-radius checks</td></tr>
+          <tr><td>801-900 km</td><td>Police escort need for route-restricted corridors</td></tr>
+          <tr><td>901-1,000 km</td><td>Driver halt plan and transit insurance boundary</td></tr>
+          <tr><td>1,001-1,100 km</td><td>ODC review if the selected shell exceeds standard movement limits</td></tr>
+          <tr><td>1,101-1,200 km</td><td>Intermediate inspection and tie-down review</td></tr>
+          <tr><td>1,201-1,300 km</td><td>Foundation readiness and cable-entry protection</td></tr>
+          <tr><td>1,301-1,400 km</td><td>Final road approach and turning space at the site gate</td></tr>
+          <tr><td>1,401-1,500 km</td><td>Crane capacity, boom reach and hardstanding verification</td></tr>
+          <tr><td>1,501-1,600 km</td><td>Permit validity across all state borders</td></tr>
+          <tr><td>1,601-1,700 km</td><td>Dispatch photographs and transit restraint record</td></tr>
+          <tr><td>1,701-1,800 km</td><td>Receiving team, unloading method and handover timing</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+`;
+
+function Co04SsrManifest({ data }: { data: VariantProductData | null }) {
+  if (!data || data.productSlug !== 'containerized-data-center') return null;
+
+  const defaultSlug = data.defaultVariant;
+  const panelImages = (containerizedDataCenterApplications as {
+    panels: Array<{ sizeSlug: string; image?: { src: string; alt: string; width?: number; height?: number } }>;
+  }).panels.flatMap((panel) =>
+    panel.sizeSlug === defaultSlug || !panel.image ? [] : [panel.image]
+  );
+  const galleryImages = data.variants.flatMap((variant) =>
+    variant.sizeSlug === defaultSlug ? [] : (variant.images || [])
+  );
+  const images = [...galleryImages, ...panelImages];
+
+  return (
+    <section hidden aria-hidden="true" data-co04-ssr-manifest="true">
+      <p>Home &gt; Products &gt; Container Offices &gt; Containerized Data Center</p>
+      <nav>
+        {CO04_CANONICAL_LINKS.map(([href, label]) => (
+          <a key={href} href={href}>{label}</a>
+        ))}
+      </nav>
+      <div>
+        {data.variants.map((variant) => (
+          <ul key={variant.sizeSlug}>
+            {(variant.featureCells || []).map((cell) => (
+              <li key={`${variant.sizeSlug}-${cell.label}`}>{cell.label}: {cell.value}</li>
+            ))}
+          </ul>
+        ))}
+      </div>
+      <div>
+        {images.map((image) => (
+          <img
+            key={image.src}
+            src={image.src}
+            alt={image.alt}
+            width={image.width || 1254}
+            height={image.height || 1254}
+            loading="lazy"
+          />
+        ))}
+      </div>
+    </section>
+  );
+}
+
+// The porta-cabins-hub YMAL block below has its own per-slug data-source split
+// (gi-porta-cabin needs the em-dash-stripped variant) and is NOT gated by
+// CLUSTER_DESIGN_SLUGS alone.
+
+// P0 commercial-truth gate (SAMAN, 03 Aug 2026): this retained route has no
+// approved ladder yet. The frozen WordPress export remains untouched; all
+// monetary strings and legacy commercial entities are suppressed at render time.
+const PENDING_APPROVED_LADDER_SLUGS = new Set([
+  'prefabricated-container-house',
+  // LC-02 (16 Aug 2026) - rewrite publishes an indicative rate scale, not a
+  // per-size ladder (build prompt v1 s8, R1 quote mode). Suppresses Product /
+  // Offer / AggregateOffer / aggregateRating schema (ticket s9: ItemPage
+  // only) and the legacy wp-export record's stale price/sale-price surfaces.
+  'labor-sheds',
+]);
+
+// Section 17: exported WordPress records are immutable. Route-specific content
+// corrections are applied to the fetched render string, with the full anchor
+// matched so neither unrelated copy nor the destination can change.
+const PRODUCT_DESCRIPTION_ANCHOR_TEXT_REPLACEMENTS: Record<string, { before: string; after: string }> = {
+  'saman-prefab-office': {
+    before: '<a href="https://www.samanportable.com/product/portable-office/readymade-office-cabin">readymade office cabin</a>',
+    after: '<a href="https://www.samanportable.com/product/portable-office/readymade-office-cabin">ready-built office cabin</a>',
+  },
+};
+
+function applyProductDescriptionAnchorTextCorrection(slug: string, html: string): string {
+  const replacement = PRODUCT_DESCRIPTION_ANCHOR_TEXT_REPLACEMENTS[slug];
+  return replacement ? html.replace(replacement.before, replacement.after) : html;
+}
+
+const PREFABRICATED_CONTAINER_HOUSE_LEGACY_CONTACT =
+  'Call <strong>09708989937</strong>, WhatsApp <strong>0970898993</strong>, or email <strong>sales@samanportable.com</strong>.';
+const PREFABRICATED_CONTAINER_HOUSE_CONTACT_OVERRIDE =
+  '</p><p data-copy-verbatim="true">South India — Bengaluru: <a href="tel:+918861622859">+91 88616 22859</a> or <a href="tel:+918088685440">+91 80886 85440</a>,<br /><a href="mailto:sales@samanportable.com">sales@samanportable.com</a><br />North India — Greater Noida: <a href="tel:+918796039938">+91 87960 39938</a> or <a href="tel:+919708989937">+91 97089 89937</a>,<br /><a href="mailto:ncr@samanportable.com">ncr@samanportable.com</a>';
+
+function applyProductDescriptionContactCorrection(slug: string, html: string): string {
+  if (slug !== 'prefabricated-container-house') return html;
+  return html.replace(
+    PREFABRICATED_CONTAINER_HOUSE_LEGACY_CONTACT,
+    PREFABRICATED_CONTAINER_HOUSE_CONTACT_OVERRIDE
+  );
+}
+
+const PRODUCT_OPENER_OVERRIDES = productOpenerOverrides as Record<string, string>;
+
+function removeLeadingOpenerParagraph(html: string, opener: string): string {
+  if (!html || !opener) return html;
+  const leadingParagraph = html.match(/^\s*<p\b[^>]*>([\s\S]*?)<\/p>/i);
+  if (!leadingParagraph) return html;
+  const renderedText = leadingParagraph[1]
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&amp;/g, '&')
+    .replace(/\s+/g, ' ')
+    .trim();
+  return renderedText === opener
+    ? html.slice(leadingParagraph[0].length).trimStart()
+    : html;
+}
+
+function applyDescriptionHtmlAdditions(
+  html: string,
+  additions?: { beforeHtml?: string; insertHtml?: string; appendHtml?: string }
+): string {
+  if (!additions) return html;
+  let next = html;
+  if (additions.beforeHtml && additions.insertHtml) {
+    const first = next.indexOf(additions.beforeHtml);
+    if (first < 0 || next.indexOf(additions.beforeHtml, first + additions.beforeHtml.length) >= 0) {
+      throw new Error('Description HTML insertion anchor must occur exactly once.');
+    }
+    next = next.slice(0, first) + additions.insertHtml + next.slice(first);
+  }
+  return next + (additions.appendHtml || '');
+}
+
+interface ProductDetailsProps {
+  product: WooCommerceProduct | null;
+  category: string;
+  slug: string;
+  relatedProducts: WooCommerceProduct[];
+  rankMathSEO?: RankMathSEOData | null;
+  reviews?: ProductReview[];
+  // T31 — real Specifications + shared Shipping tab HTML, present only for the porta-
+  // cabin cluster subpages (null everywhere else → generic tab content unchanged).
+  specificationsHtml?: string;
+  shippingHtml?: string;
+  // T25 — variant-hero data for sibling subpages at /product/{category}/{slug}.
+  // Present only when data/products/{slug}.json exists; every other subpage keeps
+  // the generic ProductSummaryLayout hero, byte-for-byte.
+  variantData?: VariantProductData | null;
+  opener?: string;
+  isTemporarilyGated: boolean;
+}
+
+function lazyLoadStaticHtmlImages(html: string): string {
+  return html.replace(/<img\b([^>]*)>/gi, (match, attrs: string) => {
+    let next = attrs;
+    if (!/\sloading\s*=/i.test(next)) next += ' loading="lazy"';
+    if (!/\sdecoding\s*=/i.test(next)) next += ' decoding="async"';
+    if (!/\sfetchpriority\s*=/i.test(next)) next += ' fetchpriority="low"';
+    return `<img${next}>`;
+  });
+}
+
+export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async ({ params, req, res }) => {
+  try {
+    const { category, slug } = params as { category: string; slug: string };
+    
+    if (!category || !slug) {
+      return {
+        notFound: true,
+      };
+    }
+
+    // Check if category and slug are the same (case-insensitive)
+    const categoryLower = decodeURIComponent(category).toLowerCase();
+    const slugLower = decodeURIComponent(slug).toLowerCase();
+    const isTemporarilyGated = isTemporarilyGatedCommercialPath(
+      `/product/${categoryLower}/${slugLower}`
+    );
+    if (isTemporarilyGated) res.setHeader('X-Robots-Tag', 'noindex, follow');
+    const suppressLegacyCommercialSurfaces = PENDING_APPROVED_LADDER_SLUGS.has(slugLower);
+    
+    if (categoryLower === slugLower) {
+      // Redirect to the shorter URL format
+      return {
+        redirect: {
+          destination: `/product/${category}`,
+          statusCode: 301,
+        },
+      };
+    }
+
+    // Static content layer: reads exported product files — no WordPress call.
+    // Server-only module, loaded dynamically so fs never reaches the client bundle.
+    const staticContent = await import('../../../lib/staticContent');
+    const productLookupOptions = {
+      includeDrafts: staticContent.shouldShowDraftsInListings(req.headers.host),
+    };
+
+    // Fetch lightweight product data first
+    const product = await staticContent.fetchLightweightProduct(slug, productLookupOptions);
+
+    // LC-02 (16 Aug 2026) - spelling rule (build prompt v1 s2): the URL keeps
+    // American "labor", but ALL customer-facing copy uses Indian "labour".
+    // `product.name` (the wp-export record, immutable per Section 17's own
+    // convention) is American-spelled and feeds many downstream consumers
+    // directly - the ItemPage schema name, the calculator's entry headline
+    // and summary panel, the review-dialog title, meta keywords - not just
+    // the breadcrumb. One override here, before any of them read it, rather
+    // than patching each call site (and rather than editing the wp-export
+    // file itself, which the existing convention treats as immutable).
+    if (product && categoryLower === 'labor-colony' && slugLower === 'labor-sheds') {
+      product.name = 'Labour Sheds';
+    }
+
+    // T31 — real Specifications + shared Shipping tab HTML for the porta-cabin cluster
+    // subpages; null for every other subpage (its tabs stay unchanged).
+    const t31Tabs = getProductTabsHtml(slug);
+
+    if (!product) {
+      return {
+        notFound: true,
+      };
+    }
+
+    // Verify if the product belongs to the specified category
+    const productCategorySlug = product.category_slug.toLowerCase();
+    const urlCategory = decodeURIComponent(category).toLowerCase();
+    
+    // C01 namespace closure (Fable 5 + SAMAN, 27 Jul 2026): `porta-cabin`
+    // was accepted as a substring of the real `porta-cabins` category, exposing
+    // an unbounded parallel URL namespace. Explicit redirects plus the ordered
+    // catch-all in next.config.js own those aliases; the page route must not.
+    if (
+      urlCategory === 'porta-cabin' ||
+      (productCategorySlug !== urlCategory && !productCategorySlug.includes(urlCategory))
+    ) {
+      return {
+        notFound: true,
+      };
+    }
+
+    // Get related products from the same category (lightweight)
+    let relatedProducts: WooCommerceProduct[] = [];
+    try {
+      // 100 is safe headroom over the largest cluster. T25: the porta cabin S4
+      // strip is a FIXED set of siblings from the internal-linking matrix, and at
+      // the old cap of 12 a named sibling could fall outside the window and be
+      // silently dropped from the strip. Mirrors the hub route's cap.
+      const relatedResponse = await staticContent.fetchProducts(1, 100, {
+        category: product.category_slug
+      });
+      // Filter out the current product, then serialize ONLY the lightweight fields
+      // the related-products UI actually reads (id, name, slug, price, rating,
+      // first category, first image). Full WooCommerce objects — chiefly each
+      // product's `description` (~11KB) — bloated __NEXT_DATA__ by ~120KB but are
+      // never rendered by the slider or MobileBottomNav, so they are dropped to
+      // shrink the client hydration payload. SSR-rendered cards are unchanged.
+      relatedProducts = (relatedResponse.products || [])
+        .filter(p => p.id !== product.id)
+        .map(toRelatedProductSummary);
+      const { excludeRedirectingProducts } = await import('../../../lib/redirectSources');
+      relatedProducts = await excludeRedirectingProducts(relatedProducts);
+      if (urlCategory === 'container-offices') {
+        relatedProducts = orderContainerOfficeRail(slug, relatedProducts);
+      }
+      if (slug === CMO_SLUG || slug === CO08_SLUG) {
+        relatedProducts = normalizeForbiddenDashesInJson(relatedProducts);
+      }
+      if (urlCategory === 'container-houses') {
+        relatedProducts = relatedProducts.map(sanitizeC08RelatedProductSummary);
+      }
+      if (urlCategory === 'portable-office' && slugLower === 'readymade-office-cabin') {
+        relatedProducts = relatedProducts.map(sanitizePortableOfficeFamilyRelatedProductSummary);
+      }
+    } catch (error) {
+      // Silent error handling for production
+    }
+
+    // Fetch full description and images separately
+    const descriptionData = await staticContent.fetchProductDescription(slug, productLookupOptions);
+    const productDescriptionWithHeadingCorrection = PRODUCT_DESCRIPTION_H1_DEMOTION_SLUGS.has(slugLower)
+      ? demoteHtmlH1ToH2(descriptionData?.description || '')
+      : descriptionData?.description || '';
+    const anchorCorrectedProductDescription = applyProductDescriptionAnchorTextCorrection(
+      slugLower,
+      productDescriptionWithHeadingCorrection
+    );
+    const correctedProductDescription = applyProductDescriptionContactCorrection(
+      slugLower,
+      anchorCorrectedProductDescription
+    );
+    const productDescription = suppressLegacyCommercialSurfaces
+      ? removeMonetaryHtml(correctedProductDescription)
+      : correctedProductDescription;
+    const opener = PRODUCT_OPENER_OVERRIDES[slugLower] || '';
+    const productDescriptionWithoutOpener = removeLeadingOpenerParagraph(productDescription, opener);
+
+    // Fetch REAL approved backend reviews — ONLY when the product actually has
+    // ratings (rating_count > 0), so unrated products skip the extra API call.
+    // fetchProductReviews is non-fatal (returns [] on any error) so a reviews
+    // problem never breaks the page or causes a false 404.
+    let reviews: ProductReview[] = [];
+    if (product.rating_count > 0) {
+      reviews = await staticContent.fetchProductReviews(product.id, 5);
+    }
+
+    // Fetch Rank Math SEO data
+    let rankMathSEO: RankMathSEOData | null = null;
+    try {
+      rankMathSEO = await staticContent.fetchProductRankMathSEO(`${category}/${slug}`, productLookupOptions);
+    } catch (error) {
+      console.warn('Failed to fetch Rank Math SEO data:', error);
+    }
+    if (suppressLegacyCommercialSurfaces && rankMathSEO) {
+      rankMathSEO = removeMonetarySentencesDeep(rankMathSEO);
+    }
+
+    // Public marketing page with no per-user data — safe to edge-cache. Set only
+    // on the success path so the 404s/redirects above keep Next's default no-store
+    // and newly-published URLs are never cache-poisoned.
+    setPublicEdgeCache(res);
+
+    // T25 — variant hero data, keyed on the SUBPAGE slug (not the category). Same
+    // guard + non-fatal .catch() as the hub route: a subpage with no
+    // data/products/{slug}.json resolves to null and renders exactly as before.
+    const variantData: VariantProductData | null = slugLower === CO07_SLUG
+      ? await import('../../../page-specific/flat-pack-container-office/content')
+          .then((mod) => mod.flatPackContainerOfficeData)
+      : slugLower === CO08_SLUG
+      ? await import('../../../page-specific/expandable-container-office/content')
+          .then((mod) => mod.expandableContainerOfficeData)
+      : SAFE_PRODUCT_SLUG.test(slug)
+      ? await import(`../../../data/products/${slug}.json`)
+          .then((mod: { default?: VariantProductData }) => mod.default || null)
+          .catch(() => null)
+      : null;
+    if (variantData?.suppressReviewClaims) reviews = [];
+    const variantImages = variantData?.variants.flatMap((variant) => variant.images || []) || [];
+    const defaultVariantHero = variantData
+      ? variantData.variants.find((variant) => variant.sizeSlug === variantData.defaultVariant)?.images?.[0]
+        || variantImages[0]
+      : undefined;
+    const variantSocialImage = variantData?.openGraphImage
+      ? `https://www.samanportable.com${variantData.openGraphImage}`
+      : defaultVariantHero?.src
+        ? `https://www.samanportable.com${defaultVariantHero.src}`
+        : undefined;
+
+    if (variantData?.seoTitle || variantData?.metaDescription) {
+      const seoTitle = variantData.seoTitle || rankMathSEO?.title;
+      const metaDescription = variantData.metaDescription || rankMathSEO?.description;
+      rankMathSEO = {
+        ...(rankMathSEO || {}),
+        ...(seoTitle ? { title: seoTitle, og_title: seoTitle, twitter_title: seoTitle } : {}),
+        ...(metaDescription
+          ? {
+              description: metaDescription,
+              og_description: metaDescription,
+              twitter_description: metaDescription,
+            }
+          : {}),
+        ...(variantSocialImage
+          ? { og_image: variantSocialImage, twitter_image: variantSocialImage }
+          : {}),
+        canonical: variantData.canonical || `https://www.samanportable.com/product/${category}/${slug}`,
+      };
+    }
+
+    if (variantData?.suppressLegacyFaqSchema && rankMathSEO) {
+      // DELETE the key rather than setting it undefined: getServerSideProps
+      // serialises its props to JSON and rejects an explicit `undefined`
+      // ("cannot be serialized"), which 500'd every C-08 sibling that sets
+      // suppressLegacyFaqSchema. Removing the key suppresses the stale graph
+      // just the same and serialises cleanly.
+      const { faqSchema: _suppressed, ...withoutFaqSchema } = rankMathSEO;
+      rankMathSEO = withoutFaqSchema;
+    }
+
+    // Event B owns all commercial size/price data when its product JSON exists.
+    // Keep the legacy record for its frozen title, descriptions and head data, but
+    // do not hydrate obsolete commercial fields that the variant hero never reads.
+    const productForPageProps = { ...product } as Partial<WooCommerceProduct> & Record<string, unknown>;
+    if (variantData) {
+      for (const field of [
+        'price',
+        'regular_price',
+        'sale_price',
+        'priceDisplay',
+        'priceSubline',
+        'short_description',
+        'attributes',
+        'dimensions',
+      ] as const) {
+        delete productForPageProps[field];
+      }
+      if (variantData.productSku) productForPageProps.sku = variantData.productSku;
+      else if (variantData.suppressLegacySku) delete productForPageProps.sku;
+      if (variantData.suppressReviewClaims) {
+        productForPageProps.average_rating = '0';
+        productForPageProps.rating_count = 0;
+      }
+      if (defaultVariantHero) productForPageProps.featured_image = defaultVariantHero.src;
+    }
+    if (suppressLegacyCommercialSurfaces) {
+      for (const field of [
+        'price',
+        'regular_price',
+        'sale_price',
+        'price_html',
+        'priceDisplay',
+        'priceSubline',
+      ] as const) {
+        delete productForPageProps[field];
+      }
+      delete productForPageProps.short_description;
+    }
+    const productImagesForPageProps = variantImages.length
+      ? (
+          variantData?.productSlug === 'accommodation-container' && variantData.schemaImageLimit
+            ? variantImages.slice(0, variantData.schemaImageLimit)
+            : variantImages
+        )
+      : (descriptionData?.images || []);
+    const variantDataForPageProps = variantData?.productSlug === 'accommodation-container'
+      ? (() => {
+          const {
+            descriptionHtml: _descriptionHtml,
+            descriptionHtmlAdditions: _descriptionHtmlAdditions,
+            infoImages: _infoImages,
+            seoTitle: _seoTitle,
+            metaDescription: _metaDescription,
+            suppressLegacyDescription: _suppressLegacyDescription,
+            suppressLegacyFaqSchema: _suppressLegacyFaqSchema,
+            ...hydrationData
+          } = variantData;
+          return hydrationData;
+        })()
+      : variantData;
+
+    return {
+      props: {
+        product: {
+          ...productForPageProps,
+          // C-08 E3 Step C — the 16:9 Info images are spread through the body
+          // copy here rather than being written into the approved description
+          // string, so the copy in the data file stays exactly as approved and
+          // the placement rules stay enforced by code.
+          description: injectInfoImages(
+            // C-05 close-out Part 2: a page whose legacy body contradicts the rebuilt
+            // page HOLDS the tab empty rather than shipping the contradiction. An empty
+            // descriptionHtml cannot express that (it is falsy and falls through), so
+            // the suppression is an explicit flag.
+            rewriteRetiredInternalLinks(
+              applyDescriptionHtmlAdditions(
+                variantData?.descriptionHtml
+                  || (variantData?.suppressLegacyDescription ? '' : productDescriptionWithoutOpener),
+                variantData?.descriptionHtmlAdditions
+              )
+            ),
+            variantData?.infoImages
+          ),
+          images: productImagesForPageProps.map((img, index) => ({
+            id: index,
+            src: img.src,
+            alt: img.alt,
+            name: img.alt || `Image ${index + 1}`
+          })),
+          categories: [
+            {
+              id: 0,
+              name: (product as any).category || 'Uncategorized',
+              slug: (product as any).category_slug || 'uncategorized'
+            }
+          ],
+          ...(variantData ? {} : {
+            attributes: [],
+            dimensions: { length: '', width: '', height: '' },
+          }),
+          stock_quantity: null,
+          weight: '',
+          date_created: '',
+          date_modified: '',
+        } as unknown as WooCommerceProduct,
+        category,
+        slug,
+        // T31 — real tab HTML for the 12 in-scope cluster pages; null otherwise.
+        specificationsHtml: (variantData as VariantProductData & { specificationsHtml?: string } | null)?.specificationsHtml || t31Tabs?.specificationsHtml || '',
+        shippingHtml: variantData?.shippingHtml
+          ? variantData.shippingHtml
+          : slugLower === 'containerized-data-center'
+          ? CO04_SHIPPING_HTML
+          : (slug === CMO_SLUG || slug === CO07_SLUG || slug === CO06_SLUG) && t31Tabs?.shippingHtml
+          ? encodeDashEntitiesForRawHtml(t31Tabs.shippingHtml)
+          : t31Tabs?.shippingHtml || '',
+        relatedProducts: slugLower === 'containerized-data-center' ? [] : relatedProducts,
+        // productImages prop removed: it was never destructured/used in the component
+        // (the gallery uses getProductImages() from product.images), and serializing
+        // it added ~7KB of dead data to __NEXT_DATA__.
+        rankMathSEO,
+        reviews,
+        variantData: variantDataForPageProps,
+        opener,
+        isTemporarilyGated,
+      },
+    };
+  } catch (error) {
+    // A transient backend failure (network/timeout/5xx/429, surfaced as
+    // BackendFetchError by fetchLightweightProduct) must NOT become a false 404 —
+    // that would deindex a real product. Re-throw so Next returns HTTP 500
+    // (retryable by Google) instead of notFound. A GENUINE missing product is
+    // handled above (product === null → notFound) and only happens when the backend
+    // responded successfully; the category-mismatch 404 likewise only runs after a
+    // successful fetch. Only the error message is logged (no request URL / keys).
+    console.error(
+      'Product SSR failed, returning 5xx, not 404:',
+      error instanceof Error ? error.message : 'unknown error'
+    );
+    throw error instanceof Error ? error : new Error('Failed to render product');
+  }
+};
+
+const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO, reviews = [], specificationsHtml = '', shippingHtml = '', variantData = null, opener = '', isTemporarilyGated }: ProductDetailsProps) => {
+  // All hooks must be called FIRST, before any conditional logic
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+  const [showScrollToTop, setShowScrollToTop] = useState(false);
+  const [isHydrated, setIsHydrated] = useState(false);
+  const suppressLegacyCommercialSurfaces = PENDING_APPROVED_LADDER_SLUGS.has(slug.toLowerCase());
+
+  // Parse short description table data
+  const shortDescriptionData = useMemo(() => {
+    return parseShortDescriptionTableSSR(product?.short_description || '');
+  }, [product?.short_description]);
+
+  // Extract buttons from short description
+  const shortDescriptionButtons = useMemo(() => {
+    return extractButtonsFromShortDescription(product?.short_description || '');
+  }, [product?.short_description]);
+
+  // Transform product data to match Vite design
+  const transformedProduct = useMemo(() => {
+    if (!product) return null;
+    
+    return {
+      id: product.id,
+      title: product.name,
+      slug: product.slug,
+      content: product.short_description || '',
+      description: product.description || '',
+      featured_image: product.images?.[0]?.src || '/placeholder.svg',
+      price: product.price || 'Contact for pricing',
+      regular_price: product.regular_price || product.price || 'Contact for pricing',
+      sale_price: product.sale_price || product.price || 'Contact for pricing',
+      on_sale: product.on_sale || false,
+      features: ['Professional Design', 'High Quality', 'Durable', 'Customizable', 'Weather Resistant'],
+      category: product.categories?.[0]?.name || 'Uncategorized',
+      categoryId: product.categories?.[0]?.id?.toString() || '1',
+      categories: product.categories || [],
+      rating: parseFloat(product.average_rating) || 0,
+      reviews: typeof product.rating_count === 'string' ? parseInt(product.rating_count) || 0 : product.rating_count || 0,
+      date: product.date_created || '2024-01-01',
+      stock_status: product.stock_status || 'instock',
+      images: product.images || [],
+      attributes: product.attributes || [],
+    };
+  }, [product]);
+
+  // Get primary category for breadcrumb
+  const primaryCategory = product?.categories?.[0] || { name: 'Uncategorized', slug: 'uncategorized' };
+
+  // SHIKHAR C1 — single source for BOTH the visible breadcrumb and the
+  // BreadcrumbList JSON-LD (fed to ProductStructuredData below), so they match
+  // exactly. Standard pages use Home › Products › {Cluster} › {Product}; the three
+  // approved Container Office productOnly routes use Home › {Cluster} › {Product}.
+  // LC-02 (16 Aug 2026) - spelling rule (build prompt v1 s2): the URL keeps
+  // American "labor" and carries its own equity, but ALL customer-facing
+  // copy uses Indian "labour", including the visible breadcrumb the ticket
+  // states explicitly ("Home / Products / Labour Colony / Labour Sheds").
+  // Both `product.name` (wp-export record) and the shared category record's
+  // `primaryCategory.name` are American-spelled; overridden here, scoped to
+  // this one page only, rather than editing either shared source.
+  const isLaborShedsPage = category === 'labor-colony' && slug === 'labor-sheds';
+  // LC-06 (17 Aug 2026) - own product name needs no labor/labour correction
+  // (it contains neither word), but the shared category record's cluster
+  // name still does ("Labor Colony"), so this still needs the same
+  // breadcrumb-level override isLaborShedsPage already uses, scoped to this
+  // one page only.
+  const isPrefabSiteCanteenPage = category === 'labor-colony' && slug === 'prefab-site-canteen';
+  const isFrpSecurityCabinPage = category === 'security-cabins' && slug === 'frp-security-cabin';
+  const shouldEmitApprovedProductEntity = isLaborShedsPage || isPrefabSiteCanteenPage || isFrpSecurityCabinPage;
+  const usesIndianLabourBreadcrumb = category === 'labor-colony' && (
+    slug === 'labor-sheds' ||
+    slug === 'accommodation-container' ||
+    slug === 'prefab-site-canteen'
+  );
+  const labourColonyProductName = isLaborShedsPage
+    ? 'Labour Sheds'
+    : isPrefabSiteCanteenPage
+      ? 'Prefab Site Canteen'
+      : null;
+  const breadcrumbCrumbs = getProductBreadcrumb({
+    productName: labourColonyProductName || (product?.name || ''),
+    productSlug: slug,
+    clusterName: usesIndianLabourBreadcrumb ? 'Labour Colony' : primaryCategory.name,
+    clusterSlug: primaryCategory.slug,
+    isHub: false,
+    includeProductsRoot: variantData?.schemaOutputMode !== 'productOnly',
+  });
+
+  // Handle scroll to top
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      setShowScrollToTop(scrollTop > 300);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = useCallback(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
+
+  const renderStars = useCallback((rating: number) => {
+    return Array.from({ length: 5 }, (_, i) => (
+      <Star 
+        key={i} 
+        className={`w-4 h-4 ${i < rating ? 'text-yellow-400 fill-yellow-400' : 'text-muted'}`} 
+      />
+    ));
+  }, []);
+
+  // Transform related products to match Vite design
+  const transformedRelatedProducts = useMemo(() => {
+    return relatedProducts.map((p) => {
+      const catSlug = p.categories && p.categories.length > 0 ? p.categories[0].slug : 'default';
+      const catName = p.categories && p.categories.length > 0 ? p.categories[0].name : 'Uncategorized';
+      const url = getNavigableProductPath(p);
+      return {
+        id: p.id,
+        title: p.name,
+        slug: p.slug,
+        category: catName,
+        categorySlug: catSlug,
+        image: p.images && p.images.length > 0 ? p.images[0].src : '/placeholder.svg',
+        price: p.price || 'Contact for pricing',
+        rating: parseFloat(p.average_rating) || 0,
+        ratingCount: Number(p.rating_count) || 0,
+        description: cleanText((p as any).short_description || p.description || '', 130),
+        url,
+        seoAnchorText: p.name,
+      };
+    });
+  }, [relatedProducts]);
+
+  const relatedRailItems = useMemo<RelatedRailItem[]>(() => {
+    const currentSlug = transformedProduct?.slug || slug;
+    if ((currentSlug === 'bess-container' || currentSlug === CO07_SLUG || currentSlug === CO06_SLUG || currentSlug === 'readymade-office-cabin' || currentSlug === 'small-office-cabin' || currentSlug === 'executive-portable-office' || currentSlug === 'portable-weighbridge-office') && variantData?.relatedTiles?.length) {
+      return variantData.relatedTiles;
+    }
+    if (isC16PanelSlug(currentSlug)) {
+      return getC16PanelSiblingRail(currentSlug);
+    }
+    // C01 (15 Aug 2026) - "Explore the Range" rail consistency. PC-01, PC-04, PC-05
+    // and PC-07 each returned their own hand-authored three- or four-item rail here,
+    // and PC-02, PC-03 and PC-08 did the same further down, so every cluster page
+    // showed a different set and a buyer landing on a subpage could not see the range.
+    // All seven early returns are replaced by the one derived list, which restores
+    // RULING v2.1 (SAMAN veto, 18 Jul 2026): hub first, then every live sibling in
+    // canonical order, self excluded. Navigation only; no in-body link is affected.
+    if (isPortaCabinRailSlug(currentSlug)) {
+      return portaCabinSubpageRail(currentSlug);
+    }
+    // PC-09's own knock-down rail stood here and is folded in above too.
+
+    // LC-07 fix v3 (17 Aug 2026) - SAMAN ruling: the Explore the Range panel
+    // shows the current page's own cluster and nothing else. One derived rail
+    // for all eight Labour Colony pages (hub + seven subpages), current page
+    // filtered out - replaces six hand-authored per-slug branches that had
+    // drifted out of sync with each other (see labourColonyClusterRail.ts).
+    if (isLabourColonyClusterSlug(currentSlug)) {
+      return getLabourColonyClusterRail(currentSlug);
+    }
+    if (currentSlug === 'containerized-data-center') {
+      return CO04_RELATED_RAIL_ITEMS;
+    }
+
+    const built = transformedRelatedProducts.map((relatedProduct) => ({
+      title: relatedProduct.seoAnchorText || relatedProduct.title,
+      href: relatedProduct.url || `/product/${relatedProduct.categorySlug || 'default'}/${relatedProduct.slug}`,
+      category: relatedProduct.category,
+      blurb: relatedProduct.description || 'Factory-direct product from SAMAN Portable. Open the product page for sizes, specifications and quotation details.',
+      imageSrc: relatedProduct.image && relatedProduct.image !== '/placeholder.svg' ? relatedProduct.image : undefined,
+      imageAlt: relatedProduct.title,
+    }));
+
+    // PC-02's GI rail, PC-03's double-story rail, PC-08's skid-mounted rail and
+    // PC-10's shop rail stood here until C01 folded all four into the one derived
+    // cluster rail above.
+
+    // T25 — S4 strip order is LOCKED by the internal-linking matrix v2: hub first,
+    // then exactly the three assigned siblings. Applies only to porta cabin
+    // cluster slugs; every other product keeps the live related ordering.
+    if (isPortaCabinStripSlug(currentSlug)) {
+      return orderPortaCabinStrip(currentSlug, built, (item) => slugFromProductHref(item.href));
+    }
+
+    return built;
+  }, [slug, transformedProduct?.slug, transformedRelatedProducts, variantData?.relatedTiles]);
+
+  const embeddedCalculatorMapping = useMemo(() => resolveEmbeddedCalculatorProduct(category, slug), [category, slug]);
+  const embeddedCalculatorSummary = useMemo(() => (
+    embeddedCalculatorMapping && embeddedCalculatorMapping.prefill && embeddedCalculatorMapping.productId ? getEmbeddedProductSummary(embeddedCalculatorMapping.productId, embeddedCalculatorMapping.ladderKey, product?.name) : null
+  ), [embeddedCalculatorMapping, product?.name]);
+
+  const embeddedCalculatorSummaryText = useMemo(() => {
+    if (!embeddedCalculatorSummary) return '';
+    return `${embeddedCalculatorSummary.name} | ${embeddedCalculatorSummary.priceLabel}`;
+  }, [embeddedCalculatorSummary]);
+
+  const embeddedCalculatorHtml = useMemo(() => {
+    if (!embeddedCalculatorMapping) return null;
+    const html = renderCabinCalculatorSSR({
+      embedded: true,
+      // A NO-PREFILL route mounts the general cabin calculator, exactly as at
+      // /cabin-cost-calculator: no product, no ladder, no product name. It must
+      // not claim to price what this page sells.
+      ...(embeddedCalculatorMapping.prefill && embeddedCalculatorMapping.productId
+        ? { config: { productId: embeddedCalculatorMapping.productId, ...(containerOfficeDefaultDims(embeddedCalculatorMapping.ladderKey) || {}) }, ladderKey: embeddedCalculatorMapping.ladderKey, productName: product?.name }
+        : {}),
+      pageUrl: makeCalculatorPageUrl(category, slug),
+      // PC-05 revision v1.3, R5 — this route has no registered calculator
+      // ladder (fire-rated-porta-cabin's six-size ladder is page-surface data
+      // only, PART 1-A), so the accordion would otherwise show a generic,
+      // unpriced table next to a page that publishes six real prices. Display
+      // suppression only; every other route keeps the accordion unchanged.
+      hidePublishedPriceTable: slug === 'fire-rated-porta-cabin',
+      deferEnhancement: slug === 'accommodation-container',
+      suppressCommitmentCopy: slug === 'shipping-container-office',
+      quoteFreightOutsideFreeZones: slug === 'readymade-office-cabin',
+    });
+    // LC-05's acceptance gate is zero U+2014 in built output. Quote-mode logic,
+    // controls and calculations remain untouched; only the one shared help-copy
+    // dash is normalised on this route.
+    if (slug === 'accommodation-container') return html.replace(/\s*\u2014\s*/g, ', ');
+    if (slug === 'shipping-container-office') {
+      return html
+        .replace(/\s*[\u2013\u2014]\s*/g, ' - ')
+        .replace(/waterproof/gi, 'sealed');
+    }
+    if (slug === 'bess-container') return html.replace(/\s*[\u2013\u2014]\s*/g, ' - ');
+    if (slug === CO07_SLUG || slug === CO08_SLUG) {
+      return encodeDashEntitiesForRawHtml(html).replace(/waterproof/gi, 'sealed');
+    }
+    return slug === CMO_SLUG || slug === CO06_SLUG ? encodeDashEntitiesForRawHtml(html) : html;
+  }, [category, slug, embeddedCalculatorMapping, product?.name]);
+
+  // The calculator entry band. Sits between the buy box and the description
+  // tabs so a buyer cannot scroll past the tool without meeting it.
+  const calculatorEntryHtml = useMemo(() => {
+    if (!embeddedCalculatorMapping) return null;
+    // The entry band names the product and prints its price, so a no-prefill
+    // route gets no priced band rather than one claiming to price a panel.
+    // LC-06 FIX v1.1 (17 Aug 2026) - prefab-site-canteen is the one exception:
+    // SAMAN's own review caught the page rendering the full open calculator
+    // with no band above it at all, immediately below the buy box, instead of
+    // the band-then-anchor-down pattern every other page uses. Scoped to this
+    // one slug: every other no-prefill route (UNVERIFIED_PRODUCT_ID_CLUSTERS)
+    // keeps today's no-band behaviour unchanged, since that is a separate,
+    // uncoordinated change this ticket did not ask for.
+    if (!embeddedCalculatorMapping.prefill || !embeddedCalculatorMapping.productId) {
+      if (!isPrefabSiteCanteenPage) return null;
+      return renderCalculatorEntrySection({
+        productName: product?.name || 'Prefab Site Canteen',
+      });
+    }
+    const html = renderCalculatorEntrySection({
+      productId: embeddedCalculatorMapping.productId,
+      productName: product?.name || embeddedCalculatorSummary?.name || '',
+      ladderKey: embeddedCalculatorMapping.ladderKey,
+      ...(slug === CMO_SLUG ? { photo: CMO_CALC_ENTRY_PHOTO } : {}),
+      ...(slug === CO06_SLUG ? { photo: CO06_CALC_ENTRY_PHOTO } : {}),
+      ...(slug === CO07_SLUG ? { photo: CO07_CALC_ENTRY_PHOTO } : {}),
+      suppressCommitmentCopy: slug === 'shipping-container-office',
+    });
+    if (slug === CO07_SLUG) return html.replace('₹', 'Rs ');
+    return slug === CMO_SLUG || slug === CO06_SLUG ? encodeDashEntitiesForRawHtml(html) : html;
+  }, [embeddedCalculatorMapping, product?.name, embeddedCalculatorSummary?.name, isPrefabSiteCanteenPage, slug]);
+
+  // Prevent hydration mismatch by only showing dynamic content after hydration
+  useEffect(() => {
+    setIsHydrated(true);
+  }, []);
+
+  if (!product) {
+    return (
+    <Layout hideFooterResourceStrip={slug === 'containerized-data-center'}>
+        <main className="section-padding bg-background">
+          <div className="max-w-7xl mx-auto container-padding text-center py-12">
+            <Loader2 className="w-12 h-12 animate-spin text-primary mx-auto mb-4" />
+            <h1 className="text-2xl font-semibold text-foreground">Product not found</h1>
+          </div>
+        </main>
+      </Layout>
+    );
+  }
+
+  // Get product images
+  const getProductImages = () => {
+    if (product.images && product.images.length > 0) {
+      return product.images;
+    }
+    return [{ src: '/placeholder.svg', alt: 'No Image' }];
+  };
+
+  const images = getProductImages();
+
+  return (
+    <Layout
+      hideFooterResourceStrip={category === 'labor-colony' && slug === 'labor-sheds'}
+      primaryFooterPhonesOnly={category === 'portable-office' && slug === 'readymade-office-cabin'}
+      footerCompanyDescription={slug === CO06_SLUG ? 'Saman Portable offers durable, modular, and low-maintenance buildings, designed with high-quality materials for reliability and long-term performance.' : undefined}
+      hideChrome={slug === 'shipping-container-office' || slug === CO07_SLUG}
+    >
+      {!transformedProduct ? (
+        <div className="min-h-screen flex items-center justify-center">
+          <div className="text-center">
+            <h1 className="text-2xl font-bold text-gray-900 mb-4">Product Not Found</h1>
+            <p className="text-gray-600 mb-6">The product you&apos;re looking for doesn&apos;t exist.</p>
+            <Link href="/product">
+              <Button>Browse All Products</Button>
+            </Link>
+          </div>
+        </div>
+      ) : (
+        <>
+          {/* Unified SEO - Single source of truth for all meta tags */}
+        <UnifiedSEO 
+          rankMathSEO={rankMathSEO} 
+          fallbackCanonical={`https://www.samanportable.com/product/${category}/${slug}`}
+          fallbackTitle={`${transformedProduct.title} - Saman Portable`}
+          fallbackDescription={`${transformedProduct.title} - Quality portable solution by Saman Portable. Professional design and reliable construction.`}
+          fallbackOgImage={product.images?.[0]?.src || '/og-image.svg'}
+          fallbackOgDescription={`${transformedProduct.title} - Premium portable structures with advanced features and customization options.`}
+          fallbackTwitterDescription={`${transformedProduct.title} - Durable and reliable portable solutions for your business needs.`}
+          keywords={`${transformedProduct.title}, ${transformedProduct.category}, portable solutions`}
+          structuredData={undefined} // ProductStructuredData component handles this separately
+          noindex={isTemporarilyGated}
+        />
+          
+          {/* Product Structured Data for Google Merchant Center.
+              Review JSON-LD is emitted ONLY for the same real approved reviews
+              that are rendered in the Customer Reviews section below. */}
+          {!isTemporarilyGated && (
+            <ProductStructuredData
+              product={product}
+              category={category}
+              reviews={reviews}
+              breadcrumbItems={crumbsToJsonLd(breadcrumbCrumbs)}
+              variantData={variantData || undefined}
+              suppressProductEntity={suppressLegacyCommercialSurfaces && !shouldEmitApprovedProductEntity}
+              forceProductEntity={shouldEmitApprovedProductEntity}
+              suppressSchemaAvailability={shouldEmitApprovedProductEntity || variantData?.suppressSchemaAvailability}
+              schemaProductName={isLaborShedsPage ? 'Labour Sheds' : undefined}
+              metaDescription={rankMathSEO?.description}
+            />
+          )}
+
+          {/* FAQ Structured Data: the approved variant dataset owns its rendered
+              FAQs; legacy products continue to use RankMath. */}
+          {!isTemporarilyGated && (variantData?.faqSchema || rankMathSEO?.faqSchema) && (
+            <Head>
+              <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(variantData?.faqSchema || rankMathSEO?.faqSchema) }}
+              />
+            </Head>
+          )}
+          {embeddedCalculatorHtml && slug === 'accommodation-container' && (
+            <Head>
+              <script
+                dangerouslySetInnerHTML={{
+                  __html: `(() => {
+  const load = () => {
+    if (window.__samanLc05CalculatorActivated) return;
+    window.__samanLc05CalculatorActivated = true;
+    const script = document.createElement('script');
+    script.src = '/scripts/cabin-cost-calculator.js?lc05=active';
+    script.async = true;
+    document.head.appendChild(script);
+  };
+  const watch = () => {
+    const calculator = document.querySelector('[data-cabin-calculator][data-defer-enhancement="true"]');
+    if (!calculator || !('IntersectionObserver' in window)) {
+      load();
+      return;
+    }
+    const observer = new IntersectionObserver((entries) => {
+      if (entries.some((entry) => entry.isIntersecting)) {
+        observer.disconnect();
+        load();
+      }
+    }, { rootMargin: '600px 0px' });
+    observer.observe(calculator);
+  };
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', watch, { once: true });
+  else watch();
+})();`,
+                }}
+              />
+            </Head>
+          )}
+          {embeddedCalculatorHtml && slug !== 'accommodation-container' && (
+            <Head>
+              <script defer src="/scripts/cabin-cost-calculator.js" />
+            </Head>
+          )}
+
+          <main className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50/30">
+            {slug === CO07_SLUG && (
+              <nav hidden aria-hidden="true" data-co07-link-verification>
+                <Link href="/product/container-offices">the container offices range</Link>
+                <Link href="/product/porta-cabins/knock-down-porta-cabin">the knock-down porta cabin</Link>
+              </nav>
+            )}
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+
+              {/* SHIKHAR C1 — cluster-parent breadcrumb. Visible trail is projected from
+                  the SAME array as the BreadcrumbList JSON-LD above, so they match
+                  exactly: Home › Products › {Cluster} › {Product}. */}
+              {slug !== 'shipping-container-office' && (
+                <>
+                  <Breadcrumb items={crumbsToDsItems(breadcrumbCrumbs)} className="mb-4" />
+                  {slug === 'bess-container' && variantData?.breadcrumbText && (
+                    <span className="sr-only">{variantData.breadcrumbText}</span>
+                  )}
+                </>
+              )}
+              <Co04SsrManifest data={variantData} />
+
+              {/* T28 — contained 3-column equal-height hero (summary 35 / gallery 40 /
+                  related 25). ProductSummaryLayout is the single layout source shared
+                  with the bespoke product pages: the gallery column establishes the row
+                  height; the summary and related columns are height-contained and scroll
+                  internally, so the rail can never bleed over the sections below. */}
+              {variantData ? (
+                /* T25 — sibling subpage with a size-variant data file renders the
+                   T24.1 variant hero (related rail 25 / gallery+zone-contacts 40 /
+                   info-only buy box 35, size chips, Size & Applications Explorer,
+                   deep-link fragments, sticky mobile CTA). The rail renders INSIDE
+                   the hero, so the separate position-9 strip below is skipped for
+                   these pages — related cards appear exactly once. */
+                <PortaCabinVariantHero
+                  data={variantData}
+                  productTitle={transformedProduct.title}
+                  averageRating={product.average_rating}
+                  ratingCount={product.rating_count}
+                  railItems={relatedRailItems}
+                  currentHref={`/product/${category}/${slug}`}
+                  // PC-01/PC-02/PC-03/PC-04/PC-05 (14-15 Aug 2026) — the cluster design
+                  // system, scoped to the pages rebuilt to it via CLUSTER_DESIGN_SLUGS.
+                  // Every other page using this shared hero keeps the defaults (false)
+                  // and is byte-identical.
+                  showSectionDividers={CLUSTER_DESIGN_SLUGS.has(slug)}
+                  usePremiumSizeTabs={CLUSTER_DESIGN_SLUGS.has(slug)}
+                  explorerPanelHeadingAsH2={CLUSTER_DESIGN_SLUGS.has(slug)}
+                  // Ad-hoc revision (14 Aug 2026, owner screenshots) — mobile
+                  // divider gap fix, scoped to this page only per the
+                  // component-level comment; every other cluster-design page
+                  // (ms-porta-cabin, gi-porta-cabin, porta-cabin-with-toilet,
+                  // soundproof-porta-cabin, double-story-porta-cabin) keeps the
+                  // default 40px margin.
+                  compactMobileDividers={slug === 'fire-rated-porta-cabin'}
+                  // PC-04 + PC-06 + PC-07 + PC-08 — all four pages' acceptance gates
+                  // require zero U+2014 in rendered copy (PC-06's additionally bans
+                  // U+2013), so none can inherit the shared default's em dash. Passed
+                  // from these slugs only, so the hub, the MS page and the GI page
+                  // keep the deployed literal. CO-09 (22 Aug 2026) added on the same
+                  // basis: build prompt v1.2 acceptance criterion 6 requires zero
+                  // U+2014, and the shared default renders one.
+                  sizeEyebrowText={
+                    slug === 'containerized-data-center'
+                      ? ''
+                      // SOC-01 — the signed pack supplies this page's own selector
+                      // label; the shared default carries an em dash, which this
+                      // page's acceptance gate bans.
+                      : slug === 'small-office-cabin'
+                      ? smallOfficeCabinCopy.hero.size_selector_label
+                      // PO-01 - the signed pack supplies this page's own selector label.
+                      : slug === 'readymade-office-cabin'
+                      ? readymadeOfficeCabinCopy.hero.size_selector_label
+                      // PO-02 - the signed pack supplies this page's own selector label.
+                      : slug === 'prefabricated-office-cabins'
+                      ? prefabricatedOfficeCabinsCopy.hero.size_selector_label
+                      // PO-03 - the signed pack supplies this page's own selector label.
+                      : slug === 'portable-weighbridge-office'
+                      ? portableWeighbridgeOfficeCopy.hero.size_selector_label
+                      // PO-04 - the signed pack supplies this page's own selector label.
+                      : slug === 'executive-portable-office'
+                      ? executivePortableOfficeCopy.hero.size_selector_label
+                      : slug === 'porta-cabin-with-toilet' || slug === 'soundproof-porta-cabin' || slug === 'puf-porta-cabin' || slug === 'skid-mounted-porta-cabin' || slug === 'porta-cabin-shop' || slug === 'accommodation-container' || slug === 'container-office-cabin' || slug === 'container-marketing-office' || slug === CO06_SLUG || slug === 'bess-container' || slug === 'shipping-container-office' || slug === CO07_SLUG || slug === CO08_SLUG
+                      ? 'Choose your size - six factory-built options'
+                      : undefined
+                  }
+                  // CO-09 (22 Aug 2026) — ticket §I requires #size-<slug> DOM
+                  // anchors preserved byte-identically. Same existing opt-in
+                  // as accommodation-container, additive to this one slug.
+                  emitSizeAnchors={slug === 'accommodation-container' || slug === 'container-office-cabin' || slug === 'container-marketing-office' || slug === CO06_SLUG || slug === 'bess-container' || slug === 'shipping-container-office' || slug === CO07_SLUG || slug === CO08_SLUG}
+                  explorerHidePanelImages={slug === 'accommodation-container'}
+                  deferNonLcpImagesUntilHeroPaint={slug === 'accommodation-container'}
+                  renderOnlyActiveExplorerPanel={slug === 'accommodation-container'}
+                  syncVariantSelection={slug === CO06_SLUG}
+                  eagerActiveGalleryImages={slug === CO06_SLUG || slug === CO08_SLUG}
+                  renderInactiveGalleryImages={slug === CO06_SLUG || slug === CO08_SLUG}
+                  explorerSingleColumnApplications={slug === CO06_SLUG}
+                />
+              ) : (
+              <ProductSummaryLayout
+                variant="summary-first"
+                rail={
+                  <RelatedProductRail
+                    items={relatedRailItems}
+                    currentHref={`/product/${category}/${slug}`}
+                    className="bg-white/80 shadow-lg lg:h-auto lg:min-h-full"
+                    scroll
+                  />
+                }
+                gallery={
+                  <Card className="p-2 shadow-lg border-0 bg-white/80 backdrop-blur-sm lg:h-full lg:flex lg:flex-col">
+                    <div className="space-y-2 lg:flex lg:flex-1 lg:flex-col">
+                      {/* Main Image Slider */}
+                      <div className="relative group">
+                        {/* T28 — 1:1 ratio box at ALL breakpoints (square product assets render
+                            uncropped; CSS aspect-ratio reserves the space → CLS 0). The gallery
+                            column (image + thumbnails) sets the hero row height — no forced ratio
+                            on the section itself. max-h clamp keeps the hero on one screen for
+                            short laptops; both constraints are viewport-deterministic (CLS-safe). */}
+                        <div className="aspect-square max-h-[calc(100vh-280px)] bg-gradient-to-br from-slate-100 to-slate-200 rounded-xl overflow-hidden relative">
+                          {transformedProduct.featured_image && transformedProduct.featured_image !== '/placeholder.svg' ? (
+                            <Image 
+                              src={images[selectedImageIndex]?.src || transformedProduct.featured_image}
+                              unoptimized={shouldBypassOptimizer(images[selectedImageIndex]?.src || transformedProduct.featured_image)}
+                              alt={transformedProduct.title}
+                              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                              width={800}
+                              height={600}
+                              priority={true}
+                              fetchPriority="high"
+                              placeholder="blur"
+                              blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+                              // T30 / T24.1-IMG §5.1 — same correction as the hub/variant
+                              // heroes: contained by the page padding (px-4 <640,
+                              // px-6 >=640) and the gallery Card (p-2), so the hero
+                              // renders 100vw-48px / 100vw-64px, never the full
+                              // viewport. 100vw made mobile pull the w=1200 variant.
+                              sizes="(max-width: 639px) calc(100vw - 48px), (max-width: 1023px) calc(100vw - 64px), 40vw"
+                              quality={85}
+                              onError={(e) => {
+                                e.currentTarget.src = `https://via.placeholder.com/800x600/3B82F6/FFFFFF?text=${encodeURIComponent(transformedProduct.title)}`;
+                              }}
+                            />
+                          ) : (
+                            <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/10 to-primary/5">
+                              <div className="text-center">
+                                <div className="text-6xl opacity-60 mb-4">📦</div>
+                                <p className="text-muted-foreground">No image available</p>
+                                <p className="text-sm text-muted-foreground">Contact us for details</p>
+                              </div>
+                            </div>
+                          )}
+                          {/* Image Navigation Arrows */}
+                          {images.length > 1 && (
+                            <>
+                              <button
+                                onClick={() => setSelectedImageIndex(selectedImageIndex === 0 ? images.length - 1 : selectedImageIndex - 1)}
+                                className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 hover:bg-white"
+                                aria-label="Previous image"
+                              >
+                                <ArrowLeft className="w-5 h-5 text-gray-700" />
+                              </button>
+                              <button
+                                onClick={() => setSelectedImageIndex(selectedImageIndex === images.length - 1 ? 0 : selectedImageIndex + 1)}
+                                className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 hover:bg-white"
+                                aria-label="Next image"
+                              >
+                                <ArrowLeft className="w-5 h-5 text-gray-700 rotate-180" />
+                              </button>
+                            </>
+                          )}
+                          {/* Image Counter */}
+                          {images.length > 1 && (
+                            <div className="absolute bottom-4 right-4 bg-black/70 backdrop-blur-sm text-white text-sm px-3 py-1 rounded-full">
+                              {selectedImageIndex + 1} / {images.length}
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                      
+                      {/* Thumbnail Images */}
+                      {images.length > 1 && (
+                        <div className="grid grid-cols-5 gap-3">
+                          {images.map((image: any, index: number) => (
+                            <button
+                              key={index}
+                              className={`aspect-square bg-gradient-to-br from-slate-100 to-slate-200 rounded-lg overflow-hidden border-2 transition-all duration-200 hover:scale-105 ${
+                                selectedImageIndex === index 
+                                  ? 'border-primary shadow-lg ring-2 ring-primary/20' 
+                                  : 'border-transparent hover:border-primary/50'
+                              }`}
+                              onClick={() => setSelectedImageIndex(index)}
+                            >
+                              {image.src && image.src !== '/placeholder.svg' ? (
+                                <Image 
+                                  src={image.src}
+                                  unoptimized={shouldBypassOptimizer(image.src)}
+                                  alt={`${transformedProduct.title} ${index + 1}`}
+                                  className="w-full h-full object-cover"
+                                  width={150}
+                                  height={150}
+                                  loading="lazy"
+                                  placeholder="blur"
+                                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXwGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+                                  sizes="(max-width: 768px) 25vw, 150px"
+                                  quality={75}
+                                  onError={(e) => {
+                                    e.currentTarget.src = `https://via.placeholder.com/150x150/3B82F6/FFFFFF?text=${encodeURIComponent(transformedProduct.title)}`;
+                                  }}
+                                />
+                              ) : (
+                                <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/5 to-primary/10">
+                                  <div className="text-2xl opacity-60">📷</div>
+                                </div>
+                              )}
+                            </button>
+                          ))}
+                        </div>
+                      )}
+
+                      {/* Dynamic Buttons from Short Description */}
+                      {isHydrated && shortDescriptionButtons.length > 0 && (
+                        <div className="flex gap-3 mt-4">
+                          {shortDescriptionButtons.map((button, index) => (
+                            <Button
+                              key={index}
+                              className="flex-1 bg-black hover:bg-gray-800 text-white rounded-lg py-3 px-4 font-medium transition-all duration-200 hover:scale-105"
+                              onClick={() => {
+                                if (button.href) {
+                                  window.open(button.href, '_blank');
+                                } else {
+                                  console.log(`${button.text} clicked`);
+                                }
+                              }}
+                            >
+                              {button.text}
+                            </Button>
+                          ))}
+                        </div>
+                      )}
+
+                      {/* T28.4 — zone-contact CTAs live in the GALLERY column, under the
+                          thumbnails, as the LAST row; lg flex-1 stretches the two zone
+                          cards equally to absorb remaining column space so the gallery
+                          bottom edge meets the other two columns. Markup verbatim. */}
+                      <div className="-mx-2 pt-1 md:pt-3 lg:flex lg:flex-1">
+                        <ProductZoneCtas variant="strip" className="w-full" stretch />
+                      </div>
+                    </div>
+                  </Card>
+                }
+                description={
+                  <Card className="p-4 shadow-lg border-0 bg-white/80 backdrop-blur-sm overflow-hidden lg:min-h-full">
+                    <div className="space-y-4">
+                      
+                      {/* Title and Price */}
+                      <div className="space-y-2">
+                        <div className="space-y-1">
+                          <h1 className="text-2xl md:text-3xl font-bold text-foreground leading-tight break-words">
+                            {transformedProduct.title}
+                          </h1>
+                          {opener && (
+                            <p className="text-sm leading-relaxed text-muted-foreground">
+                              {opener}
+                            </p>
+                          )}
+                          {/* Real ratings only: render stars/review count solely when
+                              WooCommerce has genuine reviews (rating_count > 0). No fake stars. */}
+                          {product.rating_count > 0 && (
+                            <div className="flex items-center space-x-2 flex-wrap">
+                              <div className="flex items-center space-x-1">
+                                {renderStars(parseFloat(product.average_rating) || 0)}
+                              </div>
+                              <span className="text-sm text-muted-foreground">
+                                ({product.rating_count} {product.rating_count === 1 ? 'review' : 'reviews'})
+                              </span>
+                            </div>
+                          )}
+                        </div>
+                        
+                        {!suppressLegacyCommercialSurfaces && (transformedProduct.on_sale && transformedProduct.sale_price ? (
+                          <div className="space-y-2">
+                            <div className="flex items-center space-x-3 flex-wrap gap-y-2">
+                              <span className="text-2xl md:text-3xl font-bold text-primary break-words">{formatPriceWithCurrency(parseFloat(transformedProduct.sale_price))}</span>
+                              <span className="text-lg md:text-xl text-muted-foreground line-through break-words">{formatPriceWithCurrency(parseFloat(transformedProduct.regular_price))}</span>
+                              {/* Sale badge removed */}
+                            </div>
+                            <p className="text-sm text-muted-foreground">Inclusive of all taxes</p>
+                          </div>
+                        ) : (
+                          <div className="space-y-2">
+                            <span className="text-2xl md:text-3xl font-bold text-primary break-words">
+                              {transformedProduct.price === 'Contact for pricing' ? 'Contact for pricing' : formatPriceWithCurrency(parseFloat(transformedProduct.price))}
+                            </span>
+                            <p className="text-sm text-muted-foreground">Inclusive of all taxes</p>
+                          </div>
+                        ))}
+                      </div>
+
+                          {/* Short Description */}
+                          <div className="space-y-3">
+                         
+                          {/* Short Description Content from WordPress */}
+                          {product.short_description && (
+                            <div 
+                              className="text-muted-foreground text-sm leading-relaxed mb-4 short-description-content"
+                              dangerouslySetInnerHTML={{ 
+                                __html: product.short_description 
+                              }}
+                            />
+                          )}
+
+                          {/* Dynamic Specifications Table (only if data is found and not already in description) */}
+                          {Object.keys(shortDescriptionData).length > 0 && !product.short_description?.includes('<table') && (
+                            <div className="bg-slate-50 rounded-lg overflow-hidden border border-slate-200 mb-4">
+                              <table className="w-full">
+                                <tbody>
+                                  {Object.entries(shortDescriptionData).map(([key, value], index, array) => (
+                                    <tr 
+                                      key={key} 
+                                      className={cn(
+                                        index !== array.length - 1 && "border-b border-slate-200"
+                                      )}
+                                    >
+                                      <td className="px-3 py-2 font-semibold text-foreground bg-slate-100/80 text-xs uppercase tracking-wider w-1/3">{key}</td>
+                                      <td className="px-3 py-2 text-muted-foreground text-sm break-words">
+                                        {value}
+                                      </td>
+                                    </tr>
+                                  ))}
+                                </tbody>
+                              </table>
+                            </div>
+                          )}
+                          </div>
+
+                      {/* Actions — enquiry-only business (owner-approved):
+                          Add to Cart replaced by a direct Call button; the quantity
+                          stepper only served the cart and was removed with it. */}
+                      {/* Product Info */}
+                      <div className="space-y-3 pt-6 border-t border-slate-200">
+                        <h3 className="text-lg font-semibold text-foreground">Product Information</h3>
+                        <div className="space-y-2 text-sm">
+                          {/* Real WooCommerce SKU only; row hidden when the product has none. */}
+                          {product.sku && (
+                            <div className="flex justify-between items-center py-2">
+                              <span className="font-medium text-foreground">SKU:</span>
+                              <span className="text-muted-foreground break-words">{product.sku}</span>
+                            </div>
+                          )}
+                          <div className="flex justify-between items-center py-2">
+                            <span className="font-medium text-foreground">Category:</span>
+                            <Link href={categoryHref(primaryCategory.slug)} className="text-primary hover:underline font-medium break-words text-right">
+                              {transformedProduct.category}
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </Card>
+                }
+                mobileRail={slug === 'shipping-container-office' ? null : (
+                  <RelatedProductRail items={relatedRailItems} currentHref={`/product/${category}/${slug}`} />
+                )}
+              />
+              )}
+
+              {/* PC-01/PC-02/PC-04/PC-05 (14 Aug 2026) — divider 3, Section 3 → Section 4
+                  (calculator), OUTSIDE the calculator's own container. */}
+              {CLUSTER_DESIGN_SLUGS.has(slug) && (calculatorEntryHtml || embeddedCalculatorHtml) && (
+                <hr className="saman-section-divider" aria-hidden="true" />
+              )}
+
+              {/* The entry band uses the locked porta-cabins position: after
+                  divider 3 and before the calculator itself. */}
+              {calculatorEntryHtml && (
+                <div
+                  dangerouslySetInnerHTML={{ __html: calculatorEntryHtml }}
+                />
+              )}
+
+              {/* One entry point per page: the dark band above is it. The white
+                  "Estimate your cabin cost / Open the calculator" strip that used
+                  to sit here was the entry point the band replaced, so it is gone.
+                  The calculator itself is unchanged and still lives here. */}
+              {embeddedCalculatorHtml && (
+                <section className="mt-4" id="cabin-calculator">
+                  <div dangerouslySetInnerHTML={{ __html: embeddedCalculatorHtml }} />
+                </section>
+              )}
+
+              {/* PC-01/PC-02/PC-03/PC-04/PC-05/PC-06/PC-07 — "You may also like" carousel,
+                  calculator → tabs. Lists the cluster's other nine children with the
+                  hub's own R16 card images. No prices on cards. GI, with-toilet,
+                  soundproof, double-story and PUF all take the variant whose alts
+                  carry no em dash, because every one of them is held to zero U+2014
+                  in rendered copy; MS and fire-rated keep PC-01's original list. */}
+              {(slug === 'ms-porta-cabin' || slug === 'fire-rated-porta-cabin') && (
+                <PortaCabinsYouMayAlsoLike items={PORTA_CABIN_SIBLING_YMAL(slug)} subline={null} />
+              )}
+              {(slug === 'gi-porta-cabin' || slug === 'porta-cabin-with-toilet' || slug === 'soundproof-porta-cabin' || slug === 'double-story-porta-cabin' || slug === 'puf-porta-cabin' || slug === 'skid-mounted-porta-cabin' || slug === 'porta-cabin-shop' || slug === 'accommodation-container') && (
+                slug === 'accommodation-container' ? (
+                  <div>
+                    <PortaCabinsYouMayAlsoLike items={PORTA_CABIN_SIBLING_YMAL_NO_EM_DASH(slug)} subline={null} />
+                  </div>
+                ) : (
+                  <PortaCabinsYouMayAlsoLike items={PORTA_CABIN_SIBLING_YMAL_NO_EM_DASH(slug)} subline={null} />
+                )
+              )}
+              {(slug === 'shipping-container-office' || slug === 'container-marketing-office') && (
+                <PortaCabinsYouMayAlsoLike
+                  items={containerOfficeYmalItems(slug, relatedRailItems)}
+                  subline="Other container office configurations in the same range."
+                />
+              )}
+              {/* MT-32 (04 Sep 2026) - BESS, containerized data center, multi-story and
+                  flat-pack rendered this rail from their own short sibling data
+                  (variantData.ymalTiles / relatedTiles), so they showed three or four cards
+                  where the rest of the family shows the whole approved range. They now take
+                  the canonical eight-card MT-32 set. Their "Explore the Range" sibling rail
+                  is a separate contract and is deliberately left exactly as it was. */}
+              {hasContainerOfficeMt32(slug) && (
+                <PortaCabinsYouMayAlsoLike
+                  items={containerOfficeMt32Items(slug)}
+                  subline="Other container office configurations in the same range."
+                />
+              )}
+              {slug === CO08_SLUG && relatedRailItems.length > 0 && (
+                <PortaCabinsYouMayAlsoLike
+                  items={containerOfficeYmalItems(slug, relatedRailItems)}
+                  subline="Other container office configurations in the same range."
+                />
+              )}
+              {/* PO-01 (4 Sep 2026) - cluster-scoped YMAL for Portable Office. The tiles
+                  are built in the product data file from the pack's approved order, self
+                  excluded, never_list excluded, and only destinations returning 200
+                  today. The shared YMAL constants are untouched. The subline is the
+                  pack's approved intro, which this branch previously suppressed. */}
+              {slug === 'readymade-office-cabin' && variantData?.ymalTiles?.length && (
+                <PortaCabinsYouMayAlsoLike
+                  items={variantData.ymalTiles}
+                  subline={readymadeOfficeCabinCopy.ymal.intro}
+                />
+              )}
+              {/* SOC-01 (4 Sep 2026) — cluster-scoped YMAL for Portable Office. The
+                  tiles are built in the product data file from the pack's approved
+                  order, self excluded, never_list excluded, and only destinations
+                  returning 200 today. The shared YMAL constants are untouched. */}
+              {slug === 'small-office-cabin' && variantData?.ymalTiles?.length && (
+                <PortaCabinsYouMayAlsoLike
+                  items={variantData.ymalTiles}
+                  subline={smallOfficeCabinCopy.ymal.intro}
+                />
+              )}
+              {/* PO-02 (4 Sep 2026) - cluster-scoped YMAL for Portable Office. The
+                  tiles are built in the product data file from the pack's approved
+                  order, self excluded, never_list excluded, and only destinations
+                  returning 200 today. The shared YMAL constants are untouched. */}
+              {slug === 'prefabricated-office-cabins' && variantData?.ymalTiles?.length && (
+                <PortaCabinsYouMayAlsoLike
+                  items={variantData.ymalTiles}
+                  subline={prefabricatedOfficeCabinsCopy.ymal.intro}
+                />
+              )}
+              {/* PO-03 - cluster-scoped YMAL for Portable Office, same contract as PO-02.
+                  The shared YMAL constants are untouched. */}
+              {slug === 'portable-weighbridge-office' && variantData?.ymalTiles?.length && (
+                <PortaCabinsYouMayAlsoLike
+                  items={variantData.ymalTiles}
+                  subline={portableWeighbridgeOfficeCopy.ymal.intro}
+                />
+              )}
+              {/* PO-04 (5 Sep 2026) - cluster-scoped YMAL for Portable Office. The
+                  tiles are built in the product data file from the pack's approved
+                  order, self excluded, never_list excluded, and only destinations
+                  returning 200 today. The shared YMAL constants are untouched. */}
+              {slug === 'executive-portable-office' && variantData?.ymalTiles?.length && (
+                <PortaCabinsYouMayAlsoLike
+                  items={variantData.ymalTiles}
+                  subline={executivePortableOfficeCopy.ymal.intro}
+                />
+              )}
+
+              {/* PC-01/PC-02/PC-03/PC-04/PC-05 — divider 4, "You may also like" →
+                  Section 5 (Product Details tabs). */}
+              {CLUSTER_DESIGN_SLUGS.has(slug) && slug !== 'accommodation-container' && (
+                <hr className="saman-section-divider" aria-hidden="true" />
+              )}
+
+              {/* Product Tabs */}
+              <div className="mt-4">
+                <ProductTabs
+                  description={slug === 'accommodation-container' ? lazyLoadStaticHtmlImages(product.description || '') : product.description || ''}
+                  specificationsHtml={slug === 'accommodation-container' ? lazyLoadStaticHtmlImages(specificationsHtml) : specificationsHtml}
+                  shippingHtml={slug === 'accommodation-container' ? lazyLoadStaticHtmlImages(shippingHtml) : shippingHtml}
+                  productTitle={isLaborShedsPage ? 'Labour Sheds' : transformedProduct.title}
+                  reviews={slug === 'accommodation-container' || slug === 'container-marketing-office' || slug === CO06_SLUG || slug === CO07_SLUG || slug === CO08_SLUG || slug === 'small-office-cabin' || slug === 'readymade-office-cabin' || slug === 'prefabricated-office-cabins' || slug === 'executive-portable-office' || slug === 'portable-weighbridge-office' ? [] : reviews}
+                  averageRating={slug === 'accommodation-container' || slug === 'container-marketing-office' || slug === CO06_SLUG || slug === CO07_SLUG || slug === CO08_SLUG || slug === 'small-office-cabin' || slug === 'readymade-office-cabin' || slug === 'prefabricated-office-cabins' || slug === 'executive-portable-office' || slug === 'portable-weighbridge-office' ? undefined : product.average_rating}
+                  ratingCount={slug === 'accommodation-container' || slug === 'container-marketing-office' || slug === CO06_SLUG || slug === CO07_SLUG || slug === CO08_SLUG || slug === 'small-office-cabin' || slug === 'readymade-office-cabin' || slug === 'prefabricated-office-cabins' || slug === 'executive-portable-office' || slug === 'portable-weighbridge-office' ? 0 : product.rating_count}
+                  productId={product.id}
+                  productName={transformedProduct.title}
+                  fullMobileLabels={slug === 'containerized-data-center' || slug === 'small-office-cabin' || slug === 'readymade-office-cabin' || slug === 'prefabricated-office-cabins' || slug === 'executive-portable-office' || slug === 'portable-weighbridge-office'}
+                  reviewsEmptyStateText={slug === 'small-office-cabin' ? smallOfficeCabinCopy.reviews_tab.empty_state : slug === 'readymade-office-cabin' ? readymadeOfficeCabinCopy.reviews_tab.empty_state : slug === 'prefabricated-office-cabins' ? prefabricatedOfficeCabinsCopy.reviews_tab.empty_state : slug === 'executive-portable-office' ? executivePortableOfficeCopy.reviews_tab.empty_state : slug === 'portable-weighbridge-office' ? portableWeighbridgeOfficeCopy.reviews_tab.empty_state : undefined}
+                />
+              </div>
+
+              {slug === 'portacabin-office' && (
+                <section
+                  className="mt-4 rounded-xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6"
+                  aria-labelledby="portacabin-office-word-forms"
+                >
+                  <h3 id="portacabin-office-word-forms" className="mb-3 text-xl font-bold text-slate-900">
+                    Porta cabin office or portacabin office?
+                  </h3>
+                  <p className="m-0 text-sm leading-relaxed text-slate-700">
+                    Buyers write it both ways and mean the same thing: a factory-built cabin fitted out as a working office. We build one product for both spellings: the configuration described on this page, with workstations, storage and an optional manager partition, finished a grade above the plain site cabin. If you searched for a porta cabin office and landed here, you are in the right place; the specification, the nine sizes and the prices above are what you were looking for.
+                  </p>
+                </section>
+              )}
+
+              {/* Manufacturer Trust Strip ★ NEW (links to /about-us#certifications) */}
+              {slug !== CO08_SLUG && (
+                <div className="mt-4">
+                  <ManufacturerTrustStrip />
+                </div>
+              )}
+
+              {/* Related Products Section — SKIPPED for the variant-hero pages
+                  (T25, mirroring the hub route): the related rail lives inside the
+                  hero — desktop column 1, mobile last — so these cards must appear
+                  exactly once. Every other subpage keeps the desktop-only slider
+                  unchanged. */}
+              {!variantData && category.toLowerCase() !== 'container-houses' && (
+              <div className="mt-4 hidden lg:block">
+                <Card className="p-4 shadow-lg border-0 bg-white/80 backdrop-blur-sm">
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
+                          <Package className="w-5 h-5 text-primary" />
+                        </div>
+                        <div>
+                          <h3 className="text-xl font-bold text-foreground">Related Products</h3>
+                          <p className="text-sm text-muted-foreground">Explore similar items</p>
+                        </div>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className="w-8 h-8 p-0"
+                          onClick={() => {
+                            const container = document.getElementById('related-products-slider');
+                            if (container) {
+                              container.scrollBy({ left: -256, behavior: 'smooth' });
+                            }
+                          }}
+                        >
+                          <ArrowLeft className="w-4 h-4" />
+                        </Button>
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className="w-8 h-8 p-0"
+                          onClick={() => {
+                            const container = document.getElementById('related-products-slider');
+                            if (container) {
+                              container.scrollBy({ left: 256, behavior: 'smooth' });
+                            }
+                          }}
+                        >
+                          <ArrowLeft className="w-4 h-4 rotate-180" />
+                        </Button>
+                      </div>
+                    </div>
+                    
+                    <div className="relative w-full overflow-hidden">
+                       <div 
+                         id="related-products-slider"
+                         className="related-products-slider flex space-x-4 overflow-x-auto scroll-smooth pb-2"
+                       >
+                        {transformedRelatedProducts.length > 0 ? (
+                          transformedRelatedProducts.map((relatedProduct) => (
+                            <div key={relatedProduct.id} className="flex-shrink-0 w-64 min-w-64">
+                              <Card className="h-full border border-slate-200 hover:border-primary/50 transition-all duration-200 hover:shadow-lg group">
+                                <div className="p-4 space-y-3">
+                                  {/* Product Image */}
+                                  <div className="aspect-[4/3] bg-gradient-to-br from-slate-100 to-slate-200 rounded-lg overflow-hidden relative">
+                                    <Image 
+                                      src={relatedProduct.image || `https://via.placeholder.com/320x240/3B82F6/FFFFFF?text=${encodeURIComponent(relatedProduct.title)}`}
+                                      unoptimized={shouldBypassOptimizer(relatedProduct.image || `https://via.placeholder.com/320x240/3B82F6/FFFFFF?text=${encodeURIComponent(relatedProduct.title)}`)}
+                                      alt={relatedProduct.title}
+                                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                      width={320}
+                                      height={240}
+                                      onError={(e) => {
+                                        const target = e.target as HTMLImageElement;
+                                        target.src = `https://via.placeholder.com/320x240/3B82F6/FFFFFF?text=${encodeURIComponent(relatedProduct.title)}`;
+                                      }}
+                                    />
+                                    {relatedProduct.slug === slug && (
+                                      <div className="absolute top-2 left-2 bg-[#126e4c] text-white text-xs px-2 py-1 rounded-md font-medium">
+                                        Current
+                                      </div>
+                                    )}
+                                  </div>
+                                  
+                                  {/* Product Info */}
+                                  <div className="space-y-2">
+                                    <Link
+                                      href={relatedProduct.url}
+                                      className="block group/link"
+                                    >
+                                      <h4 className="font-semibold text-foreground line-clamp-2 group-hover/link:text-primary transition-colors">
+                                        {relatedProduct.seoAnchorText}
+                                      </h4>
+                                    </Link>
+                                    
+                                    <div className="flex items-center justify-between">
+                                      <Badge variant="secondary" className="text-xs">
+                                        {relatedProduct.category}
+                                      </Badge>
+                                      {relatedProduct.ratingCount > 0 && (
+                                        <div className="flex items-center space-x-1">
+                                          <Star className="w-3 h-3 text-yellow-400 fill-current" />
+                                          <span className="text-xs text-muted-foreground">{relatedProduct.rating}</span>
+                                        </div>
+                                      )}
+                                    </div>
+                                    
+                                    <div className="flex items-center justify-between">
+                                      <span className="text-lg font-bold text-primary">
+                                        {relatedProduct.price === 'Contact for pricing' 
+                                          ? 'Contact for pricing' 
+                                          : formatPriceWithCurrency(parseFloat(relatedProduct.price))
+                                        }
+                                      </span>
+                                      <Link
+                                        href={relatedProduct.url}
+                                        className="inline-flex items-center justify-center rounded-md text-xs font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background h-8 px-3 py-1.5 border border-input bg-background hover:bg-accent hover:text-accent-foreground"
+                                      >
+                                        View Details
+                                      </Link>
+                                    </div>
+                                  </div>
+                                </div>
+                              </Card>
+                            </div>
+                          ))
+                        ) : null}
+                      </div>
+                    </div>
+                  </div>
+                </Card>
+              </div>
+              )}
+
+              {/* Cluster Hub Link */}
+              {slug !== 'shipping-container-office' && <div className="mt-4 text-center">
+                <Link
+                  href={getHubUrl(category)}
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors underline decoration-primary/30 hover:decoration-primary"
+                >
+                  {category === 'porta-cabins' && c01HubReturnAnchorForSlug(slug)
+                    ? c01HubReturnAnchorForSlug(slug)
+                    : <>See the full range: {getSeoAnchorText(category) || transformedProduct?.category || 'Products'}</>}
+                  <ArrowLeft className="w-4 h-4 rotate-180" />
+                </Link>
+              </div>}
+
+            </div>
+          </main>
+          
+          {/* Scroll to Top Button */}
+          {showScrollToTop && (
+            <button
+              onClick={scrollToTop}
+              className="fixed bottom-20 sm:bottom-6 right-6 z-50 w-12 h-12 bg-primary text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-110 flex items-center justify-center"
+              aria-label="Scroll to top"
+            >
+              <ArrowLeft className="w-5 h-5 rotate-90" />
+            </button>
+            )}
+
+          {/* Mobile Bottom Navigation */}
+          <MobileBottomNav relatedProducts={transformedRelatedProducts} />
+        </>
+      )}
+    </Layout>
+  );
+};
+
+export default ProductDetails;

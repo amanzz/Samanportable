@@ -1,0 +1,63 @@
+| # | slot | file | w | h | KB | encoding |
+|---:|---|---|---:|---:|---:|---|
+| 1 | gallery | `10x10/portable-conference-cabin-10x10-conference-table-interior.webp` | 1254 | 1254 | 110 | q87 |
+| 2 | gallery | `10x10/portable-conference-cabin-10x10-interior-overview.webp` | 1254 | 1254 | 107 | q88 |
+| 3 | gallery | `10x10/portable-conference-cabin-10x10-interior-reverse-view.webp` | 1254 | 1254 | 107 | q87 |
+| 4 | gallery | `10x10/portable-conference-cabin-10x10-site-placement-exterior.webp` | 1254 | 1254 | 106 | q80 |
+| 5 | gallery | `10x10/portable-conference-cabin-10x10-wall-a-front-exterior.webp` | 1254 | 1254 | 112 | q57 |
+| 6 | gallery | `10x10/portable-conference-cabin-10x10-wall-b-rear-exterior.webp` | 1254 | 1254 | 112 | q71 |
+| 7 | gallery | `20x10/portable-conference-cabin-20x10-conference-table-interior.webp` | 1254 | 1254 | 107 | q79 |
+| 8 | gallery | `20x10/portable-conference-cabin-20x10-interior-overview.webp` | 1254 | 1254 | 111 | q85 |
+| 9 | gallery | `20x10/portable-conference-cabin-20x10-interior-reverse-view.webp` | 1254 | 1254 | 114 | q86 |
+| 10 | gallery | `20x10/portable-conference-cabin-20x10-site-placement-exterior.webp` | 1254 | 1254 | 111 | q43 |
+| 11 | gallery | `20x10/portable-conference-cabin-20x10-wall-a-front-exterior.webp` | 1254 | 1254 | 112 | q39 |
+| 12 | gallery | `20x10/portable-conference-cabin-20x10-wall-b-rear-exterior.webp` | 1254 | 1254 | 111 | q40 |
+| 13 | gallery | `20x12/portable-conference-cabin-20x12-conference-table-interior.webp` | 1254 | 1254 | 106 | q78 |
+| 14 | gallery | `20x12/portable-conference-cabin-20x12-interior-overview.webp` | 1254 | 1254 | 109 | q82 |
+| 15 | gallery | `20x12/portable-conference-cabin-20x12-interior-reverse-view.webp` | 1254 | 1254 | 109 | q83 |
+| 16 | gallery | `20x12/portable-conference-cabin-20x12-site-placement-exterior.webp` | 1254 | 1254 | 116 | q86 |
+| 17 | gallery | `20x12/portable-conference-cabin-20x12-wall-a-front-exterior.webp` | 1254 | 1254 | 112 | q34 |
+| 18 | gallery | `20x12/portable-conference-cabin-20x12-wall-b-rear-exterior.webp` | 1254 | 1254 | 113 | q51 |
+| 19 | gallery | `20x8/portable-conference-cabin-20x8-conference-table-interior.webp` | 1254 | 1254 | 107 | q81 |
+| 20 | gallery | `20x8/portable-conference-cabin-20x8-interior-overview.webp` | 1254 | 1254 | 110 | q83 |
+| 21 | gallery | `20x8/portable-conference-cabin-20x8-interior-reverse-view.webp` | 1254 | 1254 | 114 | q85 |
+| 22 | gallery | `20x8/portable-conference-cabin-20x8-site-placement-exterior.webp` | 1254 | 1254 | 107 | q86 |
+| 23 | gallery | `20x8/portable-conference-cabin-20x8-wall-a-front-exterior.webp` | 1254 | 1254 | 109 | q81 |
+| 24 | gallery | `20x8/portable-conference-cabin-20x8-wall-b-rear-exterior.webp` | 1254 | 1254 | 109 | q79 |
+| 25 | gallery | `30x10/portable-conference-cabin-30x10-conference-table-interior.webp` | 1254 | 1254 | 109 | q81 |
+| 26 | gallery | `30x10/portable-conference-cabin-30x10-interior-overview.webp` | 1254 | 1254 | 111 | q85 |
+| 27 | gallery | `30x10/portable-conference-cabin-30x10-interior-reverse-view.webp` | 1254 | 1254 | 112 | q86 |
+| 28 | gallery | `30x10/portable-conference-cabin-30x10-site-placement-exterior.webp` | 1254 | 1254 | 112 | q44 |
+| 29 | gallery | `30x10/portable-conference-cabin-30x10-wall-a-front-exterior.webp` | 1254 | 1254 | 111 | q27 |
+| 30 | gallery | `30x10/portable-conference-cabin-30x10-wall-b-rear-exterior.webp` | 1254 | 1254 | 111 | q30 |
+| 31 | gallery | `40x10/portable-conference-cabin-40x10-conference-table-interior.webp` | 1254 | 1254 | 114 | q83 |
+| 32 | gallery | `40x10/portable-conference-cabin-40x10-interior-overview.webp` | 1254 | 1254 | 112 | q85 |
+| 33 | gallery | `40x10/portable-conference-cabin-40x10-interior-reverse-view.webp` | 1254 | 1254 | 108 | q84 |
+| 34 | gallery | `40x10/portable-conference-cabin-40x10-site-placement-exterior.webp` | 1254 | 1254 | 110 | q46 |
+| 35 | gallery | `40x10/portable-conference-cabin-40x10-wall-a-front-exterior.webp` | 1254 | 1254 | 107 | q46 |
+| 36 | gallery | `40x10/portable-conference-cabin-40x10-wall-b-rear-exterior.webp` | 1254 | 1254 | 108 | q55 |
+| 37 | section3 | `section3/portable-conference-cabin-10x10-exterior.webp` | 1600 | 900 | 111 | q88 |
+| 38 | section3 | `section3/portable-conference-cabin-20x10-exterior.webp` | 1600 | 900 | 111 | q83 |
+| 39 | section3 | `section3/portable-conference-cabin-20x12-exterior.webp` | 1600 | 900 | 112 | q78 |
+| 40 | section3 | `section3/portable-conference-cabin-20x8-exterior.webp` | 1600 | 900 | 115 | q89 |
+| 41 | section3 | `section3/portable-conference-cabin-30x10-exterior.webp` | 1600 | 900 | 115 | q61 |
+| 42 | section3 | `section3/portable-conference-cabin-40x10-exterior.webp` | 1600 | 900 | 111 | q75 |
+| 43 | section2_card | `section2/portable-conference-cabin-20x10-table-and-display-bay.webp` | 1600 | 900 | 115 | q85 |
+| 44 | ga_board | `ga/portable-conference-cabin-10x10-ga-board.webp` | 1800 | 1012 | 114 | lossless |
+| 45 | ga_board | `ga/portable-conference-cabin-20x10-ga-board.webp` | 1800 | 1012 | 116 | lossless |
+| 46 | ga_board | `ga/portable-conference-cabin-20x12-ga-board.webp` | 1800 | 1012 | 115 | lossless |
+| 47 | ga_board | `ga/portable-conference-cabin-20x8-ga-board.webp` | 1800 | 1012 | 116 | lossless |
+| 48 | ga_board | `ga/portable-conference-cabin-30x10-ga-board.webp` | 1800 | 1012 | 120 | lossless |
+| 49 | ga_board | `ga/portable-conference-cabin-40x10-ga-board.webp` | 1800 | 1012 | 102 | q100 |
+| 50 | description | `description/portable-conference-cabin-description-01-20x10-slate-blue-grey-exterior.webp` | 1600 | 900 | 113 | q72 |
+| 51 | description | `description/portable-conference-cabin-description-02-20x8-twelve-seat-interior.webp` | 1600 | 900 | 108 | q87 |
+| 52 | description | `description/portable-conference-cabin-description-03-40x10-twenty-two-seat-interior.webp` | 1600 | 900 | 105 | q88 |
+| 53 | description | `description/portable-conference-cabin-description-04-10x10-deep-oxford-blue-exterior.webp` | 1600 | 900 | 113 | q75 |
+| 54 | description | `description/portable-conference-cabin-description-05-20x12-wide-aisle-interior.webp` | 1600 | 900 | 110 | q90 |
+| 55 | description | `description/portable-conference-cabin-description-06-30x10-two-door-exterior.webp` | 1600 | 900 | 114 | q64 |
+| 56 | spec_diagram | `specs/portable-conference-cabin-envelope-material-diagram.webp` | 1600 | 900 | 107 | lossless |
+| 57 | spec_diagram | `specs/portable-conference-cabin-roof-family-diagram.webp` | 1600 | 900 | 100 | lossless |
+
+PDF: `public/downloads/portable-conference-cabin-technical-specification-and-price.pdf` - 31327 KB (copied verbatim from the approved package, not re-encoded).
+
+**57 images, every one WebP and inside the 80-120 KB band (min 100 KB, max 120 KB). No source PNG is copied into `public/`.**

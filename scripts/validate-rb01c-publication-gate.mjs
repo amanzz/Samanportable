@@ -167,7 +167,8 @@ async function main() {
   // PO-05 (6 Sep 2026): 66/38. PO-07 made the identical 64/40 -> 65/39 edit this branch
   // had already made, so git auto-merged it silently; with BOTH pages shipping the true
   // count is one higher again.
-  if (approved.size !== 66 || planned.size !== 38) fail(`architecture counts are ${approved.size}/66 approved and ${planned.size}/38 planned`);
+  // PO-08 (6 Sep 2026): 66/38 -> 67/37, this page's path moving to approved.
+  if (approved.size !== 67 || planned.size !== 37) fail(`architecture counts are ${approved.size}/67 approved and ${planned.size}/37 planned`);
   if (!approved.has(EXPANDABLE_OFFICE) || planned.has(EXPANDABLE_OFFICE)) fail('Expandable Container Office release classification is wrong');
   if (!planned.has(ACCOMMODATION) || approved.has(ACCOMMODATION)) fail('Accommodation Container release classification is wrong');
   if (!planned.has(EXPANDABLE_HOUSE) || approved.has(EXPANDABLE_HOUSE)) fail('Expandable Container House release classification is wrong');

@@ -154,6 +154,16 @@ export interface VariantProductData {
       false there too). Absent on every other product → no id is emitted,
       byte-identical elsewhere. */
   emitSizeAnchors?: boolean;
+  /** PO-08 (6 Sep 2026) — opt-in, default false. The Size & Applications Explorer
+      renders an `<img>` for the ACTIVE panel only (V7: inactive panels issue zero
+      network requests at initial load), so a page whose acceptance gate requires
+      EVERY per-size Explorer photograph to be referenced in the served HTML would
+      otherwise ship five of six unreferenced. This emits the same hidden,
+      aria-hidden manifest span that site-office-container already uses, listing
+      each panel image's src and alt. Absent on every other product → no span is
+      emitted and their markup is byte-identical. Presentation is unchanged either
+      way: the images still render on tab selection, exactly as the design lock does. */
+  emitExplorerImageManifest?: boolean;
   /** "Download specifications" target. The button is omitted when absent. */
   specPdfHref?: string;
   /** Replaces the default "Price on request — send enquiry" line wherever a

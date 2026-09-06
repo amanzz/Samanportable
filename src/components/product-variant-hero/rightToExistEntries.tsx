@@ -7,6 +7,8 @@ import smallOfficeCabinCopy from '../../../content/soc-01/SOC-01-small-office-ca
 import readymadeOfficeCabinCopy from '../../../content/po-01/PO-01-readymade-office-cabin-copy-v1.json';
 import prefabricatedOfficeCabinsCopy from '../../../content/po-02/PO-02-prefabricated-office-cabins-copy-v1.json';
 import portableWeighbridgeOfficeCopy from '../../../content/po-03/PO-03-portable-weighbridge-office-copy-v1.json';
+import portableConferenceCabinCopy from '../../../content/po-08/PO-08-portable-conference-cabin-copy-v1.json';
+import portableConferenceCabinAssets from '../../../content/po-08/PO-08-portable-conference-cabin-asset-map-v1.json';
 import portableControlRoomCopy from '../../../content/po-07/PO-07-portable-control-room-copy-v1.json';
 import executivePortableOfficeCopy from '../../../content/po-04/PO-04-executive-portable-office-copy-v1.json';
 import constructionSiteCabinCopy from '../../../content/po-06/PO-06-construction-site-cabin-copy-v1.json';
@@ -1432,6 +1434,53 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
       // The pack names the target as the sizes section; on this route that section's
       // id is #porta-size-applications (the pack's literal "#sizes" exists only on
       // the unrelated panel routes). Same target as PO-01 and SOC-01.
+      ctaHref: '#porta-size-applications',
+    },
+  },
+  // PO-08 (6 Sep 2026) - Section 2 rendered verbatim from the signed copy pack
+  // (content/po-08). Nothing is retyped: heading, both paragraphs, the CTA and every
+  // split-card field are read from the pack. The approved contextual link sits in
+  // paragraph 1 (the pack's section2.link.in says "paragraph1"), so the paragraph
+  // ships a hidden plain-text mirror as well - the acceptance gate compares its
+  // tag-stripped text against the pack string, and an inline <a> would otherwise
+  // leave a space before the following comma.
+  'portable-conference-cabin': {
+    heading: portableConferenceCabinCopy.section2.h2,
+    bodyParagraphs: [
+      (() => {
+        const { paragraph1, link } = portableConferenceCabinCopy.section2;
+        const at = paragraph1.indexOf(link.anchor);
+        if (at < 0) return <>{paragraph1}</>;
+        return (
+          <>
+            {paragraph1.slice(0, at)}
+            <Link className={linkClass} href={link.href}>{link.anchor}</Link>
+            {paragraph1.slice(at + link.anchor.length)}
+          </>
+        );
+      })(),
+      (<>{portableConferenceCabinCopy.section2.paragraph2}</>),
+    ],
+    verificationText: [portableConferenceCabinCopy.section2.paragraph1],
+    topCtaLabel: portableConferenceCabinCopy.section2.cta,
+    topCtaHref: '#porta-size-applications',
+    splitCard: {
+      // SAMAN instruction, 6 Sep 2026: this card is a PHOTOGRAPH of the unit, not the
+      // GA board - a centred 16:9 crop of the 20x10 table-interior 1:1 master, which
+      // is the sanctioned crop case. The output was opened at full size and neither
+      // the conference table nor the display bay is clipped. The six approved GA
+      // boards render in the Specifications tab instead.
+      imageSrc: `/${portableConferenceCabinAssets.output_root.replace('public/', '')}/${portableConferenceCabinAssets.section2_card.out}`,
+      imageAlt: portableConferenceCabinCopy.alt_text.section2_card,
+      imageWidth: 1600,
+      imageHeight: 900,
+      subheading: portableConferenceCabinCopy.section2.split_card.h3,
+      body: portableConferenceCabinCopy.section2.split_card.paragraph1,
+      body2: portableConferenceCabinCopy.section2.split_card.paragraph2,
+      ctaLabel: portableConferenceCabinCopy.section2.split_card.cta,
+      // The pack's cta_target is the literal "#sizes", which exists only on the
+      // unrelated panel routes; on this route the Section 3 anchor is
+      // #porta-size-applications. Same resolution as PO-01, PO-02, PO-04 and SOC-01.
       ctaHref: '#porta-size-applications',
     },
   },

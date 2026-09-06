@@ -1,0 +1,23 @@
+PASS exactly one H1  | ['Portable Conference Cabin: Six Sizes, 6 to 22 Seats']
+PASS no empty heading
+PASS every <img> carries an alt attribute  | 35/35
+PASS no empty alt
+PASS no duplicate alt
+PASS explicit width and height on every <img>  | 35
+PASS no U+2014 in body text
+PASS tab present: Description
+PASS tab present: Specifications
+PASS tab present: Shipping
+PASS tab present: Reviews
+PASS tab panel body server-rendered: Description body  | Portable conference cabin or portable meeting room?
+PASS tab panel body server-rendered: Specifications body  | Group A
+PASS tab panel body server-rendered: Shipping body  | Ghaziabad
+PASS tab panel body server-rendered: Reviews body  | No verified reviews yet.
+PASS small-screen tab labels differ from the long labels
+PASS zero hits: 'coming soon'
+PASS zero hits: 'available on request'
+PASS zero hits: 'contact us for details'
+PASS zero hits: 'placeholder'
+PASS zero hits: 'TBD'
+
+RESULT: PASS

@@ -72,6 +72,7 @@ import executivePortableOfficeCopy from '../../../../content/po-04/PO-04-executi
 import constructionSiteCabinCopy from '../../../../content/po-06/PO-06-construction-site-cabin-copy-v1.json';
 import portableControlRoomCopy from '../../../../content/po-07/PO-07-portable-control-room-copy-v1.json';
 import portableMobileLaboratoryCopy from '../../../../content/po-05/PO-05-portable-mobile-laboratory-copy-v1.json';
+import portableConferenceCabinCopy from '../../../../content/po-08/PO-08-portable-conference-cabin-copy-v1.json';
 import { injectInfoImages } from '../../../lib/infoImageLayout';
 import containerizedDataCenterApplications from '../../../data/products/containerized-data-center-applications.json';
 import containerizedDataCenterRelated from '../../../data/products/containerized-data-center-related.json';
@@ -232,6 +233,11 @@ const CLUSTER_DESIGN_SLUGS = new Set([
   // byte-for-byte; no new styling. Its explorer headings are scoped to H3 below, for
   // the same reason PO-06's and PO-07's are.
   'portable-mobile-laboratory',
+  // PO-08 (6 Sep 2026) - design lock: same premium chip/tab and divider treatment as
+  // the live porta-cabins reference. The explorer heading opt-in is scoped OFF for this
+  // slug below, as PO-05, PO-06 and PO-07 also do: the lock renders Section 3 panel
+  // headings as H3 and this page's build prompt requires that level.
+  'portable-conference-cabin',
 ]);
 
 // Dynamic import for ProductTabs to avoid SSR issues
@@ -944,7 +950,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
 
   const relatedRailItems = useMemo<RelatedRailItem[]>(() => {
     const currentSlug = transformedProduct?.slug || slug;
-    if ((currentSlug === 'bess-container' || currentSlug === CO07_SLUG || currentSlug === CO06_SLUG || currentSlug === 'readymade-office-cabin' || currentSlug === 'small-office-cabin' || currentSlug === 'executive-portable-office' || currentSlug === 'portable-weighbridge-office' || currentSlug === 'construction-site-cabin' || currentSlug === 'portable-control-room' || currentSlug === 'portable-mobile-laboratory') && variantData?.relatedTiles?.length) {
+    if ((currentSlug === 'bess-container' || currentSlug === CO07_SLUG || currentSlug === CO06_SLUG || currentSlug === 'readymade-office-cabin' || currentSlug === 'small-office-cabin' || currentSlug === 'executive-portable-office' || currentSlug === 'portable-weighbridge-office' || currentSlug === 'construction-site-cabin' || currentSlug === 'portable-control-room' || currentSlug === 'portable-mobile-laboratory' || currentSlug === 'portable-conference-cabin') && variantData?.relatedTiles?.length) {
       return variantData.relatedTiles;
     }
     if (isC16PanelSlug(currentSlug)) {
@@ -1258,7 +1264,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   // PO-05 - H3 too: the design lock renders each Section 3 panel heading
                   // as an H3 and the signed pack names the field `h3`. Both branches share
                   // an identical class string, so only the heading LEVEL changes.
-                  explorerPanelHeadingAsH2={CLUSTER_DESIGN_SLUGS.has(slug) && slug !== 'construction-site-cabin' && slug !== 'portable-control-room' && slug !== 'portable-mobile-laboratory'}
+                  explorerPanelHeadingAsH2={CLUSTER_DESIGN_SLUGS.has(slug) && slug !== 'construction-site-cabin' && slug !== 'portable-control-room' && slug !== 'portable-mobile-laboratory' && slug !== 'portable-conference-cabin'}
                   // Ad-hoc revision (14 Aug 2026, owner screenshots) — mobile
                   // divider gap fix, scoped to this page only per the
                   // component-level comment; every other cluster-design page
@@ -1296,6 +1302,9 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                       ? portableMobileLaboratoryCopy.hero.size_selector_label
                       : slug === 'portable-control-room'
                       ? portableControlRoomCopy.hero.size_selector_label
+                      // PO-08 - the signed pack supplies this page's own selector label.
+                      : slug === 'portable-conference-cabin'
+                      ? portableConferenceCabinCopy.hero.size_selector_label
                       // PO-04 - the signed pack supplies this page's own selector label.
                       : slug === 'executive-portable-office'
                       ? executivePortableOfficeCopy.hero.size_selector_label
@@ -1739,6 +1748,17 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   subline={executivePortableOfficeCopy.ymal.intro}
                 />
               )}
+              {/* PO-08 (6 Sep 2026) - cluster-scoped YMAL for Portable Office. The
+                  tiles are built in the product data file from the pack's approved
+                  explore_range.order, this page excluded, never_list excluded, and
+                  only destinations returning 200 today. The shared YMAL constants
+                  are untouched. */}
+              {slug === 'portable-conference-cabin' && variantData?.ymalTiles?.length && (
+                <PortaCabinsYouMayAlsoLike
+                  items={variantData.ymalTiles}
+                  subline={portableConferenceCabinCopy.ymal.intro}
+                />
+              )}
 
               {/* PC-01/PC-02/PC-03/PC-04/PC-05 — divider 4, "You may also like" →
                   Section 5 (Product Details tabs). */}
@@ -1753,9 +1773,9 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   specificationsHtml={slug === 'accommodation-container' ? lazyLoadStaticHtmlImages(specificationsHtml) : specificationsHtml}
                   shippingHtml={slug === 'accommodation-container' ? lazyLoadStaticHtmlImages(shippingHtml) : shippingHtml}
                   productTitle={isLaborShedsPage ? 'Labour Sheds' : transformedProduct.title}
-                  reviews={slug === 'accommodation-container' || slug === 'container-marketing-office' || slug === CO06_SLUG || slug === CO07_SLUG || slug === CO08_SLUG || slug === 'small-office-cabin' || slug === 'readymade-office-cabin' || slug === 'prefabricated-office-cabins' || slug === 'executive-portable-office' || slug === 'portable-weighbridge-office' || slug === 'construction-site-cabin' || slug === 'portable-control-room' || slug === 'portable-mobile-laboratory' ? [] : reviews}
-                  averageRating={slug === 'accommodation-container' || slug === 'container-marketing-office' || slug === CO06_SLUG || slug === CO07_SLUG || slug === CO08_SLUG || slug === 'small-office-cabin' || slug === 'readymade-office-cabin' || slug === 'prefabricated-office-cabins' || slug === 'executive-portable-office' || slug === 'portable-weighbridge-office' || slug === 'construction-site-cabin' || slug === 'portable-control-room' || slug === 'portable-mobile-laboratory' ? undefined : product.average_rating}
-                  ratingCount={slug === 'accommodation-container' || slug === 'container-marketing-office' || slug === CO06_SLUG || slug === CO07_SLUG || slug === CO08_SLUG || slug === 'small-office-cabin' || slug === 'readymade-office-cabin' || slug === 'prefabricated-office-cabins' || slug === 'executive-portable-office' || slug === 'portable-weighbridge-office' || slug === 'construction-site-cabin' || slug === 'portable-control-room' || slug === 'portable-mobile-laboratory' ? 0 : product.rating_count}
+                  reviews={slug === 'accommodation-container' || slug === 'container-marketing-office' || slug === CO06_SLUG || slug === CO07_SLUG || slug === CO08_SLUG || slug === 'small-office-cabin' || slug === 'readymade-office-cabin' || slug === 'prefabricated-office-cabins' || slug === 'executive-portable-office' || slug === 'portable-weighbridge-office' || slug === 'construction-site-cabin' || slug === 'portable-control-room' || slug === 'portable-mobile-laboratory' || slug === 'portable-conference-cabin' ? [] : reviews}
+                  averageRating={slug === 'accommodation-container' || slug === 'container-marketing-office' || slug === CO06_SLUG || slug === CO07_SLUG || slug === CO08_SLUG || slug === 'small-office-cabin' || slug === 'readymade-office-cabin' || slug === 'prefabricated-office-cabins' || slug === 'executive-portable-office' || slug === 'portable-weighbridge-office' || slug === 'construction-site-cabin' || slug === 'portable-control-room' || slug === 'portable-mobile-laboratory' || slug === 'portable-conference-cabin' ? undefined : product.average_rating}
+                  ratingCount={slug === 'accommodation-container' || slug === 'container-marketing-office' || slug === CO06_SLUG || slug === CO07_SLUG || slug === CO08_SLUG || slug === 'small-office-cabin' || slug === 'readymade-office-cabin' || slug === 'prefabricated-office-cabins' || slug === 'executive-portable-office' || slug === 'portable-weighbridge-office' || slug === 'construction-site-cabin' || slug === 'portable-control-room' || slug === 'portable-mobile-laboratory' || slug === 'portable-conference-cabin' ? 0 : product.rating_count}
                   productId={product.id}
                   productName={transformedProduct.title}
                   // PO-06 is deliberately NOT in this list. fullMobileLabels makes the
@@ -1765,7 +1785,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   // passes nothing here either, so the default gives the required
                   // Description/Info, Specifications/Specs, Shipping/Ship pairs.
                   fullMobileLabels={slug === 'containerized-data-center' || slug === 'small-office-cabin' || slug === 'readymade-office-cabin' || slug === 'prefabricated-office-cabins' || slug === 'executive-portable-office' || slug === 'portable-weighbridge-office'}
-                  reviewsEmptyStateText={slug === 'small-office-cabin' ? smallOfficeCabinCopy.reviews_tab.empty_state : slug === 'readymade-office-cabin' ? readymadeOfficeCabinCopy.reviews_tab.empty_state : slug === 'prefabricated-office-cabins' ? prefabricatedOfficeCabinsCopy.reviews_tab.empty_state : slug === 'executive-portable-office' ? executivePortableOfficeCopy.reviews_tab.empty_state : slug === 'portable-weighbridge-office' ? portableWeighbridgeOfficeCopy.reviews_tab.empty_state : slug === 'construction-site-cabin' ? constructionSiteCabinCopy.reviews_tab.empty_state : slug === 'portable-control-room' ? portableControlRoomCopy.reviews_tab.empty_state : slug === 'portable-mobile-laboratory' ? portableMobileLaboratoryCopy.reviews_tab.empty_state : undefined}
+                  reviewsEmptyStateText={slug === 'small-office-cabin' ? smallOfficeCabinCopy.reviews_tab.empty_state : slug === 'readymade-office-cabin' ? readymadeOfficeCabinCopy.reviews_tab.empty_state : slug === 'prefabricated-office-cabins' ? prefabricatedOfficeCabinsCopy.reviews_tab.empty_state : slug === 'executive-portable-office' ? executivePortableOfficeCopy.reviews_tab.empty_state : slug === 'portable-weighbridge-office' ? portableWeighbridgeOfficeCopy.reviews_tab.empty_state : slug === 'construction-site-cabin' ? constructionSiteCabinCopy.reviews_tab.empty_state : slug === 'portable-control-room' ? portableControlRoomCopy.reviews_tab.empty_state : slug === 'portable-mobile-laboratory' ? portableMobileLaboratoryCopy.reviews_tab.empty_state : slug === 'portable-conference-cabin' ? portableConferenceCabinCopy.reviews_tab.empty_state : undefined}
                 />
               </div>
 

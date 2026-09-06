@@ -12,7 +12,10 @@ const customCanonicalPaths = require('../src/lib/customProductCanonicalPaths.jso
 // PO-05 (6 Sep 2026) - and /product/portable-office/portable-mobile-laboratory with it.
 // PO-06 and PO-07 both landed on static-migration while this branch was open, so three
 // pages leave the backlog in all: 63 -> 66 approved, 41 -> 38 planned.
-const EXPECTED = { approved: 66, planned: 38 };
+// PO-08 (6 Sep 2026) - /product/portable-office/portable-conference-cabin ships, so it
+// moves out of the planned-release backlog and into the approved production list. The
+// fixture counts move with it: 66 -> 67 approved, 38 -> 37 planned.
+const EXPECTED = { approved: 67, planned: 37 };
 const strict = process.argv.includes('--strict') || process.env.SAMAN_STRICT_PRODUCTION_DATA === 'true';
 const failures = [];
 const warnings = [];
