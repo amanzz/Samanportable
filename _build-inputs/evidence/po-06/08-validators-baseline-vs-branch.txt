@@ -1,0 +1,90 @@
+ARTEFACT 8 - VALIDATORS: PRISTINE BASELINE vs THIS BRANCH
+
+Baseline worktree: worktrees/po06-baseline-3c538299, detached at 3c538299 (the exact
+commit this branch was cut from), git status clean, same node_modules.
+
+PART A - OFFLINE VALIDATORS AT PRISTINE 3c538299 (no server needed)
+
+commercial-architecture                    PASS
+temporary-commercial-gating                FAIL   :: - expected exactly 63 gated paths, found 62
+pc01-calculator-price-parity               PASS
+po-family-release                          FAIL   :: const fail = (message) => { throw new Error(`PO_FAMILY_INVALID: ${message}`); };
+merchant-feed                              FAIL   :: Validation errors: 6
+pc01-static-faq                            PASS
+c01-specification-overrides                PASS
+pc01-qualified-c01-debt                    FAIL   :: PC-01 qualified C01 legacy debt validation: FAIL
+pc01-performance-measurement-debt          FAIL   :: PC-01 performance measurement debt validation: FAIL
+cod16-quotation-wording                    PASS
+enquiry-dialog-a11y                        PASS
+local-inventory                            FAIL   :: Validation errors: 3
+po-family-pdfs                             FAIL   :: KeyError: 'capacity'
+
+
+
+PART B - ALL VALIDATORS ON THIS BRANCH (server: http://127.0.0.1:4106)
+
+commercial-architecture                    PASS
+temporary-commercial-gating                FAIL   :: - expected exactly 63 gated paths, found 62
+pc01-calculator-price-parity               PASS
+po-family-release                          FAIL   :: const fail = (message) => { throw new Error(`PO_FAMILY_INVALID: ${message}`); };
+merchant-feed                              FAIL   :: Validation errors: 6
+pc01-static-faq                            PASS
+c01-specification-overrides                PASS
+pc01-qualified-c01-debt                    FAIL   :: PC-01 qualified C01 legacy debt validation: FAIL
+pc01-performance-measurement-debt          FAIL   :: PC-01 performance measurement debt validation: FAIL
+cod16-quotation-wording                    PASS
+enquiry-dialog-a11y                        PASS
+local-inventory                            FAIL   :: Validation errors: 3
+po-family-pdfs                             FAIL   :: KeyError: 'capacity'
+publication-gate                           FAIL   :: RB-01C publication-gate validation failed:
+stg01b-structured-data                     FAIL   :: STG-01B structured-data validation failed:
+cc01-faq-parity                            PASS
+container-office-rail                      PASS
+pc01-keyword-ownership                     FAIL   :: TypeError: fetch failed
+
+
+PART C - THE TWO SERVER-DEPENDENT RELEASE GATES, BASELINE vs BRANCH
+
+Both need a built, running server, so both sides were built and served: pristine
+baseline 3c538299 on :4107, this branch on :4106. Sanity check first -
+  /product/portable-office/construction-site-cabin  ->  404 on :4107, 200 on :4106.
+
+validate:publication-gate (RB-01C)
+  PRISTINE BASELINE - 4 failures:
+    - architecture counts are 63/62 approved and 41/42 planned
+    - temporary gating fixture is TEMPORARY_OWNER_DISPOSITION_PENDING with 62 paths
+    - temporarily gated path /product/portable-office/modern-office-cabin returned 301 -> https://www.samanportable.com/product/portable-office/small-office-cabin
+    - temporarily gated path /product/portable-office/modern-office-cabin lacks noindex,follow
+  THIS BRANCH - 3 failures:
+    - temporary gating fixture is TEMPORARY_OWNER_DISPOSITION_PENDING with 62 paths
+    - temporarily gated path /product/portable-office/modern-office-cabin returned 301 -> https://www.samanportable.com/product/portable-office/small-office-cabin
+    - temporarily gated path /product/portable-office/modern-office-cabin lacks noindex,follow
+  DELTA: one failure FEWER. The stale 62/42 architecture pin is repaired to 64/40
+  by this commit; the remaining three are byte-identical to the baseline and none
+  of them touches a path in this diff (the gating fixture and modern-office-cabin,
+  a route this branch never edits and deliberately never links - it is on the
+  pack's never_list).
+
+validate:stg01b-structured-data
+  PRISTINE BASELINE - 2 failures:
+    - architecture is 63/41, expected 62/42
+    - protected content/product/rail/gating/freight sources changed: 37 files
+  THIS BRANCH - 1 failure:
+    - protected content/product/rail/gating/freight sources changed: 37 files
+  DELTA: one failure FEWER, same repair. The protected-sources assertion is
+  'git diff --name-only 82494c30 -- src/data ...' against a checkpoint commit from
+  well before this release train, so it lists every file any merged ticket has
+  touched since. Counted on both sides at the same moment: 37 files at the pristine
+  baseline, 37 on this branch - an identical list. Any new product page necessarily
+  adds its own src/data record to that list once committed, exactly as PO-03 and
+  PO-04 did; the gate was already failing before this branch existed.
+
+SUMMARY
+  Offline validators : 13 run, 6 pass, 7 fail - IDENTICAL failures and identical
+                       messages at the pristine baseline and on this branch.
+  Server validators  :  5 run. cc01-faq-parity and container-office-rail PASS.
+                       publication-gate and stg01b fail one time FEWER than at the
+                       baseline. pc01-keyword-ownership errors with 'fetch failed'
+                       on both sides - it targets port 3211, a second server this
+                       environment does not run, and is not affected by this diff.
+  Introduced by this branch: ZERO new validator failures. Two stale pins repaired.

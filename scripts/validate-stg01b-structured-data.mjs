@@ -167,10 +167,12 @@ async function main() {
   const architecture = JSON.parse(fs.readFileSync(path.join(root, 'src/data/seo/commercialArchitecture.json'), 'utf8'));
   // PO-04 (5 Sep 2026): /product/portable-office/executive-portable-office ships, so it
   // moves from the planned-release backlog into the approved production list. 61/43 -> 62/42.
-  // PO-05 (5 Sep 2026): 64/40. Still 62/42 on entry (PO-03 published a 63rd approved
+  // PO-06 (6 Sep 2026): 64/40. Still 62/42 on entry (PO-03 and PO-04 each published a
   // path without moving this pin), so this also repairs that pre-existing drift.
-  if (architecture.approvedProductionPaths.length !== 64 || architecture.plannedReleasePaths.length !== 40) {
-    fail(`architecture is ${architecture.approvedProductionPaths.length}/${architecture.plannedReleasePaths.length}, expected 64/40`);
+  // PO-05 (6 Sep 2026): 65/39, PO-06 having merged to static-migration while this
+  // branch was open - this release publishes the 65th approved path on top of it.
+  if (architecture.approvedProductionPaths.length !== 65 || architecture.plannedReleasePaths.length !== 39) {
+    fail(`architecture is ${architecture.approvedProductionPaths.length}/${architecture.plannedReleasePaths.length}, expected 65/39`);
   }
   assertProtectedSourcesUnchanged();
 

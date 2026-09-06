@@ -3,10 +3,13 @@ const path = require('path');
 const architecture = require('../src/data/seo/commercialArchitecture.json');
 const customCanonicalPaths = require('../src/lib/customProductCanonicalPaths.json');
 
-// PO-05 (5 Sep 2026) - /product/portable-office/portable-mobile-laboratory ships,
-// so it moves out of the planned-release backlog and into the approved production
-// list. The fixture counts move with it: 63 -> 64 approved, 41 -> 40 planned.
-const EXPECTED = { approved: 64, planned: 40 };
+// PO-06 (6 Sep 2026) - /product/portable-office/construction-site-cabin ships, so it
+// moves out of the planned-release backlog and into the approved production list. The
+// fixture counts move with it: 63 -> 64 approved, 41 -> 40 planned.
+// PO-05 (6 Sep 2026) - /product/portable-office/portable-mobile-laboratory ships too.
+// PO-06 landed on static-migration while this branch was open, so both pages leave the
+// backlog together and the counts move once more: 64 -> 65 approved, 40 -> 39 planned.
+const EXPECTED = { approved: 65, planned: 39 };
 const strict = process.argv.includes('--strict') || process.env.SAMAN_STRICT_PRODUCTION_DATA === 'true';
 const failures = [];
 const warnings = [];

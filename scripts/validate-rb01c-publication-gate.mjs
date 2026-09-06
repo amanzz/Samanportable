@@ -160,9 +160,11 @@ async function main() {
   const planned = new Set(architecture.plannedReleasePaths);
   // PO-04 (5 Sep 2026): /product/portable-office/executive-portable-office ships, so it
   // moves from the planned-release backlog into the approved production list. 61/43 -> 62/42.
-  // PO-05 (5 Sep 2026): 64/40. This pin was still 62/42 on entry - PO-03 published a
-  // 63rd approved path without moving it - so this line also repairs that drift.
-  if (approved.size !== 64 || planned.size !== 40) fail(`architecture counts are ${approved.size}/64 approved and ${planned.size}/40 planned`);
+  // PO-06 (6 Sep 2026): 64/40. This pin was still 62/42 on entry - PO-03 and PO-04
+  // each published a path without moving it, so this line also repairs that drift.
+  // PO-05 (6 Sep 2026): 65/39. PO-06 merged to static-migration while this branch was
+  // open, so this release publishes the 65th approved path on top of PO-06's 64th.
+  if (approved.size !== 65 || planned.size !== 39) fail(`architecture counts are ${approved.size}/65 approved and ${planned.size}/39 planned`);
   if (!approved.has(EXPANDABLE_OFFICE) || planned.has(EXPANDABLE_OFFICE)) fail('Expandable Container Office release classification is wrong');
   if (!planned.has(ACCOMMODATION) || approved.has(ACCOMMODATION)) fail('Accommodation Container release classification is wrong');
   if (!planned.has(EXPANDABLE_HOUSE) || approved.has(EXPANDABLE_HOUSE)) fail('Expandable Container House release classification is wrong');

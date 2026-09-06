@@ -1,0 +1,31 @@
+PO-06 Portable Construction Site Cabin - Step 0 baseline
+
+branch:      feature/po06-construction-site-cabin-20260906
+cut from:    origin/static-migration
+HEAD:        3c538299725f7f37589a7cc41e9a5e906106a9fa
+             3c538299 2026-09-05 23:22:51 +0530 Merge pull request #191 from amanzz/feature/po03-portable-weighbridge-office-20260905
+captured:    2026-09-06T07:02:04Z
+
+This page does not exist yet (404 today), so there is nothing of its own to clone.
+What follows is 'git show HEAD:<path>' of the porta-cabins design-lock route's
+equivalents. Note there is no per-page route FILE for either page: /product/porta-cabins
+is the dynamic hub route [category]/index.tsx and this page will be [category]/[slug].tsx.
+
+  src/pages/product/[category]/[slug].tsx                        -> route-product-category-slug.tsx
+  src/pages/product/[category]/index.tsx                         -> route-product-category-index.tsx
+  src/data/products/porta-cabins.json                            -> data-products-porta-cabins.json
+  src/data/products/portable-weighbridge-office.json             -> data-products-portable-weighbridge-office.json
+  src/data/wp-export/products/portable-weighbridge-office.json   -> data-wp-export-products-portable-weighbridge-office.json
+  src/lib/calculatorLadders.ts                                   -> lib-calculatorLadders.ts
+  src/lib/specsShippingTabs.ts                                   -> lib-specsShippingTabs.ts
+  src/lib/sitemapCanonicalPaths.json                             -> lib-sitemapCanonicalPaths.json
+  src/components/product-variant-hero/rightToExistEntries.tsx    -> component-rightToExistEntries.tsx
+  src/components/product-variant-hero/PortaCabinVariantHero.tsx  -> component-PortaCabinVariantHero.tsx
+  src/data/seo/commercialArchitecture.json                       -> data-seo-commercialArchitecture.json
+
+gallery manifest:  none. The gallery is declared inline in the product JSON's
+                   variants[].images array; portable-weighbridge-office.json above is
+                   the cloned example (36 slides, six sizes).
+calculator ladder: see lib-calculatorLadders.ts, ROUTE_LADDERS.
+
+keep_as_is:        NONE. There is no live gallery to retain - the route 404s today.

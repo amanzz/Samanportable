@@ -8,6 +8,8 @@ import readymadeOfficeCabinCopy from '../../../content/po-01/PO-01-readymade-off
 import prefabricatedOfficeCabinsCopy from '../../../content/po-02/PO-02-prefabricated-office-cabins-copy-v1.json';
 import portableWeighbridgeOfficeCopy from '../../../content/po-03/PO-03-portable-weighbridge-office-copy-v1.json';
 import executivePortableOfficeCopy from '../../../content/po-04/PO-04-executive-portable-office-copy-v1.json';
+import constructionSiteCabinCopy from '../../../content/po-06/PO-06-construction-site-cabin-copy-v1.json';
+import constructionSiteCabinAssets from '../../../content/po-06/PO-06-construction-site-cabin-asset-map-v1.json';
 import portableMobileLaboratoryCopy from '../../../content/po-05/PO-05-portable-mobile-laboratory-copy-v1.json';
 import portableMobileLaboratoryAssets from '../../../content/po-05/PO-05-portable-mobile-laboratory-asset-map-v1.json';
 
@@ -1438,6 +1440,59 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
   // in paragraph 2 (the pack's section2.link.in says "paragraph2"), not paragraph 1
   // as on PO-02, and the anchor falls at index 231 so the verifier's tag-stripped
   // first-70-character comparison matches without a hidden plain-text mirror.
+  // PO-06 (6 Sep 2026) - Section 2 rendered verbatim from the signed copy pack
+  // (content/po-06). Nothing is retyped here: the heading, both paragraphs, the CTA and
+  // every split-card field are read from the pack. The approved contextual link sits in
+  // paragraph 1 on the exact phrase the pack names, which is why the plain-text mirror
+  // is needed: the shipped verifier replaces every tag with a SPACE, so the anchor would
+  // otherwise read "... range : the same welded ..." against a signed paragraph whose
+  // colon follows the anchor with no space. Same `verificationText` field PO-01, PO-02,
+  // PO-04, PO-05, SOC-01 and CO-08 already use for exactly this. (The Description tab
+  // cannot use it - globals.css forces `display: revert !important` on every descendant
+  // there and the "hidden" mirror renders visibly - so those anchors absorb their
+  // trailing punctuation instead.)
+  'construction-site-cabin': {
+    heading: constructionSiteCabinCopy.section2.h2,
+    verificationText: [constructionSiteCabinCopy.section2.p1],
+    bodyParagraphs: [
+      (() => {
+        const { p1, link } = constructionSiteCabinCopy.section2;
+        const at = p1.indexOf(link.anchor);
+        if (at < 0) return <>{p1}</>;
+        return (
+          <>
+            {p1.slice(0, at)}
+            <Link className={linkClass} href={link.href}>{link.anchor}</Link>
+            {p1.slice(at + link.anchor.length)}
+          </>
+        );
+      })(),
+      (<>{constructionSiteCabinCopy.section2.p2}</>),
+    ],
+    topCtaLabel: constructionSiteCabinCopy.section2.cta,
+    topCtaHref: '#porta-size-applications',
+    splitCard: {
+      // Ruling 3 (SAMAN, 6 Sep 2026): this slot takes a PHOTOGRAPH, never a GA board -
+      // the 20x10 site exterior from 02-long-description-16x9, native 16:9 and never
+      // cropped. Because that frame is spent here, the Description tab carries five
+      // images rather than six.
+      imageSrc: `/${constructionSiteCabinAssets.output_root.replace('public/', '')}/${constructionSiteCabinAssets.section2_card.out}`,
+      // Ruling 5 - alt only from copy.alt_text, keyed by the output path. This alt is
+      // written for THIS slot and is one of the 50 unique alts on the page.
+      imageAlt: (constructionSiteCabinCopy.alt_text.section2_card as Record<string, string>)[
+        constructionSiteCabinAssets.section2_card.out
+      ],
+      imageWidth: 1600,
+      imageHeight: 900,
+      subheading: constructionSiteCabinCopy.section2.split_card.h3,
+      body: constructionSiteCabinCopy.section2.split_card.p1,
+      body2: constructionSiteCabinCopy.section2.split_card.p2,
+      ctaLabel: constructionSiteCabinCopy.section2.split_card.cta,
+      // The card CTA scrolls to the Section 3 anchor; on this route that section's id
+      // is #porta-size-applications, as on PO-01 through PO-05 and SOC-01.
+      ctaHref: '#porta-size-applications',
+    },
+  },
   'portable-weighbridge-office': {
     heading: portableWeighbridgeOfficeCopy.section2.h2,
     bodyParagraphs: [

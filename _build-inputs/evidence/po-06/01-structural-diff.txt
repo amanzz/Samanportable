@@ -1,0 +1,41 @@
+ARTEFACT 1 - STRUCTURAL DIFF vs THE DESIGN LOCK
+preview    : http://127.0.0.1:4106/product/portable-office/construction-site-cabin
+design lock: https://www.samanportable.com/product/porta-cabins
+
+Each row is a SHARED COMPONENT identified by the marker markup that component
+itself emits. Only presence and ORDER are compared; byte offsets differ because
+the two pages carry different copy, which is a permitted content difference.
+
+shared component                                  preview       lock  verdict
+hero section (T24.1 three-column)                     341        341  both present
+hero gallery column (1:1 frame)                     34362      34154  both present
+zone contact bar (ProductZoneCtas)                  39170      38614  both present
+hero premium size chips                             43403      42848  both present
+buy box column (pc-buybox)                          42756      42200  both present
+related rail (pc-rail / Explore the Range)          49860      48216  both present
+section divider                                     34013      33805  both present
+RightToExist section                                56814      58577  both present
+RightToExist split card                             58866      59764  both present
+SizeApplicationsExplorer                            60083      60894  both present
+explorer premium size tabs                          60614      61428  both present
+calculator strip                                    98290      93439  both present
+PortaCabinsYouMayAlsoLike                          313777      94918  both present
+ProductTabs (Product Details)                      319447     103101  both present
+Description panel                                  323768     107399  both present
+Specifications panel                               324868     108497  both present
+Shipping panel                                     326153     109780  both present
+Reviews panel                                      327242     110867  both present
+
+Component ORDER, preview    : hero section (T24.1 three-column) > hero gallery column (1:1 frame) > zone contact bar (ProductZoneCtas) > hero premium size chips > buy box column (pc-buybox) > related rail (pc-rail / Explore the Range) > section divider > RightToExist section > RightToExist split card > SizeApplicationsExplorer > explorer premium size tabs > calculator strip > PortaCabinsYouMayAlsoLike > ProductTabs (Product Details) > Description panel > Specifications panel > Shipping panel > Reviews panel
+Component ORDER, design lock: hero section (T24.1 three-column) > hero gallery column (1:1 frame) > zone contact bar (ProductZoneCtas) > hero premium size chips > buy box column (pc-buybox) > related rail (pc-rail / Explore the Range) > section divider > RightToExist section > RightToExist split card > SizeApplicationsExplorer > explorer premium size tabs > calculator strip > PortaCabinsYouMayAlsoLike > ProductTabs (Product Details) > Description panel > Specifications panel > Shipping panel > Reviews panel
+
+RESULT: PASS - every shared component present on both pages appears in the
+identical order. The delta is content only.
+
+Present on the preview but not on the design lock: (none)
+Present on the design lock but not on the preview: (none)
+
+Known, pre-existing hub-vs-product-route divergences (not introduced by this page,
+documented on PO-01 through PO-05): the hub route renders no calculator H2 block,
+and the hub's own Description tab publishes its six 16:9 frames the same way this
+page publishes its five.

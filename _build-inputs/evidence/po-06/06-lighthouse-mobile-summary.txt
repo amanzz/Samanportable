@@ -1,0 +1,15 @@
+ARTEFACT 6b - LIGHTHOUSE MOBILE, PREVIEW vs THE LIVE DESIGN LOCK
+
+Lighthouse 13.4.1, --preset=perf --form-factor=mobile --throttling-method=simulate.
+
+page                                        perf    FCP s    LCP s    TBT ms      CLS     SI s
+PO-06 preview (local, this branch)            70     1.94     3.74       719   0.0000     2.37
+porta-cabins design lock (live production)    43     2.13     6.20      3562   0.0001     4.45
+
+The two are not a like-for-like network comparison - the preview is served from
+localhost and the design lock over the public internet - so the absolute numbers
+are not the point. What matters for a design-lock ticket is that the new page is
+not WORSE than the template it copies on any metric, and it is not: CLS is a flat
+0, and LCP, TBT and Speed Index all come in ahead of the lock.
+
+Raw reports: 06-lighthouse-mobile-preview.json, 06-lighthouse-mobile-designlock.json

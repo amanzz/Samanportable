@@ -41,16 +41,28 @@ const PROTECTED_NORMALIZED_SHA256 = {
   // asserted to derive from its own product record, the six published prices are
   // still checked against porta-cabins.json, and the live per-variant calculator
   // computation below still runs. No rate, formula, tax or component price moved.
-  // PO-05 (5 Sep 2026): re-pinned. calculatorLadders.ts changed by exactly one additive
-  // ROUTE_LADDERS entry plus its import ('portable-mobile-laboratory', toRows of that
-  // route's own product JSON). Verified against the branch point 3c538299: 40 -> 41 keys,
-  // the added key is 'portable-mobile-laboratory' and NOTHING was removed; the whole diff
-  // is five added lines (one import, three comment lines, one entry) and zero modified or
-  // deleted lines, so no existing route's ladder rows, rates, GST or published prices
-  // changed. This pin is a tamper tripwire only - every substantive PC-01 assertion below
+  // PO-03 (5 Sep 2026): re-pinned. calculatorLadders.ts changed by exactly one additive
+  // ROUTE_LADDERS entry plus its import ('portable-weighbridge-office', toRows of that
+  // route's own product JSON). Verified against origin/static-migration: 39 -> 40 keys,
+  // the new key is the ONLY difference, and no existing route's ladder rows, rates, GST
+  // or published prices changed. The deeper parity assertions below run unchanged.
+  // PO-06 (6 Sep 2026): re-pinned. calculatorLadders.ts changed by exactly one additive
+  // ROUTE_LADDERS entry plus its import ('construction-site-cabin', toRows of that
+  // route's own product JSON). Verified against the branch point 3c538299:
+  // 40 -> 41 keys, the added key is the ONLY difference, no key was removed, and the
+  // forty pre-existing keys are unchanged and still in the same order - so no existing
+  // route's ladder rows, rates, GST or published prices moved. The deeper parity
+  // assertions below run unchanged.
+  // PO-05 (6 Sep 2026): re-pinned on top of PO-06, which merged to static-migration
+  // while this branch was open. One further additive ROUTE_LADDERS entry plus its import
+  // ('portable-mobile-laboratory', toRows of that route's own product JSON). Verified
+  // against origin/static-migration: 41 -> 42 keys, the added key is the ONLY difference,
+  // no key was removed, and the forty-one pre-existing keys are unchanged and still in
+  // the same order - so no existing route's ladder rows, rates, GST or published prices
+  // moved. This pin is a tamper tripwire only; every substantive PC-01 assertion below
   // (the live per-variant calculator computation, and the six published prices checked
   // against porta-cabins.json) is separate and still runs unchanged.
-  ladders: '4225b1be7cb70704f525e2fc6aae4f3ec9caa3df371cd5118eeff2e5a1215338',
+  ladders: '98730853fd053a3c6225a4cf3d081d1d00276e0127662549c635f6c0a0bf8c1e',
   rates: 'db62c8be57eeb09025d208df87b05ab9aac02f4183ac0e4a324f49c56291ba48',
   componentRates: '0e2c0e49ecbef688f8a262993cf7750155a5f9976209edddca3fcf4a434518dc',
   tax: 'da95cc10d8e2a5bb20bd9589630bcb1c4ad09fa1d53cfdbe32cd89c094579294',

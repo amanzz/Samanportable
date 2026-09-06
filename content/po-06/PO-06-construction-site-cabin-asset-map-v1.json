@@ -1,0 +1,311 @@
+{
+ "page": "construction-site-cabin",
+ "page_id": "PO-06",
+ "package_root": "D:\\Project-shekhar\\all-product-images\\Hub (Portable Office Cabin)\\construction-site-cabin\\approved-website-assets-v1",
+ "output_root": "public/images/products/construction-site-cabin",
+ "rules": {
+  "never_ship_source_png": true,
+  "webp_size_band_kb": [
+   80,
+   120
+  ],
+  "gallery": {
+   "width_px": 1254,
+   "quality_start": 86,
+   "ratio": "1:1",
+   "crop": "none"
+  },
+  "ga_board": {
+   "width_px": 1800,
+   "quality_start": 88,
+   "crop": "NEVER - downscale proportionally only; dimension text and the printed price block must stay legible"
+  },
+  "section2_card": {
+   "width_px": 1600,
+   "quality_start": 90,
+   "ratio": "16:9",
+   "crop": "none (source is native 16:9)"
+  },
+  "description": {
+   "width_px": 1600,
+   "quality_start": 90,
+   "ratio": "16:9",
+   "crop": "none (all five sources are native 16:9)"
+  },
+  "spec_diagram": {
+   "width_px": 1600,
+   "quality_start": 90,
+   "crop": "none"
+  },
+  "loading": "the six images of the selected size eager with fetchpriority=high on slide 1 only; the other thirty lazy; explicit width and height on every img; preload link for slide 1 of the default size (20x10) carrying the same imagesrcset; GA boards and description images lazy",
+  "measure_every_output": "report width, height and KB for every file; anything outside 80-120 KB is re-encoded (quality first, then width) and re-measured"
+ },
+ "keep_as_is": {
+  "note": "None. PO-06 is a new page returning 404 today; there is no live gallery to retain."
+ },
+ "gallery_new": {
+  "10x10": {
+   "running_order_note": "3 exteriors then 3 interiors, file order 01-06 (SAMAN sanction 6 Sep 2026)",
+   "slides": [
+    {
+     "src": "01-square-product-gallery/size-10x10/01-site-cabin-10x10-front-exterior.png",
+     "out": "10x10/construction-site-cabin-10x10-front-exterior.webp"
+    },
+    {
+     "src": "01-square-product-gallery/size-10x10/02-site-cabin-10x10-rear-exterior.png",
+     "out": "10x10/construction-site-cabin-10x10-rear-exterior.webp"
+    },
+    {
+     "src": "01-square-product-gallery/size-10x10/03-site-cabin-10x10-side-exterior.png",
+     "out": "10x10/construction-site-cabin-10x10-side-exterior.webp"
+    },
+    {
+     "src": "01-square-product-gallery/size-10x10/04-site-cabin-10x10-entry-interior.png",
+     "out": "10x10/construction-site-cabin-10x10-entry-interior.webp"
+    },
+    {
+     "src": "01-square-product-gallery/size-10x10/05-site-cabin-10x10-corner-interior.png",
+     "out": "10x10/construction-site-cabin-10x10-corner-interior.webp"
+    },
+    {
+     "src": "01-square-product-gallery/size-10x10/06-site-cabin-10x10-reverse-interior.png",
+     "out": "10x10/construction-site-cabin-10x10-reverse-interior.webp"
+    }
+   ]
+  },
+  "20x8": {
+   "running_order_note": "3 exteriors then 3 interiors, file order 01-06 (SAMAN sanction 6 Sep 2026)",
+   "slides": [
+    {
+     "src": "01-square-product-gallery/size-20x8/01-site-cabin-20x8-front-exterior.png",
+     "out": "20x8/construction-site-cabin-20x8-front-exterior.webp"
+    },
+    {
+     "src": "01-square-product-gallery/size-20x8/02-site-cabin-20x8-rear-exterior.png",
+     "out": "20x8/construction-site-cabin-20x8-rear-exterior.webp"
+    },
+    {
+     "src": "01-square-product-gallery/size-20x8/03-site-cabin-20x8-side-exterior.png",
+     "out": "20x8/construction-site-cabin-20x8-side-exterior.webp"
+    },
+    {
+     "src": "01-square-product-gallery/size-20x8/04-site-cabin-20x8-entry-interior.png",
+     "out": "20x8/construction-site-cabin-20x8-entry-interior.webp"
+    },
+    {
+     "src": "01-square-product-gallery/size-20x8/05-site-cabin-20x8-corner-interior.png",
+     "out": "20x8/construction-site-cabin-20x8-corner-interior.webp"
+    },
+    {
+     "src": "01-square-product-gallery/size-20x8/06-site-cabin-20x8-reverse-interior.png",
+     "out": "20x8/construction-site-cabin-20x8-reverse-interior.webp"
+    }
+   ]
+  },
+  "20x10": {
+   "running_order_note": "3 exteriors then 3 interiors, file order 01-06 (SAMAN sanction 6 Sep 2026)",
+   "slides": [
+    {
+     "src": "01-square-product-gallery/size-20x10/01-site-cabin-20x10-front-exterior.png",
+     "out": "20x10/construction-site-cabin-20x10-front-exterior.webp"
+    },
+    {
+     "src": "01-square-product-gallery/size-20x10/02-site-cabin-20x10-rear-exterior.png",
+     "out": "20x10/construction-site-cabin-20x10-rear-exterior.webp"
+    },
+    {
+     "src": "01-square-product-gallery/size-20x10/03-site-cabin-20x10-side-exterior.png",
+     "out": "20x10/construction-site-cabin-20x10-side-exterior.webp"
+    },
+    {
+     "src": "01-square-product-gallery/size-20x10/04-site-cabin-20x10-entry-interior.png",
+     "out": "20x10/construction-site-cabin-20x10-entry-interior.webp"
+    },
+    {
+     "src": "01-square-product-gallery/size-20x10/05-site-cabin-20x10-corner-interior.png",
+     "out": "20x10/construction-site-cabin-20x10-corner-interior.webp"
+    },
+    {
+     "src": "01-square-product-gallery/size-20x10/06-site-cabin-20x10-reverse-interior.png",
+     "out": "20x10/construction-site-cabin-20x10-reverse-interior.webp"
+    }
+   ]
+  },
+  "20x12": {
+   "running_order_note": "3 exteriors then 3 interiors, file order 01-06 (SAMAN sanction 6 Sep 2026)",
+   "slides": [
+    {
+     "src": "01-square-product-gallery/size-20x12/01-site-cabin-20x12-front-exterior.png",
+     "out": "20x12/construction-site-cabin-20x12-front-exterior.webp"
+    },
+    {
+     "src": "01-square-product-gallery/size-20x12/02-site-cabin-20x12-rear-exterior.png",
+     "out": "20x12/construction-site-cabin-20x12-rear-exterior.webp"
+    },
+    {
+     "src": "01-square-product-gallery/size-20x12/03-site-cabin-20x12-side-exterior.png",
+     "out": "20x12/construction-site-cabin-20x12-side-exterior.webp"
+    },
+    {
+     "src": "01-square-product-gallery/size-20x12/04-site-cabin-20x12-entry-interior.png",
+     "out": "20x12/construction-site-cabin-20x12-entry-interior.webp"
+    },
+    {
+     "src": "01-square-product-gallery/size-20x12/05-site-cabin-20x12-corner-interior.png",
+     "out": "20x12/construction-site-cabin-20x12-corner-interior.webp"
+    },
+    {
+     "src": "01-square-product-gallery/size-20x12/06-site-cabin-20x12-reverse-interior.png",
+     "out": "20x12/construction-site-cabin-20x12-reverse-interior.webp"
+    }
+   ]
+  },
+  "30x10": {
+   "running_order_note": "3 exteriors then 3 interiors, file order 01-06 (SAMAN sanction 6 Sep 2026)",
+   "slides": [
+    {
+     "src": "01-square-product-gallery/size-30x10/01-site-cabin-30x10-front-exterior.png",
+     "out": "30x10/construction-site-cabin-30x10-front-exterior.webp"
+    },
+    {
+     "src": "01-square-product-gallery/size-30x10/02-site-cabin-30x10-rear-exterior.png",
+     "out": "30x10/construction-site-cabin-30x10-rear-exterior.webp"
+    },
+    {
+     "src": "01-square-product-gallery/size-30x10/03-site-cabin-30x10-side-exterior.png",
+     "out": "30x10/construction-site-cabin-30x10-side-exterior.webp"
+    },
+    {
+     "src": "01-square-product-gallery/size-30x10/04-site-cabin-30x10-entry-interior.png",
+     "out": "30x10/construction-site-cabin-30x10-entry-interior.webp"
+    },
+    {
+     "src": "01-square-product-gallery/size-30x10/05-site-cabin-30x10-corner-interior.png",
+     "out": "30x10/construction-site-cabin-30x10-corner-interior.webp"
+    },
+    {
+     "src": "01-square-product-gallery/size-30x10/06-site-cabin-30x10-reverse-interior.png",
+     "out": "30x10/construction-site-cabin-30x10-reverse-interior.webp"
+    }
+   ]
+  },
+  "40x10": {
+   "running_order_note": "3 exteriors then 3 interiors, file order 01-06 (SAMAN sanction 6 Sep 2026)",
+   "slides": [
+    {
+     "src": "01-square-product-gallery/size-40x10/01-site-cabin-40x10-front-exterior.png",
+     "out": "40x10/construction-site-cabin-40x10-front-exterior.webp"
+    },
+    {
+     "src": "01-square-product-gallery/size-40x10/02-site-cabin-40x10-rear-exterior.png",
+     "out": "40x10/construction-site-cabin-40x10-rear-exterior.webp"
+    },
+    {
+     "src": "01-square-product-gallery/size-40x10/03-site-cabin-40x10-side-exterior.png",
+     "out": "40x10/construction-site-cabin-40x10-side-exterior.webp"
+    },
+    {
+     "src": "01-square-product-gallery/size-40x10/04-site-cabin-40x10-entry-interior.png",
+     "out": "40x10/construction-site-cabin-40x10-entry-interior.webp"
+    },
+    {
+     "src": "01-square-product-gallery/size-40x10/05-site-cabin-40x10-corner-interior.png",
+     "out": "40x10/construction-site-cabin-40x10-corner-interior.webp"
+    },
+    {
+     "src": "01-square-product-gallery/size-40x10/06-site-cabin-40x10-reverse-interior.png",
+     "out": "40x10/construction-site-cabin-40x10-reverse-interior.webp"
+    }
+   ]
+  }
+ },
+ "ga_boards": {
+  "10x10": {
+   "src": "00-ga-specification-boards/size-10x10/construction-site-cabin-10x10x8-5-premium-ga-specification-board-v1.png",
+   "out": "ga/construction-site-cabin-10x10-ga-board.webp"
+  },
+  "20x8": {
+   "src": "00-ga-specification-boards/size-20x8/construction-site-cabin-20x8x8-5-premium-ga-specification-board-v1.png",
+   "out": "ga/construction-site-cabin-20x8-ga-board.webp"
+  },
+  "20x10": {
+   "src": "00-ga-specification-boards/size-20x10/construction-site-cabin-20x10x8-5-premium-ga-specification-board-v1.png",
+   "out": "ga/construction-site-cabin-20x10-ga-board.webp"
+  },
+  "20x12": {
+   "src": "00-ga-specification-boards/size-20x12/construction-site-cabin-20x12x8-5-premium-ga-specification-board-v1.png",
+   "out": "ga/construction-site-cabin-20x12-ga-board.webp"
+  },
+  "30x10": {
+   "src": "00-ga-specification-boards/size-30x10/construction-site-cabin-30x10x8-5-premium-ga-specification-board-v1.png",
+   "out": "ga/construction-site-cabin-30x10-ga-board.webp"
+  },
+  "40x10": {
+   "src": "00-ga-specification-boards/size-40x10/construction-site-cabin-40x10x8-5-premium-ga-specification-board-v1.png",
+   "out": "ga/construction-site-cabin-40x10-ga-board.webp"
+  }
+ },
+ "section2_card": {
+  "src": "02-long-description-16x9/03-site-cabin-20x10-site-exterior.png",
+  "out": "section2/construction-site-cabin-20x10-site-exterior-card.webp"
+ },
+ "description_images": {
+  "desc_01": {
+   "src": "02-long-description-16x9/01-site-cabin-10x10-project-exterior.png",
+   "out": "description/construction-site-cabin-10x10-on-site-exterior.webp"
+  },
+  "desc_02": {
+   "src": "02-long-description-16x9/02-site-cabin-20x8-office-interior.png",
+   "out": "description/construction-site-cabin-20x8-interior-desk-run.webp"
+  },
+  "desc_03": {
+   "src": "02-long-description-16x9/04-site-cabin-20x12-wide-interior.png",
+   "out": "description/construction-site-cabin-20x12-interior-wide-aisle.webp"
+  },
+  "desc_04": {
+   "src": "02-long-description-16x9/_repaired-16x9-v1/05-site-cabin-30x10-team-interior.png",
+   "out": "description/construction-site-cabin-30x10-interior-eight-desks.webp"
+  },
+  "desc_05": {
+   "src": "02-long-description-16x9/_repaired-16x9-v1/06-site-cabin-40x10-manager-interior.png",
+   "out": "description/construction-site-cabin-40x10-manager-room.webp"
+  }
+ },
+ "spec_diagrams": {
+  "01": {
+   "src": "03-technical-diagrams-16x9/01-site-cabin-frame-joint-diagram.png",
+   "out": "diagrams/construction-site-cabin-frame-joint-diagram.webp"
+  },
+  "02": {
+   "src": "03-technical-diagrams-16x9/02-site-cabin-window-electrical-diagram.png",
+   "out": "diagrams/construction-site-cabin-window-electrical-diagram.webp"
+  }
+ },
+ "spec_pdf": {
+  "src": "04-technical-pdf/portable-construction-site-cabin-priced-technical-specification-and-ga-v1.pdf",
+  "out": "portable-construction-site-cabin-priced-technical-specification-and-ga-v1.pdf",
+  "note": "the PDF prints the Rs 1,450 price basis, which is the basis this page publishes"
+ },
+ "package_deviations": [
+  {
+   "item": "gallery running order",
+   "finding": "the package supplies three exteriors then three interiors per size, not four exteriors then two",
+   "resolution": "SAMAN sanctioned 3 + 3 in file order 01-06 on 6 Sep 2026, as PO-04"
+  },
+  {
+   "item": "02-long-description-16x9/05 and /06",
+   "finding": "delivered as a 1080x1080 square centred in a 1920x1080 frame with 420 px blurred pillars each side",
+   "resolution": "SAMAN approved re-derivation on 6 Sep 2026; true 16:9 masters written to 02-long-description-16x9/_repaired-16x9-v1/ and used by this map. The pillared originals are not referenced."
+  },
+  {
+   "item": "05-image-seo-and-qa/construction-site-cabin-image-seo-metadata.csv",
+   "finding": "alt text repeats within each size, which fails the duplicate-alt DOM check",
+   "resolution": "Claude authored 50 unique alts in copy.alt_text; the CSV alt column is not used"
+  },
+  {
+   "item": "prices",
+   "finding": "the folder workbook (edited 24 Aug, base Rs 1,350) contradicts the wall ledger, the six GA boards and the 13-page technical PDF (frozen 22 Aug, base Rs 1,450)",
+   "resolution": "SAMAN ruled the Rs 1,450 basis on 6 Sep 2026. GA boards need no change; the workbook is the outlier and is not used for price"
+  }
+ ]
+}

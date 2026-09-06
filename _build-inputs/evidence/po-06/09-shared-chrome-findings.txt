@@ -1,0 +1,94 @@
+ARTEFACT 9 - THE THREE verify_po06.py CHECKS THAT NO PAGE-LEVEL CHANGE CAN SATISFY
+
+verify_po06.py: 445 checks PASS, 3 FAIL (448 total), RESULT: FAIL (3 checks).
+
+All three hits are in SHARED COMPONENTS that the build prompt explicitly forbids this
+ticket from editing, and each is reproducible on pages SAMAN has already approved -
+including, for the delivery string, the /product/porta-cabins design lock itself.
+Nothing in this page's own copy, data or markup produces any of them.
+
+Measured 6 Sep 2026, tag-stripped page text, digit ranges normalised ("7 to 21" and
+"7-21" both counted):
+
+  page                                        "2,37,600"   "7-21 working days"   "working days"
+  LIVE design lock /product/porta-cabins      absent       PRESENT               5
+  LIVE PO-03 portable-weighbridge-office      PRESENT      PRESENT               3
+  LIVE PO-04 executive-portable-office        PRESENT      PRESENT               3
+  LOCAL PO-06 preview (this branch)           PRESENT      PRESENT               2
+
+PO-06 carries the FEWEST occurrences of the three product pages, because this page's
+variant featureCells replace the shared five-cell default outright and therefore retire
+the buy-box "Delivery: 7-21 Working Days" cell that PO-03 and PO-04 still render.
+
+
+FINDING 1 - "withdrawn Rs 1,350-basis price absent: 2,37,600"
+
+  Rendered by:  src/lib/cabinCalculatorSSR.ts, the shared Section 4 calculator's
+                "Choose your product" chooser.
+  Exact markup: <strong class="choice-title">Site Office Container</strong>
+                <small class="choice-price">from Rs 2,37,600 ex-GST</small>
+  What it is:   the SITE OFFICE CONTAINER's own published from-price. It is a different
+                product on a different page. The collision is arithmetical coincidence:
+                the verifier's withdrawn-price list contains 2,37,600 because that is
+                what PO-06's 20x8 size would have cost on the retired Rs 1,350 basis
+                (160 sq ft x 1,350), and the Site Office Container's unrelated from-price
+                happens to be the same number.
+  Not a claim:  no PO-06 size is priced at 2,37,600 anywhere on this page. The 20x8 size
+                publishes Rs 2,55,200 ex-GST / Rs 3,01,136 incl GST, the Rs 1,450 basis,
+                and all six withdrawn figures are asserted absent from this page's
+                product JSON by scripts/po06-build-product-json.py.
+  Why unfixed:  build prompt Step 5 - "Untouched ... Do not touch calculator content,
+                labels, formulas or styling" - and Step 10. Removing it would mean
+                editing another product's price inside a shared component.
+  Absent on the design lock only because the hub route renders no calculator at all,
+  which is itself a documented pre-existing hub-vs-product divergence.
+
+
+FINDINGS 2 and 3 - "absent: '7-21 working days'" and "unsourced promise absent:
+'working days'"
+
+  Two rendered instances on this page, both shared:
+
+  a) src/lib/specsShippingTabs.ts:390, inside buildShippingHtml():
+       "...with delivery and installation across South and North India in 7-21 working
+        days. Cabins up to 20 ft travel on a 20 ft open trailer..."
+     This is the FIRST PARAGRAPH of the shared freight component. Build prompt Step 7
+     requires the Shipping tab to be exactly "the same shared freight component the live
+     porta-cabins page renders", and calls a panel without the freight figures a
+     regression. The requirement to render that component verbatim and the pack's
+     old_page_strings_absent entry are in direct contradiction: satisfying either one
+     breaks the other. This page therefore renders the component unedited, which is the
+     instruction that came with a design lock.
+
+  b) src/lib/cabinCalculatorSSR.ts:3181 (with src/lib/cabinEstimateCopy.ts:29), the
+     shared calculator's step-8 commitment line:
+       "Delivery in 7 to 21 working days. Freight is confirmed once the exact delivery
+        location and order are approved."
+     Same Step 5 prohibition as finding 1. Note cabinCalculatorSSR.ts does expose a
+     suppressCommitmentCopy option, but the design lock does NOT pass it - the lock
+     renders this line - so using it here would be a deliberate divergence from the
+     design lock and a change to calculator content, which Step 5 forbids twice over.
+
+  A third shared instance exists at src/components/ProductTabs.tsx:134 and is not
+  counted above because it does not reach this page's tag-stripped text.
+
+
+WHAT WAS DONE IN BOUNDARY
+
+  The one instance this page COULD retire was retired: the buy-box Delivery cell. The
+  pack's hero.fixed_cells supply "Delivery: Pan-India; freight published by distance
+  band", and because a variant's own featureCells replace the shared five-cell default
+  outright (LC-00), the deployed literal "7-21 Working Days" never renders. That needed
+  no component edit and no per-field override.
+
+WHAT IS ASKED OF SAMAN
+
+  Either (a) accept these three as shared-chrome exclusions for PO-06, as the equivalent
+  shared-template string was handled on PO-01 (PR #186), or (b) rule a separate,
+  cluster-wide ticket to change the shared freight component and the shared calculator,
+  which would move every product page at once and cannot be scoped to this one.
+
+  This is reported, not worked around. Precedent: PO-01's copy pack listed a shared
+  ProductTabs subtitle in old_page_strings_absent, making verify_po01.py fail a check no
+  page-level change could satisfy; it was raised for a ruling rather than fixed by
+  editing the shared component and breaking the design-lock conformance gates.
