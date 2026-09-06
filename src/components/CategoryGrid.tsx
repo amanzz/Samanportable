@@ -55,7 +55,10 @@ export const CATEGORIES: CategoryDef[] = [
   { name: 'Security Cabins', slug: 'security-cabins', href: '/product/security-cabins', icon: Shield, description: 'Guard posts and security kiosks.' },
   { name: 'Portable Toilet', slug: 'portable-toilet', href: '/product/portable-toilet', icon: Droplets, description: 'Standalone sanitation units: single seaters to multi-cubicle blocks.' },
   { name: 'Industrial Sheds', slug: 'industrial-sheds', href: '/product/industrial-sheds', icon: Factory, description: 'Sheds, garden sheds and prefabricated warehouses.' },
-  { name: 'PEB Construction', slug: 'peb-constructions', href: '/product/peb-constructions', icon: HardHat, description: 'Design-to-erection pre-engineered building projects, managed end to end by our team.' },
+  // SAMAN-105 Section A (4 Sep 2026): the 'PEB Construction' card is removed, not
+  // re-pointed. /product/peb-constructions 301s to /product/pre-engineered-buildings,
+  // which is the card directly below, so a re-point would show the same destination
+  // twice in the grid. Same treatment the Phase 1 'Portable Cabin' card got above.
   { name: 'Pre-Engineered Buildings', slug: 'pre-engineered-buildings', href: '/product/pre-engineered-buildings', icon: Building, description: 'Steel-framed factories, warehouses and industrial buildings, engineered to span.' },
   { name: 'Prefab Building', slug: 'prefab-buildings', href: '/product/prefab-buildings', icon: Blocks, description: 'Modular buildings for schools, offices, healthcare and site facilities: multi-room layouts.' },
   { name: 'Prefabricated Houses', slug: 'prefabricated-houses', href: '/product/prefabricated-houses', icon: Home, description: 'Panel-built prefab homes and bunkhouses, residential builds that are not container-based.' },

@@ -602,10 +602,15 @@ export const PORTABLE_OFFICE_LINK_MODULES: Record<string, InternalLinkModule> = 
       // describes the retired glazed product and would misdescribe the compact steel
       // cabin, so the row is removed rather than repointed behind false copy. No
       // replacement anchor is invented; the 301 carries the equity.
+      // SAMAN-105 Section A (4 Sep 2026) - re-pointed. This row's destination,
+      // /product/portable-office/portable-office-container, now 301s to
+      // /product/container-offices ('container for office' #2 is that hub's intent).
+      // The anchor is re-pointed rather than removed: 'rebuilt container offices'
+      // still describes the Container Offices hub accurately, so no copy changes.
       {
         before: 'If the shell can be reused rather than fabricated, ',
         anchor: 'rebuilt container offices',
-        href: '/product/portable-office/portable-office-container',
+        href: '/product/container-offices',
         after: ' are the cheaper route.',
       },
     ],

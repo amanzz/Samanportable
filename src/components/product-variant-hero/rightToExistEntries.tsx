@@ -418,9 +418,19 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
     body: (
       <>This page exists to route you to the right build, not to sell one configuration. The four home pages under it each own a distinct specification: repeatable prefab modules, villa-grade luxury finish, the reinforced shipping-form shell, and the fixed-plan affordable build. Start here when you know the size you need but not yet the build style that fits your plot and budget.</>
     ),
-    comparison: (
-      <>If you already know you want the budget build, go straight to the <Link className={linkClass} href={containerHouseHref('affordable-container-homes')}>affordable container homes</Link> page.</>
-    ),
+    // SAMAN-105 Section A (4 Sep 2026) - the comparison line is REMOVED, not
+    // re-pointed. It sent the reader to affordable-container-homes, which now 301s
+    // into this very hub, so any re-point makes it a self-link and re-pointing it at
+    // a different sibling would put false copy behind "the budget build". `comparison`
+    // is optional on this type and the `body` above already routes the reader across
+    // the range. Same treatment SOC-01 gave the modern-office-cabin row in
+    // PortaCabinVariantHero: remove the row rather than repoint behind false copy.
+    //
+    // NOT changed here, and reported with the ticket for an owner copy decision: the
+    // `body` sentence above still names "the fixed-plan affordable build" as one of
+    // four home pages, and the descriptionHtml in src/data/products/container-houses.json
+    // still carries a paragraph selling it at Rs 1,438 per sq ft. Both are claims about
+    // a retired page, and rewriting owner copy is outside a redirect ticket.
   },
   // CH-PFB-04 (6 Sep 2026) - build prompt v1 section 2 block 6, copy pack
   // section2, verbatim. Two lead paragraphs (895 chars across the pair as the pack

@@ -109,7 +109,11 @@ const MEGA_COLUMNS = [
     title: 'Structures & Buildings',
     items: [
       { name: 'Industrial Shed', href: '/product/industrial-sheds' },
-      { name: 'PEB Construction', href: '/product/peb-constructions' },
+      // SAMAN-105 Section A (4 Sep 2026): the 'PEB Construction' entry is deleted,
+      // not re-pointed. /product/peb-constructions 301s into
+      // /product/pre-engineered-buildings, which is the entry directly below, so a
+      // re-point would leave two identically-destined items in the same menu. Same
+      // treatment the Phase 1 'Portable Cabin' entry got above.
       { name: 'Pre-Engineered Building', href: '/product/pre-engineered-buildings' },
       { name: 'Prefab Building', href: '/product/prefab-buildings' },
       { name: 'Prefabricated House', href: '/product/prefabricated-houses' },
