@@ -1,0 +1,30 @@
+CH-FPK-06 Template Conformance Gate - artefact 2
+Component-order assertion, the eleven blocks of the design lock
+
+Each marker below is searched in the served DOM (__NEXT_DATA__ stripped) and
+reported with the byte offset at which it first appears, so the ORDER is checked
+and not merely the presence. Sub-markers (1a, 1b, 1c, 6a) sit INSIDE their parent
+block and are reported for completeness without an order assertion of their own.
+
+Note on the hero columns: the lock ships grid-template-areas "rail gallery buybox"
+(PortaCabinVariantHero.tsx line 1478), so the DOM and desktop order is
+rail | gallery | buy box, and mobile is block flow gallery -> buy box -> rail.
+The build prompt states the columns in the reverse order; this route emits the
+identical grid-template-areas string as porta-cabins, so there is no delta here.
+
+  2  Contact / location bar (shared header strip)            @   24331
+  1  Three-column hero grid (rail | gallery | buy box)       @   52987
+  1a   gallery column, six slides for the selected size      @   73007
+  1b   decision panel: five per-variant FEATURE_CELLS        @   74773
+  3  Size selector chips (usePremiumSizeTabs)                @   73139
+  4  Price display for the selected size                     @   76273
+  1c/5 Explore the Range panel + its H2                      @   78236
+  6  Section 2 RightToExist, top block                       @   83692
+  6a   Section 2 split card, directly below the top block    @   85151
+  7  Section 2 media pairing - this page has NO media band   ABSENT - correct
+  8  Section 3 SizeApplicationsExplorer (image left, text right) @   89794
+  9  Section 4 calculator, untouched                         @  128231
+  10 You may also like (current cluster only)                @  343035
+  11 Section 5 Product Details, four tabs                    @  350379
+
+component order: PASS

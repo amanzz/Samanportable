@@ -1,0 +1,12 @@
+
+checks run: 799
+failures: 7
+  - unsourced fact published on the page: working days
+  - unsourced fact published on the page: 7 to 21
+  - structured data type missing: Product
+  - structured data type missing: AggregateOffer
+  - structured data type missing: BreadcrumbList
+  - section 2 split card not referenced on the page
+  - retired URL is linked on the page: affordable-container-homes
+
+RESULT: FAIL

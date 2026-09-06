@@ -1,0 +1,33 @@
+CH-FPK-06 Template Conformance Gate - artefact 1
+Structural diff: /product/container-houses/flat-pack-container-homes
+             vs: /product/porta-cabins  (the design lock)
+
+Method: every element in the served DOM that carries a `saman-*` design-lock
+class hook, reduced to tag + hooks, counted. Text, image paths, hrefs and
+variant/size rows are the four permitted content differences and are excluded
+by construction. __NEXT_DATA__ is stripped before the comparison.
+
+design-lock hooks present on BOTH routes at identical counts: 16
+  =  button.saman-size-chip                                     6
+  =  button.saman-size-tab                                      6
+  =  button.saman-ymal-arrow                                    2
+  =  div.saman-s2-split                                         1
+  =  div.saman-s2-split-body                                    1
+  =  div.saman-s2-split-media                                   1
+  =  div.saman-size-chips                                       1
+  =  div.saman-size-tabs                                        1
+  =  div.saman-ymal-controls                                    1
+  =  div.saman-ymal-dots                                        1
+  =  div.saman-ymal-track                                       1
+  =  div.saman-ymal-viewport                                    1
+  =  h3.saman-s2-split-subheading                               1
+  =  hr.saman-section-divider                                   4
+  =  p.saman-s2-split-text                                      2
+  =  section.saman-youmaylike                                   1
+
+hooks whose COUNT differs: 5
+  !=  a.saman-s2-split-cta                                       flat-pack 2    porta-cabins 1
+  !=  a.saman-ymal-card                                          flat-pack 4    porta-cabins 10
+  !=  button.saman-ymal-dot                                      flat-pack 2    porta-cabins 8
+  !=  div.saman-table-wrap                                       flat-pack 5    porta-cabins 4
+  !=  table.saman-table                                          flat-pack 5    porta-cabins 4

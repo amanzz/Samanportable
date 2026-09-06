@@ -1,0 +1,781 @@
+{
+  "productSlug": "flat-pack-container-homes",
+  "productName": "Flat-Pack Container Homes",
+  "variantAxis": "Size",
+  "defaultVariant": "20x10",
+  "hsn": "9406",
+  "gstPercent": 18,
+  "emitAggregateOffer": true,
+  "schemaIncludeVariantOffers": true,
+  "schemaBrandName": "SAMAN Portable",
+  "suppressLegacySku": true,
+  "suppressLegacyFaqSchema": true,
+  "suppressReviewClaims": true,
+  "emitVariantFactCompleteness": true,
+  "emitExplorerImageManifest": true,
+  "optimizeLocalGalleryImages": true,
+  "labelActiveThumbnailAlt": true,
+  "variants": [
+    {
+      "sizeSlug": "10x10",
+      "label": "10x10 ft",
+      "dims": "10x10x8.5 ft",
+      "areaSqft": 100,
+      "priceExGst": 207000,
+      "priceInclGst": 244260,
+      "featureCells": [
+        {
+          "label": "",
+          "value": "100 sq.ft erected built-up area"
+        },
+        {
+          "label": "",
+          "value": "Single-room studio footprint"
+        },
+        {
+          "label": "",
+          "value": "50 mm class insulated panel envelope"
+        },
+        {
+          "label": "",
+          "value": "Lightest pack in the six-size ladder"
+        },
+        {
+          "label": "",
+          "value": "Rs 2,07,000 ex-GST"
+        }
+      ],
+      "images": [
+        {
+          "src": "/images/flat-pack-container-homes/size-10x10/01-flat-pack-container-home-10x10-front-left-exterior.webp",
+          "alt": "10x10 ft ft flat-pack container home, front left three-quarter view with the entrance door visible and the bolted corner posts on the near corner",
+          "provenance": "render",
+          "width": 1180,
+          "height": 1180
+        },
+        {
+          "src": "/images/flat-pack-container-homes/size-10x10/02-flat-pack-container-home-10x10-front-right-exterior.webp",
+          "alt": "10x10 ft ft flat-pack container home, front right three-quarter view showing the demountable panel joints along the long wall",
+          "provenance": "render",
+          "width": 1100,
+          "height": 1100
+        },
+        {
+          "src": "/images/flat-pack-container-homes/size-10x10/03-flat-pack-container-home-10x10-full-front-elevation-exterior.webp",
+          "alt": "10x10 ft ft flat-pack container home, square-on front elevation showing the door and window positions on the panel grid",
+          "provenance": "render",
+          "width": 960,
+          "height": 960
+        },
+        {
+          "src": "/images/flat-pack-container-homes/size-10x10/04-flat-pack-container-home-10x10-residential-setting-exterior.webp",
+          "alt": "10x10 ft ft flat-pack container home assembled on a residential plot with a paved approach path",
+          "provenance": "render",
+          "width": 960,
+          "height": 960
+        },
+        {
+          "src": "/images/flat-pack-container-homes/size-10x10/05-flat-pack-container-home-10x10-living-space-interior.webp",
+          "alt": "Interior of a 10x10 ft ft flat-pack container home looking through the living space to the sleeping end",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/flat-pack-container-homes/size-10x10/06-flat-pack-container-home-10x10-kitchen-dining-interior.webp",
+          "alt": "Kitchen and dining run inside a 10x10 ft ft flat-pack container home, alongside the demountable service panel",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "20x8",
+      "label": "20x8 ft",
+      "dims": "20x8x8.5 ft",
+      "areaSqft": 160,
+      "priceExGst": 316800,
+      "priceInclGst": 373824,
+      "featureCells": [
+        {
+          "label": "",
+          "value": "160 sq.ft erected built-up area"
+        },
+        {
+          "label": "",
+          "value": "Narrowest body, easiest approach road"
+        },
+        {
+          "label": "",
+          "value": "50 mm class insulated panel envelope"
+        },
+        {
+          "label": "",
+          "value": "One external door, single-run panel grid"
+        },
+        {
+          "label": "",
+          "value": "Rs 3,16,800 ex-GST"
+        }
+      ],
+      "images": [
+        {
+          "src": "/images/flat-pack-container-homes/size-20x8/01-flat-pack-container-home-20x8-front-left-exterior.webp",
+          "alt": "20x8 ft ft flat-pack container home, front left three-quarter view with the entrance door visible and the bolted corner posts on the near corner",
+          "provenance": "render",
+          "width": 1024,
+          "height": 1024
+        },
+        {
+          "src": "/images/flat-pack-container-homes/size-20x8/02-flat-pack-container-home-20x8-front-right-exterior.webp",
+          "alt": "20x8 ft ft flat-pack container home, front right three-quarter view showing the demountable panel joints along the long wall",
+          "provenance": "render",
+          "width": 1100,
+          "height": 1100
+        },
+        {
+          "src": "/images/flat-pack-container-homes/size-20x8/03-flat-pack-container-home-20x8-full-front-elevation-exterior.webp",
+          "alt": "20x8 ft ft flat-pack container home, square-on front elevation showing the door and window positions on the panel grid",
+          "provenance": "render",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/flat-pack-container-homes/size-20x8/04-flat-pack-container-home-20x8-residential-setting-exterior.webp",
+          "alt": "20x8 ft ft flat-pack container home assembled on a residential plot with a paved approach path",
+          "provenance": "render",
+          "width": 1024,
+          "height": 1024
+        },
+        {
+          "src": "/images/flat-pack-container-homes/size-20x8/05-flat-pack-container-home-20x8-living-space-interior.webp",
+          "alt": "Interior of a 20x8 ft ft flat-pack container home looking through the living space to the sleeping end",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/flat-pack-container-homes/size-20x8/06-flat-pack-container-home-20x8-kitchen-dining-interior.webp",
+          "alt": "Kitchen and dining run inside a 20x8 ft ft flat-pack container home, alongside the demountable service panel",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "20x10",
+      "label": "20x10 ft",
+      "dims": "20x10x8.5 ft",
+      "areaSqft": 200,
+      "priceExGst": 360000,
+      "priceInclGst": 424800,
+      "featureCells": [
+        {
+          "label": "",
+          "value": "200 sq.ft erected built-up area"
+        },
+        {
+          "label": "",
+          "value": "The reference size for the price rule"
+        },
+        {
+          "label": "",
+          "value": "50 mm class insulated panel envelope"
+        },
+        {
+          "label": "",
+          "value": "Lowest rate per sq.ft under 300 sq.ft"
+        },
+        {
+          "label": "",
+          "value": "Rs 3,60,000 ex-GST"
+        }
+      ],
+      "images": [
+        {
+          "src": "/images/flat-pack-container-homes/size-20x10/01-flat-pack-container-home-20x10-front-left-exterior.webp",
+          "alt": "20x10 ft ft flat-pack container home, front left three-quarter view with the entrance door visible and the bolted corner posts on the near corner",
+          "provenance": "render",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/flat-pack-container-homes/size-20x10/02-flat-pack-container-home-20x10-front-right-exterior.webp",
+          "alt": "20x10 ft ft flat-pack container home, front right three-quarter view showing the demountable panel joints along the long wall",
+          "provenance": "render",
+          "width": 960,
+          "height": 960
+        },
+        {
+          "src": "/images/flat-pack-container-homes/size-20x10/03-flat-pack-container-home-20x10-full-front-elevation-exterior.webp",
+          "alt": "20x10 ft ft flat-pack container home, square-on front elevation showing the door and window positions on the panel grid",
+          "provenance": "render",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/flat-pack-container-homes/size-20x10/04-flat-pack-container-home-20x10-residential-setting-exterior.webp",
+          "alt": "20x10 ft ft flat-pack container home assembled on a residential plot with a paved approach path",
+          "provenance": "render",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/flat-pack-container-homes/size-20x10/05-flat-pack-container-home-20x10-living-space-interior.webp",
+          "alt": "Interior of a 20x10 ft ft flat-pack container home looking through the living space to the sleeping end",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/flat-pack-container-homes/size-20x10/06-flat-pack-container-home-20x10-kitchen-dining-interior.webp",
+          "alt": "Kitchen and dining run inside a 20x10 ft ft flat-pack container home, alongside the demountable service panel",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "30x10",
+      "label": "30x10 ft",
+      "dims": "30x10x8.5 ft",
+      "areaSqft": 300,
+      "priceExGst": 518400,
+      "priceInclGst": 611712,
+      "featureCells": [
+        {
+          "label": "",
+          "value": "300 sq.ft erected built-up area"
+        },
+        {
+          "label": "",
+          "value": "Length added without widening the pack"
+        },
+        {
+          "label": "",
+          "value": "50 mm class insulated panel envelope"
+        },
+        {
+          "label": "",
+          "value": "Two external doors on the opening grid"
+        },
+        {
+          "label": "",
+          "value": "Rs 5,18,400 ex-GST"
+        }
+      ],
+      "images": [
+        {
+          "src": "/images/flat-pack-container-homes/size-30x10/01-flat-pack-container-home-30x10-front-left-exterior.webp",
+          "alt": "30x10 ft ft flat-pack container home, front left three-quarter view with the entrance door visible and the bolted corner posts on the near corner",
+          "provenance": "render",
+          "width": 1100,
+          "height": 1100
+        },
+        {
+          "src": "/images/flat-pack-container-homes/size-30x10/02-flat-pack-container-home-30x10-front-right-exterior.webp",
+          "alt": "30x10 ft ft flat-pack container home, front right three-quarter view showing the demountable panel joints along the long wall",
+          "provenance": "render",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/flat-pack-container-homes/size-30x10/03-flat-pack-container-home-30x10-full-front-elevation-exterior.webp",
+          "alt": "30x10 ft ft flat-pack container home, square-on front elevation showing the door and window positions on the panel grid",
+          "provenance": "render",
+          "width": 1100,
+          "height": 1100
+        },
+        {
+          "src": "/images/flat-pack-container-homes/size-30x10/04-flat-pack-container-home-30x10-residential-setting-exterior.webp",
+          "alt": "30x10 ft ft flat-pack container home assembled on a residential plot with a paved approach path",
+          "provenance": "render",
+          "width": 1024,
+          "height": 1024
+        },
+        {
+          "src": "/images/flat-pack-container-homes/size-30x10/05-flat-pack-container-home-30x10-living-space-interior.webp",
+          "alt": "Interior of a 30x10 ft ft flat-pack container home looking through the living space to the sleeping end",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/flat-pack-container-homes/size-30x10/06-flat-pack-container-home-30x10-kitchen-dining-interior.webp",
+          "alt": "Kitchen and dining run inside a 30x10 ft ft flat-pack container home, alongside the demountable service panel",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "40x10",
+      "label": "40x10 ft",
+      "dims": "40x10x8.5 ft",
+      "areaSqft": 400,
+      "priceExGst": 684000,
+      "priceInclGst": 807120,
+      "featureCells": [
+        {
+          "label": "",
+          "value": "400 sq.ft erected built-up area"
+        },
+        {
+          "label": "",
+          "value": "Longest single-width body in the range"
+        },
+        {
+          "label": "",
+          "value": "50 mm class insulated panel envelope"
+        },
+        {
+          "label": "",
+          "value": "Panel count rises, panel type does not"
+        },
+        {
+          "label": "",
+          "value": "Rs 6,84,000 ex-GST"
+        }
+      ],
+      "images": [
+        {
+          "src": "/images/flat-pack-container-homes/size-40x10/01-flat-pack-container-home-40x10-front-left-exterior.webp",
+          "alt": "40x10 ft ft flat-pack container home, front left three-quarter view with the entrance door visible and the bolted corner posts on the near corner",
+          "provenance": "render",
+          "width": 960,
+          "height": 960
+        },
+        {
+          "src": "/images/flat-pack-container-homes/size-40x10/02-flat-pack-container-home-40x10-front-right-exterior.webp",
+          "alt": "40x10 ft ft flat-pack container home, front right three-quarter view showing the demountable panel joints along the long wall",
+          "provenance": "render",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/flat-pack-container-homes/size-40x10/03-flat-pack-container-home-40x10-full-front-elevation-exterior.webp",
+          "alt": "40x10 ft ft flat-pack container home, square-on front elevation showing the door and window positions on the panel grid",
+          "provenance": "render",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "src": "/images/flat-pack-container-homes/size-40x10/04-flat-pack-container-home-40x10-residential-setting-exterior.webp",
+          "alt": "40x10 ft ft flat-pack container home assembled on a residential plot with a paved approach path",
+          "provenance": "render",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/flat-pack-container-homes/size-40x10/05-flat-pack-container-home-40x10-living-space-interior.webp",
+          "alt": "Interior of a 40x10 ft ft flat-pack container home looking through the living space to the sleeping end",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/flat-pack-container-homes/size-40x10/06-flat-pack-container-home-40x10-kitchen-dining-interior.webp",
+          "alt": "Kitchen and dining run inside a 40x10 ft ft flat-pack container home, alongside the demountable service panel",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "40x12",
+      "label": "40x12 ft",
+      "dims": "40x12x8.5 ft",
+      "areaSqft": 480,
+      "priceExGst": 812160,
+      "priceInclGst": 958349,
+      "featureCells": [
+        {
+          "label": "",
+          "value": "480 sq.ft erected built-up area"
+        },
+        {
+          "label": "",
+          "value": "Widest body, lowest rate per sq.ft"
+        },
+        {
+          "label": "",
+          "value": "50 mm class insulated panel envelope"
+        },
+        {
+          "label": "",
+          "value": "Longest floor cassette, most bracing"
+        },
+        {
+          "label": "",
+          "value": "Rs 8,12,160 ex-GST"
+        }
+      ],
+      "images": [
+        {
+          "src": "/images/flat-pack-container-homes/size-40x12/01-flat-pack-container-home-40x12-front-left-exterior.webp",
+          "alt": "40x12 ft ft flat-pack container home, front left three-quarter view with the entrance door visible and the bolted corner posts on the near corner",
+          "provenance": "render",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/flat-pack-container-homes/size-40x12/02-flat-pack-container-home-40x12-rear-left-exterior.webp",
+          "alt": "40x12 ft flat-pack container home, rear left view of the widest body in the range showing the roof cassette overhang and the panel bays",
+          "provenance": "render",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/flat-pack-container-homes/size-40x12/03-flat-pack-container-home-40x12-full-front-elevation-exterior.webp",
+          "alt": "40x12 ft ft flat-pack container home, square-on front elevation showing the door and window positions on the panel grid",
+          "provenance": "render",
+          "width": 900,
+          "height": 900
+        },
+        {
+          "src": "/images/flat-pack-container-homes/size-40x12/04-flat-pack-container-home-40x12-residential-setting-exterior.webp",
+          "alt": "40x12 ft ft flat-pack container home assembled on a residential plot with a paved approach path",
+          "provenance": "render",
+          "width": 1024,
+          "height": 1024
+        },
+        {
+          "src": "/images/flat-pack-container-homes/size-40x12/05-flat-pack-container-home-40x12-living-space-interior.webp",
+          "alt": "Interior of a 40x12 ft ft flat-pack container home looking through the living space to the sleeping end",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/flat-pack-container-homes/size-40x12/06-flat-pack-container-home-40x12-kitchen-dining-interior.webp",
+          "alt": "Kitchen and dining run inside a 40x12 ft ft flat-pack container home, alongside the demountable service panel",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    }
+  ],
+  "categoryLabel": "Container Houses",
+  "categoryHref": "/product/container-houses",
+  "h1": "Flat-Pack Container Homes Shipped as a Bolt-Together Kit",
+  "seoTitle": "Flat Pack Container Homes, Bolt-Together Kit Price | SAMAN",
+  "metaDescription": "Flat pack container homes from SAMAN in six sizes, 100 to 480 sq.ft. A bolted residential kit you assemble on site, from Rs 2,07,000 ex-GST. Made in India.",
+  "canonical": "https://www.samanportable.com/product/container-houses/flat-pack-container-homes",
+  "opener": "A flat-pack container home leaves our factory as parts rather than as a finished box. The floor cassette, corner posts, insulated wall panels, roof cassette and a labelled hardware pack travel as a flat stack, and the home is bolted together at your plot. That matters when the road to the site will not take a 40-foot module on a trailer, when a crane is not practical, or when you expect to move the house again later. Buyers here are usually building on farm land, a hill plot, a resort site or a second plot with a narrow approach. Six sizes run from 100 to 480 sq.ft of erected built-up area, with a 50 mm class insulated envelope, an 18 mm MGO or BWP plywood floor deck and a torque-controlled joint schedule. Prices start at Rs 2,07,000 ex-GST.",
+  "relatedTiles": [
+    {
+      "title": "Container Houses",
+      "href": "/product/container-houses",
+      "category": "Container Houses",
+      "blurb": "Explore Container Houses",
+      "imageSrc": "/images/products/container-houses/20x10/container-houses-20x10-front-right-hero.webp",
+      "imageAlt": "Front-right hero view of a 20x10 ft container house, cream cladding with a pale base, on paving with planted borders and mountains behind"
+    },
+    {
+      "title": "Prefab Container Homes",
+      "href": "/product/container-houses/prefab-container-homes",
+      "category": "Container Houses",
+      "blurb": "Explore Prefab Container Homes",
+      "imageSrc": "/images/products/container-houses/prefab-container-homes/gallery/prefab-container-homes-20x10-01-front-right-three-quarter-view.webp",
+      "imageAlt": "SAMAN 20 x 10 ft prefab container home, front-right three-quarter view"
+    },
+    {
+      "title": "Shipping Container Homes",
+      "href": "/product/container-houses/shipping-container-homes",
+      "category": "Container Houses",
+      "blurb": "Explore Shipping Container Homes",
+      "imageSrc": "/images/products/shipping-container-homes/20x10/shipping-container-homes-20x10-front-right-hero.webp",
+      "imageAlt": "Front-right hero view of a 20x10 ft shipping container home, sand-toned cladding, on a paved suburban court behind low hedges"
+    },
+    {
+      "title": "Luxury Container Houses",
+      "href": "/product/container-houses/luxury-container-houses",
+      "category": "Container Houses",
+      "blurb": "Explore Luxury Container Houses",
+      "imageSrc": "/images/products/luxury-container-houses/20x10/luxury-container-houses-20x10-front-right-hero.webp",
+      "imageAlt": "Front-right hero view of a 20x10 ft luxury container house, mid-grey cladding, on a paved terrace beside a backwater lagoon"
+    }
+  ],
+  "ymalTiles": [
+    {
+      "title": "Container Houses",
+      "href": "/product/container-houses",
+      "category": "Container Houses",
+      "blurb": "Explore Container Houses",
+      "imageSrc": "/images/products/container-houses/20x10/container-houses-20x10-front-right-hero.webp",
+      "imageAlt": "Front-right hero view of a 20x10 ft container house, cream cladding with a pale base, on paving with planted borders and mountains behind"
+    },
+    {
+      "title": "Prefab Container Homes",
+      "href": "/product/container-houses/prefab-container-homes",
+      "category": "Container Houses",
+      "blurb": "Explore Prefab Container Homes",
+      "imageSrc": "/images/products/container-houses/prefab-container-homes/gallery/prefab-container-homes-20x10-01-front-right-three-quarter-view.webp",
+      "imageAlt": "SAMAN 20 x 10 ft prefab container home, front-right three-quarter view"
+    },
+    {
+      "title": "Shipping Container Homes",
+      "href": "/product/container-houses/shipping-container-homes",
+      "category": "Container Houses",
+      "blurb": "Explore Shipping Container Homes",
+      "imageSrc": "/images/products/shipping-container-homes/20x10/shipping-container-homes-20x10-front-right-hero.webp",
+      "imageAlt": "Front-right hero view of a 20x10 ft shipping container home, sand-toned cladding, on a paved suburban court behind low hedges"
+    },
+    {
+      "title": "Luxury Container Houses",
+      "href": "/product/container-houses/luxury-container-houses",
+      "category": "Container Houses",
+      "blurb": "Explore Luxury Container Houses",
+      "imageSrc": "/images/products/luxury-container-houses/20x10/luxury-container-houses-20x10-front-right-hero.webp",
+      "imageAlt": "Front-right hero view of a 20x10 ft luxury container house, mid-grey cladding, on a paved terrace beside a backwater lagoon"
+    }
+  ],
+  "applicationsContent": {
+    "h2": "Six flat-pack sizes and what each one changes on site",
+    "intro": "Each size changes the pack, the panel count and the erected area. The drawings below carry the same figures.",
+    "panels": [
+      {
+        "sizeSlug": "10x10",
+        "h3": "10x10 ft flat-pack kit: 100 sq.ft, the smallest pack",
+        "paragraph": "The 10x10 is the only square body in the range and the lightest pack we make. It erects as one room with a wet corner, which suits a farm watchman's home, a caretaker unit at a resort, or a first structure on a plot that will be built out later. It also carries the highest rate per square foot in the ladder, at Rs 2,070, because the fixed content of a kit, the hardware pack, the tracks, the flashings and the assembly documents, does not shrink with the footprint.",
+        "applications": [
+          "100 sq.ft erected built-up area at Rs 2,070 per sq.ft",
+          "Rs 2,07,000 ex-GST, Rs 2,44,260 including 18% GST",
+          "Square panel grid, so the opening schedule is symmetrical",
+          "Shortest floor cassette, fewest splice plates in the range",
+          "Choose it when the approach is a footpath rather than a road"
+        ],
+        "image": {
+          "src": "/images/flat-pack-container-homes/boards/flat-pack-container-home-10x10x8-5-3d-assembly-kit-board-v1-4x3.webp",
+          "alt": "10x10 ft ft flat-pack container home assembly and kit drawing showing the complete unit in 3D with overall dimensions, the seven packed assemblies exploded and the six-step site assembly sequence",
+          "provenance": "render",
+          "width": 1800,
+          "height": 1350
+        },
+        "tabLabel": "10x10 ft"
+      },
+      {
+        "sizeSlug": "20x8",
+        "h3": "20x8 ft flat-pack kit: 160 sq.ft on the narrowest body",
+        "paragraph": "At eight feet wide this is the narrowest body we pack, and that is the point of it. Panels, floor cassette and roof cassette sit inside a tighter envelope, so the stack takes less deck width on the vehicle and less turning room at the gate. Erected it gives a linear 160 sq.ft: a living end, a service run and a sleeping end on one axis, with a single external door on the long wall. Choose it when the site is reached through a compound gate or a village lane.",
+        "applications": [
+          "160 sq.ft erected built-up area at Rs 1,980 per sq.ft",
+          "Rs 3,16,800 ex-GST, Rs 3,73,824 including 18% GST",
+          "Narrowest pack width of the six sizes",
+          "One external door on the long wall opening grid",
+          "Linear plan, no cross-corridor, so no internal load-bearing line"
+        ],
+        "image": {
+          "src": "/images/flat-pack-container-homes/boards/flat-pack-container-home-20x8x8-5-3d-assembly-kit-board-v1-4x3.webp",
+          "alt": "20x8 ft ft flat-pack container home assembly and kit drawing showing the complete unit in 3D with overall dimensions, the seven packed assemblies exploded and the six-step site assembly sequence",
+          "provenance": "render",
+          "width": 1800,
+          "height": 1350
+        },
+        "tabLabel": "20x8 ft"
+      },
+      {
+        "sizeSlug": "20x10",
+        "h3": "20x10 ft flat-pack kit: 200 sq.ft, the reference size",
+        "paragraph": "Two hundred square feet is the size the price rule is calibrated on. At exactly 200 sq.ft the rate is neither loaded for a small footprint nor reduced for a large one, so Rs 1,800 per sq.ft is the true base and every other size sits a stated percentage away from it. As a home it is the first size that holds a separate bedroom, a kitchen and dining run and a full wet area without the plan reading as a corridor.",
+        "applications": [
+          "200 sq.ft erected built-up area at Rs 1,800 per sq.ft, the unadjusted base rate",
+          "Rs 3,60,000 ex-GST, Rs 4,24,800 including 18% GST",
+          "First size with a separate bedroom off the living run",
+          "Panel grid repeats, so a second identical kit matches part for part",
+          "The size the six drawings are dimensioned against for comparison"
+        ],
+        "image": {
+          "src": "/images/flat-pack-container-homes/boards/flat-pack-container-home-20x10x8-5-3d-assembly-kit-board-v1-4x3.webp",
+          "alt": "20x10 ft ft flat-pack container home assembly and kit drawing showing the complete unit in 3D with overall dimensions, the seven packed assemblies exploded and the six-step site assembly sequence",
+          "provenance": "render",
+          "width": 1800,
+          "height": 1350
+        },
+        "tabLabel": "20x10 ft"
+      },
+      {
+        "sizeSlug": "30x10",
+        "h3": "30x10 ft flat-pack kit: 300 sq.ft without a wider pack",
+        "paragraph": "The 30x10 adds half again the length of the 20x10 while keeping the same body width, so the panel profile, the track sections and the vehicle width do not change. Only the count changes, which is the cheapest way to buy area in a flat-pack system. The rate drops to Rs 1,728 because this size crosses into the 201 to 300 sq.ft band, where the workbook applies a four per cent reduction. Two external doors sit on the opening grid.",
+        "applications": [
+          "300 sq.ft erected built-up area at Rs 1,728 per sq.ft, four per cent below base",
+          "Rs 5,18,400 ex-GST, Rs 6,11,712 including 18% GST",
+          "Same body width as the 20x10, so the same panel and track profile",
+          "Two external doors, which supports a separable guest or rental end",
+          "Longer floor cassette, so more splice plates and more diagonal checks"
+        ],
+        "image": {
+          "src": "/images/flat-pack-container-homes/boards/flat-pack-container-home-30x10x8-5-3d-assembly-kit-board-v1-4x3.webp",
+          "alt": "30x10 ft ft flat-pack container home assembly and kit drawing showing the complete unit in 3D with overall dimensions, the seven packed assemblies exploded and the six-step site assembly sequence",
+          "provenance": "render",
+          "width": 1800,
+          "height": 1350
+        },
+        "tabLabel": "30x10 ft"
+      },
+      {
+        "sizeSlug": "40x10",
+        "h3": "40x10 ft flat-pack kit: 400 sq.ft on one long axis",
+        "paragraph": "Forty by ten is the longest single-width body we pack, and the size where the flat-pack argument is strongest. A finished 40-foot module needs a trailer, a turning circle and a crane at the far end; the same house as a kit needs a vehicle that reaches the plot and a level set of supports. Bracing matters more here than at any other size, because the floor cassette must be square and level along forty feet before the first panel is seated.",
+        "applications": [
+          "400 sq.ft erected built-up area at Rs 1,710 per sq.ft",
+          "Rs 6,84,000 ex-GST, Rs 8,07,120 including 18% GST",
+          "Longest single-width body, still ten feet wide on the vehicle",
+          "Diagonal and level checks along the full cassette before enclosure",
+          "The size that most often replaces a craned 40-foot module"
+        ],
+        "image": {
+          "src": "/images/flat-pack-container-homes/boards/flat-pack-container-home-40x10x8-5-3d-assembly-kit-board-v1-4x3.webp",
+          "alt": "40x10 ft ft flat-pack container home assembly and kit drawing showing the complete unit in 3D with overall dimensions, the seven packed assemblies exploded and the six-step site assembly sequence",
+          "provenance": "render",
+          "width": 1800,
+          "height": 1350
+        },
+        "tabLabel": "40x10 ft"
+      },
+      {
+        "sizeSlug": "40x12",
+        "h3": "40x12 ft flat-pack kit: 480 sq.ft at the lowest rate",
+        "paragraph": "This is the largest kit in the ladder and the only one on a twelve-foot body. Widening changes the pack, not the method: the panels are the same 50 mm class insulated panels, but the roof cassette spans further and the floor cassette carries more cross-members, so the crate footprint grows in both directions. At 480 sq.ft the rate is Rs 1,692, the lowest in the range, and this is the size buyers choose when the house has to read as a permanent building.",
+        "applications": [
+          "480 sq.ft erected built-up area at Rs 1,692 per sq.ft, the lowest in the ladder",
+          "Rs 8,12,160 ex-GST, Rs 9,58,349 including 18% GST",
+          "Only size in the range on a twelve-foot body width",
+          "Roof cassette spans further, so purlin count rises with the width",
+          "Heaviest pack, and the one most likely to need mechanical handling on site"
+        ],
+        "image": {
+          "src": "/images/flat-pack-container-homes/boards/flat-pack-container-home-40x12x8-5-3d-assembly-kit-board-v1-4x3.webp",
+          "alt": "40x12 ft ft flat-pack container home assembly and kit drawing showing the complete unit in 3D with overall dimensions, the seven packed assemblies exploded and the six-step site assembly sequence",
+          "provenance": "render",
+          "width": 1800,
+          "height": 1350
+        },
+        "tabLabel": "40x12 ft"
+      }
+    ]
+  },
+  "infoImages": [
+    {
+      "src": "/images/flat-pack-container-homes/wide/ld-flat-pack-container-home-10x10-wide.webp",
+      "alt": "10x10 ft ft flat-pack container home, wide exterior view of the assembled unit on site",
+      "width": 1920,
+      "height": 1080,
+      "afterSectionHeading": "Flat pack container home or flat pack site cabin?"
+    },
+    {
+      "src": "/images/flat-pack-container-homes/wide/ld-flat-pack-container-home-20x8-wide.webp",
+      "alt": "20x8 ft ft flat-pack container home, wide exterior view of the assembled unit on site",
+      "width": 1920,
+      "height": 1080,
+      "afterSectionHeading": "What actually arrives on the truck, and what does not"
+    },
+    {
+      "src": "/images/flat-pack-container-homes/wide/ld-flat-pack-container-home-20x10-wide.webp",
+      "alt": "20x10 ft ft flat-pack container home, wide exterior view of the assembled unit on site",
+      "width": 1920,
+      "height": 1080,
+      "afterSectionHeading": "The six controlled steps of a site assembly"
+    },
+    {
+      "src": "/images/flat-pack-container-homes/wide/ld-flat-pack-container-home-30x10-wide.webp",
+      "alt": "30x10 ft ft flat-pack container home, wide exterior view of the assembled unit on site",
+      "width": 1792,
+      "height": 1008,
+      "afterSectionHeading": "Why a bolted shell can be taken apart and put back"
+    },
+    {
+      "src": "/images/flat-pack-container-homes/wide/ld-flat-pack-container-home-40x10-wide.webp",
+      "alt": "40x10 ft ft flat-pack container home, wide exterior view of the assembled unit on site",
+      "width": 1440,
+      "height": 810,
+      "afterSectionHeading": "Choosing a size when access is the real constraint"
+    },
+    {
+      "src": "/images/flat-pack-container-homes/wide/ld-flat-pack-container-home-40x12-wide.webp",
+      "alt": "40x12 ft ft flat-pack container home, wide exterior view of the assembled unit on site",
+      "width": 1440,
+      "height": 810,
+      "afterSectionHeading": "What the kit price covers and what is quoted later"
+    }
+  ],
+  "descriptionHtml": "<h2>Flat pack container home or flat pack site cabin?</h2><p>Search for a flat pack container in India and most of what comes back is not a home. It is a site office, a storage unit or a bare bolted shell, sold by exporters and traders on listing sites, priced on the shell alone. Those products are real and they are cheap for what they are, but they are not the same purchase as this one, and buying one expecting a house is the most common mistake we see.</p><p>A flat pack container home has to do everything a house does. The envelope has to hold insulation continuously across every panel joint, not just on the flat of the panel. The floor has to take furniture, a wet area and daily traffic rather than a desk and a chair. There has to be a place for water in and waste out. The lining has to be a finish somebody lives behind, not a liner. Every one of those adds parts to the crate and steps to the assembly, and every one of them is why a residential kit does not carry a site-cabin price.</p><p>So the honest boundary is this. If you are buying a site office, a security post, a store or a labour-camp shell, our <a href=\"https://www.samanportable.com/product/container-offices\">container office range</a> is written for that specification and this page is not. If you are buying somewhere for a person to live, on a plot a finished module cannot easily reach, you are on the right page.</p><h2>What actually arrives on the truck, and what does not</h2><p>A flat-pack container home is delivered as seven packed assemblies. They travel as a stack rather than as a box, which is the whole reason the product exists, and every part in the stack is numbered and orientation-marked so that it can only go where it belongs.</p><ul><li>Base frame and floor cassette: 150x75x5 mm MS channel with bolted splice plates and defined support points</li><li>Floor board kit: 18 mm MGO, cement-fibre or BWP plywood panels on the bolted grid</li><li>Corner posts, base and top tracks: bolted RHS posts with locating spigots and base and top plates</li><li>Wall panel set: 50 mm class PUF, EPS or mineral-wool panels with dry, gasketed, replaceable joints</li><li>Roof cassette and purlin kit: pre-punched upper rails, rafters and panel supports on a torque schedule</li><li>Roof panels and dry flashings: insulated panels, ridge and eave trims, butyl tapes and gutters</li><li>Lining, ceiling and hardware pack: demountable lining, ceiling kit, grade-marked bolts and the assembly documents</li></ul><p>What does not arrive is just as important. The kit is the frame, the envelope, the floor and the service-ready finish. Freight, unloading, the assembly labour, tools, any crane or forklift, wet-area fixtures, furniture, air-conditioning equipment, foundations and the utility connections at your boundary are all outside it unless they are written into your quotation. The base kit may be supplied dry: where a wet pod or a service panel is included, its scope, its external stubs and its waterproofing are stated separately rather than assumed.</p><h2>The six controlled steps of a site assembly</h2><p>Assembly is a sequence with checks between the steps, and the sequence is the same at every size. Supports are set out and checked level before a single crate is opened, because everything downstream inherits that plane. The floor cassette is bolted next and squared, with diagonals measured before any floor board goes down, since a cassette that is out of square cannot be corrected once the panels are seated.</p><p>Corner posts stand third, on their locating spigots, and they stay temporarily braced until the walls and roof have made a complete diaphragm. Wall panels then seat into the base and top tracks in a fixed order, so that tongues, laps and service cut-outs line up; a panel put in the wrong bay is the one error that costs a whole day. The roof cassette and roof panels follow, and the roof is water-tested on site after it is closed rather than trusted.</p><p>The last step is the one buyers forget to ask about. Lining and ceiling go in, the torque record is completed, the packing list is reconciled part by part, and as-built photographs are taken. Practical completion is those documents, not the moment the roof goes on. Ask for them, because they are what you will need if the house is ever taken down and moved.</p><h2>Why a bolted shell can be taken apart and put back</h2><p>There is nothing structural welded on site. Posts land on spigots, panels seat in tracks, flashings are mechanically fixed with butyl tapes rather than bedded in cured sealant, and the interior lining is screw-fixed or clipped so that service zones stay openable. Every one of those choices is made so that the reverse operation is possible.</p><p>That is a different promise from relocatable, and we are careful about the difference. A welded module can be lifted and moved as a unit as often as its lifting points and coating allow. A flat-pack home can be dismantled to its parts and rebuilt somewhere a lifted module could never go. What it cannot do is either of those an unlimited number of times: gaskets compress, seals age, and bolt holes have a life. The number of reassembly cycles we will warrant is a quotation control, stated for your order, and we will not publish a number here that we cannot hold for every project.</p><p>If a project is declared permanent from the start, the assembly can be sealed differently and the finishes can be continuous. Tell us at quotation stage, because that decision changes the flashing detail and the floor finish, and it cannot be reversed later without new parts.</p><h2>Choosing a size when access is the real constraint</h2><p>On most flat-pack enquiries the plot decides the size, not the family. Start with the vehicle that can actually reach your boundary and the space it has to turn in, because the stack has to arrive before anything else matters. The 20x8 packs on the narrowest body in the range and is the one we suggest when the approach is a compound gate or a village lane. The 10x10 is the lightest kit and the one whose components a small crew can move furthest by hand.</p><p>Once access is settled, area is a straight commercial decision, and the rate works in your favour as the kit grows. Rs 2,070 per sq.ft at 100 sq.ft falls to Rs 1,800 at 200 sq.ft and to Rs 1,692 at 480 sq.ft, because the fixed content of a kit is spread across more area. Adding length is cheaper than adding width: the 30x10 and the 40x10 keep the same body width, the same panel profile and the same tracks as the 20x10, and only the counts change. Going to the twelve-foot body on the 40x12 changes the roof span and the floor cassette as well.</p><p>The six drawings on this page are dimensioned so that you can put two sizes side by side and see exactly what the extra money buys before you talk to anyone.</p><h2>What the kit price covers and what is quoted later</h2><p>The price on this page is a kit and envelope price on erected built-up area. It is not a turnkey house price and it is not a shell price either, so it is worth being precise about where the line sits.</p><table><thead><tr><th></th><th>In the kit price</th><th>Quoted separately</th></tr></thead><tbody><tr><td>Structure</td><td>Base frame, floor cassette, corner posts, tracks, roof cassette and purlin kit</td><td>Foundations, plinth, anchor design and any site-specific engineering</td></tr><tr><td>Envelope</td><td>50 mm class insulated wall panels, roof panels, dry flashings, trims and seals</td><td>Upgraded coating for coastal, industrial or high-moisture exposure</td></tr><tr><td>Inside</td><td>Floor board kit, modular floor finish, demountable lining and ceiling kit</td><td>Wet-area fixtures, modular kitchen, furniture, appliances and AC equipment</td></tr><tr><td>Services</td><td>Wiring, containment, distribution board provision and labelled circuits as scheduled</td><td>Incoming supply, site earthing, utility connection and any inverter or solar system</td></tr><tr><td>Getting it there</td><td>Pack list, part IDs, assembly drawing, torque schedule and bracing method</td><td>Freight, unloading, crane or forklift, assembly labour and tools</td></tr><tr><td>Afterwards</td><td>Ten-year structural warranty, torque record and water test at handover</td><td>Reassembly beyond the warranted cycle count, and any relocation work</td></tr></tbody></table><p>Two further points on how the number is built. Area is measured on the erected built-up footprint, never on packed shipping volume, so a tighter pack does not change what you pay. And the rate itself is budgetary and market-calibrated at this stage: it is a planning number against current Indian flat-pack and container-house listings, and it becomes a price when a signed quotation is issued against your site, your access and your finish schedule.</p><h2>Where flat pack sits against the rest of our range</h2><p>The <a href=\"https://www.samanportable.com/product/container-houses\">container houses range page</a> is where to start if you are still deciding on area and bedroom count. It carries the same six-size ladder and the general arrangement drawings for the standard residential build, and it answers the size question better than any subpage can.</p><p>Once you know the size, the choice between us and our siblings is a choice about how the house is built and delivered. A <a href=\"https://www.samanportable.com/product/container-houses/prefab-container-homes\">prefab container home module</a> arrives finished and is the right answer when your plot is well served and you may repeat the same unit across a colony. A <a href=\"https://www.samanportable.com/product/container-houses/shipping-container-homes\">shipping container home</a> is built on container hardware and is the answer for coastal duty and relocation as a whole unit. A <a href=\"https://www.samanportable.com/product/container-houses/luxury-container-houses\">luxury container house</a> changes the finish schedule rather than the method. Flat pack is the answer to one question only: the house has to be built where it stands, because it cannot arrive there in one piece.</p><h2>Warranty, maintenance and the limits we do not stretch</h2><p>The structural warranty on this product is ten years. What it covers, when it starts, how it is serviced and what happens if the unit is relocated are set out in the signed quotation and the handover documents, and those govern over anything written on a web page.</p><p>It does not cover what we cannot control. Unapproved alterations, poor foundations, water entering the site, utility faults, corrosive exposure, missed seal and coating maintenance, misuse and damage during a relocation stay outside it. On a demountable product the maintenance that matters most is the seal and coating line: gaskets, butyl tapes and cut edges are what keep a bolted envelope dry, and they need looking at rather than ignoring.</p><p>We also do not claim what we have not tested for your project. No fire rating, thermal value, acoustic rating, floor load capacity, relocation count or transport classification is asserted on this page. Where a project needs one of those, it is established with the specific evidence and approval for that project, and it is priced accordingly.</p><h2>Questions buyers ask before ordering a flat-pack kit</h2><h3>Can I assemble a flat pack container home myself?</h3><p>It is bolted, not welded, but it is not a self-assembly product. The torque schedule, the temporary bracing and the water test need a trained crew, and the warranty is written against an assembly done to the approved drawing.</p><h3>How is a flat pack container home different from a prefab one?</h3><p>A prefab module arrives finished and is craned into place. A flat pack arrives as parts and is built on the plot. Choose flat pack when the approach road, the turning space or the crane access will not take a whole module.</p><h3>What does a flat pack container home cost in India?</h3><p>From Rs 2,07,000 ex-GST for the 100 sq.ft kit up to Rs 8,12,160 ex-GST for 480 sq.ft. Rates run from Rs 2,070 down to Rs 1,692 per sq.ft as the kit grows. Freight, labour and site work are quoted separately.</p><h3>Can the house be taken down and moved later?</h3><p>Yes, that is what the bolted joints are for. Panels, posts and cassettes come apart and go back together. The number of reassembly cycles we will warrant is stated in your quotation, because gaskets and seals have a service life.</p><h3>What size vehicle does the kit need?</h3><p>The stack travels flat, so the pack is far shorter than the erected home. The 20x8 packs on the narrowest body in the range. Send us your approach width and turning space and we will confirm the vehicle before you order.</p><h3>Is the wet area included in the kit?</h3><p>Not always. The base kit may be supplied dry. Where a service panel or wet pod is included, the connections, waterproofing, fixture scope and the dismantling procedure for it are written into the quotation separately.</p><h3>What foundation does a flat pack container home need?</h3><p>Level, load-bearing supports at the points shown on the approved drawing. Foundations are not in the kit price. Getting that plane right is the first assembly step and everything else depends on it.</p><h3>What warranty comes with a flat pack container home?</h3><p>Ten years structural. Cover, start date, service access and relocation conditions are set by the signed quotation and handover documents. Site water entry, poor foundations and unapproved alterations stay outside it.</p>",
+  "faqSchema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can I assemble a flat pack container home myself?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It is bolted, not welded, but it is not a self-assembly product. The torque schedule, the temporary bracing and the water test need a trained crew, and the warranty is written against an assembly done to the approved drawing."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is a flat pack container home different from a prefab one?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A prefab module arrives finished and is craned into place. A flat pack arrives as parts and is built on the plot. Choose flat pack when the approach road, the turning space or the crane access will not take a whole module."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does a flat pack container home cost in India?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "From Rs 2,07,000 ex-GST for the 100 sq.ft kit up to Rs 8,12,160 ex-GST for 480 sq.ft. Rates run from Rs 2,070 down to Rs 1,692 per sq.ft as the kit grows. Freight, labour and site work are quoted separately."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can the house be taken down and moved later?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, that is what the bolted joints are for. Panels, posts and cassettes come apart and go back together. The number of reassembly cycles we will warrant is stated in your quotation, because gaskets and seals have a service life."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What size vehicle does the kit need?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The stack travels flat, so the pack is far shorter than the erected home. The 20x8 packs on the narrowest body in the range. Send us your approach width and turning space and we will confirm the vehicle before you order."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the wet area included in the kit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not always. The base kit may be supplied dry. Where a service panel or wet pod is included, the connections, waterproofing, fixture scope and the dismantling procedure for it are written into the quotation separately."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What foundation does a flat pack container home need?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Level, load-bearing supports at the points shown on the approved drawing. Foundations are not in the kit price. Getting that plane right is the first assembly step and everything else depends on it."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What warranty comes with a flat pack container home?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ten years structural. Cover, start date, service access and relocation conditions are set by the signed quotation and handover documents. Site water entry, poor foundations and unapproved alterations stay outside it."
+        }
+      }
+    ]
+  },
+  "trustStripText": "GST registered"
+}

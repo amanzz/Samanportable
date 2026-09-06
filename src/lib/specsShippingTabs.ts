@@ -39,6 +39,8 @@ import constructionSiteCabinAssets from '../../content/po-06/PO-06-construction-
 import portableConferenceCabinCopy from '../../content/po-08/PO-08-portable-conference-cabin-copy-v1.json';
 import portableConferenceCabinAssets from '../../content/po-08/PO-08-portable-conference-cabin-asset-map-v1.json';
 import prefabContainerHomesCopy from '../../content/ch-pfb-04/CH-PFB-04-prefab-container-homes-copy-v1.json';
+import flatPackContainerHomesCopy from '../../content/ch-fpk-06/CH-FPK-06-flat-pack-container-homes-copy-v1.json';
+import flatPackContainerHomesAssets from '../../content/ch-fpk-06/CH-FPK-06-flat-pack-container-homes-asset-map-v1.json';
 import portableControlRoomCopy from '../../content/po-07/PO-07-portable-control-room-copy-v1.json';
 import portableControlRoomAssets from '../../content/po-07/PO-07-portable-control-room-asset-map-v1.json';
 import portableMobileLaboratoryCopy from '../../content/po-05/PO-05-portable-mobile-laboratory-copy-v1.json';
@@ -1651,6 +1653,73 @@ function buildPrefabContainerHomesSpecificationsHtml(): string {
 }
 
 
+// CH-FPK-06 (7 Sep 2026) - Flat-Pack Container Homes. Page-scoped builder on the same
+// grouped-table chrome every Specs tab above uses (TH/TD inside a bordered section
+// card), fed only by this page's signed copy pack and asset map. Nothing is authored
+// here and no sibling route reads this function, so every other Specifications tab is
+// byte-identical.
+//
+// All five of this pack's groups are the same shape - a `head` array and a matrix of
+// `rows` - so one table helper covers them; A and C additionally carry a note. Below
+// the tables sit ALL SIX kit boards at their approved 489:374 geometry, per build
+// prompt section 5: never cropped, always lazy, always with explicit width/height.
+// Section 5 also makes `shared.technical_pdf` null for this product, so no PDF button
+// and no fallback link is emitted.
+function buildFlatPackContainerHomesSpecificationsHtml(): string {
+  const spec = flatPackContainerHomesCopy.tabs.specifications;
+
+  const narrative = spec.narrative
+    .map((p) => `<p class="mb-5 text-sm leading-relaxed text-slate-600">${esc(p)}</p>`)
+    .join('');
+
+  const table = (head: ReadonlyArray<string>, rows: ReadonlyArray<ReadonlyArray<string>>): string => {
+    const th = head.map((h) => `<th class="${TH}">${esc(h)}</th>`).join('');
+    const tb = rows
+      .map((row) => (
+        `<tr>` +
+          row.map((cell, i) => (
+            i === 0
+              ? `<td class="${TD} font-semibold text-slate-700">${esc(cell)}</td>`
+              : `<td class="${TD}">${escBold(cell)}</td>`
+          )).join('') +
+        `</tr>`
+      ))
+      .join('');
+    return `<div class="saman-table-wrap"><table class="saman-table"><thead><tr>${th}</tr></thead>`
+      + `<tbody>${tb}</tbody></table></div>`;
+  };
+
+  const note = (text: string | null | undefined): string =>
+    (text ? `<p class="px-4 pb-4 pt-3 m-0 text-xs leading-relaxed text-slate-500">${esc(text)}</p>` : '');
+
+  const section = (title: string, ...bodies: string[]): string => (
+    `<section class="mb-4 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">` +
+      `<h4 class="m-0 bg-slate-50 px-4 py-3 text-base font-bold text-emerald-900">${esc(title)}</h4>` +
+      bodies.join('') +
+    `</section>`
+  );
+
+  const group = (g: { title: string; head: string[]; rows: string[][]; note?: string | null }): string =>
+    section(g.title, table(g.head, g.rows), note(g.note));
+
+  const groups = [spec.group_a, spec.group_b, spec.group_c, spec.group_d, spec.group_e]
+    .map((g) => group(g as { title: string; head: string[]; rows: string[][]; note?: string | null }))
+    .join('');
+
+  // The six approved kit boards, in the size-ladder order the pack publishes, at the
+  // 489:374 derivative's exact geometry. Never cropped at any size for any reason.
+  const boards = flatPackContainerHomesAssets.shared.spec_diagrams
+    .map((d) => (
+      `<figure class="mt-4 m-0 rounded-xl border border-slate-200 bg-white p-5 shadow-sm">` +
+        `<img src="${esc(d.public_path)}" alt="${esc(d.alt)}" width="${d.width}" height="${d.height}" ` +
+        `loading="lazy" class="w-full h-auto rounded-lg" />` +
+      `</figure>`
+    ))
+    .join('');
+
+  return `<div class="not-prose">${narrative}${groups}${boards}</div>`;
+}
+
 // PO-08 (6 Sep 2026) - Portable Conference Cabin. Same grouped-table design as the
 // PO-03 Specs tab above; this copy pack's spec groups use `header` (singular), and this
 // page additionally renders the SIX approved GA boards between the group tables and the
@@ -1772,6 +1841,22 @@ export function getProductTabsHtml(
   const c01Entry = pageSlug
     ? (getEffectiveC01SpecificationEntry(pageSlug) as C01SpecificationEntry | undefined)
     : undefined;
+  // CH-FPK-06 (7 Sep 2026) - this new route's Specifications tab is built from its own
+  // signed pack, and its Shipping tab is the shared freight component exactly as the
+  // porta-cabins design lock renders it (buildShippingHtml with no options: both
+  // trailer tables, the eighteen distance bands each, both zone city tables, the two
+  // free-delivery lines, the ODC note and the tentative-price disclaimer).
+  //
+  // Placement matters: this branch sits ABOVE the generic c01/C06/C04/C08/C05 dataset
+  // lookups because those dispatch first and would win for any slug that happens to be
+  // a dataset key. `flat-pack-container-homes` is not a key in any of them today, so no
+  // other route's resolution changes either way; the position keeps it that way.
+  if (pageSlug === 'flat-pack-container-homes') {
+    return {
+      specificationsHtml: buildFlatPackContainerHomesSpecificationsHtml(),
+      shippingHtml: buildShippingHtml(),
+    };
+  }
   if (pageSlug && c01Entry) {
     return {
       specificationsHtml: buildC01SpecificationsHtml(c01Entry),

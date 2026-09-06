@@ -1,0 +1,34 @@
+CH-FPK-06 Template Conformance Gate - artefact 5
+DOM checks on the served page (__NEXT_DATA__ stripped)
+
+  <h1> count                              : 1   PASS
+  headings total                          : 73
+  EMPTY headings                          : 0   PASS
+  <img> tags                              : 33
+  EMPTY / missing alt                     : 0   PASS
+  DUPLICATE alt strings                   : 0   PASS
+  <img> missing width or height           : 0   PASS
+  U+2014 em dash in body text             : 0   PASS
+  U+2014 anywhere in served HTML          : 0
+
+  loading attribute audit
+    images with loading="lazy"            : 31
+    images NOT lazy                       : 2
+      loading=None    fetchpriority=high  src=/saman-logo.svg
+      loading=None    fetchpriority=high  src=/_next/image?url=%2Fimages%2Fflat-pack-container-homes%2Fsize-20x10%2F01-flat-pack-contain
+    <link rel=preload as=image>           : 2
+      <link rel="preload" href="/saman-logo.svg" as="image" fetchpriority="high"/>
+      <link rel="preload" as="image" imageSrcSet="/_next/image?url=%2Fimages%2Fflat-pack-container-homes%2Fsize-20x10%2F01-flat-pack-container-home-20x10-front-left-exterior.webp&amp;w=256&amp;q=85 256w, /_next/image?url=%2Fim
+
+  design tokens
+    #1a3c2e   present
+    #2d7a3f   present
+    #f0f7f2   present
+
+  empty-slot fallback phrases (must all be 0)
+    available on request       0
+    coming soon                0
+    contact us for details     0
+    to be confirmed            0
+    tbd                        0
+    lorem ipsum                0

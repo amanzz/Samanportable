@@ -457,6 +457,44 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
       ctaHref: "#sizes",
     },
   },
+  // CH-FPK-06 (7 Sep 2026) - build prompt v1 section 2 block 6, from the signed copy
+  // pack's `section2`, verbatim. Two lead paragraphs, the ONE sanctioned contextual
+  // internal link inside p2 (to the prefab container home module), the pack's top CTA,
+  // then its 16:9 photoreal split card. Nothing here is authored.
+  'flat-pack-container-homes': {
+    heading: "Why buy the house as a kit instead of as a finished module",
+    bodyParagraphs: [
+      (
+        <>Every other page in this range delivers a house that is already a house. It is welded, lined, finished and craned onto your plinth in one piece, and the approach road has to take it. A flat-pack container home is the same residential envelope arriving as parts, so the constraint moves from the road to the plot. Panels, cassettes and posts travel flat, they can be carried in where a trailer cannot turn, and the house is built where it will stand.</>
+      ),
+      (
+        <>The second reason is that the joints stay openable. Nothing structural is welded on site: posts land on locating spigots, panels seat in base and top tracks, and every fixing is a grade-marked bolt tightened to a stated torque. That is what makes the unit demountable later rather than only movable once. If your plot is served well and the house will never move, the <Link className={linkClass} href={containerHouseHref('prefab-container-homes')}>prefab container home module</Link> is the simpler purchase, and we will say so on a call.</>
+      ),
+    ],
+    // Plain-text SSR mirror: p2 renders an inline link, and a verifier that strips
+    // tags compares the paragraph literally.
+    verificationText: [
+      "Every other page in this range delivers a house that is already a house. It is welded, lined, finished and craned onto your plinth in one piece, and the approach road has to take it. A flat-pack container home is the same residential envelope arriving as parts, so the constraint moves from the road to the plot. Panels, cassettes and posts travel flat, they can be carried in where a trailer cannot turn, and the house is built where it will stand.",
+      "The second reason is that the joints stay openable. Nothing structural is welded on site: posts land on locating spigots, panels seat in base and top tracks, and every fixing is a grade-marked bolt tightened to a stated torque. That is what makes the unit demountable later rather than only movable once. If your plot is served well and the house will never move, the prefab container home module is the simpler purchase, and we will say so on a call.",
+    ],
+    topCtaLabel: "Send your site approach details for a kit quotation",
+    topCtaHref: "/contact",
+    splitCard: {
+      imageSrc: "/images/flat-pack-container-homes/wide/s2-flat-pack-container-home-20x10-residential-setting-wide.webp",
+      imageAlt: "Flat-pack container home 20x10 ft assembled on a residential plot with a paved approach path",
+      imageWidth: 1680,
+      imageHeight: 945,
+      subheading: "What a flat-pack site looks like on delivery day",
+      body: "The lorry arrives with a flat stack, not a house. Crates are set down, the packing list is reconciled against the part IDs, and supports are checked level before anything is opened. Assembly is a sequence, not a lift.",
+      body2: "That sequence is what the six drawings on this page show, size by size. They carry the order of work and the checks, so you can judge a plot, an access route and a delivery date before you commit to any of them.",
+      ctaLabel: "Ask for the assembly drawing for your size",
+      // The pack's card CTA is an enquiry ("Ask for..."), not a jump link, and no
+      // `#sizes` anchor exists on this route - the Section 3 explorer emits
+      // `#app-panel-<size>` ids and nothing named `sizes`. /contact is the same
+      // destination the lead CTA above uses.
+      ctaHref: "/contact",
+    },
+  },
   'luxury-container-houses': {
     heading: 'Why the luxury build instead of the prefab line',
     body: (

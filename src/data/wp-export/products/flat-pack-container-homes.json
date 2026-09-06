@@ -1,0 +1,69 @@
+{
+  "id": 2026090701,
+  "name": "Flat-Pack Container Homes",
+  "slug": "flat-pack-container-homes",
+  "permalink": "https://www.samanportable.com/product/container-houses/flat-pack-container-homes",
+  "date_created": "2026-09-07T00:00:00",
+  "date_modified": "2026-09-07T00:00:00",
+  "type": "simple",
+  "status": "publish",
+  "featured": false,
+  "catalog_visibility": "visible",
+  "description": "",
+  "short_description": "",
+  "sku": "",
+  "price": "",
+  "regular_price": "",
+  "sale_price": "",
+  "on_sale": false,
+  "purchasable": false,
+  "virtual": false,
+  "downloadable": false,
+  "downloads": [],
+  "manage_stock": false,
+  "stock_quantity": null,
+  "stock_status": "instock",
+  "backorders": "no",
+  "reviews_allowed": true,
+  "average_rating": "0.00",
+  "rating_count": 0,
+  "categories": [
+    {
+      "id": 216,
+      "name": "Container Houses",
+      "slug": "container-houses"
+    }
+  ],
+  "brands": [
+    {
+      "id": 3870,
+      "name": "Saman Portable",
+      "slug": "saman-portable"
+    }
+  ],
+  "tags": [],
+  "images": [
+    {
+      "id": 202609070101,
+      "src": "/images/flat-pack-container-homes/size-20x10/01-flat-pack-container-home-20x10-front-left-exterior.webp",
+      "name": "01-flat-pack-container-home-20x10-front-left-exterior",
+      "alt": "20x10 ft ft flat-pack container home, front left three-quarter view with the entrance door visible and the bolted corner posts on the near corner",
+      "width": 900,
+      "height": 900
+    }
+  ],
+  "attributes": [],
+  "dimensions": {
+    "length": "",
+    "width": "",
+    "height": ""
+  },
+  "weight": "",
+  "meta_data": [],
+  "_rank_math_head": {
+    "success": true,
+    "head": "<title>Flat Pack Container Homes, Bolt-Together Kit Price | SAMAN</title>\n<meta name=\"description\" content=\"Flat pack container homes from SAMAN in six sizes, 100 to 480 sq.ft. A bolted residential kit you assemble on site, from Rs 2,07,000 ex-GST. Made in India.\"/>\n<meta name=\"robots\" content=\"index, follow\"/>\n<link rel=\"canonical\" href=\"https://www.samanportable.com/product/container-houses/flat-pack-container-homes\" />"
+  },
+  "category": "Container Houses",
+  "category_slug": "container-houses"
+}
