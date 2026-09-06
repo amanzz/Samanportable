@@ -36,8 +36,10 @@ import portableOffice from '@/data/products/portable-office.json';
 import modernOfficeCabin from '@/data/products/modern-office-cabin.json';
 import portableOfficeContainer from '@/data/products/portable-office-container.json';
 import prefabricatedOfficeCabins from '@/data/products/prefabricated-office-cabins.json';
+import portableWeighbridgeOffice from '@/data/products/portable-weighbridge-office.json';
 import readymadeOfficeCabin from '@/data/products/readymade-office-cabin.json';
 import smallOfficeCabin from '@/data/products/small-office-cabin.json';
+import executivePortableOffice from '@/data/products/executive-portable-office.json';
 import containerOfficesJson from '@/data/products/container-offices.json';
 import containerOfficeCabinJson from '@/data/products/container-office-cabin.json';
 import containerMarketingOffice from '@/data/products/container-marketing-office.json';
@@ -227,8 +229,16 @@ export const ROUTE_LADDERS: Readonly<Record<string, LadderRow[]>> = {
   'modern-office-cabin': toRows(modernOfficeCabin),
   'portable-office-container': toRows(portableOfficeContainer),
   'prefabricated-office-cabins': toRows(prefabricatedOfficeCabins),
+  // PO-03 — the six prices are read from this route's own product JSON via toRows,
+  // so the ladder cannot drift from the buy box. Nothing else in the calculator changes.
+  'portable-weighbridge-office': toRows(portableWeighbridgeOffice),
   'readymade-office-cabin': toRows(readymadeOfficeCabin),
   'small-office-cabin': toRows(smallOfficeCabin),
+  // PO-04 (5 Sep 2026) - one ROUTE_LADDERS entry for the new route, read from this
+  // page's own product JSON via toRows(...), so the calculator follows the six
+  // published ex-GST prices with no calculator content, label, formula or styling
+  // change. From-price derives as the 10x10 at Rs 2,23,388 ex-GST.
+  'executive-portable-office': toRows(executivePortableOffice),
   'container-offices': toRows(containerOfficesJson),
   'container-office-cabin': toRows(containerOfficeCabinJson),
   'container-marketing-office': toRows(containerMarketingOffice),

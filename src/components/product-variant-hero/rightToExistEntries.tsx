@@ -11,6 +11,8 @@ import portableControlRoomCopy from '../../../content/po-07/PO-07-portable-contr
 import executivePortableOfficeCopy from '../../../content/po-04/PO-04-executive-portable-office-copy-v1.json';
 import constructionSiteCabinCopy from '../../../content/po-06/PO-06-construction-site-cabin-copy-v1.json';
 import constructionSiteCabinAssets from '../../../content/po-06/PO-06-construction-site-cabin-asset-map-v1.json';
+import portableMobileLaboratoryCopy from '../../../content/po-05/PO-05-portable-mobile-laboratory-copy-v1.json';
+import portableMobileLaboratoryAssets from '../../../content/po-05/PO-05-portable-mobile-laboratory-asset-map-v1.json';
 
 const CABIN_HREF = '/product/porta-cabins';
 const href = (slug: string) => `${CABIN_HREF}/${slug}`;
@@ -25,6 +27,12 @@ const containerCafeHref = (slug: string) => `${CONTAINER_CAFE_HREF}/${slug}`;
 
 const bodyClass = 'text-sm leading-relaxed text-slate-700';
 const linkClass = 'font-semibold text-[var(--ds-color-leaf)] underline underline-offset-2';
+
+// PO-05 - the Section 2 split card is the ONLY image between the Section 2 H2 and the
+// Section 3 H2, exactly as the porta-cabins design lock renders it. The six 16:9
+// workflow frames belong inside the Description tab and are emitted into
+// descriptionHtml, which is how the lock publishes its own six.
+const PO05_ASSETS = portableMobileLaboratoryAssets;
 
 export interface RightToExistEntry {
   heading: string;
@@ -1568,6 +1576,55 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
       ctaLabel: portableControlRoomCopy.section2.split_card.cta,
       // The pack's cta_target is "#size-applications"; on this route that section's
       // DOM id is #porta-size-applications. Same target as PO-01 to PO-04 and SOC-01.
+      ctaHref: '#porta-size-applications',
+    },
+  },
+  // PO-05 (5 Sep 2026) - Section 2 rendered verbatim from the signed copy pack
+  // (content/po-05). Nothing is retyped here: heading, both paragraphs, the CTA and
+  // every split-card field are read from the pack. The approved contextual link sits
+  // in paragraph 1 (the pack's section2.link.in says "paragraph1"), which is why the
+  // plain-text mirror below is needed: the shipped verifier strips tags to a SPACE,
+  // so the anchor would otherwise read "... range , and then finished ..." against a
+  // signed paragraph that has no space before the comma. Same `verificationText`
+  // field PO-01, PO-02, PO-04, SOC-01 and CO-08 already use for the same reason.
+  'portable-mobile-laboratory': {
+    heading: portableMobileLaboratoryCopy.section2.h2,
+    verificationText: [portableMobileLaboratoryCopy.section2.paragraph1],
+    bodyParagraphs: [
+      (() => {
+        const { paragraph1, link } = portableMobileLaboratoryCopy.section2;
+        const at = paragraph1.indexOf(link.anchor);
+        if (at < 0) return <>{paragraph1}</>;
+        return (
+          <>
+            {paragraph1.slice(0, at)}
+            <Link className={linkClass} href={link.href}>{link.anchor}</Link>
+            {paragraph1.slice(at + link.anchor.length)}
+          </>
+        );
+      })(),
+      (<>{portableMobileLaboratoryCopy.section2.paragraph2}</>),
+    ],
+    topCtaLabel: portableMobileLaboratoryCopy.section2.cta,
+    topCtaHref: '#porta-size-applications',
+    splitCard: {
+      // PO-05-R2 (SAMAN ruling, 6 Sep 2026): the card is a PHOTOGRAPH, matching the
+      // design lock's own card, which ships a native 16:9 photograph in this slot with
+      // no aspect box and no object-cover. The GA board it previously carried moved to
+      // the Specifications tab. Encoded from the 20x10 workbench interior master with a
+      // centred 16:9 crop - the sanctioned crop-to-slot-ratio case.
+      imageSrc: `/${PO05_ASSETS.output_root.replace('public/', '')}/${PO05_ASSETS.section2_card.out}`,
+      // alt_text.section2_card is written for THIS slot and describes the interior,
+      // so it stays distinct from every gallery, Section 3 and GA-board alt.
+      imageAlt: portableMobileLaboratoryCopy.alt_text.section2_card,
+      imageWidth: 1254,
+      imageHeight: 705,
+      subheading: portableMobileLaboratoryCopy.section2.split_card.h3,
+      body: portableMobileLaboratoryCopy.section2.split_card.paragraph1,
+      body2: portableMobileLaboratoryCopy.section2.split_card.paragraph2,
+      ctaLabel: portableMobileLaboratoryCopy.section2.split_card.cta,
+      // The pack's cta_target is "#sizes"; on this route that section's id is
+      // #porta-size-applications. Same target as PO-01 through PO-04 and SOC-01.
       ctaHref: '#porta-size-applications',
     },
   },

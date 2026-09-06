@@ -38,6 +38,8 @@ import constructionSiteCabinCopy from '../../content/po-06/PO-06-construction-si
 import constructionSiteCabinAssets from '../../content/po-06/PO-06-construction-site-cabin-asset-map-v1.json';
 import portableControlRoomCopy from '../../content/po-07/PO-07-portable-control-room-copy-v1.json';
 import portableControlRoomAssets from '../../content/po-07/PO-07-portable-control-room-asset-map-v1.json';
+import portableMobileLaboratoryCopy from '../../content/po-05/PO-05-portable-mobile-laboratory-copy-v1.json';
+import portableMobileLaboratoryAssets from '../../content/po-05/PO-05-portable-mobile-laboratory-asset-map-v1.json';
 
 // SOC-01 — the two approved coordination diagrams and the v3 technical PDF, at the
 // exact dimensions of the shipped WebP derivatives (never cropped, never upscaled).
@@ -1450,6 +1452,110 @@ function buildPortableControlRoomSpecificationsHtml(): string {
   return `<div class="not-prose">${narrative}${cards}${diagrams}${pdf}</div>`;
 }
 
+// PO-05 (5 Sep 2026) - Portable Mobile Laboratory. The asset map declares the two
+// technical diagrams under NUMBERED keys ("1", "2") as PO-02's v1 did, and the copy
+// pack's spec groups use `header` (singular), not PO-03's `headers`. Groups A-E render
+// as the same premium grouped-table cards the porta-cabins Specs tab uses; every string
+// comes from the signed pack and nothing is retyped. Each group's note renders under
+// its own table, then the two diagrams, then the PDF link.
+const PO05_IMG_ROOT = `/${portableMobileLaboratoryAssets.output_root.replace('public/', '')}`;
+const PO05_SPEC_DIAGRAMS = [
+  {
+    src: `${PO05_IMG_ROOT}/${portableMobileLaboratoryAssets.spec_diagrams['1'].out}`,
+    alt: portableMobileLaboratoryCopy.alt_text.spec_diagram_1,
+    width: 1600,
+    height: 900,
+  },
+  {
+    src: `${PO05_IMG_ROOT}/${portableMobileLaboratoryAssets.spec_diagrams['2'].out}`,
+    alt: portableMobileLaboratoryCopy.alt_text.spec_diagram_2,
+    width: 1600,
+    height: 900,
+  },
+] as const;
+/** PO-05-R2 (SAMAN ruling, 6 Sep 2026) - Section 3's left column now carries a
+    photograph of the unit, so the six approved GA specification boards render HERE,
+    below the group tables and above the two coordination diagrams. Order comes from
+    the copy pack's `ga_board_slots`; the boards are never cropped (native 16:9,
+    downscaled to 1800 px only) and every one is lazy. */
+const PO05_GA_BOARDS = portableMobileLaboratoryCopy.specifications_tab.ga_board_slots.map(
+  (slot) => {
+    const size = slot.replace(/^ga_/, '') as keyof typeof portableMobileLaboratoryAssets.ga_boards.files;
+    return {
+      src: `${PO05_IMG_ROOT}/${portableMobileLaboratoryAssets.ga_boards.files[size].out}`,
+      alt: (portableMobileLaboratoryCopy.alt_text.ga_boards as Record<string, string>)[size],
+      width: 1800,
+      height: 1012,
+    };
+  }
+);
+const PO05_SPEC_PDF = {
+  href: `/${portableMobileLaboratoryAssets.spec_pdf.out.replace('public/', '')}`,
+  label: portableMobileLaboratoryAssets.spec_pdf.link_label,
+} as const;
+
+function buildPortableMobileLaboratorySpecificationsHtml(): string {
+  const spec = portableMobileLaboratoryCopy.specifications_tab;
+
+  const narrative = spec.narrative
+    .map((p) => `<p class="mb-5 text-sm leading-relaxed text-slate-600">${esc(p)}</p>`)
+    .join('');
+
+  const cards = spec.groups.map((group) => {
+    const head = group.header.map((h) => `<th>${esc(h)}</th>`).join('');
+    const body = group.rows
+      .map((row) => (
+        `<tr>` +
+          row.map((cell, i) => (
+            i === 0
+              ? `<td class="${TD} font-semibold text-slate-700">${esc(cell)}</td>`
+              : `<td class="${TD}">${escBold(cell)}</td>`
+          )).join('') +
+        `</tr>`
+      ))
+      .join('');
+    const note = group.note
+      ? `<p class="px-4 pb-4 pt-3 m-0 text-xs leading-relaxed text-slate-500">${esc(group.note)}</p>`
+      : '';
+    return (
+      `<section class="mb-4 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">` +
+        `<h4 class="m-0 bg-slate-50 px-4 py-3 text-base font-bold text-emerald-900">${esc(group.title)}</h4>` +
+        `<div class="saman-table-wrap"><table class="saman-table"><thead><tr>${head}</tr></thead>` +
+        `<tbody>${body}</tbody></table></div>` +
+        note +
+      `</section>`
+    );
+  }).join('');
+
+  // The six approved GA boards sit between the tables and the coordination diagrams.
+  // `specifications_tab.ga_board_note` is a build instruction, not buyer-facing copy
+  // (narrative paragraph 3 already announces the boards), so it is not rendered.
+  const gaBoards = PO05_GA_BOARDS
+    .map((b) => (
+      `<figure class="mt-4 m-0 rounded-xl border border-slate-200 bg-white p-5 shadow-sm">` +
+        `<img src="${esc(b.src)}" alt="${esc(b.alt)}" width="${b.width}" height="${b.height}" ` +
+        `loading="lazy" class="w-full h-auto rounded-lg" />` +
+      `</figure>`
+    ))
+    .join('');
+
+  const diagrams = PO05_SPEC_DIAGRAMS
+    .map((d) => (
+      `<figure class="mt-4 m-0 rounded-xl border border-slate-200 bg-white p-5 shadow-sm">` +
+        `<img src="${esc(d.src)}" alt="${esc(d.alt)}" width="${d.width}" height="${d.height}" ` +
+        `loading="lazy" class="w-full h-auto rounded-lg" />` +
+      `</figure>`
+    ))
+    .join('');
+
+  const pdf =
+    `<p class="mt-5 text-sm"><a href="${esc(PO05_SPEC_PDF.href)}" ` +
+    `class="font-semibold text-emerald-800 underline underline-offset-2">` +
+    `${esc(PO05_SPEC_PDF.label)}</a></p>`;
+
+  return `<div class="not-prose">${narrative}${cards}${gaBoards}${diagrams}${pdf}</div>`;
+}
+
 /** Both tab bodies for a page slug, or null when the slug is not in scope. */
 export function getProductTabsHtml(
   pageSlug: string | undefined | null
@@ -1646,6 +1752,16 @@ export function getProductTabsHtml(
   if (pageSlug === 'construction-site-cabin') {
     return {
       specificationsHtml: buildConstructionSiteCabinSpecificationsHtml(),
+      shippingHtml: buildShippingHtml(),
+    };
+  }
+  // PO-05 - same contract: the Shipping tab is the shared freight component called
+  // with no options, so both trailer ladders (eighteen bands each), both zone city
+  // tables, the two free-delivery lines, the ODC note and the tentative-price
+  // disclaimer are byte-identical to the design lock.
+  if (pageSlug === 'portable-mobile-laboratory') {
+    return {
+      specificationsHtml: buildPortableMobileLaboratorySpecificationsHtml(),
       shippingHtml: buildShippingHtml(),
     };
   }

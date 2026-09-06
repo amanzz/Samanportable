@@ -162,7 +162,12 @@ async function main() {
   // moves from the planned-release backlog into the approved production list. 61/43 -> 62/42.
   // PO-06 (6 Sep 2026): 64/40. This pin was still 62/42 on entry - PO-03 and PO-04
   // each published a path without moving it, so this line also repairs that drift.
-  if (approved.size !== 64 || planned.size !== 40) fail(`architecture counts are ${approved.size}/64 approved and ${planned.size}/40 planned`);
+  // PO-05 (6 Sep 2026): 65/39. PO-06 merged to static-migration while this branch was
+  // open, so this release publishes the 65th approved path on top of PO-06's 64th.
+  // PO-05 (6 Sep 2026): 66/38. PO-07 made the identical 64/40 -> 65/39 edit this branch
+  // had already made, so git auto-merged it silently; with BOTH pages shipping the true
+  // count is one higher again.
+  if (approved.size !== 66 || planned.size !== 38) fail(`architecture counts are ${approved.size}/66 approved and ${planned.size}/38 planned`);
   if (!approved.has(EXPANDABLE_OFFICE) || planned.has(EXPANDABLE_OFFICE)) fail('Expandable Container Office release classification is wrong');
   if (!planned.has(ACCOMMODATION) || approved.has(ACCOMMODATION)) fail('Accommodation Container release classification is wrong');
   if (!planned.has(EXPANDABLE_HOUSE) || approved.has(EXPANDABLE_HOUSE)) fail('Expandable Container House release classification is wrong');
