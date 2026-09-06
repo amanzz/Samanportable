@@ -1348,14 +1348,20 @@ export function PortaCabinVariantHero({
           <div className="grid grid-cols-2 rounded-lg border border-[var(--ds-color-border)] overflow-hidden">
             {FEATURE_CELLS.map((cell, i) => (
               <div
-                key={cell.label}
+                key={cell.label || cell.value}
                 className={cn(
                   'px-2.5 py-1.5 min-h-[3.25rem]',
                   i % 2 === 0 && 'border-r border-[var(--ds-color-border)]',
                   i < FEATURE_CELLS.length - 2 && 'border-b border-[var(--ds-color-border)]'
                 )}
               >
-                <div className="text-[10px] font-bold uppercase tracking-[0.7px] text-[var(--ds-color-steel)]">{cell.label}</div>
+                {/* CH-HUB (6 Sep 2026) — `featureCellsWithoutLabels` drops the label row
+                    for a product whose approved cells are self-describing lines with no
+                    labels supplied. Default false, so every other product still renders
+                    the label div and its markup is byte-identical. */}
+                {!data.featureCellsWithoutLabels && (
+                  <div className="text-[10px] font-bold uppercase tracking-[0.7px] text-[var(--ds-color-steel)]">{cell.label}</div>
+                )}
                 <div className="text-[13px] font-semibold text-[var(--ds-color-forest)]">{cell.value}</div>
               </div>
             ))}

@@ -58,6 +58,14 @@ export interface ProductVariant {
 
 export interface VariantProductData {
   productSlug: string;
+  /** CH-HUB (6 Sep 2026) — opt-in, default false. Renders each `featureCells` entry
+      as its value alone, with no label row above it, for a product whose approved
+      FEATURE_CELLS table supplies five self-describing lines and no labels. Writing
+      a label per cell would be authoring customer-facing copy, which the build
+      prompt forbids, so the label row is dropped instead of invented. Absent on
+      every other product → the label row renders exactly as before and their markup
+      is byte-identical. Only meaningful alongside `featureCells`. */
+  featureCellsWithoutLabels?: boolean;
   variantAxis: string;
   defaultVariant: string;
   hsn?: string;

@@ -1,0 +1,39 @@
+CH-HUB Template Conformance Gate - artefact 1 of 6
+COMPONENT ORDER, candidate vs the porta-cabins design lock
+Generated 6 Sep 2026. Baseline 24edd07038d864117d2c4e389f67b87013efd1b8.
+Candidate  http://localhost:3000/product/container-houses
+Lock       https://www.samanportable.com/product/porta-cabins
+
+RESULT: block order is IDENTICAL
+
+#    CANDIDATE                        DESIGN LOCK                     
+------------------------------------------------------------------------
+1    hero grid                        hero grid                       
+2    gallery column                   gallery column                  
+3    buy box / decision panel         buy box / decision panel        
+4    explore-the-range rail           explore-the-range rail          
+5    divider 1                        divider 1                       
+6    divider 2                        divider 2                       
+7    size chips (premium)             size chips (premium)            
+8    section divider (3 / 4)          section divider (3 / 4)         
+9    Section 2 RightToExist           Section 2 RightToExist          
+10   Section 3 explorer               Section 3 explorer              
+11   explorer size tabs (premium)     explorer size tabs (premium)    
+12   Product Details tabs             Product Details tabs            
+13   You may also like                You may also like               
+
+MARKER PRESENCE (first index / count)
+marker                         candidate                  lock                      
+pc-hero-grid                   idx 47583    x17           idx 47590    x17          
+pc-rail                        idx 47884    x3            idx 47891    x3           
+pc-gallery                     idx 47626    x3            idx 47633    x3           
+pc-buybox                      idx 47665    x3            idx 47672    x3           
+saman-size-chips               idx 57833    x1            idx 57657    x1           
+pc-divider1                    idx 48600    x2            idx 48607    x2           
+pc-divider2                    idx 48660    x2            idx 48667    x2           
+saman-s2-split                 idx 67921    x8            idx 74573    x7           
+porta-size-applications        idx 69052    x2            idx 75700    x1           
+saman-size-tabs                idx 71140    x1            idx 76237    x1           
+saman-section-divider          idx 66039    x4            idx 73232    x4           
+You may also like              idx 113362   x2            idx 109720   x12          
+Product Details                idx 106103   x3            idx 102466   x3           

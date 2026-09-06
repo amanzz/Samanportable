@@ -1,0 +1,40 @@
+CH-HUB Template Conformance Gate - artefact 2 of 6
+PROP AUDIT - every design-lock gate and data opt-in this route now sets
+Generated 6 Sep 2026. Baseline 24edd07038d864117d2c4e389f67b87013efd1b8.
+
+ROUTE GATES  src/pages/product/[category]/index.tsx
+prop                       wired    container-houses included
+--------------------------------------------------------------
+showSectionDividers        True     True
+usePremiumSizeTabs         True     True
+sizeEyebrowText            True     True
+fullMobileLabels           True     True
+reviewsEmptyStateText      True     True
+
+DATA OPT-INS  src/data/products/container-houses.json
+--------------------------------------------------------------
+featureCellsWithoutLabels              True
+emitVariantFactCompleteness            True
+emitExplorerImageManifest              True
+emitAggregateOffer                     True
+suppressReviewClaims                   True
+suppressAggregateRatingSchema          True
+suppressLegacyFaqSchema                True
+suppressLegacyDescription              True
+hasProductVideo                        False
+
+SHARED-COMPONENT CHANGES (opt-in, default false, absent elsewhere)
+--------------------------------------------------------------
+featureCellsWithoutLabels  types.ts + PortaCabinVariantHero.tsx
+   the pack supplies five unlabelled cells per size; the label row is
+   dropped rather than 30 labels invented. Default false.
+getProductTabsHtml         specsShippingTabs.ts
+   one branch guarded by pageSlug === 'container-houses', placed before
+   the C08 branch so the five C08 subpages are untouched.
+
+EXPLORER PANELS: 6
+VARIANTS       : 20x8, 20x10, 20x12, 40x8, 40x10, 40x12
+YMAL TILES     :
+    /product/container-houses/prefab-container-homes
+    /product/container-houses/shipping-container-homes
+    /product/container-houses/luxury-container-houses

@@ -1,0 +1,27 @@
+CH-HUB Template Conformance Gate - artefact 6 of 6
+BASELINE vs CANDIDATE - every changed file classified
+Baseline 24edd07038d864117d2c4e389f67b87013efd1b8 (origin/static-migration, PR #196)
+Branch   ch-hub/container-house
+
+TRACKED FILES DIFFERING FROM BASELINE
+-------------------------------------
+public/sitemap-images-products.xml                         expected - build output; adds this hub's 42 new images + 2 YMAL tile images, drops the 36 superseded 900px files and the video poster
+src/components/product-variant-hero/PortaCabinVariantHero.tsx expected - featureCellsWithoutLabels render branch, default false
+src/components/product-variant-hero/rightToExistEntries.tsx expected - this page's Section 2 entry only
+src/components/product-variant-hero/types.ts               expected - featureCellsWithoutLabels opt-in declaration
+src/data/products/c08-specifications.json                  expected - prompt v2 s8.1, those two product keys only
+src/data/products/container-houses.json                    expected - this page's own product record (copy, prices, 42 images, schema opt-ins)
+src/data/products/prefab-container-homes.json              expected - prompt v2 s8.1, 5-year -> 10-year structural
+src/data/products/shipping-container-homes.json            expected - prompt v2 s8.1, 5-year -> 10-year structural
+src/data/wp-export/products/container-houses.json          expected - prompt v2 s4 scalar price defect (3050000 -> 281600, 'Starting Rs 12 lakh' removed)
+src/lib/calculatorLadders.ts                               expected - prompt v2 s4, hub ladder row only, four sibling ladders untouched
+src/lib/specsShippingTabs.ts                               expected - one branch guarded by pageSlug === 'container-houses', before the C08 branch
+src/pages/product/[category]/index.tsx                     expected - 5 design-lock gates + syncVariantSelection + fullMobileLabels + YMAL + deferred calculator + reviewsEmptyStateText
+
+NEW (UNTRACKED) FILES
+---------------------
+content/ch-hub/ (2 files)                                  expected - copy pack + asset map committed verbatim, per the content/<page-id>/ convention
+public/images/products/container-houses/** (55)            expected - 36 gallery + 6 section2 cards + 6 GA boards + 6 isometrics + 1 SOP sheet
+_build-inputs/artefacts/chhub-gate*                        expected - these six conformance artefacts
+
+UNEXPECTED COUNT: 0

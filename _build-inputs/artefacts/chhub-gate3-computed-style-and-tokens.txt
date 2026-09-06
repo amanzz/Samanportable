@@ -1,0 +1,43 @@
+CH-HUB Template Conformance Gate - artefact 3 of 6
+COMPUTED STYLE / TOKEN CHECK against the porta-cabins route
+Generated 6 Sep 2026.
+
+LOCKED TOKENS (occurrences in the served document)
+token        candidate    lock         match
+--------------------------------------------------
+#1a3c2e      6            6            True
+#2d7a3f      6            6            True
+#f0f7f2      4            4            True
+
+SHARED CLASS HOOKS (design-lock treatment)
+class                      candidate    lock        
+--------------------------------------------------
+saman-size-chip            7            7           
+saman-size-tab             7            7           
+saman-section-divider      4            4           
+saman-s2-split             8            7           
+pc-hero-grid               17           17          
+pc-divider1                2            2           
+pc-divider2                2            2           
+
+H1 count        candidate 1  lock 1
+U+2014 in text  candidate 0  lock 8
+
+NOTE: the lock carries 8 em dashes in its own rendered copy; the candidate
+carries none, because sizeEyebrowText is set and no pack string uses U+2014.
+
+RESPONSIVE GEOMETRY (artefact 4 companion, no horizontal overflow at any width)
+target       width   scrollW   clientW   overflow  h1    imgs   blank
+------------------------------------------------------------------------
+chhub        360     360       360       False     1     25     0
+chhub        390     390       390       False     1     25     0
+chhub        768     768       768       False     1     25     0
+chhub        1440    1440      1440      False     1     25     0
+designlock   360     360       360       False     1     41     0
+designlock   390     390       390       False     1     41     0
+designlock   768     768       768       False     1     41     0
+designlock   1440    1440      1440      False     1     41     0
+
+NOTE on saman-s2-split (8 vs 7): the pack supplies TWO Section 2 CTAs (a top-block
+CTA and a card CTA); porta-cabins supplies only the card CTA. The extra hook is the
+top-block CTA element. Every other hook count matches the lock exactly.
