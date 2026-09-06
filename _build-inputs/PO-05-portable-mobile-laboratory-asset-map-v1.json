@@ -30,9 +30,10 @@
   },
   "section3_image": {
    "width_px": 1600,
-   "quality_start": 90,
-   "ratio": "16:9",
-   "crop": "centred 16:9 crop of the 1:1 master"
+   "height_px": 1200,
+   "quality_start": 88,
+   "ratio": "4:3",
+   "crop": "centred 4:3 crop of the 1:1 master"
   },
   "description_image": {
    "width_px": 1600,
@@ -224,8 +225,9 @@
  },
  "section3_images": {
   "slot": "Section 3 left column, one per size, lazy. SAMAN ruling 6 Sep 2026: a PHOTOGRAPH here, not the 2D GA drawing.",
-  "ratio": "16:9",
-  "crop": "The gallery masters are 1:1 and this slot is 16:9, so take a CENTRED 16:9 crop of the full width (full width, height = width * 9/16, equal trim top and bottom). This is the sanctioned case: crop only to reach the slot's ratio. Open every output and confirm the whole unit is inside the frame; if any is clipped, shift the crop window vertically rather than scaling.",
+  "ratio": "4:3",
+  "ratio_evidence": "Measured on the live design lock 6 Sep 2026: the Section 3 left panel is aspect-ratio 4 / 3 with object-fit cover, and the lock's own asset porta-cabin-ga-plan-20x10.webp is 1920x1440. This pack's earlier 16:9 claim was wrong and is withdrawn.",
+  "crop": "The gallery masters are 1:1 and this slot is 4:3, so take a CENTRED 4:3 crop: full width, height = width * 3/4, equal trim top and bottom. This is the sanctioned case, crop only to reach the slot's ratio. Open every output and confirm the whole unit is inside the frame; if any is clipped, shift the crop window vertically rather than scaling.",
   "files": {
    "10x10": {
     "src": "10x10/_master/01-mobile-laboratory-10x10-front-hero.png",
@@ -256,6 +258,7 @@
  },
  "ga_boards": {
   "slot": "Specifications tab, below the tables and above the two coordination diagrams, one per size, lazy",
+  "placement_note": "Build instruction, not copy. Do not render this sentence on the page: SAMAN ruled on 6 Sep 2026 that Section 3 carries a photograph, so the six approved GA boards render in the Specifications tab instead. specifications_tab.narrative[2] already announces them to the reader.",
   "files": {
    "10x10": {
     "src": "_approved-ga-v1/portable-mobile-laboratory-10x10x8-5-premium-ga-specification-board-v1.png",

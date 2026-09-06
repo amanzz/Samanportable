@@ -100,7 +100,14 @@ for f in copy["forbidden_strings"]:
 # note: "placeholder" is NOT forbidden on this page - "exhaust cowl placeholder" is the
 # approved GA control term for a held position, and is checked by count above.
 check("no U+2014 in copy", "—" not in doc.split("<body")[-1])
-check("no 'Info' tab label", not re.search(r">\s*Info\s*<", doc))
+# The four tabs carry a responsive PAIR of labels and the two words differ: Description/Info,
+# Specifications/Specs, Shipping/Ship, Reviews. The old assert here forbade the word "Info",
+# which contradicted the lock; it is withdrawn and replaced with the positive check.
+for _long, _short in [("Description", "Info"), ("Specifications", "Specs"), ("Shipping", "Ship")]:
+    check(f"tab pair {_long}/{_short} present", _long in text and _short in text, (_long, _short))
+check("tab short label is not a repeat of the long one",
+      "DescriptionDescription" not in text.replace(" ", "")
+      and "ShippingShipping" not in text.replace(" ", ""))
 
 # 7 links
 for l in copy["links"]["internal"]:
@@ -144,7 +151,7 @@ for slug, f in amap.get("section3_images", {}).get("files", {}).items():
         try:
             from PIL import Image
             w, h = Image.open(p).size
-            check(f"Section 3 photo {slug} is 16:9", abs(w / h - 16 / 9) < 0.02, (w, h))
+            check(f"Section 3 photo {slug} is 4:3", abs(w / h - 4 / 3) < 0.02, (w, h))
         except Exception as e:
             check(f"Section 3 photo {slug} ratio check", False, e)
 _s3 = text.find(copy["section3"]["h2"])

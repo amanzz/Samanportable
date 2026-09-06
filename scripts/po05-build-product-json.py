@@ -14,6 +14,11 @@ COPY = json.load(open(os.path.join(PACK, "PO-05-portable-mobile-laboratory-copy-
 AMAP = json.load(open(os.path.join(PACK, "PO-05-portable-mobile-laboratory-asset-map-v1.json"), encoding="utf-8"))
 SLUG = "portable-mobile-laboratory"
 IMG = "/" + AMAP["output_root"].replace("public/", "")
+# Encoded dimensions come from the measurement table the image build writes, never
+# from a number retyped here - the pack declares a target width, the encoder never
+# upscales past the master, and the <img> must carry what actually shipped.
+MEAS = {r["file"]: (r["width"], r["height"]) for r in json.load(
+    open(os.path.join(ROOT, "scripts", "po05-image-measurements.json"), encoding="utf-8"))}
 E = lambda s: html.escape(s, quote=False)
 
 # ---------------------------------------------------------------- hero variants
@@ -59,10 +64,13 @@ panels = [{
         "alt": s3Alt[AMAP["section3_images"]["files"][s["slug"]]["out"]],
         # Same provenance as the gallery slides: these are the approved renders.
         "provenance": "render",
-        # Native 1:1, exactly as the design lock feeds this aspect-[4/3] object-cover
-        # box. A pre-cropped 16:9 file would be cropped a second time by the box and
-        # would clip both ends of the unit (SAMAN ruling, 6 Sep 2026).
-        "width": 1254, "height": 1254,
+        # A centred 4:3 crop, matching the panel's own aspect-[4/3] object-cover box
+        # (pack amendment, 6 Sep 2026). Because the file already matches the box, the
+        # box crops it no further and the whole unit stays in frame. The pack declares
+        # 1600x1200; the masters are 1254 px wide and nothing is ever upscaled, so
+        # these ship at 1254x940 - the measurement table is the source of truth.
+        "width": MEAS[IMG + "/" + AMAP["section3_images"]["files"][s["slug"]]["out"]][0],
+        "height": MEAS[IMG + "/" + AMAP["section3_images"]["files"][s["slug"]]["out"]][1],
     },
 } for s in COPY["section3"]["sizes"]]
 

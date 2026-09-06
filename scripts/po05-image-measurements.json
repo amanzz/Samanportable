@@ -829,20 +829,15 @@
   "file": "/images/products/portable-mobile-laboratory/section3/portable-mobile-laboratory-10x10-exterior.webp",
   "source": "10x10/_master/01-mobile-laboratory-10x10-front-hero.png",
   "width": 1254,
-  "height": 1254,
-  "quality": 83,
-  "bytes": 120454,
-  "kb": 117,
+  "height": 940,
+  "quality": 88,
+  "bytes": 104970,
+  "kb": 102,
   "attempts": [
    [
     1254,
-    86,
-    138
-   ],
-   [
-    1254,
-    83,
-    117
+    88,
+    102
    ]
   ]
  },
@@ -851,20 +846,15 @@
   "file": "/images/products/portable-mobile-laboratory/section3/portable-mobile-laboratory-20x8-exterior.webp",
   "source": "20x8/_master/01-mobile-laboratory-20x8-front-hero.png",
   "width": 1254,
-  "height": 1254,
-  "quality": 79,
-  "bytes": 122756,
-  "kb": 119,
+  "height": 940,
+  "quality": 88,
+  "bytes": 123136,
+  "kb": 120,
   "attempts": [
    [
     1254,
-    86,
-    167
-   ],
-   [
-    1254,
-    79,
-    119
+    88,
+    120
    ]
   ]
  },
@@ -873,15 +863,15 @@
   "file": "/images/products/portable-mobile-laboratory/section3/portable-mobile-laboratory-20x10-exterior.webp",
   "source": "20x10/_master/01-mobile-laboratory-20x10-front-hero.png",
   "width": 1254,
-  "height": 1254,
-  "quality": 86,
-  "bytes": 115794,
-  "kb": 113,
+  "height": 940,
+  "quality": 88,
+  "bytes": 97044,
+  "kb": 94,
   "attempts": [
    [
     1254,
-    86,
-    113
+    88,
+    94
    ]
   ]
  },
@@ -890,20 +880,15 @@
   "file": "/images/products/portable-mobile-laboratory/section3/portable-mobile-laboratory-20x12-exterior.webp",
   "source": "20x12/_master/01-mobile-laboratory-20x12-front-hero.png",
   "width": 1254,
-  "height": 1254,
-  "quality": 83,
-  "bytes": 119996,
-  "kb": 117,
+  "height": 940,
+  "quality": 88,
+  "bytes": 112916,
+  "kb": 110,
   "attempts": [
    [
     1254,
-    86,
-    138
-   ],
-   [
-    1254,
-    83,
-    117
+    88,
+    110
    ]
   ]
  },
@@ -912,20 +897,20 @@
   "file": "/images/products/portable-mobile-laboratory/section3/portable-mobile-laboratory-30x10-exterior.webp",
   "source": "30x10/_master/01-mobile-laboratory-30x10-front-hero.png",
   "width": 1254,
-  "height": 1254,
-  "quality": 77,
-  "bytes": 119612,
-  "kb": 116,
+  "height": 940,
+  "quality": 86,
+  "bytes": 123568,
+  "kb": 120,
   "attempts": [
    [
     1254,
-    86,
-    171
+    88,
+    132
    ],
    [
     1254,
-    77,
-    116
+    86,
+    120
    ]
   ]
  },
@@ -934,20 +919,15 @@
   "file": "/images/products/portable-mobile-laboratory/section3/portable-mobile-laboratory-40x10-exterior.webp",
   "source": "40x10/_master/01-mobile-laboratory-40x10-front-hero.png",
   "width": 1254,
-  "height": 1254,
-  "quality": 83,
-  "bytes": 123518,
-  "kb": 120,
+  "height": 940,
+  "quality": 88,
+  "bytes": 116488,
+  "kb": 113,
   "attempts": [
    [
     1254,
-    86,
-    140
-   ],
-   [
-    1254,
-    83,
-    120
+    88,
+    113
    ]
   ]
  },

@@ -966,7 +966,6 @@
    "ga_30x10",
    "ga_40x10"
   ],
-  "ga_board_note": "SAMAN ruling 6 Sep 2026: Section 3 carries a photograph, so the six approved GA boards render here instead, below the tables and above the two coordination diagrams.",
   "diagram_slots": [
    "spec_diagram_1",
    "spec_diagram_2"
@@ -1135,5 +1134,5 @@
  "old_page_strings_absent": [
   "(new page; no legacy strings)"
  ],
- "sha256_of_copy": "562ea7e51128e769e42553e2523bc62f7df9a94fcbd7edc918baab4050d25c32"
+ "sha256_of_copy": "8f18fe0a14d31c99dfcdd7b010425b36252eb990d8c00911da7d704851c10119"
 }
