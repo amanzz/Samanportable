@@ -1,68 +1,82 @@
 PO-05-R2 image measurement table - every browser-fetched output
-band 80-120 KB (KiB). Quality-first then width. Nothing is cropped: Section 3 ships
-the master at its native 1:1 (SAMAN ruling 6 Sep 2026, second pass) and the Section 2
-card takes the sanctioned centred 16:9 crop to reach its native-16:9 slot.
+Re-measured 6 Sep 2026 after the pack amendment. Band 80-120 KB (KiB), quality
+first then width. Section 3 now ships the sanctioned centred 4:3 crop to reach its
+aspect-[4/3] object-cover panel (the pack's earlier 16:9 claim is withdrawn); the
+Section 2 card keeps its centred 16:9 crop. Nothing else changed - the other 49
+outputs re-encode byte-identical.
 
 slot              file                                                                   w     h    q   KB
 ----------------------------------------------------------------------------------------------------------
-description/10x10 portable-mobile-laboratory-description-04-10x10-compact-workflow.webp  1600   900   90  114
-description/20x10 portable-mobile-laboratory-description-01-20x10-dual-bench-room.webp  1600   900   88  120
-description/20x12 portable-mobile-laboratory-description-05-20x12-wide-aisle.webp     1600   900   88  119
-description/20x8  portable-mobile-laboratory-description-03-20x8-linear-finish.webp   1600   900   90   88
-description/30x10 portable-mobile-laboratory-description-02-30x10-sample-flow.webp    1600   900   90   91
-description/40x10 portable-mobile-laboratory-description-06-40x10-services-run.webp   1600   900   90  109
-diagram/1         portable-mobile-laboratory-frame-envelope-diagram.webp              1600   900   91   80
-diagram/2         portable-mobile-laboratory-openings-services-diagram.webp           1600   900   90   87
-ga/10x10          portable-mobile-laboratory-10x10-ga-board.webp                      1800  1012   91   82
-ga/20x10          portable-mobile-laboratory-20x10-ga-board.webp                      1800  1012   88   86
-ga/20x12          portable-mobile-laboratory-20x12-ga-board.webp                      1800  1012   88   90
-ga/20x8           portable-mobile-laboratory-20x8-ga-board.webp                       1800  1012   88   88
-ga/30x10          portable-mobile-laboratory-30x10-ga-board.webp                      1800  1012   88   87
-ga/40x10          portable-mobile-laboratory-40x10-ga-board.webp                      1800  1012   88   89
-gallery/10x10     portable-mobile-laboratory-10x10-front-door-wall.webp               1254  1254   83  117
-gallery/10x10     portable-mobile-laboratory-10x10-interior-bench-run.webp            1254  1254   85  119
-gallery/10x10     portable-mobile-laboratory-10x10-interior-from-door.webp            1254  1254   82  117
-gallery/10x10     portable-mobile-laboratory-10x10-sink-service-interface.webp        1254  1254   86  115
-gallery/20x10     portable-mobile-laboratory-20x10-front-window-door-window.webp      1254  1254   86  113
-gallery/20x10     portable-mobile-laboratory-20x10-interior-dual-bench.webp           1254  1254   80  119
-gallery/20x10     portable-mobile-laboratory-20x10-interior-from-door.webp            1254  1254   78  115
-gallery/20x10     portable-mobile-laboratory-20x10-rear-two-windows.webp              1254  1254   86   87
-gallery/20x10     portable-mobile-laboratory-20x10-sink-service-interface.webp        1254  1254   85  114
-gallery/20x10     portable-mobile-laboratory-20x10-wall-a-elevation.webp              1254  1254   88   80
-gallery/20x12     portable-mobile-laboratory-20x12-front-window-door-window.webp      1254  1254   83  117
-gallery/20x12     portable-mobile-laboratory-20x12-interior-from-door.webp            1254  1254   81  119
-gallery/20x12     portable-mobile-laboratory-20x12-interior-wide-aisle.webp           1254  1254   83  118
-gallery/20x12     portable-mobile-laboratory-20x12-rear-two-windows.webp              1254  1254   85  120
-gallery/20x12     portable-mobile-laboratory-20x12-sink-service-interface.webp        1254  1254   88   81
-gallery/20x12     portable-mobile-laboratory-20x12-wall-a-elevation.webp              1254  1254   85  112
-gallery/20x8      portable-mobile-laboratory-20x8-front-window-door-window.webp       1254  1254   79  119
-gallery/20x8      portable-mobile-laboratory-20x8-interior-from-door.webp             1254  1254   86  104
-gallery/20x8      portable-mobile-laboratory-20x8-interior-linear-bench.webp          1254  1254   86   92
-gallery/20x8      portable-mobile-laboratory-20x8-rear-two-windows.webp               1254  1254   80  116
-gallery/20x8      portable-mobile-laboratory-20x8-sink-service-interface.webp         1254  1254   86  109
-gallery/20x8      portable-mobile-laboratory-20x8-wall-a-elevation.webp               1254  1254   84  119
-gallery/30x10     portable-mobile-laboratory-30x10-front-two-doors.webp               1254  1254   77  116
-gallery/30x10     portable-mobile-laboratory-30x10-interior-from-door.webp            1254  1254   88   82
-gallery/30x10     portable-mobile-laboratory-30x10-interior-sample-flow.webp          1254  1254   89   88
-gallery/30x10     portable-mobile-laboratory-30x10-rear-four-windows.webp             1254  1254   79  115
-gallery/30x10     portable-mobile-laboratory-30x10-sink-service-interface.webp        1254  1254   87   84
-gallery/30x10     portable-mobile-laboratory-30x10-wall-a-elevation.webp              1254  1254   83  114
-gallery/40x10     portable-mobile-laboratory-40x10-front-two-doors.webp               1254  1254   83  120
-gallery/40x10     portable-mobile-laboratory-40x10-interior-capacity-bench.webp       1254  1254   88   83
-gallery/40x10     portable-mobile-laboratory-40x10-interior-from-door.webp            1254  1254   88   84
-gallery/40x10     portable-mobile-laboratory-40x10-rear-four-windows.webp             1254  1254   85  119
-gallery/40x10     portable-mobile-laboratory-40x10-sink-service-interface.webp        1254  1254   91   86
-gallery/40x10     portable-mobile-laboratory-40x10-wall-a-elevation.webp              1254  1254   80  115
-section2          portable-mobile-laboratory-20x10-bench-and-sink.webp                1254   705   90   99
-section3/10x10    portable-mobile-laboratory-10x10-exterior.webp                      1254  1254   83  117
-section3/20x10    portable-mobile-laboratory-20x10-exterior.webp                      1254  1254   86  113
-section3/20x12    portable-mobile-laboratory-20x12-exterior.webp                      1254  1254   83  117
-section3/20x8     portable-mobile-laboratory-20x8-exterior.webp                       1254  1254   79  119
-section3/30x10    portable-mobile-laboratory-30x10-exterior.webp                      1254  1254   77  116
-section3/40x10    portable-mobile-laboratory-40x10-exterior.webp                      1254  1254   83  120
+description/10x10 portable-mobile-laboratory-description-04-10x10-compact-workflow.webp   1600   900   90  114
+description/20x10 portable-mobile-laboratory-description-01-20x10-dual-bench-room.webp    1600   900   88  120
+description/20x12 portable-mobile-laboratory-description-05-20x12-wide-aisle.webp         1600   900   88  119
+description/20x8  portable-mobile-laboratory-description-03-20x8-linear-finish.webp       1600   900   90   88
+description/30x10 portable-mobile-laboratory-description-02-30x10-sample-flow.webp        1600   900   90   91
+description/40x10 portable-mobile-laboratory-description-06-40x10-services-run.webp       1600   900   90  109
+diagram/1         portable-mobile-laboratory-frame-envelope-diagram.webp                  1600   900   91   80
+diagram/2         portable-mobile-laboratory-openings-services-diagram.webp               1600   900   90   87
+ga/10x10          portable-mobile-laboratory-10x10-ga-board.webp                          1800  1012   91   82
+ga/20x10          portable-mobile-laboratory-20x10-ga-board.webp                          1800  1012   88   86
+ga/20x12          portable-mobile-laboratory-20x12-ga-board.webp                          1800  1012   88   90
+ga/20x8           portable-mobile-laboratory-20x8-ga-board.webp                           1800  1012   88   88
+ga/30x10          portable-mobile-laboratory-30x10-ga-board.webp                          1800  1012   88   87
+ga/40x10          portable-mobile-laboratory-40x10-ga-board.webp                          1800  1012   88   89
+gallery/10x10     portable-mobile-laboratory-10x10-front-door-wall.webp                   1254  1254   83  117
+gallery/10x10     portable-mobile-laboratory-10x10-interior-bench-run.webp                1254  1254   85  119
+gallery/10x10     portable-mobile-laboratory-10x10-interior-from-door.webp                1254  1254   82  117
+gallery/10x10     portable-mobile-laboratory-10x10-sink-service-interface.webp            1254  1254   86  115
+gallery/20x10     portable-mobile-laboratory-20x10-front-window-door-window.webp          1254  1254   86  113
+gallery/20x10     portable-mobile-laboratory-20x10-interior-dual-bench.webp               1254  1254   80  119
+gallery/20x10     portable-mobile-laboratory-20x10-interior-from-door.webp                1254  1254   78  115
+gallery/20x10     portable-mobile-laboratory-20x10-rear-two-windows.webp                  1254  1254   86   87
+gallery/20x10     portable-mobile-laboratory-20x10-sink-service-interface.webp            1254  1254   85  114
+gallery/20x10     portable-mobile-laboratory-20x10-wall-a-elevation.webp                  1254  1254   88   80
+gallery/20x12     portable-mobile-laboratory-20x12-front-window-door-window.webp          1254  1254   83  117
+gallery/20x12     portable-mobile-laboratory-20x12-interior-from-door.webp                1254  1254   81  119
+gallery/20x12     portable-mobile-laboratory-20x12-interior-wide-aisle.webp               1254  1254   83  118
+gallery/20x12     portable-mobile-laboratory-20x12-rear-two-windows.webp                  1254  1254   85  120
+gallery/20x12     portable-mobile-laboratory-20x12-sink-service-interface.webp            1254  1254   88   81
+gallery/20x12     portable-mobile-laboratory-20x12-wall-a-elevation.webp                  1254  1254   85  112
+gallery/20x8      portable-mobile-laboratory-20x8-front-window-door-window.webp           1254  1254   79  119
+gallery/20x8      portable-mobile-laboratory-20x8-interior-from-door.webp                 1254  1254   86  104
+gallery/20x8      portable-mobile-laboratory-20x8-interior-linear-bench.webp              1254  1254   86   92
+gallery/20x8      portable-mobile-laboratory-20x8-rear-two-windows.webp                   1254  1254   80  116
+gallery/20x8      portable-mobile-laboratory-20x8-sink-service-interface.webp             1254  1254   86  109
+gallery/20x8      portable-mobile-laboratory-20x8-wall-a-elevation.webp                   1254  1254   84  119
+gallery/30x10     portable-mobile-laboratory-30x10-front-two-doors.webp                   1254  1254   77  116
+gallery/30x10     portable-mobile-laboratory-30x10-interior-from-door.webp                1254  1254   88   82
+gallery/30x10     portable-mobile-laboratory-30x10-interior-sample-flow.webp              1254  1254   89   88
+gallery/30x10     portable-mobile-laboratory-30x10-rear-four-windows.webp                 1254  1254   79  115
+gallery/30x10     portable-mobile-laboratory-30x10-sink-service-interface.webp            1254  1254   87   84
+gallery/30x10     portable-mobile-laboratory-30x10-wall-a-elevation.webp                  1254  1254   83  114
+gallery/40x10     portable-mobile-laboratory-40x10-front-two-doors.webp                   1254  1254   83  120
+gallery/40x10     portable-mobile-laboratory-40x10-interior-capacity-bench.webp           1254  1254   88   83
+gallery/40x10     portable-mobile-laboratory-40x10-interior-from-door.webp                1254  1254   88   84
+gallery/40x10     portable-mobile-laboratory-40x10-rear-four-windows.webp                 1254  1254   85  119
+gallery/40x10     portable-mobile-laboratory-40x10-sink-service-interface.webp            1254  1254   91   86
+gallery/40x10     portable-mobile-laboratory-40x10-wall-a-elevation.webp                  1254  1254   80  115
+section2          portable-mobile-laboratory-20x10-bench-and-sink.webp                    1254   705   90   99
+section3/10x10    portable-mobile-laboratory-10x10-exterior.webp                          1254   940   88  102
+section3/20x10    portable-mobile-laboratory-20x10-exterior.webp                          1254   940   88   94
+section3/20x12    portable-mobile-laboratory-20x12-exterior.webp                          1254   940   88  110
+section3/20x8     portable-mobile-laboratory-20x8-exterior.webp                           1254   940   88  120
+section3/30x10    portable-mobile-laboratory-30x10-exterior.webp                          1254   940   86  120
+section3/40x10    portable-mobile-laboratory-40x10-exterior.webp                          1254   940   88  113
 ----------------------------------------------------------------------------------------------------------
 55 outputs, 0 outside the band
 
-Widths: Section 3 and the Section 2 card are declared 1600 px in the asset map but
-ship at 1254 px - their source masters are natively 1254x1254 and upscaling is
-forbidden. See 10-PROPOSED-pack-amendment-section3-ratio.md.
+The six re-encoded files, before -> after:
+  10x10  1254x1254 q83 117 KB  ->  1254x940 q88 102 KB
+  20x8   1254x1254 q79 119 KB  ->  1254x940 q88 120 KB
+  20x10  1254x1254 q86 113 KB  ->  1254x940 q88  94 KB
+  20x12  1254x1254 q83 117 KB  ->  1254x940 q88 110 KB
+  30x10  1254x1254 q77 116 KB  ->  1254x940 q86 120 KB
+  40x10  1254x1254 q83 120 KB  ->  1254x940 q88 113 KB
+
+Ratio: 1254/940 = 1.3340 against 4/3 = 1.3333, inside the verifier's 0.02 tolerance.
+
+Widths: the amended pack declares Section 3 at 1600x1200 and the Section 2 card at
+1600 px, but every one of these masters is natively 1254x1254 and the encoder never
+upscales. They therefore ship 1254x940 and 1254x705 - the same deviation, for the
+same reason, that the accepted Section 2 card already carried. Measured in the page:
+the panel renders 533x399 CSS px, so 1254x940 still covers it at better than 2x DPR.

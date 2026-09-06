@@ -198,7 +198,10 @@ PASS forbidden absent: 'lab on wheels'
 PASS forbidden absent: 'mobile laboratory van'
 PASS forbidden absent: '—'
 PASS no U+2014 in copy
-FAIL no 'Info' tab label
+PASS tab pair Description/Info present  | ('Description', 'Info')
+PASS tab pair Specifications/Specs present  | ('Specifications', 'Specs')
+PASS tab pair Shipping/Ship present  | ('Shipping', 'Ship')
+PASS tab short label is not a repeat of the long one
 PASS link present /product/portable-office
 PASS link present /product/container-offices
 PASS link present /product/portable-office/readymade-office-cabin
@@ -273,24 +276,24 @@ PASS GA webp 20x10 exists and 80-120 KB (Specifications tab)  | 86
 PASS GA webp 20x12 exists and 80-120 KB (Specifications tab)  | 90
 PASS GA webp 30x10 exists and 80-120 KB (Specifications tab)  | 87
 PASS GA webp 40x10 exists and 80-120 KB (Specifications tab)  | 89
-PASS Section 3 photo 10x10 exists and 80-120 KB  | 117
+PASS Section 3 photo 10x10 exists and 80-120 KB  | 102
 PASS Section 3 photo 10x10 referenced on the page
-FAIL Section 3 photo 10x10 is 16:9  | (1254, 1254)
-PASS Section 3 photo 20x8 exists and 80-120 KB  | 119
+PASS Section 3 photo 10x10 is 4:3  | (1254, 940)
+PASS Section 3 photo 20x8 exists and 80-120 KB  | 120
 PASS Section 3 photo 20x8 referenced on the page
-FAIL Section 3 photo 20x8 is 16:9  | (1254, 1254)
-PASS Section 3 photo 20x10 exists and 80-120 KB  | 113
+PASS Section 3 photo 20x8 is 4:3  | (1254, 940)
+PASS Section 3 photo 20x10 exists and 80-120 KB  | 94
 PASS Section 3 photo 20x10 referenced on the page
-FAIL Section 3 photo 20x10 is 16:9  | (1254, 1254)
-PASS Section 3 photo 20x12 exists and 80-120 KB  | 117
+PASS Section 3 photo 20x10 is 4:3  | (1254, 940)
+PASS Section 3 photo 20x12 exists and 80-120 KB  | 110
 PASS Section 3 photo 20x12 referenced on the page
-FAIL Section 3 photo 20x12 is 16:9  | (1254, 1254)
-PASS Section 3 photo 30x10 exists and 80-120 KB  | 116
+PASS Section 3 photo 20x12 is 4:3  | (1254, 940)
+PASS Section 3 photo 30x10 exists and 80-120 KB  | 120
 PASS Section 3 photo 30x10 referenced on the page
-FAIL Section 3 photo 30x10 is 16:9  | (1254, 1254)
-PASS Section 3 photo 40x10 exists and 80-120 KB  | 120
+PASS Section 3 photo 30x10 is 4:3  | (1254, 940)
+PASS Section 3 photo 40x10 exists and 80-120 KB  | 113
 PASS Section 3 photo 40x10 referenced on the page
-FAIL Section 3 photo 40x10 is 16:9  | (1254, 1254)
+PASS Section 3 photo 40x10 is 4:3  | (1254, 940)
 PASS no GA board renders in Section 3
 PASS GA 10x10 ratio 16:9 (never cropped)  | (1800, 1012)
 PASS GA 20x8 ratio 16:9 (never cropped)  | (1800, 1012)
@@ -351,4 +354,4 @@ PASS faq schema matches visible: Is the sink connected, and is
 PASS faq schema matches visible: Can a fume hood be fitted?
 PASS faq schema matches visible: How is the laboratory lifted a
 
-RESULT: FAIL (7 checks)
+RESULT: PASS

@@ -51,9 +51,31 @@ Correct call not to render it. It has been removed from `copy.specifications_tab
 
 `8f18fe0a14d31c99dfcdd7b010425b36252eb990d8c00911da7d704851c10119`
 
-## Then
+## Then · deploy, do not wait for a preview sign-off
 
-Re-run `verify_po05.py`. `RESULT: PASS` should now be reachable. Re-run gates 3 and 6, refresh the measurement table for the six re-encoded files, then **merge PR #193 into `static-migration` and deploy**, per step 4 of the rev-2 ticket.
+SAMAN has confirmed on 6 September 2026 that **you deploy and he reviews the live URL**. There is no localhost approval step. So:
+
+1. Re-encode the six Section 3 photographs at 1600x1200 and re-measure.
+2. Re-run `verify_po05.py`. `RESULT: PASS` is required and is now reachable.
+3. Re-run gates 3 and 6 and refresh the measurement table for the re-encoded files.
+4. **Merge PR #193 into `static-migration` and deploy.** Do not stop for approval; it is already given, conditional only on step 2 printing PASS. If PASS is still not reachable, stop and report the exact failing assert with its line number instead of deploying.
+5. Add `/product/portable-office/portable-mobile-laboratory` to the sitemap if the build has not already.
+
+## Post-deploy report, so SAMAN can review production in one pass
+
+Return the live URL and confirm each of these against **production**, not the preview:
+
+- HTTP 200, self-canonical, one H1, title and meta description byte-identical to the copy pack.
+- Section 2: exactly one image between its H2 and the Section 3 H2, and that image is the interior photograph, not a drawing.
+- Section 3: a photograph for every one of the six sizes, each 4:3, none clipping the unit.
+- Description tab: six images, at the anchors in the copy pack, none between Section 2 and Section 3.
+- Specifications tab: the six GA boards below the tables and above the two coordination diagrams.
+- Tabs: a flattened scrape reads `DescriptionInfo`, `SpecificationsSpecs`, `ShippingShip`, `Reviews`.
+- Gallery: 10x10 shows four slides, every other size six.
+- Shipping tab renders both freight tables and the two free-delivery lines.
+- Grep the production HTML for `coming soon|available on request|contact us for details|placeholder|TBD` and report zero hits, and confirm no U+2014 in body copy.
+
+Attach one full-page desktop screenshot of production so SAMAN has it alongside the URL.
 
 ## Your three out-of-scope findings, acknowledged
 

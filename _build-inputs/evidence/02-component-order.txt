@@ -1,5 +1,5 @@
 ARTEFACT 2 - COMPONENT-ORDER ASSERTION (the eleven canonical blocks)
-preview: http://localhost:3105/product/portable-office/portable-mobile-laboratory
+preview: http://127.0.0.1:3155/product/portable-office/portable-mobile-laboratory
 
 #    block                                              offset
 1    three-column hero                                     341
@@ -10,9 +10,9 @@ preview: http://localhost:3105/product/portable-office/portable-mobile-laborator
 6    Section 2 RightToExist + split card                 57551
 7    Section 2 media pairing (split card)                59303
 8    Section 3 SizeApplicationsExplorer                  60476
-9    Section 4 calculator                                98921
-10   You may also like                                  314448
-11   Section 5 Product Details tab strip                320073
+9    Section 4 calculator                                98920
+10   You may also like                                  314447
+11   Section 5 Product Details tab strip                320072
 
 RESULT: PASS - all eleven blocks present, in the canonical order.
 
