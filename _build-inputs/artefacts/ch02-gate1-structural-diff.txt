@@ -1,0 +1,86 @@
+CH-02 Template Conformance Gate - artefact 1: structural diff vs the design lock
+page:       /product/container-houses/luxury-container-houses
+design lock: /product/porta-cabins
+
+Compared as a bag of structural landmarks (tag + saman-* classes only), so
+copy, images and alt text, size rows and prices, and link destinations - the
+four things the lock permits to differ - cannot register as structure.
+
+landmarks on the design lock: 146
+landmarks on this page:       170
+
+delta by landmark (design lock -> this page):
+  aside|                                              1 ->    3   (+2)
+  a|saman-s2-split-cta                                1 ->    2   (+1)
+  a|saman-ymal-card                                  10 ->    3   (-7)
+  button|saman-ymal-dot                               8 ->    1   (-7)
+  div|saman-table-wrap                                4 ->    5   (+1)
+  figure|                                             2 ->    0   (-2)
+  h2|                                                21 ->   32   (+11)
+  h3|                                                22 ->   31   (+9)
+  h4|                                                14 ->    9   (-5)
+  nav|                                                2 ->    3   (+1)
+  section|                                            9 ->   26   (+17)
+  table|                                              4 ->    7   (+3)
+  table|saman-table                                   4 ->    5   (+1)
+  ul|                                                17 ->   16   (-1)
+landmark classes only on the design lock: ['figure|']
+landmark classes only on this page:       (none)
+
+------------------------------------------------------------------------------
+<section> elements by class
+------------------------------------------------------------------------------
+   design lock   this page   class
+             0           8   calc-step
+             2           5   mb-4 overflow-hidden rounded-xl border border-slate-200 bg
+             1           1   mb-4 scroll-mt-20
+             1           1   rounded-lg border border-emerald-100 bg-white/95 p-3 shado
+             1           1   scroll-mt-20
+             1           1   mt-0
+             1           1   calc-entry
+             1           1   saman-youmaylike
+             1           1   mt-4
+             1           1   rounded-xl border border-emerald-200 bg-white p-5 shadow-s
+             0           1   noscript-content
+             0           1   price-tables
+             0           1   rounded-xl border border-[#0A3D2A]/15 bg-[#F0F7F4] px-4 py
+             0           1   calc-step is-active
+             0           1   wall-diagram
+             0           1   cabin-calculator-ssr
+
+  of this page's sections, 13 belong to the EMBEDDED CALCULATOR.
+
+==============================================================================
+CLASSIFICATION - every delta above, and which permitted axis it sits on
+==============================================================================
+
+1. The embedded calculator (calc-step x8, cabin-calculator-ssr, wall-diagram,
+   price-tables, noscript-content, and their h2/h3/table/ul children).
+   The design lock is the category HUB route, which renders only the calculator
+   ENTRY band; every PRODUCT route renders the calculator itself. This is a
+   route-level difference that predates this page - PO-01 through PO-08 all carry
+   it - and build prompt v1 3.11 rules the calculator untouched. Not authored here.
+
+2. Copy volume. The Description tab's nine approved H2 sections plus the FAQ run,
+   the Section 3 six size panels (H3 by 3.7) and the Specifications tab's FIVE
+   approved group tables against the lock's two. Every one of these is a string
+   from the signed pack rendered through the shared component. Permitted axis:
+   copy strings.
+
+3. YMAL and Explore the Range card counts (saman-ymal-card 10 -> 3, saman-ymal-dot
+   8 -> 1). Build prompt v1 3.6: the approved container-houses list, this page
+   excluded, only destinations returning 200, and never padded by repeating a tile.
+   Today that is exactly three. Permitted axis: internal-link destinations.
+
+4. figure 2 -> 0. The lock's two figures are its Specifications tab's technical
+   diagram frames. The CH-02 pack ships no spec diagrams - its drawings are the six
+   Section 3 GA boards - and the design lock's own rule is that an empty slot
+   renders NOTHING rather than fallback content. Permitted axis: images.
+
+5. saman-s2-split-cta 1 -> 2. The lock's Section 2 renders the split card's CTA
+   only; this page's approved copy also supplies a lead CTA (section2.cta), which
+   the shared component already has a slot for (topCtaLabel/topCtaHref, default
+   absent). Permitted axis: copy strings.
+
+No landmark class exists on this page that the design lock does not also render.
+The one class the lock has and this page does not is `figure`, explained at 4.

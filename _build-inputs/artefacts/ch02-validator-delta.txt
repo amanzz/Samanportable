@@ -1,0 +1,60 @@
+CH-02 validator delta
+Pristine baseline ea5ff6f9 (origin/static-migration, PO-CLUSTER-02 merged) in
+worktrees/ch02-baseline-ea5ff6f9, sharing this branch's node_modules via a
+junction so the two are comparable. Server-probing validators point at the SAME
+local preview (http://127.0.0.1:3102) in both runs, because that isolates the
+source-tree difference rather than the build.
+
+validator                            BASELINE   CH-02      delta
+----------------------------------------------------------------------------
+commercial-architecture              PASS       PASS       same
+pc01-calculator-price-parity         PASS       PASS       same
+pc01-static-faq                      PASS       PASS       same
+c01-specification-overrides          PASS       PASS       same
+cod16-quotation-wording              PASS       PASS       same
+enquiry-dialog-a11y                  PASS       PASS       same
+cc01-faq-parity                      PASS       PASS       same
+pc01-qualified-c01-debt              FAIL       FAIL       same
+container-office-rail                FAIL       FAIL       same
+pc01-keyword-ownership               FAIL       FAIL       same
+po-family-release                    FAIL       FAIL       same
+po-family-pdfs                       FAIL       FAIL       same
+temporary-commercial-gating          FAIL       FAIL       same
+merchant-feed                        FAIL       FAIL       same
+local-inventory                      FAIL       FAIL       same
+stg01b-structured-data               FAIL       FAIL       same (see below)
+publication-gate                     FAIL       FAIL       same (identical lines)
+
+pc01-calculator-price-parity deserves a note: it FAILED on this branch until the
+`ladders` hash was re-pinned, because editing calculatorLadders.ts at all trips
+its tamper tripwire. The change behind the re-pin is evidenced in
+ch02-calculator-ladder-evidence.txt - 49 -> 49 ROUTE_LADDERS keys, identical key
+order, exactly one key's EXPRESSION changed, and the resulting luxury ladder
+equals the signed pack's six ex-GST prices. It PASSES now.
+
+--------------------------------------------------------------------------------
+validate:stg01b-structured-data - whole-file hash tripwire
+--------------------------------------------------------------------------------
+  flagged at baseline ea5ff6f9 : 45 files
+  flagged on the CH-02 branch  : 46 files
+  added by this branch         :
+    src/data/wp-export/products/luxury-container-houses.json
+  removed by this branch       : (none)
+
+  The single addition is this page's own wp-export record, whose Rank Math head
+  this branch refreshes to the pack's approved title, description and canonical.
+  src/data/products/luxury-container-houses.json was ALREADY flagged at baseline.
+  Every other flagged file is flagged before this branch exists, including the
+  equivalents PO-05 through PO-08 each added the same way.
+
+--------------------------------------------------------------------------------
+validate:publication-gate
+--------------------------------------------------------------------------------
+  Baseline and branch produce byte-identical failure lines. This route was already
+  in approvedProductionPaths and in sitemapCanonicalPaths before this branch, so
+  CH-02 required no release-gate flip and no counter bump - it is a rewrite of a
+  live page, not a new route.
+
+--------------------------------------------------------------------------------
+SUMMARY: zero validators newly fail because of this branch.
+--------------------------------------------------------------------------------

@@ -1,0 +1,155 @@
+CH-02 Template Conformance Gate - artefact 4: prop audit
+slug: luxury-container-houses
+
+Every prop passed to each shared component on this route, the source
+expression, and the value it resolves to for THIS slug. Props whose value
+depends on fetched page data are marked <needs page data> - their source
+expression is shown in full so the wiring is still auditable.
+
+==============================================================================
+<PortaCabinVariantHero>   props passed: 19
+==============================================================================
+
+  data
+    source : {variantData}
+    value  : <needs page data>
+
+  productTitle
+    source : {transformedProduct.title}
+    value  : <needs page data>
+
+  averageRating
+    source : {product.average_rating}
+    value  : <needs page data>
+
+  ratingCount
+    source : {product.rating_count}
+    value  : <needs page data>
+
+  railItems
+    source : {relatedRailItems}
+    value  : <needs page data>
+
+  currentHref
+    source : {`/product/${category}/${slug}`}
+    value  : <needs page data>
+
+  showSectionDividers
+    source : {CLUSTER_DESIGN_SLUGS.has(slug)}
+    value  : true
+
+  usePremiumSizeTabs
+    source : {CLUSTER_DESIGN_SLUGS.has(slug)}
+    value  : true
+
+  explorerPanelHeadingAsH2
+    source : {CLUSTER_DESIGN_SLUGS.has(slug) && slug !== 'construction-site-cabin' && slug !== 'portable-control-room' && slug !== 'portable-mobile-laboratory' && slug !== 'portable-conference-cabin' && slug !== 'prefab-container-homes' && slug !== 'flat-pack-container-homes' && slug !== 'luxury-container-houses'}
+    value  : false
+
+  compactMobileDividers
+    source : {slug === 'fire-rated-porta-cabin'}
+    value  : false
+
+  sizeEyebrowText
+    source : { slug === 'containerized-data-center' ? '' // SOC-01 — the signed pack supplies this page's own selector // label; the shared default carries an em dash, which this // page's acceptance gate bans. : slug === 'small-office-cabin' ? smallOfficeCabinCopy.hero.size_selector_label // PO-01 - the signed pack supplies this page's own selector label. : slug === 'readymade-office-cabin' ? readymadeOfficeC
+    value  : "Choose your size - six factory-built options"
+
+  emitSizeAnchors
+    source : {slug === 'accommodation-container' || slug === 'container-office-cabin' || slug === 'container-marketing-office' || slug === CO06_SLUG || slug === 'bess-container' || slug === 'shipping-container-office' || slug === CO07_SLUG || slug === CO08_SLUG}
+    value  : false
+
+  explorerHidePanelImages
+    source : {slug === 'accommodation-container'}
+    value  : false
+
+  deferNonLcpImagesUntilHeroPaint
+    source : {slug === 'accommodation-container'}
+    value  : false
+
+  renderOnlyActiveExplorerPanel
+    source : {slug === 'accommodation-container'}
+    value  : false
+
+  syncVariantSelection
+    source : {slug === CO06_SLUG}
+    value  : false
+
+  eagerActiveGalleryImages
+    source : {slug === CO06_SLUG || slug === CO08_SLUG}
+    value  : false
+
+  renderInactiveGalleryImages
+    source : {slug === CO06_SLUG || slug === CO08_SLUG}
+    value  : false
+
+  explorerSingleColumnApplications
+    source : {slug === CO06_SLUG}
+    value  : false
+==============================================================================
+<ProductTabs>   props passed: 11
+==============================================================================
+
+  description
+    source : {slug === 'accommodation-container' ? lazyLoadStaticHtmlImages(product.description || '') : product.description || ''}
+    value  : <needs page data>
+
+  specificationsHtml
+    source : {slug === 'accommodation-container' ? lazyLoadStaticHtmlImages(specificationsHtml) : specificationsHtml}
+    value  : <needs page data>
+
+  shippingHtml
+    source : {slug === 'accommodation-container' ? lazyLoadStaticHtmlImages(shippingHtml) : shippingHtml}
+    value  : <needs page data>
+
+  productTitle
+    source : {isLaborShedsPage ? 'Labour Sheds' : transformedProduct.title}
+    value  : <needs page data>
+
+  reviews
+    source : {slug === 'accommodation-container' || slug === 'container-marketing-office' || slug === CO06_SLUG || slug === CO07_SLUG || slug === CO08_SLUG || slug === 'small-office-cabin' || slug === 'readymade-office-cabin' || slug === 'prefabricated-office-cabins' || slug === 'executive-portable-office' || slug === 'portable-weighbridge-office' || slug === 'construction-site-cabin' || slug === 'portable-con
+    value  : []
+
+  averageRating
+    source : {slug === 'accommodation-container' || slug === 'container-marketing-office' || slug === CO06_SLUG || slug === CO07_SLUG || slug === CO08_SLUG || slug === 'small-office-cabin' || slug === 'readymade-office-cabin' || slug === 'prefabricated-office-cabins' || slug === 'executive-portable-office' || slug === 'portable-weighbridge-office' || slug === 'construction-site-cabin' || slug === 'portable-con
+    value  : "undefined"
+
+  ratingCount
+    source : {slug === 'accommodation-container' || slug === 'container-marketing-office' || slug === CO06_SLUG || slug === CO07_SLUG || slug === CO08_SLUG || slug === 'small-office-cabin' || slug === 'readymade-office-cabin' || slug === 'prefabricated-office-cabins' || slug === 'executive-portable-office' || slug === 'portable-weighbridge-office' || slug === 'construction-site-cabin' || slug === 'portable-con
+    value  : 0
+
+  productId
+    source : {product.id}
+    value  : <needs page data>
+
+  productName
+    source : {transformedProduct.title}
+    value  : <needs page data>
+
+  fullMobileLabels
+    source : {slug === 'containerized-data-center' || slug === 'small-office-cabin' || slug === 'readymade-office-cabin' || slug === 'prefabricated-office-cabins' || slug === 'executive-portable-office' || slug === 'portable-weighbridge-office'}
+    value  : false
+
+  reviewsEmptyStateText
+    source : {slug === 'small-office-cabin' ? smallOfficeCabinCopy.reviews_tab.empty_state : slug === 'readymade-office-cabin' ? readymadeOfficeCabinCopy.reviews_tab.empty_state : slug === 'prefabricated-office-cabins' ? prefabricatedOfficeCabinsCopy.reviews_tab.empty_state : slug === 'executive-portable-office' ? executivePortableOfficeCopy.reviews_tab.empty_state : slug === 'portable-weighbridge-office' ? po
+    value  : <needs page data>
+
+==============================================================================
+Opt-in props and their declared defaults (from the component's own signature)
+==============================================================================
+  heading                                default false
+  showSectionDividers                    default false
+  usePremiumSizeTabs                     default false
+  explorerPanelHeadingAsH2               default false
+  compactMobileDividers                  default false
+  emitSizeAnchors                        default false
+  explorerHidePanelImages                default false
+  deferNonLcpImagesUntilHeroPaint        default false
+  renderOnlyActiveExplorerPanel          default false
+  syncVariantSelection                   default false
+  eagerActiveGalleryImages               default false
+  renderInactiveGalleryImages            default false
+  explorerSingleColumnApplications       default false
+
+This page turns ON only: showSectionDividers, usePremiumSizeTabs.
+It explicitly leaves explorerPanelHeadingAsH2 OFF (build prompt v1 3.7),
+and fullMobileLabels OFF so the tab strip reads Description/Info.

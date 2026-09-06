@@ -1,0 +1,90 @@
+[
+ {
+  "label": "CH-02 local",
+  "url": "http://127.0.0.1:3102/product/container-houses/luxury-container-houses",
+  "run": 1,
+  "perf": 65,
+  "LCP": 4450.278,
+  "CLS": 0.01496613905502348,
+  "TBT": 718.4999999999995,
+  "FCP": 1852.1390000000001,
+  "SI": 3353.8341222284425
+ },
+ {
+  "label": "CH-02 local",
+  "url": "http://127.0.0.1:3102/product/container-houses/luxury-container-houses",
+  "run": 2,
+  "perf": 74,
+  "LCP": 3862.5280000000007,
+  "CLS": 0.01496613905502348,
+  "TBT": 524,
+  "FCP": 1612.5280000000002,
+  "SI": 1650.758868726949
+ },
+ {
+  "label": "design lock local",
+  "url": "http://127.0.0.1:3102/product/porta-cabins",
+  "run": 1,
+  "perf": 53,
+  "LCP": 3804.7659999999996,
+  "CLS": 0,
+  "TBT": 2842.616999999999,
+  "FCP": 1854.766,
+  "SI": 6161.0910180120345
+ },
+ {
+  "label": "design lock local",
+  "url": "http://127.0.0.1:3102/product/porta-cabins",
+  "run": 2,
+  "perf": 78,
+  "LCP": 3979.888,
+  "CLS": 0,
+  "TBT": 384,
+  "FCP": 1429.888,
+  "SI": 1429.888
+ },
+ {
+  "label": "sibling local untouched",
+  "url": "http://127.0.0.1:3102/product/container-houses/shipping-container-homes",
+  "run": 1,
+  "perf": 60,
+  "LCP": 3661.6229999999996,
+  "CLS": 0,
+  "TBT": 2081.1884999999993,
+  "FCP": 1861.623,
+  "SI": 2881.468758487074
+ },
+ {
+  "label": "sibling local untouched",
+  "url": "http://127.0.0.1:3102/product/container-houses/shipping-container-homes",
+  "run": 2,
+  "perf": 59,
+  "LCP": 3986.8699999999994,
+  "CLS": 0.01496613905502348,
+  "TBT": 1829.5,
+  "FCP": 1983.435,
+  "SI": 2362.5257676831925
+ },
+ {
+  "label": "design lock LIVE",
+  "url": "https://www.samanportable.com/product/porta-cabins",
+  "run": 1,
+  "perf": 42,
+  "LCP": 11038.911999999998,
+  "CLS": 0.00005909133057149509,
+  "TBT": 1570.5,
+  "FCP": 2540.288,
+  "SI": 4667.007015843603
+ },
+ {
+  "label": "design lock LIVE",
+  "url": "https://www.samanportable.com/product/porta-cabins",
+  "run": 2,
+  "perf": 65,
+  "LCP": 3157.5323,
+  "CLS": 0,
+  "TBT": 1934.5,
+  "FCP": 1529.5322999999999,
+  "SI": 2169.599419668722
+ }
+]

@@ -1,0 +1,4 @@
+ea5ff6f998a8ddc9e6edc922a01b323e53754dc6
+ea5ff6f9 Merge pull request #197 from amanzz/fix/po-cluster-02-explore-range-20260906
+581dc957 PO-CLUSTER-02: derive Explore the Range for the Portable Office cluster
+24edd070 Merge pull request #196 from amanzz/feature/po08-portable-conference-cabin-20260906

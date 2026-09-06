@@ -1,0 +1,65 @@
+CH-02 - shipped verifier (verify_ch02.py), local preview, GATE OF RECORD, UNMODIFIED.
+branch 01cf7f77 on origin/static-migration de790ffb, build v8Yyd6JDtG-h0aERHUN0b
+
+checks run: 315   failures: 60
+  FAIL L96: ex-GST price for 20x8 (436,480) not on the page
+  FAIL L96: ex-GST price for 20x10 (496,000) not on the page
+  FAIL L96: ex-GST price for 20x12 (571,392) not on the page
+  FAIL L96: ex-GST price for 40x8 (753,920) not on the page
+  FAIL L96: ex-GST price for 40x10 (942,400) not on the page
+  FAIL L96: ex-GST price for 40x12 (1,118,976) not on the page
+  FAIL L139: free-delivery line missing: free delivery within Bangalore
+  FAIL L174: a PNG or JPG reached the page; every fetched image must be WebP
+  FAIL L175: fetchpriority=high must be on slide 1 only
+  FAIL L176: preload link with imagesrcset missing
+  FAIL L180: asset luxury-container-house-20x8-gallery-01-e01.webp returned 404
+  FAIL L180: asset luxury-container-house-20x8-gallery-02-e02.webp returned 404
+  FAIL L180: asset luxury-container-house-20x8-gallery-03-e03.webp returned 404
+  FAIL L180: asset luxury-container-house-20x8-gallery-04-e06.webp returned 404
+  FAIL L180: asset luxury-container-house-20x8-gallery-05-i01.webp returned 404
+  FAIL L180: asset luxury-container-house-20x8-gallery-06-i03.webp returned 404
+  FAIL L180: asset luxury-container-house-20x10-gallery-01-e01.webp returned 404
+  FAIL L180: asset luxury-container-house-20x10-gallery-02-e02.webp returned 404
+  FAIL L180: asset luxury-container-house-20x10-gallery-03-e03.webp returned 404
+  FAIL L180: asset luxury-container-house-20x10-gallery-04-e06.webp returned 404
+  FAIL L180: asset luxury-container-house-20x10-gallery-05-i01.webp returned 404
+  FAIL L180: asset luxury-container-house-20x10-gallery-06-i03.webp returned 404
+  FAIL L180: asset luxury-container-house-20x12-gallery-01-e01.webp returned 404
+  FAIL L180: asset luxury-container-house-20x12-gallery-02-e02.webp returned 404
+  FAIL L180: asset luxury-container-house-20x12-gallery-03-e03.webp returned 404
+  FAIL L180: asset luxury-container-house-20x12-gallery-04-e06.webp returned 404
+  FAIL L180: asset luxury-container-house-20x12-gallery-05-i01.webp returned 404
+  FAIL L180: asset luxury-container-house-20x12-gallery-06-i03.webp returned 404
+  FAIL L180: asset luxury-container-house-40x8-gallery-01-e01.webp returned 404
+  FAIL L180: asset luxury-container-house-40x8-gallery-02-e02.webp returned 404
+  FAIL L180: asset luxury-container-house-40x8-gallery-03-e03.webp returned 404
+  FAIL L180: asset luxury-container-house-40x8-gallery-04-e06.webp returned 404
+  FAIL L180: asset luxury-container-house-40x8-gallery-05-i01.webp returned 404
+  FAIL L180: asset luxury-container-house-40x8-gallery-06-i03.webp returned 404
+  FAIL L180: asset luxury-container-house-40x10-gallery-01-e01.webp returned 404
+  FAIL L180: asset luxury-container-house-40x10-gallery-02-e02.webp returned 404
+  FAIL L180: asset luxury-container-house-40x10-gallery-03-e03.webp returned 404
+  FAIL L180: asset luxury-container-house-40x10-gallery-04-e06.webp returned 404
+  FAIL L180: asset luxury-container-house-40x10-gallery-05-i01.webp returned 404
+  FAIL L180: asset luxury-container-house-40x10-gallery-06-i03.webp returned 404
+  FAIL L180: asset luxury-container-house-40x12-gallery-01-e01.webp returned 404
+  FAIL L180: asset luxury-container-house-40x12-gallery-02-e02.webp returned 404
+  FAIL L180: asset luxury-container-house-40x12-gallery-03-e03.webp returned 404
+  FAIL L180: asset luxury-container-house-40x12-gallery-04-e06.webp returned 404
+  FAIL L180: asset luxury-container-house-40x12-gallery-05-i01.webp returned 404
+  FAIL L180: asset luxury-container-house-40x12-gallery-06-i03.webp returned 404
+  FAIL L180: asset luxury-container-house-section2-villa-in-landscape-16x9.webp returned 404
+  FAIL L180: asset luxury-container-house-20x8-3d-cutaway-ga-1800.webp returned 404
+  FAIL L180: asset luxury-container-house-20x10-3d-cutaway-ga-1800.webp returned 404
+  FAIL L180: asset luxury-container-house-20x12-3d-cutaway-ga-1800.webp returned 404
+  FAIL L180: asset luxury-container-house-40x8-3d-cutaway-ga-1800.webp returned 404
+  FAIL L180: asset luxury-container-house-40x10-3d-cutaway-ga-1800.webp returned 404
+  FAIL L180: asset luxury-container-house-40x12-3d-cutaway-ga-1800.webp returned 404
+  FAIL L180: asset luxury-container-house-20x8-kitchen-dining-16x9.webp returned 404
+  FAIL L180: asset luxury-container-house-20x10-bathroom-16x9.webp returned 404
+  FAIL L180: asset luxury-container-house-20x12-kitchen-dining-16x9.webp returned 404
+  FAIL L180: asset luxury-container-house-40x8-bathroom-16x9.webp returned 404
+  FAIL L180: asset luxury-container-house-40x10-kitchen-dining-16x9.webp returned 404
+  FAIL L180: asset luxury-container-house-40x12-bathroom-16x9.webp returned 404
+  FAIL L193: structured data types are ['FAQPage', 'ItemPage'], want exactly ItemPage, Product, BreadcrumbList, FAQPage
+RESULT: FAIL

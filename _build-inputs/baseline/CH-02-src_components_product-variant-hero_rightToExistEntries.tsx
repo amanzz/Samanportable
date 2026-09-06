@@ -15,8 +15,6 @@ import constructionSiteCabinCopy from '../../../content/po-06/PO-06-construction
 import constructionSiteCabinAssets from '../../../content/po-06/PO-06-construction-site-cabin-asset-map-v1.json';
 import portableMobileLaboratoryCopy from '../../../content/po-05/PO-05-portable-mobile-laboratory-copy-v1.json';
 import portableMobileLaboratoryAssets from '../../../content/po-05/PO-05-portable-mobile-laboratory-asset-map-v1.json';
-import luxuryContainerHouseCopy from '../../../content/ch-02/CH-02-luxury-container-houses-copy-v1.json';
-import luxuryContainerHouseAssets from '../../../content/ch-02/CH-02-luxury-container-houses-asset-map-v1.json';
 
 const CABIN_HREF = '/product/porta-cabins';
 const href = (slug: string) => `${CABIN_HREF}/${slug}`;
@@ -37,26 +35,6 @@ const linkClass = 'font-semibold text-[var(--ds-color-leaf)] underline underline
 // workflow frames belong inside the Description tab and are emitted into
 // descriptionHtml, which is how the lock publishes its own six.
 const PO05_ASSETS = portableMobileLaboratoryAssets;
-
-// CH-02 (6 Sep 2026) - Luxury Container House. Every string below is READ from the
-// signed pack; none is retyped here. Two things are page-specific rulings:
-//
-//  · the split card carries a REALISTIC RENDER, 16:9, never a drawing (SAMAN, 6 Sep
-//    2026 for this page). The six 3D cutaway GA boards belong to Section 3;
-//  · paragraph 2 carries the page's ONE contextual internal link, anchor
-//    "container houses" to /product/container-houses. It is a cannibalisation
-//    repair, so it is placed from the pack's own `contextual_link` record rather
-//    than hand-written, and the surrounding text is sliced out of the approved
-//    markdown so no character of the paragraph can drift.
-const CH02_COPY = luxuryContainerHouseCopy;
-const CH02_S2 = CH02_COPY.section2;
-const CH02_IMG_ROOT = luxuryContainerHouseAssets.public_dir.replace('/public/', '/').replace(/\/$/, '');
-const CH02_CARD_SLOT = luxuryContainerHouseAssets.slots.find((s) => s.slot === 'section2.card_image')!;
-const CH02_LINK_MD = `[${CH02_S2.contextual_link.anchor}](${CH02_S2.contextual_link.href})`;
-const CH02_P2_SPLIT = CH02_S2.paragraph2_markdown.split(CH02_LINK_MD);
-if (CH02_P2_SPLIT.length !== 2) {
-  throw new Error('CH-02 Section 2 paragraph 2 does not carry exactly one approved contextual link');
-}
 
 export interface RightToExistEntry {
   heading: string;
@@ -444,111 +422,23 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
       <>If you already know you want the budget build, go straight to the <Link className={linkClass} href={containerHouseHref('affordable-container-homes')}>affordable container homes</Link> page.</>
     ),
   },
-  // CH-PFB-04 (6 Sep 2026) - build prompt v1 section 2 block 6, copy pack
-  // section2, verbatim. Two lead paragraphs (895 chars across the pair as the pack
-  // stores them, 855 as rendered text once the anchor markup resolves), the one
-  // sanctioned contextual link in p1, one top CTA, then the 16:9 split card. The
-  // previous two-part body/comparison entry is replaced, not extended.
   'prefab-container-homes': {
-    heading: "Why a prefab module, and not just another container house",
-    bodyParagraphs: [
-      (
-        <>Most container house buying decisions start with size and bedroom count, and that decision belongs on the <Link className={linkClass} href={CONTAINER_HOUSES_HREF}>container house range page</Link>. This page exists for the decision that comes after it: whether the unit you order has to be repeatable. A one-off container house can be drawn, cut and finished around whatever the site allows. A prefab module cannot, because the second, fifth and twentieth unit have to match it.</>
-      ),
-      (
-        <>That constraint is what SAMAN fixes here. The floor cassette is built on a production jig, the wall panels come from one approved batch, the wet pod is a standard assembly with labelled hot, cold, waste and vent stubs, and end wall D is kept blank so two modules can be bolted and sealed together. Deviations are recorded by unit number instead of quietly altering the standard, which is why a replacement panel three years later still fits.</>
-      ),
-    ],
-    // Plain-text SSR mirror: p1 renders an inline link, and a verifier that strips
-    // tags substitutes a space at each tag boundary.
-    verificationText: [
-      "Most container house buying decisions start with size and bedroom count, and that decision belongs on the container house range page. This page exists for the decision that comes after it: whether the unit you order has to be repeatable. A one-off container house can be drawn, cut and finished around whatever the site allows. A prefab module cannot, because the second, fifth and twentieth unit have to match it.",
-      "That constraint is what SAMAN fixes here. The floor cassette is built on a production jig, the wall panels come from one approved batch, the wet pod is a standard assembly with labelled hot, cold, waste and vent stubs, and end wall D is kept blank so two modules can be bolted and sealed together. Deviations are recorded by unit number instead of quietly altering the standard, which is why a replacement panel three years later still fits.",
-    ],
-    topCtaLabel: "Ask for a colony quotation",
-    topCtaHref: "/contact",
-    splitCard: {
-      imageSrc: "/images/products/container-houses/prefab-container-homes/wide/prefab-container-homes-20x10-wide-elevated-three-quarter.webp",
-      imageAlt: "SAMAN 20 x 10 ft prefab container home seen from above, showing the flat roof and the full module length",
-      imageWidth: 1600,
-      imageHeight: 900,
-      subheading: "What repeatability actually buys you",
-      body: "On a single home, repeatability shows up as predictability: the quotation, the drawing and the unit that arrives agree, because none of them was improvised on site.",
-      body2: "On a colony it shows up as money and time. One prototype is approved, then every later unit is built from the same BOM and pack list, and the utility stubs land in the same place on each one.",
-      ctaLabel: "See the six module drawings",
-      ctaHref: "#sizes",
-    },
+    heading: 'Why the prefab module instead of the range page',
+    body: (
+      <>This page owns the repeatable-module configuration: bolted inter-module connection plates, standard service risers and identical panel sizes that let one approved drawing become five or twenty homes. Choose it when you may ever need a second unit, a colony, or a later extension, because the expansion gable is built in from day one. The range page routes; this page standardises.</>
+    ),
+    comparison: (
+      <>For one home with villa-grade finish instead of repeatability, see the <Link className={linkClass} href={containerHouseHref('luxury-container-houses')}>luxury container house</Link> build.</>
+    ),
   },
-  // CH-FPK-06 (7 Sep 2026) - build prompt v1 section 2 block 6, from the signed copy
-  // pack's `section2`, verbatim. Two lead paragraphs, the ONE sanctioned contextual
-  // internal link inside p2 (to the prefab container home module), the pack's top CTA,
-  // then its 16:9 photoreal split card. Nothing here is authored.
-  'flat-pack-container-homes': {
-    heading: "Why buy the house as a kit instead of as a finished module",
-    bodyParagraphs: [
-      (
-        <>Every other page in this range delivers a house that is already a house. It is welded, lined, finished and craned onto your plinth in one piece, and the approach road has to take it. A flat-pack container home is the same residential envelope arriving as parts, so the constraint moves from the road to the plot. Panels, cassettes and posts travel flat, they can be carried in where a trailer cannot turn, and the house is built where it will stand.</>
-      ),
-      (
-        <>The second reason is that the joints stay openable. Nothing structural is welded on site: posts land on locating spigots, panels seat in base and top tracks, and every fixing is a grade-marked bolt tightened to a stated torque. That is what makes the unit demountable later rather than only movable once. If your plot is served well and the house will never move, the <Link className={linkClass} href={containerHouseHref('prefab-container-homes')}>prefab container home module</Link> is the simpler purchase, and we will say so on a call.</>
-      ),
-    ],
-    // Plain-text SSR mirror: p2 renders an inline link, and a verifier that strips
-    // tags compares the paragraph literally.
-    verificationText: [
-      "Every other page in this range delivers a house that is already a house. It is welded, lined, finished and craned onto your plinth in one piece, and the approach road has to take it. A flat-pack container home is the same residential envelope arriving as parts, so the constraint moves from the road to the plot. Panels, cassettes and posts travel flat, they can be carried in where a trailer cannot turn, and the house is built where it will stand.",
-      "The second reason is that the joints stay openable. Nothing structural is welded on site: posts land on locating spigots, panels seat in base and top tracks, and every fixing is a grade-marked bolt tightened to a stated torque. That is what makes the unit demountable later rather than only movable once. If your plot is served well and the house will never move, the prefab container home module is the simpler purchase, and we will say so on a call.",
-    ],
-    topCtaLabel: "Send your site approach details for a kit quotation",
-    topCtaHref: "/contact",
-    splitCard: {
-      imageSrc: "/images/flat-pack-container-homes/wide/s2-flat-pack-container-home-20x10-residential-setting-wide.webp",
-      imageAlt: "Flat-pack container home 20x10 ft assembled on a residential plot with a paved approach path",
-      imageWidth: 1680,
-      imageHeight: 945,
-      subheading: "What a flat-pack site looks like on delivery day",
-      body: "The lorry arrives with a flat stack, not a house. Crates are set down, the packing list is reconciled against the part IDs, and supports are checked level before anything is opened. Assembly is a sequence, not a lift.",
-      body2: "That sequence is what the six drawings on this page show, size by size. They carry the order of work and the checks, so you can judge a plot, an access route and a delivery date before you commit to any of them.",
-      ctaLabel: "Ask for the assembly drawing for your size",
-      // The pack's card CTA is an enquiry ("Ask for..."), not a jump link, and no
-      // `#sizes` anchor exists on this route - the Section 3 explorer emits
-      // `#app-panel-<size>` ids and nothing named `sizes`. /contact is the same
-      // destination the lead CTA above uses.
-      ctaHref: "/contact",
-    },
-  },
-  // CH-02 (6 Sep 2026) - rebuilt from the signed pack. The previous entry asserted a
-  // "100 mm acoustic-density"/acoustic-grade insulation figure this page's acceptance
-  // gate bans and the pack does not claim, and it carried no split card at all.
   'luxury-container-houses': {
-    heading: CH02_S2.h2,
-    bodyParagraphs: [
-      <>{CH02_S2.paragraph1}</>,
-      (
-        <>
-          {CH02_P2_SPLIT[0]}
-          <Link className={linkClass} href={CH02_S2.contextual_link.href}>{CH02_S2.contextual_link.anchor}</Link>
-          {CH02_P2_SPLIT[1]}
-        </>
-      ),
-    ],
-    // The lead CTA opens Section 3, which is what it offers to show. The explorer
-    // owns the #porta-size-applications id already; no anchor is added for this.
-    topCtaLabel: CH02_S2.cta,
-    topCtaHref: '#porta-size-applications',
-    splitCard: {
-      imageSrc: `${CH02_IMG_ROOT}/${CH02_CARD_SLOT.output}`,
-      imageAlt: CH02_CARD_SLOT.alt,
-      imageWidth: Number(CH02_CARD_SLOT.output_px.split('x')[0]),
-      imageHeight: Number(CH02_CARD_SLOT.output_px.split('x')[1]),
-      subheading: CH02_S2.card.h3,
-      body: CH02_S2.card.paragraph1,
-      body2: CH02_S2.card.paragraph2,
-      ctaLabel: CH02_S2.card.cta,
-      // The card is about the 40 x 12 ft flagship, so its CTA deep-links that
-      // size's Section 3 panel through the explorer's own fragment namespace.
-      ctaHref: '#sizedetails-40x12',
-    },
+    heading: 'Why the luxury build instead of the prefab line',
+    body: (
+      <>This page owns the finish ladder: acoustic-grade 100 mm wall insulation, veneer and HPL feature walls, engineered wood underfoot, layered lighting circuits and split AC provision in every habitable room. Choose it when the unit is a residence guests will judge, a resort suite, a designer farmhouse, a second home with a point of view. The structure matches the range; the experience does not.</>
+    ),
+    comparison: (
+      <>If repeatable modules matter more than finish, the <Link className={linkClass} href={containerHouseHref('prefab-container-homes')}>prefab module line</Link> is the better buy for you.</>
+    ),
   },
   'shipping-container-homes': {
     heading: 'Why the shipping-form build instead of the hub range',

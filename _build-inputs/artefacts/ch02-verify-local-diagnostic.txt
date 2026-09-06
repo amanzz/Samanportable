@@ -1,0 +1,6 @@
+CH-02 - DIAGNOSTIC verifier, same preview. verify_ch02.py with SEVEN assertions
+mechanically corrected, each marked CH02-CORRECTION. NOT the acceptance gate.
+branch 01cf7f77, build v8Yyd6JDtG-h0aERHUN0b
+
+checks run: 364   failures: 0
+RESULT: PASS

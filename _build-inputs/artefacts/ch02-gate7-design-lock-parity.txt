@@ -1,0 +1,57 @@
+CH-02 - shipped-verifier assertions measured against the DESIGN LOCK
+this page  : http://127.0.0.1:3102/product/container-houses/luxury-container-houses
+design lock: https://www.samanportable.com/product/porta-cabins   (build prompt v1 1: "built and correct")
+
+L174  every fetched image must be WebP
+    this page   : raster images: ['/credentials/optimized/calculator-band-v1-1926.jpg']
+    design lock : raster images: ['/credentials/optimized/calculator-band-v1-1926.jpg']
+
+L175  fetchpriority=high on slide 1 only (<= 1 occurrence)
+    this page   : 4 occurrences
+    design lock : 4 occurrences
+
+L176  preload link carrying imagesrcset
+    this page   : imagesrcset present: False
+    design lock : imagesrcset present: False
+
+L193  top-level LD types == {ItemPage, Product, BreadcrumbList, FAQPage}
+    this page   : top level: ['FAQPage', 'ItemPage']
+    design lock : top level: ['FAQPage', 'ItemPage']
+
+L149  zero U+2014 in the page source
+    this page   : 0 em dashes
+    design lock : 48 em dashes
+
+------------------------------------------------------------------------------
+fetchpriority=high, every occurrence on this page:
+    <link rel="preload" href="/saman-logo.svg" as="image" fetchpriority="high"/>
+    <link rel="preload" href="/images/products/container-houses/luxury-container-houses/luxury-container-house-20x10-gallery-01-e01.webp" as="image" fetch
+    <img alt="SAMAN Portable header logo" fetchpriority="high" width="200" height="100" decoding="async" data-nimg="1" class="h-11 w-auto object-contain" 
+    <img alt="20 x 10 ft luxury container house in charcoal graphite finish, front-right view with the main door and living glazing" fetchpriority="high" 
+
+fetchpriority=high, every occurrence on the design lock:
+    <link rel="preload" href="/saman-logo.svg" as="image" fetchpriority="high"/>
+    <link rel="preload" href="/images/products/porta-cabins/20x10/porta-cabin-20x10-01-exterior-front-left.webp" as="image" fetchpriority="high"/>
+    <img alt="SAMAN Portable header logo" fetchpriority="high" width="200" height="100" decoding="async" data-nimg="1" class="h-11 w-auto object-contain" 
+    <img alt="Desert Ochre 20x10 ft porta cabin, door centred between sliding windows on the long wall" fetchpriority="high" width="1254" height="1254" de
+
+Two of the four on each page are the SHARED HEADER LOGO (its preload and
+its <img>), which every page on the site renders. The other two are the
+gallery slide-1 preload and the slide-1 <img> - which is precisely what
+build prompt v1 3.10 asks for. The floor is therefore 4, not 1, and it is
+4 on the design lock too.
+
+------------------------------------------------------------------------------
+JSON-LD nesting - Product and BreadcrumbList are PRESENT, inside ItemPage:
+    this page   : ['ItemPage.breadcrumb -> BreadcrumbList', 'ItemPage.mainEntity -> Product']
+    design lock : ['ItemPage.breadcrumb -> BreadcrumbList', 'ItemPage.mainEntity -> Product']
+The shipped verifier reads only each node's own @type and does not walk
+mainEntity or breadcrumb, so it reports both as absent on BOTH pages.
+
+==============================================================================
+CONCLUSION
+==============================================================================
+L174, L175, L176 and L193 fail on the design lock itself. Making this page
+pass them would require diverging from the design lock, which build prompt
+v1 1 forbids and 4 rules must be reported rather than coded around.
+L149 is the one this page meets and the design lock does not.

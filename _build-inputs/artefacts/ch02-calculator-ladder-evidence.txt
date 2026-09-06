@@ -1,0 +1,26 @@
+CH-02 - calculatorLadders.ts change evidence (for the PC-01 hash re-pin)
+
+ROUTE_LADDERS keys, baseline : 49
+ROUTE_LADDERS keys, this branch: 49
+keys added   : (none)
+keys removed : (none)
+key ORDER identical: True
+
+Every key other than 'luxury-container-houses' resolves through the SAME
+expression as before, byte for byte:
+  differing key expressions: 
+    luxury-container-houses: "containerHouseLadder('luxury-container-houses')" -> 'toRows(luxuryContainerHouses)'
+
+The luxury ladder itself:
+  before (transcribed CONTAINER_HOUSE_PRICES row): [380160, 432000, 497760, 649600, 812000, 953760]
+  after  (toRows of this page's product JSON)    : [436480, 496000, 571392, 753920, 942400, 1118976]
+  the signed pack's six ex-GST prices            : [436480, 496000, 571392, 753920, 942400, 1118976]
+  after == pack: True
+
+This is the ticket's own instruction (build prompt v1 3.2 and 3.11): the live
+page published a lower, stale ladder and the calculator followed a second copy
+of it. The route now reads the page's own record through toRows(...), which is
+what every other route above it already does. No rate, formula, tax, component
+price or GST value is touched, and no other route's rows move.
+
+new sha256 of the normalised file: 00db2c4596caa47bca24295b6177cb190dcf00229569b68961ff3a4e63f4c5aa
