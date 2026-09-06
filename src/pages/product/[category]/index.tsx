@@ -49,6 +49,7 @@ import { injectInfoImages } from '../../../lib/infoImageLayout';
 import { PortaCabinVariantHero } from '../../../components/product-variant-hero/PortaCabinVariantHero';
 import type { VariantProductData } from '../../../components/product-variant-hero/types';
 import { PORTA_CABIN_HUB_RAIL } from '../../../lib/portaCabinClusterRail';
+import { portableOfficeHubRail } from '../../../lib/portableOfficeClusterRail';
 import { getLabourColonyClusterRail } from '../../../lib/labourColonyClusterRail';
 import PortaCabinsYouMayAlsoLike from '../../../components/product-variant-hero/PortaCabinsYouMayAlsoLike';
 import DeferredCabinCalculator from '../../../components/DeferredCabinCalculator';
@@ -647,8 +648,13 @@ const ProductDetails = ({
     if (category === 'porta-cabins') {
       return PORTA_CABIN_HUB_RAIL;
     }
-    if (category === 'portable-office' && variantData?.relatedTiles?.length) {
-      return variantData.relatedTiles;
+    // PO-CLUSTER-02 (6 Sep 2026) - the hub's own panel was stale for the same
+    // reason as its subpages: it read a hand-authored relatedTiles array from
+    // portable-office.json that still listed only the three siblings live on
+    // its build date. It now resolves the same derived cluster list the
+    // subpages use, minus the hub's own card.
+    if (category === 'portable-office') {
+      return portableOfficeHubRail();
     }
     // LC-07 fix v3 (17 Aug 2026) - SAMAN ruling: the Explore the Range panel
     // shows the current page's own cluster and nothing else. Same derived
