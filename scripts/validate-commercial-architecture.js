@@ -5,8 +5,10 @@ const customCanonicalPaths = require('../src/lib/customProductCanonicalPaths.jso
 
 // PO-06 (6 Sep 2026) - /product/portable-office/construction-site-cabin ships, so it
 // moves out of the planned-release backlog and into the approved production list. The
+// PO-07 (6 Sep 2026) - /product/portable-office/portable-control-room ships, so it
+// moves out of the planned-release backlog into the approved production list. The
 // fixture counts move with it: 63 -> 64 approved, 41 -> 40 planned.
-const EXPECTED = { approved: 64, planned: 40 };
+const EXPECTED = { approved: 65, planned: 39 };
 const strict = process.argv.includes('--strict') || process.env.SAMAN_STRICT_PRODUCTION_DATA === 'true';
 const failures = [];
 const warnings = [];

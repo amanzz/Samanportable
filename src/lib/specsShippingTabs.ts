@@ -36,6 +36,8 @@ import portableWeighbridgeOfficeCopy from '../../content/po-03/PO-03-portable-we
 import portableWeighbridgeOfficeAssets from '../../content/po-03/PO-03-portable-weighbridge-office-asset-map-v3.json';
 import constructionSiteCabinCopy from '../../content/po-06/PO-06-construction-site-cabin-copy-v1.json';
 import constructionSiteCabinAssets from '../../content/po-06/PO-06-construction-site-cabin-asset-map-v1.json';
+import portableControlRoomCopy from '../../content/po-07/PO-07-portable-control-room-copy-v1.json';
+import portableControlRoomAssets from '../../content/po-07/PO-07-portable-control-room-asset-map-v1.json';
 
 // SOC-01 — the two approved coordination diagrams and the v3 technical PDF, at the
 // exact dimensions of the shipped WebP derivatives (never cropped, never upscaled).
@@ -1376,6 +1378,78 @@ function buildConstructionSiteCabinSpecificationsHtml(): string {
   return `<div class="not-prose">${narrative}${cards}${diagrams}${pdf}</div>`;
 }
 
+// PO-07 (6 Sep 2026) - Portable Control Room. The copy pack's spec groups use
+// `header` (singular; PO-03's v3 used `headers`) and this page additionally publishes
+// a caption under each of the two technical diagrams. Groups A-E render as the same
+// premium grouped-table cards the porta-cabins Specs tab uses; every string comes from
+// the signed pack and nothing is retyped.
+const PO07_IMG_ROOT = `/${portableControlRoomAssets.output_root.replace('public/', '')}`;
+// alt_text carries nested maps (gallery_new, ga_boards, description_images) alongside
+// the two flat diagram alts, so it cannot be indexed as Record<string, string>. These
+// two are read straight off the pack by name - still no retyped copy.
+const PO07_DIAGRAM_ALTS: Record<string, string> = {
+  spec_diagram_1: portableControlRoomCopy.alt_text.spec_diagram_1,
+  spec_diagram_2: portableControlRoomCopy.alt_text.spec_diagram_2,
+};
+const PO07_SPEC_DIAGRAMS = portableControlRoomCopy.specifications_tab.diagram_slots.map((slot, i) => ({
+  src: `${PO07_IMG_ROOT}/${(portableControlRoomAssets.spec_diagrams as Record<string, { out: string }>)[slot].out}`,
+  alt: PO07_DIAGRAM_ALTS[slot],
+  caption: portableControlRoomCopy.specifications_tab.diagram_captions[i],
+  width: 1600,
+  height: 900,
+}));
+
+function buildPortableControlRoomSpecificationsHtml(): string {
+  const spec = portableControlRoomCopy.specifications_tab;
+
+  const narrative = spec.narrative
+    .map((p) => `<p class="mb-5 text-sm leading-relaxed text-slate-600">${esc(p)}</p>`)
+    .join('');
+
+  const cards = spec.groups.map((group) => {
+    const head = group.header.map((h) => `<th>${esc(h)}</th>`).join('');
+    const body = group.rows
+      .map((row) => (
+        `<tr>` +
+          row.map((cell, i) => (
+            i === 0
+              ? `<td class="${TD} font-semibold text-slate-700">${esc(cell)}</td>`
+              : `<td class="${TD}">${escBold(cell)}</td>`
+          )).join('') +
+        `</tr>`
+      ))
+      .join('');
+    const note = group.note
+      ? `<p class="px-4 pb-4 pt-3 m-0 text-xs leading-relaxed text-slate-500">${esc(group.note)}</p>`
+      : '';
+    return (
+      `<section class="mb-4 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">` +
+        `<h4 class="m-0 bg-slate-50 px-4 py-3 text-base font-bold text-emerald-900">${esc(group.title)}</h4>` +
+        `<div class="saman-table-wrap"><table class="saman-table"><thead><tr>${head}</tr></thead>` +
+        `<tbody>${body}</tbody></table></div>` +
+        note +
+      `</section>`
+    );
+  }).join('');
+
+  const diagrams = PO07_SPEC_DIAGRAMS
+    .map((d) => (
+      `<figure class="mt-4 m-0 rounded-xl border border-slate-200 bg-white p-5 shadow-sm">` +
+        `<img src="${esc(d.src)}" alt="${esc(d.alt)}" width="${d.width}" height="${d.height}" ` +
+        `loading="lazy" class="w-full h-auto rounded-lg" />` +
+        `<figcaption class="mt-3 m-0 text-xs leading-relaxed text-slate-500">${esc(d.caption)}</figcaption>` +
+      `</figure>`
+    ))
+    .join('');
+
+  const pdf =
+    `<p class="mt-5 text-sm"><a href="${esc(spec.pdf_href)}" ` +
+    `class="font-semibold text-emerald-800 underline underline-offset-2">` +
+    `${esc(spec.pdf_label)}</a></p>`;
+
+  return `<div class="not-prose">${narrative}${cards}${diagrams}${pdf}</div>`;
+}
+
 /** Both tab bodies for a page slug, or null when the slug is not in scope. */
 export function getProductTabsHtml(
   pageSlug: string | undefined | null
@@ -1548,6 +1622,16 @@ export function getProductTabsHtml(
   // called with no options, so both trailer ladders, both zone city tables, the two
   // free-delivery lines, the ODC note and the tentative-price disclaimer are
   // byte-identical to the design lock.
+  // PO-07 - same contract as PO-02/PO-03: the Shipping tab is the shared freight
+  // component called with no options, so both trailer ladders, both zone city tables,
+  // the two free-delivery lines, the ODC note and the tentative-price disclaimer are
+  // byte-identical to the design lock. No page-specific shipping copy is added.
+  if (pageSlug === 'portable-control-room') {
+    return {
+      specificationsHtml: buildPortableControlRoomSpecificationsHtml(),
+      shippingHtml: buildShippingHtml(),
+    };
+  }
   if (pageSlug === 'portable-weighbridge-office') {
     return {
       specificationsHtml: buildPortableWeighbridgeOfficeSpecificationsHtml(),
