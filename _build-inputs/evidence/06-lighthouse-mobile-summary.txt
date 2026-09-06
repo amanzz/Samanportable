@@ -1,6 +1,6 @@
 ARTEFACT 6b - Lighthouse mobile, re-run 6 Sep 2026 after the pack amendment
 lighthouse@11 --preset=perf --form-factor=mobile. Branch build served by next start
-on port 3155; the BASELINE rows are a second full production build of
+on port 3157; the BASELINE rows are a second full production build of
 origin/static-migration (fedcd8c2, PO-06 merged, PO-05 absent - that route 404s there)
 served on port 3156, so branch and baseline are directly comparable.
 

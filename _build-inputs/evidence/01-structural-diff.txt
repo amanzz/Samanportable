@@ -1,6 +1,6 @@
 ARTEFACT 1 - STRUCTURAL DIFF vs THE DESIGN LOCK
-preview    : http://127.0.0.1:3155/product/portable-office/portable-mobile-laboratory
-design lock: http://127.0.0.1:3155/product/porta-cabins
+preview    : http://127.0.0.1:3157/product/portable-office/portable-mobile-laboratory
+design lock: http://127.0.0.1:3157/product/porta-cabins
 
 Each row is a SHARED COMPONENT identified by the marker markup that component
 itself emits. Only presence and ORDER are compared; byte offsets differ because

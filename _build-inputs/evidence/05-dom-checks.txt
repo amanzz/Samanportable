@@ -1,5 +1,5 @@
 ARTEFACT 5 - DOM CHECKS ON THE FETCHED PREVIEW HTML
-url: http://127.0.0.1:3155/product/portable-office/portable-mobile-laboratory
+url: http://127.0.0.1:3157/product/portable-office/portable-mobile-laboratory
 
 PASS  exactly one H1  | ['Portable Mobile Laboratory: Six Sizes, 100 to 400 sq ft']
 PASS  no empty heading  | 73

@@ -1,5 +1,5 @@
 ARTEFACT 2 - COMPONENT-ORDER ASSERTION (the eleven canonical blocks)
-preview: http://127.0.0.1:3155/product/portable-office/portable-mobile-laboratory
+preview: http://127.0.0.1:3157/product/portable-office/portable-mobile-laboratory
 
 #    block                                              offset
 1    three-column hero                                     341

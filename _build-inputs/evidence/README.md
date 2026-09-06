@@ -4,8 +4,8 @@ Re-issued 6 Sep 2026 after **`PO-05-PACK-AMENDMENT-APPLIED-6sep2026.md`**, which
 the pack's 16:9 claim for Section 3 and replaced the verifier's self-contradicting
 `no 'Info' tab label` assert. Supersedes the PO-05-R2 issue of this folder.
 
-Preview URL used for every artefact: `http://127.0.0.1:3155/product/portable-office/portable-mobile-laboratory`
-(local `next start` of this branch's production build — **not** 3105, which still had the
+Preview URL used for every artefact: `http://127.0.0.1:3157/product/portable-office/portable-mobile-laboratory`
+(local `next start` of the final twice-merged production build — **not** 3105, which still had the
 previous session's stale server bound to it and would have served the old build).
 Design lock: `/product/porta-cabins`, measured from the SAME local build.
 
@@ -53,11 +53,11 @@ better than 2× DPR. Recorded in `07-image-measurements.txt`.
 
 ## Reproduce
 
-    npm run build && npx next start -p 3155
+    npm run build && npx next start -p 3157
     python scripts/po05-conformance-gate.py \
-      http://127.0.0.1:3155/product/portable-office/portable-mobile-laboratory \
-      http://127.0.0.1:3155/product/porta-cabins
+      http://127.0.0.1:3157/product/portable-office/portable-mobile-laboratory \
+      http://127.0.0.1:3157/product/porta-cabins
     python _build-inputs/verify_po05.py \
-      http://127.0.0.1:3155/product/portable-office/portable-mobile-laboratory \
+      http://127.0.0.1:3157/product/portable-office/portable-mobile-laboratory \
       _build-inputs/PO-05-portable-mobile-laboratory-copy-v1.json \
       _build-inputs/PO-05-portable-mobile-laboratory-asset-map-v1.json public
