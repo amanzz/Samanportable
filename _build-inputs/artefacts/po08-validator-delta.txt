@@ -1,0 +1,57 @@
+Validator delta - pristine baseline fef76255 (origin/static-migration: PO-05, PO-06 and PO-07 all merged)
+vs feature/po08-portable-conference-cabin-20260906 rebased onto it.
+The baseline worktree shares node_modules via a junction, so results are comparable.
+
+validator                            BASELINE   PO-08      delta
+----------------------------------------------------------------------------
+commercial-architecture              PASS       PASS       same
+pc01-calculator-price-parity         PASS       PASS       same
+po-family-release                    FAIL       FAIL       same
+po-family-pdfs                       FAIL       FAIL       same
+temporary-commercial-gating          FAIL       FAIL       same
+merchant-feed                        FAIL       FAIL       same
+pc01-static-faq                      PASS       PASS       same
+c01-specification-overrides          PASS       PASS       same
+pc01-qualified-c01-debt              FAIL       FAIL       same
+local-inventory                      FAIL       FAIL       same
+container-office-rail                PASS       PASS       same
+cod16-quotation-wording              PASS       PASS       same
+enquiry-dialog-a11y                  PASS       PASS       same
+pc01-keyword-ownership               PASS       PASS       same
+
+--------------------------------------------------------------------------------
+Server-probing validators, run against the LOCAL preview (http://127.0.0.1:3108).
+They default to a production probe and this page is not deployed yet.
+--------------------------------------------------------------------------------
+
+validate:cc01-faq-parity          baseline PASS   PO-08 PASS
+
+validate:stg01b-structured-data   baseline FAIL   PO-08 FAIL   (same)
+  Whole-file hash tripwire, "protected ... sources changed".
+      flagged at baseline fef76255 : 43 files
+      flagged on the PO-08 branch  : 45 files
+      added by this branch         :
+        src/data/products/portable-conference-cabin.json
+        src/data/wp-export/products/portable-conference-cabin.json
+      removed by this branch       : 
+  The only additions are this page's own two new data records. Every other
+  flagged file is already flagged before this branch - including the equivalents
+  PO-05, PO-06 and PO-07 each added the same way.
+
+validate:publication-gate         baseline FAIL   PO-08 FAIL   (same, fewer lines)
+  baseline fef76255 failure lines:
+    - temporary gating fixture is TEMPORARY_OWNER_DISPOSITION_PENDING with 62 paths
+    - planned path /product/portable-office/portable-conference-cabin returned 200
+    - temporarily gated path /product/portable-office/modern-office-cabin returned 301 -> https://www.samanportable.com/product/portable-office/small-office-cabin
+    - temporarily gated path /product/portable-office/modern-office-cabin lacks noindex,follow
+  PO-08 branch failure lines:
+    - temporary gating fixture is TEMPORARY_OWNER_DISPOSITION_PENDING with 62 paths
+    - temporarily gated path /product/portable-office/modern-office-cabin returned 301 -> https://www.samanportable.com/product/portable-office/small-office-cabin
+    - temporarily gated path /product/portable-office/modern-office-cabin lacks noindex,follow
+  The planned-path line is GONE because this branch moves the path to approved.
+  What remains concerns modern-office-cabin's redirect and the temporary gating
+  fixture, neither touched by this page.
+
+--------------------------------------------------------------------------------
+SUMMARY: zero validators newly fail because of this branch.
+--------------------------------------------------------------------------------

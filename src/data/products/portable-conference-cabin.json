@@ -1,0 +1,835 @@
+{
+  "productSlug": "portable-conference-cabin",
+  "productName": "Portable Conference Cabin",
+  "variantAxis": "size",
+  "defaultVariant": "20x10",
+  "hsn": 9406,
+  "gstPercent": 18,
+  "emitAggregateOffer": true,
+  "variants": [
+    {
+      "sizeSlug": "10x10",
+      "label": "10×10 ft",
+      "dims": "10×10×8.5 ft",
+      "areaSqft": 100,
+      "priceExGst": 201250,
+      "priceInclGst": 237475,
+      "featureCells": [
+        {
+          "label": "Size",
+          "value": "10×10×8.5 ft · 100 sq ft"
+        },
+        {
+          "label": "Roof",
+          "value": "Two-way, centred ridge"
+        },
+        {
+          "label": "Openings",
+          "value": "1 door · 3 windows"
+        },
+        {
+          "label": "Table & seats",
+          "value": "5 ft × 5 ft · 6 seats"
+        },
+        {
+          "label": "Clear circulation",
+          "value": "2.5 ft on all four sides"
+        },
+        {
+          "label": "Material",
+          "value": "MS frame · corrugated MS shell"
+        },
+        {
+          "label": "Delivery",
+          "value": "7–21 Working Days"
+        },
+        {
+          "label": "Coverage",
+          "value": "Bangalore · Delhi NCR"
+        },
+        {
+          "label": "Brand",
+          "value": "SAMAN Portable"
+        }
+      ],
+      "images": [
+        {
+          "src": "/images/products/portable-conference-cabin/10x10/portable-conference-cabin-10x10-wall-a-front-exterior.webp",
+          "alt": "SAMAN 10×10 ft portable conference cabin in deep oxford blue: the single centred door on Wall A, low centred-ridge two-way roof and matte-black skid base.",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-conference-cabin/10x10/portable-conference-cabin-10x10-wall-b-rear-exterior.webp",
+          "alt": "Rear of the 10×10 ft portable conference cabin: Wall B with one centred window and one centred window on the end wall, no external door.",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-conference-cabin/10x10/portable-conference-cabin-10x10-site-placement-exterior.webp",
+          "alt": "10×10 ft portable conference cabin placed on a paved standing area, showing the door side clearance needed for the outward-opening door.",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-conference-cabin/10x10/portable-conference-cabin-10x10-interior-overview.webp",
+          "alt": "Inside the 10×10 ft portable conference cabin from the door: 5 ft × 5 ft conference table on the centreline with 6 chairs and the solid presentation bay ahead.",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-conference-cabin/10x10/portable-conference-cabin-10x10-interior-reverse-view.webp",
+          "alt": "Reverse view of the 10×10 ft portable conference cabin interior in warm ivory: 2.5 ft on all four sides of clear circulation around the table.",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-conference-cabin/10x10/portable-conference-cabin-10x10-conference-table-interior.webp",
+          "alt": "5 ft × 5 ft conference table in the 10×10 ft portable conference cabin, seating 6, with the display mounted on a solid wall bay clear of every opening.",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "20x8",
+      "label": "20×8 ft",
+      "dims": "20×8×8.5 ft",
+      "areaSqft": 160,
+      "priceExGst": 308000,
+      "priceInclGst": 363440,
+      "featureCells": [
+        {
+          "label": "Size",
+          "value": "20×8×8.5 ft · 160 sq ft"
+        },
+        {
+          "label": "Roof",
+          "value": "One-way across width"
+        },
+        {
+          "label": "Openings",
+          "value": "1 door · 6 windows"
+        },
+        {
+          "label": "Table & seats",
+          "value": "14 ft × 3.5 ft · 12 seats"
+        },
+        {
+          "label": "Clear circulation",
+          "value": "3 ft at both ends, 2.25 ft each side"
+        },
+        {
+          "label": "Material",
+          "value": "MS frame · corrugated MS shell"
+        },
+        {
+          "label": "Delivery",
+          "value": "7–21 Working Days"
+        },
+        {
+          "label": "Coverage",
+          "value": "Bangalore · Delhi NCR"
+        },
+        {
+          "label": "Brand",
+          "value": "SAMAN Portable"
+        }
+      ],
+      "images": [
+        {
+          "src": "/images/products/portable-conference-cabin/20x8/portable-conference-cabin-20x8-wall-a-front-exterior.webp",
+          "alt": "SAMAN 20×8 ft portable conference cabin in burgundy wine: window, door and window along Wall A, approved one-way slope across the 8 ft width roof and matte-black skid base.",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-conference-cabin/20x8/portable-conference-cabin-20x8-wall-b-rear-exterior.webp",
+          "alt": "Rear of the 20×8 ft portable conference cabin: Wall B with two windows and one centred window on the end wall, no external door.",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-conference-cabin/20x8/portable-conference-cabin-20x8-site-placement-exterior.webp",
+          "alt": "20×8 ft portable conference cabin placed on a paved standing area, showing the door side clearance needed for the outward-opening door.",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-conference-cabin/20x8/portable-conference-cabin-20x8-interior-overview.webp",
+          "alt": "Inside the 20×8 ft portable conference cabin from the door: 14 ft × 3.5 ft conference table on the centreline with 12 chairs and the solid presentation bay ahead.",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-conference-cabin/20x8/portable-conference-cabin-20x8-interior-reverse-view.webp",
+          "alt": "Reverse view of the 20×8 ft portable conference cabin interior in champagne cream: 3 ft at both ends, 2.25 ft each side of clear circulation around the table.",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-conference-cabin/20x8/portable-conference-cabin-20x8-conference-table-interior.webp",
+          "alt": "14 ft × 3.5 ft conference table in the 20×8 ft portable conference cabin, seating 12, with the display mounted on a solid wall bay clear of every opening.",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "20x10",
+      "label": "20×10 ft",
+      "dims": "20×10×8.5 ft",
+      "areaSqft": 200,
+      "priceExGst": 350000,
+      "priceInclGst": 413000,
+      "featureCells": [
+        {
+          "label": "Size",
+          "value": "20×10×8.5 ft · 200 sq ft"
+        },
+        {
+          "label": "Roof",
+          "value": "Two-way, centred ridge"
+        },
+        {
+          "label": "Openings",
+          "value": "1 door · 6 windows"
+        },
+        {
+          "label": "Table & seats",
+          "value": "14 ft × 5 ft · 12 seats"
+        },
+        {
+          "label": "Clear circulation",
+          "value": "3 ft at both ends, 2.5 ft each side"
+        },
+        {
+          "label": "Material",
+          "value": "MS frame · corrugated MS shell"
+        },
+        {
+          "label": "Delivery",
+          "value": "7–21 Working Days"
+        },
+        {
+          "label": "Coverage",
+          "value": "Bangalore · Delhi NCR"
+        },
+        {
+          "label": "Brand",
+          "value": "SAMAN Portable"
+        }
+      ],
+      "images": [
+        {
+          "src": "/images/products/portable-conference-cabin/20x10/portable-conference-cabin-20x10-wall-a-front-exterior.webp",
+          "alt": "SAMAN 20×10 ft portable conference cabin in slate blue-grey: window, door and window along Wall A, low centred-ridge two-way roof and matte-black skid base.",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-conference-cabin/20x10/portable-conference-cabin-20x10-wall-b-rear-exterior.webp",
+          "alt": "Rear of the 20×10 ft portable conference cabin: Wall B with two windows and one centred window on the end wall, no external door.",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-conference-cabin/20x10/portable-conference-cabin-20x10-site-placement-exterior.webp",
+          "alt": "20×10 ft portable conference cabin placed on a paved standing area, showing the door side clearance needed for the outward-opening door.",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-conference-cabin/20x10/portable-conference-cabin-20x10-interior-overview.webp",
+          "alt": "Inside the 20×10 ft portable conference cabin from the door: 14 ft × 5 ft conference table on the centreline with 12 chairs and the solid presentation bay ahead.",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-conference-cabin/20x10/portable-conference-cabin-20x10-interior-reverse-view.webp",
+          "alt": "Reverse view of the 20×10 ft portable conference cabin interior in light greige: 3 ft at both ends, 2.5 ft each side of clear circulation around the table.",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-conference-cabin/20x10/portable-conference-cabin-20x10-conference-table-interior.webp",
+          "alt": "14 ft × 5 ft conference table in the 20×10 ft portable conference cabin, seating 12, with the display mounted on a solid wall bay clear of every opening.",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "20x12",
+      "label": "20×12 ft",
+      "dims": "20×12×8.5 ft",
+      "areaSqft": 240,
+      "priceExGst": 403200,
+      "priceInclGst": 475776,
+      "featureCells": [
+        {
+          "label": "Size",
+          "value": "20×12×8.5 ft · 240 sq ft"
+        },
+        {
+          "label": "Roof",
+          "value": "Two-way, centred ridge"
+        },
+        {
+          "label": "Openings",
+          "value": "1 door · 6 windows"
+        },
+        {
+          "label": "Table & seats",
+          "value": "14 ft × 5 ft · 12 seats"
+        },
+        {
+          "label": "Clear circulation",
+          "value": "3 ft at both ends, 3.5 ft each side"
+        },
+        {
+          "label": "Material",
+          "value": "MS frame · corrugated MS shell"
+        },
+        {
+          "label": "Delivery",
+          "value": "7–21 Working Days"
+        },
+        {
+          "label": "Coverage",
+          "value": "Bangalore · Delhi NCR"
+        },
+        {
+          "label": "Brand",
+          "value": "SAMAN Portable"
+        }
+      ],
+      "images": [
+        {
+          "src": "/images/products/portable-conference-cabin/20x12/portable-conference-cabin-20x12-wall-a-front-exterior.webp",
+          "alt": "SAMAN 20×12 ft portable conference cabin in pearl off-white: window, door and window along Wall A, low centred-ridge two-way roof and matte-black skid base.",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-conference-cabin/20x12/portable-conference-cabin-20x12-wall-b-rear-exterior.webp",
+          "alt": "Rear of the 20×12 ft portable conference cabin: Wall B with two windows and one centred window on the end wall, no external door.",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-conference-cabin/20x12/portable-conference-cabin-20x12-site-placement-exterior.webp",
+          "alt": "20×12 ft portable conference cabin placed on a paved standing area, showing the door side clearance needed for the outward-opening door.",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-conference-cabin/20x12/portable-conference-cabin-20x12-interior-overview.webp",
+          "alt": "Inside the 20×12 ft portable conference cabin from the door: 14 ft × 5 ft conference table on the centreline with 12 chairs and the solid presentation bay ahead.",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-conference-cabin/20x12/portable-conference-cabin-20x12-interior-reverse-view.webp",
+          "alt": "Reverse view of the 20×12 ft portable conference cabin interior in mist blue-grey: 3 ft at both ends, 3.5 ft each side of clear circulation around the table.",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-conference-cabin/20x12/portable-conference-cabin-20x12-conference-table-interior.webp",
+          "alt": "14 ft × 5 ft conference table in the 20×12 ft portable conference cabin, seating 12, with the display mounted on a solid wall bay clear of every opening.",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "30x10",
+      "label": "30×10 ft",
+      "dims": "30×10×8.5 ft",
+      "areaSqft": 300,
+      "priceExGst": 504000,
+      "priceInclGst": 594720,
+      "featureCells": [
+        {
+          "label": "Size",
+          "value": "30×10×8.5 ft · 300 sq ft"
+        },
+        {
+          "label": "Roof",
+          "value": "Two-way, centred ridge"
+        },
+        {
+          "label": "Openings",
+          "value": "2 doors · 6 windows"
+        },
+        {
+          "label": "Table & seats",
+          "value": "20 ft × 5 ft · 18 seats"
+        },
+        {
+          "label": "Clear circulation",
+          "value": "5 ft at both ends, 2.5 ft each side"
+        },
+        {
+          "label": "Material",
+          "value": "MS frame · corrugated MS shell"
+        },
+        {
+          "label": "Delivery",
+          "value": "7–21 Working Days"
+        },
+        {
+          "label": "Coverage",
+          "value": "Bangalore · Delhi NCR"
+        },
+        {
+          "label": "Brand",
+          "value": "SAMAN Portable"
+        }
+      ],
+      "images": [
+        {
+          "src": "/images/products/portable-conference-cabin/30x10/portable-conference-cabin-30x10-wall-a-front-exterior.webp",
+          "alt": "SAMAN 30×10 ft portable conference cabin in mineral bronze: two external doors on Wall A, low centred-ridge two-way roof and matte-black skid base.",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-conference-cabin/30x10/portable-conference-cabin-30x10-wall-b-rear-exterior.webp",
+          "alt": "Rear of the 30×10 ft portable conference cabin: Wall B with four windows and one centred window on the end wall, no external door.",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-conference-cabin/30x10/portable-conference-cabin-30x10-site-placement-exterior.webp",
+          "alt": "30×10 ft portable conference cabin placed on a paved standing area, showing the door side clearance needed for the outward-opening doors.",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-conference-cabin/30x10/portable-conference-cabin-30x10-interior-overview.webp",
+          "alt": "Inside the 30×10 ft portable conference cabin from the door: 20 ft × 5 ft conference table on the centreline with 18 chairs and the solid presentation bay ahead.",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-conference-cabin/30x10/portable-conference-cabin-30x10-interior-reverse-view.webp",
+          "alt": "Reverse view of the 30×10 ft portable conference cabin interior in porcelain white: 5 ft at both ends, 2.5 ft each side of clear circulation around the table.",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-conference-cabin/30x10/portable-conference-cabin-30x10-conference-table-interior.webp",
+          "alt": "20 ft × 5 ft conference table in the 30×10 ft portable conference cabin, seating 18, with the display mounted on a solid wall bay clear of every opening.",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "40x10",
+      "label": "40×10 ft",
+      "dims": "40×10×8.5 ft",
+      "areaSqft": 400,
+      "priceExGst": 665000,
+      "priceInclGst": 784700,
+      "featureCells": [
+        {
+          "label": "Size",
+          "value": "40×10×8.5 ft · 400 sq ft"
+        },
+        {
+          "label": "Roof",
+          "value": "Two-way, centred ridge"
+        },
+        {
+          "label": "Openings",
+          "value": "2 doors · 6 windows"
+        },
+        {
+          "label": "Table & seats",
+          "value": "26 ft × 5 ft · 22 seats"
+        },
+        {
+          "label": "Clear circulation",
+          "value": "7 ft at both ends, 2.5 ft each side"
+        },
+        {
+          "label": "Material",
+          "value": "MS frame · corrugated MS shell"
+        },
+        {
+          "label": "Delivery",
+          "value": "7–21 Working Days"
+        },
+        {
+          "label": "Coverage",
+          "value": "Bangalore · Delhi NCR"
+        },
+        {
+          "label": "Brand",
+          "value": "SAMAN Portable"
+        }
+      ],
+      "images": [
+        {
+          "src": "/images/products/portable-conference-cabin/40x10/portable-conference-cabin-40x10-wall-a-front-exterior.webp",
+          "alt": "SAMAN 40×10 ft portable conference cabin in muted teal: two external doors on Wall A, low centred-ridge two-way roof and matte-black skid base.",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-conference-cabin/40x10/portable-conference-cabin-40x10-wall-b-rear-exterior.webp",
+          "alt": "Rear of the 40×10 ft portable conference cabin: Wall B with four windows and one centred window on the end wall, no external door.",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-conference-cabin/40x10/portable-conference-cabin-40x10-site-placement-exterior.webp",
+          "alt": "40×10 ft portable conference cabin placed on a paved standing area, showing the door side clearance needed for the outward-opening doors.",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-conference-cabin/40x10/portable-conference-cabin-40x10-interior-overview.webp",
+          "alt": "Inside the 40×10 ft portable conference cabin from the door: 26 ft × 5 ft conference table on the centreline with 22 chairs and the solid presentation bay ahead.",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-conference-cabin/40x10/portable-conference-cabin-40x10-interior-reverse-view.webp",
+          "alt": "Reverse view of the 40×10 ft portable conference cabin interior in pale sand: 7 ft at both ends, 2.5 ft each side of clear circulation around the table.",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-conference-cabin/40x10/portable-conference-cabin-40x10-conference-table-interior.webp",
+          "alt": "26 ft × 5 ft conference table in the 40×10 ft portable conference cabin, seating 22, with the display mounted on a solid wall bay clear of every opening.",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    }
+  ],
+  "specPdfHref": "/downloads/portable-conference-cabin-technical-specification-and-price.pdf",
+  "schemaIncludeVariantOffers": true,
+  "suppressLegacySku": true,
+  "suppressReviewClaims": true,
+  "suppressLegacyFaqSchema": true,
+  "emitExplorerImageManifest": true,
+  "emitVariantFactCompleteness": true,
+  "materialLabel": "MS frame · corrugated MS shell",
+  "deliveryLabel": "7–21 Working Days",
+  "coverageLabel": "Bangalore · Delhi NCR",
+  "trustStripText": "GST registered",
+  "hideHeroProofRow": true,
+  "categoryLabel": "Portable Office Cabin",
+  "categoryHref": "/product/portable-office",
+  "specPdfButtonLabel": "Download technical specification (PDF)",
+  "schemaBrandName": "SAMAN Portable",
+  "priceCaption": "Prices exclude GST. GST is 18 per cent under HSN 9406.",
+  "h1": "Portable Conference Cabin: Six Sizes, 6 to 22 Seats",
+  "seoTitle": "Portable Conference Cabin: 6 Sizes, 6 to 22 Seats | SAMAN",
+  "metaDescription": "Portable conference cabin in six approved sizes, 100 to 400 sq ft, seating 6 to 22 at a scheduled table. Ex-GST prices published for every size. Built by SAMAN.",
+  "canonical": "https://www.samanportable.com/product/portable-office/portable-conference-cabin",
+  "opener": "A portable conference cabin is a factory-built steel meeting room delivered complete, so a project review, a client presentation or a training session stops competing for space in the site office. Six approved sizes are published here, 100 to 400 sq ft, and each one is planned around a scheduled conference table rather than around desks: 6 seats at a 5 ft square table in the 10x10, 12 seats along a 14 ft table in the three 20 ft cabins, 18 at 20 ft and 22 at 26 ft in the 30 ft and 40 ft cabins. Every size holds a measured circulation clearance around the table, keeps one wall solid as the presentation bay, and carries its own opening schedule so a window never lands where the display goes. Prices below are ex-GST for the meeting-room shell.",
+  "ymalTiles": [
+    {
+      "title": "Portable Office Cabin",
+      "href": "/product/portable-office",
+      "category": "Portable Office",
+      "blurb": "Explore Portable Office Cabin",
+      "imageSrc": "/images/products/portable-office/20x10/portable-office-20x10-front-angle.webp",
+      "imageAlt": "Portable Office Cabin 20 x 10 ft exterior render"
+    },
+    {
+      "title": "Readymade Office Cabin",
+      "href": "/product/portable-office/readymade-office-cabin",
+      "category": "Portable Office",
+      "blurb": "Explore Readymade Office Cabin",
+      "imageSrc": "/images/products/readymade-office-cabin/20x10/readymade-office-cabin-20x10-front.webp",
+      "imageAlt": "Readymade Office Cabin 20 x 10 ft exterior render"
+    },
+    {
+      "title": "Prefabricated Office Cabins",
+      "href": "/product/portable-office/prefabricated-office-cabins",
+      "category": "Portable Office",
+      "blurb": "Explore Prefabricated Office Cabins",
+      "imageSrc": "/images/products/prefabricated-office-cabins/20x10/prefabricated-office-cabin-20x10-front-angle.webp",
+      "imageAlt": "Prefabricated Office Cabins 20 x 10 ft exterior render"
+    },
+    {
+      "title": "Small Office Cabin",
+      "href": "/product/portable-office/small-office-cabin",
+      "category": "Portable Office",
+      "blurb": "Explore Small Office Cabin",
+      "imageSrc": "/images/products/small-office-cabin/10x10/small-office-cabin-10x10-front-angle.webp",
+      "imageAlt": "Small Office Cabin 10 x 10 ft exterior render"
+    }
+  ],
+  "relatedTiles": [
+    {
+      "title": "Portable Office Cabin",
+      "href": "/product/portable-office",
+      "category": "Portable Office",
+      "blurb": "Explore Portable Office Cabin",
+      "imageSrc": "/images/products/portable-office/20x10/portable-office-20x10-front-angle.webp",
+      "imageAlt": "Portable Office Cabin 20 x 10 ft exterior render"
+    },
+    {
+      "title": "Readymade Office Cabin",
+      "href": "/product/portable-office/readymade-office-cabin",
+      "category": "Portable Office",
+      "blurb": "Explore Readymade Office Cabin",
+      "imageSrc": "/images/products/readymade-office-cabin/20x10/readymade-office-cabin-20x10-front.webp",
+      "imageAlt": "Readymade Office Cabin 20 x 10 ft exterior render"
+    },
+    {
+      "title": "Prefabricated Office Cabins",
+      "href": "/product/portable-office/prefabricated-office-cabins",
+      "category": "Portable Office",
+      "blurb": "Explore Prefabricated Office Cabins",
+      "imageSrc": "/images/products/prefabricated-office-cabins/20x10/prefabricated-office-cabin-20x10-front-angle.webp",
+      "imageAlt": "Prefabricated Office Cabins 20 x 10 ft exterior render"
+    },
+    {
+      "title": "Small Office Cabin",
+      "href": "/product/portable-office/small-office-cabin",
+      "category": "Portable Office",
+      "blurb": "Explore Small Office Cabin",
+      "imageSrc": "/images/products/small-office-cabin/10x10/small-office-cabin-10x10-front-angle.webp",
+      "imageAlt": "Small Office Cabin 10 x 10 ft exterior render"
+    }
+  ],
+  "suppressSchemaAvailability": true,
+  "faqSchema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a portable conference cabin?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A factory-built steel meeting room delivered complete and placed on prepared supports. It is planned around a scheduled conference table rather than desks, and it can be relocated when the project moves."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How many people does a portable conference cabin seat?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Six to twenty-two, depending on size. The 10x10 seats 6, the three 20 ft cabins seat 12 each, the 30x10 seats 18 and the 40x10 seats 22. These are indicative counts for the approved table plan."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does a portable conference cabin cost in India?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "From ₹2,01,250 ex-GST for the 100 sq ft 10x10 up to ₹6,65,000 ex-GST for the 400 sq ft 40x10. All six sizes and their GST-inclusive figures are published on this page."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the conference table included in the price?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The table and chairs shown are the approved planning footprint, not supplied furniture. Table, chairs, display, camera, speakers, network hardware and AC equipment are quoted separately."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which size should I choose for twelve people?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "All three 20 ft cabins seat twelve. Choose the 20x8 for the lowest price, the 20x10 for a full 5 ft table depth, and the 20x12 for 3.5 ft aisles that let someone walk behind a seated row."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can the cabin be moved to another site later?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. It is relocatable: lifted and transported between sites rather than driven. Lifting points, freight and unloading are arranged against the confirmed locations at the time of the move."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the cabin soundproof?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It is a lined steel room and no tested sound-reduction figure is claimed for it. Formal acoustic testing is outside the published scope and would have to be scheduled separately."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where does SAMAN deliver conference cabins?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Across India from facilities in Bangalore and Greater Noida. Delivery is free within Bangalore city and across Delhi NCR; freight for other distances follows the ladder in the Shipping tab."
+        }
+      }
+    ]
+  },
+  "descriptionHtml": "<section><h2>Portable conference cabin or portable meeting room?</h2><p>Both phrases describe the same thing on this site: a factory-built steel room, delivered complete, whose internal arrangement is planned around a conference table instead of around desks. The search results for these phrases are split, and it is worth saying plainly what this page is not. It is not a conference speakerphone, a portable microphone system or a video-conferencing kit. It is not the conference cabin of an aircraft or a train. It is a building: a 100 to 400 sq ft room on a steel chassis that arrives on a trailer, sits on prepared supports, and holds a meeting the day it is connected.</p><p>The second thing worth separating is mobility. A conference cabin is relocatable, not mobile. It is lifted and moved between sites when the project moves; it is not driven, and it does not have wheels, a chassis axle or road-registration. If the requirement is a vehicle that drives to a venue and opens out, this is the wrong product family. If the requirement is a room that stands for months on a site, a campus or a yard and then goes somewhere else, this is the right one.</p><img src=\"/images/products/portable-conference-cabin/description/portable-conference-cabin-description-01-20x10-slate-blue-grey-exterior.webp\" alt=\"A 20×10 ft portable conference cabin in slate blue-grey on a paved standing area: window, door and window along Wall A, a straight eave on the long wall and the shallow gable at the end.\" width=\"1600\" height=\"900\" data-c08-info-image=\"true\" /><p>Where the office cabin range answers the question \"where do people work\", this page answers \"where do people meet\". That is a materially different plan. The table is fixed first, the walking clearance around it is scheduled next, and the openings are placed last so that one wall stays solid for the display. Nothing on this page is a renamed office cabin.</p></section><section><h2>Who orders a portable conference cabin, and where</h2><p>The recurring buyer is a project team that already has a site office and has run out of room in it. The site office is where drawings, laptops and the daily work sit; the moment a client, a consultant or an auditor visits, the working office has to be cleared and the day stops. A separate meeting cabin removes that cost. It is ordered alongside labour accommodation and site offices on infrastructure projects, on industrial and factory expansions, on large residential developments, and at plants where a training or review room is needed without giving up permanent floor area.</p><img src=\"/images/products/portable-conference-cabin/description/portable-conference-cabin-description-02-20x8-twelve-seat-interior.webp\" alt=\"Inside a 20×8 ft portable conference cabin: a 14 ft × 3.5 ft table seating twelve in two facing rows, with 2.25 ft aisles and the display on the solid central bay.\" width=\"1600\" height=\"900\" data-c08-info-image=\"true\" /><p>The second recurring buyer is a business park or corporate campus that needs a room quickly and cannot wait for a fit-out. A cabin placed in a car park or a landscaped courtyard, in a chosen exterior colour, reads as a considered addition rather than a temporary hut, which is why the six approved colourways in this range are muted rather than industrial. Training providers and sales teams order the same cabins for the same reason: a room that arrives finished and can be moved when the requirement moves.</p><p>Where the cabin stands matters more than buyers expect. It needs a level, drained standing area and firm support points, and it needs enough clear space on the door side for the door to swing outward and for people to gather without stepping into traffic. On the 30 ft and 40 ft cabins, both doors need that space, not just one.</p></section><section><h2>Seats decide your size here, not square feet</h2><p>On an office cabin, area is the deciding number. On a conference cabin it is the table, and the table is scheduled. The 10x10 carries a 5 ft square top for six. The three 20 ft cabins all carry a 14 ft table for twelve. The 30 ft carries a 20 ft table for eighteen and the 40 ft a 26 ft table for twenty-two. Seat counts are indicative: they describe what the approved table plan comfortably takes, not a certified occupancy figure.</p><p>This is why two cabins with different footprints can seat the same number. The 20x8, the 20x10 and the 20x12 all seat twelve, and they differ in two things only: how deep the table is across the middle, and how much room a person has to walk behind a seated row. The 20x8 gives a 3.5 ft table depth and 2.25 ft aisles. The 20x10 gives 5 ft and 2.5 ft. The 20x12 gives 5 ft and 3.5 ft. The price difference between them, from ₹3,08,000 to ₹4,03,200 ex-GST, buys circulation, not seats.</p><img src=\"/images/products/portable-conference-cabin/description/portable-conference-cabin-description-03-40x10-twenty-two-seat-interior.webp\" alt=\"Inside a 40×10 ft portable conference cabin: a 26 ft table seating twenty-two, with 7 ft clear at the end for someone to stand and present.\" width=\"1600\" height=\"900\" data-c08-info-image=\"true\" /><p>Read the seat count with the end clearance beside it. Ends are where a person stands to present, and the range deliberately widens that dimension as the table lengthens: 2.5 ft at 10x10, 3 ft on the 20 ft cabins, 5 ft at 30x10 and 7 ft at 40x10. A long table in a cabin with a short end gap seats everyone and leaves nobody anywhere to stand.</p></section><section><h2>Choosing between 100, 160, 200, 240, 300 and 400 sq ft</h2><p>The six approved sizes below are the whole published range. Prices are ex-GST for the meeting-room shell and follow a single area-based rule, which is why the rate per square foot falls as the cabin gets larger.</p><table><thead><tr><th>Size</th><th>Area</th><th>Table</th><th>Seats</th><th>Clear circulation</th><th>Price ex-GST</th><th>Price incl. 18% GST</th></tr></thead><tbody><tr><td>10×10 ft</td><td>100 sq ft</td><td>5 ft × 5 ft</td><td>6</td><td>2.5 ft on all four sides</td><td>₹2,01,250</td><td>₹2,37,475</td></tr><tr><td>20×8 ft</td><td>160 sq ft</td><td>14 ft × 3.5 ft</td><td>12</td><td>3 ft at both ends, 2.25 ft each side</td><td>₹3,08,000</td><td>₹3,63,440</td></tr><tr><td>20×10 ft</td><td>200 sq ft</td><td>14 ft × 5 ft</td><td>12</td><td>3 ft at both ends, 2.5 ft each side</td><td>₹3,50,000</td><td>₹4,13,000</td></tr><tr><td>20×12 ft</td><td>240 sq ft</td><td>14 ft × 5 ft</td><td>12</td><td>3 ft at both ends, 3.5 ft each side</td><td>₹4,03,200</td><td>₹4,75,776</td></tr><tr><td>30×10 ft</td><td>300 sq ft</td><td>20 ft × 5 ft</td><td>18</td><td>5 ft at both ends, 2.5 ft each side</td><td>₹5,04,000</td><td>₹5,94,720</td></tr><tr><td>40×10 ft</td><td>400 sq ft</td><td>26 ft × 5 ft</td><td>22</td><td>7 ft at both ends, 2.5 ft each side</td><td>₹6,65,000</td><td>₹7,84,700</td></tr></tbody></table><img src=\"/images/products/portable-conference-cabin/description/portable-conference-cabin-description-04-10x10-deep-oxford-blue-exterior.webp\" alt=\"A 10×10 ft portable conference cabin in deep oxford blue: the smallest approved size, a square plan with one door on Wall A and one centred window on each remaining wall.\" width=\"1600\" height=\"900\" data-c08-info-image=\"true\" /><p>A quick sanity check before ordering: divide the area by the seat count. It runs from about 16.7 sq ft per seat on the 10x10 down to 13.3 on the 20x8 and back up to 20 on the 20x12 and 18.2 on the 40x10. A figure near 13 means a compact room where everyone stays seated; a figure near 20 means people can move around the table while it is occupied. Neither is better in the abstract, but the number tells you which kind of room you are buying before the drawing arrives.</p><p>Read the table by seat count first and by rate second. If six seats is the requirement, the 10x10 is the only size that does not waste area, even though it carries the highest rate per square foot in the family. If twelve is the requirement, the choice is between three cabins and it is a circulation decision. If the number is fifteen to eighteen, the 30x10 is the size; if it is twenty or more, the 40x10 is the only one that seats them at a single table, and it does so at the lowest rate in the range.</p></section><section><h2>Why the display wall is never the door wall</h2><p>Every size in this range keeps one wall clear of openings so a display can be mounted without covering a window or a door. That decision is made in the approved general arrangement, not on site. On the 20 ft cabins, Wall A takes a window at 1.5 to 5.5 ft, the door at 8.5 to 11.5 ft and a window at 14.5 to 18.5 ft, while Wall B takes only two windows at the ends, leaving a solid central bay. That central bay is the presentation zone.</p><img src=\"/images/products/portable-conference-cabin/description/portable-conference-cabin-description-05-20x12-wide-aisle-interior.webp\" alt=\"Inside a 20×12 ft portable conference cabin: the same 14 ft × 5 ft table as the 20×10 with 3.5 ft aisles, wide enough to walk behind a seated row.\" width=\"1600\" height=\"900\" data-c08-info-image=\"true\" /><p>The 40x10 shows the same logic at length. Wall A carries three windows and two doors; Wall B is held to four windows on a wide rhythm rather than a continuous run, so the solid sections between them stay long enough to take a screen or a pinned drawing set. Both end walls, on every size in the range, carry one centred window and no external door.</p><p>One practical consequence: exterior and interior views of the same cabin show openings at the same physical coordinates and are never mirrored. If the approved drawing puts the door at 8.5 ft from the left-hand corner of Wall A, that is where it is built. Check the general arrangement board for your size in the Specifications tab before the drawing is frozen, because the opening schedule is the part that is expensive to change after fabrication starts.</p></section><section><h2>What the meeting-room shell includes, and what it does not</h2><p>The published price is for the cabin as a finished room. The platform build-up is common across SAMAN's steel cabin families and is set out in full in the Specifications tab; the meeting-specific decisions are the table plan, the clearance schedule, the solid presentation bay and the opening positions. What is explicitly outside the published price is listed below, and it is listed because these are the items that most often turn a comparison of two quotations into a comparison of two different things.</p><ul><li>Conference table and chairs. The table shown in the drawings and images is the approved planning footprint, not supplied furniture.</li><li>Display screen, camera, speakers, microphones and any network hardware.</li><li>Air-conditioning equipment. Provision is coordinated; the units themselves are quoted separately.</li><li>Formal acoustic testing or a certified sound-reduction figure. The cabin is a lined steel room, and no dB rating is claimed for it.</li><li>Civil work: foundations, supports, levelling, drainage and the standing area itself.</li><li>Freight, unloading and crane or forklift time, which are quoted against the confirmed delivery location. See the Shipping tab for the published freight ladder.</li></ul><img src=\"/images/products/portable-conference-cabin/description/portable-conference-cabin-description-06-30x10-two-door-exterior.webp\" alt=\"A 30×10 ft portable conference cabin in mineral bronze: two external doors on Wall A, one near each end, with two scheduled windows between them.\" width=\"1600\" height=\"900\" data-c08-info-image=\"true\" /><p>What is included is the finished enclosure on SAMAN's common cabin platform: a welded MS channel chassis, MS framing with reinforced openings, a 1.2 mm corrugated MS external skin and a 1.4 mm sloped corrugated roof with sealed laps and flashings, 8 mm prelaminated interior lining, an 18 mm board floor with a resilient finish, glass wool insulation in the roof and walls, concealed copper wiring with a distribution board and earthing, outward-opening MS-framed doors at roughly 7 ft by 3 ft, and two-track aluminium sliding windows. Full figures, including the alternatives, sit in the Specifications tab.</p><p>Structural calculations, code certification, lifting capacity and site foundation design are not claimed by this page. Final structure, services, fire and egress provisions, accessibility and fabrication remain subject to approved project engineering, shop drawings and the signed quotation. Anything a buyer needs to rely on contractually should appear in that quotation rather than being inferred from a web page.</p></section><section><h2>How the price is built, and what is quoted separately</h2><p>Every price on this page comes from one editable base rate and one area rule. The base rate is ₹1,750 per sq ft at 200 sq ft, and the rule then adjusts it by area band: below 200 sq ft the rate rises, above it the rate falls. That is why the 10x10 works out at ₹2,012.50 per sq ft while the 40x10 works out at ₹1,662.50, and why the total still climbs from ₹2,01,250 to ₹6,65,000 ex-GST across the range. GST at 18% is shown alongside every figure rather than folded into it.</p><p>The bands are published so a buyer can check the arithmetic: 40 to 59 sq ft carries plus 44%, 60 to 79 plus 36%, 80 to 99 plus 26%, 100 to 149 plus 15%, 150 to 199 plus 10%, 200 exactly is the base, 201 to 300 minus 4%, 301 to 400 minus 5%, 401 to 500 minus 6%, and so on to 801 to 900 at minus 10%. Above 900 sq ft the price is quoted manually, because a single meeting room that large is a different engineering problem.</p><p>Compare quotations on the same basis. A conference cabin quoted with a table, twelve chairs and a 65-inch display is not comparable with a shell price, and a shell price with freight buried in it is not comparable with one that shows freight separately. The figures on this page are budgetary shell prices, ex-GST, before transport, and they update when the workbook base rate changes.</p></section><section><h2>When a portable conference cabin is the wrong choice</h2><p>If the room will hold one or two people for focused work, this is the wrong product: a single-desk room is smaller, cheaper and available in the <a href=\"/product/portable-office/small-office-cabin\">Small Office Cabin range.</a> If the requirement is a working office for a team, with desks, storage and circulation between them, the <a href=\"/product/portable-office\">general Portable Office Cabin range</a> is planned for that and prices lower at the same footprint. Ordering a conference cabin for either job means paying for a table plan that will be removed.</p><p>If more than twenty-two people must sit at one table, no size in this range does it, and the honest answer is that a single relocatable cabin is the wrong form: two cabins placed side by side do not make one room, because the shared wall stays. If a certified acoustic performance is a contract requirement, this page cannot support it either, because no tested figure exists for these units.</p><p>And if the room has to be permanent, priced over twenty years and connected into a building's services, a prefabricated or pre-engineered structure is the better comparison. The value of a conference cabin is that it arrives finished, works immediately and leaves when the project does.</p></section><section><h2>Portable Conference Cabin FAQs</h2><h3>What is a portable conference cabin?</h3><p>A factory-built steel meeting room delivered complete and placed on prepared supports. It is planned around a scheduled conference table rather than desks, and it can be relocated when the project moves.</p><h3>How many people does a portable conference cabin seat?</h3><p>Six to twenty-two, depending on size. The 10x10 seats 6, the three 20 ft cabins seat 12 each, the 30x10 seats 18 and the 40x10 seats 22. These are indicative counts for the approved table plan.</p><h3>What does a portable conference cabin cost in India?</h3><p>From ₹2,01,250 ex-GST for the 100 sq ft 10x10 up to ₹6,65,000 ex-GST for the 400 sq ft 40x10. All six sizes and their GST-inclusive figures are published on this page.</p><h3>Is the conference table included in the price?</h3><p>No. The table and chairs shown are the approved planning footprint, not supplied furniture. Table, chairs, display, camera, speakers, network hardware and AC equipment are quoted separately.</p><h3>Which size should I choose for twelve people?</h3><p>All three 20 ft cabins seat twelve. Choose the 20x8 for the lowest price, the 20x10 for a full 5 ft table depth, and the 20x12 for 3.5 ft aisles that let someone walk behind a seated row.</p><h3>Can the cabin be moved to another site later?</h3><p>Yes. It is relocatable: lifted and transported between sites rather than driven. Lifting points, freight and unloading are arranged against the confirmed locations at the time of the move.</p><h3>Is the cabin soundproof?</h3><p>It is a lined steel room and no tested sound-reduction figure is claimed for it. Formal acoustic testing is outside the published scope and would have to be scheduled separately.</p><h3>Where does SAMAN deliver conference cabins?</h3><p>Across India from facilities in Bangalore and Greater Noida. Delivery is free within Bangalore city and across Delhi NCR; freight for other distances follows the ladder in the Shipping tab.</p></section>",
+  "applicationsContent": {
+    "h2": "Compare the six conference cabin sizes and seat counts",
+    "intro": "Six approved sizes, one meeting-room finish, one price rule. Each size shows the cabin, its table, its seat count and its ex-GST price.",
+    "panels": [
+      {
+        "sizeSlug": "10x10",
+        "h3": "10×10 ft Portable Conference Cabin: 100 sq ft, 6 Seats",
+        "paragraph": "The only square plan in the range and the only one with a square table. A 5 ft by 5 ft top seats six at close range, which suits a daily site huddle, a two-party contract discussion or an interview room rather than a presentation to a group. Circulation is 2.5 ft on all four sides, the tightest here, so a chair pushed back reaches the wall. One door on Wall A and one window on Wall B leave both end walls carrying one centred window each, and the wall opposite the door stays clear for a screen.",
+        "applications": [
+          "10×10×8.5 ft, 100 sq ft, ₹2,01,250 ex-GST (₹2,37,475 incl. 18% GST)",
+          "Rate ₹2,012.50 per sq ft, the highest in the range because the area band adds 15%",
+          "5 ft × 5 ft table, 6 indicative seats, 2.5 ft clear on all four sides",
+          "One door on Wall A, one window on Wall B, one centred window on each end wall",
+          "Low centred-ridge two-way roof with the ridge along the 10 ft length",
+          "Approved colourway: Deep Oxford Blue exterior, Warm Ivory interior"
+        ],
+        "image": {
+          "src": "/images/products/portable-conference-cabin/section3/portable-conference-cabin-10x10-exterior.webp",
+          "alt": "10×10 ft portable conference cabin in deep oxford blue, 100 sq ft, seating 6 at a 5 ft × 5 ft table: the single centred door on Wall A and the low centred-ridge two-way roof.",
+          "width": 1600,
+          "height": 900
+        }
+      },
+      {
+        "sizeSlug": "20x8",
+        "h3": "20×8 ft Portable Conference Cabin: 160 sq ft, 12 Seats",
+        "paragraph": "The narrow-body option, and the only cabin in the range with a one-way roof falling across its 8 ft width. A 14 ft by 3.5 ft table seats twelve in two facing rows, but the side clearance drops to 2.25 ft, so this is the size to pick when the standing footprint is constrained and everyone will stay seated. It is also the cheapest way to reach twelve seats: the same seat count as the 20×10 for ₹42,000 less ex-GST, paid for in narrower aisles and a table 1.5 ft shallower across the middle.",
+        "applications": [
+          "20×8×8.5 ft, 160 sq ft, ₹3,08,000 ex-GST (₹3,63,440 incl. 18% GST)",
+          "Rate ₹1,925.00 per sq ft under the 150 to 199 sq ft band, which adds 10%",
+          "14 ft × 3.5 ft table, 12 indicative seats, 3 ft at the ends and 2.25 ft each side",
+          "Wall A window-door-window at 1.5-5.5, 8.5-11.5 and 14.5-18.5 ft; Wall B two windows",
+          "Only size with the approved one-way roof, falling across the 8 ft width",
+          "Approved colourway: Burgundy Wine exterior, Champagne Cream interior"
+        ],
+        "image": {
+          "src": "/images/products/portable-conference-cabin/section3/portable-conference-cabin-20x8-exterior.webp",
+          "alt": "20×8 ft portable conference cabin in burgundy wine, 160 sq ft, seating 12 at a 14 ft × 3.5 ft table: window, door and window along Wall A and the approved one-way slope across the 8 ft width roof.",
+          "width": 1600,
+          "height": 900
+        }
+      },
+      {
+        "sizeSlug": "20x10",
+        "h3": "20×10 ft Portable Conference Cabin: 200 sq ft, 12 Seats",
+        "paragraph": "The reference size, and the one the price rule is built on: 200 sq ft is the band where the rate carries neither an uplift nor a discount. A 14 ft by 5 ft table seats twelve with a full 5 ft top, so laptops, drawings and a printed set can sit open at the same time, and side clearance rises to 2.5 ft. The opening schedule matches the 20×8 and the 20×12 exactly, which means a company running more than one cabin gets the same door position and the same window rhythm across all three.",
+        "applications": [
+          "20×10×8.5 ft, 200 sq ft, ₹3,50,000 ex-GST (₹4,13,000 incl. 18% GST)",
+          "Rate ₹1,750.00 per sq ft, the base rate: 200 sq ft is the zero-adjustment band",
+          "14 ft × 5 ft table, 12 indicative seats, 3 ft at the ends and 2.5 ft each side",
+          "Wall A window-door-window; Wall B two windows at 1.5-5.5 and 14.5-18.5 ft",
+          "Full 5 ft table depth, 1.5 ft deeper than the 20×8 at the same seat count",
+          "Approved colourway: Slate Blue-Grey exterior, Light Greige interior"
+        ],
+        "image": {
+          "src": "/images/products/portable-conference-cabin/section3/portable-conference-cabin-20x10-exterior.webp",
+          "alt": "20×10 ft portable conference cabin in slate blue-grey, 200 sq ft, seating 12 at a 14 ft × 5 ft table: window, door and window along Wall A and the low centred-ridge two-way roof.",
+          "width": 1600,
+          "height": 900
+        }
+      },
+      {
+        "sizeSlug": "20x12",
+        "h3": "20×12 ft Portable Conference Cabin: 240 sq ft, 12 Seats",
+        "paragraph": "Same table and same twelve seats as the 20×10, with the extra two feet of width spent entirely on the aisles: side clearance goes from 2.5 ft to 3.5 ft. That is the width at which a person can walk behind a seated row without anyone moving a chair, which is what makes this the size to specify when visitors will arrive mid-meeting or a trolley has to reach the far end. Buy it for circulation, not for capacity; if the seat count is what has to rise, the 30×10 is the cheaper route per seat.",
+        "applications": [
+          "20×12×8.5 ft, 240 sq ft, ₹4,03,200 ex-GST (₹4,75,776 incl. 18% GST)",
+          "Rate ₹1,680.00 per sq ft under the 201 to 300 sq ft band, which deducts 4%",
+          "14 ft × 5 ft table, 12 indicative seats, 3 ft at the ends and 3.5 ft each side",
+          "Widest side clearance in the range: 3.5 ft, one foot more than the 20×10",
+          "Wall A window-door-window and Wall B two windows, identical to the 20×10",
+          "Approved colourway: Pearl Off-White exterior, Mist Blue-Grey interior"
+        ],
+        "image": {
+          "src": "/images/products/portable-conference-cabin/section3/portable-conference-cabin-20x12-exterior.webp",
+          "alt": "20×12 ft portable conference cabin in pearl off-white, 240 sq ft, seating 12 at a 14 ft × 5 ft table: window, door and window along Wall A and the low centred-ridge two-way roof.",
+          "width": 1600,
+          "height": 900
+        }
+      },
+      {
+        "sizeSlug": "30x10",
+        "h3": "30×10 ft Portable Conference Cabin: 300 sq ft, 18 Seats",
+        "paragraph": "The first size with two external doors, and that is the reason to choose it over a wider 20 ft cabin. A 20 ft table seating eighteen is long enough that a single door forces late arrivals to walk past every seated person; a door near each end removes that. End clearance also doubles to 5 ft, which is the room needed to stand and address the table from the head rather than from a corner. Wall B carries four windows on a regular rhythm, so daylight reaches the middle seats and not only the ends.",
+        "applications": [
+          "30×10×8.5 ft, 300 sq ft, ₹5,04,000 ex-GST (₹5,94,720 incl. 18% GST)",
+          "Rate ₹1,680.00 per sq ft, the same band rate as the 20×12 at 25% more area",
+          "20 ft × 5 ft table, 18 indicative seats, 5 ft at the ends and 2.5 ft each side",
+          "Two external doors on Wall A at 1.5-4.5 ft and 25.5-28.5 ft, one near each end",
+          "Wall B carries four windows at 1.5-5.5, 8.5-12.5, 17.5-21.5 and 24.5-28.5 ft",
+          "Approved colourway: Mineral Bronze exterior, Porcelain White interior"
+        ],
+        "image": {
+          "src": "/images/products/portable-conference-cabin/section3/portable-conference-cabin-30x10-exterior.webp",
+          "alt": "30×10 ft portable conference cabin in mineral bronze, 300 sq ft, seating 18 at a 20 ft × 5 ft table: two external doors on Wall A and the low centred-ridge two-way roof.",
+          "width": 1600,
+          "height": 900
+        }
+      },
+      {
+        "sizeSlug": "40x10",
+        "h3": "40×10 ft Portable Conference Cabin: 400 sq ft, 22 Seats",
+        "paragraph": "The largest approved size and the lowest rate per square foot in the family. A 26 ft table seats twenty-two and leaves 7 ft clear at each end, which is enough to stand and present with a screen behind you and still let people pass. Wall A takes three windows and two doors and Wall B is held to four windows, leaving long solid bays between them; those bays are where a display or a pinned drawing set goes, and they are the reason a longer cabin does not become a corridor of glass.",
+        "applications": [
+          "40×10×8.5 ft, 400 sq ft, ₹6,65,000 ex-GST (₹7,84,700 incl. 18% GST)",
+          "Rate ₹1,662.50 per sq ft, the lowest in the range under the 301 to 400 band at -5%",
+          "26 ft × 5 ft table, 22 indicative seats, 7 ft at the ends and 2.5 ft each side",
+          "Two external doors on Wall A at 11.5-14.5 ft and 35.5-38.5 ft with three windows",
+          "Wall B is limited to four windows, leaving solid bays for the display wall",
+          "Approved colourway: Muted Teal exterior, Pale Sand interior"
+        ],
+        "image": {
+          "src": "/images/products/portable-conference-cabin/section3/portable-conference-cabin-40x10-exterior.webp",
+          "alt": "40×10 ft portable conference cabin in muted teal, 400 sq ft, seating 22 at a 26 ft × 5 ft table: two external doors on Wall A and the low centred-ridge two-way roof.",
+          "width": 1600,
+          "height": 900
+        }
+      }
+    ]
+  },
+  "labelActiveThumbnailAlt": true,
+  "optimizeLocalGalleryImages": false
+}

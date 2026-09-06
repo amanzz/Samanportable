@@ -1,0 +1,22 @@
+specs panel state: active
+Specifications tab clicked: true
+
+GA boards in the Specifications tab:
+  portable-conference-cabin-10x10-ga-board.webp  1067x600  loaded=true  y=7464
+  portable-conference-cabin-20x8-ga-board.webp   1067x600  loaded=true  y=8122
+  portable-conference-cabin-20x10-ga-board.webp  1067x600  loaded=true  y=8780
+  portable-conference-cabin-20x12-ga-board.webp  1067x600  loaded=true  y=9438
+  portable-conference-cabin-30x10-ga-board.webp  1067x600  loaded=true  y=10096
+  portable-conference-cabin-40x10-ga-board.webp  1067x600  loaded=true  y=10754
+Technical diagrams:
+  portable-conference-cabin-roof-family-diagram.webp 1067x600  loaded=true  y=11448
+  portable-conference-cabin-envelope-material-diagram.webp 1067x600  loaded=true  y=12106
+
+Group E table y=3850
+all six GA boards painted : true
+both diagrams painted     : true
+GA boards sit BELOW the group tables : true
+GA boards sit ABOVE both diagrams    : true
+PDF link present                     : true
+
+saved po08-specifications-tab-1440.png

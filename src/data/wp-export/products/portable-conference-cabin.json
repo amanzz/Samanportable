@@ -1,0 +1,60 @@
+{
+  "id": 2026090601,
+  "name": "Portable Conference Cabin",
+  "slug": "portable-conference-cabin",
+  "permalink": "https://www.samanportable.com/product/portable-office/portable-conference-cabin",
+  "date_created": "2026-09-06T00:00:00",
+  "date_modified": "2026-09-06T00:00:00",
+  "type": "simple",
+  "status": "publish",
+  "featured": false,
+  "catalog_visibility": "visible",
+  "description": "",
+  "short_description": "",
+  "sku": "",
+  "price": "",
+  "regular_price": "",
+  "sale_price": "",
+  "on_sale": false,
+  "purchasable": false,
+  "virtual": false,
+  "downloadable": false,
+  "downloads": [],
+  "manage_stock": false,
+  "stock_quantity": null,
+  "stock_status": "instock",
+  "backorders": "no",
+  "reviews_allowed": true,
+  "average_rating": "0.00",
+  "rating_count": 0,
+  "categories": [
+    {
+      "id": 230,
+      "name": "Portable Office",
+      "slug": "portable-office"
+    }
+  ],
+  "brands": [
+    {
+      "id": 3870,
+      "name": "Saman Portable",
+      "slug": "saman-portable"
+    }
+  ],
+  "tags": [],
+  "images": [],
+  "attributes": [],
+  "dimensions": {
+    "length": "",
+    "width": "",
+    "height": ""
+  },
+  "weight": "",
+  "meta_data": [],
+  "_rank_math_head": {
+    "success": true,
+    "head": "<title>Portable Conference Cabin: 6 Sizes, 6 to 22 Seats | SAMAN</title>\n<meta name=\"description\" content=\"Portable conference cabin in six approved sizes, 100 to 400 sq ft, seating 6 to 22 at a scheduled table. Ex-GST prices published for every size. Built by SAMAN.\"/>\n<meta name=\"robots\" content=\"index, follow\"/>\n<link rel=\"canonical\" href=\"https://www.samanportable.com/product/portable-office/portable-conference-cabin\" />\n"
+  },
+  "category": "Portable Office",
+  "category_slug": "portable-office"
+}

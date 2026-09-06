@@ -1,0 +1,47 @@
+
+=== PO-08 preview  http://127.0.0.1:3108/product/portable-office/portable-conference-cabin ===
+  #    offset  block
+  1     61402  three-column hero
+  2     59435  contact / location bar
+  3     62064  size selector tabs
+  4     62907  price display for selected size
+  5     68936  H2 Explore the Range
+  6     73006  Section 2 RightToExist
+  7     75097  Section 2 media pairing (split card)
+  8     76417  Section 3 SizeApplicationsExplorer
+  9    117674  Section 4 calculator
+ 10    333194  You may also like
+ 11    337375  Product Details four-tab strip
+blocks located: 11/11
+DOM emission order: [2, 1, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+
+=== DESIGN LOCK    https://www.samanportable.com/product/porta-cabins ===
+  #    offset  block
+  1     57002  three-column hero
+  2     55035  contact / location bar
+  3     57657  size selector tabs
+  4     58472  price display for selected size
+  5     63944  H2 Explore the Range
+  6     73379  Section 2 RightToExist
+  7     74601  Section 2 media pairing (split card)
+  8     75696  Section 3 SizeApplicationsExplorer
+  9    108241  Section 4 calculator
+ 10    109769  You may also like
+ 11    117903  Product Details four-tab strip
+blocks located: 11/11
+DOM emission order: [2, 1, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+
+=== GATE 1: structural diff against the design lock ===
+preview     DOM emission order : [2, 1, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+design lock DOM emission order : [2, 1, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+blocks on preview but not on the lock : none
+blocks on the lock but not on preview : none
+component tree emitted in IDENTICAL order, zero delta : True
+
+Note: blocks 1 and 2 are emitted 2-then-1 on BOTH pages. That is the T24.1
+hero: the gallery column, which carries the zone contact cards, is emitted
+before the buy box, and CSS grid-template-areas places them visually. It is a
+property of the shared hero, identical on the design lock, so it is not a
+delta introduced by this page.
+
+RESULT: PASS

@@ -1,0 +1,14 @@
+PO-08 baseline
+branch: feature/po08-portable-conference-cabin-20260906
+cut from: origin/static-migration
+HEAD at cut: 3c538299725f7f37589a7cc41e9a5e906106a9fa
+date: 2026-09-06
+
+The route /product/portable-office/portable-conference-cabin returns 404 today, so
+there is no existing route file, product JSON, gallery manifest or calculator ladder
+entry for this page to record. Per Step 0 the porta-cabins design-lock equivalents are
+recorded instead, together with the shared dynamic route this page renders through and
+the nearest sibling precedent (PO-03, the last new page merged into static-migration).
+
+The asset map declares no keep_as_is set: 'New page, 404 today. Nothing is retained;
+there is no live gallery for this URL.' All 57 images are new.

@@ -1,0 +1,105 @@
+============================================================================================
+GATE 4  PROP AUDIT - PortaCabinVariantHero (the shared component the page is built on)
+============================================================================================
+prop                               PO-08                              design lock           
+--------------------------------------------------------------------------------------------
+data                               portable-conference-cabin.json     porta-cabins.json     
+                                   -> C1+C2+C3+C4 - the product record: copy, images/alt, size rows and prices, link tiles
+productTitle                       Portable Conference Cabin          Porta Cabins          
+                                   -> C1 copy
+averageRating                      product.average_rating             product.average_rating
+                                   -> identical expression
+ratingCount                        product.rating_count               product.rating_count  
+                                   -> identical expression
+railItems                          relatedTiles (4 cluster tiles)     hub rail tiles        
+                                   -> C4 link destinations
+currentHref                        /product/portable-office/portable-conference-cabin /product/porta-cabins 
+                                   -> C4 link destination
+showSectionDividers                True                               True                  
+                                   -> BEHAVIOUR - must match the lock
+usePremiumSizeTabs                 True                               True                  
+                                   -> BEHAVIOUR - must match the lock
+explorerPanelHeadingAsH2           False (scoped off for this slug)   False (hub does not pass it)
+                                   -> BEHAVIOUR - must match the lock
+compactMobileDividers              False                              False (hub does not pass it)
+                                   -> BEHAVIOUR - must match the lock
+sizeEyebrowText                    pack hero.size_selector_label      'Choose size'         
+                                   -> C1 copy
+emitSizeAnchors                    False                              False                 
+                                   -> BEHAVIOUR - must match the lock. porta-cabins.json does not set it, so the lock emits no #size-<slug> anchors; this route's prop list excludes this slug, so neither does this page. Verified against the served HTML of both.
+explorerHidePanelImages            False                              False (hub does not pass it)
+                                   -> BEHAVIOUR - must match the lock
+deferNonLcpImagesUntilHeroPaint    False                              False (hub does not pass it)
+                                   -> BEHAVIOUR - must match the lock
+renderOnlyActiveExplorerPanel      False                              False (hub does not pass it)
+                                   -> BEHAVIOUR - must match the lock
+syncVariantSelection               False                              False (hub does not pass it)
+                                   -> BEHAVIOUR - must match the lock
+eagerActiveGalleryImages           False                              False (hub does not pass it)
+                                   -> BEHAVIOUR - must match the lock
+renderInactiveGalleryImages        False                              False (hub does not pass it)
+                                   -> BEHAVIOUR - must match the lock
+explorerSingleColumnApplications   False                              False (hub does not pass it)
+                                   -> BEHAVIOUR - must match the lock
+
+============================================================================================
+ProductTabs (shared component)
+============================================================================================
+description              product JSON descriptionHtml                        
+                         -> C1 copy + C2 images
+specificationsHtml       pack specifications_tab                             
+                         -> C1 copy + C2 images
+shippingHtml             buildShippingHtml() - shared freight component, NO options
+                         -> identical to the design lock, byte-for-byte
+productTitle             Portable Conference Cabin                           
+                         -> C1 copy
+reviews                  [] (suppressed)                                     
+                         -> BEHAVIOUR - matches the PO cluster siblings
+averageRating            undefined (suppressed)                              
+                         -> BEHAVIOUR - matches the PO cluster siblings
+ratingCount              0 (suppressed)                                      
+                         -> BEHAVIOUR - matches the PO cluster siblings
+fullMobileLabels         NOT PASSED -> false                                 
+                         -> identical to the design lock (hub does not pass it)
+reviewsEmptyStateText    pack reviews_tab.empty_state                        
+                         -> C1 copy
+
+============================================================================================
+RightToExist (shared component) - entry keyed by slug in rightToExistEntries.tsx
+============================================================================================
+heading                  pack section2.h2                                    
+                         -> C1 copy
+bodyParagraphs           pack section2.paragraph1 (with the approved link) + paragraph2
+                         -> C1 copy + C4 link
+verificationText         pack section2.paragraph1                            
+                         -> C1 copy (hidden plain-text mirror, as PO-01/02/04)
+topCtaLabel              pack section2.cta                                   
+                         -> C1 copy
+topCtaHref               #porta-size-applications                            
+                         -> C4 link destination (same as the lock)
+splitCard.*              pack section2.split_card + the section2 card image  
+                         -> C1 copy + C2 image
+
+============================================================================================
+Product-JSON behaviour opt-ins (all default false; absent on every other page)
+============================================================================================
+- emitVariantFactCompleteness
+   PO-04's existing opt-in. Ships every size's approved buy-box facts in a
+   hidden completeness block. The buy box still renders ONE size at a time,
+   exactly as the lock does - presentation is unchanged.
+- emitExplorerImageManifest
+   PO-08's opt-in. The Explorer renders an <img> for the ACTIVE panel only, so
+   the other five Section 3 photographs would never be referenced in SSR. Emits
+   the same hidden aria-hidden manifest span site-office-container already uses.
+   Presentation is unchanged; images still render on tab selection.
+- suppressReviewClaims / suppressLegacySku / suppressLegacyFaqSchema
+   Matches PO-01..PO-04; this page publishes no review or rating markup.
+- trustStripText = 'GST registered'
+   The shared default asserts ISO 9001:2015 certification and a 5-year warranty,
+   both of which this page's ruling forbids. Same literal as PO-03 and PO-05.
+- hideHeroProofRow
+   Matches PO-01..PO-04.
+
+============================================================================================
+No prop outside the four permitted content kinds differs from the design lock.
+RESULT: PASS

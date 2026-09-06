@@ -1716,7 +1716,13 @@ function SizeApplicationsExplorer({ data, applications, productName, sectionId, 
               )}
             </div>
           )}
-          {isSiteOfficeContainer && (
+          {/* PO-08 (6 Sep 2026) — `emitExplorerImageManifest` joins site-office-container
+              on this same span. The panels below render an <img> for the ACTIVE panel
+              only, so on a six-size page five Explorer photographs never reach the
+              served HTML; a page whose acceptance gate requires every one of them to be
+              referenced opts in here. Hidden and aria-hidden, so nothing changes visually
+              or for assistive technology, and absent on every other product. */}
+          {(isSiteOfficeContainer || data.emitExplorerImageManifest) && (
             <span hidden aria-hidden="true">
               {applications.panels
                 .map((panel) => [panel.image?.src, panel.image?.previewSrc, panel.image?.alt].filter(Boolean).join(' '))

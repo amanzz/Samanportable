@@ -1,0 +1,850 @@
+{
+  "productSlug": "portable-weighbridge-office",
+  "productName": "Portable Weighbridge Office",
+  "variantAxis": "size",
+  "defaultVariant": "20x10",
+  "hsn": "9406",
+  "gstPercent": 18,
+  "emitAggregateOffer": true,
+  "variants": [
+    {
+      "sizeSlug": "10x10",
+      "label": "10 × 10 ft",
+      "dims": "10 × 10 × 8.5 ft",
+      "areaSqft": 100,
+      "priceExGst": 178250,
+      "priceInclGst": 210335,
+      "featureCells": [
+        {
+          "label": "Size",
+          "value": "10 × 10 × 8.5 ft · 100 sq ft"
+        },
+        {
+          "label": "Roof",
+          "value": "Two-way, centred ridge"
+        },
+        {
+          "label": "Openings",
+          "value": "1 door, 3 windows"
+        },
+        {
+          "label": "Consoles staged",
+          "value": "1"
+        },
+        {
+          "label": "Application",
+          "value": "Single-operator plinth room"
+        },
+        {
+          "label": "Material",
+          "value": "MS frame, insulated panel"
+        },
+        {
+          "label": "Delivery",
+          "value": "7 to 21 working days"
+        },
+        {
+          "label": "Coverage",
+          "value": "Pan-India, two zones"
+        },
+        {
+          "label": "Brand",
+          "value": "SAMAN Portable"
+        }
+      ],
+      "images": [
+        {
+          "src": "/images/products/portable-weighbridge-office/10x10/portable-weighbridge-office-10x10-yard-exterior-wall-a-entry.webp",
+          "alt": "10 x 10 x 8.5 ft SAMAN portable weighbridge office cabin, yard side Wall A with the staff entry door, Deep Oxford Blue exterior",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-weighbridge-office/10x10/portable-weighbridge-office-10x10-deck-exterior-wall-b-weighbridge.webp",
+          "alt": "10 x 10 x 8.5 ft weighbridge office cabin seen from the deck, Wall B glazing above the operator consoles, no door on this wall",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-weighbridge-office/10x10/portable-weighbridge-office-10x10-roof-and-lifting-eyes.webp",
+          "alt": "10 x 10 x 8.5 ft weighbridge office cabin from above showing the two-way ridged roof and the four top-corner lifting eyes",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-weighbridge-office/10x10/portable-weighbridge-office-10x10-interior-operator-consoles.webp",
+          "alt": "Inside the 10 x 10 x 8.5 ft weighbridge office cabin at the operator consoles on Wall B, facing the weighbridge deck glazing",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-weighbridge-office/10x10/portable-weighbridge-office-10x10-interior-from-entry-door.webp",
+          "alt": "Inside the 10 x 10 x 8.5 ft weighbridge office cabin looking at Wall A, the staff entry door and the document counter",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-weighbridge-office/10x10/portable-weighbridge-office-10x10-interior-workflow-end-wall.webp",
+          "alt": "Inside the 10 x 10 x 8.5 ft weighbridge office cabin towards the end wall with its single centred window, Champagne Cream lining",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "20x8",
+      "label": "20 × 8 ft",
+      "dims": "20 × 8 × 8.5 ft",
+      "areaSqft": 160,
+      "priceExGst": 272800,
+      "priceInclGst": 321904,
+      "featureCells": [
+        {
+          "label": "Size",
+          "value": "20 × 8 × 8.5 ft · 160 sq ft"
+        },
+        {
+          "label": "Roof",
+          "value": "One-way slope to Wall B"
+        },
+        {
+          "label": "Openings",
+          "value": "1 door, 6 windows"
+        },
+        {
+          "label": "Consoles staged",
+          "value": "2"
+        },
+        {
+          "label": "Application",
+          "value": "Narrow two-operator room"
+        },
+        {
+          "label": "Material",
+          "value": "MS frame, insulated panel"
+        },
+        {
+          "label": "Delivery",
+          "value": "7 to 21 working days"
+        },
+        {
+          "label": "Coverage",
+          "value": "Pan-India, two zones"
+        },
+        {
+          "label": "Brand",
+          "value": "SAMAN Portable"
+        }
+      ],
+      "images": [
+        {
+          "src": "/images/products/portable-weighbridge-office/20x8/portable-weighbridge-office-20x8-yard-exterior-wall-a-entry.webp",
+          "alt": "20 x 8 x 8.5 ft SAMAN portable weighbridge office cabin, yard side Wall A with the staff entry door, Graphite Charcoal exterior",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-weighbridge-office/20x8/portable-weighbridge-office-20x8-deck-exterior-wall-b-weighbridge.webp",
+          "alt": "20 x 8 x 8.5 ft weighbridge office cabin seen from the deck, Wall B glazing above the operator consoles, no door on this wall",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-weighbridge-office/20x8/portable-weighbridge-office-20x8-roof-and-lifting-eyes.webp",
+          "alt": "20 x 8 x 8.5 ft weighbridge office cabin from above showing the one-way sloping roof and the four top-corner lifting eyes",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-weighbridge-office/20x8/portable-weighbridge-office-20x8-interior-operator-consoles.webp",
+          "alt": "Inside the 20 x 8 x 8.5 ft weighbridge office cabin at the operator consoles on Wall B, facing the weighbridge deck glazing",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-weighbridge-office/20x8/portable-weighbridge-office-20x8-interior-from-entry-door.webp",
+          "alt": "Inside the 20 x 8 x 8.5 ft weighbridge office cabin looking at Wall A, the staff entry door and the document counter",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-weighbridge-office/20x8/portable-weighbridge-office-20x8-interior-workflow-end-wall.webp",
+          "alt": "Inside the 20 x 8 x 8.5 ft weighbridge office cabin towards the end wall with its single centred window, Porcelain Sage lining",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "20x10",
+      "label": "20 × 10 ft",
+      "dims": "20 × 10 × 8.5 ft",
+      "areaSqft": 200,
+      "priceExGst": 310000,
+      "priceInclGst": 365800,
+      "featureCells": [
+        {
+          "label": "Size",
+          "value": "20 × 10 × 8.5 ft · 200 sq ft"
+        },
+        {
+          "label": "Roof",
+          "value": "Two-way, centred ridge"
+        },
+        {
+          "label": "Openings",
+          "value": "1 door, 6 windows"
+        },
+        {
+          "label": "Consoles staged",
+          "value": "2"
+        },
+        {
+          "label": "Application",
+          "value": "Standard two-operator room"
+        },
+        {
+          "label": "Material",
+          "value": "MS frame, insulated panel"
+        },
+        {
+          "label": "Delivery",
+          "value": "7 to 21 working days"
+        },
+        {
+          "label": "Coverage",
+          "value": "Pan-India, two zones"
+        },
+        {
+          "label": "Brand",
+          "value": "SAMAN Portable"
+        }
+      ],
+      "images": [
+        {
+          "src": "/images/products/portable-weighbridge-office/20x10/portable-weighbridge-office-20x10-yard-exterior-wall-a-entry.webp",
+          "alt": "20 x 10 x 8.5 ft SAMAN portable weighbridge office cabin, yard side Wall A with the staff entry door, Warm Stone Taupe exterior",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-weighbridge-office/20x10/portable-weighbridge-office-20x10-deck-exterior-wall-b-weighbridge.webp",
+          "alt": "20 x 10 x 8.5 ft weighbridge office cabin seen from the deck, Wall B glazing above the operator consoles, no door on this wall",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-weighbridge-office/20x10/portable-weighbridge-office-20x10-roof-and-lifting-eyes.webp",
+          "alt": "20 x 10 x 8.5 ft weighbridge office cabin from above showing the two-way ridged roof and the four top-corner lifting eyes",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-weighbridge-office/20x10/portable-weighbridge-office-20x10-interior-operator-consoles.webp",
+          "alt": "Inside the 20 x 10 x 8.5 ft weighbridge office cabin at the operator consoles on Wall B, facing the weighbridge deck glazing",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-weighbridge-office/20x10/portable-weighbridge-office-20x10-interior-from-entry-door.webp",
+          "alt": "Inside the 20 x 10 x 8.5 ft weighbridge office cabin looking at Wall A, the staff entry door and the document counter",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-weighbridge-office/20x10/portable-weighbridge-office-20x10-interior-workflow-end-wall.webp",
+          "alt": "Inside the 20 x 10 x 8.5 ft weighbridge office cabin towards the end wall with its single centred window, Mist Blue-Grey lining",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "20x12",
+      "label": "20 × 12 ft",
+      "dims": "20 × 12 × 8.5 ft",
+      "areaSqft": 240,
+      "priceExGst": 357120,
+      "priceInclGst": 421402,
+      "featureCells": [
+        {
+          "label": "Size",
+          "value": "20 × 12 × 8.5 ft · 240 sq ft"
+        },
+        {
+          "label": "Roof",
+          "value": "Two-way, centred ridge"
+        },
+        {
+          "label": "Openings",
+          "value": "1 door, 6 windows"
+        },
+        {
+          "label": "Consoles staged",
+          "value": "2"
+        },
+        {
+          "label": "Application",
+          "value": "Two operators, widest gangway"
+        },
+        {
+          "label": "Material",
+          "value": "MS frame, insulated panel"
+        },
+        {
+          "label": "Delivery",
+          "value": "7 to 21 working days"
+        },
+        {
+          "label": "Coverage",
+          "value": "Pan-India, two zones"
+        },
+        {
+          "label": "Brand",
+          "value": "SAMAN Portable"
+        }
+      ],
+      "images": [
+        {
+          "src": "/images/products/portable-weighbridge-office/20x12/portable-weighbridge-office-20x12-yard-exterior-wall-a-entry.webp",
+          "alt": "20 x 12 x 8.5 ft SAMAN portable weighbridge office cabin, yard side Wall A with the staff entry door, Deep Bottle Green exterior",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-weighbridge-office/20x12/portable-weighbridge-office-20x12-deck-exterior-wall-b-weighbridge.webp",
+          "alt": "20 x 12 x 8.5 ft weighbridge office cabin seen from the deck, Wall B glazing above the operator consoles, no door on this wall",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-weighbridge-office/20x12/portable-weighbridge-office-20x12-roof-and-lifting-eyes.webp",
+          "alt": "20 x 12 x 8.5 ft weighbridge office cabin from above showing the two-way ridged roof and the four top-corner lifting eyes",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-weighbridge-office/20x12/portable-weighbridge-office-20x12-interior-operator-consoles.webp",
+          "alt": "Inside the 20 x 12 x 8.5 ft weighbridge office cabin at the operator consoles on Wall B, facing the weighbridge deck glazing",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-weighbridge-office/20x12/portable-weighbridge-office-20x12-interior-from-entry-door.webp",
+          "alt": "Inside the 20 x 12 x 8.5 ft weighbridge office cabin looking at Wall A, the staff entry door and the document counter",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-weighbridge-office/20x12/portable-weighbridge-office-20x12-interior-workflow-end-wall.webp",
+          "alt": "Inside the 20 x 12 x 8.5 ft weighbridge office cabin towards the end wall with its single centred window, Pale Sand lining",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "30x10",
+      "label": "30 × 10 ft",
+      "dims": "30 × 10 × 8.5 ft",
+      "areaSqft": 300,
+      "priceExGst": 446400,
+      "priceInclGst": 526752,
+      "featureCells": [
+        {
+          "label": "Size",
+          "value": "30 × 10 × 8.5 ft · 300 sq ft"
+        },
+        {
+          "label": "Roof",
+          "value": "Two-way, centred ridge"
+        },
+        {
+          "label": "Openings",
+          "value": "2 doors, 8 windows"
+        },
+        {
+          "label": "Consoles staged",
+          "value": "4"
+        },
+        {
+          "label": "Application",
+          "value": "Four-operator open hall"
+        },
+        {
+          "label": "Material",
+          "value": "MS frame, insulated panel"
+        },
+        {
+          "label": "Delivery",
+          "value": "7 to 21 working days"
+        },
+        {
+          "label": "Coverage",
+          "value": "Pan-India, two zones"
+        },
+        {
+          "label": "Brand",
+          "value": "SAMAN Portable"
+        }
+      ],
+      "images": [
+        {
+          "src": "/images/products/portable-weighbridge-office/30x10/portable-weighbridge-office-30x10-yard-exterior-wall-a-entry.webp",
+          "alt": "30 x 10 x 8.5 ft SAMAN portable weighbridge office cabin, yard side Wall A with the staff entry door, Burgundy Wine exterior",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-weighbridge-office/30x10/portable-weighbridge-office-30x10-deck-exterior-wall-b-weighbridge.webp",
+          "alt": "30 x 10 x 8.5 ft weighbridge office cabin seen from the deck, Wall B glazing above the operator consoles, no door on this wall",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-weighbridge-office/30x10/portable-weighbridge-office-30x10-roof-and-lifting-eyes.webp",
+          "alt": "30 x 10 x 8.5 ft weighbridge office cabin from above showing the two-way ridged roof and the four top-corner lifting eyes",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-weighbridge-office/30x10/portable-weighbridge-office-30x10-interior-operator-consoles.webp",
+          "alt": "Inside the 30 x 10 x 8.5 ft weighbridge office cabin at the operator consoles on Wall B, facing the weighbridge deck glazing",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-weighbridge-office/30x10/portable-weighbridge-office-30x10-interior-from-entry-door.webp",
+          "alt": "Inside the 30 x 10 x 8.5 ft weighbridge office cabin looking at Wall A, the staff entry door and the document counter",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-weighbridge-office/30x10/portable-weighbridge-office-30x10-interior-workflow-end-wall.webp",
+          "alt": "Inside the 30 x 10 x 8.5 ft weighbridge office cabin towards the end wall with its single centred window, Soft Clay Greige lining",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "40x10",
+      "label": "40 × 10 ft",
+      "dims": "40 × 10 × 8.5 ft",
+      "areaSqft": 400,
+      "priceExGst": 589000,
+      "priceInclGst": 695020,
+      "featureCells": [
+        {
+          "label": "Size",
+          "value": "40 × 10 × 8.5 ft · 400 sq ft"
+        },
+        {
+          "label": "Roof",
+          "value": "Two-way, centred ridge"
+        },
+        {
+          "label": "Openings",
+          "value": "2 doors, 9 windows, 1 partition door"
+        },
+        {
+          "label": "Consoles staged",
+          "value": "4"
+        },
+        {
+          "label": "Application",
+          "value": "Supervisor room plus operations hall"
+        },
+        {
+          "label": "Material",
+          "value": "MS frame, insulated panel"
+        },
+        {
+          "label": "Delivery",
+          "value": "7 to 21 working days"
+        },
+        {
+          "label": "Coverage",
+          "value": "Pan-India, two zones"
+        },
+        {
+          "label": "Brand",
+          "value": "SAMAN Portable"
+        }
+      ],
+      "images": [
+        {
+          "src": "/images/products/portable-weighbridge-office/40x10/portable-weighbridge-office-40x10-yard-exterior-wall-a-entry.webp",
+          "alt": "40 x 10 x 8.5 ft SAMAN portable weighbridge office cabin, yard side Wall A with the staff entry door, Muted Teal exterior",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-weighbridge-office/40x10/portable-weighbridge-office-40x10-deck-exterior-wall-b-weighbridge.webp",
+          "alt": "40 x 10 x 8.5 ft weighbridge office cabin seen from the deck, Wall B glazing above the operator consoles, no door on this wall",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-weighbridge-office/40x10/portable-weighbridge-office-40x10-roof-and-lifting-eyes.webp",
+          "alt": "40 x 10 x 8.5 ft weighbridge office cabin from above showing the two-way ridged roof and the four top-corner lifting eyes",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-weighbridge-office/40x10/portable-weighbridge-office-40x10-interior-operator-consoles.webp",
+          "alt": "Inside the 40 x 10 x 8.5 ft weighbridge office cabin at the operator consoles on Wall B, facing the weighbridge deck glazing",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-weighbridge-office/40x10/portable-weighbridge-office-40x10-interior-from-entry-door.webp",
+          "alt": "Inside the 40 x 10 x 8.5 ft weighbridge office cabin looking at Wall A, the staff entry door and the document counter",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/portable-weighbridge-office/40x10/portable-weighbridge-office-40x10-interior-workflow-end-wall.webp",
+          "alt": "Inside the 40 x 10 x 8.5 ft weighbridge office cabin towards the end wall with its single centred window, Pearl Grey lining",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    }
+  ],
+  "specPdfHref": "/docs/portable-weighbridge-office-technical-specification-and-price-v1.pdf",
+  "schemaIncludeVariantOffers": true,
+  "suppressLegacySku": true,
+  "suppressReviewClaims": true,
+  "suppressLegacyFaqSchema": true,
+  "emitSizeAnchors": true,
+  "materialLabel": "MS frame, insulated panel",
+  "deliveryLabel": "7 to 21 working days",
+  "coverageLabel": "Pan-India, two zones",
+  "trustStripText": "GST registered",
+  "hideHeroProofRow": true,
+  "categoryLabel": "Portable Office Cabin",
+  "categoryHref": "/product/portable-office",
+  "specPdfButtonLabel": "Download technical specification (PDF)",
+  "schemaBrandName": "SAMAN Portable",
+  "priceCaption": "Prices exclude GST. GST is 18 per cent under HSN 9406.",
+  "h1": "Portable Weighbridge Office Cabin for Deck-Side Operators",
+  "seoTitle": "Portable Weighbridge Office Cabin: 6 Sizes, Prices | SAMAN",
+  "metaDescription": "Deck-side weighbridge office cabin in six approved sizes, 100 to 400 sq ft, from Rs 1,78,250 ex-GST. Wall B faces the deck. See prices and GA drawings.",
+  "canonical": "https://www.samanportable.com/product/portable-office/portable-weighbridge-office",
+  "opener": "A weighbridge office cabin is the operator room beside the weighbridge deck, not the weighing system itself. SAMAN builds it as a steel portable cabin with one wall fixed as the deck-facing sightline wall, so the operator reads the indicator, watches the truck settle on the platform and hands the ticket over without leaving the desk. Six sizes are approved, from a 100 sq ft single-operator plinth room to a 400 sq ft unit that splits into a supervisor and records room and a four-operator hall. Every size carries a general arrangement drawing fixing the door wall, the window schedule, the console positions and the roof fall, so what you approve is what is fabricated. Prices are ex-GST for the cabin enclosure; platform, load cells, indicator and civil works are quoted separately.",
+  "ymalTiles": [
+    {
+      "title": "Portable Office",
+      "href": "/product/portable-office",
+      "category": "Portable Office",
+      "blurb": "Explore Portable Office",
+      "imageSrc": "/images/products/portable-office/20x10/portable-office-20x10-front-angle.webp",
+      "imageAlt": "Portable Office 20 x 10 ft exterior render"
+    },
+    {
+      "title": "Readymade Office Cabin",
+      "href": "/product/portable-office/readymade-office-cabin",
+      "category": "Portable Office",
+      "blurb": "Explore Readymade Office Cabin",
+      "imageSrc": "/images/products/readymade-office-cabin/20x10/readymade-office-cabin-20x10-front.webp",
+      "imageAlt": "Readymade Office Cabin 20 x 10 ft exterior render"
+    },
+    {
+      "title": "Prefabricated Office Cabins",
+      "href": "/product/portable-office/prefabricated-office-cabins",
+      "category": "Portable Office",
+      "blurb": "Explore Prefabricated Office Cabins",
+      "imageSrc": "/images/products/prefabricated-office-cabins/20x10/prefabricated-office-cabin-20x10-front-angle.webp",
+      "imageAlt": "Prefabricated Office Cabins 20 x 10 ft exterior render"
+    },
+    {
+      "title": "Executive Portable Office",
+      "href": "/product/portable-office/executive-portable-office",
+      "category": "Portable Office",
+      "blurb": "Explore Executive Portable Office",
+      "imageSrc": "/images/products/executive-portable-office/gallery/20x10/executive-portable-office-20x10-front-centred-door.webp",
+      "imageAlt": "Executive Portable Office 20 x 10 ft exterior render"
+    },
+    {
+      "title": "Small Office Cabin",
+      "href": "/product/portable-office/small-office-cabin",
+      "category": "Portable Office",
+      "blurb": "Explore Small Office Cabin",
+      "imageSrc": "/images/products/small-office-cabin/10x10/small-office-cabin-10x10-front-angle.webp",
+      "imageAlt": "Small Office Cabin 10 x 10 ft exterior render"
+    }
+  ],
+  "relatedTiles": [
+    {
+      "title": "Portable Office",
+      "href": "/product/portable-office",
+      "category": "Portable Office",
+      "blurb": "Explore Portable Office",
+      "imageSrc": "/images/products/portable-office/20x10/portable-office-20x10-front-angle.webp",
+      "imageAlt": "Portable Office 20 x 10 ft exterior render"
+    },
+    {
+      "title": "Readymade Office Cabin",
+      "href": "/product/portable-office/readymade-office-cabin",
+      "category": "Portable Office",
+      "blurb": "Explore Readymade Office Cabin",
+      "imageSrc": "/images/products/readymade-office-cabin/20x10/readymade-office-cabin-20x10-front.webp",
+      "imageAlt": "Readymade Office Cabin 20 x 10 ft exterior render"
+    },
+    {
+      "title": "Prefabricated Office Cabins",
+      "href": "/product/portable-office/prefabricated-office-cabins",
+      "category": "Portable Office",
+      "blurb": "Explore Prefabricated Office Cabins",
+      "imageSrc": "/images/products/prefabricated-office-cabins/20x10/prefabricated-office-cabin-20x10-front-angle.webp",
+      "imageAlt": "Prefabricated Office Cabins 20 x 10 ft exterior render"
+    },
+    {
+      "title": "Executive Portable Office",
+      "href": "/product/portable-office/executive-portable-office",
+      "category": "Portable Office",
+      "blurb": "Explore Executive Portable Office",
+      "imageSrc": "/images/products/executive-portable-office/gallery/20x10/executive-portable-office-20x10-front-centred-door.webp",
+      "imageAlt": "Executive Portable Office 20 x 10 ft exterior render"
+    },
+    {
+      "title": "Small Office Cabin",
+      "href": "/product/portable-office/small-office-cabin",
+      "category": "Portable Office",
+      "blurb": "Explore Small Office Cabin",
+      "imageSrc": "/images/products/small-office-cabin/10x10/small-office-cabin-10x10-front-angle.webp",
+      "imageAlt": "Small Office Cabin 10 x 10 ft exterior render"
+    }
+  ],
+  "suppressSchemaAvailability": true,
+  "faqSchema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Do you supply the weighbridge itself?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. SAMAN manufactures the operator cabin only. The platform, load cells, junction box, indicator, printer, software, calibration and stamping are outside our scope and are quoted separately by your weighbridge supplier."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the smallest weighbridge office cabin you make?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The smallest approved size is 10 by 10 by 8.5 ft, 100 sq ft, at Rs 1,78,250 ex-GST. It is drawn for one operator with one console and one printer shelf on the deck wall."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How many operators fit in a weighbridge cabin?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "One in the 10 by 10, two in each of the three 20 ft sizes, and four in both the 30 by 10 and the 40 by 10. The console count is fixed on each size's approved drawing."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are the prices inclusive of GST?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. All six prices are ex-GST. GST is charged at 18 per cent on top, and the GST-inclusive figure is shown alongside each size so you can see both."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which wall faces the weighbridge deck?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Wall B is fixed as the weighbridge-deck and truck-approach wall on every size. It carries the operator consoles and the deck glazing and never carries an external door."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can the door be moved to the deck side?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The approved drawings put every external door on Wall A, the yard side, to keep the entry out of the truck approach and the dust. Any change to an opening is a drawing revision confirmed at quotation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is delivery included in the price?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Freight is quoted separately against the distance bands in the Shipping tab. Delivery is free within Bangalore city and across Delhi NCR including Ghaziabad, Gurugram, Faridabad, Noida and Greater Noida."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is air conditioning included?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. An air conditioning provision point is part of the standard electrical layout, but the unit itself is supplied only when it is written into your quotation."
+        }
+      }
+    ]
+  },
+  "descriptionHtml": "<section><h2>A weighbridge office cabin is not a weighbridge</h2><p>Most searches that reach a page like this one are looking for one of two different things, and they are worth separating before anything else. A weighbridge is the weighing installation: the platform, the load cells under it, the junction box, the indicator head and the software that turns a signal into a printed weight. A weighbridge office cabin is the room the operator sits in while that installation does its work. SAMAN manufactures the room. It does not manufacture, supply, calibrate or stamp the weighing system.</p><p>That distinction matters commercially, because the two are usually bought from different suppliers on different timelines. The weighbridge is specified by capacity and by legal metrology approval, and it is normally ordered first because the civil foundation has to be poured around it. The cabin is specified by how many people work the lane, how far the plinth edge sits from the platform, and where the cable duct comes up. It is ordered later, and it can be moved or replaced afterwards without touching the weighing system at all.</p><p>Everything on this page therefore refers to the enclosure only. The six prices are for the cabin as drawn: shell, roof, floor, openings, insulation, internal lining and the standard electrical package. The platform, load cells, junction box, indicator, printer, computer, weighment software, CCTV, boom barrier, calibration, stamping, certification, civil works and site utilities are quoted separately or arranged by you. If a supplier quotes you a single figure covering both the weighing system and the room, ask them to split it, because the two are priced on completely different bases.</p></section><section><h2>What the operator needs from the room, in order</h2><p>Ask a weighment operator what makes a cabin workable and the answers come in a fixed order. First, the sightline: they need to see the whole platform and the driver's window from a seated position, because standing up for every vehicle across a two-hundred-truck day is not a plan. Second, the handover: tickets, gate passes and challans pass through a window or a hatch, and the queue moves at the speed of that exchange. Third, the cabling: the load-cell run and the indicator run enter on the deck side, and if they share a route with the power and lighting circuits the display picks up noise.</p><p>Fourth, and least glamorous, is dust. A weighbridge lane is where laden tippers brake and pull away, and the resulting airborne load is what actually ages the room: it gets into the door seal, onto the console, and onto the glazing that the sightline depends on. Putting the door on the yard side rather than the truck side is the cheapest single decision available, and it is the one the general arrangement drawings for all six sizes make for you.</p><p>None of this is exotic, but it is not what a general-purpose office room is arranged around. An office cabin is planned so that desks and circulation work; a weighbridge office cabin is planned so that a seated operator can watch a platform, take a ticket, and keep a cable run clean. The layouts below are the result of applying that order of priorities to six different footprints.</p></section><section><h2>How many operators, and which of the six sizes</h2><p>Start from the number of people who sit on the deck wall during your busiest shift, not from the area you think you need. Every approved size fixes its console count on the drawing, and the console count is what the room is really sold by. One console fits the 10 by 10. Two fit the 20 by 8, the 20 by 10 and the 20 by 12, which differ from one another only in how much gangway is left behind the operators. Four fit the 30 by 10 and the 40 by 10, and only the 40 by 10 gives one of those four a separate room.</p><table><thead><tr><th>Size (L × W × H ft)</th><th>Area</th><th>Consoles</th><th>External doors</th><th>Windows</th><th>Clear gangway</th><th>Price ex-GST</th></tr></thead><tbody><tr><td>10 × 10 × 8.5</td><td>100 sq ft</td><td>1</td><td>1</td><td>3</td><td>6.84 ft</td><td>Rs 1,78,250</td></tr><tr><td>20 × 8 × 8.5</td><td>160 sq ft</td><td>2</td><td>1</td><td>6</td><td>3.34 ft</td><td>Rs 2,72,800</td></tr><tr><td>20 × 10 × 8.5</td><td>200 sq ft</td><td>2</td><td>1</td><td>6</td><td>5.34 ft</td><td>Rs 3,10,000</td></tr><tr><td>20 × 12 × 8.5</td><td>240 sq ft</td><td>2</td><td>1</td><td>6</td><td>7.34 ft</td><td>Rs 3,57,120</td></tr><tr><td>30 × 10 × 8.5</td><td>300 sq ft</td><td>4</td><td>2</td><td>8</td><td>5.34 ft</td><td>Rs 4,46,400</td></tr><tr><td>40 × 10 × 8.5</td><td>400 sq ft</td><td>4</td><td>2</td><td>9</td><td>5.34 ft</td><td>Rs 5,89,000</td></tr></tbody></table><p>The gangway column is the one buyers most often overlook and most often regret. At 3.34 ft on the 20 by 8, a second person cannot pass behind a seated operator without that operator moving their chair in. At 5.34 ft on the 20 by 10 they can. At 7.34 ft on the 20 by 12 a supervisor can stand behind both consoles during peak weighment and a document trolley can still get past. The three 20 ft sizes carry the same openings on the same coordinates, so gangway width, and the Rs 84,320 between the narrowest and the widest, is genuinely the whole decision.</p><p>Height is common at 8.5 ft nominal across all six, and wall thickness is 100 mm throughout. Both are fixed, so they are not a variable you need to weigh. What does change with size is the roof: the 20 by 8 uses a one-way plane falling from Wall A to Wall B, and the other five use a two-way roof with a centred ridge. In both cases the total rise or fall is 5 to 6 in, which is a drainage slope rather than a pitched roof, and every size carries exactly four compact lifting eyes at the top corners with no ISO container castings.</p></section><section><h2>Why Wall B is fixed and Wall A takes the door</h2><p>On every one of the six drawings the four walls are named the same way. Wall B is the weighbridge-deck and truck-approach wall. Wall A is the yard and staff-entry wall. End C and End D are the two short walls. That naming is not a labelling convention, it is a constraint, and it decides four things at once: where the deck glazing goes, where the operator consoles go, where the door does not go, and which side the cable sleeve enters.</p><p>Wall B therefore carries a deck window above every console position and no external door at all. On the 10 by 10 that is one window at 3 to 7 ft with the console beneath it. On the 20 ft sizes it is two windows at 1.5 to 5.5 and 14.5 to 18.5 ft with a console under each. On the 30 by 10 it is four windows and four consoles on matching coordinates. On the 40 by 10 it is a supervisor window at 3 to 7 ft plus three hall windows at 13, 23 and 33 ft. The operator is always looking at the platform, never at a wall.</p><p>Wall A takes everything that does not need the sightline: the entry door or doors, the printer and document counter, and the records cupboard. Putting the printer behind the operator rather than beside them is deliberate, because it keeps the paperwork movement across the room instead of along the glazing. And both end walls follow one rule with no exceptions anywhere in the range: exactly one horizontally centred 4 by 3 ft window, no external door, and nothing standing against them.</p><p>If your plinth is arranged so that the truck approach is on the other side, the cabin is simply set down the other way round. What cannot happen is a cabin with consoles facing a blank wall, which is what you get when a general office cabin is bought and pressed into weighment service.</p></section><section><h2>What the 40 by 10 partition buys over the 30 by 10</h2><p>The 30 by 10 and the 40 by 10 both seat four people and both cost more than any other size in the range, so the choice between them is worth setting out plainly. The 30 by 10 is one open hall: four consoles along Wall B, two doors on Wall A at opposite ends so a shift change does not cross behind a working console, and no internal wall anywhere. The supervisor, if there is one, works the floor.</p><p>The 40 by 10 takes the same four people and splits them. A partition at 10 ft creates a 10 by 10 supervisor and records room with its own desk, its own window on each long wall, and a connecting door between 6.25 and 9.25 ft. There is deliberately no window in that partition. What is left is a 30 by 10 operations hall with three consoles instead of four, plus an admin console on Wall A at 23 to 27 ft that faces away from the deck.</p><p>So the honest comparison is this. If you need four operators watching the platform, the 30 by 10 gives you four and costs Rs 1,42,600 less. If you need three watching the platform plus somewhere private to keep weighment records, run a dispute with a transporter, or hold a shift briefing without the hall hearing it, the 40 by 10 gives you that at 400 sq ft. Buying the 40 by 10 for the extra area alone is the wrong reason; buying it for the closed door is the right one.</p></section><section><h2>How the price is built, and what is quoted separately</h2><p>Every price on this page comes out of one calculation, and it is worth showing because it lets you check the figures rather than trust them. The base rate is Rs 1,550 per sq ft at 200 sq ft. Smaller cabins carry a percentage uplift because the fixed content of a cabin, the frame corners, the door, the electrical board, does not shrink with the floor. Larger cabins carry a percentage reduction because that same fixed content is spread further.</p><p>At 100 sq ft the band adds 15 per cent, giving Rs 1,782.50 per sq ft and Rs 1,78,250. At 160 sq ft it adds 10 per cent, giving Rs 1,705 and Rs 2,72,800. At 200 sq ft no adjustment applies, so the 20 by 10 sits exactly on the base rate at Rs 3,10,000. At 240 and 300 sq ft the band takes off 4 per cent, giving Rs 1,488 per sq ft in both cases. At 400 sq ft it takes off 5 per cent, giving Rs 1,472.50 and Rs 5,89,000. Multiply any rate by its area and you will get the published figure exactly.</p><p>All six figures are ex-GST. GST is charged at 18 per cent on top, and the GST-inclusive figures are shown alongside so there is nothing to work out. What the price covers is the cabin as drawn: the steel frame, the external cladding and roof, the insulation, the internal lining, the floor system, the doors and windows on the approved schedule, the standard electrical package, the corrosion protection, and the four lifting eyes. What it does not cover is everything on this list.</p><ul><li>The weighbridge platform, load cells and junction box</li><li>The indicator head, printer, computer and weighment software</li><li>CCTV, boom barriers, traffic lights and access-control equipment</li><li>Calibration, stamping, legal metrology certification and testing</li><li>Civil works, foundations, plinth construction and site utilities</li><li>Furniture and loose equipment shown in photographs for staging</li><li>Delivery, unloading, placement and any site-side support works</li><li>Air conditioning, unless it is written into your quotation</li></ul><p>Freight is quoted separately against the distance bands in the Shipping tab, and delivery is free within Bangalore city and across Delhi NCR including Ghaziabad, Gurugram, Faridabad, Noida and Greater Noida. Warranty period and exclusions are confirmed in the final quotation for your order rather than published here as a headline number.</p></section><section><h2>Placing the cabin beside the deck: what to check first</h2><p>Four site questions decide whether the cabin you order will actually work where you intend to put it, and all four are cheaper to answer before fabrication than after delivery. The first is the offset: how far the cabin face will stand from the platform edge. That distance, together with the height of the plinth the cabin sits on, is what sets the seated sightline to the platform surface and to the driver's window. Send it with your enquiry.</p><p>The second is the support. The cabin arrives as a completed steel module and needs a level, load-bearing support along its base, whether that is a prepared plinth, a concrete pad or a supported steel frame. Preparing it is site-side work and is not in the price. The third is access for the vehicle and the crane or hydra that lifts the unit off it. The four lifting eyes are at the top corners, so the unit is lifted from above and needs clear headroom and swing space at the moment of placement.</p><p>The fourth is services. The load-cell and indicator cabling has to enter the room on the deck side and stay separated from the power and lighting circuits, and the incoming supply, earthing arrangement and any UPS or air conditioning provision have to be agreed before the internal wiring is set out. The standard electrical package is a distribution board with isolation, MCB and RCCB protection, earthing, and segregated lighting, socket, data and air conditioning circuits, with typical starting cable sizes of 1.5, 2.5 and 4 sq mm by duty. Final circuit quantities, connected load and breaking capacity follow the approved electrical drawing for your order.</p></section><section><h2>When a weighbridge office cabin is the wrong choice</h2><p>There are three situations where something else on the SAMAN range will serve you better, and it is worth saying so. If the room is a gate office that happens to be near a weighbridge but whose real job is checking vehicles in and out, a <a href=\"/product/security-cabins\">security cabin</a> is the right product, because it is planned around access control rather than around a deck sightline. If the room is a general site or project office where nobody watches a platform, a <a href=\"/product/portable-office/readymade-office-cabin\">readymade office cabin</a> gives you the same build at a layout that suits desks.</p><p>And if you need somewhere for one clerk with a single desk and no weighment role at all, a <a href=\"/product/portable-office/small-office-cabin\">small office cabin</a> starts below the smallest size on this page. The deck-facing console positions, the fixed Wall B glazing and the segregated cable route are what you are paying the difference for here, and if none of the three is doing anything for you, they are not worth buying.</p><p>One more boundary is worth being explicit about. Nothing on this page is a structural, lifting, wind, seismic or code-compliance certificate, and no certification is claimed. Structural capacity, lifting capacity, foundation design, electrical load schedules and statutory compliance remain project-controlled and are confirmed against the approved drawings for your order.</p></section><section><h2>Frequently asked questions</h2><h3>Do you supply the weighbridge itself?</h3><p>No. SAMAN manufactures the operator cabin only. The platform, load cells, junction box, indicator, printer, software, calibration and stamping are outside our scope and are quoted separately by your weighbridge supplier.</p><h3>What is the smallest weighbridge office cabin you make?</h3><p>The smallest approved size is 10 by 10 by 8.5 ft, 100 sq ft, at Rs 1,78,250 ex-GST. It is drawn for one operator with one console and one printer shelf on the deck wall.</p><h3>How many operators fit in a weighbridge cabin?</h3><p>One in the 10 by 10, two in each of the three 20 ft sizes, and four in both the 30 by 10 and the 40 by 10. The console count is fixed on each size's approved drawing.</p><h3>Are the prices inclusive of GST?</h3><p>No. All six prices are ex-GST. GST is charged at 18 per cent on top, and the GST-inclusive figure is shown alongside each size so you can see both.</p><h3>Which wall faces the weighbridge deck?</h3><p>Wall B is fixed as the weighbridge-deck and truck-approach wall on every size. It carries the operator consoles and the deck glazing and never carries an external door.</p><h3>Can the door be moved to the deck side?</h3><p>The approved drawings put every external door on Wall A, the yard side, to keep the entry out of the truck approach and the dust. Any change to an opening is a drawing revision confirmed at quotation.</p><h3>Is delivery included in the price?</h3><p>No. Freight is quoted separately against the distance bands in the Shipping tab. Delivery is free within Bangalore city and across Delhi NCR including Ghaziabad, Gurugram, Faridabad, Noida and Greater Noida.</p><h3>Is air conditioning included?</h3><p>No. An air conditioning provision point is part of the standard electrical layout, but the unit itself is supplied only when it is written into your quotation.</p></section>",
+  "applicationsContent": {
+    "h2": "Six approved weighbridge office sizes, and who each one fits",
+    "intro": "Each size below is drawn, priced and fixed. The drawing beside it is the approved general arrangement for that option, not an illustration.",
+    "panels": [
+      {
+        "sizeSlug": "10x10",
+        "h3": "10 × 10 ft: one operator working the plinth on their own",
+        "paragraph": "The smallest approved option is a square plinth-side room for a single weighment operator. Wall A carries the only door, set between 3.5 and 6.5 ft, so the entry stays on the yard side and away from the truck approach. The deck window W1 runs 3 to 7 ft along Wall B directly above the console, and the two end walls each carry one centred window for cross light. With no second desk to plan around, the room keeps a clear central circulation of 6.84 ft.",
+        "applications": [
+          "100 sq ft at Rs 1,782.50 per sq ft, Rs 1,78,250 ex-GST",
+          "Option PWO-10X10-01OP-V1: 1 external door, 3 windows, 1 console",
+          "C1 operator console and printer shelf on Wall B, 1 to 5 ft",
+          "EC1 records cupboard on Wall B, 7.25 to 9.25 ft",
+          "Two-way roof, 5 to 6 in fall each side, four corner lifting eyes",
+          "Presentation colours: Deep Oxford Blue outside, Champagne Cream inside"
+        ],
+        "image": {
+          "src": "/images/products/portable-weighbridge-office/ga/portable-weighbridge-office-10x10-ga-board.webp",
+          "alt": "Approved general arrangement drawing for the 10 x 10 x 8.5 ft SAMAN weighbridge office cabin, floor plan and four wall elevations with the opening schedule, option PWO-10X10-01OP-V1",
+          "width": 1800,
+          "height": 1012
+        }
+      },
+      {
+        "sizeSlug": "20x8",
+        "h3": "20 × 8 ft: two operators where the weighbridge lane is tight",
+        "paragraph": "Choose the 20 by 8 when the plinth edge leaves you length but not width. It seats the same two operators as the 20 by 10 on the same Wall B coordinates, and takes the difference out of the gangway, which drops to 3.34 ft clear. It is also the only size in the range with a one-way roof: a single plane falls from the high eave on Wall A to the low eave on Wall B, 5 to 6 in across the width, so rainwater is thrown away from the staff entry.",
+        "applications": [
+          "160 sq ft at Rs 1,705 per sq ft, Rs 2,72,800 ex-GST",
+          "Wall A reads window, door, window: 1.5 to 5.5, 8.5 to 11.5, 14.5 to 18.5 ft",
+          "Consoles C1 and C2 on Wall B at 1.5 to 5.5 and 14.5 to 18.5 ft",
+          "PC1 printer counter and EC1 cupboard both on Wall A",
+          "One-way roof falling Wall A to Wall B, the only size that does",
+          "Clear gangway 3.34 ft, the narrowest of the six"
+        ],
+        "image": {
+          "src": "/images/products/portable-weighbridge-office/ga/portable-weighbridge-office-20x8-ga-board.webp",
+          "alt": "Approved general arrangement drawing for the 20 x 8 x 8.5 ft SAMAN weighbridge office cabin, floor plan and four wall elevations with the opening schedule, option PWO-20X08-02OP-V1",
+          "width": 1800,
+          "height": 1012
+        }
+      },
+      {
+        "sizeSlug": "20x10",
+        "h3": "20 × 10 ft: the standard two-operator weighment room",
+        "paragraph": "This is the size most weighbridge sites order and the default shown when the page loads. Two deck-facing consoles sit at the ends of Wall B with the printer counter and records cupboard behind them on Wall A, so paperwork moves across the room rather than along the sightline. At 200 sq ft it is priced at the base rate with no band adjustment, which makes it the reference figure against which the other five sizes are worked out.",
+        "applications": [
+          "200 sq ft at the Rs 1,550 base rate, Rs 3,10,000 ex-GST",
+          "The only size with no price band adjustment applied",
+          "Deck windows W3 and W4 on Wall B at 1.5 to 5.5 and 14.5 to 18.5 ft",
+          "Door D1 centred on Wall A between 8.5 and 11.5 ft",
+          "Clear gangway 5.34 ft behind the consoles",
+          "Two-way roof; Warm Stone Taupe outside, Mist Blue-Grey inside"
+        ],
+        "image": {
+          "src": "/images/products/portable-weighbridge-office/ga/portable-weighbridge-office-20x10-ga-board.webp",
+          "alt": "Approved general arrangement drawing for the 20 x 10 x 8.5 ft SAMAN weighbridge office cabin, floor plan and four wall elevations with the opening schedule, option PWO-20X10-02OP-V1",
+          "width": 1800,
+          "height": 1012
+        }
+      },
+      {
+        "sizeSlug": "20x12",
+        "h3": "20 × 12 ft: same layout, two more feet of working width",
+        "paragraph": "The 20 by 12 is a controlled derivative rather than a new plan. It keeps the 20 by 10 opening ledger unchanged along its length and adds one continuous 2 ft clear strip across the width. Nothing moves on Wall A or Wall B; the gangway simply widens from 5.34 ft to 7.34 ft. Order it where a supervisor stands behind the operators during peak weighment, or where a document trolley has to pass a seated operator without anybody standing up.",
+        "applications": [
+          "240 sq ft at Rs 1,488 per sq ft, Rs 3,57,120 ex-GST",
+          "Derivative lock: identical 20 by 10 ledger plus a 2 ft clear strip",
+          "Clear gangway 7.34 ft, the widest of the 20 ft family",
+          "Same 1 door and 6 windows as the 20 by 10, same coordinates",
+          "Two-way roof; Deep Bottle Green outside, Pale Sand inside",
+          "Rs 47,120 above the 20 by 10 for 40 extra sq ft"
+        ],
+        "image": {
+          "src": "/images/products/portable-weighbridge-office/ga/portable-weighbridge-office-20x12-ga-board.webp",
+          "alt": "Approved general arrangement drawing for the 20 x 12 x 8.5 ft SAMAN weighbridge office cabin, floor plan and four wall elevations with the opening schedule, option PWO-20X12-02OP-V1",
+          "width": 1800,
+          "height": 1012
+        }
+      },
+      {
+        "sizeSlug": "30x10",
+        "h3": "30 × 10 ft: four operators in one open weighment hall",
+        "paragraph": "At 300 sq ft the plan opens out to four consoles on Wall B, each one sitting under its own deck window, so all four operators keep an unbroken view of the platform. Wall A gains a second door: D1 at 1.5 to 4.5 ft and D2 at 25.5 to 28.5 ft, one at each end, which lets a shift change happen without anyone crossing behind a working console. There is no partition, so the supervisor works the floor rather than a separate room.",
+        "applications": [
+          "300 sq ft at Rs 1,488 per sq ft, Rs 4,46,400 ex-GST",
+          "Option PWO-30X10-04OP-V1: 2 doors, 8 windows, 4 consoles",
+          "Consoles C1 to C4 on Wall B at 1.5, 8.5, 17.5 and 24.5 ft",
+          "Each console sits under its own deck window on the same coordinates",
+          "PC1 printer counter at 13 to 17 ft, EC1 cupboard at 22.5 to 24.5 ft",
+          "One open room, no internal partition at this size"
+        ],
+        "image": {
+          "src": "/images/products/portable-weighbridge-office/ga/portable-weighbridge-office-30x10-ga-board.webp",
+          "alt": "Approved general arrangement drawing for the 30 x 10 x 8.5 ft SAMAN weighbridge office cabin, floor plan and four wall elevations with the opening schedule, option PWO-30X10-04OP-V1",
+          "width": 1800,
+          "height": 1012
+        }
+      },
+      {
+        "sizeSlug": "40x10",
+        "h3": "40 × 10 ft: supervisor and records room plus the hall",
+        "paragraph": "The largest approved size is the only one that is partitioned. A wall at 10 ft splits off a 10 by 10 supervisor and records room with its own desk and window pair, leaving a 30 by 10 operations hall with three consoles beyond it. The connecting door sits in the partition between 6.25 and 9.25 ft and there is no partition window, so weighment records and shift paperwork stay behind a closed door while the hall keeps working.",
+        "applications": [
+          "400 sq ft at Rs 1,472.50 per sq ft, Rs 5,89,000 ex-GST",
+          "Partition P1 at 10 ft, internal door 6.25 to 9.25 ft, no partition glazing",
+          "Supervisor room takes MW1 on Wall A and MW2 on Wall B, both 3 to 7 ft",
+          "Operations hall carries three deck consoles at 13, 23 and 33 ft",
+          "A1 admin console on Wall A at 23 to 27 ft faces away from the deck",
+          "9 exterior windows and 2 external doors, the most in the range"
+        ],
+        "image": {
+          "src": "/images/products/portable-weighbridge-office/ga/portable-weighbridge-office-40x10-ga-board.webp",
+          "alt": "Approved general arrangement drawing for the 40 x 10 x 8.5 ft SAMAN weighbridge office cabin, floor plan and four wall elevations with the opening schedule, option PWO-40X10-SUP-04OP-V1",
+          "width": 1800,
+          "height": 1012
+        }
+      }
+    ]
+  },
+  "labelActiveThumbnailAlt": true,
+  "optimizeLocalGalleryImages": false
+}
