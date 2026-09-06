@@ -140,7 +140,10 @@ const CONTAINER_HOUSE_SIZES: ReadonlyArray<{ sizeSlug: string; label: string; ar
 
 const CONTAINER_HOUSE_PRICES: Record<string, readonly number[]> = {
   'container-houses': [293440, 333400, 384240, 501440, 626800, 736320],
-  'prefab-container-homes': [259520, 295000, 339840, 443520, 554400, 651360],
+  // CH-PFB-04 (6 Sep 2026) - rebuilt to SAMAN's approved Option B ladder: 200 sq.ft
+  // base rate Rs 1,625 adjusted by area band, ex-GST. Replaces the Rs 1,475 base the
+  // route published before. This route's own ladder only; no sibling key is touched.
+  'prefab-container-homes': [286000, 325000, 374400, 494000, 617500, 733200],
   'shipping-container-homes': [364320, 414000, 476880, 622720, 778400, 913920],
   'affordable-container-homes': [252960, 287600, 331200, 432320, 540400, 634560],
   'luxury-container-houses': [380160, 432000, 497760, 649600, 812000, 953760],

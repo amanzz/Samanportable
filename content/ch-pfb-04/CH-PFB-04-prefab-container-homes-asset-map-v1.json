@@ -1,0 +1,394 @@
+{
+ "page_id": "CH-PFB-04",
+ "slug": "prefab-container-homes",
+ "version": "v1",
+ "date": "2026-09-06",
+ "source_folder": "D:\\\\Project-shekhar\\\\all-product-images\\\\Hub page (Container Houses)\\\\prefab-container-homes",
+ "public_root": "/images/products/container-houses/prefab-container-homes/",
+ "encode_settings": {
+  "gallery": "WebP 1254x1254, quality fitted 72-86, method 6",
+  "wide_16x9": "WebP 1600x900, quality fitted, method 6, cropped from the 1254 square at 46% from top",
+  "ga": "WebP 1800x1377, quality fitted, method 6, downscaled from the 3912x2992 master PNG"
+ },
+ "slots": [
+  {
+   "slot": "gallery.20x8.01",
+   "source": "20 × 8 × 8.5 ft\\061_prefab-container-homes_20x8_E01_*.png",
+   "output": "gallery/prefab-container-homes-20x8-01-front-right-three-quarter-view.webp",
+   "settings": "1254x1254 WebP",
+   "alt": "SAMAN 20 x 8 ft prefab container home, front-right three-quarter view",
+   "alt_source": "approved render set, size folder 20 × 8 × 8.5 ft, view code E01"
+  },
+  {
+   "slot": "gallery.20x8.02",
+   "source": "20 × 8 × 8.5 ft\\062_prefab-container-homes_20x8_E02_*.png",
+   "output": "gallery/prefab-container-homes-20x8-02-front-left-angle-with-entry-door.webp",
+   "settings": "1254x1254 WebP",
+   "alt": "SAMAN 20 x 8 ft prefab container home, front-left angle with entry door",
+   "alt_source": "approved render set, size folder 20 × 8 × 8.5 ft, view code E02"
+  },
+  {
+   "slot": "gallery.20x8.03",
+   "source": "20 × 8 × 8.5 ft\\063_prefab-container-homes_20x8_E03_*.png",
+   "output": "gallery/prefab-container-homes-20x8-03-long-side-elevation.webp",
+   "settings": "1254x1254 WebP",
+   "alt": "SAMAN 20 x 8 ft prefab container home, long side elevation",
+   "alt_source": "approved render set, size folder 20 × 8 × 8.5 ft, view code E03"
+  },
+  {
+   "slot": "gallery.20x8.04",
+   "source": "20 × 8 × 8.5 ft\\067_prefab-container-homes_20x8_I01_*.png",
+   "output": "gallery/prefab-container-homes-20x8-04-entry-and-living-area.webp",
+   "settings": "1254x1254 WebP",
+   "alt": "SAMAN 20 x 8 ft prefab container home, entry and living area",
+   "alt_source": "approved render set, size folder 20 × 8 × 8.5 ft, view code I01"
+  },
+  {
+   "slot": "gallery.20x8.05",
+   "source": "20 × 8 × 8.5 ft\\068_prefab-container-homes_20x8_I02_*.png",
+   "output": "gallery/prefab-container-homes-20x8-05-kitchen-and-dining-run.webp",
+   "settings": "1254x1254 WebP",
+   "alt": "SAMAN 20 x 8 ft prefab container home, kitchen and dining run",
+   "alt_source": "approved render set, size folder 20 × 8 × 8.5 ft, view code I02"
+  },
+  {
+   "slot": "gallery.20x8.06",
+   "source": "20 × 8 × 8.5 ft\\069_prefab-container-homes_20x8_I03_*.png",
+   "output": "gallery/prefab-container-homes-20x8-06-bedroom.webp",
+   "settings": "1254x1254 WebP",
+   "alt": "SAMAN 20 x 8 ft prefab container home, bedroom",
+   "alt_source": "approved render set, size folder 20 × 8 × 8.5 ft, view code I03"
+  },
+  {
+   "slot": "gallery.20x10.01",
+   "source": "20 × 10 × 8.5 ft\\071_prefab-container-homes_20x10_E01_*.png",
+   "output": "gallery/prefab-container-homes-20x10-01-front-right-three-quarter-view.webp",
+   "settings": "1254x1254 WebP",
+   "alt": "SAMAN 20 x 10 ft prefab container home, front-right three-quarter view",
+   "alt_source": "approved render set, size folder 20 × 10 × 8.5 ft, view code E01"
+  },
+  {
+   "slot": "gallery.20x10.02",
+   "source": "20 × 10 × 8.5 ft\\072_prefab-container-homes_20x10_E02_*.png",
+   "output": "gallery/prefab-container-homes-20x10-02-front-left-angle-with-entry-door.webp",
+   "settings": "1254x1254 WebP",
+   "alt": "SAMAN 20 x 10 ft prefab container home, front-left angle with entry door",
+   "alt_source": "approved render set, size folder 20 × 10 × 8.5 ft, view code E02"
+  },
+  {
+   "slot": "gallery.20x10.03",
+   "source": "20 × 10 × 8.5 ft\\073_prefab-container-homes_20x10_E03_*.png",
+   "output": "gallery/prefab-container-homes-20x10-03-long-side-elevation.webp",
+   "settings": "1254x1254 WebP",
+   "alt": "SAMAN 20 x 10 ft prefab container home, long side elevation",
+   "alt_source": "approved render set, size folder 20 × 10 × 8.5 ft, view code E03"
+  },
+  {
+   "slot": "gallery.20x10.04",
+   "source": "20 × 10 × 8.5 ft\\077_prefab-container-homes_20x10_I01_*.png",
+   "output": "gallery/prefab-container-homes-20x10-04-entry-and-living-area.webp",
+   "settings": "1254x1254 WebP",
+   "alt": "SAMAN 20 x 10 ft prefab container home, entry and living area",
+   "alt_source": "approved render set, size folder 20 × 10 × 8.5 ft, view code I01"
+  },
+  {
+   "slot": "gallery.20x10.05",
+   "source": "20 × 10 × 8.5 ft\\078_prefab-container-homes_20x10_I02_*.png",
+   "output": "gallery/prefab-container-homes-20x10-05-kitchen-and-dining-run.webp",
+   "settings": "1254x1254 WebP",
+   "alt": "SAMAN 20 x 10 ft prefab container home, kitchen and dining run",
+   "alt_source": "approved render set, size folder 20 × 10 × 8.5 ft, view code I02"
+  },
+  {
+   "slot": "gallery.20x10.06",
+   "source": "20 × 10 × 8.5 ft\\079_prefab-container-homes_20x10_I03_*.png",
+   "output": "gallery/prefab-container-homes-20x10-06-bedroom.webp",
+   "settings": "1254x1254 WebP",
+   "alt": "SAMAN 20 x 10 ft prefab container home, bedroom",
+   "alt_source": "approved render set, size folder 20 × 10 × 8.5 ft, view code I03"
+  },
+  {
+   "slot": "gallery.20x12.01",
+   "source": "20 × 12 × 8.5 ft\\081_prefab-container-homes_20x12_E01_*.png",
+   "output": "gallery/prefab-container-homes-20x12-01-front-right-three-quarter-view.webp",
+   "settings": "1254x1254 WebP",
+   "alt": "SAMAN 20 x 12 ft prefab container home, front-right three-quarter view",
+   "alt_source": "approved render set, size folder 20 × 12 × 8.5 ft, view code E01"
+  },
+  {
+   "slot": "gallery.20x12.02",
+   "source": "20 × 12 × 8.5 ft\\082_prefab-container-homes_20x12_E02_*.png",
+   "output": "gallery/prefab-container-homes-20x12-02-front-left-angle-with-entry-door.webp",
+   "settings": "1254x1254 WebP",
+   "alt": "SAMAN 20 x 12 ft prefab container home, front-left angle with entry door",
+   "alt_source": "approved render set, size folder 20 × 12 × 8.5 ft, view code E02"
+  },
+  {
+   "slot": "gallery.20x12.03",
+   "source": "20 × 12 × 8.5 ft\\083_prefab-container-homes_20x12_E03_*.png",
+   "output": "gallery/prefab-container-homes-20x12-03-long-side-elevation.webp",
+   "settings": "1254x1254 WebP",
+   "alt": "SAMAN 20 x 12 ft prefab container home, long side elevation",
+   "alt_source": "approved render set, size folder 20 × 12 × 8.5 ft, view code E03"
+  },
+  {
+   "slot": "gallery.20x12.04",
+   "source": "20 × 12 × 8.5 ft\\087_prefab-container-homes_20x12_I01_*.png",
+   "output": "gallery/prefab-container-homes-20x12-04-entry-and-living-area.webp",
+   "settings": "1254x1254 WebP",
+   "alt": "SAMAN 20 x 12 ft prefab container home, entry and living area",
+   "alt_source": "approved render set, size folder 20 × 12 × 8.5 ft, view code I01"
+  },
+  {
+   "slot": "gallery.20x12.05",
+   "source": "20 × 12 × 8.5 ft\\088_prefab-container-homes_20x12_I02_*.png",
+   "output": "gallery/prefab-container-homes-20x12-05-kitchen-and-dining-run.webp",
+   "settings": "1254x1254 WebP",
+   "alt": "SAMAN 20 x 12 ft prefab container home, kitchen and dining run",
+   "alt_source": "approved render set, size folder 20 × 12 × 8.5 ft, view code I02"
+  },
+  {
+   "slot": "gallery.20x12.06",
+   "source": "20 × 12 × 8.5 ft\\089_prefab-container-homes_20x12_I03_*.png",
+   "output": "gallery/prefab-container-homes-20x12-06-bedroom.webp",
+   "settings": "1254x1254 WebP",
+   "alt": "SAMAN 20 x 12 ft prefab container home, bedroom",
+   "alt_source": "approved render set, size folder 20 × 12 × 8.5 ft, view code I03"
+  },
+  {
+   "slot": "gallery.40x8.01",
+   "source": "40 × 8 × 8.5 ft\\091_prefab-container-homes_40x8_E01_*.png",
+   "output": "gallery/prefab-container-homes-40x8-01-front-right-three-quarter-view.webp",
+   "settings": "1254x1254 WebP",
+   "alt": "SAMAN 40 x 8 ft prefab container home, front-right three-quarter view",
+   "alt_source": "approved render set, size folder 40 × 8 × 8.5 ft, view code E01"
+  },
+  {
+   "slot": "gallery.40x8.02",
+   "source": "40 × 8 × 8.5 ft\\092_prefab-container-homes_40x8_E02_*.png",
+   "output": "gallery/prefab-container-homes-40x8-02-front-left-angle-with-entry-door.webp",
+   "settings": "1254x1254 WebP",
+   "alt": "SAMAN 40 x 8 ft prefab container home, front-left angle with entry door",
+   "alt_source": "approved render set, size folder 40 × 8 × 8.5 ft, view code E02"
+  },
+  {
+   "slot": "gallery.40x8.03",
+   "source": "40 × 8 × 8.5 ft\\093_prefab-container-homes_40x8_E03_*.png",
+   "output": "gallery/prefab-container-homes-40x8-03-long-side-elevation.webp",
+   "settings": "1254x1254 WebP",
+   "alt": "SAMAN 40 x 8 ft prefab container home, long side elevation",
+   "alt_source": "approved render set, size folder 40 × 8 × 8.5 ft, view code E03"
+  },
+  {
+   "slot": "gallery.40x8.04",
+   "source": "40 × 8 × 8.5 ft\\097_prefab-container-homes_40x8_I01_*.png",
+   "output": "gallery/prefab-container-homes-40x8-04-entry-and-living-area.webp",
+   "settings": "1254x1254 WebP",
+   "alt": "SAMAN 40 x 8 ft prefab container home, entry and living area",
+   "alt_source": "approved render set, size folder 40 × 8 × 8.5 ft, view code I01"
+  },
+  {
+   "slot": "gallery.40x8.05",
+   "source": "40 × 8 × 8.5 ft\\098_prefab-container-homes_40x8_I02_*.png",
+   "output": "gallery/prefab-container-homes-40x8-05-kitchen-and-dining-run.webp",
+   "settings": "1254x1254 WebP",
+   "alt": "SAMAN 40 x 8 ft prefab container home, kitchen and dining run",
+   "alt_source": "approved render set, size folder 40 × 8 × 8.5 ft, view code I02"
+  },
+  {
+   "slot": "gallery.40x8.06",
+   "source": "40 × 8 × 8.5 ft\\099_prefab-container-homes_40x8_I03_*.png",
+   "output": "gallery/prefab-container-homes-40x8-06-bedroom.webp",
+   "settings": "1254x1254 WebP",
+   "alt": "SAMAN 40 x 8 ft prefab container home, bedroom",
+   "alt_source": "approved render set, size folder 40 × 8 × 8.5 ft, view code I03"
+  },
+  {
+   "slot": "gallery.40x10.01",
+   "source": "40 × 10 × 8.5 ft\\101_prefab-container-homes_40x10_E01_*.png",
+   "output": "gallery/prefab-container-homes-40x10-01-front-right-three-quarter-view.webp",
+   "settings": "1254x1254 WebP",
+   "alt": "SAMAN 40 x 10 ft prefab container home, front-right three-quarter view",
+   "alt_source": "approved render set, size folder 40 × 10 × 8.5 ft, view code E01"
+  },
+  {
+   "slot": "gallery.40x10.02",
+   "source": "40 × 10 × 8.5 ft\\102_prefab-container-homes_40x10_E02_*.png",
+   "output": "gallery/prefab-container-homes-40x10-02-front-left-angle-with-entry-door.webp",
+   "settings": "1254x1254 WebP",
+   "alt": "SAMAN 40 x 10 ft prefab container home, front-left angle with entry door",
+   "alt_source": "approved render set, size folder 40 × 10 × 8.5 ft, view code E02"
+  },
+  {
+   "slot": "gallery.40x10.03",
+   "source": "40 × 10 × 8.5 ft\\103_prefab-container-homes_40x10_E03_*.png",
+   "output": "gallery/prefab-container-homes-40x10-03-long-side-elevation.webp",
+   "settings": "1254x1254 WebP",
+   "alt": "SAMAN 40 x 10 ft prefab container home, long side elevation",
+   "alt_source": "approved render set, size folder 40 × 10 × 8.5 ft, view code E03"
+  },
+  {
+   "slot": "gallery.40x10.04",
+   "source": "40 × 10 × 8.5 ft\\107_prefab-container-homes_40x10_I01_*.png",
+   "output": "gallery/prefab-container-homes-40x10-04-entry-and-living-area.webp",
+   "settings": "1254x1254 WebP",
+   "alt": "SAMAN 40 x 10 ft prefab container home, entry and living area",
+   "alt_source": "approved render set, size folder 40 × 10 × 8.5 ft, view code I01"
+  },
+  {
+   "slot": "gallery.40x10.05",
+   "source": "40 × 10 × 8.5 ft\\108_prefab-container-homes_40x10_I02_*.png",
+   "output": "gallery/prefab-container-homes-40x10-05-kitchen-and-dining-run.webp",
+   "settings": "1254x1254 WebP",
+   "alt": "SAMAN 40 x 10 ft prefab container home, kitchen and dining run",
+   "alt_source": "approved render set, size folder 40 × 10 × 8.5 ft, view code I02"
+  },
+  {
+   "slot": "gallery.40x10.06",
+   "source": "40 × 10 × 8.5 ft\\109_prefab-container-homes_40x10_I03_*.png",
+   "output": "gallery/prefab-container-homes-40x10-06-bedroom.webp",
+   "settings": "1254x1254 WebP",
+   "alt": "SAMAN 40 x 10 ft prefab container home, bedroom",
+   "alt_source": "approved render set, size folder 40 × 10 × 8.5 ft, view code I03"
+  },
+  {
+   "slot": "gallery.40x12.01",
+   "source": "40 × 12 × 8.5 ft\\111_prefab-container-homes_40x12_E01_*.png",
+   "output": "gallery/prefab-container-homes-40x12-01-front-right-three-quarter-view.webp",
+   "settings": "1254x1254 WebP",
+   "alt": "SAMAN 40 x 12 ft prefab container home, front-right three-quarter view",
+   "alt_source": "approved render set, size folder 40 × 12 × 8.5 ft, view code E01"
+  },
+  {
+   "slot": "gallery.40x12.02",
+   "source": "40 × 12 × 8.5 ft\\112_prefab-container-homes_40x12_E02_*.png",
+   "output": "gallery/prefab-container-homes-40x12-02-front-left-angle-with-entry-door.webp",
+   "settings": "1254x1254 WebP",
+   "alt": "SAMAN 40 x 12 ft prefab container home, front-left angle with entry door",
+   "alt_source": "approved render set, size folder 40 × 12 × 8.5 ft, view code E02"
+  },
+  {
+   "slot": "gallery.40x12.03",
+   "source": "40 × 12 × 8.5 ft\\113_prefab-container-homes_40x12_E03_*.png",
+   "output": "gallery/prefab-container-homes-40x12-03-long-side-elevation.webp",
+   "settings": "1254x1254 WebP",
+   "alt": "SAMAN 40 x 12 ft prefab container home, long side elevation",
+   "alt_source": "approved render set, size folder 40 × 12 × 8.5 ft, view code E03"
+  },
+  {
+   "slot": "gallery.40x12.04",
+   "source": "40 × 12 × 8.5 ft\\117_prefab-container-homes_40x12_I01_*.png",
+   "output": "gallery/prefab-container-homes-40x12-04-entry-and-living-area.webp",
+   "settings": "1254x1254 WebP",
+   "alt": "SAMAN 40 x 12 ft prefab container home, entry and living area",
+   "alt_source": "approved render set, size folder 40 × 12 × 8.5 ft, view code I01"
+  },
+  {
+   "slot": "gallery.40x12.05",
+   "source": "40 × 12 × 8.5 ft\\118_prefab-container-homes_40x12_I02_*.png",
+   "output": "gallery/prefab-container-homes-40x12-05-kitchen-and-dining-run.webp",
+   "settings": "1254x1254 WebP",
+   "alt": "SAMAN 40 x 12 ft prefab container home, kitchen and dining run",
+   "alt_source": "approved render set, size folder 40 × 12 × 8.5 ft, view code I02"
+  },
+  {
+   "slot": "gallery.40x12.06",
+   "source": "40 × 12 × 8.5 ft\\119_prefab-container-homes_40x12_I03_*.png",
+   "output": "gallery/prefab-container-homes-40x12-06-bedroom.webp",
+   "settings": "1254x1254 WebP",
+   "alt": "SAMAN 40 x 12 ft prefab container home, bedroom",
+   "alt_source": "approved render set, size folder 40 × 12 × 8.5 ft, view code I03"
+  },
+  {
+   "slot": "section3.20x8.ga",
+   "source": "Claude-authored 3D general arrangement sheet, master PNG 3912x2992 in 01 GA Drawings",
+   "output": "ga/prefab-container-homes-20x8x8-5-3d-general-arrangement-v1.webp",
+   "settings": "1800x1377 WebP from the 3912x2992 master, 489:374",
+   "alt": "SAMAN 20 x 8 ft prefab container home 3D general arrangement: dimensions, opening schedule, module coupling and shell build-up",
+   "alt_source": "drawing content"
+  },
+  {
+   "slot": "section3.20x10.ga",
+   "source": "Claude-authored 3D general arrangement sheet, master PNG 3912x2992 in 01 GA Drawings",
+   "output": "ga/prefab-container-homes-20x10x8-5-3d-general-arrangement-v1.webp",
+   "settings": "1800x1377 WebP from the 3912x2992 master, 489:374",
+   "alt": "SAMAN 20 x 10 ft prefab container home 3D general arrangement: dimensions, opening schedule, module coupling and shell build-up",
+   "alt_source": "drawing content"
+  },
+  {
+   "slot": "section3.20x12.ga",
+   "source": "Claude-authored 3D general arrangement sheet, master PNG 3912x2992 in 01 GA Drawings",
+   "output": "ga/prefab-container-homes-20x12x8-5-3d-general-arrangement-v1.webp",
+   "settings": "1800x1377 WebP from the 3912x2992 master, 489:374",
+   "alt": "SAMAN 20 x 12 ft prefab container home 3D general arrangement: dimensions, opening schedule, module coupling and shell build-up",
+   "alt_source": "drawing content"
+  },
+  {
+   "slot": "section3.40x8.ga",
+   "source": "Claude-authored 3D general arrangement sheet, master PNG 3912x2992 in 01 GA Drawings",
+   "output": "ga/prefab-container-homes-40x8x8-5-3d-general-arrangement-v1.webp",
+   "settings": "1800x1377 WebP from the 3912x2992 master, 489:374",
+   "alt": "SAMAN 40 x 8 ft prefab container home 3D general arrangement: dimensions, opening schedule, module coupling and shell build-up",
+   "alt_source": "drawing content"
+  },
+  {
+   "slot": "section3.40x10.ga",
+   "source": "Claude-authored 3D general arrangement sheet, master PNG 3912x2992 in 01 GA Drawings",
+   "output": "ga/prefab-container-homes-40x10x8-5-3d-general-arrangement-v1.webp",
+   "settings": "1800x1377 WebP from the 3912x2992 master, 489:374",
+   "alt": "SAMAN 40 x 10 ft prefab container home 3D general arrangement: dimensions, opening schedule, module coupling and shell build-up",
+   "alt_source": "drawing content"
+  },
+  {
+   "slot": "section3.40x12.ga",
+   "source": "Claude-authored 3D general arrangement sheet, master PNG 3912x2992 in 01 GA Drawings",
+   "output": "ga/prefab-container-homes-40x12x8-5-3d-general-arrangement-v1.webp",
+   "settings": "1800x1377 WebP from the 3912x2992 master, 489:374",
+   "alt": "SAMAN 40 x 12 ft prefab container home 3D general arrangement: dimensions, opening schedule, module coupling and shell build-up",
+   "alt_source": "drawing content"
+  },
+  {
+   "slot": "section2.split.image_16x9",
+   "source": "20 × 10 × 8.5 ft\\076_prefab-container-homes_20x10_E06_elevated-three-quarter.png",
+   "output": "wide/prefab-container-homes-20x10-wide-elevated-three-quarter.webp",
+   "settings": "1600x900 WebP, 16:9 crop from the 1254 square",
+   "alt": "SAMAN 20 x 10 ft prefab container home seen from above, showing the flat roof and the full module length",
+   "alt_source": "approved render set, view code E06",
+   "note": "realistic render, not a drawing, per SAMAN's instruction of 6 Sep 2026 that section 2 uses realistic images"
+  },
+  {
+   "slot": "media_band.40x10",
+   "source": "40 × 10 × 8.5 ft\\106_prefab-container-homes_40x10_E06_elevated-three-quarter.png",
+   "output": "wide/prefab-container-homes-40x10-wide-elevated-three-quarter.webp",
+   "settings": "1600x900 WebP, 16:9 crop from the 1254 square",
+   "alt": "SAMAN 40 x 10 ft prefab container home from above on a hill site",
+   "alt_source": "approved render set, view code E06"
+  },
+  {
+   "slot": "media_band.40x12",
+   "source": "40 × 12 × 8.5 ft\\116_prefab-container-homes_40x12_E06_elevated-three-quarter.png",
+   "output": "wide/prefab-container-homes-40x12-wide-elevated-three-quarter.webp",
+   "settings": "1600x900 WebP, 16:9 crop from the 1254 square",
+   "alt": "SAMAN 40 x 12 ft prefab container home from above, full 40 ft body",
+   "alt_source": "approved render set, view code E06"
+  },
+  {
+   "slot": "media_band.20x8",
+   "source": "20 × 8 × 8.5 ft\\066_prefab-container-homes_20x8_E06_elevated-three-quarter.png",
+   "output": "wide/prefab-container-homes-20x8-wide-elevated-three-quarter.webp",
+   "settings": "1600x900 WebP, 16:9 crop from the 1254 square",
+   "alt": "SAMAN 20 x 8 ft prefab container home from above in a landscaped setting",
+   "alt_source": "approved render set, view code E06"
+  }
+ ],
+ "empty_slots": [
+  {
+   "slot": "specifications.diagrams",
+   "reason": "the approved folder contains no technical diagrams; renders nothing"
+  },
+  {
+   "slot": "specifications.technical_pdf",
+   "reason": "no prefab-container-homes technical specification PDF exists yet; renders nothing"
+  }
+ ]
+}

@@ -1,0 +1,44 @@
+# Artefact 5 - validator suite, branch against a pristine baseline
+
+Baseline: a clean worktree detached at ea5ff6f9, the exact branch point, built and
+served on the same port the server-dependent validators fetch. Both runs use the
+same Node and the same node_modules.
+
+validator                                      baseline   branch
+validate:merchant-feed                         FAIL       FAIL
+validate:local-inventory                       FAIL       FAIL
+validate:commercial-architecture               PASS       PASS
+validate:commercial-architecture:release       PASS       PASS
+validate:publication-gate                      FAIL       FAIL
+validate:temporary-commercial-gating           FAIL       FAIL
+validate:container-office-rail                 PASS       PASS
+validate:cod16-quotation-wording               PASS       PASS
+validate:stg01b-structured-data                FAIL       FAIL
+validate:c01-specification-overrides           PASS       PASS
+validate:pc01-qualified-c01-debt               FAIL       FAIL
+test:pc01-qualified-c01-debt                   PASS       PASS
+validate:pc01-performance-measurement-debt     FAIL       FAIL
+test:pc01-performance-measurement-debt         FAIL       FAIL
+validate:pc01-calculator-price-parity          PASS       PASS
+test:pc01-calculator-price-parity              PASS       PASS
+validate:pc01-static-faq                       PASS       PASS
+validate:cc01-faq-parity                       PASS       PASS
+validate:enquiry-dialog-a11y                   PASS       PASS
+validate:po-family-pdfs                        FAIL       FAIL
+validate:po-family-release                     FAIL       FAIL
+validate:pc01-pdf                              PASS       PASS
+test:pc01-pdf                                  PASS       PASS
+validate:pc01-keyword-ownership                FAIL       FAIL
+test:pc01-keyword-ownership                    PASS       PASS
+
+Identical result on every one of the 25 checks: True
+
+So all 11 failures are pre-existing at the branch point and none is introduced
+by this build.
+
+Image intake gate (npm run image-gate), run separately because it needs the
+postbuild manifest: FAILS on both. src/data/image-intake-allowlist.json declares
+'this list may shrink but must never gain or alter an entry', so ANY new image on
+this site fails it by construction. 17,799 failure lines in total, of which 364
+name this page's 46 new files; the other 17,435 are pre-existing site-wide drift,
+overwhelmingly blog.samanportable.com WordPress uploads.

@@ -422,14 +422,40 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
       <>If you already know you want the budget build, go straight to the <Link className={linkClass} href={containerHouseHref('affordable-container-homes')}>affordable container homes</Link> page.</>
     ),
   },
+  // CH-PFB-04 (6 Sep 2026) - build prompt v1 section 2 block 6, copy pack
+  // section2, verbatim. Two lead paragraphs (895 chars across the pair as the pack
+  // stores them, 855 as rendered text once the anchor markup resolves), the one
+  // sanctioned contextual link in p1, one top CTA, then the 16:9 split card. The
+  // previous two-part body/comparison entry is replaced, not extended.
   'prefab-container-homes': {
-    heading: 'Why the prefab module instead of the range page',
-    body: (
-      <>This page owns the repeatable-module configuration: bolted inter-module connection plates, standard service risers and identical panel sizes that let one approved drawing become five or twenty homes. Choose it when you may ever need a second unit, a colony, or a later extension, because the expansion gable is built in from day one. The range page routes; this page standardises.</>
-    ),
-    comparison: (
-      <>For one home with villa-grade finish instead of repeatability, see the <Link className={linkClass} href={containerHouseHref('luxury-container-houses')}>luxury container house</Link> build.</>
-    ),
+    heading: "Why a prefab module, and not just another container house",
+    bodyParagraphs: [
+      (
+        <>Most container house buying decisions start with size and bedroom count, and that decision belongs on the <Link className={linkClass} href={CONTAINER_HOUSES_HREF}>container house range page</Link>. This page exists for the decision that comes after it: whether the unit you order has to be repeatable. A one-off container house can be drawn, cut and finished around whatever the site allows. A prefab module cannot, because the second, fifth and twentieth unit have to match it.</>
+      ),
+      (
+        <>That constraint is what SAMAN fixes here. The floor cassette is built on a production jig, the wall panels come from one approved batch, the wet pod is a standard assembly with labelled hot, cold, waste and vent stubs, and end wall D is kept blank so two modules can be bolted and sealed together. Deviations are recorded by unit number instead of quietly altering the standard, which is why a replacement panel three years later still fits.</>
+      ),
+    ],
+    // Plain-text SSR mirror: p1 renders an inline link, and a verifier that strips
+    // tags substitutes a space at each tag boundary.
+    verificationText: [
+      "Most container house buying decisions start with size and bedroom count, and that decision belongs on the container house range page. This page exists for the decision that comes after it: whether the unit you order has to be repeatable. A one-off container house can be drawn, cut and finished around whatever the site allows. A prefab module cannot, because the second, fifth and twentieth unit have to match it.",
+      "That constraint is what SAMAN fixes here. The floor cassette is built on a production jig, the wall panels come from one approved batch, the wet pod is a standard assembly with labelled hot, cold, waste and vent stubs, and end wall D is kept blank so two modules can be bolted and sealed together. Deviations are recorded by unit number instead of quietly altering the standard, which is why a replacement panel three years later still fits.",
+    ],
+    topCtaLabel: "Ask for a colony quotation",
+    topCtaHref: "/contact",
+    splitCard: {
+      imageSrc: "/images/products/container-houses/prefab-container-homes/wide/prefab-container-homes-20x10-wide-elevated-three-quarter.webp",
+      imageAlt: "SAMAN 20 x 10 ft prefab container home seen from above, showing the flat roof and the full module length",
+      imageWidth: 1600,
+      imageHeight: 900,
+      subheading: "What repeatability actually buys you",
+      body: "On a single home, repeatability shows up as predictability: the quotation, the drawing and the unit that arrives agree, because none of them was improvised on site.",
+      body2: "On a colony it shows up as money and time. One prototype is approved, then every later unit is built from the same BOM and pack list, and the utility stubs land in the same place on each one.",
+      ctaLabel: "See the six module drawings",
+      ctaHref: "#sizes",
+    },
   },
   'luxury-container-houses': {
     heading: 'Why the luxury build instead of the prefab line',

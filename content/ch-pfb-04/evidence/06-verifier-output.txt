@@ -1,0 +1,15 @@
+# Artefact 6 - verify_ch_pfb_04.py against the served HTML
+
+Command:
+  python verify_ch_pfb_04.py \
+    CH-PFB-04-prefab-container-homes-copy-v1.json \
+    CH-PFB-04-prefab-container-homes-asset-map-v1.json \
+    <rendered page from http://127.0.0.1:3217/product/container-houses/prefab-container-homes>
+
+Output:
+
+  checks passed: 360
+  RESULT: PASS
+
+The rendered-HTML block (last 10 checks) asserts exactly one H1, zero U+2014,
+no Info tab, and each of the seven FAQ answers byte-identical in the page.

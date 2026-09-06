@@ -1,0 +1,40 @@
+# Artefact 1 - component order, measured on the served HTML
+
+Route: /product/container-houses/prefab-container-homes
+The eleven blocks build prompt v1 section 2 fixes.
+
+## Top-to-bottom sequence (blocks 2 and 7 handled separately below)
+
+  1  Three-column hero             offset 72248    ok
+  3  Size selector tabs            offset 72382    ok
+  4  Price for selected size       offset 73275    ok
+  5  H2 Explore the Range          offset 77782    ok
+  6  Section 2 RightToExist        offset 82306    ok
+  6b Split card 16:9               offset 84020    ok
+  8  Section 3 explorer            offset 84957    ok
+  9  Section 4 calculator          offset 163820   ok
+  10 You may also like             offset 340894   ok
+  11 Section 5 Product Details     offset 347336   ok
+
+  Blocks out of sequence: 0
+
+## Block 2 - contact / location bar
+
+  This bar renders INSIDE the hero grid, in the gallery column, so in DOM order
+  it precedes the buy-box H1. That is the design lock's own layout, not a
+  deviation, so it is checked against the lock rather than against a flat
+  sequence.
+
+    preview:      bar at 68204, h1 at 72163  -> bar before h1: True
+    porta-cabins: bar at 53416, h1 at 57375  -> bar before h1: True
+    same relative placement as the lock: True
+
+## Block 7 - media / finished-work band
+
+  DEVIATION, reported not worked around. All three approved wide frames publish
+  (offsets [358653, 363133, 366249]), but no standalone media-band renderer exists anywhere in src/:
+  grep for mediaBand / media_band / media-band returns zero hits. They are
+  injected into the Description panel through the sanctioned infoImages route
+  (src/lib/infoImageLayout.ts), spread through the body copy, so their offsets
+  fall inside block 11 rather than between blocks 6 and 8. Building a new band
+  component would be authoring layout, which section 2 forbids.
