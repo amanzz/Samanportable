@@ -1,0 +1,1142 @@
+[
+ {
+  "slot": "gallery/10x10",
+  "file": "/images/products/construction-site-cabin/10x10/construction-site-cabin-10x10-front-exterior.webp",
+  "out": "10x10/construction-site-cabin-10x10-front-exterior.webp",
+  "source": "01-square-product-gallery/size-10x10/01-site-cabin-10x10-front-exterior.png",
+  "source_size": "1254x1254",
+  "width": 1254,
+  "height": 1254,
+  "quality": 42,
+  "bytes": 120844,
+  "kb": 118,
+  "attempts": [
+   [
+    1254,
+    86,
+    281
+   ],
+   [
+    1254,
+    42,
+    118
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/10x10",
+  "file": "/images/products/construction-site-cabin/10x10/construction-site-cabin-10x10-rear-exterior.webp",
+  "out": "10x10/construction-site-cabin-10x10-rear-exterior.webp",
+  "source": "01-square-product-gallery/size-10x10/02-site-cabin-10x10-rear-exterior.png",
+  "source_size": "1254x1254",
+  "width": 1254,
+  "height": 1254,
+  "quality": 57,
+  "bytes": 123162,
+  "kb": 120,
+  "attempts": [
+   [
+    1254,
+    86,
+    237
+   ],
+   [
+    1254,
+    57,
+    120
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/10x10",
+  "file": "/images/products/construction-site-cabin/10x10/construction-site-cabin-10x10-side-exterior.webp",
+  "out": "10x10/construction-site-cabin-10x10-side-exterior.webp",
+  "source": "01-square-product-gallery/size-10x10/03-site-cabin-10x10-side-exterior.png",
+  "source_size": "1254x1254",
+  "width": 1254,
+  "height": 1254,
+  "quality": 54,
+  "bytes": 122936,
+  "kb": 120,
+  "attempts": [
+   [
+    1254,
+    86,
+    251
+   ],
+   [
+    1254,
+    54,
+    120
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/10x10",
+  "file": "/images/products/construction-site-cabin/10x10/construction-site-cabin-10x10-entry-interior.webp",
+  "out": "10x10/construction-site-cabin-10x10-entry-interior.webp",
+  "source": "01-square-product-gallery/size-10x10/04-site-cabin-10x10-entry-interior.png",
+  "source_size": "1254x1254",
+  "width": 1254,
+  "height": 1254,
+  "quality": 85,
+  "bytes": 119262,
+  "kb": 116,
+  "attempts": [
+   [
+    1254,
+    86,
+    122
+   ],
+   [
+    1254,
+    85,
+    116
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/10x10",
+  "file": "/images/products/construction-site-cabin/10x10/construction-site-cabin-10x10-corner-interior.webp",
+  "out": "10x10/construction-site-cabin-10x10-corner-interior.webp",
+  "source": "01-square-product-gallery/size-10x10/05-site-cabin-10x10-corner-interior.png",
+  "source_size": "1254x1254",
+  "width": 1254,
+  "height": 1254,
+  "quality": 85,
+  "bytes": 122486,
+  "kb": 119,
+  "attempts": [
+   [
+    1254,
+    86,
+    128
+   ],
+   [
+    1254,
+    85,
+    119
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/10x10",
+  "file": "/images/products/construction-site-cabin/10x10/construction-site-cabin-10x10-reverse-interior.webp",
+  "out": "10x10/construction-site-cabin-10x10-reverse-interior.webp",
+  "source": "01-square-product-gallery/size-10x10/06-site-cabin-10x10-reverse-interior.png",
+  "source_size": "1254x1254",
+  "width": 1254,
+  "height": 1254,
+  "quality": 83,
+  "bytes": 118008,
+  "kb": 115,
+  "attempts": [
+   [
+    1254,
+    86,
+    140
+   ],
+   [
+    1254,
+    83,
+    115
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/20x8",
+  "file": "/images/products/construction-site-cabin/20x8/construction-site-cabin-20x8-front-exterior.webp",
+  "out": "20x8/construction-site-cabin-20x8-front-exterior.webp",
+  "source": "01-square-product-gallery/size-20x8/01-site-cabin-20x8-front-exterior.png",
+  "source_size": "1254x1254",
+  "width": 1254,
+  "height": 1254,
+  "quality": 67,
+  "bytes": 122098,
+  "kb": 119,
+  "attempts": [
+   [
+    1254,
+    86,
+    214
+   ],
+   [
+    1254,
+    67,
+    119
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/20x8",
+  "file": "/images/products/construction-site-cabin/20x8/construction-site-cabin-20x8-rear-exterior.webp",
+  "out": "20x8/construction-site-cabin-20x8-rear-exterior.webp",
+  "source": "01-square-product-gallery/size-20x8/02-site-cabin-20x8-rear-exterior.png",
+  "source_size": "1254x1254",
+  "width": 1254,
+  "height": 1254,
+  "quality": 74,
+  "bytes": 123432,
+  "kb": 120,
+  "attempts": [
+   [
+    1254,
+    86,
+    195
+   ],
+   [
+    1254,
+    74,
+    120
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/20x8",
+  "file": "/images/products/construction-site-cabin/20x8/construction-site-cabin-20x8-side-exterior.webp",
+  "out": "20x8/construction-site-cabin-20x8-side-exterior.webp",
+  "source": "01-square-product-gallery/size-20x8/03-site-cabin-20x8-side-exterior.png",
+  "source_size": "1254x1254",
+  "width": 1254,
+  "height": 1254,
+  "quality": 41,
+  "bytes": 122200,
+  "kb": 119,
+  "attempts": [
+   [
+    1254,
+    86,
+    286
+   ],
+   [
+    1254,
+    41,
+    119
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/20x8",
+  "file": "/images/products/construction-site-cabin/20x8/construction-site-cabin-20x8-entry-interior.webp",
+  "out": "20x8/construction-site-cabin-20x8-entry-interior.webp",
+  "source": "01-square-product-gallery/size-20x8/04-site-cabin-20x8-entry-interior.png",
+  "source_size": "1254x1254",
+  "width": 1254,
+  "height": 1254,
+  "quality": 86,
+  "bytes": 116836,
+  "kb": 114,
+  "attempts": [
+   [
+    1254,
+    86,
+    114
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/20x8",
+  "file": "/images/products/construction-site-cabin/20x8/construction-site-cabin-20x8-corner-interior.webp",
+  "out": "20x8/construction-site-cabin-20x8-corner-interior.webp",
+  "source": "01-square-product-gallery/size-20x8/05-site-cabin-20x8-corner-interior.png",
+  "source_size": "1254x1254",
+  "width": 1254,
+  "height": 1254,
+  "quality": 86,
+  "bytes": 109122,
+  "kb": 106,
+  "attempts": [
+   [
+    1254,
+    86,
+    106
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/20x8",
+  "file": "/images/products/construction-site-cabin/20x8/construction-site-cabin-20x8-reverse-interior.webp",
+  "out": "20x8/construction-site-cabin-20x8-reverse-interior.webp",
+  "source": "01-square-product-gallery/size-20x8/06-site-cabin-20x8-reverse-interior.png",
+  "source_size": "1254x1254",
+  "width": 1254,
+  "height": 1254,
+  "quality": 85,
+  "bytes": 121486,
+  "kb": 118,
+  "attempts": [
+   [
+    1254,
+    86,
+    126
+   ],
+   [
+    1254,
+    85,
+    118
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/20x10",
+  "file": "/images/products/construction-site-cabin/20x10/construction-site-cabin-20x10-front-exterior.webp",
+  "out": "20x10/construction-site-cabin-20x10-front-exterior.webp",
+  "source": "01-square-product-gallery/size-20x10/01-site-cabin-20x10-front-exterior.png",
+  "source_size": "1254x1254",
+  "width": 1254,
+  "height": 1254,
+  "quality": 53,
+  "bytes": 122862,
+  "kb": 119,
+  "attempts": [
+   [
+    1254,
+    86,
+    262
+   ],
+   [
+    1254,
+    53,
+    119
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/20x10",
+  "file": "/images/products/construction-site-cabin/20x10/construction-site-cabin-20x10-rear-exterior.webp",
+  "out": "20x10/construction-site-cabin-20x10-rear-exterior.webp",
+  "source": "01-square-product-gallery/size-20x10/02-site-cabin-20x10-rear-exterior.png",
+  "source_size": "1254x1254",
+  "width": 1254,
+  "height": 1254,
+  "quality": 46,
+  "bytes": 123394,
+  "kb": 120,
+  "attempts": [
+   [
+    1254,
+    86,
+    281
+   ],
+   [
+    1254,
+    46,
+    120
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/20x10",
+  "file": "/images/products/construction-site-cabin/20x10/construction-site-cabin-20x10-side-exterior.webp",
+  "out": "20x10/construction-site-cabin-20x10-side-exterior.webp",
+  "source": "01-square-product-gallery/size-20x10/03-site-cabin-20x10-side-exterior.png",
+  "source_size": "1254x1254",
+  "width": 1254,
+  "height": 1254,
+  "quality": 64,
+  "bytes": 123550,
+  "kb": 120,
+  "attempts": [
+   [
+    1254,
+    86,
+    228
+   ],
+   [
+    1254,
+    64,
+    120
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/20x10",
+  "file": "/images/products/construction-site-cabin/20x10/construction-site-cabin-20x10-entry-interior.webp",
+  "out": "20x10/construction-site-cabin-20x10-entry-interior.webp",
+  "source": "01-square-product-gallery/size-20x10/04-site-cabin-20x10-entry-interior.png",
+  "source_size": "1254x1254",
+  "width": 1254,
+  "height": 1254,
+  "quality": 84,
+  "bytes": 122058,
+  "kb": 119,
+  "attempts": [
+   [
+    1254,
+    86,
+    135
+   ],
+   [
+    1254,
+    84,
+    119
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/20x10",
+  "file": "/images/products/construction-site-cabin/20x10/construction-site-cabin-20x10-corner-interior.webp",
+  "out": "20x10/construction-site-cabin-20x10-corner-interior.webp",
+  "source": "01-square-product-gallery/size-20x10/05-site-cabin-20x10-corner-interior.png",
+  "source_size": "1254x1254",
+  "width": 1254,
+  "height": 1254,
+  "quality": 85,
+  "bytes": 121966,
+  "kb": 119,
+  "attempts": [
+   [
+    1254,
+    86,
+    125
+   ],
+   [
+    1254,
+    85,
+    119
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/20x10",
+  "file": "/images/products/construction-site-cabin/20x10/construction-site-cabin-20x10-reverse-interior.webp",
+  "out": "20x10/construction-site-cabin-20x10-reverse-interior.webp",
+  "source": "01-square-product-gallery/size-20x10/06-site-cabin-20x10-reverse-interior.png",
+  "source_size": "1254x1254",
+  "width": 1254,
+  "height": 1254,
+  "quality": 81,
+  "bytes": 117186,
+  "kb": 114,
+  "attempts": [
+   [
+    1254,
+    86,
+    156
+   ],
+   [
+    1254,
+    81,
+    114
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/20x12",
+  "file": "/images/products/construction-site-cabin/20x12/construction-site-cabin-20x12-front-exterior.webp",
+  "out": "20x12/construction-site-cabin-20x12-front-exterior.webp",
+  "source": "01-square-product-gallery/size-20x12/01-site-cabin-20x12-front-exterior.png",
+  "source_size": "1254x1254",
+  "width": 1254,
+  "height": 1254,
+  "quality": 71,
+  "bytes": 122354,
+  "kb": 119,
+  "attempts": [
+   [
+    1254,
+    86,
+    199
+   ],
+   [
+    1254,
+    71,
+    119
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/20x12",
+  "file": "/images/products/construction-site-cabin/20x12/construction-site-cabin-20x12-rear-exterior.webp",
+  "out": "20x12/construction-site-cabin-20x12-rear-exterior.webp",
+  "source": "01-square-product-gallery/size-20x12/02-site-cabin-20x12-rear-exterior.png",
+  "source_size": "1254x1254",
+  "width": 1254,
+  "height": 1254,
+  "quality": 67,
+  "bytes": 122896,
+  "kb": 120,
+  "attempts": [
+   [
+    1254,
+    86,
+    202
+   ],
+   [
+    1254,
+    67,
+    120
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/20x12",
+  "file": "/images/products/construction-site-cabin/20x12/construction-site-cabin-20x12-side-exterior.webp",
+  "out": "20x12/construction-site-cabin-20x12-side-exterior.webp",
+  "source": "01-square-product-gallery/size-20x12/03-site-cabin-20x12-side-exterior.png",
+  "source_size": "1254x1254",
+  "width": 1254,
+  "height": 1254,
+  "quality": 46,
+  "bytes": 123488,
+  "kb": 120,
+  "attempts": [
+   [
+    1254,
+    86,
+    277
+   ],
+   [
+    1254,
+    46,
+    120
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/20x12",
+  "file": "/images/products/construction-site-cabin/20x12/construction-site-cabin-20x12-entry-interior.webp",
+  "out": "20x12/construction-site-cabin-20x12-entry-interior.webp",
+  "source": "01-square-product-gallery/size-20x12/04-site-cabin-20x12-entry-interior.png",
+  "source_size": "1254x1254",
+  "width": 1254,
+  "height": 1254,
+  "quality": 84,
+  "bytes": 123176,
+  "kb": 120,
+  "attempts": [
+   [
+    1254,
+    86,
+    136
+   ],
+   [
+    1254,
+    84,
+    120
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/20x12",
+  "file": "/images/products/construction-site-cabin/20x12/construction-site-cabin-20x12-corner-interior.webp",
+  "out": "20x12/construction-site-cabin-20x12-corner-interior.webp",
+  "source": "01-square-product-gallery/size-20x12/05-site-cabin-20x12-corner-interior.png",
+  "source_size": "1254x1254",
+  "width": 1254,
+  "height": 1254,
+  "quality": 85,
+  "bytes": 120768,
+  "kb": 117,
+  "attempts": [
+   [
+    1254,
+    86,
+    126
+   ],
+   [
+    1254,
+    85,
+    117
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/20x12",
+  "file": "/images/products/construction-site-cabin/20x12/construction-site-cabin-20x12-reverse-interior.webp",
+  "out": "20x12/construction-site-cabin-20x12-reverse-interior.webp",
+  "source": "01-square-product-gallery/size-20x12/06-site-cabin-20x12-reverse-interior.png",
+  "source_size": "1254x1254",
+  "width": 1254,
+  "height": 1254,
+  "quality": 85,
+  "bytes": 123168,
+  "kb": 120,
+  "attempts": [
+   [
+    1254,
+    86,
+    127
+   ],
+   [
+    1254,
+    85,
+    120
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/30x10",
+  "file": "/images/products/construction-site-cabin/30x10/construction-site-cabin-30x10-front-exterior.webp",
+  "out": "30x10/construction-site-cabin-30x10-front-exterior.webp",
+  "source": "01-square-product-gallery/size-30x10/01-site-cabin-30x10-front-exterior.png",
+  "source_size": "1254x1254",
+  "width": 1254,
+  "height": 1254,
+  "quality": 56,
+  "bytes": 123842,
+  "kb": 120,
+  "attempts": [
+   [
+    1254,
+    86,
+    251
+   ],
+   [
+    1254,
+    56,
+    120
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/30x10",
+  "file": "/images/products/construction-site-cabin/30x10/construction-site-cabin-30x10-rear-exterior.webp",
+  "out": "30x10/construction-site-cabin-30x10-rear-exterior.webp",
+  "source": "01-square-product-gallery/size-30x10/02-site-cabin-30x10-rear-exterior.png",
+  "source_size": "1254x1254",
+  "width": 1254,
+  "height": 1254,
+  "quality": 47,
+  "bytes": 123572,
+  "kb": 120,
+  "attempts": [
+   [
+    1254,
+    86,
+    260
+   ],
+   [
+    1254,
+    47,
+    120
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/30x10",
+  "file": "/images/products/construction-site-cabin/30x10/construction-site-cabin-30x10-side-exterior.webp",
+  "out": "30x10/construction-site-cabin-30x10-side-exterior.webp",
+  "source": "01-square-product-gallery/size-30x10/03-site-cabin-30x10-side-exterior.png",
+  "source_size": "1254x1254",
+  "width": 1254,
+  "height": 1254,
+  "quality": 53,
+  "bytes": 121726,
+  "kb": 118,
+  "attempts": [
+   [
+    1254,
+    86,
+    255
+   ],
+   [
+    1254,
+    53,
+    118
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/30x10",
+  "file": "/images/products/construction-site-cabin/30x10/construction-site-cabin-30x10-entry-interior.webp",
+  "out": "30x10/construction-site-cabin-30x10-entry-interior.webp",
+  "source": "01-square-product-gallery/size-30x10/04-site-cabin-30x10-entry-interior.png",
+  "source_size": "1254x1254",
+  "width": 1254,
+  "height": 1254,
+  "quality": 82,
+  "bytes": 120042,
+  "kb": 117,
+  "attempts": [
+   [
+    1254,
+    86,
+    148
+   ],
+   [
+    1254,
+    82,
+    117
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/30x10",
+  "file": "/images/products/construction-site-cabin/30x10/construction-site-cabin-30x10-corner-interior.webp",
+  "out": "30x10/construction-site-cabin-30x10-corner-interior.webp",
+  "source": "01-square-product-gallery/size-30x10/05-site-cabin-30x10-corner-interior.png",
+  "source_size": "1254x1254",
+  "width": 1254,
+  "height": 1254,
+  "quality": 84,
+  "bytes": 120766,
+  "kb": 117,
+  "attempts": [
+   [
+    1254,
+    86,
+    134
+   ],
+   [
+    1254,
+    84,
+    117
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/30x10",
+  "file": "/images/products/construction-site-cabin/30x10/construction-site-cabin-30x10-reverse-interior.webp",
+  "out": "30x10/construction-site-cabin-30x10-reverse-interior.webp",
+  "source": "01-square-product-gallery/size-30x10/06-site-cabin-30x10-reverse-interior.png",
+  "source_size": "1254x1254",
+  "width": 1254,
+  "height": 1254,
+  "quality": 82,
+  "bytes": 119564,
+  "kb": 116,
+  "attempts": [
+   [
+    1254,
+    86,
+    146
+   ],
+   [
+    1254,
+    82,
+    116
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/40x10",
+  "file": "/images/products/construction-site-cabin/40x10/construction-site-cabin-40x10-front-exterior.webp",
+  "out": "40x10/construction-site-cabin-40x10-front-exterior.webp",
+  "source": "01-square-product-gallery/size-40x10/01-site-cabin-40x10-front-exterior.png",
+  "source_size": "1254x1254",
+  "width": 1254,
+  "height": 1254,
+  "quality": 68,
+  "bytes": 121686,
+  "kb": 118,
+  "attempts": [
+   [
+    1254,
+    86,
+    209
+   ],
+   [
+    1254,
+    68,
+    118
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/40x10",
+  "file": "/images/products/construction-site-cabin/40x10/construction-site-cabin-40x10-rear-exterior.webp",
+  "out": "40x10/construction-site-cabin-40x10-rear-exterior.webp",
+  "source": "01-square-product-gallery/size-40x10/02-site-cabin-40x10-rear-exterior.png",
+  "source_size": "1254x1254",
+  "width": 1254,
+  "height": 1254,
+  "quality": 51,
+  "bytes": 122700,
+  "kb": 119,
+  "attempts": [
+   [
+    1254,
+    86,
+    245
+   ],
+   [
+    1254,
+    51,
+    119
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/40x10",
+  "file": "/images/products/construction-site-cabin/40x10/construction-site-cabin-40x10-side-exterior.webp",
+  "out": "40x10/construction-site-cabin-40x10-side-exterior.webp",
+  "source": "01-square-product-gallery/size-40x10/03-site-cabin-40x10-side-exterior.png",
+  "source_size": "1254x1254",
+  "width": 1254,
+  "height": 1254,
+  "quality": 60,
+  "bytes": 123406,
+  "kb": 120,
+  "attempts": [
+   [
+    1254,
+    86,
+    224
+   ],
+   [
+    1254,
+    60,
+    120
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/40x10",
+  "file": "/images/products/construction-site-cabin/40x10/construction-site-cabin-40x10-entry-interior.webp",
+  "out": "40x10/construction-site-cabin-40x10-entry-interior.webp",
+  "source": "01-square-product-gallery/size-40x10/04-site-cabin-40x10-entry-interior.png",
+  "source_size": "1254x1254",
+  "width": 1254,
+  "height": 1254,
+  "quality": 81,
+  "bytes": 123682,
+  "kb": 120,
+  "attempts": [
+   [
+    1254,
+    86,
+    161
+   ],
+   [
+    1254,
+    81,
+    120
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/40x10",
+  "file": "/images/products/construction-site-cabin/40x10/construction-site-cabin-40x10-corner-interior.webp",
+  "out": "40x10/construction-site-cabin-40x10-corner-interior.webp",
+  "source": "01-square-product-gallery/size-40x10/05-site-cabin-40x10-corner-interior.png",
+  "source_size": "1254x1254",
+  "width": 1254,
+  "height": 1254,
+  "quality": 86,
+  "bytes": 110572,
+  "kb": 107,
+  "attempts": [
+   [
+    1254,
+    86,
+    107
+   ]
+  ]
+ },
+ {
+  "slot": "gallery/40x10",
+  "file": "/images/products/construction-site-cabin/40x10/construction-site-cabin-40x10-reverse-interior.webp",
+  "out": "40x10/construction-site-cabin-40x10-reverse-interior.webp",
+  "source": "01-square-product-gallery/size-40x10/06-site-cabin-40x10-reverse-interior.png",
+  "source_size": "1254x1254",
+  "width": 1254,
+  "height": 1254,
+  "quality": 82,
+  "bytes": 118178,
+  "kb": 115,
+  "attempts": [
+   [
+    1254,
+    86,
+    145
+   ],
+   [
+    1254,
+    82,
+    115
+   ]
+  ]
+ },
+ {
+  "slot": "ga/10x10",
+  "file": "/images/products/construction-site-cabin/ga/construction-site-cabin-10x10-ga-board.webp",
+  "out": "ga/construction-site-cabin-10x10-ga-board.webp",
+  "source": "00-ga-specification-boards/size-10x10/construction-site-cabin-10x10x8-5-premium-ga-specification-board-v1.png",
+  "source_size": "3840x2160",
+  "width": 1800,
+  "height": 1012,
+  "quality": 88,
+  "bytes": 88878,
+  "kb": 86,
+  "attempts": [
+   [
+    1800,
+    88,
+    86
+   ]
+  ]
+ },
+ {
+  "slot": "ga/20x8",
+  "file": "/images/products/construction-site-cabin/ga/construction-site-cabin-20x8-ga-board.webp",
+  "out": "ga/construction-site-cabin-20x8-ga-board.webp",
+  "source": "00-ga-specification-boards/size-20x8/construction-site-cabin-20x8x8-5-premium-ga-specification-board-v1.png",
+  "source_size": "3840x2160",
+  "width": 1800,
+  "height": 1012,
+  "quality": 88,
+  "bytes": 90094,
+  "kb": 87,
+  "attempts": [
+   [
+    1800,
+    88,
+    87
+   ]
+  ]
+ },
+ {
+  "slot": "ga/20x10",
+  "file": "/images/products/construction-site-cabin/ga/construction-site-cabin-20x10-ga-board.webp",
+  "out": "ga/construction-site-cabin-20x10-ga-board.webp",
+  "source": "00-ga-specification-boards/size-20x10/construction-site-cabin-20x10x8-5-premium-ga-specification-board-v1.png",
+  "source_size": "3840x2160",
+  "width": 1800,
+  "height": 1012,
+  "quality": 88,
+  "bytes": 93150,
+  "kb": 90,
+  "attempts": [
+   [
+    1800,
+    88,
+    90
+   ]
+  ]
+ },
+ {
+  "slot": "ga/20x12",
+  "file": "/images/products/construction-site-cabin/ga/construction-site-cabin-20x12-ga-board.webp",
+  "out": "ga/construction-site-cabin-20x12-ga-board.webp",
+  "source": "00-ga-specification-boards/size-20x12/construction-site-cabin-20x12x8-5-premium-ga-specification-board-v1.png",
+  "source_size": "3840x2160",
+  "width": 1800,
+  "height": 1012,
+  "quality": 88,
+  "bytes": 93286,
+  "kb": 91,
+  "attempts": [
+   [
+    1800,
+    88,
+    91
+   ]
+  ]
+ },
+ {
+  "slot": "ga/30x10",
+  "file": "/images/products/construction-site-cabin/ga/construction-site-cabin-30x10-ga-board.webp",
+  "out": "ga/construction-site-cabin-30x10-ga-board.webp",
+  "source": "00-ga-specification-boards/size-30x10/construction-site-cabin-30x10x8-5-premium-ga-specification-board-v1.png",
+  "source_size": "3840x2160",
+  "width": 1800,
+  "height": 1012,
+  "quality": 88,
+  "bytes": 98460,
+  "kb": 96,
+  "attempts": [
+   [
+    1800,
+    88,
+    96
+   ]
+  ]
+ },
+ {
+  "slot": "ga/40x10",
+  "file": "/images/products/construction-site-cabin/ga/construction-site-cabin-40x10-ga-board.webp",
+  "out": "ga/construction-site-cabin-40x10-ga-board.webp",
+  "source": "00-ga-specification-boards/size-40x10/construction-site-cabin-40x10x8-5-premium-ga-specification-board-v1.png",
+  "source_size": "3840x2160",
+  "width": 1800,
+  "height": 1012,
+  "quality": 88,
+  "bytes": 104420,
+  "kb": 101,
+  "attempts": [
+   [
+    1800,
+    88,
+    101
+   ]
+  ]
+ },
+ {
+  "slot": "section2",
+  "file": "/images/products/construction-site-cabin/section2/construction-site-cabin-20x10-site-exterior-card.webp",
+  "out": "section2/construction-site-cabin-20x10-site-exterior-card.webp",
+  "source": "02-long-description-16x9/03-site-cabin-20x10-site-exterior.png",
+  "source_size": "1920x1080",
+  "width": 1600,
+  "height": 900,
+  "quality": 46,
+  "bytes": 123790,
+  "kb": 120,
+  "attempts": [
+   [
+    1600,
+    90,
+    345
+   ],
+   [
+    1600,
+    46,
+    120
+   ]
+  ]
+ },
+ {
+  "slot": "description/desc_01",
+  "file": "/images/products/construction-site-cabin/description/construction-site-cabin-10x10-on-site-exterior.webp",
+  "out": "description/construction-site-cabin-10x10-on-site-exterior.webp",
+  "source": "02-long-description-16x9/01-site-cabin-10x10-project-exterior.png",
+  "source_size": "1920x1080",
+  "width": 1600,
+  "height": 900,
+  "quality": 43,
+  "bytes": 122498,
+  "kb": 119,
+  "attempts": [
+   [
+    1600,
+    90,
+    334
+   ],
+   [
+    1600,
+    43,
+    119
+   ]
+  ]
+ },
+ {
+  "slot": "description/desc_02",
+  "file": "/images/products/construction-site-cabin/description/construction-site-cabin-20x8-interior-desk-run.webp",
+  "out": "description/construction-site-cabin-20x8-interior-desk-run.webp",
+  "source": "02-long-description-16x9/02-site-cabin-20x8-office-interior.png",
+  "source_size": "1920x1080",
+  "width": 1600,
+  "height": 900,
+  "quality": 90,
+  "bytes": 99248,
+  "kb": 96,
+  "attempts": [
+   [
+    1600,
+    90,
+    96
+   ]
+  ]
+ },
+ {
+  "slot": "description/desc_03",
+  "file": "/images/products/construction-site-cabin/description/construction-site-cabin-20x12-interior-wide-aisle.webp",
+  "out": "description/construction-site-cabin-20x12-interior-wide-aisle.webp",
+  "source": "02-long-description-16x9/04-site-cabin-20x12-wide-interior.png",
+  "source_size": "1920x1080",
+  "width": 1600,
+  "height": 900,
+  "quality": 87,
+  "bytes": 123196,
+  "kb": 120,
+  "attempts": [
+   [
+    1600,
+    90,
+    141
+   ],
+   [
+    1600,
+    87,
+    120
+   ]
+  ]
+ },
+ {
+  "slot": "description/desc_04",
+  "file": "/images/products/construction-site-cabin/description/construction-site-cabin-30x10-interior-eight-desks.webp",
+  "out": "description/construction-site-cabin-30x10-interior-eight-desks.webp",
+  "source": "02-long-description-16x9/_repaired-16x9-v1/05-site-cabin-30x10-team-interior.png",
+  "source_size": "1920x1080",
+  "width": 1600,
+  "height": 900,
+  "quality": 86,
+  "bytes": 122984,
+  "kb": 120,
+  "attempts": [
+   [
+    1600,
+    90,
+    154
+   ],
+   [
+    1600,
+    86,
+    120
+   ]
+  ]
+ },
+ {
+  "slot": "description/desc_05",
+  "file": "/images/products/construction-site-cabin/description/construction-site-cabin-40x10-manager-room.webp",
+  "out": "description/construction-site-cabin-40x10-manager-room.webp",
+  "source": "02-long-description-16x9/_repaired-16x9-v1/06-site-cabin-40x10-manager-interior.png",
+  "source_size": "1920x1080",
+  "width": 1600,
+  "height": 900,
+  "quality": 90,
+  "bytes": 95088,
+  "kb": 92,
+  "attempts": [
+   [
+    1600,
+    90,
+    92
+   ]
+  ]
+ },
+ {
+  "slot": "diagram/01",
+  "file": "/images/products/construction-site-cabin/diagrams/construction-site-cabin-frame-joint-diagram.webp",
+  "out": "diagrams/construction-site-cabin-frame-joint-diagram.webp",
+  "source": "03-technical-diagrams-16x9/01-site-cabin-frame-joint-diagram.png",
+  "source_size": "1920x1080",
+  "width": 1600,
+  "height": 900,
+  "quality": 91,
+  "bytes": 82450,
+  "kb": 80,
+  "attempts": [
+   [
+    1600,
+    90,
+    76
+   ],
+   [
+    1600,
+    91,
+    80
+   ]
+  ]
+ },
+ {
+  "slot": "diagram/02",
+  "file": "/images/products/construction-site-cabin/diagrams/construction-site-cabin-window-electrical-diagram.webp",
+  "out": "diagrams/construction-site-cabin-window-electrical-diagram.webp",
+  "source": "03-technical-diagrams-16x9/02-site-cabin-window-electrical-diagram.png",
+  "source_size": "1920x1080",
+  "width": 1600,
+  "height": 900,
+  "quality": 90,
+  "bytes": 83934,
+  "kb": 81,
+  "attempts": [
+   [
+    1600,
+    90,
+    81
+   ]
+  ]
+ }
+]

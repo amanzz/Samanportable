@@ -37,6 +37,7 @@ import modernOfficeCabin from '@/data/products/modern-office-cabin.json';
 import portableOfficeContainer from '@/data/products/portable-office-container.json';
 import prefabricatedOfficeCabins from '@/data/products/prefabricated-office-cabins.json';
 import portableWeighbridgeOffice from '@/data/products/portable-weighbridge-office.json';
+import constructionSiteCabin from '@/data/products/construction-site-cabin.json';
 import readymadeOfficeCabin from '@/data/products/readymade-office-cabin.json';
 import smallOfficeCabin from '@/data/products/small-office-cabin.json';
 import executivePortableOffice from '@/data/products/executive-portable-office.json';
@@ -232,6 +233,11 @@ export const ROUTE_LADDERS: Readonly<Record<string, LadderRow[]>> = {
   // PO-03 — the six prices are read from this route's own product JSON via toRows,
   // so the ladder cannot drift from the buy box. Nothing else in the calculator changes.
   'portable-weighbridge-office': toRows(portableWeighbridgeOffice),
+  // PO-06 (6 Sep 2026) — one additive ROUTE_LADDERS entry for the new route. The six
+  // prices are read from this route's own product JSON via toRows, so the ladder cannot
+  // drift from the buy box. No rate, formula, tax, component price, label or styling
+  // moves, and no existing route's ladder is touched.
+  'construction-site-cabin': toRows(constructionSiteCabin),
   'readymade-office-cabin': toRows(readymadeOfficeCabin),
   'small-office-cabin': toRows(smallOfficeCabin),
   // PO-04 (5 Sep 2026) - one ROUTE_LADDERS entry for the new route, read from this

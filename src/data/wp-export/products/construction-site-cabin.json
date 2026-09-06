@@ -1,0 +1,60 @@
+{
+  "id": 2026090601,
+  "name": "Portable Construction Site Cabin",
+  "slug": "construction-site-cabin",
+  "permalink": "https://www.samanportable.com/product/portable-office/construction-site-cabin",
+  "date_created": "2026-09-06T00:00:00",
+  "date_modified": "2026-09-06T00:00:00",
+  "type": "simple",
+  "status": "publish",
+  "featured": false,
+  "catalog_visibility": "visible",
+  "description": "",
+  "short_description": "",
+  "sku": "",
+  "price": "",
+  "regular_price": "",
+  "sale_price": "",
+  "on_sale": false,
+  "purchasable": false,
+  "virtual": false,
+  "downloadable": false,
+  "downloads": [],
+  "manage_stock": false,
+  "stock_quantity": null,
+  "stock_status": "instock",
+  "backorders": "no",
+  "reviews_allowed": true,
+  "average_rating": "0.00",
+  "rating_count": 0,
+  "categories": [
+    {
+      "id": 230,
+      "name": "Portable Office",
+      "slug": "portable-office"
+    }
+  ],
+  "brands": [
+    {
+      "id": 3870,
+      "name": "Saman Portable",
+      "slug": "saman-portable"
+    }
+  ],
+  "tags": [],
+  "images": [],
+  "attributes": [],
+  "dimensions": {
+    "length": "",
+    "width": "",
+    "height": ""
+  },
+  "weight": "",
+  "meta_data": [],
+  "_rank_math_head": {
+    "success": true,
+    "head": "<title>Site Office Cabin for Construction Sites, 6 Sizes | SAMAN</title>\n<meta name=\"description\" content=\"Site office cabin for construction sites in six sizes, 100 to 400 sq ft, from Rs 1,66,750 ex-GST. Grilled windows, marked lifting lugs, GA drawing per size.\"/>\n<meta name=\"robots\" content=\"index, follow\"/>\n<link rel=\"canonical\" href=\"https://www.samanportable.com/product/portable-office/construction-site-cabin\" />"
+  },
+  "category": "Portable Office",
+  "category_slug": "portable-office"
+}

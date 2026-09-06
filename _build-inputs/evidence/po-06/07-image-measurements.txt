@@ -1,0 +1,94 @@
+ARTEFACT 7 - IMAGE MEASUREMENT TABLE (every published output)
+
+Encoder: scripts/po06-build-images.py - Pillow save(..., 'WEBP', method=6).
+Rules are read from the signed asset map, never hard-coded: band 80-120 KB, no crop at
+any size, quality adjusted first and width only after, then re-measured. Source PNGs
+are never copied into public/.
+
+FILE (under /images/products/construction-site-cabin/)         SOURCE PX   OUTPUT PX   q         KB  IN BAND
+10x10/construction-site-cabin-10x10-front-exterior.webp        1254x1254   1254x1254   q42      118  yes
+10x10/construction-site-cabin-10x10-rear-exterior.webp         1254x1254   1254x1254   q57      120  yes
+10x10/construction-site-cabin-10x10-side-exterior.webp         1254x1254   1254x1254   q54      120  yes
+10x10/construction-site-cabin-10x10-entry-interior.webp        1254x1254   1254x1254   q85      116  yes
+10x10/construction-site-cabin-10x10-corner-interior.webp       1254x1254   1254x1254   q85      119  yes
+10x10/construction-site-cabin-10x10-reverse-interior.webp      1254x1254   1254x1254   q83      115  yes
+20x8/construction-site-cabin-20x8-front-exterior.webp          1254x1254   1254x1254   q67      119  yes
+20x8/construction-site-cabin-20x8-rear-exterior.webp           1254x1254   1254x1254   q74      120  yes
+20x8/construction-site-cabin-20x8-side-exterior.webp           1254x1254   1254x1254   q41      119  yes
+20x8/construction-site-cabin-20x8-entry-interior.webp          1254x1254   1254x1254   q86      114  yes
+20x8/construction-site-cabin-20x8-corner-interior.webp         1254x1254   1254x1254   q86      106  yes
+20x8/construction-site-cabin-20x8-reverse-interior.webp        1254x1254   1254x1254   q85      118  yes
+20x10/construction-site-cabin-20x10-front-exterior.webp        1254x1254   1254x1254   q53      119  yes
+20x10/construction-site-cabin-20x10-rear-exterior.webp         1254x1254   1254x1254   q46      120  yes
+20x10/construction-site-cabin-20x10-side-exterior.webp         1254x1254   1254x1254   q64      120  yes
+20x10/construction-site-cabin-20x10-entry-interior.webp        1254x1254   1254x1254   q84      119  yes
+20x10/construction-site-cabin-20x10-corner-interior.webp       1254x1254   1254x1254   q85      119  yes
+20x10/construction-site-cabin-20x10-reverse-interior.webp      1254x1254   1254x1254   q81      114  yes
+20x12/construction-site-cabin-20x12-front-exterior.webp        1254x1254   1254x1254   q71      119  yes
+20x12/construction-site-cabin-20x12-rear-exterior.webp         1254x1254   1254x1254   q67      120  yes
+20x12/construction-site-cabin-20x12-side-exterior.webp         1254x1254   1254x1254   q46      120  yes
+20x12/construction-site-cabin-20x12-entry-interior.webp        1254x1254   1254x1254   q84      120  yes
+20x12/construction-site-cabin-20x12-corner-interior.webp       1254x1254   1254x1254   q85      117  yes
+20x12/construction-site-cabin-20x12-reverse-interior.webp      1254x1254   1254x1254   q85      120  yes
+30x10/construction-site-cabin-30x10-front-exterior.webp        1254x1254   1254x1254   q56      120  yes
+30x10/construction-site-cabin-30x10-rear-exterior.webp         1254x1254   1254x1254   q47      120  yes
+30x10/construction-site-cabin-30x10-side-exterior.webp         1254x1254   1254x1254   q53      118  yes
+30x10/construction-site-cabin-30x10-entry-interior.webp        1254x1254   1254x1254   q82      117  yes
+30x10/construction-site-cabin-30x10-corner-interior.webp       1254x1254   1254x1254   q84      117  yes
+30x10/construction-site-cabin-30x10-reverse-interior.webp      1254x1254   1254x1254   q82      116  yes
+40x10/construction-site-cabin-40x10-front-exterior.webp        1254x1254   1254x1254   q68      118  yes
+40x10/construction-site-cabin-40x10-rear-exterior.webp         1254x1254   1254x1254   q51      119  yes
+40x10/construction-site-cabin-40x10-side-exterior.webp         1254x1254   1254x1254   q60      120  yes
+40x10/construction-site-cabin-40x10-entry-interior.webp        1254x1254   1254x1254   q81      120  yes
+40x10/construction-site-cabin-40x10-corner-interior.webp       1254x1254   1254x1254   q86      107  yes
+40x10/construction-site-cabin-40x10-reverse-interior.webp      1254x1254   1254x1254   q82      115  yes
+ga/construction-site-cabin-10x10-ga-board.webp                 3840x2160   1800x1012   q88       86  yes
+ga/construction-site-cabin-20x8-ga-board.webp                  3840x2160   1800x1012   q88       87  yes
+ga/construction-site-cabin-20x10-ga-board.webp                 3840x2160   1800x1012   q88       90  yes
+ga/construction-site-cabin-20x12-ga-board.webp                 3840x2160   1800x1012   q88       91  yes
+ga/construction-site-cabin-30x10-ga-board.webp                 3840x2160   1800x1012   q88       96  yes
+ga/construction-site-cabin-40x10-ga-board.webp                 3840x2160   1800x1012   q88      101  yes
+section2/construction-site-cabin-20x10-site-exterior-card.webp 1920x1080   1600x900    q46      120  yes
+description/construction-site-cabin-10x10-on-site-exterior.webp 1920x1080   1600x900    q43      119  yes
+description/construction-site-cabin-20x8-interior-desk-run.webp 1920x1080   1600x900    q90       96  yes
+description/construction-site-cabin-20x12-interior-wide-aisle.webp 1920x1080   1600x900    q87      120  yes
+description/construction-site-cabin-30x10-interior-eight-desks.webp 1920x1080   1600x900    q86      120  yes
+description/construction-site-cabin-40x10-manager-room.webp    1920x1080   1600x900    q90       92  yes
+diagrams/construction-site-cabin-frame-joint-diagram.webp      1920x1080   1600x900    q91       80  yes
+diagrams/construction-site-cabin-window-electrical-diagram.webp 1920x1080   1600x900    q90       81  yes
+
+50 outputs; 0 outside the 80-120 KB band.
+
+Geometry, by slot:
+  36 gallery slides   1254x1254 (1:1)  - masters are already 1254x1254, so NOTHING is
+                                         resized or cropped; only the encode differs.
+   6 GA boards        1800x1012 (16:9) - downscaled proportionally from 3840x2160.
+   1 Section 2 card   1600x900  (16:9) - from 1920x1080, proportional, no crop.
+   5 description      1600x900  (16:9) - from 1920x1080, proportional, no crop.
+   2 spec diagrams    1600x900  (16:9) - from 1920x1080, proportional, no crop.
+
+Quality range 41-91. Twenty-two outputs met the band at the asset map's declared
+starting quality; the rest are dense exterior renders whose q86 encode overshot the
+120 KB cap, so quality was lowered at the DECLARED WIDTH rather than the frame being
+narrowed or cropped - the asset map's stated order (quality first, then width).
+Every one of the 50 keeps its declared geometry; width was never reduced.
+
+Fidelity spot-check on the six lowest-quality encodes and all six GA boards
+(SSIM, 8x8 luma windows, output vs its own source master, resized where needed):
+  20x8-side-exterior          q41   0.9407
+  10x10-front-exterior        q42   0.9359
+  10x10-on-site-exterior      q43   0.9372
+  20x10-rear-exterior         q46   0.9321
+  20x12-side-exterior         q46   0.9385
+  20x10-site-exterior-card    q46   0.9330
+  all six GA boards           q88   0.9986 - 0.9988
+
+The GA boards are effectively lossless at the shipped 1800 px: the 20x10 board was
+opened at 1:1 and its dimension text, wall-opening ledger and printed price block
+('Price ex GST Rs 290,000' / 'Price incl 18% GST Rs 342,200') are all legible, which
+is also the independent confirmation of ruling 1's Rs 1,450-per-sq-ft basis at 200 sq ft.
+The low-quality gallery encodes lose high-frequency ground and foliage texture only;
+no wall, opening, fitting or lifting lug is affected.
+
+Also shipped, not an image and outside the band rule:
+  portable-construction-site-cabin-priced-technical-specification-and-ga-v1.pdf  3778 KB (copied byte-for-byte from the approved package)

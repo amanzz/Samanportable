@@ -1,0 +1,39 @@
+ARTEFACT 10 - THE FIVE DESCRIPTION-TAB FRAMES ACTUALLY LOAD AND PAINT
+
+Ruling 3 puts five 16:9 frames INSIDE the Description tab. They are emitted as bare
+inline <img> in descriptionHtml, exactly as the porta-cabins design lock publishes its
+own, and the shared OptimizedContent layer adds its standard classes and loading=lazy.
+
+Because they are lazy, a naive probe that scrolls the page once and then measures
+reads them as 0x0 with complete=false - they have not fetched yet. That is a
+MEASUREMENT artefact, not a page defect, and it is also why the first full-page
+screenshot pass captured them blank. scripts/po06-screenshots.js now forces every
+image eager and awaits decode() before the shutter; the desktop capture grew from
+10,307 px to 13,307 px tall once the five frames painted.
+
+Measured by scrolling each frame into view and awaiting decode(), viewport 1280:
+
+description-tab imgs found: 5 | viewport 1280
+  1. construction-site-cabin-10x10-on-site-exterior.webp
+     painted 1067x600  natural 1600x900  complete=true  fetched=true
+  2. construction-site-cabin-20x8-interior-desk-run.webp
+     painted 1067x600  natural 1600x900  complete=true  fetched=true
+  3. construction-site-cabin-20x12-interior-wide-aisle.webp
+     painted 1067x600  natural 1600x900  complete=true  fetched=true
+  4. construction-site-cabin-30x10-interior-eight-desks.webp
+     painted 1067x600  natural 1600x900  complete=true  fetched=true
+  5. construction-site-cabin-40x10-manager-room.webp
+     painted 1067x600  natural 1600x900  complete=true  fetched=true
+FAILED REQUESTS: [
+
+All five: complete=true, natural 1600x900, painted 1067x600 (16:9, uncropped).
+The only failed requests during the run were third-party analytics beacons
+(google.com/ccm, analytics.google.com), which this machine blocks and which are
+unrelated to the page's own assets.
+
+Served directly from the preview, for completeness:
+  construction-site-cabin-10x10-on-site-exterior.webp              HTTP 200  122498 bytes
+  construction-site-cabin-20x8-interior-desk-run.webp              HTTP 200  99248 bytes
+  construction-site-cabin-20x12-interior-wide-aisle.webp           HTTP 200  123196 bytes
+  construction-site-cabin-30x10-interior-eight-desks.webp          HTTP 200  122984 bytes
+  construction-site-cabin-40x10-manager-room.webp                  HTTP 200  95088 bytes

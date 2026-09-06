@@ -1,0 +1,870 @@
+{
+  "productSlug": "construction-site-cabin",
+  "productName": "Portable Construction Site Cabin",
+  "variantAxis": "size",
+  "defaultVariant": "20x10",
+  "hsn": "9406",
+  "gstPercent": 18,
+  "emitAggregateOffer": true,
+  "variants": [
+    {
+      "sizeSlug": "10x10",
+      "label": "10 × 10 ft",
+      "dims": "10 × 10 × 8.5 ft",
+      "areaSqft": 100,
+      "priceExGst": 166750,
+      "priceInclGst": 196765,
+      "featureCells": [
+        {
+          "label": "Size",
+          "value": "10 × 10 × 8.5 ft, 100 sq ft"
+        },
+        {
+          "label": "Roof",
+          "value": "Centred-ridge two-way slope"
+        },
+        {
+          "label": "Openings",
+          "value": "1 door, 3 windows"
+        },
+        {
+          "label": "Desks staged",
+          "value": "4"
+        },
+        {
+          "label": "Application",
+          "value": "Gate or batching-plant engineer's room"
+        },
+        {
+          "label": "Material",
+          "value": "Welded MS frame, 1.2 mm corrugated MS walls"
+        },
+        {
+          "label": "Delivery",
+          "value": "Pan-India; freight published by distance band"
+        },
+        {
+          "label": "Coverage",
+          "value": "Bangalore and Delhi NCR manufacturing zones"
+        },
+        {
+          "label": "Brand",
+          "value": "SAMAN Portable"
+        }
+      ],
+      "images": [
+        {
+          "src": "/images/products/construction-site-cabin/10x10/construction-site-cabin-10x10-front-exterior.webp",
+          "alt": "10 × 10 ft construction site cabin in Deep Oxford Blue, front wall door and left wall window",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/construction-site-cabin/10x10/construction-site-cabin-10x10-rear-exterior.webp",
+          "alt": "10 × 10 ft site office cabin from the rear, a window on each of the two side walls",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/construction-site-cabin/10x10/construction-site-cabin-10x10-side-exterior.webp",
+          "alt": "10 × 10 ft site cabin from the right, showing the front door and the right wall window together",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/construction-site-cabin/10x10/construction-site-cabin-10x10-entry-interior.webp",
+          "alt": "Inside the 10 × 10 ft site cabin from the doorway, four desks staged around three walls",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/construction-site-cabin/10x10/construction-site-cabin-10x10-corner-interior.webp",
+          "alt": "10 × 10 ft site cabin interior corner, rear and left wall windows above two desk positions",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/construction-site-cabin/10x10/construction-site-cabin-10x10-reverse-interior.webp",
+          "alt": "10 × 10 ft site cabin interior looking back at the entrance door and the right wall desk",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "20x8",
+      "label": "20 × 8 ft",
+      "dims": "20 × 8 × 8.5 ft",
+      "areaSqft": 160,
+      "priceExGst": 255200,
+      "priceInclGst": 301136,
+      "featureCells": [
+        {
+          "label": "Size",
+          "value": "20 × 8 × 8.5 ft, 160 sq ft"
+        },
+        {
+          "label": "Roof",
+          "value": "One-way slope"
+        },
+        {
+          "label": "Openings",
+          "value": "1 door, 6 windows"
+        },
+        {
+          "label": "Desks staged",
+          "value": "3"
+        },
+        {
+          "label": "Application",
+          "value": "Narrow access inside the hoarding line"
+        },
+        {
+          "label": "Material",
+          "value": "Welded MS frame, 1.2 mm corrugated MS walls"
+        },
+        {
+          "label": "Delivery",
+          "value": "Pan-India; freight published by distance band"
+        },
+        {
+          "label": "Coverage",
+          "value": "Bangalore and Delhi NCR manufacturing zones"
+        },
+        {
+          "label": "Brand",
+          "value": "SAMAN Portable"
+        }
+      ],
+      "images": [
+        {
+          "src": "/images/products/construction-site-cabin/20x8/construction-site-cabin-20x8-front-exterior.webp",
+          "alt": "20 × 8 ft construction site cabin in Graphite Charcoal, window, door and window on the front wall",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/construction-site-cabin/20x8/construction-site-cabin-20x8-rear-exterior.webp",
+          "alt": "20 × 8 ft site office cabin rear elevation, two rear windows and the one-way sloping roof",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/construction-site-cabin/20x8/construction-site-cabin-20x8-side-exterior.webp",
+          "alt": "20 × 8 ft site cabin from the right end, front wall openings and the end wall window in one view",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/construction-site-cabin/20x8/construction-site-cabin-20x8-entry-interior.webp",
+          "alt": "Inside the 20 × 8 ft site cabin from the door, three desks in a single run along the rear wall",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/construction-site-cabin/20x8/construction-site-cabin-20x8-corner-interior.webp",
+          "alt": "20 × 8 ft site cabin interior corner showing the front wall door and the left end wall window",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/construction-site-cabin/20x8/construction-site-cabin-20x8-reverse-interior.webp",
+          "alt": "20 × 8 ft site cabin interior from the far end, rear desk run under two windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "20x10",
+      "label": "20 × 10 ft",
+      "dims": "20 × 10 × 8.5 ft",
+      "areaSqft": 200,
+      "priceExGst": 290000,
+      "priceInclGst": 342200,
+      "featureCells": [
+        {
+          "label": "Size",
+          "value": "20 × 10 × 8.5 ft, 200 sq ft"
+        },
+        {
+          "label": "Roof",
+          "value": "Centred-ridge two-way slope"
+        },
+        {
+          "label": "Openings",
+          "value": "1 door, 6 windows"
+        },
+        {
+          "label": "Desks staged",
+          "value": "5"
+        },
+        {
+          "label": "Application",
+          "value": "Main contractor's standard site office"
+        },
+        {
+          "label": "Material",
+          "value": "Welded MS frame, 1.2 mm corrugated MS walls"
+        },
+        {
+          "label": "Delivery",
+          "value": "Pan-India; freight published by distance band"
+        },
+        {
+          "label": "Coverage",
+          "value": "Bangalore and Delhi NCR manufacturing zones"
+        },
+        {
+          "label": "Brand",
+          "value": "SAMAN Portable"
+        }
+      ],
+      "images": [
+        {
+          "src": "/images/products/construction-site-cabin/20x10/construction-site-cabin-20x10-front-exterior.webp",
+          "alt": "20 × 10 ft construction site cabin in Deep Bottle Green on a working site, front door between two windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/construction-site-cabin/20x10/construction-site-cabin-20x10-rear-exterior.webp",
+          "alt": "20 × 10 ft site office cabin rear elevation with two rear windows and the centred ridge roof",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/construction-site-cabin/20x10/construction-site-cabin-20x10-side-exterior.webp",
+          "alt": "20 × 10 ft site cabin from the right end, front wall openings and the end wall window together",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/construction-site-cabin/20x10/construction-site-cabin-20x10-entry-interior.webp",
+          "alt": "Inside the 20 × 10 ft site cabin from the door, five desks in two runs with a clear central aisle",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/construction-site-cabin/20x10/construction-site-cabin-20x10-corner-interior.webp",
+          "alt": "20 × 10 ft site cabin interior corner, front wall door and left end wall window above the desks",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/construction-site-cabin/20x10/construction-site-cabin-20x10-reverse-interior.webp",
+          "alt": "20 × 10 ft site cabin interior from the far end, rear desk run under two 4 ft windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "20x12",
+      "label": "20 × 12 ft",
+      "dims": "20 × 12 × 8.5 ft",
+      "areaSqft": 240,
+      "priceExGst": 334080,
+      "priceInclGst": 394214,
+      "featureCells": [
+        {
+          "label": "Size",
+          "value": "20 × 12 × 8.5 ft, 240 sq ft"
+        },
+        {
+          "label": "Roof",
+          "value": "Centred-ridge two-way slope"
+        },
+        {
+          "label": "Openings",
+          "value": "1 door, 6 windows"
+        },
+        {
+          "label": "Desks staged",
+          "value": "5"
+        },
+        {
+          "label": "Application",
+          "value": "Site office with a drawing-table aisle"
+        },
+        {
+          "label": "Material",
+          "value": "Welded MS frame, 1.2 mm corrugated MS walls"
+        },
+        {
+          "label": "Delivery",
+          "value": "Pan-India; freight published by distance band"
+        },
+        {
+          "label": "Coverage",
+          "value": "Bangalore and Delhi NCR manufacturing zones"
+        },
+        {
+          "label": "Brand",
+          "value": "SAMAN Portable"
+        }
+      ],
+      "images": [
+        {
+          "src": "/images/products/construction-site-cabin/20x12/construction-site-cabin-20x12-front-exterior.webp",
+          "alt": "20 × 12 ft construction site cabin in Burgundy Wine, front door between two windows on the 20 ft wall",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/construction-site-cabin/20x12/construction-site-cabin-20x12-rear-exterior.webp",
+          "alt": "20 × 12 ft site office cabin rear elevation, two rear windows on the wider 12 ft plan",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/construction-site-cabin/20x12/construction-site-cabin-20x12-side-exterior.webp",
+          "alt": "20 × 12 ft site cabin from the right end, showing the centred window on the 12 ft end wall",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/construction-site-cabin/20x12/construction-site-cabin-20x12-entry-interior.webp",
+          "alt": "Inside the 20 × 12 ft site cabin, five desks and the wider aisle a drawing table needs",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/construction-site-cabin/20x12/construction-site-cabin-20x12-corner-interior.webp",
+          "alt": "20 × 12 ft site cabin interior corner with the front door and the centred end wall window",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/construction-site-cabin/20x12/construction-site-cabin-20x12-reverse-interior.webp",
+          "alt": "20 × 12 ft site cabin interior from the far end, rear desks under two windows on the 12 ft width",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "30x10",
+      "label": "30 × 10 ft",
+      "dims": "30 × 10 × 8.5 ft",
+      "areaSqft": 300,
+      "priceExGst": 417600,
+      "priceInclGst": 492768,
+      "featureCells": [
+        {
+          "label": "Size",
+          "value": "30 × 10 × 8.5 ft, 300 sq ft"
+        },
+        {
+          "label": "Roof",
+          "value": "Centred-ridge two-way slope"
+        },
+        {
+          "label": "Openings",
+          "value": "2 doors, 8 windows"
+        },
+        {
+          "label": "Desks staged",
+          "value": "8"
+        },
+        {
+          "label": "Application",
+          "value": "Two-door site office for a full team"
+        },
+        {
+          "label": "Material",
+          "value": "Welded MS frame, 1.2 mm corrugated MS walls"
+        },
+        {
+          "label": "Delivery",
+          "value": "Pan-India; freight published by distance band"
+        },
+        {
+          "label": "Coverage",
+          "value": "Bangalore and Delhi NCR manufacturing zones"
+        },
+        {
+          "label": "Brand",
+          "value": "SAMAN Portable"
+        }
+      ],
+      "images": [
+        {
+          "src": "/images/products/construction-site-cabin/30x10/construction-site-cabin-30x10-front-exterior.webp",
+          "alt": "30 × 10 ft construction site cabin in Slate Blue-Grey, two doors and two windows on the 30 ft front wall",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/construction-site-cabin/30x10/construction-site-cabin-30x10-rear-exterior.webp",
+          "alt": "30 × 10 ft site office cabin rear elevation with four windows along the 30 ft rear wall",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/construction-site-cabin/30x10/construction-site-cabin-30x10-side-exterior.webp",
+          "alt": "30 × 10 ft site cabin from the right end, both front doors and the end wall window in one view",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/construction-site-cabin/30x10/construction-site-cabin-30x10-entry-interior.webp",
+          "alt": "Inside the 30 × 10 ft site cabin from a door, eight desks staged in two runs",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/construction-site-cabin/30x10/construction-site-cabin-30x10-corner-interior.webp",
+          "alt": "30 × 10 ft site cabin interior corner, front wall doors and the left end wall window",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/construction-site-cabin/30x10/construction-site-cabin-30x10-reverse-interior.webp",
+          "alt": "30 × 10 ft site cabin interior from the far end, five rear desks under four windows",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    },
+    {
+      "sizeSlug": "40x10",
+      "label": "40 × 10 ft",
+      "dims": "40 × 10 × 8.5 ft",
+      "areaSqft": 400,
+      "priceExGst": 551000,
+      "priceInclGst": 650180,
+      "featureCells": [
+        {
+          "label": "Size",
+          "value": "40 × 10 × 8.5 ft, 400 sq ft"
+        },
+        {
+          "label": "Roof",
+          "value": "Centred-ridge two-way slope"
+        },
+        {
+          "label": "Openings",
+          "value": "2 doors plus 1 internal, 10 windows"
+        },
+        {
+          "label": "Desks staged",
+          "value": "12 plus manager room"
+        },
+        {
+          "label": "Application",
+          "value": "Site office with a partitioned manager room"
+        },
+        {
+          "label": "Material",
+          "value": "Welded MS frame, 1.2 mm corrugated MS walls"
+        },
+        {
+          "label": "Delivery",
+          "value": "Pan-India; freight published by distance band"
+        },
+        {
+          "label": "Coverage",
+          "value": "Bangalore and Delhi NCR manufacturing zones"
+        },
+        {
+          "label": "Brand",
+          "value": "SAMAN Portable"
+        }
+      ],
+      "images": [
+        {
+          "src": "/images/products/construction-site-cabin/40x10/construction-site-cabin-40x10-front-exterior.webp",
+          "alt": "40 × 10 ft construction site cabin in Muted Teal, two doors and three windows on the 40 ft front wall",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/construction-site-cabin/40x10/construction-site-cabin-40x10-rear-exterior.webp",
+          "alt": "40 × 10 ft site office cabin rear elevation with five windows along the 40 ft rear wall",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/construction-site-cabin/40x10/construction-site-cabin-40x10-side-exterior.webp",
+          "alt": "40 × 10 ft site cabin from the right end, the common office end wall window and both front doors",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/construction-site-cabin/40x10/construction-site-cabin-40x10-entry-interior.webp",
+          "alt": "Inside the 40 × 10 ft site cabin common office, twelve desks in two runs down the 30 ft room",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/construction-site-cabin/40x10/construction-site-cabin-40x10-corner-interior.webp",
+          "alt": "The 10 × 10 ft manager room inside the 40 × 10 ft site cabin, with its window and partition door",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "src": "/images/products/construction-site-cabin/40x10/construction-site-cabin-40x10-reverse-interior.webp",
+          "alt": "40 × 10 ft site cabin common office looking back at the partition door to the manager room",
+          "provenance": "render",
+          "width": 1254,
+          "height": 1254
+        }
+      ]
+    }
+  ],
+  "specPdfHref": "/images/products/construction-site-cabin/portable-construction-site-cabin-priced-technical-specification-and-ga-v1.pdf",
+  "schemaIncludeVariantOffers": true,
+  "suppressReviewClaims": true,
+  "suppressLegacyFaqSchema": true,
+  "suppressSchemaAvailability": true,
+  "categoryLabel": "Portable Office",
+  "categoryHref": "/product/portable-office",
+  "specPdfButtonLabel": "Download technical specification (PDF)",
+  "schemaBrandName": "SAMAN Portable",
+  "h1": "Portable Construction Site Cabin: Six Site-Duty Sizes",
+  "seoTitle": "Site Office Cabin for Construction Sites, 6 Sizes | SAMAN",
+  "metaDescription": "Site office cabin for construction sites in six sizes, 100 to 400 sq ft, from Rs 1,66,750 ex-GST. Grilled windows, marked lifting lugs, GA drawing per size.",
+  "canonical": "https://www.samanportable.com/product/portable-office/construction-site-cabin",
+  "opener": "A portable construction site cabin is the site office that stands inside the hoarding line, not in a business park. SAMAN builds it as one welded steel module in six approved sizes from 10 × 10 ft to 40 × 10 ft, 100 to 400 sq ft, published from Rs 1,66,750 ex-GST. Every size carries grilled sliding windows, an outward-opening steel door on the front wall and lifting lugs marked on the shell so the crane picks the unit up the same way on every move. The 30 × 10 ft plan puts a door at each end of the front wall so nobody walks past the drawing table to reach a desk. The 40 × 10 ft arrives with a 10 × 10 ft manager room already partitioned. Choose by the wall-opening schedule and the staged desk count, both fixed on the GA drawing for the size you select.",
+  "ymalTiles": [
+    {
+      "title": "Portable Office Cabin",
+      "href": "/product/portable-office",
+      "category": "Portable Office",
+      "blurb": "Explore Portable Office Cabin",
+      "imageSrc": "/images/products/portable-office/20x10/portable-office-20x10-front-angle.webp",
+      "imageAlt": "Portable Office Cabin 20 x 10 ft exterior render"
+    },
+    {
+      "title": "Readymade Office Cabin",
+      "href": "/product/portable-office/readymade-office-cabin",
+      "category": "Portable Office",
+      "blurb": "Explore Readymade Office Cabin",
+      "imageSrc": "/images/products/readymade-office-cabin/20x10/readymade-office-cabin-20x10-front.webp",
+      "imageAlt": "Readymade Office Cabin 20 x 10 ft exterior render"
+    },
+    {
+      "title": "Prefabricated Office Cabins",
+      "href": "/product/portable-office/prefabricated-office-cabins",
+      "category": "Portable Office",
+      "blurb": "Explore Prefabricated Office Cabins",
+      "imageSrc": "/images/products/prefabricated-office-cabins/20x10/prefabricated-office-cabin-20x10-front-angle.webp",
+      "imageAlt": "Prefabricated Office Cabins 20 x 10 ft exterior render"
+    },
+    {
+      "title": "Portable Weighbridge Office",
+      "href": "/product/portable-office/portable-weighbridge-office",
+      "category": "Portable Office",
+      "blurb": "Explore Portable Weighbridge Office",
+      "imageSrc": "/images/products/portable-weighbridge-office/20x10/portable-weighbridge-office-20x10-yard-exterior-wall-a-entry.webp",
+      "imageAlt": "Portable Weighbridge Office 20 x 10 ft exterior render"
+    },
+    {
+      "title": "Executive Portable Office",
+      "href": "/product/portable-office/executive-portable-office",
+      "category": "Portable Office",
+      "blurb": "Explore Executive Portable Office",
+      "imageSrc": "/images/products/executive-portable-office/gallery/20x10/executive-portable-office-20x10-front-centred-door.webp",
+      "imageAlt": "Executive Portable Office 20 x 10 ft exterior render"
+    },
+    {
+      "title": "Small Office Cabin",
+      "href": "/product/portable-office/small-office-cabin",
+      "category": "Portable Office",
+      "blurb": "Explore Small Office Cabin",
+      "imageSrc": "/images/products/small-office-cabin/10x10/small-office-cabin-10x10-front-angle.webp",
+      "imageAlt": "Small Office Cabin 10 x 10 ft exterior render"
+    }
+  ],
+  "relatedTiles": [
+    {
+      "title": "Portable Office Cabin",
+      "href": "/product/portable-office",
+      "category": "Portable Office",
+      "blurb": "Explore Portable Office Cabin",
+      "imageSrc": "/images/products/portable-office/20x10/portable-office-20x10-front-angle.webp",
+      "imageAlt": "Portable Office Cabin 20 x 10 ft exterior render"
+    },
+    {
+      "title": "Readymade Office Cabin",
+      "href": "/product/portable-office/readymade-office-cabin",
+      "category": "Portable Office",
+      "blurb": "Explore Readymade Office Cabin",
+      "imageSrc": "/images/products/readymade-office-cabin/20x10/readymade-office-cabin-20x10-front.webp",
+      "imageAlt": "Readymade Office Cabin 20 x 10 ft exterior render"
+    },
+    {
+      "title": "Prefabricated Office Cabins",
+      "href": "/product/portable-office/prefabricated-office-cabins",
+      "category": "Portable Office",
+      "blurb": "Explore Prefabricated Office Cabins",
+      "imageSrc": "/images/products/prefabricated-office-cabins/20x10/prefabricated-office-cabin-20x10-front-angle.webp",
+      "imageAlt": "Prefabricated Office Cabins 20 x 10 ft exterior render"
+    },
+    {
+      "title": "Portable Weighbridge Office",
+      "href": "/product/portable-office/portable-weighbridge-office",
+      "category": "Portable Office",
+      "blurb": "Explore Portable Weighbridge Office",
+      "imageSrc": "/images/products/portable-weighbridge-office/20x10/portable-weighbridge-office-20x10-yard-exterior-wall-a-entry.webp",
+      "imageAlt": "Portable Weighbridge Office 20 x 10 ft exterior render"
+    },
+    {
+      "title": "Executive Portable Office",
+      "href": "/product/portable-office/executive-portable-office",
+      "category": "Portable Office",
+      "blurb": "Explore Executive Portable Office",
+      "imageSrc": "/images/products/executive-portable-office/gallery/20x10/executive-portable-office-20x10-front-centred-door.webp",
+      "imageAlt": "Executive Portable Office 20 x 10 ft exterior render"
+    },
+    {
+      "title": "Small Office Cabin",
+      "href": "/product/portable-office/small-office-cabin",
+      "category": "Portable Office",
+      "blurb": "Explore Small Office Cabin",
+      "imageSrc": "/images/products/small-office-cabin/10x10/small-office-cabin-10x10-front-angle.webp",
+      "imageAlt": "Small Office Cabin 10 x 10 ft exterior render"
+    }
+  ],
+  "faqSchema": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What size site office cabin do I need on a construction site?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Count the people who need a desk of their own. Four fits the 100 sq ft 10 × 10 ft, five the 200 sq ft 20 × 10 ft, eight the 300 sq ft 30 × 10 ft, and twelve plus a manager room the 400 sq ft 40 × 10 ft."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is a portable site cabin a temporary structure?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It is a relocatable one. The cabin is a welded steel module built to be lifted and moved repeatedly, with marked lifting points, rather than a permanent building fixed to a foundation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are the prices on this page inclusive of GST?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Every price is published ex-GST, and the figure including 18 per cent GST is shown alongside it for each of the six approved sizes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does the price include delivery to the site?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Freight is charged by trailer size and distance band and is published on the shipping tab. Delivery is free within Bangalore city and across Delhi NCR."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can the door and window positions be changed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The positions on this page are the approved schedule and are fixed on the GA drawing for each size. Any change is a drawing revision and is priced through a quotation, not selected on the page."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why do the windows have grills on the outside?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The grill protects the glass from what leans against a site cabin: scaffold tube, shuttering ply and reinforcement. Every window in all six sizes carries one as standard."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is air conditioning included in the cabin price?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The price covers the electrical point and circuit provision for an air conditioner. The unit itself, and its installation, are quoted separately."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is the cabin lifted and placed on site?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "By crane, using the lifting lugs designed into the chassis and marked on the shell. The site provides the crane and a level, compacted bearing or temporary plinth for it to sit on."
+        }
+      }
+    ]
+  },
+  "descriptionHtml": "<section><h2>Site office cabin or site office container? Start here</h2><p>Two different products answer the phrase site office, and buyers land on both with the same question. One is a steel-framed cabin built from scratch on a welded chassis, delivered in the size the drawing says and in a colour chosen for the job. The other is a used ISO shipping container cut and lined into an office, fixed at container dimensions because that is what the box already is. This page is the first of those.</p><p>The difference matters on a construction site more than anywhere else. A cabin is built to a wall-opening schedule, so the door lands where the site access is and the windows land over the desks rather than wherever the container corrugation allowed. Widths are not tied to 8 ft: this range runs 8, 10 and 12 ft wide, and the 12 ft width exists specifically so a drawing table has an aisle. A cabin is also lighter for its floor area, which matters when the only crane free to place it is the one already erecting the structure.</p><p>If the container form is what you actually want, whether for the stack strength, the lock-up security or the look, that is a separate approved product and it has its own page: <a href=\"/product/container-offices/shipping-container-office\">the SAMAN site office container.</a> Nothing on this page is a container conversion, and no size here is derived from a shipping container.</p><img src=\"/images/products/construction-site-cabin/description/construction-site-cabin-10x10-on-site-exterior.webp\" width=\"1600\" height=\"900\" loading=\"lazy\" alt=\"10 × 10 ft construction site cabin inside the hoarding line of an active project, structure rising behind\"></section><section><h2>Who works in a site cabin, and where it actually stands</h2><p>The people this cabin is specified for are the ones whose day is spent between the room and the works: the site engineer, the project or contracts manager, the planner, the safety officer, the store or document controller, and the labour supervisor who comes in with muddy boots and leaves again in four minutes. None of them treat the room as an office in the ordinary sense. The door opens perhaps two hundred times a day, drawings are laid flat rather than filed, and half the furniture is only there because something has to hold the site register.</p><p>Where it stands is just as particular. A site cabin sits inside the hoarding line on ground that was a field or a demolition slab a month ago, usually on a temporary plinth or on packed rubble rather than a foundation. It is close enough to the works to see them and far enough back to be outside the crane drop zone, which means it will be moved at least once as the structure comes out of the ground and the site layout changes. Access is a haul road, not a service yard: the delivery trailer needs turning room and the crane needs a marked pick-up point on the shell.</p><p>Because the unit moves, everything about it is specified for repeat lifting rather than for one placement. That is the single largest difference between this build and a cabin that will spend its whole life on a paved compound, and it is why the lifting lug positions are painted onto the shell rather than left for the rigger to work out.</p></section><section><h2>What site duty changes about the shell and the openings</h2><p>The shell is the same welded steel platform SAMAN uses across the cabin families: a 100 × 50 × 3 mm MS C-channel base chassis, 50 × 50 mm hollow-section top and wall framing with reinforced openings, 1.2 mm corrugated MS external walls and a 1.4 mm corrugated MS roof with sealed laps and flashings. Walls are 100 mm thick. Inside, 8 mm prelaminated MDF lining with aluminium joint sections runs to an 18 mm cement-fibre floor board finished in 1.3 mm vinyl. Roof insulation is 50 mm glass wool at 42 kg per cubic metre; walls take 25 mm glass wool or the documented 12 mm Heatlon option.</p><p>What site duty changes is where things sit and how they are protected. Every window in the range is a 4 ft two-track aluminium sliding unit with 4 mm glass, and every one of them carries a fixed protective grill on the outside. That grill is not a security afterthought; it is what stops a length of pipe or a bundle of shuttering ply leaning against the glass. The door is a single outward-opening MS-framed leaf, roughly 7 × 3 ft, set in the front wall and raised clear of the mud line so the threshold sheds boot dirt outward instead of collecting it.</p><p>Electrical work is concealed copper wiring on typical 1.5, 2.5 and 4 sq mm circuits with a distribution board carrying isolation, MCB and RCCB protection plus earthing, segregated between lighting, sockets and the air-conditioning provision. The provision is a point and a circuit; the unit itself is quoted separately. Corrosion protection is prepared MS with red-oxide primer and two enamel coats, and each of the six sizes ships in its own approved exterior colour so a fleet on one site can be told apart at a distance.</p><img src=\"/images/products/construction-site-cabin/description/construction-site-cabin-20x8-interior-desk-run.webp\" width=\"1600\" height=\"900\" loading=\"lazy\" alt=\"Interior of a 20 × 8 ft site office cabin, three desks in one run under the rear windows\"></section><section><h2>Choosing between 100, 160, 200, 240, 300 and 400 sq ft</h2><p>Size on a construction site is decided by two numbers that have nothing to do with floor area: how many people need a desk of their own, and how wide the aisle has to be for the biggest drawing that gets opened in the room. Work those two out and the size chooses itself, because the desk count is staged on the GA drawing rather than left to the buyer.</p><table><caption>Approved sizes, staged desks and published prices</caption><thead><tr><th>Size</th><th>Area</th><th>Staged desks</th><th>External doors</th><th>Windows</th><th>Price ex-GST</th><th>Price incl. 18% GST</th></tr></thead><tbody><tr><td>10 × 10 × 8.5 ft</td><td>100 sq ft</td><td>4</td><td>1</td><td>3</td><td>Rs 1,66,750</td><td>Rs 1,96,765</td></tr><tr><td>20 × 8 × 8.5 ft</td><td>160 sq ft</td><td>3</td><td>1</td><td>6</td><td>Rs 2,55,200</td><td>Rs 3,01,136</td></tr><tr><td>20 × 10 × 8.5 ft</td><td>200 sq ft</td><td>5</td><td>1</td><td>6</td><td>Rs 2,90,000</td><td>Rs 3,42,200</td></tr><tr><td>20 × 12 × 8.5 ft</td><td>240 sq ft</td><td>5</td><td>1</td><td>6</td><td>Rs 3,34,080</td><td>Rs 3,94,214</td></tr><tr><td>30 × 10 × 8.5 ft</td><td>300 sq ft</td><td>8</td><td>2</td><td>8</td><td>Rs 4,17,600</td><td>Rs 4,92,768</td></tr><tr><td>40 × 10 × 8.5 ft</td><td>400 sq ft</td><td>12 plus manager room</td><td>2</td><td>10</td><td>Rs 5,51,000</td><td>Rs 6,50,180</td></tr></tbody></table><p>Read the table by the desk column first. The 20 × 8 ft stages fewer desks than the smaller 10 × 10 ft, which looks wrong until you see why: at 8 ft wide only one desk run fits, so its three desks sit in a single line on the rear wall, while the square 10 × 10 ft puts four desks around three walls. The 20 × 8 ft is not bought for capacity, it is bought because a 10 ft module will not physically go where it has to go.</p><p>The step from 20 × 10 ft to 20 × 12 ft buys no extra desks at all. Both stage five. The two feet buy aisle, and the buyers who pay for them are the ones who hold the weekly progress meeting standing around a drawing in the site office rather than in a separate meeting room. If your drawings live rolled up in a tube, the 20 × 10 ft is the better value; if they live open on a table, the 20 × 12 ft is the size to order.</p><img src=\"/images/products/construction-site-cabin/description/construction-site-cabin-20x12-interior-wide-aisle.webp\" width=\"1600\" height=\"900\" loading=\"lazy\" alt=\"Interior of a 20 × 12 ft site cabin, five desks and the wider central aisle on the 12 ft width\"><p>Below 100 sq ft this page stops. A gate room, a single-supervisor cabin or a security post at 48 to 80 sq ft is a different product and is priced on the <a href=\"/product/portable-office/small-office-cabin\">small office cabin page.</a> Above 400 sq ft the price rule continues in published bands to 900 sq ft, and beyond that the size is quoted manually rather than listed.</p></section><section><h2>The two-door 30 × 10 and the partitioned 40 × 10 plan</h2><p>The two largest sizes are the only ones that change the plan rather than just the dimensions, and both changes exist for the same reason: at eight desks and above, a single door stops working.</p><p>On the 30 × 10 ft, eight desks are staged three along the front wall and five along the rear. With one central door, anyone reaching the far end walks the full length of the aisle past six colleagues, and the room has one way out. The approved plan puts a 3 ft door near each end of the 30 ft front wall instead, which splits the traffic, lets the far desks be reached directly, and means the drawing table can be placed mid-wall without becoming a corridor. Four of its eight windows run along the rear wall, one over each pair of desks.</p><img src=\"/images/products/construction-site-cabin/description/construction-site-cabin-30x10-interior-eight-desks.webp\" width=\"1600\" height=\"900\" loading=\"lazy\" alt=\"Interior of a 30 × 10 ft site cabin, eight desks staged in two runs along the long walls\"><p>The 40 × 10 ft is the only size in the range delivered with a partition already built. A full-height partition 10 ft in from one end wall creates a 10 × 10 ft manager room with its own 4 ft window and its own 3 ft internal door, opening off the common office. What is left is a 30 × 10 ft open office staging twelve desks, five on the front wall and seven on the rear, served by two external doors on the 40 ft front wall. Ten windows are scheduled in total, one of which belongs to the manager room.</p><p>That partition is worth ordering rather than adding later for one practical reason: a site manager takes calls and holds conversations that the room should not hear, and a partition built into the module on the shop floor is straight, lined on both faces and finished to the same standard as the shell. A partition put in on site after delivery is a carpentry job on a floor that is already in use.</p><img src=\"/images/products/construction-site-cabin/description/construction-site-cabin-40x10-manager-room.webp\" width=\"1600\" height=\"900\" loading=\"lazy\" alt=\"The partitioned 10 × 10 ft manager room in the 40 × 10 ft site cabin, window, desk and internal door\"></section><section><h2>What the published price covers and what is quoted apart</h2><p>Every price on this page is the finished cabin shell as described: chassis, framing, external envelope, roof, insulation, internal lining, floor, the scheduled doors and windows with their grills, the internal electrical installation with its distribution board, the paint system, and the lifting provision. It is quoted ex-GST, with 18 per cent GST shown separately against every size, and it is the same price whether the unit goes to a metro site or a district town.</p><p>What is not in it is everything that is site-specific, because pricing it blind would either overcharge the buyer or under-specify the job:</p><ul><li>Furniture, including the desks the layout is staged for</li><li>Air conditioning units; the page price includes the point and circuit only</li><li>Telecom, data cabling and any networking equipment</li><li>Generators, incoming supply, and connection to the site distribution board</li><li>Foundation, plinth, levelling and rough-ground packing</li><li>Access stairs, landings and handrails</li><li>Water, drainage and any sanitary fit-out</li></ul><p>Freight is published separately by trailer size and distance band on the shipping tab, with delivery free within Bangalore city and across Delhi NCR including Ghaziabad, Gurugram, Faridabad, Noida and Greater Noida. Crane hire at the receiving end is arranged by the site, since the crane that lands the cabin is almost always one already on hire to the project.</p><p>Two things commonly bought alongside a site cabin sit on their own pages rather than being folded into this one. Workforce accommodation is priced as a <a href=\"/product/labor-colony\">labour colony,</a> and standalone sanitation is priced as a <a href=\"/product/portable-toilet\">portable toilet.</a> Ordering them together is normal; pricing them together is not, because the quantities never scale the same way.</p></section><section><h2>Common questions about construction site office cabins</h2><h3>What size site office cabin do I need on a construction site?</h3><p>Count the people who need a desk of their own. Four fits the 100 sq ft 10 × 10 ft, five the 200 sq ft 20 × 10 ft, eight the 300 sq ft 30 × 10 ft, and twelve plus a manager room the 400 sq ft 40 × 10 ft.</p><h3>Is a portable site cabin a temporary structure?</h3><p>It is a relocatable one. The cabin is a welded steel module built to be lifted and moved repeatedly, with marked lifting points, rather than a permanent building fixed to a foundation.</p><h3>Are the prices on this page inclusive of GST?</h3><p>No. Every price is published ex-GST, and the figure including 18 per cent GST is shown alongside it for each of the six approved sizes.</p><h3>Does the price include delivery to the site?</h3><p>No. Freight is charged by trailer size and distance band and is published on the shipping tab. Delivery is free within Bangalore city and across Delhi NCR.</p><h3>Can the door and window positions be changed?</h3><p>The positions on this page are the approved schedule and are fixed on the GA drawing for each size. Any change is a drawing revision and is priced through a quotation, not selected on the page.</p><h3>Why do the windows have grills on the outside?</h3><p>The grill protects the glass from what leans against a site cabin: scaffold tube, shuttering ply and reinforcement. Every window in all six sizes carries one as standard.</p><h3>Is air conditioning included in the cabin price?</h3><p>No. The price covers the electrical point and circuit provision for an air conditioner. The unit itself, and its installation, are quoted separately.</p><h3>How is the cabin lifted and placed on site?</h3><p>By crane, using the lifting lugs designed into the chassis and marked on the shell. The site provides the crane and a level, compacted bearing or temporary plinth for it to sit on.</p></section>",
+  "applicationsContent": {
+    "h2": "The six approved site cabin sizes, 100 to 400 sq ft",
+    "intro": "Sizes run in folder order. Each carries its own GA drawing, wall-opening schedule and staged desk count.",
+    "panels": [
+      {
+        "sizeSlug": "10x10",
+        "h3": "10 × 10 ft Site Cabin: 100 sq ft Engineer's Gate Room",
+        "paragraph": "The smallest approved site cabin is a square 100 sq ft room with the door centred on the front wall and a 4 ft window on each of the other three walls, so daylight arrives from three sides and no desk faces a blank sheet. Four desk positions are staged around the perimeter, two on the rear wall and one on each side wall, leaving the centre of the floor clear for a visitor to stand at a drawing spread on the desk. It goes in at the gate, at the batching plant, or beside a single tower crane.",
+        "applications": [
+          "100 sq ft, 10 × 10 × 8.5 ft, centred-ridge two-way roof",
+          "One 3 ft outward-opening door, centred on the front wall",
+          "Three 4 ft sliding windows, one each on the rear, left and right walls",
+          "4 staged desks: 2 on the rear wall, 1 on each side wall",
+          "Deep Oxford Blue shell with a Warm Ivory interior lining",
+          "Rs 1,66,750 ex-GST, Rs 1,96,765 with 18 per cent GST"
+        ],
+        "image": {
+          "src": "/images/products/construction-site-cabin/ga/construction-site-cabin-10x10-ga-board.webp",
+          "alt": "GA drawing, 10 × 10 ft construction site cabin: floor plan, four elevations and the approved opening schedule",
+          "provenance": "drawing",
+          "width": 1800,
+          "height": 1012,
+          "fit": "contain"
+        }
+      },
+      {
+        "sizeSlug": "20x8",
+        "h3": "20 × 8 ft Site Cabin: 160 sq ft Narrow-Access Office",
+        "paragraph": "An 8 ft width is what fits when the hoarding line, a service trench or a boundary wall leaves no room to swing a 10 ft module into place. The 20 × 8 ft answers that with the only one-way sloping roof in the range, so run-off leaves on a single side and there is no ridge to clear under a low crane pass. Three desks sit in one run along the rear wall and the door lands in the middle of the front wall, between two windows, keeping the whole aisle on the door side.",
+        "applications": [
+          "160 sq ft, 20 × 8 × 8.5 ft, one-way sloping roof",
+          "Only size in the range without a centred ridge",
+          "Six 4 ft windows: two front, two rear, one on each 8 ft end wall",
+          "3 staged desks in a single run on the rear wall",
+          "Graphite Charcoal shell with a Champagne Cream interior lining",
+          "Rs 2,55,200 ex-GST, Rs 3,01,136 with 18 per cent GST"
+        ],
+        "image": {
+          "src": "/images/products/construction-site-cabin/ga/construction-site-cabin-20x8-ga-board.webp",
+          "alt": "GA drawing, 20 × 8 ft construction site cabin: one-way sloping roof, floor plan and six window schedule",
+          "provenance": "drawing",
+          "width": 1800,
+          "height": 1012,
+          "fit": "contain"
+        }
+      },
+      {
+        "sizeSlug": "20x10",
+        "h3": "20 × 10 ft Site Cabin: 200 sq ft Five-Desk Site Office",
+        "paragraph": "This is the reference size and the one the price rule is built around, at Rs 1,450 per sq ft before any band adjustment. Two hundred square feet stages five desks in two runs, two on the front wall and three on the rear, with a clear aisle down the middle wide enough to pass a rolled drawing without turning sideways. Six 4 ft windows put daylight over every desk position and one on each end wall, and the single door sits centrally on the 20 ft front wall.",
+        "applications": [
+          "200 sq ft, 20 × 10 × 8.5 ft, centred-ridge two-way roof",
+          "Reference size: Rs 1,450 per sq ft with no band adjustment",
+          "One 3 ft door centred on the 20 ft front wall, between two windows",
+          "5 staged desks: 2 on the front wall, 3 on the rear",
+          "Deep Bottle Green shell with a Light Greige interior lining",
+          "Rs 2,90,000 ex-GST, Rs 3,42,200 with 18 per cent GST"
+        ],
+        "image": {
+          "src": "/images/products/construction-site-cabin/ga/construction-site-cabin-20x10-ga-board.webp",
+          "alt": "GA drawing, 20 × 10 ft construction site cabin: five staged desks, one door and six windows",
+          "provenance": "drawing",
+          "width": 1800,
+          "height": 1012,
+          "fit": "contain"
+        }
+      },
+      {
+        "sizeSlug": "20x12",
+        "h3": "20 × 12 ft Site Cabin: 240 sq ft Drawing-Table Room",
+        "paragraph": "Same 20 ft length, same five desks, two more feet of width. Those two feet are what a drawing table needs: at 12 ft the aisle between the desk runs still takes a full-size sheet laid flat with people standing on both sides of it. The end walls grow to 12 ft and each carries a 4 ft window centred in the wall rather than pushed to one side. Contractors who hold their weekly progress meeting in the site office order this width rather than the 20 × 10 ft.",
+        "applications": [
+          "240 sq ft, 20 × 12 × 8.5 ft, centred-ridge two-way roof",
+          "Widest 20 ft plan; two extra feet of aisle over the 20 × 10 ft",
+          "4 ft window centred on each 12 ft end wall",
+          "5 staged desks in the same two-run layout as the 20 × 10 ft",
+          "Burgundy Wine shell with a Porcelain Sage interior lining",
+          "Rs 3,34,080 ex-GST, Rs 3,94,214 with 18 per cent GST"
+        ],
+        "image": {
+          "src": "/images/products/construction-site-cabin/ga/construction-site-cabin-20x12-ga-board.webp",
+          "alt": "GA drawing, 20 × 12 ft construction site cabin: 12 ft width, centred end wall windows and five desks",
+          "provenance": "drawing",
+          "width": 1800,
+          "height": 1012,
+          "fit": "contain"
+        }
+      },
+      {
+        "sizeSlug": "30x10",
+        "h3": "30 × 10 ft Site Cabin: 300 sq ft Two-Door Site Office",
+        "paragraph": "The 30 × 10 ft is the first plan with two external doors, one near each end of the 30 ft front wall, and that is the whole point of it. Eight desks are staged in this room, three on the front wall and five on the rear, and with a single door the far desks would only be reachable by walking the length of the aisle past everyone else. Two doors split the traffic and give the room a second way out. Eight 4 ft windows carry the daylight, four of them along the rear wall.",
+        "applications": [
+          "300 sq ft, 30 × 10 × 8.5 ft, centred-ridge two-way roof",
+          "Two 3 ft external doors, near each end of the 30 ft front wall",
+          "Eight 4 ft windows: two front, four rear, one on each end wall",
+          "8 staged desks: 3 on the front wall, 5 on the rear",
+          "Slate Blue-Grey shell with a Pale Sand interior lining",
+          "Rs 4,17,600 ex-GST, Rs 4,92,768 with 18 per cent GST"
+        ],
+        "image": {
+          "src": "/images/products/construction-site-cabin/ga/construction-site-cabin-30x10-ga-board.webp",
+          "alt": "GA drawing, 30 × 10 ft construction site cabin: two front doors, eight windows and eight staged desks",
+          "provenance": "drawing",
+          "width": 1800,
+          "height": 1012,
+          "fit": "contain"
+        }
+      },
+      {
+        "sizeSlug": "40x10",
+        "h3": "40 × 10 ft Site Cabin: 400 sq ft Manager and Team Plan",
+        "paragraph": "The largest approved size is the only one that arrives partitioned. A full-height partition 10 ft in from one end wall creates a 10 × 10 ft manager room with its own window and its own 3 ft internal door, and leaves a 30 × 10 ft common office staging twelve desks. Two external doors on the 40 ft front wall serve the common office at both ends. Ten windows are scheduled across the four walls, one of them belonging to the manager room and reached only through the partition door.",
+        "applications": [
+          "400 sq ft, 40 × 10 × 8.5 ft, centred-ridge two-way roof",
+          "Only size delivered with a partition already built in",
+          "10 × 10 ft manager room with one window and a 3 ft internal door",
+          "12 staged desks in the common office: 5 front, 7 rear",
+          "Two 3 ft external doors on the 40 ft front wall; ten windows in all",
+          "Rs 5,51,000 ex-GST, Rs 6,50,180 with 18 per cent GST"
+        ],
+        "image": {
+          "src": "/images/products/construction-site-cabin/ga/construction-site-cabin-40x10-ga-board.webp",
+          "alt": "GA drawing, 40 × 10 ft construction site cabin: 10 × 10 ft manager room, partition door and twelve desks",
+          "provenance": "drawing",
+          "width": 1800,
+          "height": 1012,
+          "fit": "contain"
+        }
+      }
+    ]
+  },
+  "labelActiveThumbnailAlt": true,
+  "optimizeLocalGalleryImages": false
+}

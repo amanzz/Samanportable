@@ -1,0 +1,39 @@
+ARTEFACT 5 - DOM CHECKS ON THE FETCHED PREVIEW HTML
+url: http://127.0.0.1:4106/product/portable-office/construction-site-cabin
+
+PASS  exactly one H1  | ['Portable Construction Site Cabin: Six Site-Duty Sizes']
+PASS  no empty heading  | 71 headings, 0 empty
+PASS  every img has an alt attribute  | 32/32
+PASS  no empty alt
+PASS  no duplicate alt  | []
+PASS  explicit width and height on every img  | 32 imgs
+PASS  no U+2014 em dash in body text
+PASS  tab Description has a DIFFERENT small-screen label 'Info'  | Info
+PASS  tab Specifications has a DIFFERENT small-screen label 'Specs'  | Specs
+PASS  tab Shipping has a DIFFERENT small-screen label 'Ship'  | Ship
+PASS  Reviews tab present (single label, no pair)
+PASS  no DescriptionDescription
+PASS  no fifth tab called Info
+PASS  tab panel in the fetched HTML: description
+PASS  tab panel in the fetched HTML: additional
+PASS  tab panel in the fetched HTML: shipping
+PASS  tab panel in the fetched HTML: reviews
+PASS  all four panels are server-rendered
+PASS  zero hits for 'coming soon'  | preview 0 | LIVE DESIGN LOCK 0
+PASS  zero hits for 'available on request'  | preview 0 | LIVE DESIGN LOCK 0
+PASS  zero hits for 'contact us for details'  | preview 0 | LIVE DESIGN LOCK 0
+PASS  zero hits for 'placeholder'  | preview 0 | LIVE DESIGN LOCK 0
+PASS  zero hits for 'TBD'  | preview 0 | LIVE DESIGN LOCK 0
+FAIL  zero hits for 'working days'  | preview 2 | LIVE DESIGN LOCK 5
+PASS  pack forbids: 'coming soon'
+PASS  pack forbids: 'available on request'
+PASS  pack forbids: 'contact us for details'
+PASS  pack forbids: 'placeholder'
+PASS  pack forbids: 'TBD'
+FAIL  pack forbids: '7-21 working days'  | also on the LIVE design lock
+PASS  pack forbids: 'site office container conversion'
+
+NOTE on any 'working days' hit above: the preview column is measured against the
+LIVE DESIGN LOCK column. Where both are non-zero the string is shared chrome that
+the design lock itself publishes, and no page-level change can remove it - see
+artefact 9 for the traced source lines.
