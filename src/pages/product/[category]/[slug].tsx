@@ -55,6 +55,7 @@ import {
 import PortaCabinsYouMayAlsoLike from '../../../components/product-variant-hero/PortaCabinsYouMayAlsoLike';
 import { rewriteRetiredInternalLinks } from '../../../lib/staticContent';
 import { isLabourColonyClusterSlug, getLabourColonyClusterRail } from '../../../lib/labourColonyClusterRail';
+import { isPortableOfficeRailSlug, portableOfficeSubpageRail } from '../../../lib/portableOfficeClusterRail';
 import { containerOfficeYmalItems, orderContainerOfficeRail } from '../../../lib/containerOfficeClusterRail';
 import { containerOfficeMt32Items, hasContainerOfficeMt32 } from '../../../lib/containerOfficeMt32';
 import { getEmbeddedProductSummary, renderCabinCalculatorSSR, renderCalculatorEntrySection } from '../../../lib/cabinCalculatorSSR';
@@ -950,7 +951,19 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
 
   const relatedRailItems = useMemo<RelatedRailItem[]>(() => {
     const currentSlug = transformedProduct?.slug || slug;
-    if ((currentSlug === 'bess-container' || currentSlug === CO07_SLUG || currentSlug === CO06_SLUG || currentSlug === 'readymade-office-cabin' || currentSlug === 'small-office-cabin' || currentSlug === 'executive-portable-office' || currentSlug === 'portable-weighbridge-office' || currentSlug === 'construction-site-cabin' || currentSlug === 'portable-control-room' || currentSlug === 'portable-mobile-laboratory' || currentSlug === 'portable-conference-cabin') && variantData?.relatedTiles?.length) {
+    // PO-CLUSTER-02 (6 Sep 2026) - Explore the Range was stale on every Portable
+    // Office page. Each of the nine carried its OWN hand-authored relatedTiles in
+    // its product JSON, so a page built in August never learned about a sibling
+    // that went live in September: the laboratory page showed 6 of 8 live
+    // siblings, the readymade page 3, and the executive page railed
+    // portable-office-container, which is not an approved path. One derived list
+    // now serves the whole cluster, exactly as the porta-cabin (C01) and
+    // labour-colony (LC-07) clusters already do below. Their JSON relatedTiles
+    // arrays are no longer read for these slugs.
+    if (isPortableOfficeRailSlug(currentSlug)) {
+      return portableOfficeSubpageRail(currentSlug);
+    }
+    if ((currentSlug === 'bess-container' || currentSlug === CO07_SLUG || currentSlug === CO06_SLUG) && variantData?.relatedTiles?.length) {
       return variantData.relatedTiles;
     }
     if (isC16PanelSlug(currentSlug)) {
