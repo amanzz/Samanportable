@@ -1988,6 +1988,9 @@ export function getProductTabsHtml(
   if (pageSlug === 'prefab-container-homes') {
     return {
       specificationsHtml: buildPrefabContainerHomesSpecificationsHtml(),
+      shippingHtml: buildShippingHtml(),
+    };
+  }
   // SCH-02 (6 Sep 2026) - this slug is still a member of C08_DATASET (the legacy
   // container-house spec set, sourced from workbook sheet "36 Shipping Container
   // Homes"), whose rows carry the unsourced reinforced-shell positioning build

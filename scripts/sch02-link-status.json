@@ -1,7 +1,7 @@
 {
   "_note": "Status each approved Container Houses destination answered at build time. Redirects are NOT followed: a 301 is not a 200.",
   "base": "https://www.samanportable.com",
-  "probed": "2026-09-06T21:18:54",
+  "probed": "2026-09-07T10:35:49",
   "results": {
     "/product/container-houses": {
       "status": 200,

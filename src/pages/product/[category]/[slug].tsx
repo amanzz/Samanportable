@@ -1845,6 +1845,8 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                 <PortaCabinsYouMayAlsoLike
                   items={variantData.ymalTiles}
                   subline={prefabContainerHomesCopy.you_may_also_like.intro}
+                />
+              )}
               {/* SCH-02 (6 Sep 2026) - cluster-scoped YMAL for Container Houses. The
                   tiles are built in the product data file from the ticket's approved
                   eight, this page excluded, and only destinations that answered 200 at
