@@ -37,6 +37,8 @@ import portableWeighbridgeOfficeAssets from '../../content/po-03/PO-03-portable-
 import constructionSiteCabinCopy from '../../content/po-06/PO-06-construction-site-cabin-copy-v1.json';
 import constructionSiteCabinAssets from '../../content/po-06/PO-06-construction-site-cabin-asset-map-v1.json';
 import portableConferenceCabinCopy from '../../content/po-08/PO-08-portable-conference-cabin-copy-v1.json';
+import shippingContainerHomesSpec from '../data/products/sch02-specifications.json';
+import shippingContainerHomesAssets from '../../content/sch-02/SCH-02-shipping-container-homes-asset-map-v1.json';
 import portableConferenceCabinAssets from '../../content/po-08/PO-08-portable-conference-cabin-asset-map-v1.json';
 import prefabContainerHomesCopy from '../../content/ch-pfb-04/CH-PFB-04-prefab-container-homes-copy-v1.json';
 import flatPackContainerHomesCopy from '../../content/ch-fpk-06/CH-FPK-06-flat-pack-container-homes-copy-v1.json';
@@ -1746,6 +1748,92 @@ const PO08_SPEC_PDF = {
   label: portableConferenceCabinAssets.spec_pdf.link_label,
 } as const;
 
+
+// SCH-02 - the six approved Section 3 drawings, resolved from the signed asset map by
+// slot, in the pack's size order. scripts/sch02-install-images.py copies each package
+// file to this path unchanged.
+const SCH02_SECTION3_DRAWINGS = ['20x8', '20x10', '20x12', '40x8', '40x10', '40x12'].map((sizeSlug) => {
+  const entry = shippingContainerHomesAssets.images.find((i) => i.slot === `section3.${sizeSlug}.plan`)!;
+  const [width, height] = entry.output_px.split('x').map(Number);
+  return {
+    src: `/images/products/shipping-container-homes/size-section/${entry.prebuilt_webp.split('/').pop()}`,
+    alt: entry.alt,
+    width,
+    height,
+  };
+});
+
+
+/**
+ * SCH-02 Shipping Container Homes - Specifications tab.
+ *
+ * Five grouped tables in the order the content map fixes (A sizes and prices,
+ * B the 17 product-specific conversion lines, C the opening schedule by size,
+ * D the 13 platform-common lines, E the scope boundary), then the six approved
+ * 3D cutaway drawings. Every cell comes from src/data/products/sch02-specifications.json,
+ * which scripts/sch02-extract-specs.py builds from the signed copy pack, workbook sheet
+ * "02 Shipping Container Homes" and the approved opening ledger; nothing is authored here.
+ *
+ * No technical-PDF link. The PDF at /specs/shipping-container-homes-technical-specification.pdf
+ * is dated 2 Aug 2026 and republishes the Rs 3,64,320-9,13,920 ladder and the 5-year
+ * structural warranty that build ticket v2 corrections 1 and 2 withdraw, so linking it
+ * from the corrected page would put both back one click away. The buy box still renders
+ * the download control, disabled, through the product JSON's `specPdfDisabled`.
+ */
+function buildShippingContainerHomesSpecificationsHtml(): string {
+  const narrative = shippingContainerHomesSpec.narrative
+    .map((paragraph) => `<p class="mb-5 text-sm leading-relaxed text-slate-600">${esc(paragraph)}</p>`)
+    .join('');
+
+  const cards = shippingContainerHomesSpec.groups.map((group) => {
+    const head = group.header.map((h) => `<th class="${TH}">${esc(h)}</th>`).join('');
+    const body = group.rows
+      .map((row) => (
+        `<tr>` +
+          row.map((cell, i) => (
+            i === 0
+              ? `<td class="${TD} font-semibold text-slate-700">${esc(cell)}</td>`
+              : `<td class="${TD}">${escBold(cell)}</td>`
+          )).join('') +
+        `</tr>`
+      ))
+      .join('');
+    const note = group.note
+      ? `<p class="px-4 pb-4 pt-3 m-0 text-xs leading-relaxed text-slate-500">${esc(group.note)}</p>`
+      : '';
+    return (
+      `<section class="mb-4 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">` +
+        `<h4 class="m-0 bg-slate-50 px-4 py-3 text-base font-bold text-emerald-900">${esc(group.title)}</h4>` +
+        `<div class="saman-table-wrap"><table class="saman-table"><thead><tr>${head}</tr></thead>` +
+        `<tbody>${body}</tbody></table></div>` +
+        note +
+      `</section>`
+    );
+  }).join('');
+
+  // The six approved 3D cutaway drawings, in the pack's size order, at their exact
+  // authored geometry. Lazy, and never cropped: the asset map's rule for this group
+  // is "never crop at any size for any reason" because a cropped drawing loses its
+  // dimension text.
+  // The Section 3 explorer already renders the ACTIVE size's drawing with the
+  // asset map's approved alt, so repeating that alt verbatim here would ship two
+  // images with identical alt text. Each diagram is prefixed with its position in
+  // this block instead - the same disambiguation `labelActiveThumbnailAlt` makes
+  // for the gallery's active thumbnail ("Thumbnail N: <alt>"). The approved alt is
+  // preserved intact after the prefix.
+  const drawings = SCH02_SECTION3_DRAWINGS
+    .map((d, i) => ({ ...d, alt: `Specifications diagram ${i + 1}: ${d.alt}` }))
+    .map((d) => (
+      `<figure class="mt-4 m-0 rounded-xl border border-slate-200 bg-white p-5 shadow-sm">` +
+        `<img src="${esc(d.src)}" alt="${esc(d.alt)}" width="${d.width}" height="${d.height}" ` +
+        `loading="lazy" class="w-full h-auto rounded-lg" />` +
+      `</figure>`
+    ))
+    .join('');
+
+  return `<div class="not-prose">${narrative}${cards}${drawings}</div>`;
+}
+
 function buildPortableConferenceCabinSpecificationsHtml(): string {
   const spec = portableConferenceCabinCopy.specifications_tab;
 
@@ -1900,6 +1988,22 @@ export function getProductTabsHtml(
   if (pageSlug === 'prefab-container-homes') {
     return {
       specificationsHtml: buildPrefabContainerHomesSpecificationsHtml(),
+      shippingHtml: buildShippingHtml(),
+    };
+  }
+  // SCH-02 (6 Sep 2026) - this slug is still a member of C08_DATASET (the legacy
+  // container-house spec set, sourced from workbook sheet "36 Shipping Container
+  // Homes"), whose rows carry the unsourced reinforced-shell positioning build
+  // ticket v2 correction 3 removes, and which returns shippingHtml: '' so the page
+  // never gets the shared freight component. Both are answered here, ahead of that
+  // branch. The five other C08 slugs still fall through to it unchanged.
+  if (pageSlug === 'shipping-container-homes') {
+    return {
+      specificationsHtml: buildShippingContainerHomesSpecificationsHtml(),
+      // The SAME shared freight component the live porta-cabins page renders -
+      // both trailer ladders, both zone city tables, the two free-delivery lines,
+      // the ODC note and the tentative-price disclaimer - called with no options
+      // so it stays byte-identical to the design lock.
       shippingHtml: buildShippingHtml(),
     };
   }

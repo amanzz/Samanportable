@@ -320,7 +320,15 @@ const C08_PRODUCT_SLUGS = new Set([
   'container-houses',
   'prefab-container-homes',
   'luxury-container-houses',
-  'shipping-container-homes',
+  // SCH-02 (6 Sep 2026) - 'shipping-container-homes' was a member and is not any
+  // more. This registry is the LEGACY C-08 container-house template, and the three
+  // behaviours it selects all contradict the porta-cabins design lock that build
+  // ticket v2 rewrites this page onto: imagesForVariant() slices a six-slide gallery
+  // down to five (the ticket pins six slides per size), the spec-PDF control moves
+  // out of the buy box into the gallery column, and the thumbnail alt rule diverges.
+  // Set membership is per-slug, so removing this one entry cannot change what the
+  // five below resolve to; a rendered diff of prefab-container-homes is in
+  // _build-inputs/artefacts/ as the evidence.
   'affordable-container-homes',
   // E3 ruling 1 (Fable 5, 05 Aug): page six follows the same six-per-size slot
   // rule as its siblings — five in the gallery, row six reserved for Section H.

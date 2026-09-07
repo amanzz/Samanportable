@@ -1,0 +1,69 @@
+SCH-02 artefact 4 - prop audit
+
+A. src/data/products/shipping-container-homes.json - every key passed to
+   PortaCabinVariantHero as `data`:
+     applicationsContent              <dict, 3 entries>
+     canonical                        'https://www.samanportable.com/product/container-houses/shipping-container-homes'
+     categoryHref                     '/product/container-houses'
+     categoryLabel                    'Container Houses'
+     defaultVariant                   '20x10'
+     descriptionHtml                  '<h2>What counts as a shipping container home on this page</h2><p>Search for shipping contain...'
+     emitAggregateOffer               True
+     emitExplorerImageManifest        True
+     emitVariantFactCompleteness      True
+     faqSchema                        <dict, 3 entries>
+     gstPercent                       18
+     h1                               'Shipping Container Homes Built From Real Cargo Shells'
+     hideHeroProofRow                 True
+     labelActiveThumbnailAlt          True
+     metaDescription                  'Shipping container homes converted from real cargo shells. Six sizes from 160 to 480 sq.ft, ...'
+     opener                           'A SAMAN shipping container home is a residential conversion of a genuine freight-container s...'
+     optimizeLocalGalleryImages       False
+     priceCaption                     'Prices are ex-GST unless stated; 18 per cent GST applies.'
+     productName                      'Shipping Container Homes'
+     productSlug                      'shipping-container-homes'
+     relatedTiles                     <list, 4 entries>
+     schemaBrandName                  'SAMAN Portable'
+     seoTitle                         'Shipping Container House India: 6 Sizes & Price | SAMAN'
+     specPdfDisabled                  True
+     suppressLegacyFaqSchema          True
+     suppressLegacySku                True
+     suppressReviewClaims             True
+     suppressSchemaAvailability       True
+     trustStripText                   'GST registered · ISO 9001:2015 certified manufacturer · 10-year structural and 1-year finish...'
+     variantAxis                      'Size'
+     variants                         <list, 6 entries>
+     ymalTiles                        <list, 4 entries>
+
+B. Route-level props (src/pages/product/[category]/[slug].tsx):
+     showSectionDividers              true   (CLUSTER_DESIGN_SLUGS)
+     usePremiumSizeTabs               true   (CLUSTER_DESIGN_SLUGS)
+     explorerPanelHeadingAsH2         FALSE  (scoped off: the lock renders H3)
+     sizeEyebrowText                  'Choose your size - six factory-built options'
+     compactMobileDividers            false  (default)
+     emitSizeAnchors                  false  (default)
+     explorerHidePanelImages          false  (default)
+     deferNonLcpImagesUntilHeroPaint  false  (default)
+     renderOnlyActiveExplorerPanel    false  (default)
+     syncVariantSelection             false  (default)
+     eagerActiveGalleryImages         false  (default)
+     renderInactiveGalleryImages      false  (default)
+     explorerSingleColumnApplications false  (default)
+     fullMobileLabels                 NOT PASSED (the lock's dual labels)
+     reviews / averageRating / ratingCount  suppressed (no verified reviews)
+     reviewsEmptyStateText            from the signed pack
+     suppressCommitmentCopy           true   (existing opt-in, correction 4)
+
+C. Shared-component changes:
+     PortaCabinVariantHero.tsx  - 'shipping-container-homes' REMOVED from the
+       legacy C08_PRODUCT_SLUGS registry. Not an opt-in prop: it is a per-slug
+       registry membership, so the five remaining members resolve identically.
+       Required because that registry slices a six-slide gallery to five, which
+       contradicts build ticket section 1 and section 6.
+     specsShippingTabs.ts       - one new builder + one dispatch branch, both
+       guarded on this slug only.
+     rightToExistEntries.tsx    - this slug's own entry replaced.
+     calculatorLadders.ts       - this slug's ladder now reads its own product
+       JSON via toRows; its unsourced hardcoded row removed.
+     No other shared component is modified. No new opt-in prop was added.
+

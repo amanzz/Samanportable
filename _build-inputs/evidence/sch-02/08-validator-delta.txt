@@ -1,0 +1,33 @@
+SCH-02 - validator delta against pristine static-migration HEAD (ea5ff6f9)
+
+baseline worktree: worktrees/sch02-baseline-ea5ff6f9 (detached at ea5ff6f9)
+branch worktree  : worktrees/sch02-shipping-container-homes-20260906
+Both run with the same node_modules, back to back, on the same machine.
+
+validator                                      BASELINE BRANCH  
+validate:merchant-feed                         FAIL     FAIL     
+validate:local-inventory                       FAIL     FAIL     
+validate:commercial-architecture               PASS     PASS     
+validate:publication-gate                      FAIL     FAIL     
+validate:temporary-commercial-gating           FAIL     FAIL     
+validate:container-office-rail                 FAIL     FAIL     
+validate:cod16-quotation-wording               PASS     PASS     
+validate:stg01b-structured-data                FAIL     FAIL     
+validate:c01-specification-overrides           PASS     PASS     
+validate:pc01-qualified-c01-debt               FAIL     FAIL     
+validate:pc01-performance-measurement-debt     FAIL     FAIL     
+validate:pc01-calculator-price-parity          PASS     PASS     
+validate:pc01-static-faq                       PASS     PASS     
+validate:cc01-faq-parity                       FAIL     FAIL     
+validate:enquiry-dialog-a11y                   PASS     PASS     
+validate:po-family-pdfs                        FAIL     FAIL     
+validate:po-family-release                     FAIL     FAIL     
+validate:pc01-pdf                              PASS     PASS     
+image-gate                                     FAIL     FAIL     
+
+Result: identical. Twelve validators fail at pristine HEAD and fail the same way
+here; this branch introduces none and fixes none of them. The one validator this
+branch did move, validate:pc01-calculator-price-parity, is a tamper tripwire on
+calculatorLadders.ts; it was re-pinned only after 07-ladder-delta.txt proved the
+change is confined to this route (48 of 49 routes byte-identical, no key added or
+removed, key order unchanged), and it now PASSES on both sides.

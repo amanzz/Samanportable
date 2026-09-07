@@ -1,0 +1,383 @@
+{
+  "_source": {
+    "groupA": "content/sch-02/SCH-02-shipping-container-homes-copy-v1.json > variants",
+    "groupB": "SAMAN_Container_Houses_8_Pages_6_Sizes_Technical_Specs_Priced.xlsx > sheet '02 Shipping Container Homes' > Classification = Product-Specific (17 rows)",
+    "groupC": "SAMAN Structural Approved Design/02-size-standards/container-house-six-size-family.md > section 6",
+    "groupD": "SAMAN_Container_Houses_8_Pages_6_Sizes_Technical_Specs_Priced.xlsx > sheet '02 Shipping Container Homes' > Classification = Platform Common (13 rows)",
+    "groupE": "content/sch-02/SCH-02-shipping-container-homes-copy-v1.json > description_tab section 5 bullets",
+    "generatedBy": "scripts/sch02-extract-specs.py"
+  },
+  "narrative": [
+    "The specification below decides three things a photograph cannot: what you are actually buying, what the drawing has to show before fabrication, and where the boundary of the published price sits. Seventeen of the thirty technical lines on this page are specific to the cargo-shell conversion and thirteen are common to every SAMAN structure. The seventeen are the ones to read.",
+    "Read them in the order the conversion happens. Group B is the donor shell and what is done to it. Group C is the opening schedule by size, which is the single source for both the plan and all four elevations. Group D is the platform-common material key, shared with every SAMAN cabin and container product. Group E is the scope boundary. A figure that appears nowhere in these groups is not a published fact about this product, and no certification, fire rating, thermal value, acoustic rating, floor capacity, relocation count or transport status is asserted without the specific evidence and approval behind it.",
+    "Two lines deserve a buyer's attention before the rest. The floor frame line records that the existing cross-members and bottom rails are condition-assessed and that original cargo flooring is only retained after documented acceptance. The layout line records that CSC or cargo certification held before conversion is not represented as approval after structural modification. Those two together are the difference between a conversion and a repaint."
+  ],
+  "groups": [
+    {
+      "title": "A. Sizes, areas and published prices",
+      "header": [
+        "Size",
+        "Built-up",
+        "Carpet",
+        "Rate / sq.ft",
+        "Price ex-GST",
+        "Price incl. 18% GST"
+      ],
+      "rows": [
+        [
+          "20 x 8 x 8.5 ft",
+          "160 sq.ft",
+          "146 sq.ft",
+          "Rs 1,760",
+          "Rs 2,81,600",
+          "Rs 3,32,288"
+        ],
+        [
+          "20 x 10 x 8.5 ft",
+          "200 sq.ft",
+          "185 sq.ft",
+          "Rs 1,600",
+          "Rs 3,20,000",
+          "Rs 3,77,600"
+        ],
+        [
+          "20 x 12 x 8.5 ft",
+          "240 sq.ft",
+          "224 sq.ft",
+          "Rs 1,536",
+          "Rs 3,68,640",
+          "Rs 4,34,995"
+        ],
+        [
+          "40 x 8 x 8.5 ft",
+          "320 sq.ft",
+          "296 sq.ft",
+          "Rs 1,520",
+          "Rs 4,86,400",
+          "Rs 5,73,952"
+        ],
+        [
+          "40 x 10 x 8.5 ft",
+          "400 sq.ft",
+          "375 sq.ft",
+          "Rs 1,520",
+          "Rs 6,08,000",
+          "Rs 7,17,440"
+        ],
+        [
+          "40 x 12 x 8.5 ft",
+          "480 sq.ft",
+          "454 sq.ft",
+          "Rs 1,504",
+          "Rs 7,21,920",
+          "Rs 8,51,866"
+        ]
+      ],
+      "note": "Prices are ex-GST unless stated; 18 per cent GST applies. The area basis is the built-up area of the converted and joined modules."
+    },
+    {
+      "title": "B. Product-specific build: the cargo shell and what is done to it",
+      "header": [
+        "Component",
+        "Material / type",
+        "Section / size / thickness",
+        "Detail"
+      ],
+      "rows": [
+        [
+          "Floor frame",
+          "Retained shipping-container underframe and residential floor conversion",
+          "Existing cross-members and bottom rails are condition-assessed; corroded or cut members are repaired, and local steel is added below wet rooms, large openings and joined-module edges.",
+          "Original cargo flooring is checked for damage, contamination and treatment history. Replacement substrate, service penetrations and thermal isolation are documented before residential finishes conceal the underframe."
+        ],
+        [
+          "Roof stiffeners",
+          "Cargo-roof reinforcement around conversions",
+          "Original roof bows/sheet retained where sound, with engineered trimmers around skylights, exhausts or stair openings and secondary framing wherever loads exceed the cargo roof design intent.",
+          "Shipping Container Homes do not support tanks, decks, solar frames or canopy reactions directly on thin roof sheet. Such loads transfer to verified rails, posts or added frames with independent waterproofing."
+        ],
+        [
+          "Corner posts / walls",
+          "Retained corner posts, castings and cut-out reinforcement",
+          "ISO-form corner posts and fittings are preserved where practicable; side-wall removals receive designed portal frames, headers, sills and jambs tied back to the primary container structure.",
+          "Large glazing and inter-container openings can remove corrugated shear capacity. The conversion drawing records what steel is removed, what replaces it and how temporary bracing prevents distortion during cutting and transport."
+        ],
+        [
+          "Exterior walls",
+          "Original corrugated cargo-steel exterior with residential remediation",
+          "Weathering/cargo-grade corrugated side and end panels are cleaned, repaired and coated; inner thermal frame or approved insulated panel system is installed without trapping moisture.",
+          "Dent, corrosion, previous cargo, patches and coating condition are recorded. The visible container aesthetic may be retained, but rust, unsealed welds and unknown contamination are not accepted as design features."
+        ],
+        [
+          "Roof",
+          "Retained cargo roof plus residential weather and thermal upgrade",
+          "Original steel roof is inspected, repaired and protected; an insulated inner ceiling or ventilated secondary over-roof may be added for Indian heat, rain noise and drainage control.",
+          "Low points, patched penetrations and container-to-container roof joints receive positive drainage and maintainable flashings. Site joining must not create valleys that depend only on sealant."
+        ],
+        [
+          "Interior walls",
+          "Independent inner service wall inside cargo shell",
+          "Light steel or timber-free service frame with moisture-resistant board, laminate/HPL or gypsum finish set inside the corrugated shell and insulation layer.",
+          "The Shipping Container Homes liner keeps wiring and plumbing accessible while controlling condensation. It does not hide untreated corrosion, and cavity closures prevent pests, fibre migration and humid air bypass."
+        ],
+        [
+          "Ceiling",
+          "Suspended residential ceiling below cargo roof",
+          "Moisture-resistant gypsum, laminated board or panel liner on secondary supports, with insulation retention, access panels and no attachment to unsupported thin roof sheet.",
+          "Ceiling voids coordinate roof bows, wiring, exhaust, AC drains and joint beams. Clear height is stated after insulation and ceiling build-up, especially in standard-height donor containers."
+        ],
+        [
+          "Floor base",
+          "Cargo-floor rehabilitation and residential substrate",
+          "Existing marine plywood retained only after documented condition/contamination acceptance; otherwise replaced or overlaid with sealed 18-19 mm approved structural board on repaired cross-members.",
+          "The floor build-up isolates residual treatment, closes gaps at corrugations and allows wet-area waterproofing. Unverified cargo floor is not represented as clean residential substrate."
+        ],
+        [
+          "Floor finish",
+          "Durable finish over converted cargo floor",
+          "3-5 mm LVT/SPC or approved resilient finish in dry rooms, with slip-resistant wet finish and transition profiles across container joins.",
+          "Shipping-home floor finishes account for container camber, repaired patches, joint movement and threshold levels. Adhesive and underlay are compatible with the sealed substrate and expected temperature range."
+        ],
+        [
+          "Wall insulation",
+          "Condensation-controlled wall insulation inside steel shell",
+          "Nominal 50 mm PUF/PIR, closed-cell spray/board or mineral-wool assembly with continuous air/vapour control selected for climate and fire strategy.",
+          "The insulation wraps corrugation valleys, posts and opening frames to reduce cold bridges without blocking inspection or drainage. A loose blanket against bare steel is not accepted in a humid residential conversion."
+        ],
+        [
+          "Roof insulation",
+          "Cargo-roof heat and rain-noise control",
+          "Typically 75-100 mm mineral/glass wool or closed-cell insulated build-up below or above the retained roof, with vapour layer and protected service cavity.",
+          "The Shipping Container Homes roof assembly addresses solar gain, condensation and impact noise as a system. Insulation is not compressed around bows, lights or joins, and roof repairs remain inspectable."
+        ],
+        [
+          "Decorative / external finish",
+          "Container identity and conversion facade treatment",
+          "Repaired corrugated steel in approved coating, with optional framed cladding zones, sunshades or joint covers that do not trap water against the cargo shell.",
+          "Corrugation may remain visible as the architectural identity. Cladding brackets, decorative cuts and signs avoid corner castings and verified primary members unless detailed by the conversion engineer."
+        ],
+        [
+          "Main door / service door",
+          "Reinforced residential doorway cut into cargo shell",
+          "Insulated steel/laminated door or weather-rated slider in a welded opening frame with sill, header, jamb reinforcement, threshold flashing and transport restraint.",
+          "Door location is coordinated with original end doors, corner posts and module joins. Retained cargo doors are weather-secured and insulated or permanently closed as shown on the conversion drawing."
+        ],
+        [
+          "Windows / service opening",
+          "Framed glazing openings in corrugated cargo walls",
+          "Powder-coated aluminium/uPVC units with 4-6 mm safety glazing mounted in welded subframes; larger sliders use dedicated portal framing and transport protection.",
+          "Each Shipping Container Homes opening is checked for wall-shear loss, drainage and thermal bridging. Unreinforced site cutting after delivery is prohibited."
+        ],
+        [
+          "Ventilation / AC",
+          "Ventilation strategy for a highly airtight steel conversion",
+          "Openable cross-ventilation plus kitchen/bath exhaust and split-AC provision; controlled fresh air added where occupancy, cooking or sealed glazing requires it.",
+          "Condensation risk is assessed at steel bridges and closed cavities. Exhaust discharge, AC condensate and fresh-air inlets avoid roof valleys and container joints."
+        ],
+        [
+          "Plumbing / sanitary",
+          "Service-wall plumbing within converted containers",
+          "Kitchen and bathroom services concentrate on accessible walls or pods; sleeves avoid corner posts, bottom rails and critical cross-members, with traps, vents and external quick-connect stubs.",
+          "All cargo-shell penetrations are framed, coated and sealed. Joined modules coordinate waste fall and flexible connections so relocation or differential movement does not fracture concealed pipework."
+        ],
+        [
+          "Layout / configuration",
+          "Single, joined or stacked shipping-home configuration",
+          "Layout identifies donor size/grade, container count, cut-out schedule, connection frames, stacked load path, stairs, egress, foundation points and service cores.",
+          "CSC plate or cargo certification before conversion is not represented as automatic approval after structural modification. Transport, municipal, fire and structural evidence is confirmed for the completed residential configuration."
+        ]
+      ],
+      "note": "Seventeen of the thirty technical lines on this page are specific to the cargo-shell conversion. Source: workbook sheet “02 Shipping Container Homes”."
+    },
+    {
+      "title": "C. Opening schedule and staged layout, by size",
+      "header": [
+        "Size",
+        "Wall A (entrance long wall)",
+        "Wall B (rear long wall)",
+        "End C",
+        "End D",
+        "Internal doors"
+      ],
+      "rows": [
+        [
+          "20 x 8 x 8.5 ft",
+          "W1 1.5–5.5 · D1 6.5–9.5 · W2 15.5–19.5",
+          "W3 7.5–11.5 · EF/L-1 12–13.5 · W4 15.5–19.5",
+          "W5 2–6",
+          "W6 2–6",
+          "D2 → BATHROOM · D3 → BEDROOM"
+        ],
+        [
+          "20 x 10 x 8.5 ft",
+          "W1 1.5–5.5 · D1 6.5–9.5 · W2 15.5–19.5",
+          "W3 7.5–11.5 · EF/L-1 12–13.5 · W4 15.5–19.5",
+          "W5 3–7",
+          "W6 3–7",
+          "D2 → BATHROOM · D3 → BEDROOM"
+        ],
+        [
+          "20 x 12 x 8.5 ft",
+          "W1 1.5–5.5 · D1 6.5–9.5 · W2 15.5–19.5",
+          "W3 7.5–11.5 · EF/L-1 12–13.5 · W4 15.5–19.5",
+          "W5 4–8",
+          "W6 4–8",
+          "D2 → SHOWER · D3 → W.C. · D4 → BEDROOM"
+        ],
+        [
+          "40 x 8 x 8.5 ft",
+          "W1 1.5–5.5 · D1 6.5–9.5 · W2 12–16 · D2 24–27 · W3 33.5–37.5",
+          "W4 2–6 · W5 17.5–21.5 · EF/L-1 23.5–25.5 · EF/L-2 26.5–28.5 · W6 33.5–37.5",
+          "W7 2–6",
+          "W8 2–6",
+          "D3 → W.C. · D4 → SHOWER · D5 → UTILITY · D6 → BEDROOM"
+        ],
+        [
+          "40 x 10 x 8.5 ft",
+          "W1 1.5–5.5 · D1 6.5–9.5 · W2 12–16 · D2 24–27 · W3 35–39",
+          "W4 2–6 · W5 17.5–21.5 · W6 23–27 · EF/L-1 27.5–29 · EF/L-2 30–31.5 · W7 35–39",
+          "W8 3–7",
+          "W9 3–7",
+          "D3 → STUDY · D4 → W.C. · D5 → SHOWER · D6 → UTILITY · D7 → BEDROOM"
+        ],
+        [
+          "40 x 12 x 8.5 ft",
+          "W1 1.5–5.5 · D1 6.5–9.5 · W2 11.5–15.5 · D2 23–26 · W3 35–39",
+          "W4 2–6 · W5 16.5–20.5 · EF/L-1 22.5–24 · EF/L-2 24.5–26 · W6 28.5–32.5 · W7 35–39",
+          "W8 4–8",
+          "W9 4–8",
+          "D3 → W.C. · D4 → SHOWER · D5 → UTILITY · D6 → BEDROOM 2 · D7 → BEDROOM 1"
+        ]
+      ],
+      "note": "Positions are foot ranges measured from End C, the plan origin. The plan and all four elevations are drawn from this ledger and from nothing else. Standard window 4'-0\" x 3'-0\", sill 3'-6\", head 6'-6\". External door 3'-0\" x 7'-0\", internal doors 2'-6\" x 7'-0\". Wet-area high-level louvre EF/L-n 1'-6\" x 1'-0\", head 7'-6\"."
+    },
+    {
+      "title": "D. Platform-common material key",
+      "header": [
+        "Component",
+        "Material / type",
+        "Section / size / thickness",
+        "Detail"
+      ],
+      "rows": [
+        [
+          "Bottom frame",
+          "Primary chassis / structural base",
+          "Structural family and member schedule fixed by approved engineering: fabricated MS reference 150x75x5 mm channels; retained freight-container rails or proprietary flat-pack/expandable chassis where applicable.",
+          "Support points, anchor locations, allowable bearing, corrosion access and the complete load path are shown on the signed GA/BOM. A nominal section is not a universal substitute for site wind review, foundation design or mechanism-specific engineering."
+        ],
+        [
+          "Bottom stiffeners",
+          "Secondary base members and local reinforcement",
+          "Typically 100x50x4 mm channels and 80x40x3 mm RHS/tubular members, or the approved equivalent for the selected structural family and design loads.",
+          "Spacing and local doublers respond to partitions, wet cores, concentrated furniture/equipment, transport reactions, lifting and module joints. Unrecorded cutting, corrosion loss or member substitution is not accepted."
+        ],
+        [
+          "Top frame",
+          "Upper perimeter ring beam / load-transfer frame",
+          "Typically 80x40x3 mm MS RHS or the proprietary upper rail retained or supplied with the approved container-house system.",
+          "The ring frame ties posts, roof members and opening headers, receives transport restraint and transfers wind or joining loads. Stacking, canopies, balconies and rooftop equipment require additional engineered steel."
+        ],
+        [
+          "Lifting / handling",
+          "Approved lifting, transport and support provision",
+          "Marked lifting points, corner fittings, lugs, pockets or temporary transport brackets designed for the completed centre of gravity and finished weight.",
+          "Lift and transport only to the approved method statement, rigging geometry and support-point drawing. Interior fit-out, wet tanks and loose items must be secured; forklift handling is permitted only where pockets and capacity are documented."
+        ],
+        [
+          "Welding & fabrication",
+          "Controlled welded and/or bolted fabrication",
+          "IS 2062 or approved structural steel; weld sizes, bolt grade, hole tolerances and joint sequence as the fabrication drawings and material schedule.",
+          "Fabrication records cover fit-up, weld continuity, distortion, bolt tightening, sharp-edge removal, dimensions and coating restoration. Critical mechanism, stacking or module-join details require the specified inspection or engineering sign-off."
+        ],
+        [
+          "Fasteners & sealing",
+          "Weatherproof joints, penetrations and dissimilar-material interfaces",
+          "Corrosion-compatible fasteners, EPDM washers, butyl/PU sealants, closure profiles, flashings, sleeves and isolation tapes matched to the approved envelope.",
+          "Every factory and site penetration is detailed to drain outward and remain maintainable. Sealant alone is not used to compensate for poor laps, unsupported joints or movement; site drilling must be approved, deburred, coated and resealed."
+        ],
+        [
+          "Grills / mosquito mesh",
+          "Opening safety, insect and security accessories",
+          "Removable insect mesh, restrictors, safety guards or MS grills only where required by the room use, security brief and egress strategy.",
+          "Accessories must not obstruct emergency escape, cleaning, drainage or window operation. Grill spacing, child safety, corrosion protection and release provisions are confirmed on the opening schedule rather than assumed for every window."
+        ],
+        [
+          "Electrical wiring",
+          "Copper wiring, containment and service segregation",
+          "Typical minimum circuit references: 1.5 sq.mm lighting, 2.5 sq.mm sockets and 4 sq.mm AC/high-load circuits; final sizing follows connected load, voltage drop and protective-device coordination.",
+          "PVC-insulated copper conductors run in approved conduit or trunking with labelled junctions and separation from data, gas, water and flexible deployment paths. Hidden joints, overloaded extension boards and unprotected metal penetrations are not permitted."
+        ],
+        [
+          "Electrical protection",
+          "Distribution board, protective devices, bonding and earthing",
+          "Main isolator, MCB/RCBO or RCCB protection, earth and neutral bars, circuit labels and surge protection where the approved risk assessment or supply conditions require it.",
+          "Steel frame, panels and exposed conductive parts are bonded to the tested site earth. Protection, prospective fault level, wet-area circuits, generator/UPS changeover and final connection follow the approved single-line diagram and applicable Indian codes."
+        ],
+        [
+          "Electrical fittings",
+          "Fixed residential electrical accessories",
+          "LED lighting, modular switches, 6A/16A sockets, fan/exhaust points, AC isolator/provision and dedicated appliance circuits only in the quantities shown on the approved electrical layout.",
+          "Switch and socket positions coordinate with furniture, wet zones, doors and accessible maintenance. Appliances, loose lamps, network devices, inverter/UPS, solar system and AC equipment are excluded unless specifically itemized."
+        ],
+        [
+          "Painting / coating",
+          "Corrosion-protection and finish-coat system",
+          "Prepared carbon steel with compatible primer and finish coats, or galvanized/pre-painted steel with repaired cut edges; system upgraded for coastal, industrial or high-moisture exposure.",
+          "The approved coating schedule records preparation, product, colour, coat count or dry-film target, cure and touch-up. Drain traps, crevices and inaccessible uncoated steel are avoided so inspection and maintenance remain practical."
+        ],
+        [
+          "Quality checks",
+          "Factory inspection, functional testing and handover evidence",
+          "Dimensional, member, weld/bolt, coating, roof-drainage, water-seal, opening, electrical, plumbing and product-specific deployment/joining checks as applicable.",
+          "The pre-dispatch dossier identifies the approved drawings, material schedule, test results, photographs, punch items, lifting data and site connection points. Performance ratings are stated only when supported by the contracted report or certificate."
+        ],
+        [
+          "Warranty",
+          "Commercially confirmed warranty, maintenance and exclusions",
+          "Warranty period, start date, remedy, service access, relocation conditions and exclusions only as stated in the signed quotation and final handover documents.",
+          "Unapproved alterations, poor foundations, site water entry, utility faults, corrosive exposure, missed seal/coating maintenance, misuse and relocation damage remain outside warranty unless expressly covered. Statutory rights and the signed contract govern."
+        ]
+      ],
+      "note": "Thirteen lines shared by design with every SAMAN cabin and container product. Source: workbook sheet “02 Shipping Container Homes”."
+    },
+    {
+      "title": "E. Scope boundary and exclusions",
+      "header": [
+        "Outside the published price",
+        "Status"
+      ],
+      "rows": [
+        [
+          "Donor container purchase, and any condition repair the received box turns out to need",
+          "Confirmed separately"
+        ],
+        [
+          "Stacking, large opening frames beyond the published schedule, and site joining of modules",
+          "Confirmed separately"
+        ],
+        [
+          "Foundations, site levelling, plinth and anchoring",
+          "Confirmed separately"
+        ],
+        [
+          "Transport, unloading, craneage and installation",
+          "Confirmed separately"
+        ],
+        [
+          "Site utilities, municipal and fire approvals, and project-specific engineering or testing",
+          "Confirmed separately"
+        ],
+        [
+          "Furniture, appliances, air-conditioning equipment, inverter, UPS and solar systems",
+          "Confirmed separately"
+        ],
+        [
+          "Optional finish upgrades, kitchen and bathroom fixtures beyond the approved schedule",
+          "Confirmed separately"
+        ]
+      ],
+      "note": "Conversion basis for a documented shipping or cargo shell with engineered openings, insulation, residential lining and fixed services. Shell condition, opening reinforcement, connection steel, stacking and site joints remain project-specific and can materially change cost. No certification, fire rating, thermal value, acoustic rating, floor capacity, relocation count or transport status is asserted without the specific evidence and approval behind it."
+    }
+  ]
+}

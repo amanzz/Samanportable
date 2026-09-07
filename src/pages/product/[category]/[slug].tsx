@@ -76,6 +76,7 @@ import portableMobileLaboratoryCopy from '../../../../content/po-05/PO-05-portab
 import portableConferenceCabinCopy from '../../../../content/po-08/PO-08-portable-conference-cabin-copy-v1.json';
 import prefabContainerHomesCopy from '../../../../content/ch-pfb-04/CH-PFB-04-prefab-container-homes-copy-v1.json';
 import flatPackContainerHomesCopy from '../../../../content/ch-fpk-06/CH-FPK-06-flat-pack-container-homes-copy-v1.json';
+import shippingContainerHomesCopy from '../../../../content/sch-02/SCH-02-shipping-container-homes-copy-v1.json';
 import { injectInfoImages } from '../../../lib/infoImageLayout';
 import containerizedDataCenterApplications from '../../../data/products/containerized-data-center-applications.json';
 import containerizedDataCenterRelated from '../../../data/products/containerized-data-center-related.json';
@@ -255,6 +256,14 @@ const CLUSTER_DESIGN_SLUGS = new Set([
   // headings are scoped to H3 below, as PO-05..PO-08 and CH-PFB-04 are, because the
   // lock renders them H3 and this page's pack names the field `h3`.
   'flat-pack-container-homes',
+  // SCH-02 (6 Sep 2026) - rewrite in place onto the porta-cabins design lock. The
+  // live page rendered the legacy C-08 container-house template (five gallery slides
+  // per size, no premium size tabs, no section dividers); build ticket v2 section 1
+  // pins usePremiumSizeTabs and the eleven-block order, which is what this set turns
+  // on. The explorer heading opt-in is scoped OFF for this slug below, as PO-05..PO-08
+  // also do: the lock renders Section 3 panel headings as H3 and the signed pack names
+  // the field `h3`.
+  'shipping-container-homes',
 ]);
 
 // Dynamic import for ProductTabs to avoid SSR issues
@@ -987,16 +996,13 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
     if (isPortableOfficeRailSlug(currentSlug)) {
       return portableOfficeSubpageRail(currentSlug);
     }
-    // CH-PFB-04 (6 Sep 2026) - Explore the Range for this route is the three approved
-    // container-house destinations in the signed pack (hub, shipping, luxury), all
-    // returning 200. The unbuilt flat-pack / expandable / tiny / farmhouse routes are
-    // deliberately absent. Same JSON-driven branch the three slugs beside it use.
-    // CH-FPK-06 (7 Sep 2026) - Explore the Range for this route is resolved at build
-    // time from the Container Houses approved list in commercialArchitecture.json:
-    // the hub first, then every approved sibling in the pack's candidate row order,
-    // this page excluded, no duplicates and no padding. The pack's tiny / expandable
-    // / farmhouse candidates are not approved paths and would 404, so they are not
-    // emitted. Same JSON-driven branch the four slugs beside it use.
+    // SCH-02 (6 Sep 2026) - Container Houses. Same shape as the three slugs
+    // below: this page's approved, build-time-resolved tiles, never the
+    // WooCommerce related-products fallback at the end of this hook, which is
+    // what put non-approved cluster URLs on the live page.
+    if (currentSlug === 'shipping-container-homes' && variantData?.relatedTiles?.length) {
+      return variantData.relatedTiles;
+    }
     if ((currentSlug === 'bess-container' || currentSlug === CO07_SLUG || currentSlug === CO06_SLUG || currentSlug === 'prefab-container-homes' || currentSlug === 'flat-pack-container-homes') && variantData?.relatedTiles?.length) {
       return variantData.relatedTiles;
     }
@@ -1078,7 +1084,11 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
       // suppression only; every other route keeps the accordion unchanged.
       hidePublishedPriceTable: slug === 'fire-rated-porta-cabin',
       deferEnhancement: slug === 'accommodation-container',
-      suppressCommitmentCopy: slug === 'shipping-container-office',
+      // SCH-02 (6 Sep 2026) - correction 4 withdraws the unsourced quote-response
+      // time. This is the existing per-slug opt-in shipping-container-office
+      // already uses; it removes the calculator's own "Custom quote target: 48
+      // business hours" lines. Every other slug is byte-identical.
+      suppressCommitmentCopy: slug === 'shipping-container-office' || slug === 'shipping-container-homes',
       quoteFreightOutsideFreeZones: slug === 'readymade-office-cabin',
     });
     // LC-05's acceptance gate is zero U+2014 in built output. Quote-mode logic,
@@ -1123,7 +1133,11 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
       ...(slug === CMO_SLUG ? { photo: CMO_CALC_ENTRY_PHOTO } : {}),
       ...(slug === CO06_SLUG ? { photo: CO06_CALC_ENTRY_PHOTO } : {}),
       ...(slug === CO07_SLUG ? { photo: CO07_CALC_ENTRY_PHOTO } : {}),
-      suppressCommitmentCopy: slug === 'shipping-container-office',
+      // SCH-02 (6 Sep 2026) - correction 4 withdraws the unsourced quote-response
+      // time. This is the existing per-slug opt-in shipping-container-office
+      // already uses; it removes the calculator's own "Custom quote target: 48
+      // business hours" lines. Every other slug is byte-identical.
+      suppressCommitmentCopy: slug === 'shipping-container-office' || slug === 'shipping-container-homes',
     });
     if (slug === CO07_SLUG) return html.replace('₹', 'Rs ');
     return slug === CMO_SLUG || slug === CO06_SLUG ? encodeDashEntitiesForRawHtml(html) : html;
@@ -1316,7 +1330,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   // CH-FPK-06 - same ruling again: build prompt v1 section 6 states
                   // the Section 3 size headings render as H3, which is what the
                   // design lock does, and the signed pack names the field `h3`.
-                  explorerPanelHeadingAsH2={CLUSTER_DESIGN_SLUGS.has(slug) && slug !== 'construction-site-cabin' && slug !== 'portable-control-room' && slug !== 'portable-mobile-laboratory' && slug !== 'portable-conference-cabin' && slug !== 'prefab-container-homes' && slug !== 'flat-pack-container-homes'}
+                  explorerPanelHeadingAsH2={CLUSTER_DESIGN_SLUGS.has(slug) && slug !== 'construction-site-cabin' && slug !== 'portable-control-room' && slug !== 'portable-mobile-laboratory' && slug !== 'portable-conference-cabin' && slug !== 'prefab-container-homes' && slug !== 'flat-pack-container-homes' && slug !== 'shipping-container-homes'}
                   // Ad-hoc revision (14 Aug 2026, owner screenshots) — mobile
                   // divider gap fix, scoped to this page only per the
                   // component-level comment; every other cluster-design page
@@ -1365,7 +1379,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                       // is written with a U+2014 this page's acceptance gate bans. The
                       // route takes the SAME already-deployed literal the eight slugs
                       // below render; no new copy is authored here.
-                      : slug === 'construction-site-cabin'
+                      : slug === 'construction-site-cabin' || slug === 'shipping-container-homes'
                       ? 'Choose your size - six factory-built options'
                       // CH-PFB-04 - the pack carries no size_selector_label and the shared
                       // default is written with a U+2014 this page's gate bans. Same
@@ -1833,6 +1847,17 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   subline={prefabContainerHomesCopy.you_may_also_like.intro}
                 />
               )}
+              {/* SCH-02 (6 Sep 2026) - cluster-scoped YMAL for Container Houses. The
+                  tiles are built in the product data file from the ticket's approved
+                  eight, this page excluded, and only destinations that answered 200 at
+                  build time (scripts/sch02-link-status.json). The shared YMAL constants
+                  are untouched. */}
+              {slug === 'shipping-container-homes' && variantData?.ymalTiles?.length && (
+                <PortaCabinsYouMayAlsoLike
+                  items={variantData.ymalTiles}
+                  subline={shippingContainerHomesCopy.you_may_also_like.intro}
+                />
+              )}
 
               {/* CH-FPK-06 (7 Sep 2026) - cluster-scoped YMAL for Container Houses.
                   The tiles are built in this page's own product data file from the
@@ -1859,9 +1884,9 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   specificationsHtml={slug === 'accommodation-container' ? lazyLoadStaticHtmlImages(specificationsHtml) : specificationsHtml}
                   shippingHtml={slug === 'accommodation-container' ? lazyLoadStaticHtmlImages(shippingHtml) : shippingHtml}
                   productTitle={isLaborShedsPage ? 'Labour Sheds' : transformedProduct.title}
-                  reviews={slug === 'accommodation-container' || slug === 'container-marketing-office' || slug === CO06_SLUG || slug === CO07_SLUG || slug === CO08_SLUG || slug === 'small-office-cabin' || slug === 'readymade-office-cabin' || slug === 'prefabricated-office-cabins' || slug === 'executive-portable-office' || slug === 'portable-weighbridge-office' || slug === 'construction-site-cabin' || slug === 'portable-control-room' || slug === 'portable-mobile-laboratory' || slug === 'portable-conference-cabin' || slug === 'prefab-container-homes' || slug === 'flat-pack-container-homes' ? [] : reviews}
-                  averageRating={slug === 'accommodation-container' || slug === 'container-marketing-office' || slug === CO06_SLUG || slug === CO07_SLUG || slug === CO08_SLUG || slug === 'small-office-cabin' || slug === 'readymade-office-cabin' || slug === 'prefabricated-office-cabins' || slug === 'executive-portable-office' || slug === 'portable-weighbridge-office' || slug === 'construction-site-cabin' || slug === 'portable-control-room' || slug === 'portable-mobile-laboratory' || slug === 'portable-conference-cabin' || slug === 'prefab-container-homes' || slug === 'flat-pack-container-homes' ? undefined : product.average_rating}
-                  ratingCount={slug === 'accommodation-container' || slug === 'container-marketing-office' || slug === CO06_SLUG || slug === CO07_SLUG || slug === CO08_SLUG || slug === 'small-office-cabin' || slug === 'readymade-office-cabin' || slug === 'prefabricated-office-cabins' || slug === 'executive-portable-office' || slug === 'portable-weighbridge-office' || slug === 'construction-site-cabin' || slug === 'portable-control-room' || slug === 'portable-mobile-laboratory' || slug === 'portable-conference-cabin' || slug === 'prefab-container-homes' || slug === 'flat-pack-container-homes' ? 0 : product.rating_count}
+                  reviews={slug === 'accommodation-container' || slug === 'container-marketing-office' || slug === CO06_SLUG || slug === CO07_SLUG || slug === CO08_SLUG || slug === 'small-office-cabin' || slug === 'readymade-office-cabin' || slug === 'prefabricated-office-cabins' || slug === 'executive-portable-office' || slug === 'portable-weighbridge-office' || slug === 'construction-site-cabin' || slug === 'portable-control-room' || slug === 'portable-mobile-laboratory' || slug === 'portable-conference-cabin' || slug === 'prefab-container-homes' || slug === 'flat-pack-container-homes' || slug === 'shipping-container-homes' ? [] : reviews}
+                  averageRating={slug === 'accommodation-container' || slug === 'container-marketing-office' || slug === CO06_SLUG || slug === CO07_SLUG || slug === CO08_SLUG || slug === 'small-office-cabin' || slug === 'readymade-office-cabin' || slug === 'prefabricated-office-cabins' || slug === 'executive-portable-office' || slug === 'portable-weighbridge-office' || slug === 'construction-site-cabin' || slug === 'portable-control-room' || slug === 'portable-mobile-laboratory' || slug === 'portable-conference-cabin' || slug === 'prefab-container-homes' || slug === 'flat-pack-container-homes' || slug === 'shipping-container-homes' ? undefined : product.average_rating}
+                  ratingCount={slug === 'accommodation-container' || slug === 'container-marketing-office' || slug === CO06_SLUG || slug === CO07_SLUG || slug === CO08_SLUG || slug === 'small-office-cabin' || slug === 'readymade-office-cabin' || slug === 'prefabricated-office-cabins' || slug === 'executive-portable-office' || slug === 'portable-weighbridge-office' || slug === 'construction-site-cabin' || slug === 'portable-control-room' || slug === 'portable-mobile-laboratory' || slug === 'portable-conference-cabin' || slug === 'prefab-container-homes' || slug === 'flat-pack-container-homes' || slug === 'shipping-container-homes' ? 0 : product.rating_count}
                   productId={product.id}
                   productName={transformedProduct.title}
                   // PO-06 is deliberately NOT in this list. fullMobileLabels makes the
@@ -1871,7 +1896,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   // passes nothing here either, so the default gives the required
                   // Description/Info, Specifications/Specs, Shipping/Ship pairs.
                   fullMobileLabels={slug === 'containerized-data-center' || slug === 'small-office-cabin' || slug === 'readymade-office-cabin' || slug === 'prefabricated-office-cabins' || slug === 'executive-portable-office' || slug === 'portable-weighbridge-office'}
-                  reviewsEmptyStateText={slug === 'small-office-cabin' ? smallOfficeCabinCopy.reviews_tab.empty_state : slug === 'readymade-office-cabin' ? readymadeOfficeCabinCopy.reviews_tab.empty_state : slug === 'prefabricated-office-cabins' ? prefabricatedOfficeCabinsCopy.reviews_tab.empty_state : slug === 'executive-portable-office' ? executivePortableOfficeCopy.reviews_tab.empty_state : slug === 'portable-weighbridge-office' ? portableWeighbridgeOfficeCopy.reviews_tab.empty_state : slug === 'construction-site-cabin' ? constructionSiteCabinCopy.reviews_tab.empty_state : slug === 'portable-control-room' ? portableControlRoomCopy.reviews_tab.empty_state : slug === 'portable-mobile-laboratory' ? portableMobileLaboratoryCopy.reviews_tab.empty_state : slug === 'portable-conference-cabin' ? portableConferenceCabinCopy.reviews_tab.empty_state : slug === 'flat-pack-container-homes' ? flatPackContainerHomesCopy.tabs.reviews.empty_state : undefined}
+                  reviewsEmptyStateText={slug === 'small-office-cabin' ? smallOfficeCabinCopy.reviews_tab.empty_state : slug === 'readymade-office-cabin' ? readymadeOfficeCabinCopy.reviews_tab.empty_state : slug === 'prefabricated-office-cabins' ? prefabricatedOfficeCabinsCopy.reviews_tab.empty_state : slug === 'executive-portable-office' ? executivePortableOfficeCopy.reviews_tab.empty_state : slug === 'portable-weighbridge-office' ? portableWeighbridgeOfficeCopy.reviews_tab.empty_state : slug === 'construction-site-cabin' ? constructionSiteCabinCopy.reviews_tab.empty_state : slug === 'portable-control-room' ? portableControlRoomCopy.reviews_tab.empty_state : slug === 'portable-mobile-laboratory' ? portableMobileLaboratoryCopy.reviews_tab.empty_state : slug === 'portable-conference-cabin' ? portableConferenceCabinCopy.reviews_tab.empty_state : slug === 'flat-pack-container-homes' ? flatPackContainerHomesCopy.tabs.reviews.empty_state : slug === 'shipping-container-homes' ? shippingContainerHomesCopy.reviews_tab.empty_state : undefined}
                 />
               </div>
 
