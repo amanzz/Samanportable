@@ -140,7 +140,11 @@ const CONTAINER_HOUSE_SIZES: ReadonlyArray<{ sizeSlug: string; label: string; ar
 ];
 
 const CONTAINER_HOUSE_PRICES: Record<string, readonly number[]> = {
-  'container-houses': [293440, 333400, 384240, 501440, 626800, 736320],
+  // CH-HUB (6 Sep 2026) — the hub's six published ex-GST prices, from
+  // CH-HUB-container-house-copy-v1.json §price.rows, so the calculator reads the same
+  // ladder the page prints. HUB ROW ONLY: every sibling ladder below is deliberately
+  // untouched, and no rate, formula, tax or component price moves.
+  'container-houses': [281600, 320000, 368640, 486400, 608000, 721920],
   // CH-PFB-04 (6 Sep 2026) - rebuilt to SAMAN's approved Option B ladder: 200 sq.ft
   // base rate Rs 1,625 adjusted by area band, ex-GST. Replaces the Rs 1,475 base the
   // route published before. This route's own ladder only; no sibling key is touched.

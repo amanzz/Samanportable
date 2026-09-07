@@ -52,6 +52,7 @@ import { PORTA_CABIN_HUB_RAIL } from '../../../lib/portaCabinClusterRail';
 import { portableOfficeHubRail } from '../../../lib/portableOfficeClusterRail';
 import { getLabourColonyClusterRail } from '../../../lib/labourColonyClusterRail';
 import PortaCabinsYouMayAlsoLike from '../../../components/product-variant-hero/PortaCabinsYouMayAlsoLike';
+import containerHouseCopy from '../../../../content/ch-hub/CH-HUB-container-house-copy-v1.json';
 import DeferredCabinCalculator from '../../../components/DeferredCabinCalculator';
 import { rewriteRetiredInternalLinks } from '../../../lib/staticContent';
 
@@ -414,7 +415,14 @@ export const getServerSideProps: GetServerSideProps<ProductDetailsProps> = async
     let calculatorEntryHtml: string | null = null;
     let deferredCalculator: ProductDetailsProps['deferredCalculator'] = null;
 
-    if (normalizedCategory === 'porta-cabins' && embeddedCalculatorMapping?.productId) {
+    // CH-HUB (6 Sep 2026) — the container-houses hub joins porta-cabins on the deferred
+    // calculator, which is how the design lock loads it: the wizard hydrates at the
+    // maintained entry point instead of server-rendering its whole markup into this
+    // page. Same component, same ladder, no calculator logic, step, formula or copy
+    // change. Template parity, and it also stops this route server-rendering the
+    // calculator's shared product list, which names retired cluster slugs the page
+    // itself no longer links.
+    if ((normalizedCategory === 'porta-cabins' || normalizedCategory === 'container-houses') && embeddedCalculatorMapping?.productId) {
       const calculatorSSR = await import('../../../lib/cabinCalculatorSSR');
       if (embeddedCalculatorMapping.prefill && embeddedCalculatorMapping.productId) {
         calculatorEntryHtml = calculatorSSR.renderCalculatorEntrySection({
@@ -780,9 +788,14 @@ const ProductDetails = ({
                   // other cluster hub carries the porta-cabins treatment. Added to the
                   // existing narrowly scoped gate; no duplicated CSS and no cafe-specific
                   // selector, so every other category stays byte-identical.
-                  showSectionDividers={category === 'porta-cabins' || category === 'labor-colony' || category === 'container-offices' || category === 'portable-office' || category === 'container-cafe'}
+                  showSectionDividers={category === 'porta-cabins' || category === 'labor-colony' || category === 'container-offices' || category === 'portable-office' || category === 'container-cafe' || category === 'container-houses'}
                   // R3 (14 Aug 2026) — same hub-only scoping as the dividers.
-                  usePremiumSizeTabs={category === 'porta-cabins' || category === 'labor-colony' || category === 'container-offices' || category === 'portable-office' || category === 'container-cafe'}
+                  usePremiumSizeTabs={category === 'porta-cabins' || category === 'labor-colony' || category === 'container-offices' || category === 'portable-office' || category === 'container-cafe' || category === 'container-houses'}
+                  // CH-HUB (6 Sep 2026, SAMAN ruling) - the Section 2 card CTA is an
+                  // in-page anchor to the Section 3 explorer, synced to the selected size,
+                  // so the hero's size chips move the explorer with them. Opt-in, default
+                  // false; container-office-cabin already uses it on the subpage route.
+                  syncVariantSelection={category === 'container-houses'}
                   // LC-00 R1 (16 Aug 2026) — the premium branch shows sizeEyebrowText
                   // (falling back to the porta-cabins hub's own em-dash sentence when
                   // absent), not the plain branch's hardcoded "Choose size". R1 asks
@@ -797,7 +810,7 @@ const ProductDetails = ({
                   // the exact wording CC-01 already ships. Inheriting the premium branch's
                   // porta-cabins fallback sentence would both change approved copy and
                   // introduce an em dash.
-                  sizeEyebrowText={category === 'labor-colony' || category === 'container-offices' || category === 'portable-office' || category === 'container-cafe' ? 'Choose size' : undefined}
+                  sizeEyebrowText={category === 'labor-colony' || category === 'container-offices' || category === 'portable-office' || category === 'container-cafe' || category === 'container-houses' ? 'Choose size' : undefined}
                   // CO-00 (19 Aug 2026) — data-driven, same forwarding pattern as
                   // suppressLegacyFaqSchema above. Absent/false on every other
                   // product's variantData → no id emitted, byte-identical elsewhere.
@@ -1085,7 +1098,7 @@ const ProductDetails = ({
                   production entry band, which is the calculator's entry point.
                   Hub page only. LC-00 R2 (16 Aug 2026) — labor-colony opts into the
                   identical treatment, so all four dividers match porta-cabins. */}
-              {(category === 'porta-cabins' || category === 'labor-colony' || category === 'portable-office' || category === 'container-cafe') && (deferredCalculator || legacyEmbeddedCalculatorMapping) && (
+              {(category === 'porta-cabins' || category === 'labor-colony' || category === 'portable-office' || category === 'container-cafe' || category === 'container-houses') && (deferredCalculator || legacyEmbeddedCalculatorMapping) && (
                 <hr className="saman-section-divider" aria-hidden="true" />
               )}
 
@@ -1137,6 +1150,18 @@ const ProductDetails = ({
                   useItemImageAltVerbatim
                 />
               )}
+              {/* CH-HUB (6 Sep 2026) — same Pattern B as the container cafe hub above:
+                  the three approved container-house children only, each card reusing
+                  that child's own shipped gallery hero and its own alt string verbatim.
+                  The list is data, so a retired or unapproved sibling cannot reach a
+                  card. `subline` is null because this hub has no "Ten more…" sentence. */}
+              {category === 'container-houses' && variantData?.ymalTiles?.length && (
+                <PortaCabinsYouMayAlsoLike
+                  items={variantData.ymalTiles}
+                  subline={null}
+                  useItemImageAltVerbatim
+                />
+              )}
 
               {/* PC-00 (14 Aug 2026) — divider 4, now between the "You may also
                   like" grid and Section 5 (Product Details tabs). Hub page only.
@@ -1144,7 +1169,7 @@ const ProductDetails = ({
                   grid of its own (out of scope for this revision), so this divider
                   sits directly between the calculator and the tabs instead; still
                   the same top-level section boundary the prop is meant to mark. */}
-              {(category === 'porta-cabins' || category === 'labor-colony' || category === 'portable-office' || category === 'container-cafe') && (
+              {(category === 'porta-cabins' || category === 'labor-colony' || category === 'portable-office' || category === 'container-cafe' || category === 'container-houses') && (
                 <hr className="saman-section-divider" aria-hidden="true" />
               )}
 
@@ -1161,6 +1186,15 @@ const ProductDetails = ({
                   productId={product.id}
                   reviewProductId={isSandwichPanel ? 272770 : undefined}
                   productName={transformedProduct.title}
+                  // CH-HUB (6 Sep 2026) - this hub's copy pack approves exactly four tab
+                  // labels: Description, Specifications, Shipping, Reviews. The component's
+                  // default mobile aliases (Info / Specs / Ship) are abbreviations that pack
+                  // does not carry, so this route renders the approved labels at every width.
+                  fullMobileLabels={category === 'container-houses'}
+                  // CH-HUB (6 Sep 2026) — approved neutral empty state for a hub with no
+                  // verified reviews, read from its copy pack. Every other category passes
+                  // nothing and keeps the deployed default, byte-identically.
+                  reviewsEmptyStateText={category === 'container-houses' ? containerHouseCopy.tabs.reviews.empty_state : undefined}
                 />
               </div>
 

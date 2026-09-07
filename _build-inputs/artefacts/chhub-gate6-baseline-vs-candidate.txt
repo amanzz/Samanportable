@@ -1,0 +1,50 @@
+CH-HUB Template Conformance Gate - artefact 6 of 6
+BASELINE vs CANDIDATE - every changed file classified
+Baseline ed6808f2287d1e14b83f35f2413803495d08dfc0 (origin/static-migration, PR #200)
+Branch   ch-hub/container-house   HEAD 23999d4c
+
+REBASE RECORD
+-------------
+This branch was rebased from 24edd070 onto ed6808f2, across PRs #197, #198 and #200.
+Three files conflicted and were resolved deliberately, not with a blanket keep-both:
+  src/lib/calculatorLadders.ts    kept BOTH rows - my 'container-houses' hub ladder
+                                  and CH-PFB-04's new 'prefab-container-homes' ladder.
+                                  My stale copy of the old prefab row was discarded.
+  src/lib/specsShippingTabs.ts    kept BOTH branches, prefab first then container-houses,
+                                  both before the generic C08 branch.
+  src/data/products/prefab-container-homes.json
+                                  took UPSTREAM wholesale. CH-PFB-04 rewrote that page
+                                  and had already applied the 10-year warranty (4
+                                  occurrences vs my 2), so my edit was redundant.
+src/data/products/c08-specifications.json auto-merged; verified row by row afterwards:
+prefab 10-year (theirs), shipping 10-year (mine), the other four still 5-year.
+A pre-rebase backup ref is at backup/ch-hub-container-house-prerebase-118c8ebf.
+
+FILES DIFFERING FROM BASELINE
+-----------------------------
+_build-inputs/artefacts/chhub-gate1-component-order.txt                                      expected - these six conformance artefacts
+_build-inputs/artefacts/chhub-gate2-prop-audit.txt                                           expected - these six conformance artefacts
+_build-inputs/artefacts/chhub-gate3-computed-style-and-tokens.txt                            expected - these six conformance artefacts
+_build-inputs/artefacts/chhub-gate4-container-houses-1440.jpg                                expected - these six conformance artefacts
+_build-inputs/artefacts/chhub-gate4-container-houses-360.jpg                                 expected - these six conformance artefacts
+_build-inputs/artefacts/chhub-gate4-container-houses-390.jpg                                 expected - these six conformance artefacts
+_build-inputs/artefacts/chhub-gate4-container-houses-768.jpg                                 expected - these six conformance artefacts
+_build-inputs/artefacts/chhub-gate5-verifier-output.txt                                      expected - these six conformance artefacts
+_build-inputs/artefacts/chhub-gate6-baseline-vs-candidate.txt                                expected - these six conformance artefacts
+content/ch-hub/CH-HUB-container-house-asset-map-v1.json                                      expected - copy pack / asset map committed verbatim
+content/ch-hub/CH-HUB-container-house-copy-v1.json                                           expected - copy pack / asset map committed verbatim
+public/sitemap-images-products.xml                                                           expected - build output, this hub's images
+src/components/product-variant-hero/PortaCabinVariantHero.tsx                                expected - featureCellsWithoutLabels render branch
+src/components/product-variant-hero/rightToExistEntries.tsx                                  expected - this page's Section 2 entry only
+src/components/product-variant-hero/types.ts                                                 expected - featureCellsWithoutLabels opt-in
+src/data/products/c08-specifications.json                                                    expected - prompt v2 s8.1, shipping row only (prefab row is upstream's)
+src/data/products/container-houses.json                                                      expected - this page's own product record
+src/data/products/shipping-container-homes.json                                              expected - prompt v2 s8.1, 10-year warranty
+src/data/wp-export/products/container-houses.json                                            expected - prompt v2 s4 scalar price defect
+src/lib/calculatorLadders.ts                                                                 expected - hub ladder row only (prefab row is upstream's)
+src/lib/specsShippingTabs.ts                                                                 expected - one container-houses branch
+src/pages/product/[category]/index.tsx                                                       expected - route gates, YMAL, deferred calculator, sync, labels
+
+public/images/products/container-houses/** : 64 files, all expected
+
+UNEXPECTED COUNT: 0

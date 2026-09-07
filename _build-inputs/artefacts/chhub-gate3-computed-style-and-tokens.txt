@@ -1,0 +1,50 @@
+CH-HUB Template Conformance Gate - artefact 3 of 6
+COMPUTED STYLE / TOKEN CHECK against the porta-cabins route
+Rebased onto ed6808f2 (PR #200). BUILD_ID ZZcbFyMQe8a0SfwcA7bDj.
+
+LOCKED TOKENS
+token        candidate    lock         match
+--------------------------------------------------
+#1a3c2e      6            6            True
+#2d7a3f      6            6            True
+#f0f7f2      4            4            True
+
+SHARED CLASS HOOKS
+class                      candidate    lock        
+--------------------------------------------------
+saman-size-chip            7            7           
+saman-size-tab             7            7           
+saman-section-divider      4            4           
+saman-s2-split             8            7           
+pc-hero-grid               17           17          
+pc-divider1                2            2           
+pc-divider2                2            2           
+
+H1 count        candidate 1  lock 1
+U+2014 in text  candidate 0  lock 8
+
+RESPONSIVE GEOMETRY (artefact 4 companion)
+target       width   scrollW   clientW   overflow  h1    imgs   blank
+------------------------------------------------------------------------
+chhub        360     360       360       False     1     34     0
+chhub        390     390       390       False     1     34     0
+chhub        768     768       768       False     1     34     0
+chhub        1440    1440      1440      False     1     34     0
+designlock   360     360       360       False     1     41     0
+designlock   390     390       390       False     1     41     0
+designlock   768     768       768       False     1     41     0
+designlock   1440    1440      1440      False     1     41     0
+
+NOTES
+-----
+No horizontal overflow at any of the four widths; exactly one H1 at each; zero
+blank images on every viewport after a 7 s settle. An earlier capture reported one
+blank at 768: that was decode timing on the 3912x2992 isometric/SOP PNGs
+(494-750 KB each), which report naturalWidth 0 until ~6 s. Every one returns 200
+when requested directly.
+
+saman-s2-split (candidate 8, lock 7): the pack supplies TWO Section 2 CTAs, a
+top-block CTA and a card CTA; porta-cabins supplies only the card CTA.
+
+U+2014: the lock carries 8 em dashes in its own rendered copy. The candidate
+carries none, because sizeEyebrowText is set and no pack string uses U+2014.

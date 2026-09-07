@@ -1,0 +1,868 @@
+{
+ "_meta": {
+  "page": "CH-HUB Container House (cluster hub)",
+  "version": "v1",
+  "date": "2026-09-06",
+  "asset_root": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house",
+  "rules": [
+   "Gallery slides are 1:1 at 1254 px WebP. Source PNGs never reach public/.",
+   "GA boards and isometric sheets are 3912 x 2992 at 489:374 and are never cropped.",
+   "The 16:9 slot is the size's own GA board placed on its board background. It is not a crop.",
+   "An empty slot renders nothing. Never fallback text.",
+   "No 1:1 image appears before the calculator.",
+   "Gallery WebP carry a 5,759-byte C2PA Content Credentials chunk. It is retained deliberately: these are AI-generated renders and the provenance signal must survive. Never strip it to save weight.",
+   "16:9 slots are realistic renders derived from the reserve set (R1/R2/R3 sources), never from a delivered gallery square and never from a GA board. Band 80-180 KB at 1600x900."
+  ],
+  "hold": "Images 001-030 (the three 20 ft render sets) show a 40 ft body. Drawings follow true 20 ft per SAMAN 6 Sep 2026. These galleries ship as-is and are replaced when the renders are regenerated.",
+  "kb_note": "Advisory only. Recorded before the C2PA chunk was written, so each value under-reads by about 5.6 KB. The verifier measures the file on disk and ignores these. Band is 80-130 KB."
+ },
+ "sizes": {
+  "20x8": {
+   "display": "20 x 8 x 8.5 ft",
+   "carpet_sqft": 146,
+   "built_up_sqft": 160,
+   "gallery": [
+    {
+     "slot": "gallery_01",
+     "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/size-20x8\\01-container-house-20x8-front-right-exterior.webp",
+     "public_path": "/images/container-house/size-20x8/01-container-house-20x8-front-right-exterior.webp",
+     "aspect": "1:1",
+     "width": 1254,
+     "format": "webp",
+     "kb": 98.2,
+     "q": 38,
+     "source_render": "001_container-houses_20x8_E01_front-right-hero.png",
+     "alt": "20 x 8 ft container house, front right exterior showing the entrance wall and the 8 ft end wall",
+     "kb_recorded": 92.6
+    },
+    {
+     "slot": "gallery_02",
+     "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/size-20x8\\02-container-house-20x8-rear-angle-exterior.webp",
+     "public_path": "/images/container-house/size-20x8/02-container-house-20x8-rear-angle-exterior.webp",
+     "aspect": "1:1",
+     "width": 1254,
+     "format": "webp",
+     "kb": 109.8,
+     "q": 28,
+     "source_render": "004_container-houses_20x8_E04_rear-right-angle.png",
+     "alt": "20 x 8 ft container house, rear angle showing the rear long wall and the bedroom end wall",
+     "kb_recorded": 104.2
+    },
+    {
+     "slot": "gallery_03",
+     "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/size-20x8\\03-container-house-20x8-elevated-roof-exterior.webp",
+     "public_path": "/images/container-house/size-20x8/03-container-house-20x8-elevated-roof-exterior.webp",
+     "aspect": "1:1",
+     "width": 1254,
+     "format": "webp",
+     "kb": 120.1,
+     "q": 38,
+     "source_render": "006_container-houses_20x8_E06_elevated-three-quarter.png",
+     "alt": "20 x 8 ft container house, elevated view showing the flat ISO container roof",
+     "kb_recorded": 114.5
+    },
+    {
+     "slot": "gallery_04",
+     "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/size-20x8\\04-container-house-20x8-living-hall-interior.webp",
+     "public_path": "/images/container-house/size-20x8/04-container-house-20x8-living-hall-interior.webp",
+     "aspect": "1:1",
+     "width": 1254,
+     "format": "webp",
+     "kb": 116.0,
+     "q": 78,
+     "source_render": "007_container-houses_20x8_I01_entry-living-hall.png",
+     "alt": "20 x 8 ft container house interior, entrance and living area looking towards the kitchen",
+     "kb_recorded": 110.4
+    },
+    {
+     "slot": "gallery_05",
+     "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/size-20x8\\05-container-house-20x8-kitchen-dining-interior.webp",
+     "public_path": "/images/container-house/size-20x8/05-container-house-20x8-kitchen-dining-interior.webp",
+     "aspect": "1:1",
+     "width": 1254,
+     "format": "webp",
+     "kb": 115.5,
+     "q": 82,
+     "source_render": "008_container-houses_20x8_I02_semi-kitchen-dining.png",
+     "alt": "20 x 8 ft container house interior, kitchen and dining area",
+     "kb_recorded": 109.9
+    },
+    {
+     "slot": "gallery_06",
+     "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/size-20x8\\06-container-house-20x8-bedroom-interior.webp",
+     "public_path": "/images/container-house/size-20x8/06-container-house-20x8-bedroom-interior.webp",
+     "aspect": "1:1",
+     "width": 1254,
+     "format": "webp",
+     "kb": 111.1,
+     "q": 78,
+     "source_render": "009_container-houses_20x8_I03_bedroom-view.png",
+     "alt": "20 x 8 ft container house interior, bedroom with wardrobe against the end wall",
+     "kb_recorded": 105.5
+    }
+   ],
+   "section3_ga": {
+    "slot": "section3_ga_board",
+    "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/01 GA Drawings\\container-house-20x8x8-5-premium-ga-specification-board-v1.png",
+    "aspect": "489:374",
+    "width": 3912,
+    "format": "png",
+    "crop": "forbidden",
+    "alt": "General arrangement drawing of the 20 x 8 ft container house, dimensioned floor plan and four wall elevations"
+   },
+   "section2_card_16x9": {
+    "slot": "section2_card_exterior_16x9",
+    "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/02 Long Description Images/07-container-house-20x8-exterior-wide.webp",
+    "aspect": "16:9",
+    "width": 1600,
+    "height": 900,
+    "format": "webp",
+    "q": 82,
+    "kb": 152.8,
+    "source_render": "003_container-houses_20x8_E03_long-side-elevation.png",
+    "alt": "20 x 8 ft container house, wide exterior along the entrance long wall",
+    "note": "Realistic render. SAMAN ruling 6 Sep 2026: no 2D drawing in Section 2. Derived from the reserve render, not from a delivered gallery square."
+   },
+   "isometric": {
+    "slot": "specifications_diagram_iso",
+    "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/01 GA Drawings\\container-house-20x8x8-5-isometric-general-view-v1.png",
+    "aspect": "489:374",
+    "width": 3912,
+    "format": "png",
+    "crop": "forbidden",
+    "alt": "Isometric general view of the 20 x 8 ft container house with the exploded shell build-up"
+   },
+   "palette": {
+    "exterior": "Pearl Off-White",
+    "exterior_hex": "#E5E3DC",
+    "interior": "Light Greige",
+    "interior_hex": "#DAD2C7"
+   },
+   "specifications_ga_16x9": {
+    "slot": "specifications_diagram_ga_16x9",
+    "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/02 Long Description Images/07-container-house-20x8-general-arrangement-board.webp",
+    "aspect": "16:9",
+    "width": 1600,
+    "format": "webp",
+    "alt": "General arrangement board for the 20 x 8 x 8.5 ft container house",
+    "note": "Superseded in Section 2. Retained for the Specifications tab only."
+   }
+  },
+  "20x10": {
+   "display": "20 x 10 x 8.5 ft",
+   "carpet_sqft": 185,
+   "built_up_sqft": 200,
+   "gallery": [
+    {
+     "slot": "gallery_01",
+     "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/size-20x10\\01-container-house-20x10-front-right-exterior.webp",
+     "public_path": "/images/container-house/size-20x10/01-container-house-20x10-front-right-exterior.webp",
+     "aspect": "1:1",
+     "width": 1254,
+     "format": "webp",
+     "kb": 111.1,
+     "q": 38,
+     "source_render": "011_container-houses_20x10_E01_front-right-hero.png",
+     "alt": "20 x 10 ft container house, front right exterior showing the entrance wall and the 10 ft end wall",
+     "kb_recorded": 105.5
+    },
+    {
+     "slot": "gallery_02",
+     "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/size-20x10\\02-container-house-20x10-rear-angle-exterior.webp",
+     "public_path": "/images/container-house/size-20x10/02-container-house-20x10-rear-angle-exterior.webp",
+     "aspect": "1:1",
+     "width": 1254,
+     "format": "webp",
+     "kb": 117.3,
+     "q": 38,
+     "source_render": "014_container-houses_20x10_E04_rear-right-angle.png",
+     "alt": "20 x 10 ft container house, rear angle showing the rear long wall and the bedroom end wall",
+     "kb_recorded": 111.7
+    },
+    {
+     "slot": "gallery_03",
+     "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/size-20x10\\03-container-house-20x10-elevated-roof-exterior.webp",
+     "public_path": "/images/container-house/size-20x10/03-container-house-20x10-elevated-roof-exterior.webp",
+     "aspect": "1:1",
+     "width": 1254,
+     "format": "webp",
+     "kb": 109.8,
+     "q": 28,
+     "source_render": "016_container-houses_20x10_E06_elevated-three-quarter.png",
+     "alt": "20 x 10 ft container house, elevated view showing the flat ISO container roof",
+     "kb_recorded": 104.2
+    },
+    {
+     "slot": "gallery_04",
+     "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/size-20x10\\04-container-house-20x10-living-hall-interior.webp",
+     "public_path": "/images/container-house/size-20x10/04-container-house-20x10-living-hall-interior.webp",
+     "aspect": "1:1",
+     "width": 1254,
+     "format": "webp",
+     "kb": 118.0,
+     "q": 78,
+     "source_render": "017_container-houses_20x10_I01_entry-living-hall.png",
+     "alt": "20 x 10 ft container house interior, entrance and living area looking towards the kitchen",
+     "kb_recorded": 112.4
+    },
+    {
+     "slot": "gallery_05",
+     "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/size-20x10\\05-container-house-20x10-kitchen-dining-interior.webp",
+     "public_path": "/images/container-house/size-20x10/05-container-house-20x10-kitchen-dining-interior.webp",
+     "aspect": "1:1",
+     "width": 1254,
+     "format": "webp",
+     "kb": 113.7,
+     "q": 78,
+     "source_render": "018_container-houses_20x10_I02_semi-kitchen-dining.png",
+     "alt": "20 x 10 ft container house interior, kitchen and dining area",
+     "kb_recorded": 108.1
+    },
+    {
+     "slot": "gallery_06",
+     "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/size-20x10\\06-container-house-20x10-bedroom-interior.webp",
+     "public_path": "/images/container-house/size-20x10/06-container-house-20x10-bedroom-interior.webp",
+     "aspect": "1:1",
+     "width": 1254,
+     "format": "webp",
+     "kb": 109.0,
+     "q": 74,
+     "source_render": "019_container-houses_20x10_I03_bedroom-view.png",
+     "alt": "20 x 10 ft container house interior, bedroom with wardrobe against the end wall",
+     "kb_recorded": 103.4
+    }
+   ],
+   "section3_ga": {
+    "slot": "section3_ga_board",
+    "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/01 GA Drawings\\container-house-20x10x8-5-premium-ga-specification-board-v1.png",
+    "aspect": "489:374",
+    "width": 3912,
+    "format": "png",
+    "crop": "forbidden",
+    "alt": "General arrangement drawing of the 20 x 10 ft container house, dimensioned floor plan and four wall elevations"
+   },
+   "section2_card_16x9": {
+    "slot": "section2_card_exterior_16x9",
+    "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/02 Long Description Images/07-container-house-20x10-exterior-wide.webp",
+    "aspect": "16:9",
+    "width": 1600,
+    "height": 900,
+    "format": "webp",
+    "q": 82,
+    "kb": 153.0,
+    "source_render": "013_container-houses_20x10_E03_long-side-elevation.png",
+    "alt": "20 x 10 ft container house, wide exterior along the entrance long wall",
+    "note": "Realistic render. SAMAN ruling 6 Sep 2026: no 2D drawing in Section 2. Derived from the reserve render, not from a delivered gallery square."
+   },
+   "isometric": {
+    "slot": "specifications_diagram_iso",
+    "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/01 GA Drawings\\container-house-20x10x8-5-isometric-general-view-v1.png",
+    "aspect": "489:374",
+    "width": 3912,
+    "format": "png",
+    "crop": "forbidden",
+    "alt": "Isometric general view of the 20 x 10 ft container house with the exploded shell build-up"
+   },
+   "palette": {
+    "exterior": "Sandstone Beige",
+    "exterior_hex": "#A38C70",
+    "interior": "Porcelain White",
+    "interior_hex": "#EEECE5"
+   },
+   "specifications_ga_16x9": {
+    "slot": "specifications_diagram_ga_16x9",
+    "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/02 Long Description Images/07-container-house-20x10-general-arrangement-board.webp",
+    "aspect": "16:9",
+    "width": 1600,
+    "format": "webp",
+    "alt": "General arrangement board for the 20 x 10 x 8.5 ft container house",
+    "note": "Superseded in Section 2. Retained for the Specifications tab only."
+   }
+  },
+  "20x12": {
+   "display": "20 x 12 x 8.5 ft",
+   "carpet_sqft": 224,
+   "built_up_sqft": 240,
+   "gallery": [
+    {
+     "slot": "gallery_01",
+     "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/size-20x12\\01-container-house-20x12-front-right-exterior.webp",
+     "public_path": "/images/container-house/size-20x12/01-container-house-20x12-front-right-exterior.webp",
+     "aspect": "1:1",
+     "width": 1254,
+     "format": "webp",
+     "kb": 102.3,
+     "q": 38,
+     "source_render": "021_container-houses_20x12_E01_front-right-hero.png",
+     "alt": "20 x 12 ft container house, front right exterior showing the entrance wall and the 12 ft end wall",
+     "kb_recorded": 96.7
+    },
+    {
+     "slot": "gallery_02",
+     "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/size-20x12\\02-container-house-20x12-rear-angle-exterior.webp",
+     "public_path": "/images/container-house/size-20x12/02-container-house-20x12-rear-angle-exterior.webp",
+     "aspect": "1:1",
+     "width": 1254,
+     "format": "webp",
+     "kb": 108.8,
+     "q": 38,
+     "source_render": "024_container-houses_20x12_E04_rear-right-angle.png",
+     "alt": "20 x 12 ft container house, rear angle showing the rear long wall and the bedroom end wall",
+     "kb_recorded": 103.2
+    },
+    {
+     "slot": "gallery_03",
+     "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/size-20x12\\03-container-house-20x12-elevated-roof-exterior.webp",
+     "public_path": "/images/container-house/size-20x12/03-container-house-20x12-elevated-roof-exterior.webp",
+     "aspect": "1:1",
+     "width": 1254,
+     "format": "webp",
+     "kb": 121.8,
+     "q": 23,
+     "source_render": "026_container-houses_20x12_E06_elevated-three-quarter.png",
+     "alt": "20 x 12 ft container house, elevated view showing the flat ISO container roof",
+     "kb_recorded": 116.2
+    },
+    {
+     "slot": "gallery_04",
+     "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/size-20x12\\04-container-house-20x12-living-hall-interior.webp",
+     "public_path": "/images/container-house/size-20x12/04-container-house-20x12-living-hall-interior.webp",
+     "aspect": "1:1",
+     "width": 1254,
+     "format": "webp",
+     "kb": 113.3,
+     "q": 74,
+     "source_render": "027_container-houses_20x12_I01_entry-living-hall.png",
+     "alt": "20 x 12 ft container house interior, entrance and living area looking towards the kitchen",
+     "kb_recorded": 107.7
+    },
+    {
+     "slot": "gallery_05",
+     "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/size-20x12\\05-container-house-20x12-kitchen-dining-interior.webp",
+     "public_path": "/images/container-house/size-20x12/05-container-house-20x12-kitchen-dining-interior.webp",
+     "aspect": "1:1",
+     "width": 1254,
+     "format": "webp",
+     "kb": 114.7,
+     "q": 78,
+     "source_render": "028_container-houses_20x12_I02_semi-kitchen-dining.png",
+     "alt": "20 x 12 ft container house interior, kitchen and dining area",
+     "kb_recorded": 109.1
+    },
+    {
+     "slot": "gallery_06",
+     "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/size-20x12\\06-container-house-20x12-bedroom-interior.webp",
+     "public_path": "/images/container-house/size-20x12/06-container-house-20x12-bedroom-interior.webp",
+     "aspect": "1:1",
+     "width": 1254,
+     "format": "webp",
+     "kb": 114.4,
+     "q": 74,
+     "source_render": "029_container-houses_20x12_I03_bedroom-view.png",
+     "alt": "20 x 12 ft container house interior, bedroom with wardrobe against the end wall",
+     "kb_recorded": 108.8
+    }
+   ],
+   "section3_ga": {
+    "slot": "section3_ga_board",
+    "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/01 GA Drawings\\container-house-20x12x8-5-premium-ga-specification-board-v1.png",
+    "aspect": "489:374",
+    "width": 3912,
+    "format": "png",
+    "crop": "forbidden",
+    "alt": "General arrangement drawing of the 20 x 12 ft container house, dimensioned floor plan and four wall elevations"
+   },
+   "section2_card_16x9": {
+    "slot": "section2_card_exterior_16x9",
+    "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/02 Long Description Images/07-container-house-20x12-exterior-wide.webp",
+    "aspect": "16:9",
+    "width": 1600,
+    "height": 900,
+    "format": "webp",
+    "q": 82,
+    "kb": 154.9,
+    "source_render": "023_container-houses_20x12_E03_long-side-elevation.png",
+    "alt": "20 x 12 ft container house, wide exterior along the entrance long wall",
+    "note": "Realistic render. SAMAN ruling 6 Sep 2026: no 2D drawing in Section 2. Derived from the reserve render, not from a delivered gallery square."
+   },
+   "isometric": {
+    "slot": "specifications_diagram_iso",
+    "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/01 GA Drawings\\container-house-20x12x8-5-isometric-general-view-v1.png",
+    "aspect": "489:374",
+    "width": 3912,
+    "format": "png",
+    "crop": "forbidden",
+    "alt": "Isometric general view of the 20 x 12 ft container house with the exploded shell build-up"
+   },
+   "palette": {
+    "exterior": "Deep Bottle Green",
+    "exterior_hex": "#304C3E",
+    "interior": "Champagne Linen",
+    "interior_hex": "#E7DDCD"
+   },
+   "specifications_ga_16x9": {
+    "slot": "specifications_diagram_ga_16x9",
+    "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/02 Long Description Images/07-container-house-20x12-general-arrangement-board.webp",
+    "aspect": "16:9",
+    "width": 1600,
+    "format": "webp",
+    "alt": "General arrangement board for the 20 x 12 x 8.5 ft container house",
+    "note": "Superseded in Section 2. Retained for the Specifications tab only."
+   }
+  },
+  "40x8": {
+   "display": "40 x 8 x 8.5 ft",
+   "carpet_sqft": 296,
+   "built_up_sqft": 320,
+   "gallery": [
+    {
+     "slot": "gallery_01",
+     "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/size-40x8\\01-container-house-40x8-front-right-exterior.webp",
+     "public_path": "/images/container-house/size-40x8/01-container-house-40x8-front-right-exterior.webp",
+     "aspect": "1:1",
+     "width": 1254,
+     "format": "webp",
+     "kb": 113.2,
+     "q": 28,
+     "source_render": "031_container-houses_40x8_E01_front-right-hero.png",
+     "alt": "40 x 8 ft container house, front right exterior showing the entrance wall and the 8 ft end wall",
+     "kb_recorded": 107.6
+    },
+    {
+     "slot": "gallery_02",
+     "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/size-40x8\\02-container-house-40x8-rear-angle-exterior.webp",
+     "public_path": "/images/container-house/size-40x8/02-container-house-40x8-rear-angle-exterior.webp",
+     "aspect": "1:1",
+     "width": 1254,
+     "format": "webp",
+     "kb": 116.0,
+     "q": 38,
+     "source_render": "034_container-houses_40x8_E04_rear-right-angle.png",
+     "alt": "40 x 8 ft container house, rear angle showing the rear long wall and the bedroom end wall",
+     "kb_recorded": 110.4
+    },
+    {
+     "slot": "gallery_03",
+     "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/size-40x8\\03-container-house-40x8-elevated-roof-exterior.webp",
+     "public_path": "/images/container-house/size-40x8/03-container-house-40x8-elevated-roof-exterior.webp",
+     "aspect": "1:1",
+     "width": 1254,
+     "format": "webp",
+     "kb": 122.2,
+     "q": 23,
+     "source_render": "036_container-houses_40x8_E06_elevated-three-quarter.png",
+     "alt": "40 x 8 ft container house, elevated view showing the flat ISO container roof",
+     "kb_recorded": 116.6
+    },
+    {
+     "slot": "gallery_04",
+     "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/size-40x8\\04-container-house-40x8-living-hall-interior.webp",
+     "public_path": "/images/container-house/size-40x8/04-container-house-40x8-living-hall-interior.webp",
+     "aspect": "1:1",
+     "width": 1254,
+     "format": "webp",
+     "kb": 111.3,
+     "q": 74,
+     "source_render": "037_container-houses_40x8_I01_entry-living-hall.png",
+     "alt": "40 x 8 ft container house interior, entrance and living area looking towards the kitchen",
+     "kb_recorded": 105.7
+    },
+    {
+     "slot": "gallery_05",
+     "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/size-40x8\\05-container-house-40x8-kitchen-dining-interior.webp",
+     "public_path": "/images/container-house/size-40x8/05-container-house-40x8-kitchen-dining-interior.webp",
+     "aspect": "1:1",
+     "width": 1254,
+     "format": "webp",
+     "kb": 115.6,
+     "q": 78,
+     "source_render": "038_container-houses_40x8_I02_semi-kitchen-dining.png",
+     "alt": "40 x 8 ft container house interior, kitchen and dining area",
+     "kb_recorded": 110.0
+    },
+    {
+     "slot": "gallery_06",
+     "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/size-40x8\\06-container-house-40x8-bedroom-interior.webp",
+     "public_path": "/images/container-house/size-40x8/06-container-house-40x8-bedroom-interior.webp",
+     "aspect": "1:1",
+     "width": 1254,
+     "format": "webp",
+     "kb": 100.7,
+     "q": 57,
+     "source_render": "039_container-houses_40x8_I03_bedroom-view.png",
+     "alt": "40 x 8 ft container house interior, bedroom with wardrobe against the end wall",
+     "kb_recorded": 95.1
+    }
+   ],
+   "section3_ga": {
+    "slot": "section3_ga_board",
+    "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/01 GA Drawings\\container-house-40x8x8-5-premium-ga-specification-board-v1.png",
+    "aspect": "489:374",
+    "width": 3912,
+    "format": "png",
+    "crop": "forbidden",
+    "alt": "General arrangement drawing of the 40 x 8 ft container house, dimensioned floor plan and four wall elevations"
+   },
+   "section2_card_16x9": {
+    "slot": "section2_card_exterior_16x9",
+    "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/02 Long Description Images/07-container-house-40x8-exterior-wide.webp",
+    "aspect": "16:9",
+    "width": 1600,
+    "height": 900,
+    "format": "webp",
+    "q": 70,
+    "kb": 172.2,
+    "source_render": "033_container-houses_40x8_E03_long-side-elevation.png",
+    "alt": "40 x 8 ft container house, wide exterior along the entrance long wall",
+    "note": "Realistic render. SAMAN ruling 6 Sep 2026: no 2D drawing in Section 2. Derived from the reserve render, not from a delivered gallery square."
+   },
+   "isometric": {
+    "slot": "specifications_diagram_iso",
+    "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/01 GA Drawings\\container-house-40x8x8-5-isometric-general-view-v1.png",
+    "aspect": "489:374",
+    "width": 3912,
+    "format": "png",
+    "crop": "forbidden",
+    "alt": "Isometric general view of the 40 x 8 ft container house with the exploded shell build-up"
+   },
+   "palette": {
+    "exterior": "Slate Blue-Grey",
+    "exterior_hex": "#526675",
+    "interior": "Pale Sand",
+    "interior_hex": "#E5D6BF"
+   },
+   "specifications_ga_16x9": {
+    "slot": "specifications_diagram_ga_16x9",
+    "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/02 Long Description Images/07-container-house-40x8-general-arrangement-board.webp",
+    "aspect": "16:9",
+    "width": 1600,
+    "format": "webp",
+    "alt": "General arrangement board for the 40 x 8 x 8.5 ft container house",
+    "note": "Superseded in Section 2. Retained for the Specifications tab only."
+   }
+  },
+  "40x10": {
+   "display": "40 x 10 x 8.5 ft",
+   "carpet_sqft": 375,
+   "built_up_sqft": 400,
+   "gallery": [
+    {
+     "slot": "gallery_01",
+     "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/size-40x10\\01-container-house-40x10-front-right-exterior.webp",
+     "public_path": "/images/container-house/size-40x10/01-container-house-40x10-front-right-exterior.webp",
+     "aspect": "1:1",
+     "width": 1254,
+     "format": "webp",
+     "kb": 115.2,
+     "q": 28,
+     "source_render": "041_container-houses_40x10_E01_front-right-hero.png",
+     "alt": "40 x 10 ft container house, front right exterior showing the entrance wall and the 10 ft end wall",
+     "kb_recorded": 109.6
+    },
+    {
+     "slot": "gallery_02",
+     "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/size-40x10\\02-container-house-40x10-rear-angle-exterior.webp",
+     "public_path": "/images/container-house/size-40x10/02-container-house-40x10-rear-angle-exterior.webp",
+     "aspect": "1:1",
+     "width": 1254,
+     "format": "webp",
+     "kb": 115.9,
+     "q": 23,
+     "source_render": "044_container-houses_40x10_E04_rear-right-angle.png",
+     "alt": "40 x 10 ft container house, rear angle showing the rear long wall and the bedroom end wall",
+     "kb_recorded": 110.3
+    },
+    {
+     "slot": "gallery_03",
+     "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/size-40x10\\03-container-house-40x10-elevated-roof-exterior.webp",
+     "public_path": "/images/container-house/size-40x10/03-container-house-40x10-elevated-roof-exterior.webp",
+     "aspect": "1:1",
+     "width": 1254,
+     "format": "webp",
+     "kb": 108.3,
+     "q": 28,
+     "source_render": "046_container-houses_40x10_E06_elevated-three-quarter.png",
+     "alt": "40 x 10 ft container house, elevated view showing the flat ISO container roof",
+     "kb_recorded": 102.7
+    },
+    {
+     "slot": "gallery_04",
+     "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/size-40x10\\04-container-house-40x10-living-hall-interior.webp",
+     "public_path": "/images/container-house/size-40x10/04-container-house-40x10-living-hall-interior.webp",
+     "aspect": "1:1",
+     "width": 1254,
+     "format": "webp",
+     "kb": 107.3,
+     "q": 57,
+     "source_render": "047_container-houses_40x10_I01_entry-living-hall.png",
+     "alt": "40 x 10 ft container house interior, entrance and living area looking towards the kitchen",
+     "kb_recorded": 101.7
+    },
+    {
+     "slot": "gallery_05",
+     "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/size-40x10\\05-container-house-40x10-kitchen-dining-interior.webp",
+     "public_path": "/images/container-house/size-40x10/05-container-house-40x10-kitchen-dining-interior.webp",
+     "aspect": "1:1",
+     "width": 1254,
+     "format": "webp",
+     "kb": 114.2,
+     "q": 86,
+     "source_render": "048_container-houses_40x10_I02_semi-kitchen-dining.png",
+     "alt": "40 x 10 ft container house interior, kitchen and dining area",
+     "kb_recorded": 108.6
+    },
+    {
+     "slot": "gallery_06",
+     "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/size-40x10\\06-container-house-40x10-bedroom-interior.webp",
+     "public_path": "/images/container-house/size-40x10/06-container-house-40x10-bedroom-interior.webp",
+     "aspect": "1:1",
+     "width": 1254,
+     "format": "webp",
+     "kb": 106.2,
+     "q": 82,
+     "source_render": "049_container-houses_40x10_I03_bedroom-view.png",
+     "alt": "40 x 10 ft container house interior, bedroom with wardrobe against the end wall",
+     "kb_recorded": 100.6
+    }
+   ],
+   "section3_ga": {
+    "slot": "section3_ga_board",
+    "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/01 GA Drawings\\container-house-40x10x8-5-premium-ga-specification-board-v1.png",
+    "aspect": "489:374",
+    "width": 3912,
+    "format": "png",
+    "crop": "forbidden",
+    "alt": "General arrangement drawing of the 40 x 10 ft container house, dimensioned floor plan and four wall elevations"
+   },
+   "section2_card_16x9": {
+    "slot": "section2_card_exterior_16x9",
+    "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/02 Long Description Images/07-container-house-40x10-exterior-wide.webp",
+    "aspect": "16:9",
+    "width": 1600,
+    "height": 900,
+    "format": "webp",
+    "q": 74,
+    "kb": 161.8,
+    "source_render": "043_container-houses_40x10_E03_long-side-elevation.png",
+    "alt": "40 x 10 ft container house, wide exterior along the entrance long wall",
+    "note": "Realistic render. SAMAN ruling 6 Sep 2026: no 2D drawing in Section 2. Derived from the reserve render, not from a delivered gallery square."
+   },
+   "isometric": {
+    "slot": "specifications_diagram_iso",
+    "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/01 GA Drawings\\container-house-40x10x8-5-isometric-general-view-v1.png",
+    "aspect": "489:374",
+    "width": 3912,
+    "format": "png",
+    "crop": "forbidden",
+    "alt": "Isometric general view of the 40 x 10 ft container house with the exploded shell build-up"
+   },
+   "palette": {
+    "exterior": "Warm Stone Taupe",
+    "exterior_hex": "#877968",
+    "interior": "Dove Light Grey",
+    "interior_hex": "#D7D8D5"
+   },
+   "specifications_ga_16x9": {
+    "slot": "specifications_diagram_ga_16x9",
+    "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/02 Long Description Images/07-container-house-40x10-general-arrangement-board.webp",
+    "aspect": "16:9",
+    "width": 1600,
+    "format": "webp",
+    "alt": "General arrangement board for the 40 x 10 x 8.5 ft container house",
+    "note": "Superseded in Section 2. Retained for the Specifications tab only."
+   }
+  },
+  "40x12": {
+   "display": "40 x 12 x 8.5 ft",
+   "carpet_sqft": 454,
+   "built_up_sqft": 480,
+   "gallery": [
+    {
+     "slot": "gallery_01",
+     "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/size-40x12\\01-container-house-40x12-front-right-exterior.webp",
+     "public_path": "/images/container-house/size-40x12/01-container-house-40x12-front-right-exterior.webp",
+     "aspect": "1:1",
+     "width": 1254,
+     "format": "webp",
+     "kb": 114.9,
+     "q": 38,
+     "source_render": "051_container-houses_40x12_E01_front-right-hero.png",
+     "alt": "40 x 12 ft container house, front right exterior showing the entrance wall and the 12 ft end wall",
+     "kb_recorded": 109.3
+    },
+    {
+     "slot": "gallery_02",
+     "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/size-40x12\\02-container-house-40x12-rear-angle-exterior.webp",
+     "public_path": "/images/container-house/size-40x12/02-container-house-40x12-rear-angle-exterior.webp",
+     "aspect": "1:1",
+     "width": 1254,
+     "format": "webp",
+     "kb": 120.1,
+     "q": 28,
+     "source_render": "054_container-houses_40x12_E04_rear-right-angle.png",
+     "alt": "40 x 12 ft container house, rear angle showing the rear long wall and the bedroom end wall",
+     "kb_recorded": 114.5
+    },
+    {
+     "slot": "gallery_03",
+     "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/size-40x12\\03-container-house-40x12-elevated-roof-exterior.webp",
+     "public_path": "/images/container-house/size-40x12/03-container-house-40x12-elevated-roof-exterior.webp",
+     "aspect": "1:1",
+     "width": 1254,
+     "format": "webp",
+     "kb": 128.1,
+     "q": 20,
+     "source_render": "056_container-houses_40x12_E06_elevated-three-quarter.png",
+     "alt": "40 x 12 ft container house, elevated view showing the flat ISO container roof",
+     "kb_recorded": 122.5
+    },
+    {
+     "slot": "gallery_04",
+     "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/size-40x12\\04-container-house-40x12-living-hall-interior.webp",
+     "public_path": "/images/container-house/size-40x12/04-container-house-40x12-living-hall-interior.webp",
+     "aspect": "1:1",
+     "width": 1254,
+     "format": "webp",
+     "kb": 124.4,
+     "q": 74,
+     "source_render": "057_container-houses_40x12_I01_entry-living-hall.png",
+     "alt": "40 x 12 ft container house interior, entrance and living area looking towards the kitchen",
+     "kb_recorded": 118.8
+    },
+    {
+     "slot": "gallery_05",
+     "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/size-40x12\\05-container-house-40x12-kitchen-dining-interior.webp",
+     "public_path": "/images/container-house/size-40x12/05-container-house-40x12-kitchen-dining-interior.webp",
+     "aspect": "1:1",
+     "width": 1254,
+     "format": "webp",
+     "kb": 114.7,
+     "q": 78,
+     "source_render": "058_container-houses_40x12_I02_semi-kitchen-dining.png",
+     "alt": "40 x 12 ft container house interior, kitchen and dining area",
+     "kb_recorded": 109.1
+    },
+    {
+     "slot": "gallery_06",
+     "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/size-40x12\\06-container-house-40x12-bedroom-interior.webp",
+     "public_path": "/images/container-house/size-40x12/06-container-house-40x12-bedroom-interior.webp",
+     "aspect": "1:1",
+     "width": 1254,
+     "format": "webp",
+     "kb": 111.5,
+     "q": 78,
+     "source_render": "059_container-houses_40x12_I03_bedroom-view.png",
+     "alt": "40 x 12 ft container house interior, bedroom with wardrobe against the end wall",
+     "kb_recorded": 105.9
+    }
+   ],
+   "section3_ga": {
+    "slot": "section3_ga_board",
+    "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/01 GA Drawings\\container-house-40x12x8-5-premium-ga-specification-board-v1.png",
+    "aspect": "489:374",
+    "width": 3912,
+    "format": "png",
+    "crop": "forbidden",
+    "alt": "General arrangement drawing of the 40 x 12 ft container house, dimensioned floor plan and four wall elevations"
+   },
+   "section2_card_16x9": {
+    "slot": "section2_card_exterior_16x9",
+    "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/02 Long Description Images/07-container-house-40x12-exterior-wide.webp",
+    "aspect": "16:9",
+    "width": 1600,
+    "height": 900,
+    "format": "webp",
+    "q": 78,
+    "kb": 165.9,
+    "source_render": "053_container-houses_40x12_E03_long-side-elevation.png",
+    "alt": "40 x 12 ft container house, wide exterior along the entrance long wall",
+    "note": "Realistic render. SAMAN ruling 6 Sep 2026: no 2D drawing in Section 2. Derived from the reserve render, not from a delivered gallery square."
+   },
+   "isometric": {
+    "slot": "specifications_diagram_iso",
+    "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/01 GA Drawings\\container-house-40x12x8-5-isometric-general-view-v1.png",
+    "aspect": "489:374",
+    "width": 3912,
+    "format": "png",
+    "crop": "forbidden",
+    "alt": "Isometric general view of the 40 x 12 ft container house with the exploded shell build-up"
+   },
+   "palette": {
+    "exterior": "Burnt Terracotta",
+    "exterior_hex": "#995E4C",
+    "interior": "Soft Clay Greige",
+    "interior_hex": "#D9C7BB"
+   },
+   "specifications_ga_16x9": {
+    "slot": "specifications_diagram_ga_16x9",
+    "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/02 Long Description Images/07-container-house-40x12-general-arrangement-board.webp",
+    "aspect": "16:9",
+    "width": 1600,
+    "format": "webp",
+    "alt": "General arrangement board for the 40 x 12 x 8.5 ft container house",
+    "note": "Superseded in Section 2. Retained for the Specifications tab only."
+   }
+  }
+ },
+ "shared": {
+  "sop_sheet": {
+   "slot": "specifications_diagram_sop",
+   "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/03 Technical Diagrams\\container-house-factory-assembly-sop-sheet-v1.png",
+   "aspect": "489:374",
+   "width": 3912,
+   "format": "png",
+   "crop": "forbidden",
+   "alt": "Container house factory assembly sequence, twelve stations from base frame to dispatch"
+  }
+ },
+ "reserve_renders": {
+  "note": "Four reserve WebP per size, prefixed R1 to R4, are in the same size folders and are not placed on the page.",
+  "files": [
+   "R1 front-left-exterior",
+   "R2 long-side-elevation-exterior",
+   "R3 end-wall-exterior",
+   "R4 bathroom-interior"
+  ]
+ },
+ "description_images": [
+  {
+   "slot": "description_image_1",
+   "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/02 Long Description Images/d1-container-house-40x8-front-left-exterior-wide.webp",
+   "aspect": "16:9",
+   "width": 1600,
+   "height": 900,
+   "format": "webp",
+   "q": 78,
+   "kb": 178.8,
+   "after_h2": "What a container house is, and what it is not",
+   "alt": "40 x 8 ft container house, front left exterior showing the entrance wall, the end wall window and the ISO corner castings",
+   "source_render": "032_container-houses_40x8_E02_front-left-angle.png"
+  },
+  {
+   "slot": "description_image_2",
+   "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/02 Long Description Images/d2-container-house-40x12-long-side-exterior-wide.webp",
+   "aspect": "16:9",
+   "width": 1600,
+   "height": 900,
+   "format": "webp",
+   "q": 78,
+   "kb": 165.9,
+   "after_h2": "How the six container house sizes actually differ",
+   "alt": "40 x 12 ft container house seen along its full length, showing the window run on the rear long wall",
+   "source_render": "053_container-houses_40x12_E03_long-side-elevation.png"
+  },
+  {
+   "slot": "description_image_3",
+   "file": "D:\\Project-shekhar\\all-product-images\\Hub page (Container Houses)\\container-house/02 Long Description Images/d3-container-house-20x12-front-left-exterior-wide.webp",
+   "aspect": "16:9",
+   "width": 1600,
+   "height": 900,
+   "format": "webp",
+   "q": 82,
+   "kb": 167.9,
+   "after_h2": "Who is actually buying a container house in India",
+   "alt": "20 x 12 ft container house on a landscaped plot, front left exterior with the entrance door and living window",
+   "source_render": "022_container-houses_20x12_E02_front-left-angle.png"
+  }
+ ]
+}

@@ -1894,12 +1894,24 @@ export function getProductTabsHtml(
   }
   // CH-PFB-04 (6 Sep 2026) - this route's Specifications tab is rebuilt from its own
   // signed pack instead of the generic 30-row C-08 table, and its Shipping tab is the
-  // shared freight component exactly as the porta-cabins design lock renders it,
-  // including the two free-delivery lines. Scoped to this one slug, so every other
-  // C-08 container-house page keeps buildC08SpecificationsHtml and its '' shipping.
+  // shared freight component exactly as the porta-cabins design lock renders it.
+  // Scoped to this one slug, so every other C-08 container-house page keeps
+  // buildC08SpecificationsHtml and its '' shipping.
   if (pageSlug === 'prefab-container-homes') {
     return {
       specificationsHtml: buildPrefabContainerHomesSpecificationsHtml(),
+      shippingHtml: buildShippingHtml(),
+    };
+  }
+  // CH-HUB (6 Sep 2026) — the container-houses HUB renders the same shared freight tab,
+  // exactly as the porta-cabins design lock does (buildShippingHtml() with no options).
+  // Scoped to this one slug and placed before the C08 branch below, so the remaining
+  // C08 SUBPAGES keep their empty Shipping tab and their markup stays byte-identical.
+  // Specifications is unchanged: this route's own product JSON supplies
+  // specificationsHtml and takes precedence over this value.
+  if (pageSlug === 'container-houses') {
+    return {
+      specificationsHtml: buildC08SpecificationsHtml(pageSlug),
       shippingHtml: buildShippingHtml(),
     };
   }

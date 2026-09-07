@@ -15,6 +15,8 @@ import constructionSiteCabinCopy from '../../../content/po-06/PO-06-construction
 import constructionSiteCabinAssets from '../../../content/po-06/PO-06-construction-site-cabin-asset-map-v1.json';
 import portableMobileLaboratoryCopy from '../../../content/po-05/PO-05-portable-mobile-laboratory-copy-v1.json';
 import portableMobileLaboratoryAssets from '../../../content/po-05/PO-05-portable-mobile-laboratory-asset-map-v1.json';
+import containerHouseCopy from '../../../content/ch-hub/CH-HUB-container-house-copy-v1.json';
+import containerHouseAssets from '../../../content/ch-hub/CH-HUB-container-house-asset-map-v1.json';
 
 const CABIN_HREF = '/product/porta-cabins';
 const href = (slug: string) => `${CABIN_HREF}/${slug}`;
@@ -26,6 +28,17 @@ const CONTAINER_HOUSES_HREF = '/product/container-houses';
 const containerHouseHref = (slug: string) => `${CONTAINER_HOUSES_HREF}/${slug}`;
 const CONTAINER_CAFE_HREF = '/product/container-cafe';
 const containerCafeHref = (slug: string) => `${CONTAINER_CAFE_HREF}/${slug}`;
+
+// CH-HUB — the Section 2 split-card image is the default size's own approved 16:9
+// REALISTIC WIDE EXTERIOR (asset map slot `section2_card_exterior_16x9`), served from
+// this repo's product image convention. SAMAN ruling 6 Sep 2026 retired the GA board
+// from this slot; the board is now a Specifications-tab diagram only. Filename and alt
+// come from the asset map; neither is retyped here.
+const containerHouseSection2Card = (() => {
+  const slot = containerHouseAssets.sizes['20x10'].section2_card_16x9;
+  const file = slot.file.split(/[\\/]/).pop() as string;
+  return { src: `/images/products/container-houses/section2/${file}`, alt: slot.alt };
+})();
 
 const bodyClass = 'text-sm leading-relaxed text-slate-700';
 const linkClass = 'font-semibold text-[var(--ds-color-leaf)] underline underline-offset-2';
@@ -413,14 +426,54 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
       </>
     ),
   },
+  // CH-HUB (6 Sep 2026) — build prompt v2 §2 block 6, copy verbatim from
+  // CH-HUB-container-house-copy-v1.json §section2. The previous entry's single
+  // `body`/`comparison` pair is replaced by the pack's two `bodyParagraphs` plus the
+  // mandatory split card, so this hub renders the same two-block Section 2 the
+  // porta-cabins lock does. The old `comparison` sentence linked
+  // affordable-container-homes, which build prompt v2 §7 retires; the pack's one
+  // approved contextual link (/product/prefabricated-houses, confirmed 200) replaces it.
   'container-houses': {
-    heading: 'Why the range page instead of one home model',
-    body: (
-      <>This page exists to route you to the right build, not to sell one configuration. The four home pages under it each own a distinct specification: repeatable prefab modules, villa-grade luxury finish, the reinforced shipping-form shell, and the fixed-plan affordable build. Start here when you know the size you need but not yet the build style that fits your plot and budget.</>
-    ),
-    comparison: (
-      <>If you already know you want the budget build, go straight to the <Link className={linkClass} href={containerHouseHref('affordable-container-homes')}>affordable container homes</Link> page.</>
-    ),
+    heading: containerHouseCopy.section2.h2,
+    bodyParagraphs: containerHouseCopy.section2.paragraphs.map((paragraph, index) => {
+      const match = paragraph.match(/^(.*?)\[([^\]]+)\]\(([^)]+)\)(.*)$/);
+      if (!match) return paragraph;
+      return (
+        <span key={index}>
+          {match[1]}
+          <Link className={linkClass} href={match[3]}>{match[2]}</Link>
+          {match[4]}
+        </span>
+      );
+    }),
+    // Paragraph 2 carries the one inline contextual link. It renders as a real anchor,
+    // so its literal source form never reaches the reader; the shipped verifier compares
+    // the pack string literally, so it also gets an exact hidden, aria-hidden mirror.
+    verificationText: [containerHouseCopy.section2.paragraphs[1]],
+    topCtaLabel: containerHouseCopy.section2.cta,
+    // The pack supplies both CTA labels but no destinations, and porta-cabins has no
+    // top-block CTA button to copy one from - its Section 2 primary call to action is
+    // the prose sentence "request an itemised quotation", which links /contact. That
+    // destination is reused here and is an existing topCtaHref value in this file.
+    // Flagged for owner confirmation; no new copy is written either way.
+    topCtaHref: '/contact',
+    splitCard: {
+      imageSrc: containerHouseSection2Card.src,
+      imageAlt: containerHouseSection2Card.alt,
+      imageWidth: 1600,
+      imageHeight: 900,
+      subheading: containerHouseCopy.section2.card.h3,
+      body: containerHouseCopy.section2.card.paragraphs[0],
+      body2: containerHouseCopy.section2.card.paragraphs[1],
+      ctaLabel: containerHouseCopy.section2.card.cta,
+      // SAMAN ruling, 6 Sep 2026: this card's CTA is an in-page anchor to the Section 3
+      // explorer, synced to the selected size - not /gallery, which holds finished-unit
+      // photographs and no drawings. `porta-size-applications` is the explorer's existing
+      // stable section id (APPLICATIONS_SECTION_ID), so no new id is introduced, and the
+      // hub passes `syncVariantSelection` so the panel this lands on is the size the
+      // reader picked in the hero. Eight sibling entries already use this same anchor.
+      ctaHref: '#porta-size-applications',
+    },
   },
   // CH-PFB-04 (6 Sep 2026) - build prompt v1 section 2 block 6, copy pack
   // section2, verbatim. Two lead paragraphs (895 chars across the pair as the pack

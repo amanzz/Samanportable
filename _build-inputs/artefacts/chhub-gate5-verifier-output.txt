@@ -1,0 +1,30 @@
+CH-HUB Template Conformance Gate - artefact 5 of 6
+VERIFIER OUTPUT
+
+Command:  python verify_ch_hub.py http://localhost:3000/product/container-houses
+Verifier: verify_ch_hub.py                        sha256 0308a6e00fbce8d3e95fc0fcc67413481619885ea5760db8f15202fc9c975e4c
+Copy:     CH-HUB-container-house-copy-v1.json      sha256 496db5c3a230e4c7c940c21f12cb4aa25b898bdc64ca12d45d668eaf334ecb5a
+Assets:   CH-HUB-container-house-asset-map-v1.json sha256 87014e8af5aeb963f69227c006108b7456f5cbf4051235693a664d8b2b434cc7
+Rebased onto ed6808f2 (PR #200). HEAD 23999d4c. BUILD_ID ZZcbFyMQe8a0SfwcA7bDj.
+tsc --noEmit clean, npm run build exit 0.
+
+----- CH-HUB -----
+  NOTE: shared credentials strip did not show '7 to 21 working days' - confirm the strip rendered.
+  NOTE: shared credentials strip did not show '500+ completed projects' - confirm the strip rendered.
+243 checks run, 0 failed
+RESULT: PASS
+
+----- PEER PAGE, CH-PFB-04, run against this same build -----
+checks passed: 360
+RESULT: PASS
+
+----- the two advisory NOTEs -----
+Advisory prints, not failures. '7 to 21 working days' and '500+ completed projects'
+are shared-credential strings this page does not author. The trust strip renders:
+  GST registered - ISO 9001:2015 certified manufacturer - 10 years structural,
+  1 year finishing extendable to 2, per the signed quotation - Pan-India delivery
+
+----- free-delivery, resolved -----
+The earlier shipping-free-delivery FAIL was an input error confirmed by SAMAN: the
+shared freight component emits ONE line and the lock's second occurrence is
+porta-cabins' own Description prose. The verifier now expects >= 1. No page change.
