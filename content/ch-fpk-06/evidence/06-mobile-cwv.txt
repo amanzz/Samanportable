@@ -1,0 +1,62 @@
+CH-FPK-06 Template Conformance Gate - artefact 6
+Mobile Core Web Vitals, Chrome headless, 390x844 @2x, 4x CPU throttle, Slow-4G
+(5 runs per target, median reported; raw runs below)
+
+  target                          LCP ms   CLS      TBT ms   FCP ms   TTFB ms  img  img KB  total KB
+  flatpack-local                   4312   0.0000      525     4096       806    9     516      1575
+  portacabins-local                3460   0.0000      540     3260       163    7     658      1625
+  portacabins-LIVE                 5176   0.0000      610     3764       703    7     658      1615
+
+  raw runs
+    flatpack-local run1: LCP 6916  CLS 0.0000  TBT 501  FCP 6376  TTFB 3668  imgs 9 (516 KB)  total 1575 KB
+    flatpack-local run2: LCP 4008  CLS 0.0000  TBT 505  FCP 3844  TTFB 298  imgs 9 (516 KB)  total 1575 KB
+    flatpack-local run3: LCP 4656  CLS 0.0000  TBT 960  FCP 4240  TTFB 806  imgs 9 (516 KB)  total 1575 KB
+    flatpack-local run4: LCP 3976  CLS 0.0000  TBT 525  FCP 3864  TTFB 524  imgs 9 (516 KB)  total 1575 KB
+    flatpack-local run5: LCP 4312  CLS 0.0000  TBT 1067  FCP 4096  TTFB 1012  imgs 9 (516 KB)  total 1575 KB
+    portacabins-local run1: LCP 3452  CLS 0.0000  TBT 538  FCP 3260  TTFB 305  imgs 7 (658 KB)  total 1625 KB
+    portacabins-local run2: LCP 3248  CLS 0.0000  TBT 344  FCP 2980  TTFB 359  imgs 7 (658 KB)  total 1625 KB
+    portacabins-local run3: LCP 4080  CLS 0.0000  TBT 608  FCP 3608  TTFB 157  imgs 7 (658 KB)  total 1625 KB
+    portacabins-local run4: LCP 3916  CLS 0.0000  TBT 540  FCP 3484  TTFB 163  imgs 7 (658 KB)  total 1625 KB
+    portacabins-local run5: LCP 3460  CLS 0.0000  TBT 846  FCP 3220  TTFB 132  imgs 7 (658 KB)  total 1625 KB
+    portacabins-LIVE run1: LCP 6504  CLS 0.0000  TBT 521  FCP 4012  TTFB 1206  imgs 7 (658 KB)  total 1615 KB
+    portacabins-LIVE run2: LCP 5100  CLS 0.0000  TBT 455  FCP 3868  TTFB 761  imgs 7 (658 KB)  total 1615 KB
+    portacabins-LIVE run3: LCP 5176  CLS 0.0000  TBT 610  FCP 3252  TTFB 381  imgs 7 (658 KB)  total 1615 KB
+    portacabins-LIVE run4: LCP 5132  CLS 0.0000  TBT 828  FCP 3764  TTFB 703  imgs 7 (658 KB)  total 1615 KB
+    portacabins-LIVE run5: LCP 5316  CLS 0.0000  TBT 686  FCP 3232  TTFB 314  imgs 7 (658 KB)  total 1615 KB
+
+  URLs
+    flatpack-local               http://127.0.0.1:3216/product/container-houses/flat-pack-container-homes
+    portacabins-local            http://127.0.0.1:3216/product/porta-cabins
+    portacabins-LIVE             https://www.samanportable.com/product/porta-cabins
+
+  Reading
+  -------
+  CLS is 0.0000 on all three targets, every run. TBT is within noise of the lock
+  (flatpack median 525 ms, porta-cabins local 540 ms, porta-cabins live 521 ms).
+
+  LCP: flatpack 4312 ms median against porta-cabins 3460 ms on the same machine and
+  the same server, and against 5176 ms on live production. So this page is ~850 ms
+  slower than the local design lock and ~860 ms faster than the live one.
+
+  The ~850 ms against the local lock is attributable to the image optimizer, and it
+  is a consequence of the asset map's public paths, not of this page's markup:
+
+    src/lib/imageSrc.ts isPreOptimizedLocalImage() bypasses /_next/image ONLY for
+    /images/products/**.webp. The signed asset map paths this pack's 55 assets at
+    /images/flat-pack-container-homes/..., outside that prefix, so every one of them
+    is re-encoded by the optimizer on first request. The T12 comment in that file
+    records the measured cost of exactly this: "the origin re-encodes an already-
+    optimal WebP on the first request for each (w,q) variant, and Cloudflare does
+    not cache /_next/image (every response is cf-cache-status: MISS), so the first
+    paint of every product/size image pays a multi-second optimizer TTFB."
+
+    These 55 files are already at final size and quality (86.2 to 119.8 KB after the
+    C2PA chunk is stripped), i.e. exactly the class that rule was written for.
+
+  Recommended, but NOT done in this build because it needs SAMAN to amend the signed
+  asset map: re-path the pack under
+      /images/products/container-houses/flat-pack-container-homes/...
+  matching prefab-container-homes. That single change bypasses the optimizer, makes
+  the files CDN-cacheable by extension, and also makes verifier line 257 reachable
+  (see README gap 2). It cannot be done unilaterally: `public_path` is stated 55
+  times in the asset map and the verifier asserts each one against the served HTML.

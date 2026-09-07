@@ -1,0 +1,142 @@
+CH-FPK-06 Template Conformance Gate - artefact 4
+Prop audit: every opt-in this route sets, and why.
+
+No shared component is forked, no new prop is invented and no styling is written.
+Everything below is an EXISTING opt-in that already ships on at least one sibling.
+
+A. ROUTE PROPS - src/pages/product/[category]/[slug].tsx
+-----------------------------------------------------------------------------
+  CLUSTER_DESIGN_SLUGS += 'flat-pack-container-homes'
+      Turns on the porta-cabins design lock for this route: usePremiumSizeTabs
+      (saman-size-chips / saman-size-chip in the buy box, saman-size-tabs /
+      saman-size-tab in the Section 3 explorer), showSectionDividers, and the
+      eleven-block order. Same membership CH-PFB-04 added for its own slug.
+
+  explorerPanelHeadingAsH2  = FALSE for this slug
+      Build prompt v1 section 6: "Section 3 size headings render as H3, which is
+      what the design lock does." The signed pack names the field `h3`. Scoped OFF
+      exactly as PO-05, PO-06, PO-07, PO-08 and CH-PFB-04 scope it. Both branches
+      share an identical class string, so only the heading LEVEL differs.
+
+  sizeEyebrowText = 'Choose your size - six factory-built options'
+      The pack carries no size-selector label. The shared premium default is
+      'Choose your size — six factory-built options' with a U+2014, which this
+      page's gate bans. This is the already-deployed hyphen literal that
+      construction-site-cabin, prefab-container-homes and eight other slugs
+      render; no new copy is authored.
+
+  relatedTiles branch      (Explore the Range reads variantData.relatedTiles)
+  ymalTiles block          (You may also like reads variantData.ymalTiles)
+      The same JSON-driven branch bess-container, CO-06, CO-07 and
+      prefab-container-homes already use. The shared YMAL constants are untouched.
+
+  reviews = []  /  averageRating = undefined  /  ratingCount = 0
+      No verified reviews exist for this product, so none is published and no
+      rating schema is emitted. Same list fourteen other slugs are already in.
+
+  reviewsEmptyStateText = copy pack tabs.reviews.empty_state
+      Renders the pack's "No verified reviews yet." instead of the shared default
+      "No reviews yet. Be the first to review this product.", which would be a
+      claim about this product that the pack does not make.
+
+  fullMobileLabels         NOT SET (default false)  <-- deliberate
+      fullMobileLabels={true} makes the small-screen tab label equal to the
+      desktop one, which is the "DescriptionDescription" defect build prompt
+      section 8 names. Left at its default so the strip reads
+      Description/Info, Specifications/Specs, Shipping/Ship, Reviews.
+      Confirmed on the served page: <span class="sm:hidden"> yields
+      Info / Specs / Ship.
+
+B. PRODUCT RECORD OPT-INS - src/data/products/flat-pack-container-homes.json
+-----------------------------------------------------------------------------
+  emitAggregateOffer            true   AggregateOffer, not per-variant Offers only
+  schemaIncludeVariantOffers    true   one ex-GST Offer per published size
+  schemaBrandName               'SAMAN Portable'
+  suppressLegacySku             true   no WordPress SKU exists for a new route
+  suppressLegacyFaqSchema       true   the pack's FAQPage is the only FAQ graph
+  suppressReviewClaims          true   no verified reviews
+  emitVariantFactCompleteness   true   PO-04's opt-in. The buy box renders ONE
+                                       size at a time exactly as the lock does;
+                                       this ships the other five sizes' approved
+                                       facts in the hidden completeness block so
+                                       all thirty are crawlable. All 30 verifier
+                                       feature_cell assertions pass.
+  emitExplorerImageManifest     true   PO-08's opt-in. The Section 3 explorer
+                                       renders an <img> for the ACTIVE panel only;
+                                       this emits the hidden aria-hidden manifest
+                                       span listing all six panel images and alts.
+  optimizeLocalGalleryImages    true   these assets are NOT under /images/products/
+                                       (the asset map paths them at
+                                       /images/flat-pack-container-homes/...), so
+                                       isPreOptimizedLocalImage() does not apply
+                                       and the responsive pipeline is what emits
+                                       the eager slide-1 preload with imagesrcset
+                                       that build prompt section 5 requires.
+                                       See README gap 3 for the trade-off.
+  labelActiveThumbnailAlt       true   SOC-01's opt-in. Without it the ACTIVE
+                                       gallery thumbnail renders alt="", which
+                                       gate artefact 5 bans. flat-pack-container-
+                                       office, shipping-container-office and
+                                       bess-container already render this form.
+  trustStripText  'GST registered'     The shared default asserts
+                                       "ISO 9001:2015 certified manufacturer" and
+                                       a warranty period. This pack certifies
+                                       neither, and build prompt section 13 item 4
+                                       bans a warranty term outside the
+                                       Description tab. Same already-deployed
+                                       literal PO-03, PO-05 and PO-08 use.
+
+  NOT SET, deliberately:
+    trustWarranty      the pack publishes the ten-year structural term in the
+                       Description tab only; trustStripText replaces the whole
+                       strip so no warranty period reaches the buy box.
+    materialLabel      the pack's five FEATURE_CELLS replace the standard
+                       Size/Material/Delivery/Coverage/Brand set outright, so the
+                       Material cell does not exist on this route.
+    deliveryLabel      same reason. This is also why no "7-21 Working Days" cell
+                       is rendered by this page (see README gap 4 for the two
+                       SHARED surfaces that still publish that lead time).
+    priceCaption       the pack supplies no price caption; an empty slot renders
+                       nothing rather than a fallback string.
+    specPdfHref        asset map shared.technical_pdf is null. No PDF button and
+                       no fallback link is emitted, and no other product's PDF is
+                       linked.
+    infoImages         SET (six), see below - listed here only to record that the
+                       withdrawn media band is NOT rendered by any prop: no
+                       mediaBand prop exists anywhere in src/.
+
+C. DIFFERENCES FROM THE NEAREST SIBLING (prefab-container-homes, PR #200)
+-----------------------------------------------------------------------------
+  labelActiveThumbnailAlt   flat-pack true / prefab absent
+      Gate artefact 5 on this page bans an empty alt; prefab's gate did not.
+  materialLabel             flat-pack absent / prefab set
+      prefab keeps the standard cell set; this pack replaces it (see above).
+  priceCaption              flat-pack absent / prefab set
+      prefab's pack supplies one; this pack does not.
+  trustWarranty             flat-pack absent / prefab set
+      this pack bans a warranty term outside the Description tab.
+  trustStripText            'GST registered' / 'GST registered · Pan-India delivery'
+      the shorter already-deployed literal; this pack makes no delivery-coverage
+      claim in the buy box.
+  Section 3 image `fit`     flat-pack default (cover) / prefab 'contain'
+      Build prompt section 5: this page's board is the 489:374 sheet PADDED
+      symmetrically to exact 4:3 on the board ground, so the 4:3 object-cover box
+      clips nothing. prefab feeds an unpadded 489:374 sheet and needs contain.
+
+D. IMAGE PIPELINE, per build prompt section 5
+-----------------------------------------------------------------------------
+  slide 1 of the default size (20x10)  loading eager, fetchpriority="high",
+      plus <link rel="preload" as="image" imageSrcSet="..."> carrying the same
+      srcset. Confirmed on the served page, artefact 5.
+  every other image                    loading="lazy"  (31 of 33 <img> tags; the
+      other non-lazy tag is the shared header logo).
+  explicit width and height            on all 33 <img> tags.
+  Section 2 split card                 16:9, 1680x945, photoreal render.
+  Section 3 left panel                 4:3, 1800x1350, object-fit cover.
+  Specifications tab                   all six 489:374 boards, 1800x1377, never
+                                       cropped, lazy, below the tables.
+  Description tab                      the six 16:9 long-description images,
+                                       injected after Description sections 1..6
+                                       via infoImages[].afterSectionHeading.
+  m1- / m2- / m3- wide files           referenced nowhere; deleted from the drop
+                                       folder per build prompt section 14.

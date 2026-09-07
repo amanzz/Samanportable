@@ -38,6 +38,7 @@ import portableOfficeContainer from '@/data/products/portable-office-container.j
 import prefabricatedOfficeCabins from '@/data/products/prefabricated-office-cabins.json';
 import portableWeighbridgeOffice from '@/data/products/portable-weighbridge-office.json';
 import portableConferenceCabin from '@/data/products/portable-conference-cabin.json';
+import flatPackContainerHomes from '@/data/products/flat-pack-container-homes.json';
 import constructionSiteCabin from '@/data/products/construction-site-cabin.json';
 import portableControlRoom from '@/data/products/portable-control-room.json';
 import portableMobileLaboratory from '@/data/products/portable-mobile-laboratory.json';
@@ -292,6 +293,11 @@ export const ROUTE_LADDERS: Readonly<Record<string, LadderRow[]>> = {
   'shipping-container-homes': containerHouseLadder('shipping-container-homes'),
   'affordable-container-homes': containerHouseLadder('affordable-container-homes'),
   'luxury-container-houses': containerHouseLadder('luxury-container-houses'),
+  // CH-FPK-06 (7 Sep 2026) - new route, additive key. Its size ladder is
+  // 10x10 / 20x8 / 20x10 / 30x10 / 40x10 / 40x12, which is NOT the shared
+  // CONTAINER_HOUSE_SIZES set, so it reads its own product JSON through toRows()
+  // like every other page-owned ladder. No existing key is touched.
+  'flat-pack-container-homes': toRows(flatPackContainerHomes),
 };
 
 export function getRouteLadder(ladderKey: string | null | undefined): LadderRow[] | null {

@@ -80,7 +80,14 @@ const PROTECTED_NORMALIZED_SHA256 = {
   // to src/data/products/prefab-container-homes.json, which is what the page renders.
   // NOTE: these prices are HELD from deploy pending SAMAN's written confirmation
   // (build prompt section 3). The deeper PC-01 parity assertions below run unchanged.
-  ladders: 'bc4dc48414b89602181bcd957a27decb25e0632ed438799476a2320584caa59b',
+  // CH-FPK-06 (7 Sep 2026): re-pinned. calculatorLadders.ts changed by exactly one
+  // additive ROUTE_LADDERS entry plus its import ('flat-pack-container-homes',
+  // toRows of that new route's own product JSON). Verified against the branch
+  // point ed6808f2: 49 -> 50 keys, the added key is the ONLY difference, no key
+  // was removed, and every pre-existing key is unchanged and still in the same
+  // order - so no existing route's ladder rows, rates, GST or published prices
+  // moved. The deeper PC-01 parity assertions below run unchanged.
+  ladders: '2cf375eb08dd1bd76869e32e3c30131a1833cb1dcf385e76246bf12cce1f86cf',
   rates: 'db62c8be57eeb09025d208df87b05ab9aac02f4183ac0e4a324f49c56291ba48',
   componentRates: '0e2c0e49ecbef688f8a262993cf7750155a5f9976209edddca3fcf4a434518dc',
   tax: 'da95cc10d8e2a5bb20bd9589630bcb1c4ad09fa1d53cfdbe32cd89c094579294',

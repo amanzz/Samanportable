@@ -135,7 +135,11 @@ const unfilteredSegments = { products, locations, projects, editorial };
 // PO-08 (6 Sep 2026): products 99 -> 100 for /product/portable-office/portable-conference-cabin,
 // published in this commit and added to sitemapCanonicalPaths.json in the same commit (Ruling 6).
 // Both this guard and the total below move with it - see the PC-07 / PR #132 incident note below.
-const expectedSegments = { products: 100, locations: 196, projects: 1, editorial: 65 };
+// CH-FPK-06 (7 Sep 2026): products 100 -> 101 for
+// /product/container-houses/flat-pack-container-homes, published in this commit and
+// added to sitemapCanonicalPaths.json in the same commit (Ruling 6). Both this guard
+// and the total below move with it - see the PC-07 / PR #132 incident note below.
+const expectedSegments = { products: 101, locations: 196, projects: 1, editorial: 65 };
 
 const redirectEntries = await nextConfig.redirects();
 const redirectMatchers = redirectEntries
@@ -210,8 +214,9 @@ for (const [name, expected] of Object.entries(expectedSegments)) {
 // 360 = 359 plus /product/portable-office/portable-control-room (PO-07).
 // 361 = 360 plus /product/portable-office/portable-mobile-laboratory (PO-05).
 // 362 = 361 plus /product/portable-office/portable-conference-cabin (PO-08).
-if (all.length !== 362) {
-  throw new Error(`Page sitemap total changed from 362 to ${all.length}`);
+// 363 = 362 plus /product/container-houses/flat-pack-container-homes (CH-FPK-06).
+if (all.length !== 363) {
+  throw new Error(`Page sitemap total changed from 363 to ${all.length}`);
 }
 
 const pageMap = new Map();

@@ -10,6 +10,7 @@
     "/product/container-houses/luxury-container-houses",
     "/product/container-houses/prefab-container-homes",
     "/product/container-houses/shipping-container-homes",
+    "/product/container-houses/flat-pack-container-homes",
     "/product/container-offices",
     "/product/container-offices/bess-container",
     "/product/container-offices/container-marketing-office",
@@ -71,7 +72,6 @@
   "plannedReleasePaths": [
     "/product/labor-colony/accommodation-container",
     "/product/container-houses/expandable-container-house",
-    "/product/container-houses/flat-pack-container-homes",
     "/product/container-houses/container-farmhouse",
     "/product/industrial-sheds/cold-storage-shed",
     "/product/industrial-sheds/agricultural-shed",
@@ -108,6 +108,6 @@
     "/product/roofing-sheet/curved-roofing-sheet"
   ],
   "plannedReleaseBacklogBaselineCount": 45,
-  "plannedReleaseBacklogCurrentCount": 37,
+  "plannedReleaseBacklogCurrentCount": 36,
   "sourceAuditDate": "2026-08-24"
 }

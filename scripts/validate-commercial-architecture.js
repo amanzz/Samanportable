@@ -15,7 +15,11 @@ const customCanonicalPaths = require('../src/lib/customProductCanonicalPaths.jso
 // PO-08 (6 Sep 2026) - /product/portable-office/portable-conference-cabin ships, so it
 // moves out of the planned-release backlog and into the approved production list. The
 // fixture counts move with it: 66 -> 67 approved, 38 -> 37 planned.
-const EXPECTED = { approved: 67, planned: 37 };
+// CH-FPK-06 (7 Sep 2026): /product/container-houses/flat-pack-container-homes moves
+// from plannedReleasePaths to approvedProductionPaths, which is what publishes the
+// route (isProductPubliclyRenderable returns false for a planned path). One path
+// moved; nothing else in the register changed.
+const EXPECTED = { approved: 68, planned: 36 };
 const strict = process.argv.includes('--strict') || process.env.SAMAN_STRICT_PRODUCTION_DATA === 'true';
 const failures = [];
 const warnings = [];
