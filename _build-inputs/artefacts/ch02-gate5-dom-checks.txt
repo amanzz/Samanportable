@@ -1,0 +1,96 @@
+CH-02 Template Conformance Gate - artefact 5: DOM checks
+page: /product/container-houses/luxury-container-houses
+
+H1 count: 1  (require exactly 1)
+  H1: 'Luxury Container House: Six Villa-Grade Sizes and Prices'
+
+headings total: 74   empty headings: 0  (require 0)
+heading outline:
+  <h3> Cabins & Offices
+  <h3> Accommodation & Site
+  <h3> Structures & Buildings
+  <h3> Panels & Sheets
+  <h3> Porta Cabin Rentals
+  <h3> Container Office Rentals
+  <h1> Luxury Container House: Six Villa-Grade Sizes and Prices
+  <h3> Product Information
+  <h2> Explore the Range
+  <h2> Why the luxury build costs more than the standard container house
+  <h3> The 40 x 12 ft flagship, and what 480 sq ft actually holds
+  <h2> The six luxury container house sizes, 160 to 480 sq ft
+  <h3> 20 x 8 ft luxury container house: the 160 sq ft suite
+  <h3> 20 x 10 ft luxury container house: the 200 sq ft reference
+  <h3> 20 x 12 ft luxury container house: a suite with a real lounge
+  <h3> 40 x 8 ft luxury container house: the linear villa room
+  <h3> 40 x 10 ft luxury container house: the one-bedroom villa
+  <h3> 40 x 12 ft luxury container house: the two-bedroom flagship
+  <h2> Your Luxury Container House from ₹4,36,480
+  <h2> Luxury Container House
+  <h2> Choose your product
+  <h2> Set the size
+  <h2> Frame and wall
+  <h2> Choose the interior
+  <h2> Add doors and windows
+  <h3> Door placement
+  <h3> Window placement
+  <h2> Add electrical fittings
+  <h2> Add furniture and fittings
+  <h2> Delivery and taxes
+  <h2> Get your quotation
+  <h2> Live estimate
+  <h2> Live estimate
+  <h2> Published cabin price tables
+  <h2> Complete published pricing and enquiry
+  <h2> You may also like
+  <h2> Product Details
+  <h3> Product Overview
+  <h2> Is this a design gallery or a product you can order
+  <h2> What makes a container house a luxury build
+  <h2> What a luxury container house costs in India
+  <h2> Which of the six sizes fits your plot and your brief
+  <h2> Is a container house legal in India, and on what land
+  <h2> What the price includes, and what it does not
+  <h2> Delivery, site readiness and installation
+  <h2> Warranty, service life and the maintenance you must do
+  <h2> How to brief this build so the quote is right first time
+  <h2> Questions buyers ask about the luxury build
+  <h3> What is the price of luxury container homes in India?
+  <h3> What is the cost of a container house at this specification?
+  <h3> What is the price of a 40 ft container house?
+  <h3> Is a container house legal in India?
+  <h3> How many people can a luxury container house sleep?
+  <h3> Which size has a separate bedroom with a door?
+  <h3> What is the warranty on a SAMAN luxury container house?
+  <h3> How long does delivery take?
+  <h3> Technical Specifications
+  <h4> A. Sizes and published prices
+  <h4> B. Product-specific build: structure, envelope and services
+  <h4> C. Opening schedule and staged layout, by size
+  <h4> D. Platform-common material key, shared with every SAMAN cabin
+  <h4> E. Scope boundary for the luxury container house
+  <h3> Shipping & Delivery
+  <h4> 20 ft open trailer · freight by distance (both zones)
+  <h4> 40 ft open trailer · freight by distance (both zones)
+  <h4> Typical destinations from our Bengaluru unit (South zone)
+  <h4> Typical destinations from our Greater Noida unit (North zone)
+  <h2> Customer Reviews
+  <h3> Write a Review for Luxury Container House
+  <h2> Popular Portable Cabin Resources
+  <h3> Useful Links
+  <h3> Product Categories
+  <h3> Manufacturing Unit - 1
+  <h3> Manufacturing Unit - 2
+
+img count: 24   missing/empty alt: 0  (require 0)   duplicate alt texts: 0  (require 0)
+img without explicit width AND height: 0  (require 0)
+
+U+2014 EM DASH in the full page source: 0  (require 0)
+
+forbidden-string grep (case-insensitive, over visible text):
+  'available on request': 0 hits  (require 0)
+  'coming soon': 0 hits  (require 0)
+  'contact us for details': 0 hits  (require 0)
+  'tbd': 0 hits  (require 0)
+  'lorem': 0 hits  (require 0)
+
+RESULT: PASS

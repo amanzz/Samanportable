@@ -38,14 +38,6 @@ import portableOfficeContainer from '@/data/products/portable-office-container.j
 import prefabricatedOfficeCabins from '@/data/products/prefabricated-office-cabins.json';
 import portableWeighbridgeOffice from '@/data/products/portable-weighbridge-office.json';
 import portableConferenceCabin from '@/data/products/portable-conference-cabin.json';
-import flatPackContainerHomes from '@/data/products/flat-pack-container-homes.json';
-// CH-02 (6 Sep 2026) - the Luxury Container House ladder now comes from this page's
-// OWN product JSON through toRows(...), exactly like every route above, instead of the
-// transcribed CONTAINER_HOUSE_PRICES row it used to share with its four siblings. The
-// page republished its six ex-GST prices (4,36,480 / 4,96,000 / 5,71,392 / 7,53,920 /
-// 9,42,400 / 11,18,976), and the calculator must follow the page rather than a copy of
-// an older ladder. No calculator formula, control, label or styling changes.
-import luxuryContainerHouses from '@/data/products/luxury-container-houses.json';
 import constructionSiteCabin from '@/data/products/construction-site-cabin.json';
 import portableControlRoom from '@/data/products/portable-control-room.json';
 import portableMobileLaboratory from '@/data/products/portable-mobile-laboratory.json';
@@ -148,14 +140,10 @@ const CONTAINER_HOUSE_SIZES: ReadonlyArray<{ sizeSlug: string; label: string; ar
 
 const CONTAINER_HOUSE_PRICES: Record<string, readonly number[]> = {
   'container-houses': [293440, 333400, 384240, 501440, 626800, 736320],
-  // CH-PFB-04 (6 Sep 2026) - rebuilt to SAMAN's approved Option B ladder: 200 sq.ft
-  // base rate Rs 1,625 adjusted by area band, ex-GST. Replaces the Rs 1,475 base the
-  // route published before. This route's own ladder only; no sibling key is touched.
-  'prefab-container-homes': [286000, 325000, 374400, 494000, 617500, 733200],
+  'prefab-container-homes': [259520, 295000, 339840, 443520, 554400, 651360],
   'shipping-container-homes': [364320, 414000, 476880, 622720, 778400, 913920],
   'affordable-container-homes': [252960, 287600, 331200, 432320, 540400, 634560],
-  // 'luxury-container-houses' removed: CH-02 reads its ladder from its own product
-  // JSON below, so a second transcribed copy of its prices must not survive here.
+  'luxury-container-houses': [380160, 432000, 497760, 649600, 812000, 953760],
 };
 
 function containerHouseLadder(key: string): LadderRow[] {
@@ -300,12 +288,7 @@ export const ROUTE_LADDERS: Readonly<Record<string, LadderRow[]>> = {
   'prefab-container-homes': containerHouseLadder('prefab-container-homes'),
   'shipping-container-homes': containerHouseLadder('shipping-container-homes'),
   'affordable-container-homes': containerHouseLadder('affordable-container-homes'),
-  'luxury-container-houses': toRows(luxuryContainerHouses),
-  // CH-FPK-06 (7 Sep 2026) - new route, additive key. Its size ladder is
-  // 10x10 / 20x8 / 20x10 / 30x10 / 40x10 / 40x12, which is NOT the shared
-  // CONTAINER_HOUSE_SIZES set, so it reads its own product JSON through toRows()
-  // like every other page-owned ladder. No existing key is touched.
-  'flat-pack-container-homes': toRows(flatPackContainerHomes),
+  'luxury-container-houses': containerHouseLadder('luxury-container-houses'),
 };
 
 export function getRouteLadder(ladderKey: string | null | undefined): LadderRow[] | null {

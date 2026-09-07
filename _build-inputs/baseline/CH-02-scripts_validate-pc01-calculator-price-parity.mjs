@@ -69,40 +69,7 @@ const PROTECTED_NORMALIZED_SHA256 = {
   // added key is the ONLY difference, no key was removed, and every pre-existing key is
   // unchanged and still in the same order - so no existing route's ladder rows, rates,
   // GST or published prices moved. The deeper parity assertions below run unchanged.
-  // CH-PFB-04 (6 Sep 2026): re-pinned. Unlike every re-pin above this one is NOT an
-  // added key: calculatorLadders.ts changed by exactly one existing entry's six prices,
-  // CONTAINER_HOUSE_PRICES['prefab-container-homes'], from the Rs 1,475/sq.ft base the
-  // route used to publish to SAMAN's approved Option B Rs 1,625/sq.ft base ladder
-  // [286000, 325000, 374400, 494000, 617500, 733200]. Verified against the branch point
-  // ea5ff6f9: 54 -> 54 keys, no key added or removed, and that one array plus its
-  // comment are the ONLY textual difference in the file - so no other route's ladder
-  // rows, rates, GST or published prices moved. The six new values are asserted equal
-  // to src/data/products/prefab-container-homes.json, which is what the page renders.
-  // NOTE: these prices are HELD from deploy pending SAMAN's written confirmation
-  // (build prompt section 3). The deeper PC-01 parity assertions below run unchanged.
-  // CH-FPK-06 (7 Sep 2026): re-pinned. calculatorLadders.ts changed by exactly one
-  // additive ROUTE_LADDERS entry plus its import ('flat-pack-container-homes',
-  // toRows of that new route's own product JSON). Verified against the branch
-  // point ed6808f2: 49 -> 50 keys, the added key is the ONLY difference, no key
-  // was removed, and every pre-existing key is unchanged and still in the same
-  // order - so no existing route's ladder rows, rates, GST or published prices
-  // moved. The deeper PC-01 parity assertions below run unchanged.
-  // CH-02 (6 Sep 2026): re-pinned. calculatorLadders.ts changed by exactly one
-  // ROUTE_LADDERS key's EXPRESSION - 'luxury-container-houses' now reads
-  // toRows(luxuryContainerHouses), the page's own product record, instead of the
-  // transcribed CONTAINER_HOUSE_PRICES row (which is deleted with it, so no second
-  // copy of that ladder survives) - plus the import that entry needs. Evidence in
-  // _build-inputs/artefacts/ch02-calculator-ladder-evidence.txt: key COUNT and ORDER
-  // unchanged, no key added or removed, every other key's expression byte-identical.
-  // The luxury ladder moves from the stale live figures to the six the page now
-  // publishes, which is build prompt v1 3.2's own instruction. No rate, formula, tax,
-  // component price or GST value is touched, and the deeper PC-01 parity assertions
-  // below run unchanged and still pass.
-  //
-  // MERGE NOTE: CH-02 rebased over CH-PFB-04 and CH-FPK-06, both of which re-pinned
-  // this same constant for their own disjoint reasons. No earlier hash covers the
-  // merged file, so this one is recomputed from it; every rationale above is kept.
-  ladders: '02dc590cfd2fca100b0fb87846151d4c2eda04e876dd3a2d9b20a9e09efeebef',
+  ladders: 'c5cffe0d6355c039e6ef6a3a91e44241d2425be833ae60a0e27c141ba4fb2935',
   rates: 'db62c8be57eeb09025d208df87b05ab9aac02f4183ac0e4a324f49c56291ba48',
   componentRates: '0e2c0e49ecbef688f8a262993cf7750155a5f9976209edddca3fcf4a434518dc',
   tax: 'da95cc10d8e2a5bb20bd9589630bcb1c4ad09fa1d53cfdbe32cd89c094579294',

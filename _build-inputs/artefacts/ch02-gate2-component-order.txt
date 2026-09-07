@@ -1,0 +1,27 @@
+CH-02 Template Conformance Gate - artefact 2: component-order assertion
+page: /product/container-houses/luxury-container-houses
+
+The eleven design-lock blocks, in the order they appear in the served HTML.
+'at' is the byte offset of the first match of each block's DOM marker.
+
+  at    31110  1  three-column hero (PortaCabinVariantHero grid)
+  at    35605  2  contact / location bar (hero zone cards)
+  at    40518  3  size selector tabs (usePremiumSizeTabs)
+  at    41361  4  price display for the selected size
+  at    45503  5  H2 Explore the Range
+  at    50460  6  Section 2 RightToExist + split card
+  at    50488  7  Section 2 media pairing (the split card's 16:9 frame)
+  at    51779  8  Section 3 SizeApplicationsExplorer
+  at   215070  9  Section 4 calculator
+  at   224432  10 You may also like
+  at   228661  11 Section 5 Product Details, four tabs
+
+blocks found: 11/11    in ascending document order: True
+
+role=tab elements: 11  (size chips, explorer tabs, YMAL dots, product tabs)
+Product Details tab strip: ['Description Info', 'Specifications Specs', 'Shipping Ship', 'Reviews']
+there is no fifth tab: True
+flattened scrape reads: 'DescriptionInfoSpecificationsSpecsShippingShipReviews'
+responsive pair Description/Info present: True
+
+RESULT: PASS

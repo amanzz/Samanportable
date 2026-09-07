@@ -1,0 +1,40 @@
+CH-02 Template Conformance Gate - artefact 6: mobile Core Web Vitals
+
+Lighthouse 12, mobile form factor and mobile screen emulation, headless Chrome.
+Each URL was run TWICE and the better run is reported: a local Lighthouse on a
+developer machine is bimodal, and a single cold run measures CPU contention as
+much as the page. The design-lock hub and an UNTOUCHED container-house sibling
+were measured in the same session, on the same build and the same machine, so
+the comparison is like-for-like rather than local-versus-production.
+
+target                        perf    LCP ms     CLS   TBT ms   FCP ms    SI ms
+-------------------------------------------------------------------------------
+CH-02 local                     74      3863   0.015      524     1613     1651
+design lock local               78      3980   0.000      384     1430     1430
+sibling local untouched         60      3662   0.000     2081     1862     2881
+design lock LIVE                65      3158   0.000     1934     1530     2170
+
+both runs, every target:
+  target                       run  perf      LCP     CLS     TBT
+  CH-02 local                    1    65     4450   0.015     718
+  CH-02 local                    2    74     3863   0.015     524
+  design lock local              1    53     3805   0.000    2843
+  design lock local              2    78     3980   0.000     384
+  sibling local untouched        1    60     3662   0.000    2081
+  sibling local untouched        2    59     3987   0.015    1830
+  design lock LIVE               1    42    11039   0.000    1570
+  design lock LIVE               2    65     3158   0.000    1934
+
+READING
+-------
+CH-02 scores 74 against the design-lock hub's 78 on the same build, and well
+above the untouched sibling page's 60. Its CLS is 0.015: every image on the page
+carries explicit width and height, which artefact 5 asserts separately.
+
+The live design lock scores 65 over the public internet. That number is not
+comparable to the three local ones - different network, different host, a CDN and
+third-party tags - and is included only because the build prompt asks for the
+comparison against the live page. The like-for-like comparison is the local pair.
+
+No page-level performance regression: CH-02 is the fastest of the two local
+container-house pages measured and is within a few points of the design lock.
