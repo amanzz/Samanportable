@@ -1,6 +1,6 @@
 CH-HUB Template Conformance Gate - artefact 2 of 6
-PROP AUDIT - every design-lock gate and data opt-in this route sets
-Generated 6 Sep 2026. Baseline 24edd07038d864117d2c4e389f67b87013efd1b8.
+PROP AUDIT
+Rebased onto ed6808f2 (PR #200). HEAD 23999d4c.
 
 ROUTE GATES  src/pages/product/[category]/index.tsx
 prop                       wired    container-houses included
@@ -8,6 +8,7 @@ prop                       wired    container-houses included
 showSectionDividers        True     True
 usePremiumSizeTabs         True     True
 sizeEyebrowText            True     True
+syncVariantSelection       True     True
 fullMobileLabels           True     True
 reviewsEmptyStateText      True     True
 
@@ -23,41 +24,39 @@ suppressLegacyFaqSchema                True
 suppressLegacyDescription              True
 hasProductVideo                        False
 
-EXPLORER PANELS: 6
-VARIANTS       : 20x8, 20x10, 20x12, 40x8, 40x10, 40x12
-YMAL TILES     :
+Explorer panels        : 6
+Variants               : 20x8, 20x10, 20x12, 40x8, 40x10, 40x12
+Published ex-GST ladder: [281600, 320000, 368640, 486400, 608000, 721920]
+Description-tab images : 3
+YMAL tiles             :
     /product/container-houses/prefab-container-homes
     /product/container-houses/shipping-container-homes
     /product/container-houses/luxury-container-houses
 
 SHARED-COMPONENT CHANGES (opt-in, default false, absent everywhere else)
-----------------------------------------------------------------------
+-----------------------------------------------------------------------
 featureCellsWithoutLabels   types.ts + PortaCabinVariantHero.tsx
    The pack supplies five self-describing cells per size and no labels, so the
-   label row is dropped rather than 30 labels invented. Default false.
+   label row is dropped rather than 30 labels invented.
 getProductTabsHtml branch   specsShippingTabs.ts
-   One branch guarded by pageSlug === 'container-houses', placed before the C08
-   branch, so this hub renders the shared freight tab and the five C08 subpages
-   keep theirs unchanged.
+   One branch guarded by pageSlug === 'container-houses', placed after the
+   CH-PFB-04 prefab branch and before the generic C08 branch, so the remaining
+   C08 subpages keep their empty Shipping tab.
 
-ROUTE-FILE OPT-INS THAT DIVERGE FROM THE LOCK, DELIBERATELY
------------------------------------------------------------
-syncVariantSelection   SAMAN ruling 6 Sep 2026. The Section 2 card CTA is an
-   in-page anchor to the Section 3 explorer synced to the selected size, so the
-   hero size chips move the explorer with them. Already used by
-   container-office-cabin on the subpage route.
-fullMobileLabels       The pack approves exactly four tab labels (Description,
-   Specifications, Shipping, Reviews). The component's default mobile aliases
-   (Info / Specs / Ship) are abbreviations the pack does not carry, so this route
-   renders the approved labels at every width. Six product pages already set it.
+ROUTE OPT-INS THAT DIVERGE FROM THE LOCK, DELIBERATELY
+------------------------------------------------------
+syncVariantSelection   SAMAN ruling 6 Sep 2026: the Section 2 card CTA is an
+   in-page anchor to the Section 3 explorer synced to the selected size.
+fullMobileLabels       The pack approves exactly four tab labels; the component's
+   default mobile aliases (Info / Specs / Ship) are not in the pack.
 
 DESCRIPTION-TAB IMAGES (SAMAN ruling 6 Sep 2026)
 ------------------------------------------------
-Three 16:9 images render inside the Description tab, each immediately after its
-named H2, superseding the lock's no-images-in-Description default:
-   description_image_1  after "What a container house is, and what it is not"
-   description_image_2  after "How the six container house sizes actually differ"
-   description_image_3  after "Who is actually buying a container house in India"
-Slot, file and alt are read from the pack. The 16:9 GA boards are retired from
-Section 2 and now render only in the Specifications tab, per the asset map's own
-note on specifications_ga_16x9. Section 2 carries the realistic wide exterior.
+Three 16:9 images render inside the Description tab, each after its named H2,
+superseding the lock's no-images default. Section 2 carries the realistic wide
+exterior; the 16:9 GA boards are retired from Section 2 to the Specifications tab.
+
+PEER-PAGE PARITY AFTER THE REBASE
+---------------------------------
+This branch rebased onto PR #200 (CH-PFB-04, Prefab Container Homes). That page's
+own verifier was run against this build: 360 checks passed, RESULT: PASS.
