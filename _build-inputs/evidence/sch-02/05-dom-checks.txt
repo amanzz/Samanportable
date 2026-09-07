@@ -5,7 +5,7 @@ exactly one H1                       : True (1)
   H1 text                            : 'Shipping Container Homes Built From Real Cargo Shells'
   H1 == pack h1                      : True
 no empty headings                    : True (73 headings)
-images                               : 31
+images                               : 33
 no empty alt                         : True
 no duplicate alt                     : True
 every img has width and height       : True
@@ -50,6 +50,7 @@ structured data types (incl. nested) : ['AggregateOffer', 'Answer', 'Brand', 'Br
 
 cluster links emitted by THIS PAGE (nav chrome and the shared calculator excluded):
   /product/container-houses                                  approved
+  /product/container-houses/flat-pack-container-homes        approved
   /product/container-houses/luxury-container-houses          approved
   /product/container-houses/prefab-container-homes           approved
 Section 2 link to prefab-container-homes : True

@@ -98,7 +98,7 @@ zero U+2014 in body copy : True    all four tab panels : True
 structured data (incl. nested) : AggregateOffer, BreadcrumbList, FAQPage, ItemPage, Product…
   Review absent : True     AggregateRating absent : True
   FAQ byte-identical to tab : True
-cluster links emitted by THIS PAGE : the three approved destinations only
+cluster links emitted by THIS PAGE : the four approved destinations only
 ```
 
 Validator delta against a pristine worktree at the base commit: **zero newly failing
@@ -113,3 +113,23 @@ it from the corrected page would put all of it back one click away, so the produ
 `specPdfDisabled: true` — the repo's existing LC-02 opt-in for *"a PDF that exists but is
 unsigned/draft and must not be linked."* The control still renders, disabled, so the design
 lock's layout is unchanged. The PDF needs re-issuing from the approved workbook.
+
+---
+
+## Note on link status: probed against the MERGED build, not production
+
+`scripts/sch02-link-status.json` is probed against this branch's own production build
+(`http://127.0.0.1:3260`), which is the state that deploys, and it is what the ticket
+means by *"every destination confirmed 200 at build time"*.
+
+That matters for one destination today. CH-FPK-06 merged Flat-Pack Container Homes into
+`static-migration` on 7 Sep, so it answers **200 in the merged build** and is now the
+fourth Explore the Range tile — but production has not deployed it yet and still answers
+**404**. The two land together, so the tile is correct on deploy. Re-running
+`scripts/sch02-probe-link-status.py` followed by `scripts/sch02-build-tile-meta.py` and
+`scripts/sch02-generate-page-data.py` re-resolves the panel from whatever is live at that
+moment; no tile is ever hand-written.
+
+Still excluded, and still verified rather than assumed: `container-farmhouse` and
+`expandable-container-house` answer 404, and `tiny-container-homes` answers **301 to this
+very page**.

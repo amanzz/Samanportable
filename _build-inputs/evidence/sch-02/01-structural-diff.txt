@@ -3,15 +3,15 @@ preview   : http://127.0.0.1:3260/product/container-houses/shipping-container-ho
 design lock: http://127.0.0.1:3260/product/porta-cabins
 
 tag                page     lock
-a                   132      148
+a                   134      148
 aside                 3        1
 body                  1        1
-button              212       57
+button              213       57
 caption               2        0
 circle               12       12
 dd                   11        2
 details               2        0
-div                 372      312
+div                 377      312
 dl                    3        1
 dt                   11        2
 fieldset             40        0
@@ -27,7 +27,7 @@ h4                    9       14
 header                2        1
 hr                    4        4
 iframe                1        1
-img                  31       41
+img                  33       41
 input               274        5
 label               247        5
 legend               40        0
@@ -38,7 +38,7 @@ nav                   3        2
 noscript              2        2
 ol                    1        1
 option               64        0
-p                   153      140
+p                   158      140
 path                218      153
 picture               1        1
 polygon               2        2

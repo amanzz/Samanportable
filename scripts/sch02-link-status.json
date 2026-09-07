@@ -1,7 +1,7 @@
 {
   "_note": "Status each approved Container Houses destination answered at build time. Redirects are NOT followed: a 301 is not a 200.",
-  "base": "https://www.samanportable.com",
-  "probed": "2026-09-07T10:35:49",
+  "base": "http://127.0.0.1:3260",
+  "probed": "2026-09-07T15:40:05",
   "results": {
     "/product/container-houses": {
       "status": 200,
@@ -16,7 +16,7 @@
       "location": null
     },
     "/product/container-houses/flat-pack-container-homes": {
-      "status": 404,
+      "status": 200,
       "location": null
     },
     "/product/container-houses/luxury-container-houses": {

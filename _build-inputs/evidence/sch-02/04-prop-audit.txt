@@ -22,7 +22,7 @@ A. src/data/products/shipping-container-homes.json - every key passed to
      priceCaption                     'Prices are ex-GST unless stated; 18 per cent GST applies.'
      productName                      'Shipping Container Homes'
      productSlug                      'shipping-container-homes'
-     relatedTiles                     <list, 3 entries>
+     relatedTiles                     <list, 4 entries>
      schemaBrandName                  'SAMAN Portable'
      seoTitle                         'Shipping Container House India: 6 Sizes & Price | SAMAN'
      specPdfDisabled                  True
@@ -33,7 +33,7 @@ A. src/data/products/shipping-container-homes.json - every key passed to
      trustStripText                   'GST registered · ISO 9001:2015 certified manufacturer · 10-year structural and 1-year finish...'
      variantAxis                      'Size'
      variants                         <list, 6 entries>
-     ymalTiles                        <list, 3 entries>
+     ymalTiles                        <list, 4 entries>
 
 B. Route-level props (src/pages/product/[category]/[slug].tsx):
      showSectionDividers              true   (CLUSTER_DESIGN_SLUGS)

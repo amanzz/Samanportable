@@ -392,6 +392,7 @@
     <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/credentials/optimized/saman-logo-band-cropped.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/container-house-product-video-poster.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/flat-pack-container-homes/size-20x10/01-flat-pack-container-home-20x10-front-left-exterior.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/container-houses/20x10/container-houses-20x10-bathroom-reverse.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/container-houses/20x10/container-houses-20x10-bedroom-view.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/container-houses/20x10/container-houses-20x10-end-dominant-view.webp</image:loc></image:image>
@@ -438,6 +439,73 @@
     <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
   </url>
   <url>
+    <loc>https://www.samanportable.com/product/container-houses/flat-pack-container-homes</loc>
+    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1216.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1216.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1440.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1440.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1926.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1926.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/credentials/optimized/saman-logo-band-cropped.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/flat-pack-container-homes/boards/flat-pack-container-home-10x10x8-5-3d-assembly-kit-board-v1.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/flat-pack-container-homes/boards/flat-pack-container-home-20x10x8-5-3d-assembly-kit-board-v1-4x3.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/flat-pack-container-homes/boards/flat-pack-container-home-20x10x8-5-3d-assembly-kit-board-v1.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/flat-pack-container-homes/boards/flat-pack-container-home-20x8x8-5-3d-assembly-kit-board-v1.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/flat-pack-container-homes/boards/flat-pack-container-home-30x10x8-5-3d-assembly-kit-board-v1.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/flat-pack-container-homes/boards/flat-pack-container-home-40x10x8-5-3d-assembly-kit-board-v1.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/flat-pack-container-homes/boards/flat-pack-container-home-40x12x8-5-3d-assembly-kit-board-v1.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/flat-pack-container-homes/size-10x10/01-flat-pack-container-home-10x10-front-left-exterior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/flat-pack-container-homes/size-10x10/02-flat-pack-container-home-10x10-front-right-exterior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/flat-pack-container-homes/size-10x10/03-flat-pack-container-home-10x10-full-front-elevation-exterior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/flat-pack-container-homes/size-10x10/04-flat-pack-container-home-10x10-residential-setting-exterior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/flat-pack-container-homes/size-10x10/05-flat-pack-container-home-10x10-living-space-interior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/flat-pack-container-homes/size-10x10/06-flat-pack-container-home-10x10-kitchen-dining-interior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/flat-pack-container-homes/size-20x10/01-flat-pack-container-home-20x10-front-left-exterior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/flat-pack-container-homes/size-20x10/02-flat-pack-container-home-20x10-front-right-exterior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/flat-pack-container-homes/size-20x10/03-flat-pack-container-home-20x10-full-front-elevation-exterior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/flat-pack-container-homes/size-20x10/04-flat-pack-container-home-20x10-residential-setting-exterior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/flat-pack-container-homes/size-20x10/05-flat-pack-container-home-20x10-living-space-interior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/flat-pack-container-homes/size-20x10/06-flat-pack-container-home-20x10-kitchen-dining-interior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/flat-pack-container-homes/size-20x8/01-flat-pack-container-home-20x8-front-left-exterior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/flat-pack-container-homes/size-20x8/02-flat-pack-container-home-20x8-front-right-exterior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/flat-pack-container-homes/size-20x8/03-flat-pack-container-home-20x8-full-front-elevation-exterior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/flat-pack-container-homes/size-20x8/04-flat-pack-container-home-20x8-residential-setting-exterior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/flat-pack-container-homes/size-20x8/05-flat-pack-container-home-20x8-living-space-interior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/flat-pack-container-homes/size-20x8/06-flat-pack-container-home-20x8-kitchen-dining-interior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/flat-pack-container-homes/size-30x10/01-flat-pack-container-home-30x10-front-left-exterior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/flat-pack-container-homes/size-30x10/02-flat-pack-container-home-30x10-front-right-exterior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/flat-pack-container-homes/size-30x10/03-flat-pack-container-home-30x10-full-front-elevation-exterior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/flat-pack-container-homes/size-30x10/04-flat-pack-container-home-30x10-residential-setting-exterior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/flat-pack-container-homes/size-30x10/05-flat-pack-container-home-30x10-living-space-interior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/flat-pack-container-homes/size-30x10/06-flat-pack-container-home-30x10-kitchen-dining-interior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/flat-pack-container-homes/size-40x10/01-flat-pack-container-home-40x10-front-left-exterior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/flat-pack-container-homes/size-40x10/02-flat-pack-container-home-40x10-front-right-exterior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/flat-pack-container-homes/size-40x10/03-flat-pack-container-home-40x10-full-front-elevation-exterior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/flat-pack-container-homes/size-40x10/04-flat-pack-container-home-40x10-residential-setting-exterior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/flat-pack-container-homes/size-40x10/05-flat-pack-container-home-40x10-living-space-interior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/flat-pack-container-homes/size-40x10/06-flat-pack-container-home-40x10-kitchen-dining-interior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/flat-pack-container-homes/size-40x12/01-flat-pack-container-home-40x12-front-left-exterior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/flat-pack-container-homes/size-40x12/02-flat-pack-container-home-40x12-rear-left-exterior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/flat-pack-container-homes/size-40x12/03-flat-pack-container-home-40x12-full-front-elevation-exterior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/flat-pack-container-homes/size-40x12/04-flat-pack-container-home-40x12-residential-setting-exterior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/flat-pack-container-homes/size-40x12/05-flat-pack-container-home-40x12-living-space-interior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/flat-pack-container-homes/size-40x12/06-flat-pack-container-home-40x12-kitchen-dining-interior.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/flat-pack-container-homes/wide/ld-flat-pack-container-home-10x10-wide.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/flat-pack-container-homes/wide/ld-flat-pack-container-home-20x10-wide.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/flat-pack-container-homes/wide/ld-flat-pack-container-home-20x8-wide.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/flat-pack-container-homes/wide/ld-flat-pack-container-home-30x10-wide.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/flat-pack-container-homes/wide/ld-flat-pack-container-home-40x10-wide.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/flat-pack-container-homes/wide/ld-flat-pack-container-home-40x12-wide.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/flat-pack-container-homes/wide/s2-flat-pack-container-home-20x10-residential-setting-wide.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-houses/20x10/container-houses-20x10-front-right-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/container-houses/prefab-container-homes/gallery/prefab-container-homes-20x10-01-front-right-three-quarter-view.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/luxury-container-houses/20x10/luxury-container-houses-20x10-front-right-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/products/shipping-container-homes/20x10/shipping-container-homes-20x10-front-right-hero.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/saman-logo.svg</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://www.samanportable.com/product/container-houses/luxury-container-houses</loc>
     <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1216.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-1216.webp</image:loc></image:image>
@@ -448,6 +516,7 @@
     <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/credentials/optimized/saman-logo-band-cropped.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/flat-pack-container-homes/size-20x10/01-flat-pack-container-home-20x10-front-left-exterior.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/container-houses/20x8/container-houses-20x8-front-right-hero.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/luxury-container-houses/20x10/luxury-container-houses-20x10-bathroom-reverse.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/luxury-container-houses/20x10/luxury-container-houses-20x10-bedroom-view.webp</image:loc></image:image>
@@ -561,6 +630,7 @@
     <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/credentials/optimized/calculator-band-v1-768.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/credentials/optimized/saman-logo-band-cropped.webp</image:loc></image:image>
+    <image:image><image:loc>https://www.samanportable.com/images/flat-pack-container-homes/size-10x10/01-flat-pack-container-home-10x10-front-left-exterior.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/container-houses/20x8/container-houses-20x8-front-right-hero.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/container-houses/prefab-container-homes/gallery/prefab-container-homes-20x8-01-front-right-three-quarter-view.webp</image:loc></image:image>
     <image:image><image:loc>https://www.samanportable.com/images/products/luxury-container-houses/20x8/luxury-container-houses-20x8-front-right-hero.webp</image:loc></image:image>

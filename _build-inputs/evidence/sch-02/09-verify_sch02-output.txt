@@ -1,5 +1,5 @@
 page: http://127.0.0.1:3260/product/container-houses/shipping-container-homes
 lock: http://127.0.0.1:3260/product/porta-cabins
-asserts run: 276   failures: 1
+asserts run: 281   failures: 1
   FAIL: 1 copy strings not found in rendered HTML, first: ['Shipping container homes converted from real cargo shells. Six sizes f']
 RESULT: FAIL

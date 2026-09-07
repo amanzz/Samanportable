@@ -1,5 +1,5 @@
 {
-  "_source": "each destination's own src/data/products/<slug>.json: productName as the tile title, first approved gallery image as the tile image",
+  "_source": "each destination's own src/data/products/<slug>.json: productName as the tile title, first approved gallery image as the tile image. Built by scripts/sch02-build-tile-meta.py from scripts/sch02-link-status.json.",
   "tiles": {
     "/product/container-houses": {
       "title": "Container Houses",
@@ -8,6 +8,14 @@
       "blurb": "Explore Container Houses",
       "imageSrc": "/images/products/container-houses/20x8/container-houses-20x8-front-right-hero.webp",
       "imageAlt": "Front-right hero view of a 20x8 ft container house, white steel cladding, on a paved court in a hillside garden"
+    },
+    "/product/container-houses/flat-pack-container-homes": {
+      "title": "Flat-Pack Container Homes",
+      "href": "/product/container-houses/flat-pack-container-homes",
+      "category": "Container Houses",
+      "blurb": "Explore Flat-Pack Container Homes",
+      "imageSrc": "/images/flat-pack-container-homes/size-10x10/01-flat-pack-container-home-10x10-front-left-exterior.webp",
+      "imageAlt": "10x10 ft ft flat-pack container home, front left three-quarter view with the entrance door visible and the bolted corner posts on the near corner"
     },
     "/product/container-houses/luxury-container-houses": {
       "title": "Luxury Container Houses",

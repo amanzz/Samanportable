@@ -8,12 +8,12 @@ block                               this page  design lock
 3  size selector tabs                   60144        57597
 4  price display                        61054         7604
 5  H2 Explore the Range                 65928        63945
-6  Section 2 RightToExist               69278        73379
+6  Section 2 RightToExist               70693        73379
 7  media / finished-work band          absent       absent
-8  Section 3 explorer                   72050        75687
-9  Section 4 calculator                112218       106963
-10 You may also like                   328817       109642
-11 Section 5 Product Details           422907       177831
+8  Section 3 explorer                   73465        75687
+9  Section 4 calculator                113633       106963
+10 You may also like                   330232       109642
+11 Section 5 Product Details           425488       177831
 
 blocks present on this page   : 10/11
 blocks present on design lock : 10/11
