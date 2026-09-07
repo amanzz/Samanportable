@@ -251,6 +251,18 @@ const CLUSTER_DESIGN_SLUGS = new Set([
   // the lock renders Section 3 panel headings H3 and this page's pack names the field
   // `h3`. First container-house page in this set, so no sibling is affected.
   'prefab-container-homes',
+  // CH-CLUSTER-01 design-lock parity (6 Sep 2026) - the two remaining live Container
+  // Houses pages join the same set. CH-PFB-04 (PR #200) brought prefab-container-homes
+  // in above; these two were still rendering plain size pills and no section dividers
+  // while every porta-cabin, labour-colony, container-office and portable-office sibling
+  // showed the premium treatment. Same opt-ins as every slug above, byte-for-byte, and
+  // their explorer headings are scoped to H3 below for the same reason CH-PFB-04 scoped
+  // its own: the hub renders Section 3 panel headings as H3, and this cluster follows the
+  // hub. No new styling. The set is checked by literal slug value, so no other page moves.
+  // The hub itself opts in through the four category gates in [category]/index.tsx, which
+  // this commit also sets.
+  'shipping-container-homes',
+  'luxury-container-houses',
 ]);
 
 // Dynamic import for ProductTabs to avoid SSR issues
@@ -1314,7 +1326,7 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                   // an identical class string, so only the heading LEVEL changes.
                   // CH-PFB-04 - same ruling again: the lock renders each Section 3 panel
                   // heading as an H3 and the signed pack names the field `h3`.
-                  explorerPanelHeadingAsH2={CLUSTER_DESIGN_SLUGS.has(slug) && slug !== 'construction-site-cabin' && slug !== 'portable-control-room' && slug !== 'portable-mobile-laboratory' && slug !== 'portable-conference-cabin' && slug !== 'prefab-container-homes'}
+                  explorerPanelHeadingAsH2={CLUSTER_DESIGN_SLUGS.has(slug) && slug !== 'construction-site-cabin' && slug !== 'portable-control-room' && slug !== 'portable-mobile-laboratory' && slug !== 'portable-conference-cabin' && slug !== 'prefab-container-homes' && slug !== 'shipping-container-homes' && slug !== 'luxury-container-houses'}
                   // Ad-hoc revision (14 Aug 2026, owner screenshots) — mobile
                   // divider gap fix, scoped to this page only per the
                   // component-level comment; every other cluster-design page
@@ -1370,6 +1382,15 @@ const ProductDetails = ({ product, category, slug, relatedProducts, rankMathSEO,
                       // already-deployed literal the slugs below render; no new copy.
                       : slug === 'prefab-container-homes'
                       ? 'Choose your size - six factory-built options'
+                      // CH-CLUSTER-01 (6 Sep 2026) - both pages render 'Choose size'
+                      // on production today, from the NON-premium branch of the hero,
+                      // which hard-codes that string. Turning usePremiumSizeTabs on for
+                      // them switches to the premium branch, whose fallback is the
+                      // porta-cabins sentence written with a U+2014. Passing the
+                      // already-deployed literal keeps the approved copy byte-identical
+                      // and keeps the em dash out. No new copy is authored.
+                      : slug === 'shipping-container-homes' || slug === 'luxury-container-houses'
+                      ? 'Choose size'
                       : slug === 'porta-cabin-with-toilet' || slug === 'soundproof-porta-cabin' || slug === 'puf-porta-cabin' || slug === 'skid-mounted-porta-cabin' || slug === 'porta-cabin-shop' || slug === 'accommodation-container' || slug === 'container-office-cabin' || slug === 'container-marketing-office' || slug === CO06_SLUG || slug === 'bess-container' || slug === 'shipping-container-office' || slug === CO07_SLUG || slug === CO08_SLUG
                       ? 'Choose your size - six factory-built options'
                       : undefined

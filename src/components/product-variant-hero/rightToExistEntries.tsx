@@ -414,6 +414,29 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
     ),
   },
   'container-houses': {
+    // CH-CLUSTER-01 (7 Sep 2026) — Section 2 rendered no image on this page: the
+    // .saman-s2-split card is gated only by the presence of this splitCard object,
+    // which no route flag controls, so the design-lock opt-ins did not bring it in.
+    //
+    // Image is this product's OWN 16:9 exterior render from its info/ set (1200x675,
+    // the same files the Description panel already publishes through
+    // src/lib/infoImageLayout.ts). It is a realistic elevated three-quarter render,
+    // never a general-arrangement board — the mistake SOC-01 and PO-02 had to correct.
+    //
+    // NO subheading and NO body: there is no approved copy pack for this page
+    // (content/ holds packs for ch-pfb-04, co-07/08, po-01..08 and soc-01 only), and
+    // both fields are optional precisely so a page renders the panel without them
+    // rather than inventing either (PC-02 revision v1.2). ctaLabel/ctaHref are
+    // required by the type, so they reuse the porta-cabins hub's already-deployed
+    // pair verbatim rather than authoring a new call to action.
+    splitCard: {
+      imageSrc: '/images/products/container-houses/info/20x10/container-houses-20x10-elevated-three-quarter.webp',
+      imageAlt: 'SAMAN 20 x 10 ft container house seen from an elevated three-quarter angle, showing the long side, the entry door and the base frame',
+      imageWidth: 1200,
+      imageHeight: 675,
+      ctaLabel: 'Explore the project gallery',
+      ctaHref: '/gallery',
+    },
     heading: 'Why the range page instead of one home model',
     body: (
       <>This page exists to route you to the right build, not to sell one configuration. The four home pages under it each own a distinct specification: repeatable prefab modules, villa-grade luxury finish, the reinforced shipping-form shell, and the fixed-plan affordable build. Start here when you know the size you need but not yet the build style that fits your plot and budget.</>
@@ -468,6 +491,29 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
     },
   },
   'luxury-container-houses': {
+    // CH-CLUSTER-01 (7 Sep 2026) — Section 2 rendered no image on this page: the
+    // .saman-s2-split card is gated only by the presence of this splitCard object,
+    // which no route flag controls, so the design-lock opt-ins did not bring it in.
+    //
+    // Image is this product's OWN 16:9 exterior render from its info/ set (1200x675,
+    // the same files the Description panel already publishes through
+    // src/lib/infoImageLayout.ts). It is a realistic elevated three-quarter render,
+    // never a general-arrangement board — the mistake SOC-01 and PO-02 had to correct.
+    //
+    // NO subheading and NO body: there is no approved copy pack for this page
+    // (content/ holds packs for ch-pfb-04, co-07/08, po-01..08 and soc-01 only), and
+    // both fields are optional precisely so a page renders the panel without them
+    // rather than inventing either (PC-02 revision v1.2). ctaLabel/ctaHref are
+    // required by the type, so they reuse the porta-cabins hub's already-deployed
+    // pair verbatim rather than authoring a new call to action.
+    splitCard: {
+      imageSrc: '/images/products/luxury-container-houses/info/20x10/luxury-container-houses-20x10-elevated-three-quarter.webp',
+      imageAlt: 'SAMAN 20 x 10 ft luxury container house seen from an elevated three-quarter angle, showing the full-height glazing, the entry door and the base frame',
+      imageWidth: 1200,
+      imageHeight: 675,
+      ctaLabel: 'Explore the project gallery',
+      ctaHref: '/gallery',
+    },
     heading: 'Why the luxury build instead of the prefab line',
     body: (
       <>This page owns the finish ladder: acoustic-grade 100 mm wall insulation, veneer and HPL feature walls, engineered wood underfoot, layered lighting circuits and split AC provision in every habitable room. Choose it when the unit is a residence guests will judge, a resort suite, a designer farmhouse, a second home with a point of view. The structure matches the range; the experience does not.</>
@@ -477,6 +523,29 @@ const RIGHT_TO_EXIST_ENTRIES: Record<string, RightToExistEntry> = {
     ),
   },
   'shipping-container-homes': {
+    // CH-CLUSTER-01 (7 Sep 2026) — Section 2 rendered no image on this page: the
+    // .saman-s2-split card is gated only by the presence of this splitCard object,
+    // which no route flag controls, so the design-lock opt-ins did not bring it in.
+    //
+    // Image is this product's OWN 16:9 exterior render from its info/ set (1200x675,
+    // the same files the Description panel already publishes through
+    // src/lib/infoImageLayout.ts). It is a realistic elevated three-quarter render,
+    // never a general-arrangement board — the mistake SOC-01 and PO-02 had to correct.
+    //
+    // NO subheading and NO body: there is no approved copy pack for this page
+    // (content/ holds packs for ch-pfb-04, co-07/08, po-01..08 and soc-01 only), and
+    // both fields are optional precisely so a page renders the panel without them
+    // rather than inventing either (PC-02 revision v1.2). ctaLabel/ctaHref are
+    // required by the type, so they reuse the porta-cabins hub's already-deployed
+    // pair verbatim rather than authoring a new call to action.
+    splitCard: {
+      imageSrc: '/images/products/shipping-container-homes/info/20x10/shipping-container-homes-20x10-elevated-three-quarter.webp',
+      imageAlt: 'SAMAN 20 x 10 ft shipping container home seen from an elevated three-quarter angle, showing the corrugated shell, the entry door and the base frame',
+      imageWidth: 1200,
+      imageHeight: 675,
+      ctaLabel: 'Explore the project gallery',
+      ctaHref: '/gallery',
+    },
     heading: 'Why the shipping-form build instead of the hub range',
     body: (
       <>This page owns the reinforced configuration: upsized corner posts, cross-membered base with relocation skids, weatherproof window hoods and a marine-duty paint system that shrugs off coastal air. Choose it when the home will move between sites, sit near salt water, or face wind loads the standard build should not be asked to carry. It is the range&apos;s working boots, not its slippers.</>
